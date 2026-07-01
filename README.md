@@ -1,14 +1,14 @@
 # Digital Nation — Public Website
 
-This repository contains the public-facing website for the Digital Nation. It presents the nation’s purpose, governance model, and active initiatives in a concise, sovereign-themed experience.
+This repository contains the public-facing website for the Digital Nation. It presents the nation’s purpose, governance model, active initiatives, and how to participate.
 
 ## Pages
 
-- `index.html` — Hero and core freedoms
+- `index.html` — Hero vision, freedoms, and entry points
 - `about.html` — Purpose, who we are, and leadership
-- `goals.html` — Roadmap and milestones
+- `goals.html` — Roadmap milestones
 - `initiatives.html` — Active programs
-- `join.html` — Participation flow
+- `join.html` — Participation and onboarding
 
 ## Stack
 
