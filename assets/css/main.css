@@ -21,6 +21,41 @@ html, body {
   line-height: 1.6;
 }
 
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(7,9,13,0.4) 0%, rgba(7,9,13,0.85) 60%, rgba(7,9,13,0.95) 100%),
+    radial-gradient(1200px 900px at 20% 10%, rgba(122,167,255,0.12) 0%, transparent 55%),
+    radial-gradient(1000px 700px at 80% 30%, rgba(192,132,252,0.10) 0%, transparent 55%),
+    radial-gradient(circle at 50% 110%, rgba(122,167,255,0.10), transparent 45%),
+    var(--color-bg);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45vh;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(122,167,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122,167,255,0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  animation: drift 24s ease-in-out infinite alternate;
+}
+
 a {
   color: inherit;
   text-decoration: none;
