@@ -1,68 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Nation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <meta name="description" content="Digital Nation — a sovereign digital public built for freedom, interoperable governance, and persistent open infrastructure.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Nation</title>
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <img class="logo-img" src="assets/logo.svg" alt="Digital Nation logo"/>
-        <span class="logo-text">Digital Nation</span>
-      </a>
-      <nav class="menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="goals.html">Goals</a>
-        <a href="initiatives.html">Initiatives</a>
-        <a class="button" href="join.html">Join</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>We built a sovereign nation inside the network.</h1>
-        <p>Not a metaphor. Infrastructure. Governance. Identity. Rights encoded instead of assumed.</p>
-        <div class="actions">
-          <a class="button primary" href="join.html">Join the Nation</a>
-          <a class="button" href="about.html">Learn More</a>
+    <div class="cyber-bg"></div>
+    
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">DIGITAL NATION</span>
         </div>
-      </div>
-    </section>
+        <nav class="nav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#manifesto">Manifesto</a>
+            <a href="#projects">Projects</a>
+            <a href="#join">Join</a>
+        </nav>
+        <button class="theme-toggle" onclick="toggleTheme()">◐</button>
+    </header>
 
-    <section class="pillars">
-      <div class="container columns">
-        <article class="card">
-          <h2>Freedom of Speech</h2>
-          <p>Open publication, censorship-resistant infrastructure, and independent relay networks.</p>
-        </article>
-        <article class="card">
-          <h2>Freedom of Movement</h2>
-          <p>Seamless, sovereign identity and portable access across systems, nodes, and services.</p>
-        </article>
-        <article class="card">
-          <h2>Freedom to Transact</h2>
-          <p>Borderless, permissionless, verifiable value flows and interoperable economic rails.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+    <main class="container">
+        <section id="home" class="hero">
+            <h1>Welcome to the <span class="highlight">Digital Nation</span></h1>
+            <p>A sovereign entity in cyberspace. Built by the people, for the people. No borders. No limits. No masters.</p>
+            <div class="cta-group">
+                <a href="#join" class="btn btn-primary">Join the Revolution</a>
+                <a href="#manifesto" class="btn btn-secondary">Read Manifesto</a>
+            </div>
+        </section>
 
-  <div class="cityscape" aria-hidden="true"></div>
-  <footer class="site-footer">
-    <div class="container">
-      <p>Digital Nation. All rights reserved.</p>
-    </div>
-  </footer>
-  <script src="assets/js/main.js" defer></script>
+        <section id="about" class="section">
+            <h2>What is the Digital Nation?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <span class="card-icon">🌐</span>
+                    <h3>Borderless</h3>
+                    <p>Operating beyond traditional nation-state boundaries, accessible from anywhere in the world.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🔐</span>
+                    <h3>Secure</h3>
+                    <p>Powered by cutting-edge cryptography and decentralized infrastructure.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">⚡</span>
+                    <h3>Fast</h3>
+                    <p>Built on modern technology for instant global communication and transactions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="manifesto" class="section">
+            <h2>Our Manifesto</h2>
+            <div class="manifesto-grid">
+                <div class="manifesto-item">
+                    <span class="number">01</span>
+                    <h3>Digital Sovereignty</h3>
+                    <p>We assert the right of individuals to control their digital existence.</p>
+                </div>
+                <div class="manifesto-item">
+                    <span class="number">02</span>
+                    <h3>Privacy by Design</h3>
+                    <p>Every system we build defaults to privacy. Surveillance is opt-in, not opt-out.</p>
+                </div>
+                <div class="manifesto-item">
+                    <span class="number">03</span>
+                    <h3>Open Collaboration</h3>
+                    <p> knowledge should be free. Code should be open. Innovation should be shared.</p>
+                </div>
+                <div class="manifesto-item">
+                    <span class="number">04</span>
+                    <h3>Global Community</h3>
+                    <p>United by ideals, not geography. Together we're stronger.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Current Projects</h2>
+            <div class="project-list">
+                <article class="project">
+                    <div class="project-status active"></div>
+                    <h3>Nebula Network</h3>
+                    <p>Decentralized communication layer for secure messaging.</p>
+                    <span class="tag">Active</span>
+                </article>
+                <article class="project">
+                    <div class="project-status planning"></div>
+                    <h3>Quantum Vault</h3>
+                    <p>Next-generation encrypted storage solution.</p>
+                    <span class="tag">Planning</span>
+                </article>
+                <article class="project">
+                    <div class="project-status active"></div>
+                    <h3>Citizen Portal</h3>
+                    <p>Identity and participation platform for all citizens.</p>
+                    <span class="tag">Active</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="join" class="section join-section">
+            <h2>Become a Citizen</h2>
+            <p>Ready to join the future? Here's how to get started:</p>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h4>Create Your Identity</h4>
+                    <p>Generate your cryptographic citizen ID</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h4>Connect</h4>
+                    <p>Join our decentralized network</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <h4>Participate</h4>
+                    <p>Vote, build, and shape the future</p>
+                </div>
+            </div>
+            <a href="#" class="btn btn-primary btn-large">Start Your Journey</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Digital Nation</h4>
+                <p>Building the future, one citizen at a time.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="#">Documentation</a>
+                <a href="#">GitHub</a>
+                <a href="#">Discord</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">License</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Digital Nation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
