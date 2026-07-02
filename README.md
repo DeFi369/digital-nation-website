@@ -58,7 +58,7 @@ Public Pages deployment: https://defi369.github.io/digital-nation-website/
 ## Deployment Notes
 
 - The repository is a plain static site. Push the root HTML files, `assets/`, `sitemap.xml`, and `robots.txt`.
-- `sitemap.xml` uses the GitHub Pages base URL.
+- `sitemap.xml` and `robots.txt` are both present and use the canonical GitHub Pages base URL.
 - `404.html` includes the standard site chrome so lost visitors can navigate back into the site.
 - Legal notices use the `legal-block` pattern for consistency across content and policy pages.
 
