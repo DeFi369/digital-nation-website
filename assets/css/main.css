@@ -35,7 +35,10 @@
 .page-environment .activity-feed,
 .page-sustainability .activity-feed,
 .page-health-equity .activity-feed,
-.page-bandwidth .activity-feed {
+.page-bandwidth .activity-feed,
+.page-research .activity-feed,
+.page-labs .activity-feed,
+.page-emerging-tech .activity-feed {
   margin-top: 4px;
 }
 

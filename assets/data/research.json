@@ -1,84 +1,84 @@
 {
   "generated": "2026-07-02",
   "ministry": "Research & Laboratory Policy",
-  "count": 3,
+  "count": 9,
   "entries": {
-    "frameworks": [
+    "initiatives": [
       {
-        "id": "RES-FRM-01",
-        "title": "National Research Priorities Framework",
+        "id": "RES-INI-01",
+        "title": "Participatory Research Equity Initiative",
         "status": "Active",
-        "category": "Framework",
-        "owner": "Kai Voss",
-        "summary": "Cross-ministry coordination model aligning laboratory, institutional, and industry research with national science and technology roadmaps."
+        "category": "Initiative",
+        "lead": "Nia Rahman",
+        "summary": "Community-governed research agenda ensuring marginalized populations co-design study priorities and benefit-sharing."
       },
       {
-        "id": "RES-FRM-02",
-        "title": "Open Science Access Policy",
+        "id": "RES-INI-02",
+        "title": "Open Data Infrastructure Program",
         "status": "Active",
-        "category": "Framework",
-        "owner": "Nia Rahman",
-        "summary": "Mandatory open-access publication and data-sharing standards for publicly funded research programs and national laboratories."
+        "category": "Initiative",
+        "lead": "Kai Voss",
+        "summary": "Interoperable open-data platform with standardized APIs, persistent identifiers, and read/write citizen access."
       },
       {
-        "id": "RES-FRM-03",
-        "title": "Research Ethics Governance Standard",
-        "status": "Beta",
-        "category": "Framework",
-        "owner": "Aria Solenne",
-        "summary": "Institutional review requirements, consent standards, and risk-tiered review for human-subject and dual-use research."
+        "id": "RES-INI-03",
+        "title": "Interdisciplinary Science Corridors",
+        "status": "Planning",
+        "category": "Initiative",
+        "lead": "Mira Chen",
+        "summary": "Cross-department science corridors linking Protocol, Education, and Infrastructure to accelerate applied research."
       }
     ],
     "policy": [
       {
         "id": "RES-POL-01",
-        "title": "Laboratory Authorization Policy",
+        "title": "Responsible AI Research Charter",
         "status": "Active",
         "category": "Policy",
-        "owner": "Mira Chen",
-        "summary": "Classification, permitting, and oversight rules for Tier 1 through Tier 3 national research laboratories."
+        "owner": "Aria Solenne",
+        "summary": "Mandatory ethical review, algorithmic impact disclosures, and public audit pathways for all AI research programs."
       },
       {
         "id": "RES-POL-02",
-        "title": "Dual-Use Review Policy",
-        "status": "Draft",
+        "title": "Citizen Science Participation Standard",
+        "status": "Beta",
         "category": "Policy",
-        "owner": "Kai Voss",
-        "summary": "Risk assessment and publication review requirements for research with potential defensive or harmful dual-use applications."
+        "owner": "Nia Rahman",
+        "summary": "Formalized contribution, attribution, and reward mechanisms for citizen-led research activities."
       },
       {
         "id": "RES-POL-03",
-        "title": "Research Data Retention Policy",
-        "status": "Active",
+        "title": "Dual-Use Technology Review Policy",
+        "status": "Draft",
         "category": "Policy",
-        "owner": "Nia Rahman",
-        "summary": "Retention periods, provenance metadata, and secure archival requirements for datasets generated under national programs."
+        "owner": "Kai Voss",
+        "summary": "Risk-tiered review framework for emerging technologies crossing civil, commercial, and security boundaries."
       }
     ],
-    "standard": [
+    "standards": [
       {
         "id": "RES-STD-01",
-        "title": "Peer Review Quality Standard",
-        "status": "Active",
-        "category": "Standard",
-        "owner": "Aria Solenne",
-        "summary": "Minimum review depth, conflict-of-interest checks, and reproducibility documentation for program publications."
-      },
-      {
-        "id": "RES-STD-02",
-        "title": "Attribution and Citation Standard",
+        "title": "Open Access Publication Standard",
         "status": "Active",
         "category": "Standard",
         "owner": "Mira Chen",
-        "summary": "Mandatory contributor attribution, software citation rules, and dataset citation requirements for national research outputs."
+        "summary": "All publicly funded research outputs must be published in open-access venues within 12 months."
+      },
+      {
+        "id": "RES-STD-02",
+        "title": "FAIR Data Stewardship Standard",
+        "status": "Active",
+        "category": "Standard",
+        "owner": "Aria Solenne",
+        "summary": "Findable, Accessible, Interoperable, Reusable requirements for all ministry datasets and research artifacts."
       },
       {
         "id": "RES-STD-03",
-        "title": "Research Safety Training Standard",
-        "status": "Planning",
+        "title": "Research Citation & Attribution Standard",
+        "status": "Pending",
         "category": "Standard",
         "owner": "Nia Rahman",
-        "summary": "Required foundational and role-based safety training for researchers before unsupervised lab or field access."
+        "summary": "Persistent identifier schema, citation formatting, and contributor taxonomy for Aetheria research outputs."
       }
     ]
   }
