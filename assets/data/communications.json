@@ -1,0 +1,54 @@
+{
+  "generated": "2026-07-02",
+  "count": 6,
+  "entries": [
+    {
+      "id": "COM-01",
+      "title": "Executive Public Notice",
+      "channel": "Public Affairs",
+      "status": "Active",
+      "owner": "Office of Communications",
+      "summary": "Timed announcements covering executive decisions and protocol updates."
+    },
+    {
+      "id": "COM-02",
+      "title": "Press Inquiry Protocol",
+      "channel": "Press",
+      "status": "Active",
+      "owner": "Liaison Desk",
+      "summary": "Standard response timelines, attribution rules, and spokesperson routing."
+    },
+    {
+      "id": "COM-03",
+      "title": "Digital Channel Calendar",
+      "channel": "Digital",
+      "status": "Scheduled",
+      "owner": "Communications Office",
+      "summary": "Publication schedule aligned with civic-calendar milestones."
+    },
+    {
+      "id": "COM-04",
+      "title": "Consular Bulletin",
+      "channel": "Public Affairs",
+      "status": "Archived",
+      "owner": "Registry Office",
+      "summary": "Reference archive for consular-field communication practices."
+    },
+    {
+      "id": "COM-05",
+      "title": "Media Request Intake",
+      "channel": "Press",
+      "status": "Active",
+      "owner": "Diplomatic Desk",
+      "summary": "Managed intake for interview coordination and record logging."
+    },
+    {
+      "id": "COM-06",
+      "title": "Outreach Archive",
+      "channel": "Digital",
+      "status": "Archived",
+      "owner": "Civic Communications",
+      "summary": "Retrospective archive for public outreach initiatives."
+    }
+  ]
+}

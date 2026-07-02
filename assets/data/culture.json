@@ -1,0 +1,54 @@
+{
+  "generated": "2026-07-02",
+  "count": 6,
+  "entries": [
+    {
+      "id": "CUL-01",
+      "title": "Public Narrative Charter",
+      "theme": "Narrative",
+      "status": "Active",
+      "owner": "Office of Culture",
+      "summary": "Sets publication standards for tone, attribution, and accessibility across citizen-facing materials."
+    },
+    {
+      "id": "CUL-02",
+      "title": "Visual Identity Guidelines",
+      "theme": "Media",
+      "status": "Active",
+      "owner": "Design Guild",
+      "summary": "Canonical palette, typography, and layout guidance for external representation."
+    },
+    {
+      "id": "CUL-03",
+      "title": "Community Reading Channel",
+      "theme": "Program",
+      "status": "Active",
+      "owner": "Civic Assembly",
+      "summary": "Rotating study cadence for charter, manifesto, and protocol documents."
+    },
+    {
+      "id": "CUL-04",
+      "title": "Cultural Exchange Series",
+      "theme": "Program",
+      "status": "Draft",
+      "owner": "Communications Office",
+      "summary": "Curated contributions across regions for open collaborative storytelling."
+    },
+    {
+      "id": "CUL-05",
+      "title": "Media Standards Playbook",
+      "theme": "Media",
+      "status": "Archived",
+      "owner": "Protocol Committee",
+      "summary": "Superseded publication rules retained for historical compliance audits."
+    },
+    {
+      "id": "CUL-06",
+      "title": "Open Contribution Framework",
+      "theme": "Program",
+      "status": "Active",
+      "owner": "Engagement Lead",
+      "summary": "Transparent rules for submitting approved work into civic archives and outreach channels."
+    }
+  ]
+}
