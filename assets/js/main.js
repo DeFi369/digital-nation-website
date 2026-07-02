@@ -145,7 +145,7 @@
     });
   }
   function renderSimpleBarChart() {
-    var container = document.querySelector('.dash-chart');
+    var container = document.querySelector('.dashboard-chart');
     if (!container) return;
     var data = [
       { label: 'Citizens', value: 12 },
@@ -185,7 +185,14 @@
       });
     }
     input.addEventListener('input', function () {
-      applyFilter(input.value);
+      var term = input.value.trim();
+      if (!term) {
+        activeFilter = 'all';
+        pills.forEach(function (p) {
+          p.setAttribute('aria-pressed', p.getAttribute('data-filter') === 'all' ? 'true' : 'false');
+        });
+      }
+      applyFilter(term);
     });
     pills.forEach(function (pill) {
       pill.addEventListener('click', function () {

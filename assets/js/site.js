@@ -13,11 +13,6 @@
 
     setupMenu();
     liveYear();
-
-    const doc = document.documentElement;
-    if (doc.classList.contains('page-dashboard') || doc.classList.contains('page-tools')) {
-      initDashboardTools();
-    }
   }
 
   function setupMenu() {
