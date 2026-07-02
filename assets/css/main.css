@@ -662,14 +662,6 @@ a {
   border-color: #2d3644;
   background: #13181f;
 }
-.lang-toggle {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #1f2630;
-  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-  color: var(--color-muted);
-  cursor: pointer;
-}
 
 .initiatives-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
