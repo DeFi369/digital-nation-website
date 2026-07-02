@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /archive/
+Sitemap: https://defi369.github.io/digital-nation-website/sitemap.xml

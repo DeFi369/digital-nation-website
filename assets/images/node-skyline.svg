@@ -1,0 +1,72 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 360' preserveAspectRatio='xMidYMid slice'>
+  <defs>
+    <linearGradient id='sky' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#111920'/>
+      <stop offset='100%' stop-color='#050608'/>
+    </linearGradient>
+    <linearGradient id='accent' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#7aa7ff'/>
+      <stop offset='100%' stop-color='#c084fc'/>
+    </linearGradient>
+    <filter id='glow' x='-30%' y='-30%' width='160%' height='160%'>
+      <feGaussianBlur stdDeviation='2.5' result='blur'/>
+      <feMerge>
+        <feMergeNode in='blur'/>
+        <feMergeNode in='SourceGraphic'/>
+      </feMerge>
+    </filter>
+    <filter id='soft' x='-40%' y='-40%' width='180%' height='180%'>
+      <feGaussianBlur stdDeviation='5' result='blur'/>
+      <feMerge>
+        <feMergeNode in='blur'/>
+        <feMergeNode in='SourceGraphic'/>
+      </feMerge>
+    </filter>
+    <radialGradient id='node-grad' cx='50%' cy='50%' r='50%'>
+      <stop offset='0%' stop-color='#9db8ff' stop-opacity='0.9'/>
+      <stop offset='100%' stop-color='#7aa7ff' stop-opacity='0'/>
+    </radialGradient>
+  </defs>
+
+  <rect width='1200' height='360' fill='url(#sky)'/>
+
+  <!-- Distant skyline silhouette -->
+  <path fill='#0b1016' d='M0 360V220l30 25 40-18 35 35 45-20 30 40 50-25 25 50 55-30 15 65 60-35 10 75 65-40 5 85 70-45V360z'/>
+  <path fill='#080c12' d='M0 360V260l25 20 35-12 30 30 40-15 25 40 45-20 20 45 50-25 10 55 55-30 7 65 60-35 3 75 65-42V360z'/>
+
+  <!-- Near foreground silhouette -->
+  <path fill='#040609' d='M0 360V290l20 15 30-8 25 22 35-10 20 28 40-14 15 32 45-18 10 38 50-22 5 44 55-28 2 50 60-30V360z'/>
+
+  <!-- Connecting network arcs -->
+  <path d='M120 260 L260 190 L420 230 L600 160 L780 210 L940 150 L1080 200' fill='none' stroke='#7aa7ff' stroke-width='1' stroke-opacity='0.18' stroke-dasharray='3 5'/>
+  <path d='M80 290 L210 220 L360 260 L540 190 L720 240 L880 180 L1060 230' fill='none' stroke='#c084fc' stroke-width='1' stroke-opacity='0.15' stroke-dasharray='2 6'/>
+
+  <!-- Nodes: cyan -->
+  <circle cx='120' cy='260' r='3.5' fill='#9db8ff' filter='url(#glow)'/>
+  <circle cx='260' cy='190' r='4' fill='#9db8ff' filter='url(#glow)'/>
+  <circle cx='420' cy='230' r='3.5' fill='#9db8ff' filter='url(#glow)'/>
+  <circle cx='600' cy='160' r='4.5' fill='#9db8ff' filter='url(#glow)'/>
+  <circle cx='780' cy='210' r='3.5' fill='#9db8ff' filter='url(#glow)'/>
+  <circle cx='940' cy='150' r='4' fill='#9db8ff' filter='url(#glow)'/>
+  <circle cx='1080' cy='200' r='3.5' fill='#9db8ff' filter='url(#glow)'/>
+
+  <!-- Nodes: purple -->
+  <circle cx='80' cy='290' r='3' fill='#c084fc' filter='url(#glow)'/>
+  <circle cx='210' cy='220' r='3.5' fill='#c084fc' filter='url(#glow)'/>
+  <circle cx='360' cy='260' r='3' fill='#c084fc' filter='url(#glow)'/>
+  <circle cx='540' cy='190' r='4' fill='#c084fc' filter='url(#glow)'/>
+  <circle cx='720' cy='240' r='3' fill='#c084fc' filter='url(#glow)'/>
+  <circle cx='880' cy='180' r='3.5' fill='#c084fc' filter='url(#glow)'/>
+  <circle cx='1060' cy='230' r='3' fill='#c084fc' filter='url(#glow)'/>
+
+  <!-- Tower lights -->
+  <rect x='116' y='224' width='2' height='12' rx='1' fill='#9db8ff' opacity='0.35'/>
+  <rect x='256' y='158' width='2' height='12' rx='1' fill='#9db8ff' opacity='0.35'/>
+  <rect x='416' y='204' width='2' height='10' rx='1' fill='#9db8ff' opacity='0.35'/>
+  <rect x='596' y='132' width='2' height='14' rx='1' fill='#9db8ff' opacity='0.35'/>
+  <rect x='776' y='184' width='2' height='11' rx='1' fill='#9db8ff' opacity='0.35'/>
+  <rect x='936' y='124' width='2' height='13' rx='1' fill='#9db8ff' opacity='0.35'/>
+
+  <!-- Central focal glow -->
+  <circle cx='600' cy='160' r='90' fill='url(#node-grad)' opacity='0.08' filter='url(#soft)'/>
+</svg>
