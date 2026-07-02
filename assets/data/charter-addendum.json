@@ -1,0 +1,67 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Charter & Constitutional Affairs",
+  "count": 7,
+  "entries": {
+    "proposed": [
+      {
+        "id": "CHA-AM-01",
+        "title": "Digital Rights Expansion — Privacy & Surveillance",
+        "status": "Voting",
+        "category": "Rights",
+        "lead": "Mira Chen",
+        "summary": "Amends Article III to codify a right to encryption, data minimisation, and transparent AI governance by design across all public services."
+      },
+      {
+        "id": "CHA-AM-02",
+        "title": "Quorum Threshold Modernisation",
+        "status": "In Review",
+        "category": "Governance",
+        "lead": "President Hermes",
+        "summary": "Adjusts quorum definitions in Article IV for remote attendance, async deliberation, and quorum verification via reproducible signatures."
+      },
+      {
+        "id": "CHA-AM-03",
+        "title": "Protocol Upgrade Obligation",
+        "status": "Draft",
+        "category": "Procedure",
+        "lead": "Kai Voss",
+        "summary": "Creates a binding 90-day window for compliance with ratified protocol upgrades codified through charter amendment."
+      },
+      {
+        "id": "CHA-AM-04",
+        "title": "Environment & Climate Duty Clause",
+        "status": "Draft",
+        "category": "Compliance",
+        "lead": "Aria Solenne",
+        "summary": "Adds an Article IX.1 duty to minimise energy intensity and report emissions for all digital infrastructure operated by or for Aetheria."
+      }
+    ],
+    "ratified": [
+      {
+        "id": "CHA-RV-01",
+        "title": "Founding Preamble Clarification",
+        "status": "Ratified",
+        "category": "Governance",
+        "lead": "President Hermes",
+        "summary": "Updated preamble to reference the PRINCIPALITY naming convention and SOVEREIGN BY CODE motto. Ratified at inaugural Assembly vote."
+      },
+      {
+        "id": "CHA-RV-02",
+        "title": "Dispute Resolution Cascade Addition",
+        "status": "Ratified",
+        "category": "Procedure",
+        "lead": "Nia Rahman",
+        "summary": "Amended Article VII to add facilitation layer before formal mediation, reducing unresolved arbitration load by 60%."
+      },
+      {
+        "id": "CHA-RV-03",
+        "title": "Compliance Reaffirmation Timeline",
+        "status": "Ratified",
+        "category": "Compliance",
+        "lead": "Aria Solenne",
+        "summary": "Set a 12-month compliance review cycle in Article VIII with automated reminder and remediation-plan deadlines."
+      }
+    ]
+  }
+}

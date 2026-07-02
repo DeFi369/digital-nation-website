@@ -3062,3 +3062,29 @@ a {
   border-color: rgba(122,167,255,.45);
   background: rgba(122,167,255,.14);
 }
+
+/* Charter Addendum page */
+.page-charter-addendum .activity-feed {
+  margin-top: 4px;
+}
+.page-charter-addendum .activity-filter {
+  flex: 1 1 240px;
+  max-width: 540px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(232,236,243,.1);
+  background: var(--color-surface);
+  color: var(--color-text);
+  outline: none;
+}
+.page-charter-addendum .activity-filter:focus-visible {
+  border-color: rgba(122,167,255,.45);
+  box-shadow: 0 0 0 3px rgba(122,167,255,.12);
+}
+.page-charter-addendum .activity-select {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(232,236,243,.1);
+  background: var(--color-surface);
+  color: var(--color-text);
+}

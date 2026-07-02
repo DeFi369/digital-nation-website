@@ -70,6 +70,7 @@
     const isResearchPage = document.body.classList.contains('page-research') || window.location.pathname.includes('research.html');
     const isLabsPage = document.body.classList.contains('page-labs') || window.location.pathname.includes('labs.html');
     const isEmergingTechPage = document.body.classList.contains('page-emerging-tech') || window.location.pathname.includes('emerging-tech.html');
+    const isCharterAddendumPage = document.body.classList.contains('page-charter-addendum') || window.location.pathname.includes('charter-addendum.html');
     if (isFinancePage) {
       loadFinanceScript();
     }
@@ -103,6 +104,17 @@
     if (isEmergingTechPage) {
       loadEmergingTechScript();
     }
+    if (isCharterAddendumPage) {
+      loadCharterAddendumScript();
+    }
+  }
+
+  function loadCharterAddendumScript() {
+    if (document.querySelector('script[src="assets/js/charter-addendum.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/charter-addendum.js';
+    script.defer = true;
+    document.body.appendChild(script);
   }
 
   function loadEngageScript() {
