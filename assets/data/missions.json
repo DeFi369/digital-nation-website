@@ -1,0 +1,56 @@
+{
+  "generated": "2026-07-02",
+  "count": 5,
+  "entries": [
+    {
+      "id": "MIS-0001",
+      "name": "Digital Embassy — Geneva",
+      "region": "Europe",
+      "type": "Embassy",
+      "status": "Active",
+      "representative": "Aria Solenne",
+      "contact": "geneva@example.aetheria",
+      "note": "Governance briefings and onboarding"
+    },
+    {
+      "id": "MIS-0002",
+      "name": "Node Consulate — Toronto",
+      "region": "North America",
+      "type": "Consulate",
+      "status": "Active",
+      "representative": "Kai Voss",
+      "contact": "toronto@example.aetheria",
+      "note": "Credential recovery and support"
+    },
+    {
+      "id": "MIS-0003",
+      "name": "Regional Node — Tokyo",
+      "region": "Asia Pacific",
+      "type": "Node",
+      "status": "Active",
+      "representative": "Mira Chen",
+      "contact": "tokyo@example.aetheria",
+      "note": "Engineering coordination"
+    },
+    {
+      "id": "MIS-0004",
+      "name": "Consulate — São Paulo",
+      "region": "South America",
+      "type": "Consulate",
+      "status": "Pending",
+      "representative": "Orion Vale",
+      "contact": "saopaulo@example.aetheria",
+      "note": "Opening review"
+    },
+    {
+      "id": "MIS-0005",
+      "name": "Outpost — Nairobi",
+      "region": "Africa",
+      "type": "Embassy",
+      "status": "Active",
+      "representative": "Nia Rahman",
+      "contact": "nairobi@example.aetheria",
+      "note": "Outreach and education"
+    }
+  ]
+}

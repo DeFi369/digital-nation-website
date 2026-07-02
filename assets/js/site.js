@@ -18,6 +18,8 @@
     const isDashboardPage = document.body.classList.contains('page-dashboard') || window.location.pathname.includes('dashboard.html');
     const isAssemblyPage = document.body.classList.contains('page-assembly') || window.location.pathname.includes('assembly.html');
     const isCourtPage = document.body.classList.contains('page-court') || window.location.pathname.includes('court.html');
+    const isRegistryPage = document.body.classList.contains('page-registry') || window.location.pathname.includes('registry.html');
+    const isMissionsPage = document.body.classList.contains('page-missions') || window.location.pathname.includes('missions.html');
 
     if (isEngagePage || isDashboardPage) {
       loadEngageScript();
@@ -27,6 +29,12 @@
     }
     if (isCourtPage) {
       loadCourtScript();
+    }
+    if (isRegistryPage) {
+      loadRegistryScript();
+    }
+    if (isMissionsPage) {
+      loadMissionsScript();
     }
   }
 
@@ -50,6 +58,22 @@
     if (document.querySelector('script[src="assets/js/court.js"]')) return;
     const script = document.createElement('script');
     script.src = 'assets/js/court.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadRegistryScript() {
+    if (document.querySelector('script[src="assets/js/registry.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/registry.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadMissionsScript() {
+    if (document.querySelector('script[src="assets/js/missions.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/missions.js';
     script.defer = true;
     document.body.appendChild(script);
   }

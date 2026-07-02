@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Measurable progress toward sovereignty by protocol — grounded in real micronation frameworks.">
-  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/goals.html">
-  <meta property="og:title" content="Goals — The Principality of Aetheria">
-  <meta property="og:description" content="Measurable progress toward sovereignty by protocol — grounded in real micronation frameworks.">
+  <meta name="description" content="Search the public Citizen Registry, view verification tiers, and understand public record notices for the Principality of Aetheria.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/registry.html">
+  <meta property="og:title" content="Citizen Registry & Verification — The Principality of Aetheria">
+  <meta property="og:description" content="Search the public Citizen Registry, view verification tiers, and understand public record notices for Aetheria citizens.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/goals.html">
+  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/registry.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Goals — The Principality of Aetheria">
-  <meta name="twitter:description" content="Measurable progress toward sovereignty by protocol — grounded in real micronation frameworks.">
+  <meta name="twitter:title" content="Citizen Registry & Verification — The Principality of Aetheria">
+  <meta name="twitter:description" content="Search the public Citizen Registry, view verification tiers, and understand public record notices for Aetheria citizens.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
 
-  <title>Goals — The Principality of Aetheria</title>
+  <title>Citizen Registry & Verification — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="icon" href="./favicon.ico">
 </head>
-<body>
+<body class="page-registry">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav">
@@ -57,6 +57,8 @@
         <a href="consular.html">Consular</a>
         <a href="missions.html">Missions</a>
         <a href="contact.html">Contact</a>
+        <a class="button primary" href="citizenship.html">Join</a>
+
       </nav>
     </div>
   </header>
@@ -64,69 +66,71 @@
   <main id="main">
     <section class="page">
       <div class="container">
-        <h1>Goals &amp; Milestones</h1>
+        <h1>Citizen Registry & Verification</h1>
         <p class="lead">
-          Measurable progress toward sovereignty by protocol — grounded in real micronation frameworks
-          and Aetheria-specific capabilities.
+          A searchable public record of verified citizens, verification tiers, and public notices.
+          This registry is a living record, not a closed ledger.
         </p>
 
-        <h2>Montevideo Framework</h2>
-        <p>
-          We align with the UN Montevideo Convention criteria for statehood and adapt them to a
-          digital context: a permanent population, a defined governance protocol, functional institutions,
-          and the capacity to enter into relations with other networks and polities.
-        </p>
-
-        <div class="timeline">
-          <div class="milestone">
-            <h3>Permanent Population</h3>
-            <p>Grow verified citizen registry with transparent onboarding, maintain active participation rates, and publish demographic dashboards by protocol level.</p>
-          </div>
-          <div class="milestone">
-            <h3>Defined Governance Protocol</h3>
-            <p>Codify constitutional rules, voting weights, amendment procedures, and dispute resolution in reproducible public specifications.</p>
-          </div>
-          <div class="milestone">
-            <h3>Effective Institutions</h3>
-            <p>Operate durable services: identity, communication, governance, and settlement — each with documented SLAs and public audits.</p>
-          </div>
-          <div class="milestone">
-            <h3>Capacity to Relate</h3>
-            <p>Establish protocol-level interoperability with other sovereign networks, publish recognition criteria, and maintain observer-state relationships.</p>
+        <h2>Registry Search</h2>
+        <div class="registry-controls">
+          <div class="registry-search">
+            <input type="search" id="registry-search" placeholder="Search by name, ID, or region..." autocomplete="off" aria-label="Search registry"/>
+            <div class="registry-filters">
+              <label for="registry-tier" class="sr-only">Filter by tier</label>
+              <select id="registry-tier" aria-label="Filter by verification tier">
+                <option value="all">All Tiers</option>
+                <option value="Tier 1">Tier 1 — Verified</option>
+                <option value="Tier 2">Tier 2 — Active</option>
+                <option value="Tier 3">Tier 3 — Elevated</option>
+              </select>
+              <label for="registry-status" class="sr-only">Filter by status</label>
+              <select id="registry-status" aria-label="Filter by status">
+                <option value="all">All Statuses</option>
+                <option value="Active">Active</option>
+                <option value="Pending">Pending</option>
+                <option value="Revoked">Revoked</option>
+              </select>
+            </div>
           </div>
         </div>
 
-        <h2>Digital Nation Milestones</h2>
-        <div class="timeline">
-          <div class="milestone">
-            <h3>Operational Sovereignty</h3>
-            <p>Run core services without dependence on centralized providers. Every critical function has redundant, independently operated nodes.</p>
+        <div id="registry-feed" class="registry-feed" role="feed" aria-live="polite" aria-label="Citizen registry feed">
+          <div class="activity-loading" aria-hidden="true">Loading registry...</div>
+        </div>
+
+        <h2>Verification Tiers</h2>
+        <div class="columns">
+          <div class="card">
+            <h3>Tier 1 — Verified</h3>
+            <p>Minimum verified citizen status after completed onboarding and public-record verification.</p>
           </div>
-          <div class="milestone">
-            <h3>Open Interoperability</h3>
-            <p>Publish and maintain open standards for identity, messaging, settlement, and governance that any sovereign network can adopt.</p>
+          <div class="card">
+            <h3>Tier 2 — Active</h3>
+            <p>Ongoing governance participation, service usage, and documented contribution across protocol channels.</p>
           </div>
-          <div class="milestone">
-            <h3>Universal Access</h3>
-            <p>Reduce the barrier to participation. If you have a network connection, you are eligible for citizenship. No geography, no gate, no permit.</p>
+          <div class="card">
+            <h3>Tier 3 — Elevated</h3>
+            <p>Extended trust level for ambassadors, node operators, and representatives with verified operational responsibilities.</p>
           </div>
+        </div>
+
+        <h2>Public Record Notices</h2>
+        <div class="legal-block">
+          <p>
+            Registry entries may display identity anchors, tier history, and public participation metadata.
+            No private credentials or key material are published. For context on how records are used
+            for credentials, see <a href="passport.html">Passport</a> and <a href="citizenship.html">Citizenship</a>.
+            To engage with governance using verified status, visit <a href="engage.html">Engage</a>.
+          </p>
         </div>
 
         <div class="cta">
-          <a class="button primary" href="manifesto.html">Read the Manifesto</a>
+          <a class="button primary" href="citizenship.html">Request Verification</a>
+          <a class="button" href="engage.html">Participate</a>
         </div>
       </div>
     </section>
-  <aside class="legal-block" aria-labelledby="legal-title-goals">
-      <h2 id="legal-title-goals">Legal &amp; Policy Notice</h2>
-      <p>
-        AETHERIA is an experimental digital polity. Nothing on this site constitutes legal advice,
-        statehood under international law, or an offer of regulated financial services unless
-        explicitly stated in a published protocol document. By participating you agree to the
-        <a href="charter.html">Charter</a> and <a href="manifesto.html">Manifesto</a>.
-        Read <a href="recognition.html">Recognition</a> for context on legitimacy frameworks.
-      </p>
-    </aside>
   </main>
 
   <div class="cityscape" aria-hidden="true"></div>
@@ -164,5 +168,7 @@
       </div>
     </div>
   </footer>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

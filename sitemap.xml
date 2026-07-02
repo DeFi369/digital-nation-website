@@ -41,6 +41,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://defi369.github.io/digital-nation-website/registry.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://defi369.github.io/digital-nation-website/passport.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -57,6 +62,11 @@
   </url>
   <url>
     <loc>https://defi369.github.io/digital-nation-website/consular.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://defi369.github.io/digital-nation-website/missions.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

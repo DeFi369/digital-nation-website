@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms — The Principality of Aetheria</title>
-  <meta name="description" content="Terms of participation for The Principality of Aetheria: citizenship, services, governance, and acceptable use.">
-  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/terms.html">
-  <meta property="og:title" content="Terms — The Principality of Aetheria">
-  <meta property="og:description" content="Terms of participation for AETHERIA services, governance, and citizenship.">
+  <meta name="description" content="Diplomatic missions, consular representatives, regions, and appointment framing for the Principality of Aetheria.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/missions.html">
+  <meta property="og:title" content="Diplomatic Missions & Consular Network — The Principality of Aetheria">
+  <meta property="og:description" content="Explore diplomatic missions, consular representatives, regions, and appointment framing for Aetheria.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/terms.html">
+  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/missions.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Terms — The Principality of Aetheria">
-  <meta name="twitter:description" content="Terms of participation for AETHERIA services, governance, and citizenship.">
+  <meta name="twitter:title" content="Diplomatic Missions & Consular Network — The Principality of Aetheria">
+  <meta name="twitter:description" content="Explore diplomatic missions, consular representatives, regions, and appointment framing for Aetheria.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
+
+  <title>Diplomatic Missions & Consular Network — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
@@ -22,8 +23,8 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="icon" href="./favicon.ico">
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<body class="page-missions">
+<a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav">
       <a class="brand" href="index.html">
@@ -56,6 +57,8 @@
         <a href="consular.html">Consular</a>
         <a href="missions.html">Missions</a>
         <a href="contact.html">Contact</a>
+        <a class="button primary" href="citizenship.html">Join</a>
+
       </nav>
     </div>
   </header>
@@ -63,33 +66,53 @@
   <main id="main">
     <section class="page">
       <div class="container">
-        <h1>Terms</h1>
-        <p class="lead">Terms of participation, acceptable use, and expectations for citizens and visitors.</p>
+        <h1>Diplomatic Missions & Consular Network</h1>
+        <p class="lead">
+          AETHERIA’s diplomatic presence is distributed across regions, representatives, and digital outposts.
+          Use this directory to find or request consular support.
+        </p>
 
-        <h2>Acceptance</h2>
-        <p>By participating in AETHERIA services, governance, or credential programs, you accept these terms and the Charter. If you do not agree, do not use the services or request citizenship.</p>
+        <h2>Mission Directory</h2>
+        <div class="missions-controls">
+          <div class="missions-search">
+            <input type="search" id="missions-search" placeholder="Search missions, regions, or representatives..." autocomplete="off" aria-label="Search missions"/>
+            <div class="missions-filters">
+              <label for="missions-region" class="sr-only">Filter by region</label>
+              <select id="missions-region" aria-label="Filter by region">
+                <option value="all">All Regions</option>
+                <option value="Europe">Europe</option>
+                <option value="North America">North America</option>
+                <option value="Asia Pacific">Asia Pacific</option>
+                <option value="South America">South America</option>
+                <option value="Africa">Africa</option>
+              </select>
+              <label for="missions-type" class="sr-only">Filter by type</label>
+              <select id="missions-type" aria-label="Filter by mission type">
+                <option value="all">All Types</option>
+                <option value="Embassy">Embassy</option>
+                <option value="Consulate">Consulate</option>
+                <option value="Node">Node</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
-        <h2>Citizenship</h2>
-        <p>Citizenship is granted based on contribution and verification, not purchase. It may be revoked through documented protocol procedures. Citizens are expected to follow ratified governance decisions and respect the rights of others.</p>
+        <div id="missions-feed" class="missions-feed" role="feed" aria-live="polite" aria-label="Missions feed">
+          <div class="activity-loading" aria-hidden="true">Loading missions...</div>
+        </div>
 
-        <h2>Acceptable Use</h2>
-        <p>Do not abuse services, interfere with governance, attempt credential fraud, or violate the privacy of other citizens. Violations may result in protocol-level restrictions or revocation review.</p>
-
-        <h2>Services & Availability</h2>
-        <p>AETHERIA services are provided on an as-is basis without uptime guarantees beyond documented SLAs. The Principality may update, suspend, or deprecate services through governance processes.</p>
-
-        <h2>Open Protocol</h2>
-        <p>Published standards and protocols may be adopted by others. Contributions submitted to AETHERIA may be included in public specifications unless explicitly marked otherwise.</p>
-
-        <h2>Limitation of Liability</h2>
-        <p>AETHERIA is an experimental digital polity. Participation involves technical and governance risk. To the maximum extent allowed by applicable law, AETHERIA is not liable for loss of keys, service disruption, or indirect damages arising from participation.</p>
-
-        <h2>Changes</h2>
-        <p>Terms may be amended through the Civic Assembly. Material changes are announced through public governance channels before taking effect.</p>
+        <h2>Appointments & Contact</h2>
+        <p>
+          Consular appointments, credential recovery, and governance advocacy requests are coordinated
+          through the mission directory. For verified citizens, passports can support entry into
+          <a href="passport.html">passport diplomacy contexts</a>.
+          General citizen requests may also be routed through <a href="contact.html">Contact</a>.
+        </p>
 
         <div class="cta">
-          <a class="button primary" href="charter.html">Read the Charter</a>
-          <a class="button" href="contact.html">Contact</a>
+          <a class="button primary" href="consular.html">Consular Services</a>
+          <a class="button" href="passport.html">Passport</a>
+          <a class="button" href="engage.html">Engage</a>
         </div>
       </div>
     </section>

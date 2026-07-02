@@ -1,0 +1,51 @@
+{
+  "generated": "2026-07-02",
+  "count": 5,
+  "entries": [
+    {
+      "id": "REG-0001",
+      "name": "Aria Solenne",
+      "region": "Europe",
+      "tier": "Tier 3",
+      "status": "Active",
+      "verified": "2026-01-15",
+      "note": "Ambassador-at-large; protocol liaison"
+    },
+    {
+      "id": "REG-0002",
+      "name": "Kai Voss",
+      "region": "North America",
+      "tier": "Tier 2",
+      "status": "Active",
+      "verified": "2026-02-04",
+      "note": "Node operator and governance contributor"
+    },
+    {
+      "id": "REG-0003",
+      "name": "Mira Chen",
+      "region": "Asia Pacific",
+      "tier": "Tier 1",
+      "status": "Active",
+      "verified": "2026-03-12",
+      "note": "Engineering contributor"
+    },
+    {
+      "id": "REG-0004",
+      "name": "Orion Vale",
+      "region": "South America",
+      "tier": "Tier 2",
+      "status": "Pending",
+      "verified": "2026-04-08",
+      "note": "Verification review in progress"
+    },
+    {
+      "id": "REG-0005",
+      "name": "Nia Rahman",
+      "region": "Africa",
+      "tier": "Tier 1",
+      "status": "Active",
+      "verified": "2026-05-20",
+      "note": "Outreach and education lead"
+    }
+  ]
+}
