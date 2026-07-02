@@ -62,6 +62,8 @@
     const isTreasuryPage = document.body.classList.contains('page-treasury') || window.location.pathname.includes('treasury.html');
     const isCulturePage = document.body.classList.contains('page-culture') || window.location.pathname.includes('culture.html');
     const isCommunicationsPage = document.body.classList.contains('page-communications') || window.location.pathname.includes('communications.html');
+    const isEnvironmentPage = document.body.classList.contains('page-environment') || window.location.pathname.includes('environment.html');
+    const isSustainabilityPage = document.body.classList.contains('page-sustainability') || window.location.pathname.includes('sustainability.html');
     if (isFinancePage) {
       loadFinanceScript();
     }
@@ -73,6 +75,12 @@
     }
     if (isCommunicationsPage) {
       loadCommunicationsScript();
+    }
+    if (isEnvironmentPage) {
+      loadEnvironmentScript();
+    }
+    if (isSustainabilityPage) {
+      loadSustainabilityScript();
     }
   }
 
@@ -200,6 +208,22 @@
     if (document.querySelector('script[src="assets/js/communications.js"]')) return;
     const script = document.createElement('script');
     script.src = 'assets/js/communications.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadEnvironmentScript() {
+    if (document.querySelector('script[src="assets/js/environment.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/environment.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadSustainabilityScript() {
+    if (document.querySelector('script[src="assets/js/sustainability.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/sustainability.js';
     script.defer = true;
     document.body.appendChild(script);
   }
