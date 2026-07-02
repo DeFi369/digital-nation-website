@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 420" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#02040a"/>
+      <stop offset="1" stop-color="#07111e"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7df9ff"/>
+      <stop offset="1" stop-color="#00c2ff"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="420" fill="url(#bg)"/>
+
+  <!-- repeating bar motif -->
+  <g fill="#00c2ff" opacity="0.14">
+    <rect x="48" y="110" width="8" height="310"/>
+    <rect x="96" y="86" width="8" height="334"/>
+    <rect x="144" y="130" width="8" height="290"/>
+    <rect x="192" y="70" width="8" height="350"/>
+    <rect x="240" y="96" width="8" height="324"/>
+    <rect x="288" y="112" width="8" height="308"/>
+    <rect x="336" y="78" width="8" height="342"/>
+    <rect x="384" y="108" width="8" height="312"/>
+    <rect x="432" y="92" width="8" height="328"/>
+    <rect x="480" y="74" width="8" height="346"/>
+    <rect x="528" y="104" width="8" height="316"/>
+    <rect x="576" y="82" width="8" height="338"/>
+    <rect x="624" y="118" width="8" height="302"/>
+    <rect x="672" y="88" width="8" height="332"/>
+    <rect x="720" y="100" width="8" height="320"/>
+    <rect x="768" y="76" width="8" height="344"/>
+    <rect x="816" y="92" width="8" height="328"/>
+    <rect x="864" y="86" width="8" height="334"/>
+    <rect x="912" y="106" width="8" height="314"/>
+    <rect x="960" y="80" width="8" height="340"/>
+    <rect x="1008" y="114" width="8" height="306"/>
+    <rect x="1056" y="98" width="8" height="322"/>
+    <rect x="1104" y="72" width="8" height="348"/>
+    <rect x="1152" y="108" width="8" height="312"/>
+    <rect x="1200" y="90" width="8" height="330"/>
+    <rect x="1248" y="102" width="8" height="318"/>
+    <rect x="1296" y="84" width="8" height="336"/>
+    <rect x="1344" y="116" width="8" height="304"/>
+    <rect x="1392" y="88" width="8" height="332"/>
+  </g>
+
+  <!-- glowing nodes on top -->
+  <g fill="#02040a" stroke="url(#bar)" stroke-width="2.2">
+    <rect x="44" y="102" width="16" height="16" rx="4"/>
+    <rect x="92" y="78" width="16" height="16" rx="4"/>
+    <rect x="140" y="122" width="16" height="16" rx="4"/>
+    <rect x="188" y="62" width="16" height="16" rx="4"/>
+    <rect x="236" y="88" width="16" height="16" rx="4"/>
+    <rect x="284" y="104" width="16" height="16" rx="4"/>
+    <rect x="332" y="70" width="16" height="16" rx="4"/>
+    <rect x="380" y="100" width="16" height="16" rx="4"/>
+    <rect x="428" y="84" width="16" height="16" rx="4"/>
+    <rect x="476" y="66" width="16" height="16" rx="4"/>
+    <rect x="524" y="96" width="16" height="16" rx="4"/>
+    <rect x="572" y="74" width="16" height="16" rx="4"/>
+    <rect x="620" y="110" width="16" height="16" rx="4"/>
+    <rect x="668" y="80" width="16" height="16" rx="4"/>
+    <rect x="716" y="92" width="16" height="16" rx="4"/>
+    <rect x="764" y="68" width="16" height="16" rx="4"/>
+    <rect x="812" y="84" width="16" height="16" rx="4"/>
+    <rect x="860" y="78" width="16" height="16" rx="4"/>
+    <rect x="908" y="98" width="16" height="16" rx="4"/>
+    <rect x="956" y="72" width="16" height="16" rx="4"/>
+    <rect x="1004" y="106" width="16" height="16" rx="4"/>
+    <rect x="1052" y="90" width="16" height="16" rx="4"/>
+    <rect x="1100" y="64" width="16" height="16" rx="4"/>
+    <rect x="1148" y="100" width="16" height="16" rx="4"/>
+    <rect x="1196" y="82" width="16" height="16" rx="4"/>
+    <rect x="1244" y="94" width="16" height="16" rx="4"/>
+    <rect x="1292" y="76" width="16" height="16" rx="4"/>
+    <rect x="1340" y="108" width="16" height="16" rx="4"/>
+    <rect x="1388" y="80" width="16" height="16" rx="4"/>
+  </g>
+
+  <!-- halos -->
+  <g filter="url(#glow)">
+    <rect x="40" y="98" width="24" height="24" rx="7" fill="#00c2ff" opacity="0.12"/>
+    <rect x="600" y="66" width="24" height="24" rx="7" fill="#7df9ff" opacity="0.14"/>
+    <rect x="1096" y="58" width="24" height="24" rx="7" fill="#00c2ff" opacity="0.12"/>
+    <rect x="1336" y="101" width="24" height="24" rx="7" fill="#7df9ff" opacity="0.14"/>
+  </g>
+
+  <!-- header overlay for text legibility -->
+  <rect x="0" y="0" width="1440" height="56" fill="url(#bg)" opacity="0.85"/>
+</svg>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050b14"/>
+      <stop offset="1" stop-color="#02040a"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7df9ff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#00c2ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="600" fill="url(#bg)"/>
+
+  <!-- faint horizon grid -->
+  <g opacity="0.15" stroke="#6ee7ff" stroke-width="1">
+    <line x1="0" y1="420" x2="1440" y2="420"/>
+    <line x1="0" y1="460" x2="1440" y2="460"/>
+    <line x1="0" y1="500" x2="1440" y2="500"/>
+    <line x1="0" y1="540" x2="1440" y2="540"/>
+  </g>
+
+  <!-- skyline silhouettes -->
+  <g fill="#0b1626" opacity="0.95">
+    <rect x="60" y="300" width="90" height="300"/>
+    <rect x="180" y="240" width="70" height="360"/>
+    <rect x="260" y="270" width="110" height="330"/>
+    <rect x="390" y="200" width="80" height="400"/>
+    <rect x="500" y="150" width="100" height="450"/>
+    <rect x="620" y="90" width="110" height="510"/>
+    <rect x="750" y="170" width="90" height="430"/>
+    <rect x="860" y="210" width="100" height="390"/>
+    <rect x="980" y="250" width="80" height="350"/>
+    <rect x="1080" y="180" width="95" height="420"/>
+    <rect x="1195" y="260" width="110" height="340"/>
+    <rect x="1315" y="310" width="85" height="290"/>
+  </g>
+
+  <!-- node toppers -->
+  <g fill="#7df9ff">
+    <rect x="72" y="286" width="6" height="18"/>
+    <rect x="84" y="268" width="6" height="20"/>
+    <rect x="132" y="276" width="6" height="22"/>
+
+    <rect x="192" y="226" width="6" height="20"/>
+    <rect x="214" y="206" width="6" height="22"/>
+    <rect x="224" y="216" width="6" height="20"/>
+    <rect x="234" y="206" width="6" height="22"/>
+
+    <rect x="272" y="256" width="6" height="20"/>
+    <rect x="318" y="236" width="6" height="22"/>
+    <rect x="348" y="256" width="6" height="20"/>
+
+    <rect x="402" y="186" width="6" height="20"/>
+    <rect x="420" y="166" width="6" height="24"/>
+    <rect x="444" y="176" width="6" height="22"/>
+
+    <rect x="512" y="136" width="6" height="20"/>
+    <rect x="540" y="116" width="6" height="26"/>
+    <rect x="568" y="126" width="6" height="24"/>
+    <rect x="586" y="136" width="6" height="20"/>
+
+    <rect x="632" y="76" width="6" height="22"/>
+    <rect x="654" y="56" width="6" height="26"/>
+    <rect x="686" y="46" width="6" height="28"/>
+    <rect x="718" y="56" width="6" height="26"/>
+
+    <rect x="762" y="156" width="6" height="20"/>
+    <rect x="798" y="136" width="6" height="24"/>
+    <rect x="824" y="156" width="6" height="20"/>
+
+    <rect x="872" y="196" width="6" height="20"/>
+    <rect x="906" y="176" width="6" height="22"/>
+    <rect x="940" y="196" width="6" height="20"/>
+
+    <rect x="992" y="236" width="6" height="20"/>
+    <rect x="1028" y="216" width="6" height="22"/>
+    <rect x="1042" y="236" width="6" height="20"/>
+  </g>
+
+  <!-- glowing halos -->
+  <g filter="url(#blur)">
+    <circle cx="720" cy="56" r="32" fill="#00c2ff" opacity="0.15"/>
+    <circle cx="540" cy="116" r="26" fill="#00c2ff" opacity="0.12"/>
+    <circle cx="420" cy="166" r="24" fill="#00c2ff" opacity="0.10"/>
+    <circle cx="654" cy="56" r="22" fill="#7df9ff" opacity="0.18"/>
+    <circle cx="798" cy="136" r="22" fill="#00c2ff" opacity="0.12"/>
+    <circle cx="906" cy="176" r="20" fill="#7df9ff" opacity="0.14"/>
+  </g>
+
+  <!-- network beams -->
+  <g stroke="#7df9ff" stroke-opacity="0.18" stroke-width="1.4">
+    <line x1="88" y1="284" x2="214" y2="212"/>
+    <line x1="200" y1="230" x2="318" y2="238"/>
+    <line x1="214" y1="212" x2="322" y2="238"/>
+    <line x1="316" y1="238" x2="420" y2="172"/>
+    <line x1="420" y1="172" x2="540" y2="116"/>
+    <line x1="420" y1="172" x2="686" y2="52"/>
+    <line x1="540" y1="116" x2="654" y2="56"/>
+    <line x1="540" y1="116" x2="798" y2="138"/>
+    <line x1="686" y1="52" x2="798" y2="138"/>
+    <line x1="798" y1="138" x2="906" y2="176"/>
+    <line x1="798" y1="138" x2="1028" y2="218"/>
+    <line x1="686" y1="52" x2="1118" y2="202"/>
+  </g>
+
+  <!-- horizontal circuit bus -->
+  <polyline points="80,402 240,412 500,418 720,424 980,418 1240,412 1380,422" fill="none" stroke="#7df9ff" stroke-opacity="0.45" stroke-width="2"/>
+  <polyline points="80,452 300,458 540,462 780,458 1040,462 1320,458 1410,466" fill="none" stroke="#00c2ff" stroke-opacity="0.35" stroke-width="1.4"/>
+
+  <!-- near-ground nodes -->
+  <g fill="#050b14" stroke="#7df9ff" stroke-width="2">
+    <circle cx="200" cy="412" r="5"/>
+    <circle cx="458" cy="420" r="5"/>
+    <circle cx="720" cy="425" r="6"/>
+    <circle cx="980" cy="418" r="5"/>
+    <circle cx="1220" cy="414" r="5"/>
+  </g>
+  <g fill="#7df9ff">
+    <circle cx="200" cy="412" r="2.4"/>
+    <circle cx="458" cy="420" r="2.4"/>
+    <circle cx="720" cy="425" r="3"/>
+    <circle cx="980" cy="418" r="2.4"/>
+    <circle cx="1220" cy="414" r="2.4"/>
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#040a13"/>
+      <stop offset="1" stop-color="#010409"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#e0fbff" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#7df9ff" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#00c2ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="700" fill="url(#bg)"/>
+
+  <!-- coarse grid -->
+  <path d="M0,620 L1440,620 M0,660 L1440,660" stroke="#00c2ff" stroke-opacity="0.18" stroke-width="1"/>
+
+  <!-- horizon glow -->
+  <ellipse cx="720" cy="620" rx="620" ry="180" fill="#7df9ff" opacity="0.04" filter="url(#glow)"/>
+
+  <!-- central hub -->
+  <g>
+    <circle cx="720" cy="560" r="44" fill="url(#orb)" filter="url(#glow)"/>
+    <polygon points="720,524 748,548 748,572 720,596 692,572 692,548" fill="#040a13" stroke="#7df9ff" stroke-width="2.5"/>
+    <polygon points="720,532 740,548 740,572 720,588 700,572 700,548" fill="#00c2ff" opacity="0.18"/>
+    <circle cx="720" cy="560" r="8" fill="#7df9ff"/>
+  </g>
+
+  <!-- spokes -->
+  <g stroke="#7df9ff" stroke-opacity="0.55" stroke-width="1.4">
+    <line x1="720" y1="524" x2="260" y2="196"/>
+    <line x1="720" y1="524" x2="560" y2="88"/>
+    <line x1="720" y1="524" x2="920" y2="58"/>
+    <line x1="720" y1="524" x2="1200" y2="176"/>
+    <line x1="720" y1="524" x2="1340" y2="358"/>
+    <line x1="700" y1="570" x2="340" y2="430"/>
+    <line x1="740" y1="570" x2="1060" y2="440"/>
+  </g>
+
+  <!-- nodes -->
+  <g filter="url(#glow)">
+    <circle cx="260" cy="196" r="16" fill="url(#orb)"/>
+    <circle cx="560" cy="88" r="19" fill="url(#orb)"/>
+    <circle cx="920" cy="58" r="19" fill="url(#orb)"/>
+    <circle cx="1200" cy="176" r="17" fill="url(#orb)"/>
+    <circle cx="1340" cy="358" r="14" fill="url(#orb)"/>
+    <circle cx="340" cy="430" r="14" fill="url(#orb)"/>
+    <circle cx="1060" cy="440" r="15" fill="url(#orb)"/>
+  </g>
+
+  <!-- node markers -->
+  <g fill="#050a13" stroke="#7df9ff" stroke-width="2.2">
+    <polygon points="260,182 276,196 260,210 244,196"/>
+    <polygon points="560,74 576,88 560,102 544,88"/>
+    <polygon points="920,44 936,58 920,72 904,58"/>
+    <polygon points="1200,162 1216,176 1200,190 1184,176"/>
+    <polygon points="1340,344 1356,358 1340,372 1324,358"/>
+    <polygon points="340,416 356,430 340,444 324,430"/>
+    <polygon points="1060,426 1076,440 1060,454 1044,440"/>
+  </g>
+
+  <!-- internal glyphs -->
+  <path d="M254,196 h12 M260,190 v12" stroke="#7df9ff" stroke-width="2"/>
+  <path d="M554,88 h12 M560,82 v12" stroke="#7df9ff" stroke-width="2"/>
+  <path d="M914,58 h12 M920,52 v12" stroke="#7df9ff" stroke-width="2"/>
+</svg>
