@@ -1,0 +1,85 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Research & Laboratory Policy",
+  "count": 3,
+  "entries": {
+    "frameworks": [
+      {
+        "id": "RES-FRM-01",
+        "title": "National Research Priorities Framework",
+        "status": "Active",
+        "category": "Framework",
+        "owner": "Kai Voss",
+        "summary": "Cross-ministry coordination model aligning laboratory, institutional, and industry research with national science and technology roadmaps."
+      },
+      {
+        "id": "RES-FRM-02",
+        "title": "Open Science Access Policy",
+        "status": "Active",
+        "category": "Framework",
+        "owner": "Nia Rahman",
+        "summary": "Mandatory open-access publication and data-sharing standards for publicly funded research programs and national laboratories."
+      },
+      {
+        "id": "RES-FRM-03",
+        "title": "Research Ethics Governance Standard",
+        "status": "Beta",
+        "category": "Framework",
+        "owner": "Aria Solenne",
+        "summary": "Institutional review requirements, consent standards, and risk-tiered review for human-subject and dual-use research."
+      }
+    ],
+    "policy": [
+      {
+        "id": "RES-POL-01",
+        "title": "Laboratory Authorization Policy",
+        "status": "Active",
+        "category": "Policy",
+        "owner": "Mira Chen",
+        "summary": "Classification, permitting, and oversight rules for Tier 1 through Tier 3 national research laboratories."
+      },
+      {
+        "id": "RES-POL-02",
+        "title": "Dual-Use Review Policy",
+        "status": "Draft",
+        "category": "Policy",
+        "owner": "Kai Voss",
+        "summary": "Risk assessment and publication review requirements for research with potential defensive or harmful dual-use applications."
+      },
+      {
+        "id": "RES-POL-03",
+        "title": "Research Data Retention Policy",
+        "status": "Active",
+        "category": "Policy",
+        "owner": "Nia Rahman",
+        "summary": "Retention periods, provenance metadata, and secure archival requirements for datasets generated under national programs."
+      }
+    ],
+    "standard": [
+      {
+        "id": "RES-STD-01",
+        "title": "Peer Review Quality Standard",
+        "status": "Active",
+        "category": "Standard",
+        "owner": "Aria Solenne",
+        "summary": "Minimum review depth, conflict-of-interest checks, and reproducibility documentation for program publications."
+      },
+      {
+        "id": "RES-STD-02",
+        "title": "Attribution and Citation Standard",
+        "status": "Active",
+        "category": "Standard",
+        "owner": "Mira Chen",
+        "summary": "Mandatory contributor attribution, software citation rules, and dataset citation requirements for national research outputs."
+      },
+      {
+        "id": "RES-STD-03",
+        "title": "Research Safety Training Standard",
+        "status": "Planning",
+        "category": "Standard",
+        "owner": "Nia Rahman",
+        "summary": "Required foundational and role-based safety training for researchers before unsupervised lab or field access."
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Emerging Technology Review",
+  "count": 3,
+  "entries": {
+    "horizon": [
+      {
+        "id": "EMT-HOR-01",
+        "title": "Artificial Intelligence Horizon Review",
+        "status": "Active",
+        "category": "Horizon",
+        "lead": "Kai Voss",
+        "summary": "Ongoing review of generative, embodied, and decision-support AI systems with focus on interpretability, accountability, and workforce impact."
+      },
+      {
+        "id": "EMT-HOR-02",
+        "title": "Quantum Technology Review",
+        "status": "Review",
+        "category": "Horizon",
+        "lead": "Mira Chen",
+        "summary": "Assessment of quantum sensing, computation, and secure communication readiness for national infrastructure and research programs."
+      },
+      {
+        "id": "EMT-HOR-03",
+        "title": "Biotechnology Horizon Review",
+        "status": "Active",
+        "category": "Horizon",
+        "lead": "Aria Solenne",
+        "summary": "Scanning gene-editing, synthetic biology, and biomanufacturing developments with careful review of containment and biosafety implications."
+      }
+    ],
+    "readiness": [
+      {
+        "id": "EMT-RDY-01",
+        "title": "AI Readiness Assessment",
+        "status": "Beta",
+        "category": "Readiness",
+        "lead": "Nia Rahman",
+        "summary": "Model evaluation, red-teaming, documentation, and incident-readiness checklist for high-impact public-sector AI deployments."
+      },
+      {
+        "id": "EMT-RDY-02",
+        "title": "Digital Infrastructure Safeguards",
+        "status": "Active",
+        "category": "Readiness",
+        "lead": "Kai Voss",
+        "summary": "Supply-chain review, build provenance, failover design, and adversarial testing standards for foundational digital services."
+      },
+      {
+        "id": "EMT-RDY-03",
+        "title": "Sensor and Edge System Safeguards",
+        "status": "Planning",
+        "category": "Readiness",
+        "lead": "Mira Chen",
+        "summary": "Privacy, consent, power resilience, and tamper-resistance requirements for edge sensing and IoT deployments in public infrastructure."
+      }
+    ],
+    "ethics": [
+      {
+        "id": "EMT-ETH-01",
+        "title": "Algorithmic Impact Review",
+        "status": "Active",
+        "category": "Ethics",
+        "lead": "Aria Solenne",
+        "summary": "Mandatory equity, accuracy, and recourse review before automated systems influence public services, benefits, or enforcement outcomes."
+      },
+      {
+        "id": "EMT-ETH-02",
+        "title": "Data Stewardship Policy",
+        "status": "Draft",
+        "category": "Ethics",
+        "lead": "Nia Rahman",
+        "summary": "Purpose limitation, minimization, retention, and consent standards for research and operational datasets used in emerging-technology systems."
+      },
+      {
+        "id": "EMT-ETH-03",
+        "title": "Autonomous Systems Policy",
+        "status": "Beta",
+        "category": "Ethics",
+        "lead": "Kai Voss",
+        "summary": "Human oversight, fail-safe behavior, liability assignment, and transparency requirements for autonomous and semi-autonomous systems."
+      }
+    ]
+  }
+}
