@@ -1,6 +1,6 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Ministry of Digital Protocol",
+  "office": "Technology & Innovation",
   "count": 3,
   "entries": {
     "standards": [
@@ -9,7 +9,7 @@
         "title": "AETHERIA Identity Token Schema v2",
         "category": "Identity",
         "status": "Ratified",
-        "owner": "Ministry of Digital Protocol",
+        "owner": "Technology & Innovation",
         "version": "2.1.0",
         "summary": "Defines the canonical JWT serialization, claim set, signature algorithm, and validator checklist for citizen identity tokens."
       },
@@ -18,7 +18,7 @@
         "title": "Node Interoperability Test Suite",
         "category": "Infrastructure",
         "status": "Ratified",
-        "owner": "Ministry of Infrastructure",
+        "owner": "Infrastructure & Human Services",
         "version": "1.4.0",
         "summary": "Mandatory regression tests covering API surface compliance, event ordering guarantees, and graceful degradation."
       },
@@ -27,7 +27,7 @@
         "title": "Cross-Domain Event Schemas",
         "category": "Integration",
         "status": "Draft",
-        "owner": "Ministry of Digital Protocol",
+        "owner": "Technology & Innovation",
         "version": "0.9.0",
         "summary": "Shared event types for Assembly votes, Court rulings, and Civic payments, with enforced schema validation."
       },
@@ -36,7 +36,7 @@
         "title": "Data Residency & Sovereignty Standard",
         "category": "Sovereignty",
         "status": "In Review",
-        "owner": "Ministry of Digital Protocol",
+        "owner": "Technology & Innovation",
         "version": "0.4.0",
         "summary": "Mandatory data-classification labels, regional hosting rules, and jurisdictions-of-last-resort for sensitive citizen data."
       },
@@ -45,7 +45,7 @@
         "title": "Registry Index Serialization Format",
         "category": "Registry",
         "status": "Ratified",
-        "owner": "Ministry of Digital Protocol",
+        "owner": "Technology & Innovation",
         "version": "1.0.0",
         "summary": "Canonical JSON-LD and CBOR serializations with checksums, canonical URLs, and schema validation hooks."
       }
@@ -57,7 +57,7 @@
         "riskLevel": "Critical",
         "category": "Operational",
         "status": "Active",
-        "owner": "Ministry of Digital Protocol",
+        "owner": "Technology & Innovation",
         "summary": "No single node operator may control more than 15 % of declared runtime capacity without Assembly review."
       },
       {
@@ -66,7 +66,7 @@
         "riskLevel": "High",
         "category": "Licensing",
         "status": "Active",
-        "owner": "Ministry of Digital Protocol",
+        "owner": "Technology & Innovation",
         "summary": "All ministerial software paths must use OSI-approved licenses and expose public repositories by default."
       },
       {
@@ -75,7 +75,7 @@
         "riskLevel": "High",
         "category": "Security",
         "status": "Active",
-        "owner": "Ministry of Infrastructure",
+        "owner": "Infrastructure & Human Services",
         "summary": "90-day rotation for production credentials; emergency rotation procedures under Court ruling contingency."
       },
       {
@@ -84,7 +84,7 @@
         "riskLevel": "Medium",
         "category": "Legal",
         "status": "Draft",
-        "owner": "Ministry of Digital Protocol",
+        "owner": "Technology & Innovation",
         "summary": "Defines secondary governance jurisdictions activated when primary nodes become unreachable or compromised."
       }
     ]

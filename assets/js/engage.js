@@ -134,7 +134,7 @@
         <div class="activity-meta">
           <span class="activity-type">${escapeHtml(typeLabel)}</span>
           ${item.metadata?.session ? `<span class="activity-session">Session: ${escapeHtml(item.metadata.session)}</span>` : ''}
-          ${item.metadata?.ministry ? `<span class="activity-ministry">Ministry: ${escapeHtml(item.metadata.ministry)}</span>` : ''}
+          ${item.metadata?.ministry ? `<span class="activity-ministry">Department: ${escapeHtml(item.metadata.ministry)}</span>` : ''}
           ${item.metadata?.directiveId ? `<span class="activity-directive">Directive: ${escapeHtml(item.metadata.directiveId)}</span>` : ''}
         </div>`;
     }
