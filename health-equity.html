@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Reach the Principality’s front office for citizen requests, press, partnerships, governance correspondence, or technical support.">
-  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/contact.html">
-  <meta property="og:title" content="Contact — The Principality of Aetheria">
-  <meta property="og:description" content="Reach the Principality’s front office for citizen requests, press, partnerships, governance correspondence, or technical support.">
+  <meta name="description" content="Health Equity & Public Health Access: equity frameworks, access standards, community health programs, and cross-ministry wellbeing services for the Principality of Aetheria.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/health-equity.html">
+  <meta property="og:title" content="Health Equity & Public Health Access — The Principality of Aetheria">
+  <meta property="og:description" content="Equity frameworks, access standards, community health programs, and cross-ministry wellbeing services.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/contact.html">
+  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/health-equity.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Contact — The Principality of Aetheria">
-  <meta name="twitter:description" content="Reach the Principality’s front office for citizen requests, press, partnerships, governance correspondence, or technical support.">
+  <meta name="twitter:title" content="Health Equity & Public Health Access — The Principality of Aetheria">
+  <meta name="twitter:description" content="Equity frameworks, access standards, community health programs, and cross-ministry wellbeing services.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
-
-  <title>Contact — The Principality of Aetheria</title>
+  <title>Health Equity & Public Health Access — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
@@ -23,7 +22,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="icon" href="./favicon.ico">
 </head>
-<body>
+<body class="page-health-equity">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav">
@@ -39,7 +38,8 @@
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
-      </button>            <nav class="menu" id="site-menu" aria-hidden="true">
+      </button>
+            <nav class="menu" id="site-menu" aria-hidden="true">
             <a href="index.html">Home</a>
             <details class="nav-dropdown">
               <summary>Foundations</summary>
@@ -112,50 +112,53 @@
   <main id="main">
     <section class="page">
       <div class="container">
-        <h1>Contact</h1>
+        <h1>Health Equity & Public Health Access</h1>
         <p class="lead">
-          Reach the Principality’s front office for citizen requests, press, partnerships,
-          governance correspondence, or technical support.
+          Closing gaps in health access through equity frameworks, community health standards,
+          access programs, and coordinated services across <a href="health.html">Health</a>,
+          <a href="education.html">Education</a>, and <a href="engage.html">Engagement</a>.
         </p>
 
-        <h2>Channels</h2>
-        <div class="columns">
-          <div class="card">
-            <h3>Citizen Services</h3>
-            <p>Application status, credential recovery, onboarding help, and governance questions. Reachable via the public message board.</p>
-          </div>
-          <div class="card">
-            <h3>Press</h3>
-            <p>Interview requests, fact-checking, and public-declarations coordination handled through the President’s office liaison.</p>
-          </div>
-          <div class="card">
-            <h3>Partnerships</h3>
-            <p>Interoperability, standards collaboration, and recognition agreements coordinated by the inter-network liaison team.</p>
-          </div>
+        <h2>Equity Frameworks</h2>
+        <div id="health-equity-frameworks-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Equity frameworks feed">
+          <div class="activity-loading" aria-hidden="true">Loading equity frameworks...</div>
         </div>
 
-        <h2>Patience and Protocol</h2>
+        <h2>Access Programs</h2>
+        <div id="health-equity-programs-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Access programs feed">
+          <div class="activity-loading" aria-hidden="true">Loading access programs...</div>
+        </div>
+
+        <h2>Community Health Standards</h2>
+        <div id="health-equity-standards-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Community health standards feed">
+          <div class="activity-loading" aria-hidden="true">Loading community health standards...</div>
+        </div>
+
+        <h2>Cross-Links</h2>
         <p>
-          AETHERIA operates with distributed contributors and limited administrative capacity.
-          Responses may take longer than traditional institutions; please include enough context
-          for triage and reference any open governance thread when available.
+          Equity programs connect to <a href="health.html">Health</a> services,
+          <a href="education.html">Education</a> literacy programs, and
+          <a href="engage.html">Engagement</a> participation pathways.
         </p>
 
+        <form class="activity-actions" aria-label="Filter health equity directory">
+          <label for="health-equity-search" class="sr-only">Search programs</label>
+          <input id="health-equity-search" class="activity-filter" placeholder="Search programs, standards, or facilities..." />
+          <select id="health-equity-type" class="activity-select" aria-label="Filter by type">
+            <option value="all">All types</option>
+            <option value="framework">Framework</option>
+            <option value="program">Program</option>
+            <option value="standard">Standard</option>
+          </select>
+        </form>
+
         <div class="cta">
-          <a class="button primary" href="citizenship.html">Start an Application</a>
+          <a class="button primary" href="health.html">Public Health</a>
+          <a class="button" href="bandwidth.html">Digital Access</a>
+          <a class="button" href="education.html">Education</a>
         </div>
       </div>
     </section>
-  <aside class="legal-block" aria-labelledby="legal-title-contact">
-      <h2 id="legal-title-contact">Legal &amp; Policy Notice</h2>
-      <p>
-        AETHERIA is an experimental digital polity. Nothing on this site constitutes legal advice,
-        statehood under international law, or an offer of regulated financial services unless
-        explicitly stated in a published protocol document. By participating you agree to the
-        <a href="charter.html">Charter</a> and <a href="manifesto.html">Manifesto</a>.
-        Read <a href="recognition.html">Recognition</a> for context on legitimacy frameworks.
-      </p>
-    </aside>
   </main>
 
   <div class="cityscape" aria-hidden="true"></div>
@@ -213,6 +216,8 @@
               <a href="sustainability.html">Sustainability</a>
               <a href="science.html">Science</a>
               <a href="technology.html">Technology</a>
+              <a href="health-equity.html">Health Equity</a>
+              <a href="bandwidth.html">Bandwidth</a>
               <a href="education.html">Education</a>
               <a href="health.html">Health</a>
               <a href="infrastructure.html">Infrastructure</a>

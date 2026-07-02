@@ -1,0 +1,85 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Health Equity & Public Health Access",
+  "count": 3,
+  "entries": {
+    "frameworks": [
+      {
+        "id": "HEQ-FRM-01",
+        "title": "Equity Impact Assessment Framework",
+        "status": "Active",
+        "category": "Framework",
+        "owner": "Nia Rahman",
+        "summary": "Standardized assessment for evaluating health program impacts across demographic and socioeconomic strata."
+      },
+      {
+        "id": "HEQ-FRM-02",
+        "title": "Community Health Governance Standard",
+        "status": "Active",
+        "category": "Framework",
+        "owner": "Mira Chen",
+        "summary": "Participatory governance model ensuring marginalized communities have decision-making authority over local health services."
+      },
+      {
+        "id": "HEQ-FRM-03",
+        "title": "Digital Inclusion Health Policy",
+        "status": "Beta",
+        "category": "Framework",
+        "owner": "Kai Voss",
+        "summary": "Policy framework for telehealth, digital records access, and remote care equity across connectivity tiers."
+      }
+    ],
+    "programs": [
+      {
+        "id": "HEQ-PGM-01",
+        "title": "Community Health Worker Corps",
+        "status": "Active",
+        "category": "Program",
+        "lead": "Aria Solenne",
+        "summary": "Trained community liaisons bridging digital health platforms with underserved neighborhoods and rural districts."
+      },
+      {
+        "id": "HEQ-PGM-02",
+        "title": "Mobile Clinic Network",
+        "status": "Active",
+        "category": "Program",
+        "lead": "Nia Rahman",
+        "summary": "Deployable mobile clinics providing primary care, screenings, and health education in connectivity-limited regions."
+      },
+      {
+        "id": "HEQ-PGM-03",
+        "title": "School-Based Wellness Initiative",
+        "status": "Planning",
+        "category": "Program",
+        "lead": "Mira Chen",
+        "summary": "Integrated wellness services in schools covering mental health, nutrition, and preventive care access."
+      }
+    ],
+    "standards": [
+      {
+        "id": "HEQ-STD-01",
+        "title": "Language Access Standard",
+        "status": "Active",
+        "category": "Standard",
+        "owner": "Aria Solenne",
+        "summary": "Mandatory multilingual health materials and interpreter services for all public health communications."
+      },
+      {
+        "id": "HEQ-STD-02",
+        "title": "Affordability Benchmark",
+        "status": "Draft",
+        "category": "Standard",
+        "owner": "Kai Voss",
+        "summary": "Cost thresholds for essential health services ensuring no citizen spends more than 3% of household income on care."
+      },
+      {
+        "id": "HEQ-STD-03",
+        "title": "Accessibility Compliance Tier",
+        "status": "Active",
+        "category": "Standard",
+        "owner": "Mira Chen",
+        "summary": "WCAG-aligned accessibility requirements for all digital health platforms and public health facilities."
+      }
+    ]
+  }
+}

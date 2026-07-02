@@ -31,12 +31,11 @@
 
 /* page-specific dark-theme treatments */
 .page-finance .activity-feed,
-.page-treasury .activity-feed {
-  margin-top: 4px;
-}
-
+.page-treasury .activity-feed,
 .page-environment .activity-feed,
-.page-sustainability .activity-feed {
+.page-sustainability .activity-feed,
+.page-health-equity .activity-feed,
+.page-bandwidth .activity-feed {
   margin-top: 4px;
 }
 

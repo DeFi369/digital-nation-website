@@ -65,6 +65,8 @@
     const isCommunicationsPage = document.body.classList.contains('page-communications') || window.location.pathname.includes('communications.html');
     const isEnvironmentPage = document.body.classList.contains('page-environment') || window.location.pathname.includes('environment.html');
     const isSustainabilityPage = document.body.classList.contains('page-sustainability') || window.location.pathname.includes('sustainability.html');
+    const isHealthEquityPage = document.body.classList.contains('page-health-equity') || window.location.pathname.includes('health-equity.html');
+    const isBandwidthPage = document.body.classList.contains('page-bandwidth') || window.location.pathname.includes('bandwidth.html');
     if (isFinancePage) {
       loadFinanceScript();
     }
@@ -82,6 +84,12 @@
     }
     if (isSustainabilityPage) {
       loadSustainabilityScript();
+    }
+    if (isHealthEquityPage) {
+      loadHealthEquityScript();
+    }
+    if (isBandwidthPage) {
+      loadBandwidthScript();
     }
   }
 
@@ -225,6 +233,22 @@
     if (document.querySelector('script[src="assets/js/sustainability.js"]')) return;
     const script = document.createElement('script');
     script.src = 'assets/js/sustainability.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadHealthEquityScript() {
+    if (document.querySelector('script[src="assets/js/health-equity.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/health-equity.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadBandwidthScript() {
+    if (document.querySelector('script[src="assets/js/bandwidth.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/bandwidth.js';
     script.defer = true;
     document.body.appendChild(script);
   }
