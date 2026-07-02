@@ -20,7 +20,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/nav.css">
   <link rel="icon" href="./favicon.ico">
 </head>
 <body class="page-science">
@@ -31,12 +30,10 @@
         <img class="logo-img" src="assets/images/digital-nation-logo.svg" alt="The Principality of Aetheria"/>
         <span class="logo-text">AETHERIA</span>
       </a>
-      <span class="site-header__counter" aria-live="polite" aria-label="Live member count">
-        <span class="counter-dot" aria-hidden="true"></span>
-        <span class="counter-label">Members</span>
-        <span class="counter-value" id="member-count">--</span>
+      <span class="member-counter" id="member-counter" title="Registered citizens">
+        <span class="member-counter-label" aria-hidden="true">Members</span>
+        <span class="member-counter-value" id="member-count" aria-live="polite" aria-label="Current member total">--</span>
       </span>
-
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
@@ -44,8 +41,19 @@
       </button>
             <nav class="menu" id="site-menu" aria-hidden="true">
             <details class="nav-dropdown">
-              <summary class="nav-category">Governance</summary>
-              <div class="dropdown-grid">
+              <summary>Foundations</summary>
+              <div class="dropdown-wrap">
+                <a href="about.html">About</a>
+                <a href="goals.html">Goals</a>
+                <a href="initiatives.html">Initiatives</a>
+                <a href="manifesto.html">Manifesto</a>
+                <a href="charter.html">Charter</a>
+                <a href="contact.html">Contact</a>
+              </div>
+            </details>
+            <details class="nav-dropdown">
+              <summary>Governance</summary>
+              <div class="dropdown-wrap">
                 <a href="assembly.html">Assembly</a>
                 <a href="court.html">Court</a>
                 <a href="justice.html">Justice</a>
@@ -53,16 +61,16 @@
               </div>
             </details>
             <details class="nav-dropdown">
-              <summary class="nav-category">Identity</summary>
-              <div class="dropdown-grid">
+              <summary>Identity</summary>
+              <div class="dropdown-wrap">
                 <a href="citizenship.html">Citizenship</a>
                 <a href="passport.html">Passport</a>
                 <a href="registry.html">Registry</a>
               </div>
             </details>
             <details class="nav-dropdown">
-              <summary class="nav-category">Policy</summary>
-              <div class="dropdown-grid">
+              <summary>Policy</summary>
+              <div class="dropdown-wrap">
                 <a href="economy.html">Economy</a>
                 <a href="finance.html">Finance</a>
                 <a href="treasury.html">Treasury</a>
@@ -76,8 +84,8 @@
               </div>
             </details>
             <details class="nav-dropdown">
-              <summary class="nav-category">Diplomacy</summary>
-              <div class="dropdown-grid">
+              <summary>Diplomacy</summary>
+              <div class="dropdown-wrap">
                 <a href="recognition.html">Recognition</a>
                 <a href="missions.html">Missions</a>
                 <a href="diplomacy.html">Diplomacy</a>
@@ -88,26 +96,13 @@
               </div>
             </details>
             <details class="nav-dropdown">
-              <summary class="nav-category">Engagement</summary>
-              <div class="dropdown-grid">
+              <summary>Engagement</summary>
+              <div class="dropdown-wrap">
                 <a href="engage.html">Engage</a>
                 <a href="tools.html">Tools</a>
               </div>
             </details>
-            <details class="nav-dropdown">
-              <summary class="nav-category">Foundations</summary>
-              <div class="dropdown-grid">
-                <a href="about.html">About</a>
-                <a href="goals.html">Goals</a>
-                <a href="initiatives.html">Initiatives</a>
-                <a href="manifesto.html">Manifesto</a>
-                <a href="charter.html">Charter</a>
-                <a href="contact.html">Contact</a>
-              </div>
-            </details>
-            <a href="citizenship.html" class="nav-cta">Citizenship</a>
           </nav>
-
     </div>
   </header>
 
@@ -169,30 +164,70 @@
           <span class="footer-year" data-year>2026</span>
         </div>
                                 <nav class="footer-nav" aria-label="Footer">
-          <a href="manifesto.html">Manifesto</a>
-          <a href="charter.html">Charter</a>
-          <a href="recognition.html">Recognition</a>
-          <a href="diplomacy.html">Diplomacy</a>
-          <a href="protocol.html">Protocol</a>
-          <a href="citizenship.html">Citizenship</a>
-          <a href="registry.html">Registry</a>
-          <a href="engage.html">Engage</a>
-          <a href="assembly.html">Assembly</a>
-          <a href="court.html">Court</a>
-          <a href="justice.html">Justice</a>
-          <a href="safety.html">Safety</a>
-          <a href="missions.html">Missions</a>
-          <a href="education.html">Education</a>
-          <a href="science.html">Science</a>
-          <a href="technology.html">Technology</a>
-          <a href="health.html">Health</a>
-          <a href="infrastructure.html">Infrastructure</a>
-            <a href="environment.html">Environment</a>
-            <a href="sustainability.html">Sustainability</a>
-            <a href="contact.html">Contact</a>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Foundations</summary>
+            <div class="dropdown-wrap">
+              <a href="about.html">About</a>
+              <a href="goals.html">Goals</a>
+              <a href="initiatives.html">Initiatives</a>
+              <a href="manifesto.html">Manifesto</a>
+              <a href="charter.html">Charter</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Governance</summary>
+            <div class="dropdown-wrap">
+              <a href="assembly.html">Assembly</a>
+              <a href="court.html">Court</a>
+              <a href="justice.html">Justice</a>
+              <a href="safety.html">Safety</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Identity</summary>
+            <div class="dropdown-wrap">
+              <a href="citizenship.html">Citizenship</a>
+              <a href="passport.html">Passport</a>
+              <a href="registry.html">Registry</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Policy</summary>
+            <div class="dropdown-wrap">
+              <a href="economy.html">Economy</a>
+              <a href="finance.html">Finance</a>
+              <a href="treasury.html">Treasury</a>
+              <a href="environment.html">Environment</a>
+              <a href="sustainability.html">Sustainability</a>
+              <a href="science.html">Science</a>
+              <a href="technology.html">Technology</a>
+              <a href="education.html">Education</a>
+              <a href="health.html">Health</a>
+              <a href="infrastructure.html">Infrastructure</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Diplomacy</summary>
+            <div class="dropdown-wrap">
+              <a href="recognition.html">Recognition</a>
+              <a href="missions.html">Missions</a>
+              <a href="diplomacy.html">Diplomacy</a>
+              <a href="protocol.html">Protocol</a>
+              <a href="consular.html">Consular</a>
+              <a href="culture.html">Culture</a>
+              <a href="communications.html">Communications</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Engagement</summary>
+            <div class="dropdown-wrap">
+              <a href="engage.html">Engage</a>
+              <a href="tools.html">Tools</a>
+            </div>
+          </details>
         </nav>
-
-        <div class="footer-extras">
+<div class="footer-extras">
           <a class="social-link" href="https://github.com" rel="noopener noreferrer" target="_blank" aria-label="GitHub repository">
             <span aria-hidden="true">GitHub</span>
           </a>
@@ -201,7 +236,6 @@
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
-  <script src="assets/js/nav.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

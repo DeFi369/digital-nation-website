@@ -13,7 +13,8 @@
 
     setupMenu();
     liveYear();
-
+    initDropdownNavigation();
+    initMemberCounter();
     const isAssemblyPage = document.body.classList.contains('page-assembly') || window.location.pathname.includes('assembly.html');
     const isCourtPage = document.body.classList.contains('page-court') || window.location.pathname.includes('court.html');
     const isRegistryPage = document.body.classList.contains('page-registry') || window.location.pathname.includes('registry.html');
@@ -264,5 +265,70 @@
       const yearEl = document.querySelector('[data-year]');
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     } catch {}
+  }
+
+  function initMemberCounter() {
+    const el = document.getElementById('member-count');
+    if (!el) return;
+    fetch('assets/data/registry.json')
+      .then(response => {
+        if (!response.ok) throw new Error('registry ' + response.status);
+        return response.json();
+      })
+      .then(data => {
+        const count = typeof data?.count === 'number' ? data.count : (Array.isArray(data?.entries) ? data.entries.length : 0);
+        el.textContent = String(count);
+      })
+      .catch(() => {
+        el.textContent = '--';
+      });
+  }
+
+  function initDropdownNavigation() {
+    const menu = document.querySelector('.menu');
+    if (!menu) return;
+    const dropdowns = menu.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(dropdown => {
+      const summary = dropdown.querySelector('summary');
+      if (!summary) return;
+      summary.addEventListener('click', (evt) => {
+        const wasOpen = dropdown.hasAttribute('open');
+        dropdowns.forEach(d => {
+          if (d !== dropdown && d.hasAttribute('open')) {
+            d.removeAttribute('open');
+            d.setAttribute('aria-hidden', 'true');
+          }
+        });
+        if (!wasOpen) {
+          dropdown.setAttribute('open', '');
+          dropdown.removeAttribute('aria-hidden');
+        } else {
+          dropdown.removeAttribute('open');
+          dropdown.setAttribute('aria-hidden', 'true');
+        }
+        evt.preventDefault();
+        evt.stopPropagation();
+      });
+      dropdown.addEventListener('keydown', (event) => {
+        summary.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && dropdown.hasAttribute('open')) {
+            dropdown.removeAttribute('open');
+            dropdown.setAttribute('aria-hidden', 'true');
+            summary.focus();
+          }
+        });
+      });
+    });
+    if (menu.dataset.open === 'true') {
+      dropdowns.forEach(d => d.removeAttribute('open'));
+    }
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.nav-dropdown') && !event.target.closest('.menu-toggle')) {
+        dropdowns.forEach(d => {
+          d.removeAttribute('open');
+          d.setAttribute('aria-hidden', 'true');
+        });
+      }
+    });
   }
 })();
