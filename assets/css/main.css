@@ -2,7 +2,7 @@
   --color-bg: #07090d;
   --color-surface: #0f1318;
   --color-text: #e6e8eb;
-  --color-muted: #9aa6b3;
+  --color-muted: #cfd6dd;
   --color-accent: #7aa7ff;
   --color-accent-2: #c084fc;
   --max-width: 1100px;
@@ -67,9 +67,6 @@
   opacity: 1;
   transition: opacity .45s ease;
   pointer-events: none;
-}
-.page-loader.hidden {
-  opacity: 0;
 }
 
 ::selection {
@@ -280,23 +277,6 @@ a {
   border-bottom: 1px solid #1a1f27;
   overflow: clip;
 }
-.hero > * {
-  position: relative;
-  z-index: 2;
-}
-.hero h1 {
-  font-size: clamp(34px, 5.2vw, 62px);
-  line-height: 1.12;
-  letter-spacing: -0.035em;
-  max-width: 980px;
-  margin: 0 0 16px;
-}
-.hero p {
-  color: var(--color-muted);
-  max-width: 720px;
-  font-size: clamp(16px, 1.6vw, 20px);
-  margin: 0;
-}
 .actions {
   margin-top: 30px;
   display: flex;
@@ -506,6 +486,52 @@ a {
   font-size: 12px;
   letter-spacing: .08em;
   text-transform: uppercase;
+}
+
+.activity-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.activity-actions [aria-label="Filter activity"] {
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #232a34;
+  background: #0f1318;
+  color: var(--color-text);
+}
+
+.activity-meta-chips {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid #232a34;
+  background: rgba(122,167,255,.06);
+  color: #9db8ff;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.pill[aria-pressed='true'] {
+  background: rgba(122,167,255,.18);
+  border-color: #2d3644;
+  color: #e6e8eb;
+}
+
+.pill[aria-pressed='false'] {
+  opacity: .85;
 }
 
 .legal-block {
@@ -738,7 +764,7 @@ a {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: .14em;
-  color: #76808b;
+  color: #8b95a1;
   font-weight: 700;
 }
 .value {
@@ -783,43 +809,12 @@ a {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: .16em;
-  color: #76808b;
+  color: #8b95a1;
   font-weight: 700;
 }
 .doc-value {
   font-size: 12px;
   color: var(--color-muted);
-}
-.passport-title {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.passport-sub {
-  font-size: 11px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  font-weight: 700;
-}
-.passport-main {
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-}
-.passport-motto {
-  font-size: 11px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #7aa7ff;
-  font-weight: 700;
-}
-.passport-body {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 18px 20px;
 }
 .passport-photo {
   width: 84px;
@@ -849,32 +844,6 @@ a {
     radial-gradient(circle at 70% 70%, rgba(122,167,255,.16), transparent 55%);
   opacity: .9;
   pointer-events: none;
-}
-.passport-fields {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 14px;
-  flex: 1;
-}
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  color: #76808b;
-  font-weight: 700;
-}
-.value {
-  font-size: 13px;
-  color: var(--color-text);
-}
-.value.mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  letter-spacing: .06em;
 }
 .passport-protocol {
   display: flex;
@@ -1010,64 +979,6 @@ a {
     border-radius: 14px;
   }
 }
-@media (max-width: 760px) {
-  .hero {
-    padding: 56px 0 72px;
-  }
-  .menu {
-    display: none;
-    gap: 10px;
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: rgba(7,9,13,.97);
-    border-bottom: 1px solid #1a1f27;
-    padding: 12px 18px;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .menu[aria-hidden="false"] {
-    display: flex;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-  .columns, .timeline, .join, .initiatives-grid, .dashboard-grid, .activity-item, .footer-inner {
-    grid-template-columns: 1fr;
-  }
-  .activity-item {
-    grid-template-columns: 1fr;
-  }
-  .footer-inner {
-    gap: 20px;
-  }
-  .node-visual {
-    margin-top: 36px;
-  }
-  .metric {
-    min-height: 110px;
-  }
-  .metric-row {
-    grid-template-columns: 1fr;
-  }
-  .passport-fields {
-    grid-template-columns: 1fr;
-  }
-  .passport-header, .passport-body, .passport-footer {
-    padding: 14px;
-  }
-  .passport-photo {
-    width: 64px;
-    min-width: 64px;
-    height: 82px;
-    font-size: 22px;
-  }
-  .footer-nav {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-}
 @media (max-width: 760px) and (orientation: landscape) {
   .hero {
     padding: 44px 0 64px;
@@ -1160,13 +1071,6 @@ a {
   display: inline-flex;
   margin-top: 24px;
 }
-
-.timeline {
-  margin-top: 24px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
 .milestone {
   background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
   border: 1px solid #1f2630;
@@ -1174,11 +1078,6 @@ a {
   padding: 20px;
   position: relative;
   transition: transform .1s ease, border-color .15s ease, box-shadow .15s ease;
-}
-.milestone:hover {
-  transform: translateY(-2px);
-  border-color: #2d3644;
-  box-shadow: 0 18px 40px rgba(0,0,0,.35);
 }
 .milestone-date {
   font-size: 12px;
@@ -1217,26 +1116,6 @@ a {
 .timeline-prose p {
   color: var(--color-muted);
   line-height: 1.7;
-}
-
-.dashboard-grid {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 14px;
-}
-.dash-card {
-  background: linear-gradient(180deg, rgba(122,167,255,.06), rgba(122,167,255,0));
-  border: 1px solid #1f2630;
-  border-radius: 14px;
-  padding: 18px;
-  text-align: center;
-  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
-}
-.dash-card:hover {
-  transform: translateY(-2px);
-  border-color: #2d3644;
-  box-shadow: 0 18px 40px rgba(0,0,0,.35), 0 0 0 1px rgba(122,167,255,.08);
 }
 .dash-card .metric-value {
   font-size: 36px;
@@ -1279,198 +1158,6 @@ a {
 .dash-meta-card strong {
   color: var(--color-text);
   font-weight: 800;
-}
-
-.activity-list {
-  margin-top: 18px;
-  display: grid;
-  gap: 12px;
-}
-.activity-item {
-  display: grid;
-  grid-template-columns: 2fr 3fr auto;
-  gap: 14px;
-  align-items: center;
-  padding: 16px;
-  border-radius: 14px;
-  border: 1px solid #1f2630;
-  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-}
-.activity-label {
-  font-weight: 800;
-  color: var(--color-text);
-}
-.activity-meta {
-  color: var(--color-muted);
-  font-size: 14px;
-}
-.activity-state {
-  justify-self: start;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid #2d3644;
-  background: rgba(122,167,255,.06);
-  color: #9db8ff;
-  font-size: 12px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.legal-block {
-  margin-top: 36px;
-  padding: 22px;
-  border-radius: 16px;
-  border: 1px solid #252d39;
-  background: linear-gradient(180deg, rgba(122,167,255,.07), rgba(122,167,255,0));
-  color: var(--color-muted);
-}
-.legal-block h2 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  color: var(--color-text);
-}
-.legal-block p {
-  margin: 0;
-  line-height: 1.6;
-}
-.legal-block a {
-  color: #9db8ff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(157,184,255,.45);
-}
-
-.cityscape {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 42vh;
-  z-index: 1;
-  pointer-events: none;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  mask-image: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 82%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 82%);
-}
-
-.leader-card .leader-badge {
-  font-size: 34px;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.site-footer {
-  border-top: 1px solid #1a1f27;
-  padding: 24px 0;
-  color: var(--color-muted);
-  font-size: 14px;
-  position: relative;
-  z-index: 2;
-}
-.site-footer .container {
-  padding-top: 18px;
-  padding-bottom: 18px;
-}
-.footer-inner {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr auto;
-  gap: 18px;
-  align-items: start;
-}
-.footer-brand strong {
-  color: var(--color-text);
-  font-weight: 900;
-  letter-spacing: -0.01em;
-}
-.footer-tagline {
-  display: block;
-  color: var(--color-muted);
-  font-size: 12px;
-  margin-top: 4px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-.footer-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
-}
-.protocol-version {
-  font-weight: 700;
-  letter-spacing: .06em;
-}
-.footer-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: #2dd36f;
-  box-shadow: 0 0 12px rgba(45, 211, 111, .55), 0 0 0 2px rgba(45, 211, 111, .18);
-}
-.footer-nav {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.footer-nav a {
-  color: var(--color-text);
-}
-.footer-nav a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(122,167,255, .5);
-}
-.footer-extras {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.social-link {
-  display: inline-flex;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #1f2630;
-  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-}
-.social-link:hover {
-  border-color: #2d3644;
-  background: #13181f;
-}
-.lang-toggle {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #1f2630;
-  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-  color: var(--color-muted);
-  cursor: pointer;
-}
-
-.initiatives-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.passport-mockup {
-  margin: 24px 0 8px;
-  display: flex;
-  justify-content: center;
-}
-.passport {
-  width: 100%;
-  max-width: 720px;
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
-  border: 1px solid #2a3140;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.04);
 }
 
 .page-404 {
