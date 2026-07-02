@@ -13,6 +13,21 @@
 
     setupMenu();
     liveYear();
+
+    const isEngagePage = document.body.classList.contains('page-engage') || window.location.pathname.includes('engage.html');
+    const isDashboardPage = document.body.classList.contains('page-dashboard') || window.location.pathname.includes('dashboard.html');
+
+    if (isEngagePage || isDashboardPage) {
+      loadEngageScript();
+    }
+  }
+
+  function loadEngageScript() {
+    if (document.querySelector('script[src="assets/js/engage.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/engage.js';
+    script.defer = true;
+    document.body.appendChild(script);
   }
 
   function setupMenu() {

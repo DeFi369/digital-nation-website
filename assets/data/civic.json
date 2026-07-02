@@ -1,0 +1,172 @@
+{
+  "petitions": [
+    {
+      "id": "pet-001",
+      "type": "petition",
+      "title": "Establish Universal Basic Compute Right",
+      "description": "Petition to establish a Universal Basic Compute Right guaranteeing all verified citizens access to a baseline allocation of compute resources on the public network for personal projects, learning, and civic participation.",
+      "target": "Assembly",
+      "signatureGoal": 500,
+      "currentSignatures": 342,
+      "deadline": "2026-08-15T23:59:59Z",
+      "status": "open",
+      "timestamp": "2026-06-20T14:30:00Z",
+      "metadata": {
+        "category": "rights",
+        "initiator": "citizen-203@aetheria.network"
+      }
+    },
+    {
+      "id": "pet-002",
+      "type": "petition",
+      "title": "Mandate Open-Source Requirement for Public Infrastructure Contracts",
+      "description": "Require all infrastructure contracts funded by the Treasury to release their core protocol code under an OSI-approved license within 180 days of deployment.",
+      "target": "Executive",
+      "signatureGoal": 300,
+      "currentSignatures": 187,
+      "deadline": "2026-09-01T23:59:59Z",
+      "status": "open",
+      "timestamp": "2026-06-15T10:00:00Z",
+      "metadata": {
+        "category": "governance",
+        "initiator": "citizen-089@aetheria.network"
+      }
+    },
+    {
+      "id": "pet-003",
+      "type": "petition",
+      "title": "Establish Regional Ambassador Program for Underrepresented Regions",
+      "description": "Create a funded Regional Ambassador Program to support citizen onboarding, local node operation, and community building in Africa, South America, and Southeast Asia.",
+      "target": "Ministry",
+      "signatureGoal": 250,
+      "currentSignatures": 250,
+      "deadline": "2026-07-15T23:59:59Z",
+      "status": "complete",
+      "timestamp": "2026-05-20T09:15:00Z",
+      "metadata": {
+        "category": "outreach",
+        "initiator": "citizen-156@aetheria.network"
+      }
+    }
+  ],
+  "feedback": [
+    {
+      "id": "fb-001",
+      "type": "feedback",
+      "title": "Passport Verification Flow Confusing",
+      "subject": "Passport verification steps unclear for new citizens",
+      "description": "New citizens report confusion during the passport verification flow. The multi-step process with cryptographic proofs is not well explained. Suggest adding a guided walkthrough or video tutorial.",
+      "category": "onboarding",
+      "status": "open",
+      "timestamp": "2026-06-25T11:20:00Z",
+      "metadata": {
+        "contact": "citizen-203@aetheria.network"
+      }
+    },
+    {
+      "id": "fb-002",
+      "type": "feedback",
+      "title": "Mobile Navigation Menu Issue",
+      "subject": "Hamburger menu doesn't close after selection on mobile",
+      "description": "On mobile devices, the navigation menu remains open after tapping a link. Users must manually tap the close button or outside the menu.",
+      "category": "ui",
+      "status": "in-progress",
+      "timestamp": "2026-06-22T08:30:00Z",
+      "metadata": {
+        "contact": "citizen-089@aetheria.network"
+      }
+    },
+    {
+      "id": "fb-003",
+      "type": "feedback",
+      "title": "Pathfinder Tool: Missing Contribution Areas",
+      "subject": "Pathfinder doesn't include Research or Education paths",
+      "description": "The Contribution Path Finder on tools.html lacks options for Research and Education contribution areas. Many citizens with academic backgrounds would benefit from these paths.",
+      "category": "tools",
+      "status": "open",
+      "timestamp": "2026-06-18T14:10:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "fb-004",
+      "type": "feedback",
+      "title": "Passport Page Load Performance",
+      "subject": "Passport page takes >3s to load on slower connections",
+      "description": "The passport.html page has heavy assets that cause slow load times. Consider lazy-loading non-critical resources and optimizing the visual elements.",
+      "category": "performance",
+      "status": "complete",
+      "timestamp": "2026-06-12T10:00:00Z",
+      "metadata": {
+        "contact": "citizen-156@aetheria.network"
+      }
+    }
+  ],
+  "governanceActions": [
+    {
+      "id": "gov-001",
+      "type": "governance",
+      "title": "Civic Assembly Session #12 — Protocol Standards Ratification",
+      "description": "Ratification of the Inter-Network Interoperability Protocol (INIP) v2.1 and Cross-Chain Identity Bridge Protocol (CCIBP) v1.2.",
+      "status": "complete",
+      "timestamp": "2026-06-28T16:00:00Z",
+      "metadata": {
+        "session": "assembly-12",
+        "voteResult": "passed",
+        "votesFor": 847,
+        "votesAgainst": 123,
+        "quorum": 500
+      }
+    },
+    {
+      "id": "gov-002",
+      "type": "governance",
+      "title": "Executive Directive: Emergency Node Security Patch",
+      "description": "Mandatory security patch deployment for all public nodes addressing CVE-2026-XXXX in the consensus layer. Deadline: 2026-07-05.",
+      "status": "open",
+      "timestamp": "2026-06-30T12:00:00Z",
+      "metadata": {
+        "directiveId": "exec-2026-014",
+        "severity": "critical",
+        "affectedNodes": 8
+      }
+    },
+    {
+      "id": "gov-003",
+      "type": "governance",
+      "title": "Ministry of Infrastructure: Q2 Network Capacity Report",
+      "description": "Published quarterly report showing 23% increase in network throughput, 3 new regional clusters online, and 99.7% uptime across core infrastructure.",
+      "status": "complete",
+      "timestamp": "2026-06-15T09:00:00Z",
+      "metadata": {
+        "ministry": "infrastructure",
+        "period": "Q2-2026",
+        "reportId": "infra-q2-2026"
+      }
+    },
+    {
+      "id": "gov-004",
+      "type": "governance",
+      "title": "Referendum: Digital Sovereignty Charter Amendment",
+      "description": "Proposed amendment to Article 4 of the Digital Sovereignty Charter regarding cross-network citizenship recognition. Voting opens 2026-07-10.",
+      "status": "scheduled",
+      "timestamp": "2026-06-25T18:00:00Z",
+      "metadata": {
+        "referendumId": "ref-2026-003",
+        "votingOpens": "2026-07-10T00:00:00Z",
+        "votingCloses": "2026-07-24T23:59:59Z"
+      }
+    },
+    {
+      "id": "gov-005",
+      "type": "governance",
+      "title": "Civic Assembly Session #13 — Budget & Treasury Allocation",
+      "description": "Deliberation on Q3 2026 budget proposal including infrastructure grants, developer bounties, and regional ambassador program funding.",
+      "status": "scheduled",
+      "timestamp": "2026-07-05T14:00:00Z",
+      "metadata": {
+        "session": "assembly-13",
+        "agendaItems": ["budget-q3", "grants", "ambassador-funding"]
+      }
+    }
+  ]
+}

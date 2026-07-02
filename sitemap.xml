@@ -91,6 +91,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://defi369.github.io/digital-nation-website/engage.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://defi369.github.io/digital-nation-website/terms.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -104,5 +109,10 @@
     <loc>https://defi369.github.io/digital-nation-website/404.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+<url>
+    <loc>https://defi369.github.io/digital-nation-website/engage.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Civic Engagement Hub for the Principality of Aetheria. Create petitions, submit feedback, track governance activity.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/engage.html">
+  <meta property="og:title" content="Civic Engagement Hub — The Principality of Aetheria">
+  <meta property="og:description" content="Civic Engagement Hub for the Principality of Aetheria. Create petitions, submit feedback, track governance activity.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/engage.html">
+  <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Civic Engagement Hub — The Principality of Aetheria">
+  <meta name="twitter:description" content="Civic Engagement Hub for the Principality of Aetheria. Create petitions, submit feedback, track governance activity.">
+  <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
+
+  <title>Civic Engagement Hub — The Principality of Aetheria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="./favicon.ico">
+</head>
+<body class="page-engage">
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="assets/images/digital-nation-logo.svg" alt="The Principality of Aetheria"/>
+        <span class="logo-text">AETHERIA</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <nav class="menu" id="site-menu" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="goals.html">Goals</a>
+        <a href="initiatives.html">Initiatives</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="charter.html">Charter</a>
+        <a href="citizenship.html">Citizenship</a>
+          <a href="engage.html">Engage</a>
+        <a href="recognition.html">Recognition</a>
+        <a href="tools.html">Tools</a>
+        <a href="passport.html">Passport</a>
+        <a href="economy.html">Economy</a>
+        <a href="symbols.html">Symbols</a>
+        <a href="consular.html">Consular</a>
+        <a href="contact.html">Contact</a>
+        <a href="engage.html">Engage</a>
+        <a class="button primary" href="engage.html">Engage</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page">
+      <div class="container">
+        <h1>Civic Engagement Hub</h1>
+        <p class="lead">Your gateway to participatory governance. Create petitions, submit feedback, track governance actions, and stay informed on civic activity across the Principality.</p>
+
+        <div class="civic-quick-links" aria-labelledby="quick-links-title">
+          <h2 id="quick-links-title" class="sr-only">Quick Links</h2>
+          <div class="quick-link-grid">
+            <a class="quick-link-card" href="tools.html#readiness">
+              <span class="quick-link-icon" aria-hidden="true">✓</span>
+              <h3>Readiness Self-Check</h3>
+              <p>Assess your readiness for citizenship and governance participation</p>
+            </a>
+            <a class="quick-link-card" href="tools.html#pathfinder">
+              <span class="quick-link-icon" aria-hidden="true">🧭</span>
+              <h3>Contribution Path Finder</h3>
+              <p>Find your contribution path based on interests and skills</p>
+            </a>
+            <a class="quick-link-card" href="dashboard.html">
+              <span class="quick-link-icon" aria-hidden="true">📊</span>
+              <h3>Public Dashboard</h3>
+              <p>View participation metrics, governance actions, and network status</p>
+            </a>
+            <a class="quick-link-card" href="charter.html">
+              <span class="quick-link-icon" aria-hidden="true">📜</span>
+              <h3>Charter & Governance</h3>
+              <p>Review the foundational documents governing civic participation</p>
+            </a>
+          </div>
+        </div>
+
+        <section class="civic-section" aria-labelledby="petitions-title">
+          <h2 id="petitions-title">Create a Petition</h2>
+          <p>Propose formal requests to the Assembly, Executive, or Ministries. Petitions meeting signature thresholds trigger formal review.</p>
+
+          <form id="petition-form" class="civic-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="petition-title">Petition Title <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="petition-title" name="title" required maxlength="120" placeholder="Concise, descriptive title">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="petition-description">Description <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="petition-description" name="description" required rows="5" maxlength="2000" placeholder="Explain the issue, proposed action, and expected outcome. Be specific and cite relevant charter articles or policies."></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="petition-target">Target Authority <span class="required" aria-hidden="true">*</span></label>
+                <select id="petition-target" name="target" required>
+                  <option value="">Select target authority</option>
+                  <option value="Assembly">Civic Assembly — Legislative & policy matters</option>
+                  <option value="Executive">President Hermes / Executive — Operational directives</option>
+                  <option value="Ministry">Specific Ministry — Domain-specific action</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="petition-goal">Signature Goal <span class="required" aria-hidden="true">*</span></label>
+                <input type="number" id="petition-goal" name="signatureGoal" required min="10" max="10000" value="100" step="10">
+              </div>
+
+              <div class="form-group">
+                <label for="petition-deadline">Deadline <span class="required" aria-hidden="true">*</span></label>
+                <input type="date" id="petition-deadline" name="deadline" required>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="button primary">Submit Petition</button>
+              <button type="reset" class="button">Clear Form</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="civic-section" aria-labelledby="feedback-title">
+          <h2 id="feedback-title">Submit Feedback or Issue</h2>
+          <p>Report platform issues, suggest improvements, or provide feedback on governance processes. Submissions are reviewed by the relevant team.</p>
+
+          <form id="feedback-form" class="civic-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="feedback-category">Category <span class="required" aria-hidden="true">*</span></label>
+                <select id="feedback-category" name="category" required>
+                  <option value="">Select category</option>
+                  <option value="platform">Platform & Infrastructure</option>
+                  <option value="governance">Governance & Process</option>
+                  <option value="identity">Identity & Citizenship</option>
+                  <option value="economy">Economy & Tokens</option>
+                  <option value="docs">Documentation & Communication</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="feedback-subject">Subject <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="feedback-subject" name="subject" required maxlength="100" placeholder="Brief summary of your feedback">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="feedback-title">Title <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="feedback-title" name="title" required maxlength="120" placeholder="Descriptive title for this feedback">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="feedback-description">Description <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="feedback-description" name="description" required rows="5" maxlength="3000" placeholder="Provide detailed feedback, steps to reproduce (for bugs), or suggestions. Include relevant context, screenshots links, or references."></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="feedback-contact">Contact (optional)</label>
+                <input type="email" id="feedback-contact" name="contact" placeholder="your@email.aetheria (for follow-up)" maxlength="255">
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="button primary">Submit Feedback</button>
+              <button type="reset" class="button">Clear Form</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="civic-section" aria-labelledby="activity-title">
+          <div class="section-header">
+            <h2 id="activity-title">Civic Activity Feed</h2>
+            <div class="activity-controls" id="civic-feed-filters" aria-label="Activity feed filters">
+              <div class="filter-group">
+                <label for="feed-filter-type" class="sr-only">Filter by type</label>
+                <select id="feed-filter-type" aria-label="Filter by type">
+                  <option value="all">All Types</option>
+                  <option value="petition">Petitions</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="governance">Governance Actions</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="feed-filter-status" class="sr-only">Filter by status</label>
+                <select id="feed-filter-status" aria-label="Filter by status">
+                  <option value="all">All Statuses</option>
+                  <option value="open">Open</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="complete">Complete</option>
+                  <option value="scheduled">Scheduled</option>
+                  <option value="closed">Closed</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="civic-feed-sort" class="sr-only">Sort by</label>
+                <select id="civic-feed-sort" aria-label="Sort by">
+                  <option value="date">Newest First</option>
+                  <option value="title">Title A–Z</option>
+                  <option value="status">Status</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-feed" id="civic-activity-feed" role="feed" aria-live="polite" aria-label="Civic activity feed">
+            <div class="activity-loading" aria-hidden="true">Loading activity feed…</div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div class="cityscape" aria-hidden="true"></div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <strong>THE PRINCIPALITY OF AETHERIA</strong>
+          <span class="footer-tagline">Sovereign by code</span>
+        </div>
+        <div class="footer-meta">
+          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
+          <span class="footer-status" aria-label="Public network status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Network Active
+          </span>
+          <span class="footer-year" data-year>2026</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="manifesto.html">Manifesto</a>
+          <a href="charter.html">Charter</a>
+          <a href="recognition.html">Recognition</a>
+          <a href="citizenship.html">Citizenship</a>
+          <a href="engage.html">Engage</a>
+          <a href="engage.html">Engage</a>
+        </nav>
+        <div class="footer-extras">
+          <a class="social-link" href="https://github.com" rel="noopener noreferrer" target="_blank" aria-label="GitHub repository">
+            <span aria-hidden="true">GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/engage.js"></script>
+</body>
+</html>
