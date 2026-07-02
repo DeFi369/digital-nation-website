@@ -1,0 +1,142 @@
+{
+  "cases": [
+    {
+      "caseNumber": "AETH-2026-001",
+      "title": "Citizen-203 v. Ministry of Infrastructure: Universal Compute Allocation Dispute",
+      "petitioner": "citizen-203@aetheria.network",
+      "respondent": "Ministry of Infrastructure",
+      "status": "Decided",
+      "filingDate": "2026-05-15T10:00:00Z",
+      "decisionDate": "2026-06-20T14:00:00Z",
+      "ruling": "Petitioner granted partial relief. Ministry ordered to implement transparent allocation algorithm within 60 days.",
+      "rulingType": "Partial Relief",
+      "facts": "Petitioner citizen-203@aetheria.network alleged that the Ministry of Infrastructure's compute allocation system for the Universal Basic Compute pilot program (pre-Bill-001) operated opaquely, with allocations varying by up to 40% between similarly situated citizens without published criteria. Petitioner requested declaratory judgment that the allocation process violated Charter Article 7 (Equal Protection) and an injunction requiring publication of allocation criteria.",
+      "legalQuestions": [
+        "Does the Ministry's compute allocation process constitute state action subject to Charter Article 7?",
+        "Whether unpublished allocation criteria violate the principle of equal protection under the Digital Sovereignty Charter?",
+        "What remedy is appropriate for opaque administrative allocation of public resources?"
+      ],
+      "arguments": {
+        "petitioner": "The compute allocation system is a public benefit program administered by a Ministry. Charter Article 7 guarantees equal protection of the laws. The 40% variance without published criteria creates arbitrary distinctions between citizens. The Ministry must publish clear, objective allocation criteria and apply them consistently.",
+        "respondent": "The pilot program used a dynamic allocation algorithm that adjusts for network load, geographic latency, and historical usage to optimize network efficiency. Publishing the exact algorithm would enable gaming. The variance reflects technical optimization, not discrimination. The Ministry commits to publishing high-level allocation principles."
+      },
+      "opinion": "The Court holds that the Ministry's compute allocation constitutes state action subject to Charter Article 7. While the Ministry has legitimate interests in network optimization, the complete opacity of the allocation criteria fails the rationality review required for public benefit distributions. The 40% variance without any published standard is incompatible with equal protection.\n\nThe Court grants declaratory relief: the allocation process must operate under published criteria. The Court orders the Ministry to:\n(1) Publish high-level allocation principles (network load, geographic fairness, anti-abuse) within 30 days;\n(2) Implement a transparent allocation algorithm with audit trail within 60 days;\n(3) Submit quarterly compliance reports to the Assembly Committee on Digital Rights.\n\nThe Court denies the injunction to halt the pilot program, finding that the public interest in continued operation outweighs the harm pending remediation.\n\nJustice Vortex, writing for the majority. Justice Cipher concurring. Justice Node dissenting in part (would have granted full injunction).",
+      "precedentTags": ["Equal Protection", "Administrative Transparency", "Public Benefits", "Charter Article 7"]
+    },
+    {
+      "caseNumber": "AETH-2026-002",
+      "title": "Ministry of Security v. Citizen-312: Node Operator License Revocation Appeal",
+      "petitioner": "Ministry of Security",
+      "respondent": "citizen-312@aetheria.network",
+      "status": "Decided",
+      "filingDate": "2026-04-22T09:00:00Z",
+      "decisionDate": "2026-05-30T11:00:00Z",
+      "ruling": "Revocation upheld. Ministry acted within statutory authority. Due process satisfied by pre-revocation hearing.",
+      "rulingType": "Affirmed",
+      "facts": "The Ministry of Security revoked citizen-312's node operator license after detecting repeated consensus violations (double-signing) on the public network. The Ministry cited Protocol Specification Section 4.3 (Validator Conduct) and the Node Operator Agreement Section 7 (Termination for Cause). Citizen-312 appealed, arguing the violations were caused by a third-party client bug and that the Ministry failed to provide adequate notice before revocation.",
+      "legalQuestions": [
+        "Whether the Ministry's revocation authority under the Node Operator Agreement requires a showing of intent or gross negligence?",
+        "Whether the pre-revocation hearing satisfied due process requirements under Charter Article 5?",
+        "Whether third-party software defects constitute a valid defense to consensus violations?"
+      ],
+      "arguments": {
+        "petitioner": "The Node Operator Agreement imposes strict liability for consensus violations. Section 7 permits termination for cause, defined as any material breach of the Protocol Specification. The double-signing events are objective, on-chain facts. The Ministry provided a 14-day notice and hearing, exceeding the Agreement's 7-day requirement. Intent is not an element of the offense.",
+        "respondent": "The double-signing resulted from a known bug in the reference client v2.1.3, acknowledged by the core developers. The Ministry was aware of the bug but revoked licenses anyway. This violates fundamental fairness. Due process requires notice of the specific charges and a meaningful opportunity to rebut — the hearing was perfunctory."
+      },
+      "opinion": "The Court affirms the revocation. The Node Operator Agreement unambiguously imposes strict liability for consensus violations. Section 4.3 of the Protocol Specification establishes that validators are responsible for the correctness of their signatures regardless of software provenance. This is a deliberate policy choice: the network cannot distinguish between malicious and buggy behavior on-chain.\n\nDue process was satisfied. The Ministry provided 14 days' notice (double the contractual minimum), a written statement of charges with on-chain evidence, and a hearing before a neutral arbiter. Respondent was represented and presented the client bug defense. The arbiter found the defense insufficient as a matter of contract interpretation.\n\nThe Court notes that the reference client bug has been patched in v2.1.4 and encourages affected operators to reapply after the mandatory 90-day cooling period.\n\nJustice Cipher, writing for the unanimous Court.",
+      "precedentTags": ["Strict Liability", "Due Process", "Node Operator Agreement", "Protocol Specification", "Charter Article 5"]
+    },
+    {
+      "caseNumber": "AETH-2026-003",
+      "title": "Citizen-445 v. Treasury: Quarterly Audit Mandate Mandamus",
+      "petitioner": "citizen-445@aetheria.network",
+      "respondent": "Treasury",
+      "status": "Pending",
+      "filingDate": "2026-06-12T14:00:00Z",
+      "decisionDate": null,
+      "ruling": null,
+      "rulingType": null,
+      "facts": "Petitioner seeks a writ of mandamus compelling the Treasury to comply with the Treasury Transparency & Audit Act (Bill-005), which was defeated in the Assembly but which Petitioner argues reflects an existing obligation under Charter Article 9 (Fiscal Responsibility). Petitioner alleges the Treasury has not published a full audit since Q4 2025 and the real-time dashboard promised in infra-q2-2026 remains undeployed.",
+      "legalQuestions": [
+        "Whether Charter Article 9 creates a self-executing right to quarterly audits independent of legislation?",
+        "Whether mandamus lies to compel executive action in the absence of a clear statutory duty?",
+        "Whether the Treasury's current reporting (annual summary, quarterly highlights) satisfies Charter Article 9?"
+      ],
+      "arguments": {
+        "petitioner": "Charter Article 9 states: 'The Treasury shall be subject to independent audit no less than quarterly.' This is self-executing. The defeated Bill-005 merely codified existing Charter obligations. The Treasury's failure to audit for two quarters violates the Charter directly. Mandamus is appropriate because the duty is clear, non-discretionary, and the Petitioner has no other adequate remedy.",
+        "respondent": "Charter Article 9 is aspirational and requires implementing legislation. The Treasury publishes quarterly financial highlights and an annual audited statement, which exceeds the practice of most traditional sovereigns. The real-time dashboard is in active development (tracked in infra-q2-2026). Mandamus cannot create duties that the Charter delegates to the Assembly."
+      },
+      "opinion": null,
+      "precedentTags": ["Fiscal Responsibility", "Mandamus", "Charter Article 9", "Self-Executing Provisions"]
+    },
+    {
+      "caseNumber": "AETH-2026-004",
+      "title": "Citizen-777 v. Ministry of Outreach: Regional Ambassador Eligibility Challenge",
+      "petitioner": "citizen-777@aetheria.network",
+      "respondent": "Ministry of Outreach",
+      "status": "Decided",
+      "filingDate": "2026-06-18T16:00:00Z",
+      "decisionDate": "2026-07-01T10:00:00Z",
+      "ruling": "Petitioner granted relief. Ministry must include Oceania in Ambassador Program eligibility per Amendment 003 to Bill-003.",
+      "rulingType": "Granted",
+      "facts": "Following the enactment of the Regional Ambassador Program Act (Bill-003) with Amendment 003 adding Oceania as a target region, citizen-777@aetheria.network (resident in Oceania) applied for an Ambassador position. The Ministry rejected the application, stating the program guidelines had not been updated to reflect the Amendment and that Oceania applications would be accepted in 'Phase 2' (Q4 2026).",
+      "legalQuestions": [
+        "Whether an Amendment to an Act takes effect immediately upon enactment or requires implementing regulations?",
+        "Whether the Ministry may delay implementation of a statutory mandate absent express legislative authorization?",
+        "What remedy is appropriate for wrongful exclusion from a statutory benefit program?"
+      ],
+      "arguments": {
+        "petitioner": "Amendment 003 was adopted by the Assembly and signed by the President. It became law on June 15, 2026. The Ministry has no authority to delay implementation. The 'Phase 2' timeline is an unlawful administrative suspension of a statutory right.",
+        "respondent": "The Ministry requires time to update program guidelines, establish regional support infrastructure, and recruit local coordinators. The Amendment did not appropriate additional funds for Oceania. A phased rollout is reasonable administration, not suspension."
+      },
+      "opinion": "The Court grants the petition. When the Assembly adopts an Amendment and the President signs it, the law is changed. The Ministry has no dispensing power to suspend statutory mandates. The absence of specific appropriations for Oceania does not authorize non-implementation; the Ambassador Fund (50,000 AETH annually) is a lump sum for the entire program.\n\nThe Court orders the Ministry to:\n(1) Accept and process Oceania applications immediately;\n(2) Update program guidelines within 14 days;\n(3) Report compliance to the Assembly Committee on Outreach within 30 days.\n\nThe Court declines to order specific funding allocation, leaving budget execution to the Ministry's discretion within the statutory total.\n\nJustice Node, writing for the majority. Justice Vortex concurring (emphasizing separation of powers).",
+      "precedentTags": ["Statutory Implementation", "Administrative Delay", "Amendment Effectiveness", "Separation of Powers"]
+    },
+    {
+      "caseNumber": "AETH-2026-005",
+      "title": "Executive Directive Exec-2026-014: Emergency Node Security Patch - Judicial Review",
+      "petitioner": "Citizen-888@aetheria.network (Node Operator Collective)",
+      "respondent": "President Hermes / Executive",
+      "status": "Under Review",
+      "filingDate": "2026-07-01T12:00:00Z",
+      "decisionDate": null,
+      "ruling": null,
+      "rulingType": null,
+      "facts": "President Hermes issued Executive Directive Exec-2026-014 mandating deployment of a security patch for CVE-2026-XXXX in the consensus layer by July 5, 2026. The Node Operator Collective petitioned for judicial review, arguing the Directive exceeds executive authority under Charter Article 6 (Executive Power), which limits emergency directives to 'imminent threats to network integrity' and requires Assembly ratification within 14 days. The Collective argues the CVE was disclosed 60 days ago and a patch has been available for 30 days — not 'imminent'.",
+      "legalQuestions": [
+        "Whether a 60-day-old vulnerability with a 30-day-old patch constitutes an 'imminent threat' under Charter Article 6?",
+        "Whether the Executive may bypass Assembly ratification by labeling non-imminent threats as emergencies?",
+        "What standard of review applies to executive emergency determinations?"
+      ],
+      "arguments": {
+        "petitioner": "The CVE was publicly disclosed on May 1, 2026. The patch was released May 15. The Directive was issued July 1. This is not 'imminent' — it is routine maintenance. The Executive is using emergency powers to circumvent the Assembly's legislative role. Charter Article 6 requires 'imminent threat' and Assembly ratification within 14 days. Neither condition is met.",
+        "respondent": "While the CVE is not new, active exploitation was detected on the public network on June 28. The threat became imminent at that point. The 14-day ratification clock starts from the Directive date (July 1). The Assembly session #13 (scheduled July 5) will consider ratification. The Executive acted within authority to protect network integrity."
+      },
+      "opinion": null,
+      "precedentTags": ["Executive Power", "Emergency Powers", "Charter Article 6", "Judicial Review of Executive Action"]
+    },
+    {
+      "caseNumber": "AETH-2026-006",
+      "title": "Citizen-156 v. Electoral Commission: Referendum Timing Challenge",
+      "petitioner": "citizen-156@aetheria.network",
+      "respondent": "Electoral Commission",
+      "status": "Decided",
+      "filingDate": "2026-06-26T10:00:00Z",
+      "decisionDate": "2026-07-03T14:00:00Z",
+      "ruling": "Challenge dismissed. Referendum schedule complies with Charter Article 8 and Referendum Act.",
+      "rulingType": "Dismissed",
+      "facts": "Petitioner challenged the referendum schedule for the Digital Sovereignty Charter Amendment (Bill-004), arguing the 10-day voting window (July 1-10) is insufficient for informed deliberation on a Charter amendment affecting cross-network citizenship. Petitioner requested an extension to 30 days.",
+      "legalQuestions": [
+        "Whether the 10-day voting window for Charter amendments satisfies Charter Article 8's requirement of 'adequate time for public deliberation'?",
+        "Whether the Court may impose a specific voting duration absent statutory minimum?",
+        "What constitutes 'adequate time' in a digital polity with instant communication?"
+      ],
+      "arguments": {
+        "petitioner": "Charter amendments are the highest law. Cross-network citizenship recognition fundamentally alters the polity's composition. Ten days is insufficient for citizens to understand the IPRP framework, assess reciprocity risks, and deliberate. The Referendum Act sets no minimum; the Court should read one in.",
+        "respondent": "The Referendum Act grants the Electoral Commission discretion to set voting periods. The Commission published the amendment text, explanatory note, and pro/con statements on June 25 — 15 days before voting opens. Digital communication enables rapid deliberation. The 10-day window is consistent with past referendums."
+      },
+      "opinion": "The Court dismisses the challenge. Charter Article 8 requires 'adequate time for public deliberation' but does not specify a minimum. The Referendum Act delegates scheduling to the Electoral Commission. The Commission provided 15 days of pre-voting access to materials and a 10-day voting window — 25 days total. In a digital polity where information propagates instantly and the Assembly debate was public and archived, this satisfies 'adequate time.'\n\nThe Court notes that the Petitioner's policy preference for a longer window is a matter for the Assembly to address through legislation, not judicial imposition.\n\nJustice Vortex, writing for the Court. Justice Cipher concurring in judgment only.",
+      "precedentTags": ["Referendum Process", "Charter Article 8", "Electoral Commission Discretion", "Digital Deliberation"]
+    }
+  ]
+}

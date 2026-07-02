@@ -16,9 +16,17 @@
 
     const isEngagePage = document.body.classList.contains('page-engage') || window.location.pathname.includes('engage.html');
     const isDashboardPage = document.body.classList.contains('page-dashboard') || window.location.pathname.includes('dashboard.html');
+    const isAssemblyPage = document.body.classList.contains('page-assembly') || window.location.pathname.includes('assembly.html');
+    const isCourtPage = document.body.classList.contains('page-court') || window.location.pathname.includes('court.html');
 
     if (isEngagePage || isDashboardPage) {
       loadEngageScript();
+    }
+    if (isAssemblyPage) {
+      loadAssemblyScript();
+    }
+    if (isCourtPage) {
+      loadCourtScript();
     }
   }
 
@@ -26,6 +34,22 @@
     if (document.querySelector('script[src="assets/js/engage.js"]')) return;
     const script = document.createElement('script');
     script.src = 'assets/js/engage.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadAssemblyScript() {
+    if (document.querySelector('script[src="assets/js/assembly.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/assembly.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadCourtScript() {
+    if (document.querySelector('script[src="assets/js/court.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/court.js';
     script.defer = true;
     document.body.appendChild(script);
   }

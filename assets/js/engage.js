@@ -101,6 +101,7 @@
 
     const html = filtered.map(item => renderActivityItem(item)).join('');
     container.innerHTML = html;
+    attachEscalationListeners();
   }
 
   function renderActivityItem(item) {
@@ -144,6 +145,16 @@
           <h3 class="activity-title">${escapeHtml(item.title)}</h3>
           ${item.description ? `<p class="activity-description">${escapeHtml(item.description)}</p>` : ''}
           ${metaHtml}
+          ${item._type === 'petition' && item.status === 'open' ? `
+          <div class="activity-actions">
+            <button class="button secondary escalate-petition" data-petition-id="${escapeHtml(item.id)}" data-petition-title="${escapeHtml(item.title)}">Escalate to Assembly</button>
+          </div>
+          ` : ''}
+          ${item._type === 'feedback' && item.status === 'open' ? `
+          <div class="activity-actions">
+            <button class="button secondary escalate-feedback" data-feedback-id="${escapeHtml(item.id)}" data-feedback-title="${escapeHtml(item.title)}">Request Judicial Review</button>
+          </div>
+          ` : ''}
         </div>
         <div class="activity-sidebar">
           <span class="activity-status ${statusClass}">${escapeHtml(item.status.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()))}</span>
@@ -151,6 +162,30 @@
         </div>
       </article>
     `;
+  }
+
+  function attachEscalationListeners() {
+    document.querySelectorAll('.escalate-petition').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const petitionId = e.currentTarget.dataset.petitionId;
+        const petitionTitle = e.currentTarget.dataset.petitionTitle;
+        if (confirm(`Escalate petition "${petitionTitle}" to the Assembly for consideration?`)) {
+          showToast(`Petition "${petitionTitle}" escalated to Assembly. It will appear in the Bill Tracker for debate.`);
+          // In a full implementation, this would create a draft bill in assembly.json
+        }
+      });
+    });
+
+    document.querySelectorAll('.escalate-feedback').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const feedbackId = e.currentTarget.dataset.feedbackId;
+        const feedbackTitle = e.currentTarget.dataset.feedbackTitle;
+        if (confirm(`Request judicial review for feedback "${feedbackTitle}"?`)) {
+          showToast(`Judicial review requested for "${feedbackTitle}". The Court will evaluate the submission.`);
+          // In a full implementation, this would create a case in court.json
+        }
+      });
+    });
   }
 
   function initFeedFilters() {
@@ -296,7 +331,7 @@
       .replace(/</g, '<')
       .replace(/>/g, '>')
       .replace(/"/g, '"')
-      .replace(/'/g, ''');
+      .replace(/'/g, "\\'");
   }
 
   window.CivicEngagement = {

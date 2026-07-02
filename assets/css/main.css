@@ -1688,12 +1688,636 @@ a {
   
   .form-actions .button {
     width: 100%;
-    justify-content: center;
-  }
-  
-  .civic-toast {
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-  }
-}
+        justify-content: center;
+      }
+ 
+      .civic-toast {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    /* ── Assembly & Court Styles ── */
+    .bill-tracker-header {
+      margin-bottom: 24px;
+    }
+
+    .tracker-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .tracker-stats .stat {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #232a34;
+      background: rgba(122,167,255,.06);
+      color: #9db8ff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .tracker-stats .stat strong {
+      color: #e6e8eb;
+    }
+
+    .citizen-notice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #2d3644;
+      background: rgba(122,167,255,.08);
+      color: #9db8ff;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .citizen-notice.ready {
+      border-color: rgba(34,197,94,.4);
+      background: rgba(34,197,94,.08);
+      color: #86efac;
+    }
+
+    .notice-icon {
+      font-size: 16px;
+    }
+
+    .bill-table,
+    .case-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .bill-table th,
+    .case-table th {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 2px solid #232a34;
+      color: var(--color-muted);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .bill-table td,
+    .case-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #1f2630;
+      vertical-align: middle;
+    }
+
+    .bill-table tbody tr:hover,
+    .case-table tbody tr:hover {
+      background: rgba(122,167,255,.03);
+    }
+
+    .bill-title-cell strong {
+      display: block;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+
+    .bill-id {
+      font-size: 11px;
+      color: var(--color-muted);
+      font-family: ui-monospace, monospace;
+    }
+
+    .vote-tally {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .vote-yeas { color: #86efac; font-weight: 600; }
+    .vote-nays { color: #fca5a5; font-weight: 600; }
+    .vote-abstains { color: #fde047; font-weight: 600; }
+    .vote-total { color: var(--color-muted); font-size: 12px; }
+
+    .timeline-cell {
+      min-width: 160px;
+    }
+
+    .timeline-date {
+      display: block;
+      font-weight: 600;
+      color: var(--color-text);
+      font-size: 13px;
+    }
+
+    .timeline-event {
+      display: block;
+      font-size: 12px;
+      color: var(--color-muted);
+    }
+
+    .vote-buttons {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .vote-btn {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .voted-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(34,197,94,.12);
+      color: #86efac;
+      border: 1px solid rgba(34,197,94,.3);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .bill-modal-header,
+    .case-modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .bill-modal-header h2,
+    .case-modal-header h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .bill-modal-meta,
+    .case-modal-meta {
+      margin-bottom: 24px;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #1f2630;
+      background: rgba(122,167,255,.04);
+    }
+
+    .bill-modal-meta dl,
+    .case-modal-meta dl {
+      dl {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 16px;
+      margin: 0;
+    }
+
+    .bill-modal-meta dt,
+    .case-modal-meta dt {
+      color: var(--color-muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .bill-modal-meta dd,
+    .case-modal-meta dd {
+      margin: 0;
+      color: var(--color-text);
+    }
+
+    .bill-modal-section {
+      margin-bottom: 24px;
+    }
+
+    .bill-modal-section h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .vote-tally-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .vote-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #141921;
+      border: 1px solid #232a34;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .vote-bar-fill {
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    .vote-bar-yea { background: linear-gradient(90deg, rgba(122,167,255,.75), rgba(34,197,94,.75)); }
+    .vote-bar-nay { background: linear-gradient(90deg, rgba(239,68,68,.75), rgba(192,132,252,.75)); }
+    .vote-bar-abstain { background: linear-gradient(90deg, rgba(251,191,36,.75), rgba(250,204,21,.75)); }
+
+    .vote-counts {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    .vote-count.yea { color: #86efac; }
+    .vote-count.nay { color: #fca5a5; }
+    .vote-count.abstain { color: #fde047; }
+
+    .modal-vote-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .voted-notice {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(34,197,94,.12);
+      color: #86efac;
+      border: 1px solid rgba(34,197,94,.3);
+    }
+
+    .bill-full-text,
+    .case-facts,
+    .case-opinion {
+      background: #0a0c11;
+      border: 1px solid #1f2630;
+      border-radius: 10px;
+      padding: 16px;
+      overflow-x: auto;
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      color: var(--color-text);
+    }
+
+    .amendments-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .amendment-card {
+      border: 1px solid #1f2630;
+      border-radius: 12px;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    }
+
+    .amendment-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .amendment-header h4 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .amendment-meta {
+      margin: 8px 0;
+      font-size: 12px;
+      color: var(--color-muted);
+    }
+
+    .amendment-text {
+      margin: 8px 0 0;
+      color: var(--color-text);
+      line-height: 1.55;
+    }
+
+    .amendment-votes {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+
+    .debate-log {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .debate-entry {
+      border: 1px solid #1f2630;
+      border-radius: 10px;
+      padding: 12px 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    }
+
+    .debate-entry[data-type="speech"] { border-left: 3px solid #7aa7ff; }
+    .debate-entry[data-type="procedural"] { border-left: 3px solid #c084fc; }
+    .debate-entry[data-type="vote"] { border-left: 3px solid #2dd36f; }
+
+    .debate-entry header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .debate-speaker {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .debate-time {
+      font-size: 12px;
+      color: var(--color-muted);
+    }
+
+    .debate-type {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #9db8ff;
+      background: rgba(122,167,255,.1);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .debate-entry p {
+      margin: 0;
+      color: var(--color-text);
+      line-height: 1.55;
+    }
+
+    .vote-history-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .vote-history-table th {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 2px solid #232a34;
+      color: var(--color-muted);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .vote-history-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #1f2630;
+    }
+
+    .assembly-toast,
+    .court-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(34,197,94,.15), rgba(34,197,94,.05));
+      border: 1px solid rgba(34,197,94,.3);
+      color: #86efac;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform .3s ease, opacity .3s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    }
+
+    .assembly-toast.show,
+    .court-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 760px) {
+      .bill-table th:nth-child(3),
+      .bill-table td:nth-child(3),
+      .bill-table th:nth-child(6),
+      .bill-table td:nth-child(6),
+      .case-table th:nth-child(5),
+      .case-table td:nth-child(5) {
+        display: none;
+      }
+      .bill-modal-meta dl,
+      .case-modal-meta dl {
+        grid-template-columns: 1fr;
+      }
+      .assembly-toast,
+      .court-toast {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    /* Court specific styles */
+    .docket-header {
+      margin-bottom: 20px;
+    }
+
+    .docket-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .docket-stats .stat {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #232a34;
+      background: rgba(122,167,255,.06);
+      color: #9db8ff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .docket-stats .stat strong {
+      color: #e6e8eb;
+    }
+
+    .case-number-cell strong {
+      font-family: ui-monospace, monospace;
+    }
+
+    .case-title-cell {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .case-parties-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .petitioner { font-weight: 600; }
+    .respondent { color: var(--color-muted); }
+    .divider { color: #2d3644; }
+
+    .ruling-type {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .ruling-type { background: rgba(122,167,255,.12); color: #9db8ff; border: 1px solid rgba(122,167,255,.3); }
+    .ruling-type:contains("Granted") { background: rgba(34,197,94,.12); color: #86efac; border-color: rgba(34,197,94,.3); }
+    .ruling-type:contains("Affirmed") { background: rgba(34,197,94,.12); color: #86efac; border-color: rgba(34,197,94,.3); }
+    .ruling-type:contains("Partial") { background: rgba(251,191,36,.12); color: #fde047; border-color: rgba(251,191,36,.3); }
+    .ruling-type:contains("Dismissed") { background: rgba(239,68,68,.12); color: #fca5a5; border-color: rgba(239,68,68,.3); }
+
+    .case-modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .case-modal-meta dl {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 16px;
+      margin: 0;
+    }
+
+    .case-modal-section {
+      margin-bottom: 24px;
+    }
+
+    .case-modal-section h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .case-facts,
+    .case-opinion {
+      background: #0a0c11;
+      border: 1px solid #1f2630;
+      border-radius: 10px;
+      padding: 16px;
+      overflow-x: auto;
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      color: var(--color-text);
+    }
+
+    .legal-questions {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    .legal-questions li { margin-bottom: 8px; }
+
+    .arguments-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .argument-panel {
+      border: 1px solid #1f2630;
+      border-radius: 12px;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    }
+
+    .argument-panel.petitioner { border-left: 3px solid #7aa7ff; }
+    .argument-panel.respondent { border-left: 3px solid #c084fc; }
+
+    .argument-panel h4 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .argument-panel p {
+      margin: 0;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    .precedent-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .precedent-tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #232a34;
+      background: rgba(192,132,252,.06);
+      color: #d8b4fe;
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    #precedent-search-btn,
+    #precedent-clear-btn {
+      margin-right: 8px;
+    }
+
+    .precedent-results {
+      margin-top: 24px;
+    }
+
+    .precedent-results .activity-item {
+      border-left: 3px solid #c084fc;
+    }
+
+    @media (max-width: 760px) {
+      .arguments-grid {
+        grid-template-columns: 1fr;
+      }
+      .case-modal-meta dl {
+        grid-template-columns: 1fr;
+      }
+      .filter-group {
+        flex: 1;
+      }
+      .filter-group select {
+        flex: 1;
+      }
+      .form-actions {
+        flex-direction: column;
+      }
+      .form-actions .button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
