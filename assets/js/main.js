@@ -120,6 +120,96 @@
     animateCounters();
     renderSimpleBarChart();
     initActivityFilter();
+    initDashboardCivicFeed();
+  }
+
+  function initDashboardCivicFeed() {
+    const container = document.getElementById('dashboard-activity-feed');
+    if (!container) return;
+
+    // Try to load from civic data
+    fetch('assets/data/civic.json')
+      .then(response => response.json())
+      .then(data => {
+        renderDashboardActivityFeed(container, data);
+      })
+      .catch(err => {
+        console.warn('Failed to load civic.json for dashboard:', err);
+        container.innerHTML = '<p class="activity-empty">Activity feed unavailable.</p>';
+      });
+  }
+
+  function renderDashboardActivityFeed(container, data) {
+    const items = [];
+    
+    if (data.petitions) {
+      data.petitions.forEach(p => items.push({ ...p, _type: 'petition', _sortDate: p.timestamp }));
+    }
+    if (data.feedback) {
+      data.feedback.forEach(f => items.push({ ...f, _type: 'feedback', _sortDate: f.timestamp }));
+    }
+    if (data.governanceActions) {
+      data.governanceActions.forEach(g => items.push({ ...g, _type: 'governance', _sortDate: g.timestamp }));
+    }
+
+    if (!items.length) {
+      container.innerHTML = '<p class="activity-empty">No civic activity yet.</p>';
+      return;
+    }
+
+    items.sort((a, b) => new Date(b._sortDate) - new Date(a._sortDate));
+    const limited = items.slice(0, 10);
+
+    const html = limited.map(item => renderDashboardActivityItem(item)).join('');
+    container.innerHTML = html;
+  }
+
+  function renderDashboardActivityItem(item) {
+    const date = new Date(item._sortDate);
+    const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    const formattedTime = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+    const statusClass = 'status-' + item.status;
+    const typeLabel = item._type === 'petition' ? 'Petition' : item._type === 'feedback' ? 'Feedback' : 'Governance';
+
+    let metaHtml = '';
+    if (item._type === 'petition') {
+      const progress = item.signatureGoal ? Math.min(100, Math.round((item.currentSignatures / item.signatureGoal) * 100)) : 0;
+      metaHtml = `
+        <div class="activity-meta">
+          <span class="activity-type">${escapeHtml(typeLabel)}</span>
+          <span class="activity-divider" aria-hidden="true">·</span>
+          <span>Target: ${escapeHtml(item.target)}</span>
+          <span class="activity-divider" aria-hidden="true">·</span>
+          <span>${item.currentSignatures}/${item.signatureGoal} signatures (${progress}%)</span>
+        </div>`;
+    } else if (item._type === 'feedback') {
+      metaHtml = `
+        <div class="activity-meta">
+          <span class="activity-type">${escapeHtml(typeLabel)}</span>
+          <span class="activity-divider" aria-hidden="true">·</span>
+          <span>Category: ${escapeHtml(item.category)}</span>
+          ${item.subject ? `<span class="activity-divider" aria-hidden="true">·</span><span>${escapeHtml(item.subject)}</span>` : ''}
+        </div>`;
+    } else {
+      metaHtml = `
+        <div class="activity-meta">
+          <span class="activity-type">${escapeHtml(typeLabel)}</span>
+          ${item.metadata?.session ? `<span class="activity-divider" aria-hidden="true">·</span><span>${escapeHtml(item.metadata.session)}</span>` : ''}
+          ${item.metadata?.ministry ? `<span class="activity-divider" aria-hidden="true">·</span><span>${escapeHtml(item.metadata.ministry)}</span>` : ''}
+          ${item.metadata?.directiveId ? `<span class="activity-divider" aria-hidden="true">·</span><span>${escapeHtml(item.metadata.directiveId)}</span>` : ''}
+        </div>`;
+    }
+
+    return `
+      <div class="activity-item activity-${item._type}" role="listitem" data-id="${escapeHtml(item.id)}" data-type="${item._type}" data-status="${item.status}">
+        <div>
+          <div class="activity-label">${escapeHtml(item.title)}</div>
+          ${metaHtml}
+        </div>
+        <div class="activity-state ${statusClass}">${escapeHtml(item.status.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()))}</div>
+      </div>
+    `;
   }
   function animateCounters() {
     var counters = document.querySelectorAll('.metric-value[data-count-to]');

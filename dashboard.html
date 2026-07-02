@@ -44,7 +44,7 @@
         <a href="manifesto.html">Manifesto</a>
         <a href="charter.html">Charter</a>
         <a href="citizenship.html">Citizenship</a>
-          <a href="engage.html">Engage</a>
+        <a href="engage.html">Engage</a>
         <a href="recognition.html">Recognition</a>
         <a href="tools.html">Tools</a>
         <a href="passport.html">Passport</a>
@@ -52,7 +52,6 @@
         <a href="symbols.html">Symbols</a>
         <a href="consular.html">Consular</a>
         <a href="contact.html">Contact</a>
-        <a href="engage.html">Engage</a>
         <a class="button primary" href="citizenship.html">Join</a>
       </nav>
     </div>
@@ -114,46 +113,19 @@
           </div>
         </div>
 
-        <h2>Citizen &amp; Governance Activity</h2>
-        <div class="activity-actions">
-          <input type="search" id="activity-filter" placeholder="Filter activity…" autocomplete="off" aria-label="Filter activity"/>
-          <div class="activity-meta-chips" aria-label="Status filters">
-            <button class="pill" type="button" data-filter="all" aria-pressed="true">All</button>
-            <button class="pill" type="button" data-filter="open" aria-pressed="false">Open</button>
-            <button class="pill" type="button" data-filter="complete" aria-pressed="false">Complete</button>
-            <button class="pill" type="button" data-filter="scheduled" aria-pressed="false">Scheduled</button>
-          </div>
-        </div>
-        <div class="activity-list" role="list">
-          <div class="activity-item" role="listitem">
-            <div>
-              <div class="activity-label">Civic Review</div>
-              <div class="activity-meta">Charter alignment check · Open</div>
-            </div>
-            <div class="activity-state">Open</div>
-          </div>
-          <div class="activity-item" role="listitem">
-            <div>
-              <div class="activity-label">Node Report</div>
-              <div class="activity-meta">Infrastructure availability report · Complete</div>
-            </div>
-            <div class="activity-state">Complete</div>
-          </div>
-          <div class="activity-item" role="listitem">
-            <div>
-              <div class="activity-label">Contributor Review</div>
-              <div class="activity-meta">Participation-cycle audit · Scheduled</div>
-            </div>
-            <div class="activity-state">Scheduled</div>
-          </div>
-          <div class="activity-item" role="listitem">
-            <div>
-              <div class="activity-label">Protocol Update</div>
-              <div class="activity-meta">Spec revision published · Complete</div>
-            </div>
-            <div class="activity-state">Complete</div>
-          </div>
-        </div>
+        <h2>Citizen & Governance Activity</h2>
+                <div class="activity-actions">
+                  <input type="search" id="activity-filter" placeholder="Filter activity..." autocomplete="off" aria-label="Filter activity"/>
+                  <div class="activity-meta-chips" aria-label="Status filters">
+                    <button class="pill" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="pill" type="button" data-filter="open" aria-pressed="false">Open</button>
+                    <button class="pill" type="button" data-filter="complete" aria-pressed="false">Complete</button>
+                    <button class="pill" type="button" data-filter="scheduled" aria-pressed="false">Scheduled</button>
+                  </div>
+                </div>
+                <div class="activity-list" role="list" id="dashboard-activity-feed">
+                  <div class="activity-loading" aria-hidden="true">Loading activity feed...</div>
+                </div>
 
         <aside class="legal-block" aria-labelledby="dashboard-legal">
           <h2 id="dashboard-legal">Legal &amp; Policy Notice</h2>
