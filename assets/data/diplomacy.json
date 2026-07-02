@@ -1,0 +1,84 @@
+{
+  "generated": "2026-07-02",
+  "count": 4,
+  "entries": {
+    "treaties": [
+      {
+        "id": "DIP-TRE-01",
+        "title": "Mutual Recognition Accord —网络共和国",
+        "party": "Network Republic",
+        "status": "Ratified",
+        "type": "Bilateral",
+        "effectiveDate": "2026-03-14",
+        "expiryDate": "2031-03-14",
+        "summary": "Establishes mutual recognition of citizen credentials, shared anti-fraud measures, and consular referral channels."
+      },
+      {
+        "id": "DIP-TRE-02",
+        "title": "Interoperability & Data-Sovereignty Pact",
+        "party": "Nordic Digital Alliance",
+        "status": "In Review",
+        "type": "Multilateral",
+        "effectiveDate": "2026-08-01",
+        "expiryDate": "2032-08-01",
+        "summary": "Defines data-residency requirements, cross-border incident reporting, and standard API surface definitions."
+      },
+      {
+        "id": "DIP-TRE-03",
+        "title": "Consular Cooperation Agreement",
+        "party": "Republic of Solstice Islands",
+        "status": "Signed",
+        "type": "Bilateral",
+        "effectiveDate": "2026-05-19",
+        "expiryDate": "2029-05-19",
+        "summary": "Enables honorary consular officers, document authentication workflows, and citizen-support call routing."
+      },
+      {
+        "id": "DIP-TRE-04",
+        "title": "Observer Status — Digital Standards Consortium",
+        "party": "Digital Standards Consortium",
+        "status": "Active",
+        "type": "Observer",
+        "effectiveDate": "2026-01-01",
+        "expiryDate": "PerpetualAnnualReview",
+        "summary": "Grants AETHERIA observer rights in standards proceedings, with voting rights on technical amendments."
+      },
+      {
+        "id": "DIP-TRE-05",
+        "title": "Passport Reciprocity Notice — Micronation Fellowship",
+        "party": "Micronation Fellowship",
+        "status": "Ratified",
+        "type": "Multilateral",
+        "effectiveDate": "2026-04-22",
+        "expiryDate": "2028-04-22",
+        "summary": "Recommends favorable treatment for AETHERIA passport holders; no binding visa-waiver obligation."
+      }
+    ],
+    "multilateral": [
+      {
+        "id": "DIP-MLT-01",
+        "title": "Digital States Caucus — UN CSW",
+        "status": "Active",
+        "participants": "12 polities",
+        "topic": "Digital-state participation in UN civil-society mechanisms",
+        "lastMeeting": "2026-05-30"
+      },
+      {
+        "id": "DIP-MLT-02",
+        "title": "Open Government Partnership — Digital Track",
+        "status": "Observer",
+        "participants": "4 observers",
+        "topic": "Open-data commitments and participatory budgeting standards",
+        "lastMeeting": "2026-01-18"
+      },
+      {
+        "id": "DIP-MLT-03",
+        "title": "Micronation Education Alliance",
+        "status": "Active",
+        "participants": "6 polities",
+        "topic": "Curriculum exchange, mutual accreditation, and student mobility",
+        "lastMeeting": "2026-06-09"
+      }
+    ]
+  }
+}

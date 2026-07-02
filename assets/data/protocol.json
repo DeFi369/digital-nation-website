@@ -1,0 +1,92 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Ministry of Digital Protocol",
+  "count": 3,
+  "entries": {
+    "standards": [
+      {
+        "id": "PRO-STD-01",
+        "title": "AETHERIA Identity Token Schema v2",
+        "category": "Identity",
+        "status": "Ratified",
+        "owner": "Ministry of Digital Protocol",
+        "version": "2.1.0",
+        "summary": "Defines the canonical JWT serialization, claim set, signature algorithm, and validator checklist for citizen identity tokens."
+      },
+      {
+        "id": "PRO-STD-02",
+        "title": "Node Interoperability Test Suite",
+        "category": "Infrastructure",
+        "status": "Ratified",
+        "owner": "Ministry of Infrastructure",
+        "version": "1.4.0",
+        "summary": "Mandatory regression tests covering API surface compliance, event ordering guarantees, and graceful degradation."
+      },
+      {
+        "id": "PRO-STD-03",
+        "title": "Cross-Domain Event Schemas",
+        "category": "Integration",
+        "status": "Draft",
+        "owner": "Ministry of Digital Protocol",
+        "version": "0.9.0",
+        "summary": "Shared event types for Assembly votes, Court rulings, and Civic payments, with enforced schema validation."
+      },
+      {
+        "id": "PRO-STD-04",
+        "title": "Data Residency & Sovereignty Standard",
+        "category": "Sovereignty",
+        "status": "In Review",
+        "owner": "Ministry of Digital Protocol",
+        "version": "0.4.0",
+        "summary": "Mandatory data-classification labels, regional hosting rules, and jurisdictions-of-last-resort for sensitive citizen data."
+      },
+      {
+        "id": "PRO-STD-05",
+        "title": "Registry Index Serialization Format",
+        "category": "Registry",
+        "status": "Ratified",
+        "owner": "Ministry of Digital Protocol",
+        "version": "1.0.0",
+        "summary": "Canonical JSON-LD and CBOR serializations with checksums, canonical URLs, and schema validation hooks."
+      }
+    ],
+    "sovereignty": [
+      {
+        "id": "PRO-SOV-01",
+        "title": "Single-Operator Restriction Policy",
+        "riskLevel": "Critical",
+        "category": "Operational",
+        "status": "Active",
+        "owner": "Ministry of Digital Protocol",
+        "summary": "No single node operator may control more than 15 % of declared runtime capacity without Assembly review."
+      },
+      {
+        "id": "PRO-SOV-02",
+        "title": "Open-Source License Requirement",
+        "riskLevel": "High",
+        "category": "Licensing",
+        "status": "Active",
+        "owner": "Ministry of Digital Protocol",
+        "summary": "All ministerial software paths must use OSI-approved licenses and expose public repositories by default."
+      },
+      {
+        "id": "PRO-SOV-03",
+        "title": "Keysafe Rotation Schedule",
+        "riskLevel": "High",
+        "category": "Security",
+        "status": "Active",
+        "owner": "Ministry of Infrastructure",
+        "summary": "90-day rotation for production credentials; emergency rotation procedures under Court ruling contingency."
+      },
+      {
+        "id": "PRO-SOV-04",
+        "title": "Jurisdictional Fallback Protocol",
+        "riskLevel": "Medium",
+        "category": "Legal",
+        "status": "Draft",
+        "owner": "Ministry of Digital Protocol",
+        "summary": "Defines secondary governance jurisdictions activated when primary nodes become unreachable or compromised."
+      }
+    ]
+  }
+}

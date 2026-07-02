@@ -42,6 +42,14 @@
     if (isInfrastructurePage) {
       loadInfrastructureScript();
     }
+    const isDiplomacyPage = document.body.classList.contains('page-diplomacy') || window.location.pathname.includes('diplomacy.html');
+    const isProtocolPage = document.body.classList.contains('page-protocol') || window.location.pathname.includes('protocol.html');
+    if (isDiplomacyPage) {
+      loadDiplomacyScript();
+    }
+    if (isProtocolPage) {
+      loadProtocolScript();
+    }
   }
 
   function loadEngageScript() {
@@ -104,6 +112,22 @@
     if (document.querySelector('script[src="assets/js/infrastructure.js"]')) return;
     const script = document.createElement('script');
     script.src = 'assets/js/infrastructure.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadDiplomacyScript() {
+    if (document.querySelector('script[src="assets/js/diplomacy.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/diplomacy.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadProtocolScript() {
+    if (document.querySelector('script[src="assets/js/protocol.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/protocol.js';
     script.defer = true;
     document.body.appendChild(script);
   }
