@@ -324,15 +324,13 @@
     }, 4000);
   }
 
-  function escapeHtml(str) {
+    function escapeHtml(str) {
     if (!str) return '';
-    return String(str)
-      .replace(/&/g, '&')
-      .replace(/</g, '<')
-      .replace(/>/g, '>')
-      .replace(/"/g, '"')
-      .replace(/'/g, "\\'");
+    const _div = document.createElement('div');
+    _div.textContent = str;
+    return _div.innerHTML;
   }
+
 
   window.CivicEngagement = {
     refreshFeed: () => mergeAndRender(),

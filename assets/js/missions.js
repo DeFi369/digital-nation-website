@@ -14,14 +14,16 @@
 
       if (!feed || !searchField || !regionField || !typeField) return;
 
+      let missionItems = [];
+
       fetch('assets/data/missions.json')
         .then(function (response) {
           if (!response.ok) throw new Error('missions data unavailable');
           return response.json();
         })
         .then(function (data) {
-          const entries = Array.isArray(data.entries) ? data.entries : [];
-          render(entries);
+          missionItems = Array.isArray(data.entries) ? data.entries.slice() : [];
+          render(missionItems);
         })
         .catch(function () {
           feed.innerHTML = '<div class=\"activity-empty\">Mission directory is temporarily unavailable.</div>';
@@ -96,18 +98,14 @@
       }
 
       searchField.addEventListener('input', function () {
-        renderMissions();
+        render(missionItems);
       });
       regionField.addEventListener('change', function () {
-        renderMissions();
+        render(missionItems);
       });
       typeField.addEventListener('change', function () {
-        renderMissions();
+        render(missionItems);
       });
-
-      function renderMissions() {
-        if (window._missionsData) render(window._missionsData);
-      }
     } catch {}
   }
 

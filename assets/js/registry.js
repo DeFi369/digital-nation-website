@@ -14,14 +14,16 @@
 
       if (!feed || !searchField || !tierField || !statusField) return;
 
+      let registryItems = [];
+
       fetch('assets/data/registry.json')
         .then(function (response) {
           if (!response.ok) throw new Error('registry data unavailable');
           return response.json();
         })
         .then(function (data) {
-          const entries = Array.isArray(data.entries) ? data.entries : [];
-          render(entries);
+          registryItems = Array.isArray(data.entries) ? data.entries.slice() : [];
+          render(registryItems);
         })
         .catch(function () {
           feed.innerHTML = '<div class=\"activity-empty\">Registry is temporarily unavailable.</div>';
@@ -91,18 +93,14 @@
       }
 
       searchField.addEventListener('input', function () {
-        renderRegistry();
+        render(registryItems);
       });
       tierField.addEventListener('change', function () {
-        renderRegistry();
+        render(registryItems);
       });
       statusField.addEventListener('change', function () {
-        renderRegistry();
+        render(registryItems);
       });
-
-      function renderRegistry() {
-        if (window._registryData) render(window._registryData);
-      }
     } catch {}
   }
 

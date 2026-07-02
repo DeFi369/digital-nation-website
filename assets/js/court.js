@@ -282,15 +282,13 @@
            date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
   }
 
-  function escapeHtml(str) {
+    function escapeHtml(str) {
     if (!str) return '';
-    return String(str)
-      .replace(/&/g, '&')
-      .replace(/</g, '<')
-      .replace(/>/g, '>')
-      .replace(/"/g, '"')
-      .replace(/'/g, "\\'");
+    const _div = document.createElement('div');
+    _div.textContent = str;
+    return _div.innerHTML;
   }
+
 
   window.CourtModule = {
     refresh: () => renderDocket(),

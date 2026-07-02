@@ -14,16 +14,10 @@
     setupMenu();
     liveYear();
 
-    const isEngagePage = document.body.classList.contains('page-engage') || window.location.pathname.includes('engage.html');
-    const isDashboardPage = document.body.classList.contains('page-dashboard') || window.location.pathname.includes('dashboard.html');
     const isAssemblyPage = document.body.classList.contains('page-assembly') || window.location.pathname.includes('assembly.html');
     const isCourtPage = document.body.classList.contains('page-court') || window.location.pathname.includes('court.html');
     const isRegistryPage = document.body.classList.contains('page-registry') || window.location.pathname.includes('registry.html');
     const isMissionsPage = document.body.classList.contains('page-missions') || window.location.pathname.includes('missions.html');
-
-    if (isEngagePage || isDashboardPage) {
-      loadEngageScript();
-    }
     if (isAssemblyPage) {
       loadAssemblyScript();
     }
@@ -98,6 +92,13 @@
         menu.setAttribute('aria-hidden', 'true');
         menuButton.setAttribute('aria-expanded', 'false');
         menuButton.focus();
+      }
+    });
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a') && menu.dataset.open === 'true') {
+        menu.dataset.open = 'false';
+        menu.setAttribute('aria-hidden', 'true');
+        menuButton.setAttribute('aria-expanded', 'false');
       }
     });
   }

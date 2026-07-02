@@ -106,6 +106,8 @@
     bills.sort((a, b) => {
       if (currentFilter.sort === 'date') {
         return new Date(b.timeline[0]?.date || 0) - new Date(a.timeline[0]?.date || 0);
+      } else if (currentFilter.sort === 'date-asc') {
+        return new Date(a.timeline[0]?.date || 0) - new Date(b.timeline[0]?.date || 0);
       } else if (currentFilter.sort === 'title') {
         return a.title.localeCompare(b.title);
       } else if (currentFilter.sort === 'status') {
@@ -444,15 +446,13 @@
            date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
   }
 
-  function escapeHtml(str) {
-      if (!str) return '';
-      return String(str)
-        .replace(/&/g, '&')
-        .replace(/</g, '<')
-        .replace(/>/g, '>')
-        .replace(/"/g, '"')
-        .replace(/'/g, "\\'");
-    }
+    function escapeHtml(str) {
+    if (!str) return '';
+    const _div = document.createElement('div');
+    _div.textContent = str;
+    return _div.innerHTML;
+  }
+
 
   function showToast(message) {
     const existing = document.querySelector('.assembly-toast');
