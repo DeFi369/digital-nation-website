@@ -65,15 +65,22 @@
         <h2>Readiness Self-Check</h2>
         <p>Use this checklist to assess your readiness for Aetheria citizenship and to identify preparation gaps.</p>
         <div class="readiness" id="readiness">
-          <label class="check"><input type="checkbox" data-point="principles"/> I have reviewed the charter and manifesto.</label>
-          <label class="check"><input type="checkbox" data-point="crypto"/> I understand basic cryptographic identity concepts.</label>
-          <label class="check"><input type="checkbox" data-point="protocol"/> I have experience with open protocols or collaborative standards.</label>
-          <label class="check"><input type="checkbox" data-point="networking"/> I understand decentralized networking and peer-to-peer basics.</label>
-          <label class="check"><input type="checkbox" data-point="governance"/> I am comfortable participating in transparent governance processes.</label>
-          <label class="check"><input type="checkbox" data-point="community"/> I want to support onboarding and education of new citizens.</label>
+          <fieldset class="checklist">
+            <legend class="sr-only">Readiness items</legend>
+            <label class="check"><input type="checkbox" data-point="principles" id="r-principles"/> <span>I have reviewed the charter and manifesto.</span></label>
+            <label class="check"><input type="checkbox" data-point="crypto" id="r-crypto"/> <span>I understand basic cryptographic identity concepts.</span></label>
+            <label class="check"><input type="checkbox" data-point="protocol" id="r-protocol"/> <span>I have experience with open protocols or collaborative standards.</span></label>
+            <label class="check"><input type="checkbox" data-point="networking" id="r-networking"/> <span>I understand decentralized networking and peer-to-peer basics.</span></label>
+            <label class="check"><input type="checkbox" data-point="governance" id="r-governance"/> <span>I am comfortable participating in transparent governance processes.</span></label>
+            <label class="check"><input type="checkbox" data-point="community" id="r-community"/> <span>I want to support onboarding and education of new citizens.</span></label>
+          </fieldset>
           <div class="readiness-result" aria-live="polite">
             <strong>Score:</strong> <span id="readiness-score">0</span>/6 — <span id="readiness-label">Keep exploring the Republic</span>
           </div>
+          <div id="readiness-guidance" class="readiness-guidance" tabindex="-1" aria-live="polite"></div>
+          <noscript>
+            <p class="readiness-guidance">Check the boxes above and note the score manually. For guidance, review the Charter, Manifesto, and Governance pages.</p>
+          </noscript>
         </div>
 
         <h2>Contribution Path Finder</h2>
@@ -90,6 +97,9 @@
           </select>
           <button class="button primary" type="button" id="path-go">Find path</button>
           <div class="pathfinder-result" id="pathfinder-result" aria-live="polite"></div>
+          <noscript>
+            <p>Pick an interest and see suggested paths: Engineering → protocol contributions, Governance → Assembly participation, Outreach → onboarding and docs, Node Operation → run public infrastructure, Security → audit and disclosure, Documentation → copy and translation.</p>
+          </noscript>
         </form>
       </div>
     </section>

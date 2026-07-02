@@ -1,14 +1,203 @@
 (function () {
+  'use strict';
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
-
   function init() {
     try {
       const loader = document.querySelector('.page-loader');
       if (loader) loader.classList.add('hidden');
     } catch {}
+    initReadiness();
+    initPathfinder();
+    initDashboard();
+  }
+
+  // ── Readiness Calculator ──
+  function initReadiness() {
+    const form = document.getElementById('readiness');
+    if (!form) return;
+    const scoreEl = document.getElementById('readiness-score');
+    const labelEl = document.getElementById('readiness-label');
+    const guidance = {
+      0: 'Begin with the Charter and Manifesto to ground your understanding.',
+      1: 'Great start — keep exploring the core principles.',
+      2: 'You are building solid context; continue with governance basics.',
+      3: 'Strong foundation — consider joining a node or contributing.',
+      4: 'You are close to active participation; review the contribution paths.',
+      5: 'Near full readiness — find your first contribution and engage.',
+      6: 'Full readiness — you are prepared to participate fully.'
+    };
+    function update() {
+      const checked = form.querySelectorAll('input[type="checkbox"]:checked');
+      const score = checked.length;
+      if (scoreEl) scoreEl.textContent = String(score);
+      if (labelEl) labelEl.textContent = guidance[score] || '';
+    }
+    form.addEventListener('change', update);
+    form.addEventListener('input', update);
+    update();
+  }
+
+  // ── Contribution Path Finder ──
+  function initPathfinder() {
+    var selectGroup = document.getElementById('path-interests');
+    var button = document.getElementById('path-go');
+    var output = document.getElementById('pathfinder-result');
+    if (!selectGroup || !button || !output) return;
+    function getRecommendations(value) {
+      var map = {
+        engineering: {
+          title: 'Engineering Path',
+          steps: [
+            'Review the protocol specs and open issues.',
+            'Fork the repository and propose a patch.',
+            'Run a local node and report metrics.'
+          ]
+        },
+        governance: {
+          title: 'Governance Path',
+          steps: [
+            'Read the Charter and Manifesto carefully.',
+            'Join the next Civic Assembly session.',
+            'Propose or vote on an open referendum.'
+          ]
+        },
+        outreach: {
+          title: 'Outreach Path',
+          steps: [
+            'Share public documentation and explainers.',
+            'Host an introductory discussion or AMA.',
+            'Mentor a new contributor through their first task.'
+          ]
+        },
+        node: {
+          title: 'Node Operation Path',
+          steps: [
+            'Review node operator requirements.',
+            'Provision a compliant public endpoint.',
+            'Publish node status and uptime reports.'
+          ]
+        },
+        security: {
+          title: 'Security Path',
+          steps: [
+            'Audit public protocol interfaces.',
+            'Submit responsible disclosures via the security channel.',
+            'Assist with incident review and remediation.'
+          ]
+        },
+        docs: {
+          title: 'Documentation Path',
+          steps: [
+            'Identify gaps in the current docs.',
+            'Submit a documentation PR with examples.',
+            'Translate key pages into additional languages.'
+          ]
+        }
+      };
+      return map[value] || {
+        title: 'General Path',
+        steps: [
+          'Explore the Charter and Manifesto to find your fit.',
+          'Review open tasks in the repository.',
+          'Join the onboarding conversation.'
+        ]
+      };
+    }
+    button.addEventListener('click', function () {
+      var value = selectGroup.value;
+      var rec = getRecommendations(value);
+      output.innerHTML = '<strong>' + escapeHtml(rec.title) + '</strong>' +
+        '<ol>' + rec.steps.map(function (s) { return '<li>' + escapeHtml(s) + '</li>'; }).join('') + '</ol>';
+    });
+  }
+
+  // ── Dashboard: animated counters, charts, activity filter/search ──
+  function initDashboard() {
+    animateCounters();
+    renderSimpleBarChart();
+    initActivityFilter();
+  }
+  function animateCounters() {
+    var counters = document.querySelectorAll('.metric-value[data-count-to]');
+    if (!counters.length) return;
+    counters.forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count-to'), 10) || 0;
+      var start = 0;
+      var startTime = null;
+      el.textContent = '0';
+      var duration = 900;
+      function step(ts) {
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
+        }
+      }
+      window.requestAnimationFrame(step);
+    });
+  }
+  function renderSimpleBarChart() {
+    var container = document.querySelector('.dash-chart');
+    if (!container) return;
+    var data = [
+      { label: 'Citizens', value: 12 },
+      { label: 'Nodes', value: 8 },
+      { label: 'Governance Actions', value: 4 }
+    ];
+    var max = Math.max.apply(null, data.map(function (d) { return d.value; })) || 1;
+    var html = '<div class="chart-wrap" role="img" aria-label="Participation bar chart">';
+    data.forEach(function (row) {
+      var pct = Math.round((row.value / max) * 100);
+      html += '<div class="chart-row">' +
+        '<div class="chart-label">' + escapeHtml(row.label) + '</div>' +
+        '<div class="chart-bar" aria-hidden="true">' +
+        '<div class="chart-fill" style="width:' + pct + '%"></div>' +
+        '</div>' +
+        '<div class="chart-value">' + row.value + '</div>' +
+        '</div>';
+    });
+    html += '</div>';
+    container.innerHTML = html;
+  }
+  function initActivityFilter() {
+    var input = document.getElementById('activity-filter');
+    if (!input) return;
+    var items = document.querySelectorAll('.activity-list .activity-item');
+    var pills = document.querySelectorAll('.activity-actions .pill');
+    var activeFilter = 'all';
+    function applyFilter(text) {
+      var term = text.trim().toLowerCase();
+      items.forEach(function (item) {
+        var label = (item.querySelector('.activity-label') ? item.querySelector('.activity-label').textContent : '') + ' ' +
+          (item.querySelector('.activity-meta') ? item.querySelector('.activity-meta').textContent : '') + ' ' +
+          (item.querySelector('.activity-state') ? item.querySelector('.activity-state').textContent : '');
+        var matchesText = !term || label.toLowerCase().indexOf(term) !== -1;
+        var matchesPill = activeFilter === 'all' || (item.querySelector('.activity-state') && item.querySelector('.activity-state').textContent === activeFilter);
+        item.style.display = (matchesText && matchesPill) ? '' : 'none';
+      });
+    }
+    input.addEventListener('input', function () {
+      applyFilter(input.value);
+    });
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        pills.forEach(function (p) { p.setAttribute('aria-pressed', 'false'); });
+        pill.setAttribute('aria-pressed', 'true');
+        activeFilter = pill.getAttribute('data-filter') || 'all';
+        applyFilter(input.value);
+      });
+    });
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 })();

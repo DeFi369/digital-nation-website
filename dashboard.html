@@ -68,28 +68,35 @@
         <h2>Participation Metrics</h2>
         <div class="dashboard-grid">
           <div class="dash-card">
-            <div class="metric-value" data-count-to="12">12</div>
+            <div class="metric-value" data-count-to="12" aria-atomic="true" aria-live="polite">0</div>
             <div class="metric-label">Verified Citizens</div>
             <div class="metric-delta">+2 this month</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value" data-count-to="8">8</div>
+            <div class="metric-value" data-count-to="8" aria-atomic="true" aria-live="polite">0</div>
             <div class="metric-label">Active Nodes</div>
             <div class="metric-delta">3 regions</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value" data-count-to="4">4</div>
+            <div class="metric-value" data-count-to="4" aria-atomic="true" aria-live="polite">0</div>
             <div class="metric-label">Governance Actions</div>
             <div class="metric-delta">31-day window</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value" data-count-to="3">3</div>
+            <div class="metric-value" data-count-to="3" aria-atomic="true" aria-live="polite">0</div>
             <div class="metric-label">Regional Clusters</div>
             <div class="metric-delta">Stable</div>
           </div>
         </div>
 
         <h2>Network Indicators</h2>
+        <div class="dashboard-chart" role="region" aria-label="Participation chart">
+          <noscript>
+            <div class="chart-fallback" role="img" aria-label="Summary: 12 verified citizens, 8 active nodes, 4 governance actions, 3 stable regional clusters.">
+              12 verified citizens, 8 active nodes, 4 governance actions, 3 stable regional clusters.
+            </div>
+          </noscript>
+        </div>
         <div class="dash-meta">
           <div class="dash-meta-card">
             <strong>Protocol Version:</strong> v0.1.0
