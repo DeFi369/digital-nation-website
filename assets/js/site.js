@@ -60,11 +60,19 @@
     }
     const isFinancePage = document.body.classList.contains('page-finance') || window.location.pathname.includes('finance.html');
     const isTreasuryPage = document.body.classList.contains('page-treasury') || window.location.pathname.includes('treasury.html');
+    const isCulturePage = document.body.classList.contains('page-culture') || window.location.pathname.includes('culture.html');
+    const isCommunicationsPage = document.body.classList.contains('page-communications') || window.location.pathname.includes('communications.html');
     if (isFinancePage) {
       loadFinanceScript();
     }
     if (isTreasuryPage) {
       loadTreasuryScript();
+    }
+    if (isCulturePage) {
+      loadCultureScript();
+    }
+    if (isCommunicationsPage) {
+      loadCommunicationsScript();
     }
   }
 
@@ -176,6 +184,22 @@
     if (document.querySelector('script[src="assets/js/treasury.js"]')) return;
     const script = document.createElement('script');
     script.src = 'assets/js/treasury.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadCultureScript() {
+    if (document.querySelector('script[src="assets/js/culture.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/culture.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadCommunicationsScript() {
+    if (document.querySelector('script[src="assets/js/communications.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/communications.js';
     script.defer = true;
     document.body.appendChild(script);
   }

@@ -35,6 +35,42 @@
   margin-top: 4px;
 }
 
+.page-culture .activity-feed,
+.page-communications .activity-feed {
+  margin-top: 4px;
+}
+
+.culture-badge,
+.communications-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #232a34;
+  background: rgba(122,167,255,0.12);
+  color: #e6e8eb;
+  font-size: 0.85rem;
+}
+
+.culture-status-active,
+.communications-status-active {
+  border-color: rgba(122,167,255,0.45);
+  background: rgba(122,167,255,0.18);
+}
+
+.culture-status-draft,
+.communications-status-draft,
+.culture-status-scheduled,
+.communications-status-scheduled {
+  border-color: rgba(192,132,252,0.45);
+  background: rgba(192,132,252,0.18);
+}
+
+.culture-status-archived,
+.communications-status-archived {
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+}
+
 .finance-badge,
 .treasury-badge {
   display: inline-block;
