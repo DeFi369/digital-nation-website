@@ -1,0 +1,88 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Ministry of Justice & Public Safety",
+  "count": 2,
+  "entries": {
+    "frameworks": [
+      {
+        "id": "JUS-FW-01",
+        "title": "Digital Sovereignty Charter",
+        "status": "Ratified",
+        "category": "Legal Framework",
+        "owner": "Ministry of Justice & Public Safety",
+        "summary": "Foundational legal framework defining digital rights, jurisdiction, and enforcement mechanisms for Aetheria."
+      },
+      {
+        "id": "JUS-FW-02",
+        "title": "Citizen Data Protection Act",
+        "status": "Active",
+        "category": "Legal Framework",
+        "owner": "Ministry of Justice & Public Safety",
+        "summary": "Comprehensive data protection framework ensuring citizen privacy, consent mechanisms, and breach response protocols."
+      },
+      {
+        "id": "JUS-FW-03",
+        "title": "Digital Dispute Resolution Protocol",
+        "status": "Active",
+        "category": "Dispute Resolution",
+        "owner": "Ministry of Justice & Public Safety",
+        "summary": "Structured mediation and arbitration process for digital disputes between citizens, nodes, and governance bodies."
+      }
+    ],
+    "cases": [
+      {
+        "id": "JUS-CASE-01",
+        "title": "Citizen-203 v. Ministry of Infrastructure: Compute Allocation Dispute",
+        "status": "Decided",
+        "category": "Administrative Law",
+        "petitioner": "citizen-203@aetheria.network",
+        "respondent": "Ministry of Infrastructure",
+        "summary": "Ruled that opaque compute allocation violates Charter Article 7 equal protection. Ministry ordered to publish transparent criteria within 60 days."
+      },
+      {
+        "id": "JUS-CASE-02",
+        "title": "Ministry of Security v. Citizen-312: Node Operator License Revocation",
+        "status": "Decided",
+        "category": "Regulatory Enforcement",
+        "petitioner": "Ministry of Security",
+        "respondent": "citizen-312@aetheria.network",
+        "summary": "Revocation upheld. Strict liability for consensus violations affirmed. Pre-revocation hearing satisfied due process under Charter Article 5."
+      },
+      {
+        "id": "JUS-CASE-03",
+        "title": "Citizen-445 v. Treasury: Quarterly Audit Mandamus",
+        "status": "Pending",
+        "category": "Fiscal Law",
+        "petitioner": "citizen-445@aetheria.network",
+        "respondent": "Treasury",
+        "summary": "Writ of mandamus sought to compel quarterly audits under Charter Article 9. Awaiting judicial determination on self-executing Charter provisions."
+      }
+    ],
+    "protocols": [
+      {
+        "id": "JUS-PROT-01",
+        "title": "Emergency Response Activation Protocol",
+        "status": "Active",
+        "category": "Public Safety",
+        "owner": "Ministry of Justice & Public Safety",
+        "summary": "Tiered activation framework for digital emergencies, defining authority levels, notification chains, and citizen protection measures."
+      },
+      {
+        "id": "JUS-PROT-02",
+        "title": "Digital Rights Protection Framework",
+        "status": "Active",
+        "category": "Digital Rights",
+        "owner": "Ministry of Justice & Public Safety",
+        "summary": "Mechanisms for protecting citizen digital rights including access, expression, association, and property in digital environments."
+      },
+      {
+        "id": "JUS-PROT-03",
+        "title": "Cross-Jurisdictional Cooperation Protocol",
+        "status": "Draft",
+        "category": "International Law",
+        "owner": "Ministry of Justice & Public Safety",
+        "summary": "Framework for cooperation with external legal jurisdictions, evidence sharing, and mutual recognition of digital governance decisions."
+      }
+    ]
+  }
+}

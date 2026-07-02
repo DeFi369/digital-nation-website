@@ -131,6 +131,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://defi369.github.io/digital-nation-website/justice.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://defi369.github.io/digital-nation-website/safety.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://defi369.github.io/digital-nation-website/terms.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -1,0 +1,88 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Ministry of Digital Security & Cyber Defense",
+  "count": 2,
+  "entries": {
+    "frameworks": [
+      {
+        "id": "SEC-FW-01",
+        "title": "Aetheria Cybersecurity Framework",
+        "status": "Ratified",
+        "category": "Cybersecurity",
+        "owner": "Ministry of Digital Security & Cyber Defense",
+        "summary": "Comprehensive cybersecurity framework covering threat assessment, defense protocols, and incident response for all Aetheria infrastructure."
+      },
+      {
+        "id": "SEC-FW-02",
+        "title": "Critical Infrastructure Protection Standard",
+        "status": "Active",
+        "category": "Infrastructure Protection",
+        "owner": "Ministry of Digital Security & Cyber Defense",
+        "summary": "Security standards for node operators, consensus mechanisms, and critical digital infrastructure components."
+      },
+      {
+        "id": "SEC-FW-03",
+        "title": "Threat Intelligence Sharing Protocol",
+        "status": "Active",
+        "category": "Threat Intelligence",
+        "owner": "Ministry of Digital Security & Cyber Defense",
+        "summary": "Structured protocol for sharing threat intelligence between ministries, node operators, and international partners."
+      }
+    ],
+    "incidents": [
+      {
+        "id": "SEC-INC-01",
+        "title": "CVE-2026-XXXX Consensus Layer Vulnerability",
+        "status": "Resolved",
+        "category": "Vulnerability",
+        "severity": "Critical",
+        "reportedDate": "2026-07-01",
+        "summary": "Security vulnerability in consensus layer requiring emergency patch deployment across all active nodes. Successfully mitigated within 72 hours."
+      },
+      {
+        "id": "SEC-INC-02",
+        "title": "Distributed Denial of Service Attack on Registry",
+        "status": "Resolved",
+        "category": "DDoS",
+        "severity": "High",
+        "reportedDate": "2026-06-15",
+        "summary": "Coordinated DDoS attempt on citizen registry infrastructure. Mitigated through traffic filtering and redundant gateway activation."
+      },
+      {
+        "id": "SEC-INC-03",
+        "title": "Social Engineering Campaign Targeting Node Operators",
+        "status": "Under Investigation",
+        "category": "Social Engineering",
+        "severity": "Medium",
+        "reportedDate": "2026-06-28",
+        "summary": "Coordinated phishing campaign targeting node operators with fake security update notifications. Investigation ongoing."
+      }
+    ],
+    "protocols": [
+      {
+        "id": "SEC-PROT-01",
+        "title": "Incident Response Playbook",
+        "status": "Active",
+        "category": "Incident Response",
+        "owner": "Ministry of Digital Security & Cyber Defense",
+        "summary": "Standardized incident response procedures including containment, eradication, recovery, and lessons-learned phases."
+      },
+      {
+        "id": "SEC-PROT-02",
+        "title": "Digital Defense Posture Management",
+        "status": "Active",
+        "category": "Defense",
+        "owner": "Ministry of Digital Security & Cyber Defense",
+        "summary": "Continuous monitoring and adjustment of defensive posture including firewall rules, access controls, and anomaly detection."
+      },
+      {
+        "id": "SEC-PROT-03",
+        "title": "Supply Chain Security Framework",
+        "status": "Draft",
+        "category": "Supply Chain",
+        "owner": "Ministry of Digital Security & Cyber Defense",
+        "summary": "Framework for securing software supply chain including dependency verification, build integrity, and distribution channel protection."
+      }
+    ]
+  }
+}

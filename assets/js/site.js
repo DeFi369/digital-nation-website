@@ -50,6 +50,14 @@
     if (isProtocolPage) {
       loadProtocolScript();
     }
+    const isJusticePage = document.body.classList.contains('page-justice') || window.location.pathname.includes('justice.html');
+    const isSafetyPage = document.body.classList.contains('page-safety') || window.location.pathname.includes('safety.html');
+    if (isJusticePage) {
+      loadJusticeScript();
+    }
+    if (isSafetyPage) {
+      loadSafetyScript();
+    }
   }
 
   function loadEngageScript() {
@@ -128,6 +136,22 @@
     if (document.querySelector('script[src="assets/js/protocol.js"]')) return;
     const script = document.createElement('script');
     script.src = 'assets/js/protocol.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadJusticeScript() {
+    if (document.querySelector('script[src="assets/js/justice.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/justice.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadSafetyScript() {
+    if (document.querySelector('script[src="assets/js/safety.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/safety.js';
     script.defer = true;
     document.body.appendChild(script);
   }
