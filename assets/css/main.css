@@ -35,6 +35,11 @@
   margin-top: 4px;
 }
 
+.page-environment .activity-feed,
+.page-sustainability .activity-feed {
+  margin-top: 4px;
+}
+
 .page-culture .activity-feed,
 .page-communications .activity-feed {
   margin-top: 4px;
