@@ -62,6 +62,15 @@ Public Pages deployment: https://defi369.github.io/digital-nation-website/
 - `404.html` includes the standard site chrome so lost visitors can navigate back into the site.
 - Legal notices use the `legal-block` pattern for consistency across content and policy pages.
 
-## Governance
+## Government Structure
 
-Represented publicly by the President’s office and the Civic Assembly. Content and design decisions are directed through protocol governance.
+AETHERIA is organized as a layered digital republic with six distinct layers:
+
+1. **Constitutional Core** — The President (single executive authority), Vice President, and Constitutional Council (7 members, staggered 4-year terms) set national strategy, interpret the charter, and safeguard constitutional compliance.
+2. **Strategic Cabinet** — Seven department secretaries (External Affairs, Digital Economy, Civic Identity, Public Affairs, Technology & Innovation, Infrastructure & Human Services, Justice & Constitutional Compliance) report to the President and set national policy.
+3. **Operational Offices** — Six specialized arms (Digital Operations, Data Governance, Open Records, Situational Awareness, Treasury & Resource Management, Community Stewardship) handle cross-cutting operational functions.
+4. **Service Branches** — The Digital Service Corps (operational workforce) and Electoral Commission (elections and apportionment) deliver civic and operational services.
+5. **Assembly of the Digital Nation** — A unicameral legislature that confirms appointments, approves charter amendments, passes resolutions, and holds hearings.
+6. **Charter Tribunal** — The final arbiter of charter disputes and constitutional questions, with binding rulings across all departments and offices.
+
+Public-facing content and design decisions are directed through protocol governance under the President's office and the Assembly.
