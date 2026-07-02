@@ -1,0 +1,69 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Ministry of Education & Research",
+  "count": 3,
+  "entries": {
+    "research": [
+      {
+        "id": "EDU-RES-01",
+        "title": "Protocol Governance Research",
+        "status": "Active",
+        "category": "Research",
+        "lead": "Aria Solenne",
+        "summary": "Long-horizon research on constitutional protocols, tokenized representation, and verifiable decision structures."
+      },
+      {
+        "id": "EDU-RES-02",
+        "title": "Digital Literacy Observatory",
+        "status": "Active",
+        "category": "Research",
+        "lead": "Nia Rahman",
+        "summary": "Cross-border assessment of digital literacy outcomes, onboarding friction, and citizenship readiness."
+      },
+      {
+        "id": "EDU-RES-03",
+        "title": "Open Curriculum Commons",
+        "status": "Planning",
+        "category": "Research",
+        "lead": "Kai Voss",
+        "summary": "Shared authorship framework for curriculum modules, licensing models, and contribution incentives."
+      }
+    ],
+    "literacy": [
+      {
+        "id": "EDU-LIT-01",
+        "title": "Crypto Citizenship 101",
+        "status": "Active",
+        "category": "Digital Literacy",
+        "lead": "Mira Chen",
+        "summary": "Foundational onboarding on identity, consent, sovereignty, and secure participation in digital governance."
+      },
+      {
+        "id": "EDU-LIT-02",
+        "title": "Governance Literacy Lab",
+        "status": "Active",
+        "category": "Digital Literacy",
+        "lead": "Aria Solenne",
+        "summary": "Simulated assemblies, voting mechanics, and constitutional interpretation for new citizens."
+      }
+    ],
+    "programs": [
+      {
+        "id": "EDU-PROG-01",
+        "title": "Ambassador Academy",
+        "status": "Recruiting",
+        "category": "Program",
+        "lead": "Aria Solenne",
+        "summary": "A government-relations and diplomatic communication track for elevated-tier citizens."
+      },
+      {
+        "id": "EDU-PROG-02",
+        "title": "Node Operator School",
+        "status": "Active",
+        "category": "Program",
+        "lead": "Kai Voss",
+        "summary": "Technical training for distributed node operation, incident response, and protocol upgrades."
+      }
+    ]
+  }
+}

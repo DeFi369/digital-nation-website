@@ -18,6 +18,9 @@
     const isCourtPage = document.body.classList.contains('page-court') || window.location.pathname.includes('court.html');
     const isRegistryPage = document.body.classList.contains('page-registry') || window.location.pathname.includes('registry.html');
     const isMissionsPage = document.body.classList.contains('page-missions') || window.location.pathname.includes('missions.html');
+    const isEducationPage = document.body.classList.contains('page-education') || window.location.pathname.includes('education.html');
+    const isHealthPage = document.body.classList.contains('page-health') || window.location.pathname.includes('health.html');
+    const isInfrastructurePage = document.body.classList.contains('page-infrastructure') || window.location.pathname.includes('infrastructure.html');
     if (isAssemblyPage) {
       loadAssemblyScript();
     }
@@ -29,6 +32,15 @@
     }
     if (isMissionsPage) {
       loadMissionsScript();
+    }
+    if (isEducationPage) {
+      loadEducationScript();
+    }
+    if (isHealthPage) {
+      loadHealthScript();
+    }
+    if (isInfrastructurePage) {
+      loadInfrastructureScript();
     }
   }
 
@@ -68,6 +80,30 @@
     if (document.querySelector('script[src="assets/js/missions.js"]')) return;
     const script = document.createElement('script');
     script.src = 'assets/js/missions.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadEducationScript() {
+    if (document.querySelector('script[src="assets/js/education.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/education.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadHealthScript() {
+    if (document.querySelector('script[src="assets/js/health.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/health.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadInfrastructureScript() {
+    if (document.querySelector('script[src="assets/js/infrastructure.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/infrastructure.js';
     script.defer = true;
     document.body.appendChild(script);
   }

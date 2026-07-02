@@ -1,0 +1,51 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Ministry of Public Health & Wellness",
+  "count": 2,
+  "entries": {
+    "services": [
+      {
+        "id": "HLT-SVC-01",
+        "title": "Citizen Health Record",
+        "status": "Active",
+        "category": "Service",
+        "owner": "Nia Rahman",
+        "summary": "Privacy-preserving health record layer for identity-anchored citizens with auditable consent controls."
+      },
+      {
+        "id": "HLT-SVC-02",
+        "title": "Telehealth Gateway",
+        "status": "Active",
+        "category": "Service",
+        "owner": "Kai Voss",
+        "summary": "Secure audio and video gateway for low-bandwidth environments with metadata minimization."
+      },
+      {
+        "id": "HLT-SVC-03",
+        "title": "Emergency Response Protocol",
+        "status": "Planning",
+        "category": "Service",
+        "owner": "Aria Solenne",
+        "summary": "Aetheria-wide emergency broadcast and location-verified alerting for regional incidents."
+      }
+    ],
+    "wellness": [
+      {
+        "id": "HLT-WEL-01",
+        "title": "Mindful Protocol",
+        "status": "Active",
+        "category": "Wellness",
+        "lead": "Nia Rahman",
+        "summary": "Guided digital detox and workflow hygiene program for node operators and governance contributors."
+      },
+      {
+        "id": "HLT-WEL-02",
+        "title": "Accessible Interfaces",
+        "status": "Active",
+        "category": "Wellness",
+        "lead": "Mira Chen",
+        "summary": "Theme, motion, and readability tooling designed for neurodiverse citizens and low-vision users."
+      }
+    ]
+  }
+}

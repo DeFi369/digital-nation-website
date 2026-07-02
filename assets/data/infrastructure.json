@@ -1,0 +1,69 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Ministry of Infrastructure & Digital Services",
+  "count": 3,
+  "entries": {
+    "services": [
+      {
+        "id": "INF-SVC-01",
+        "title": "Primary Node Grid",
+        "status": "Operational",
+        "category": "Infrastructure",
+        "owner": "Kai Voss",
+        "summary": "Distributed node grid for protocol validation, failover routing, and secure key ceremonies."
+      },
+      {
+        "id": "INF-SVC-02",
+        "title": "Edge Cache Layer",
+        "status": "Operational",
+        "category": "Infrastructure",
+        "owner": "Mira Chen",
+        "summary": "Regional edge-cache nodes reducing latency on passport, registry, and engage interactions."
+      },
+      {
+        "id": "INF-SVC-03",
+        "title": "Backup Ledger",
+        "status": "Active",
+        "category": "Infrastructure",
+        "owner": "Aria Solenne",
+        "summary": "Time-locked replica ledgers for disaster recovery and compliance audit chains."
+      }
+    ],
+    "civicTech": [
+      {
+        "id": "INF-TECH-01",
+        "title": "Citizen Console",
+        "status": "Operational",
+        "category": "Civic Tech",
+        "owner": "Nia Rahman",
+        "summary": "Single sign-on surface for registry, engage, passport, and mission workflows."
+      },
+      {
+        "id": "INF-TECH-02",
+        "title": "Assembly Session Bus",
+        "status": "Beta",
+        "category": "Civic Tech",
+        "owner": "Aria Solenne",
+        "summary": "Real-time session bus for debates, votes, and amendment streaming with archival guarantees."
+      }
+    ],
+    "projects": [
+      {
+        "id": "INF-PROJ-01",
+        "title": "Interplanetary Replication",
+        "status": "Planning",
+        "category": "Project",
+        "lead": "Kai Voss",
+        "summary": "Multi-region replication protocol targeting stronger defence against regional outages."
+      },
+      {
+        "id": "INF-PROJ-02",
+        "title": "Mobile Service Mesh",
+        "status": "Planning",
+        "category": "Project",
+        "lead": "Mira Chen",
+        "summary": "Offline-capable service mesh for health, registry, and engage on low-connectivity networks."
+      }
+    ]
+  }
+}
