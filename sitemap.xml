@@ -81,10 +81,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://defi369.github.io/digital-nation-website/contact.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -153,10 +149,6 @@
     <loc>https://defi369.github.io/digital-nation-website/404.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://defi369.github.io/digital-nation-website/education.html</loc>

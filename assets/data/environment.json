@@ -1,0 +1,61 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Environment & Sustainability",
+  "count": 6,
+  "entries": {
+    "policy": [
+      {
+        "id": "ENV-POL-01",
+        "title": "Carbon Disclosure Protocol",
+        "status": "Active",
+        "category": "Policy",
+        "owner": "Aria Solenne",
+        "summary": "Mandates published carbon accounting for all node operations, with quarterly disclosure formats aligned to open standards."
+      },
+      {
+        "id": "ENV-POL-02",
+        "title": "Resource Efficiency Directive",
+        "status": "Adopted",
+        "category": "Policy",
+        "owner": "Kai Voss",
+        "summary": "Sets efficiency targets for compute, storage, and network subsystems; non-conformance triggers governance review."
+      }
+    ],
+    "programs": [
+      {
+        "id": "ENV-PRO-01",
+        "title": "Green Procurement Program",
+        "status": "Open",
+        "category": "Program",
+        "lead": "Mira Chen",
+        "summary": "Prefers low-carbon infrastructure providers and hardware vendors with verifiable sustainability claims."
+      },
+      {
+        "id": "ENV-PRO-02",
+        "title": "Citizen Sustainability Fellowship",
+        "status": "Active",
+        "category": "Program",
+        "lead": "Nia Rahman",
+        "summary": "Supports citizen contributions to environmental auditing, awareness, and compliance tooling."
+      },
+      {
+        "id": "ENV-PRO-03",
+        "title": "Zero-Waste Operations Sprint",
+        "status": "Planning",
+        "category": "Program",
+        "lead": "Orion Vale",
+        "summary": "Targets operational waste reduction across node maintenance, documentation, and civic program logistics."
+      }
+    ],
+    "standards": [
+      {
+        "id": "ENV-STD-01",
+        "title": "Green Protocol Eligibility",
+        "status": "Stable",
+        "category": "Standard",
+        "owner": "Kai Voss",
+        "summary": "Services and integrations must meet energy and data-efficiency thresholds to carry the green protocol label."
+      }
+    ]
+  }
+}
