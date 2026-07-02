@@ -17,9 +17,11 @@
 
   <title>Public Dashboard — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/main.css">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" href="favicon.ico">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -67,22 +69,22 @@
         <h2>Participation Metrics</h2>
         <div class="dashboard-grid">
           <div class="dash-card">
-            <div class="metric-value">12</div>
+            <div class="metric-value" data-count-to="12">12</div>
             <div class="metric-label">Verified Citizens</div>
             <div class="metric-delta">+2 this month</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value">8</div>
+            <div class="metric-value" data-count-to="8">8</div>
             <div class="metric-label">Active Nodes</div>
             <div class="metric-delta">3 regions</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value">4</div>
+            <div class="metric-value" data-count-to="4">4</div>
             <div class="metric-label">Governance Actions</div>
             <div class="metric-delta">31-day window</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value">3</div>
+            <div class="metric-value" data-count-to="3">3</div>
             <div class="metric-label">Regional Clusters</div>
             <div class="metric-delta">Stable</div>
           </div>
@@ -105,6 +107,15 @@
         </div>
 
         <h2>Citizen &amp; Governance Activity</h2>
+        <div class="activity-actions">
+          <input type="search" id="activity-filter" placeholder="Filter activity…" autocomplete="off" aria-label="Filter activity"/>
+          <div class="activity-meta-chips" aria-label="Status filters">
+            <button class="pill" type="button" data-filter="all">All</button>
+            <button class="pill" type="button" data-filter="open">Open</button>
+            <button class="pill" type="button" data-filter="complete">Complete</button>
+            <button class="pill" type="button" data-filter="scheduled">Scheduled</button>
+          </div>
+        </div>
         <div class="activity-list" role="list">
           <div class="activity-item" role="listitem">
             <div>

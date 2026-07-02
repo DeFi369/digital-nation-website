@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Principality of Aetheria</title>
+  <link href="https://defi369.github.io/digital-nation-website/feed.xml" rel="self"/>
+  <link href="https://defi369.github.io/digital-nation-website/"/>
+  <updated>2026-07-01T00:00:00Z</updated>
+  <author>
+    <name>AETHERIA Editorial</name>
+  </author>
+  <id>urn:uuid:aetheria-site-feed</id>
+  <entry>
+    <title>Public Dashboard — participation metrics and network indicators</title>
+    <link href="https://defi369.github.io/digital-nation-website/dashboard.html"/>
+    <id>urn:uuid:aetheria-dashboard-2026-07-01</id>
+    <updated>2026-07-01T00:00:00Z</updated>
+    <summary>Verified citizens, active nodes, governance actions, and current activity summary.</summary>
+  </entry>
+  <entry>
+    <title>Citizenship Tools — readiness self-check and contribution path finder</title>
+    <link href="https://defi369.github.io/digital-nation-website/tools.html"/>
+    <id>urn:uuid:aetheria-tools-2026-07-01</id>
+    <updated>2026-07-01T00:00:00Z</updated>
+    <summary>Readiness checklist, contribution path finder, and preparation guidance.</summary>
+  </entry>
+  <entry>
+    <title>Charter — foundational operating principles</title>
+    <link href="https://defi369.github.io/digital-nation-website/charter.html"/>
+    <id>urn:uuid:aetheria-charter-2026-07-01</id>
+    <updated>2026-07-01T00:00:00Z</updated>
+    <summary>Operating principles and governance framework for the Principality of Aetheria.</summary>
+  </entry>
+</feed>

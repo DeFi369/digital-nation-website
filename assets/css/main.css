@@ -558,6 +558,29 @@ a {
   text-decoration-color: rgba(157,184,255,.45);
 }
 
+.tool-result {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #1f2630;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+}
+.tool-result p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.pathfinder-result {
+  margin-top: 18px;
+  color: var(--color-muted);
+}
+.pathfinder-result p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
 .cityscape {
   position: fixed;
   left: 0;
