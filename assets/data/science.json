@@ -1,0 +1,85 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Ministry of Science & Technology",
+  "count": 3,
+  "entries": {
+    "research": [
+      {
+        "id": "SCI-RES-01",
+        "title": "Aetheria Research Commons",
+        "status": "Active",
+        "category": "Research Program",
+        "lead": "Aria Solenne",
+        "summary": "Open research track for verifiable experimentation, reproducible methodology, and cross-ministry observation networks."
+      },
+      {
+        "id": "SCI-RES-02",
+        "title": "Protocol Engineering Observatory",
+        "status": "Active",
+        "category": "Research Program",
+        "lead": "Kai Voss",
+        "summary": "Core-language and runtime research for protocol correctness, upgrade safety, and formal verification tooling."
+      },
+      {
+        "id": "SCI-RES-03",
+        "title": "Open Standards Track",
+        "status": "Planning",
+        "category": "Research Program",
+        "lead": "Mira Chen",
+        "summary": "Evaluation of open technology standards, interoperability agreements, and licensing models for public infrastructure."
+      }
+    ],
+    "policy": [
+      {
+        "id": "SCI-POL-01",
+        "title": "Innovation Sandbox Policy",
+        "status": "Active",
+        "category": "Innovation Policy",
+        "lead": "Nia Rahman",
+        "summary": "Time-limited sandbox operational rules, safety review gates, and graduation criteria for emerging technology work."
+      },
+      {
+        "id": "SCI-POL-02",
+        "title": "Data Stewardship Framework",
+        "status": "Active",
+        "category": "Innovation Policy",
+        "lead": "Aria Solenne",
+        "summary": "Policies for sensitive datasets, consent metadata, retention schedules, and audit access in research environments."
+      },
+      {
+        "id": "SCI-POL-03",
+        "title": "Technology Readiness Review",
+        "status": "Draft",
+        "category": "Innovation Policy",
+        "lead": "Kai Voss",
+        "summary": "Standardized readiness scoring, evidence requirements, and sponsorship workflow before public deployment."
+      }
+    ],
+    "standards": [
+      {
+        "id": "SCI-STD-01",
+        "title": "API Design Standard",
+        "status": "Active",
+        "category": "Standard",
+        "lead": "Mira Chen",
+        "summary": "REST and event interface patterns for registry, engage, passport, and infrastructure service boundaries."
+      },
+      {
+        "id": "SCI-STD-02",
+        "title": "Security Baseline",
+        "status": "Active",
+        "category": "Standard",
+        "lead": "Kai Voss",
+        "summary": "Mandatory controls for authentication flows, key storage, observability, and incident response readiness."
+      },
+      {
+        "id": "SCI-STD-03",
+        "title": "Accessibility Standard",
+        "status": "Review",
+        "category": "Standard",
+        "lead": "Nia Rahman",
+        "summary": "WCAG-linked requirements, localization expectations, and accessibility review gates for public services."
+      }
+    ]
+  }
+}

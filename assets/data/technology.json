@@ -1,0 +1,85 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Technology Operations & Infrastructure",
+  "count": 3,
+  "entries": {
+    "operations": [
+      {
+        "id": "TECH-OPS-01",
+        "title": "Primary Operations Center",
+        "status": "Active",
+        "category": "Operations",
+        "owner": "Kai Voss",
+        "summary": "24-hour operational monitoring, incident triage, and protocol-aligned runbooks for core services."
+      },
+      {
+        "id": "TECH-OPS-02",
+        "title": "Regional Operations Desk",
+        "status": "Active",
+        "category": "Operations",
+        "owner": "Mira Chen",
+        "summary": "Regional coordination, citizen-facing issue routing, and escalation pathways for infrastructure incidents."
+      },
+      {
+        "id": "TECH-OPS-03",
+        "title": "Incident Review Board",
+        "status": "Beta",
+        "category": "Operations",
+        "owner": "Aria Solenne",
+        "summary": "Blameless review board, publication policy, and follow-up action tracking for major operational events."
+      }
+    ],
+    "infrastructure": [
+      {
+        "id": "TECH-INF-01",
+        "title": "Edge Service Network",
+        "status": "Operational",
+        "category": "Technology Infrastructure",
+        "owner": "Mira Chen",
+        "summary": "Regional gateway infrastructure for low-latency access to registry, engage, and passport services."
+      },
+      {
+        "id": "TECH-INF-02",
+        "title": "Primary Storage Grid",
+        "status": "Operational",
+        "category": "Technology Infrastructure",
+        "owner": "Kai Voss",
+        "summary": "Redundant object storage for public records, archives, and proof bundles with integrity verification."
+      },
+      {
+        "id": "TECH-INF-03",
+        "title": "Observability Pipeline",
+        "status": "Active",
+        "category": "Technology Infrastructure",
+        "owner": "Aria Solenne",
+        "summary": "Metrics, logs, and tracing streams for engineering, ops, and governance review workflows."
+      }
+    ],
+    "emerging": [
+      {
+        "id": "TECH-EMG-01",
+        "title": "Formal Verification Pipeline",
+        "status": "Pilot",
+        "category": "Emerging Technology",
+        "owner": "Nia Rahman",
+        "summary": "Model-checking pipeline for protocol modules, smart-style rule bundles, and upgrade candidates."
+      },
+      {
+        "id": "TECH-EMG-02",
+        "title": "Agentic Workflow Layer",
+        "status": "Pilot",
+        "category": "Emerging Technology",
+        "owner": "Aria Solenne",
+        "summary": "Verified workflow agents for onboarding, appeals, and outreach with human-in-the-loop guardrails."
+      },
+      {
+        "id": "TECH-EMG-03",
+        "title": "Zero-Knowledge Access Layer",
+        "status": "Planning",
+        "category": "Emerging Technology",
+        "owner": "Kai Voss",
+        "summary": "Privacy-preserving access controls for sensitive records while preserving verifiable audit trails."
+      }
+    ]
+  }
+}
