@@ -1,0 +1,85 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Ministry of Economic Governance",
+  "count": 3,
+  "entries": {
+    "programs": [
+      {
+        "id": "FIN-PROG-01",
+        "title": "Public Goods Funding Round Q3",
+        "status": "Active",
+        "category": "Funding",
+        "owner": "Ministry of Economic Governance",
+        "summary": "Quadratic-matching round for open-source infrastructure, citizen education, and protocol tooling. 28 proposals submitted; 12 funded at an average of 340 credits each."
+      },
+      {
+        "id": "FIN-PROG-02",
+        "title": "Citizen Bounty Network Expansion",
+        "status": "In Progress",
+        "category": "Bounties",
+        "owner": "Ministry of Economic Governance",
+        "summary": "Onboarding 45 new bounty tasks across governance, documentation, and engineering. Completion rate currently tracking 68%."
+      },
+      {
+        "id": "FIN-PROG-03",
+        "title": "Settlement Layer Stress Test",
+        "status": "Scheduled",
+        "category": "Infrastructure",
+        "owner": "Protocol Engineering",
+        "summary": "Planned load and consensus resilience test targeting 10 000 transactions per second with full audit-trail verification."
+      }
+    ],
+    "instruments": [
+      {
+        "id": "FIN-INST-01",
+        "title": "Protocol-Backed Liquidity Reserve Note",
+        "status": "Ratified",
+        "category": "Financial Instrument",
+        "owner": "Treasury",
+        "summary": "Short-duration reserve instrument backed by verifiable on-protocol liquidity commitments. Maturity window: 90 days."
+      },
+      {
+        "id": "FIN-INST-02",
+        "title": "Quadratic Funding Matching Certificate",
+        "status": "Active",
+        "category": "Funding Instrument",
+        "owner": "Ministry of Economic Governance",
+        "summary": "On-chain certificate representing matched contributions in a completed quadratic funding round."
+      },
+      {
+        "id": "FIN-INST-03",
+        "title": "Reputation-Weighted Governance Token",
+        "status": "Active",
+        "category": "Governance Instrument",
+        "owner": "Assembly Secretariat",
+        "summary": "Participation-weighted voting token. Weight is derived from verified contribution history and sybil-resistance calculus."
+      }
+    ],
+    "reports": [
+      {
+        "id": "FIN-RPT-01",
+        "title": "Q2 2026 Fiscal Transparency Report",
+        "status": "Published",
+        "category": "Governance Report",
+        "owner": "Ministry of Economic Governance",
+        "summary": "Quarterly budget execution: revenue, expenditure, reserve movements, and variance analysis published on protocol for public audit."
+      },
+      {
+        "id": "FIN-RPT-02",
+        "title": "Open Market Audit — Exchange Module v2.1",
+        "status": "In Review",
+        "category": "Security Report",
+        "owner": "Audit Committee",
+        "summary": "Independent code-and-architecture review of the exchange module. Findings pending final sign-off before publication."
+      },
+      {
+        "id": "FIN-RPT-03",
+        "title": "Bounty Network Quarterly Review",
+        "status": "Published",
+        "category": "Operational Report",
+        "owner": "Ministry of Economic Governance",
+        "summary": "Completion rates, average time-to-payout, and proposer satisfaction scores. Recommendations for v3.0 bounty protocol."
+      }
+    ]
+  }
+}
