@@ -49,12 +49,46 @@
   <main id="main">
     <section class="page">
       <div class="container">
-        <h1>Treasury & Digital Assets</h1>
+        <h1>Treasury &amp; Digital Assets</h1>
         <p class="lead">Protocol-backed reserves, transparent holdings, and accountable digital-asset management for Aetheria.</p>
 
         <h2>Treasury Operations</h2>
-        <div id="treasury-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Treasury operations feed">
+        <div class="activity-filters" aria-label="Filter treasury items">
+          <input type="search" id="treasury-search" placeholder="Search operations, assets, and reserves..." autocomplete="off" aria-label="Search treasury items"/>
+          <select id="treasury-section" aria-label="Filter by section">
+            <option value="all">All Sections</option>
+            <option value="operations">Operations</option>
+            <option value="assets">Digital Assets</option>
+            <option value="reserves">Fiscal Reserves</option>
+          </select>
+          <select id="treasury-status" aria-label="Filter by status">
+            <option value="all">All Statuses</option>
+            <option value="active">Active</option>
+            <option value="in_progress">In Progress</option>
+            <option value="scheduled">Scheduled</option>
+            <option value="in_review">In Review</option>
+          </select>
+        </div>
+
+        <div id="treasury-operations-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Treasury operations feed">
           <div class="activity-loading" aria-hidden="true">Loading treasury operations...</div>
+        </div>
+
+        <h2>Digital Asset Framework</h2>
+        <p>
+          Digital assets are governed by transparent rules: issuance is backed by documented reserves with on-protocol attestation;
+          settlement is deterministic and final; compliance metadata tags each asset class with jurisdiction restrictions, transfer limits,
+          and regulatory reporting hooks.
+        </p>
+
+        <h2>Digital Assets</h2>
+        <div id="treasury-assets-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Treasury digital assets feed">
+          <div class="activity-loading" aria-hidden="true">Loading digital assets...</div>
+        </div>
+
+        <h2>Fiscal Reserves</h2>
+        <div id="treasury-reserves-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Treasury fiscal reserves feed">
+          <div class="activity-loading" aria-hidden="true">Loading fiscal reserves...</div>
         </div>
 
         <h2>Cross-Links</h2>

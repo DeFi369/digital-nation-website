@@ -49,12 +49,36 @@
   <main id="main">
     <section class="page">
       <div class="container">
-        <h1>Economic Governance & Financial Oversight</h1>
+        <h1>Economic Governance &amp; Financial Oversight</h1>
         <p class="lead">Transparent fiscal policy, accountable spending, and citizen-level economic participation.</p>
 
-        <h2>Governance & Transparency</h2>
-        <div id="finance-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Finance governance feed">
-          <div class="activity-loading" aria-hidden="true">Loading finance framework...</div>
+        <div class="activity-filters" aria-label="Filter finance items">
+          <input type="search" id="finance-search" placeholder="Search programs, instruments, and reports..." autocomplete="off" aria-label="Search finance items"/>
+          <select id="finance-status" aria-label="Filter by status">
+            <option value="all">All Statuses</option>
+            <option value="active">Active</option>
+            <option value="in_progress">In Progress</option>
+            <option value="ratified">Ratified</option>
+            <option value="draft">Draft</option>
+            <option value="published">Published</option>
+            <option value="in_review">In Review</option>
+            <option value="scheduled">Scheduled</option>
+          </select>
+        </div>
+
+        <h2>Economic Programs</h2>
+        <div id="finance-programs-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Finance programs feed">
+          <div class="activity-loading" aria-hidden="true">Loading economic programs...</div>
+        </div>
+
+        <h2>Financial Instruments</h2>
+        <div id="finance-instruments-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Finance instruments feed">
+          <div class="activity-loading" aria-hidden="true">Loading financial instruments...</div>
+        </div>
+
+        <h2>Governance Reports</h2>
+        <div id="finance-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Finance reports feed">
+          <div class="activity-loading" aria-hidden="true">Loading governance reports...</div>
         </div>
 
         <h2>Cross-Links</h2>
@@ -62,8 +86,8 @@
 
         <div class="cta">
           <a class="button primary" href="economy.html">Economy</a>
+          <a class="button" href="treasury.html">Treasury</a>
           <a class="button" href="engage.html">Engage</a>
-          <a class="button" href="registry.html">Registry</a>
         </div>
       </div>
     </section>
