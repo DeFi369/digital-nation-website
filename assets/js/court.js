@@ -111,7 +111,8 @@
 
   function renderCaseRow(case_) {
     const statusClass = 'status-' + case_.status.toLowerCase().replace(' ', '-');
-    const rulingDisplay = case_.ruling ? `<span class="ruling-type">${escapeHtml(case_.rulingType || '—')}</span>` : '<span class="muted">—</span>';
+    const rulingClass = case_.ruling ? 'ruling-type status-' + String(case_.rulingType || '').trim().toLowerCase().replace(/\s+/g, '-') : 'muted';
+    const rulingDisplay = case_.ruling ? `<span class="${rulingClass}">${escapeHtml(case_.rulingType || '—')}</span>` : '<span class="muted">—</span>';
 
     return `
       <tr class="case-row" data-case-number="${case_.caseNumber}">

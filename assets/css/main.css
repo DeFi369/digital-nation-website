@@ -29,6 +29,49 @@
   border-radius: 8px;
 }
 
+/* page-specific dark-theme treatments */
+.page-finance .activity-feed,
+.page-treasury .activity-feed {
+  margin-top: 4px;
+}
+
+.finance-badge,
+.treasury-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #232a34;
+  background: rgba(122,167,255,0.12);
+  color: #e6e8eb;
+  font-size: 0.85rem;
+}
+
+.finance-status-active,
+.treasury-status-active {
+  border-color: rgba(122,167,255,0.45);
+  background: rgba(122,167,255,0.18);
+}
+
+.finance-status-pending,
+.treasury-status-pending {
+  border-color: rgba(192,132,252,0.45);
+  background: rgba(192,132,252,0.18);
+}
+
+.finance-status-scheduled,
+.treasury-status-scheduled {
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+}
+
+.finance-status-in-review,
+.treasury-status-in-review,
+.finance-status-complete,
+.treasury-status-complete {
+  border-color: rgba(122,167,255,0.35);
+  background: rgba(122,167,255,0.14);
+}
+
 .skip-link {
   position: absolute;
   top: -100%;
