@@ -1,84 +1,59 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Treasury & Digital Assets",
-  "count": 3,
+  "count": 6,
   "entries": {
     "operations": [
       {
-        "id": "TRE-OP-01",
-        "title": "Monthly Reserve Rebalancing",
+        "id": "TRE-O01",
+        "title": "Operating Reserve Management",
+        "category": "Operations",
         "status": "Active",
-        "category": "Treasury Operations",
-        "owner": "Treasury & Digital Assets",
-        "summary": "Protocol-governed monthly rebalancing of reserve instruments to optimize liquidity while maintaining a minimum 180-day runway."
+        "owner": "Treasury Node Alpha",
+        "summary": "Liquidity reserve operations for program continuity and operational expenses."
       },
       {
-        "id": "TRE-OP-02",
-        "title": "Disbursement Automation Pipeline",
+        "id": "TRE-O02",
+        "title": "Reserve Rebalancing",
+        "category": "Operations",
         "status": "In Progress",
-        "category": "Treasury Operations",
-        "owner": "Protocol Engineering",
-        "summary": "Automated release of bounty and public-goods payments upon verified completion triggers. Reducing manual treasury overheadestimated 35%."
-      },
-      {
-        "id": "TRE-OP-03",
-        "title": "Cross-Chain Reserve Bridge Audit",
-        "status": "Scheduled",
-        "category": "Audit",
-        "owner": "Audit Committee",
-        "summary": "Independent review of reserve bridging mechanisms prior to extending digital asset support to additional settlement layers."
+        "owner": "Treasury Committee",
+        "summary": "Semi-annual rebalancing of operating and strategic reserve targets."
       }
     ],
     "assets": [
       {
-        "id": "TRE-ASSET-01",
-        "title": "Stable Liquidity Pool — $ETH / $USDC",
+        "id": "TRE-A01",
+        "title": "Digital Asset Issuance",
+        "category": "Digital Assets",
         "status": "Active",
-        "category": "Digital Asset",
-        "owner": "Treasury & Digital Assets",
-        "summary": "Balanced liquidity pool providing settlement depth for the exchange module. Rules: immutable AMM parameters, transparent fee split."
+        "owner": "Asset Registrar",
+        "summary": "Issuance against documented reserves with on-protocol attestation."
       },
       {
-        "id": "TRE-ASSET-02",
-        "title": "Contribution Certificate (NFT-based)",
-        "status": "Active",
-        "category": "Digital Asset",
-        "owner": "Ministry of Economic Governance",
-        "summary": "Verifiable credential minted upon completion of significant public-goods work. Non-transferable; builds sybil-resistant reputation."
-      },
-      {
-        "id": "TRE-ASSET-03",
-        "title": "Participation Token — Quadratic Funding Rounds",
+        "id": "TRE-A02",
+        "title": "Custody & Settlement Upgrade",
+        "category": "Digital Assets",
         "status": "Scheduled",
-        "category": "Digital Asset",
-        "owner": "Ministry of Economic Governance",
-        "summary": "Protocol-minted participation token issued per funding round. Encodes voter preference weight for match-rate calculation."
+        "owner": "Protocol Team",
+        "summary": "Deterministic settlement upgrade with verifiable state transitions."
       }
     ],
     "reserves": [
       {
-        "id": "TRE-RES-01",
-        "title": "General Operating Reserve",
+        "id": "TRE-R01",
+        "title": "Strategic Reserve Backstop",
+        "category": "Reserves",
         "status": "Active",
-        "category": "Fiscal Reserve",
-        "owner": "Treasury & Digital Assets",
-        "summary": "Primary operating reserve covering 180+ days of protocol-critical expenditures. Composition published monthly."
+        "owner": "Treasury Node Gamma",
+        "summary": "Long-duration holdings for systemic stability and protocol backstop."
       },
       {
-        "id": "TRE-RES-02",
-        "title": "Emergent Opportunities Fund",
-        "status": "Active",
-        "category": "Fiscal Reserve",
-        "owner": "Civic Assembly",
-        "summary": "Civic Assembly-governed reserve for time-sensitive public-goods opportunities. Disbursement requires Assembly approval."
-      },
-      {
-        "id": "TRE-RES-03",
-        "title": "Stabilization Reserve",
-        "status": "In Review",
-        "category": "Fiscal Reserve",
-        "owner": "Treasury & Digital Assets",
-        "summary": "Mechanism under review for dampening settlement-layer volatility. Design document open for public comment."
+        "id": "TRE-R02",
+        "title": "Grant Reserve Allocation",
+        "category": "Reserves",
+        "status": "Draft",
+        "owner": "Grants Registrar",
+        "summary": "Funds earmarked for public-good grants, bounties, and civic prizes."
       }
     ]
   }
