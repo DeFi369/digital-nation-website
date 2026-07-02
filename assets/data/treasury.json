@@ -1,0 +1,60 @@
+{
+  "generated": "2026-07-02",
+  "count": 6,
+  "entries": [
+    {
+      "id": "TRE-0001",
+      "name": "Aether Credit",
+      "category": "Stable Instrument",
+      "status": "Active",
+      "custodian": "Treasury Node Alpha",
+      "maturity": "Open",
+      "note": "Protocol-backed liquidity instrument with deterministic settlement"
+    },
+    {
+      "id": "TRE-0002",
+      "name": "Participation Certificate",
+      "category": "Merit Instrument",
+      "status": "Active",
+      "custodian": "Governance Registrar",
+      "maturity": "Dynamic",
+      "note": "Merit-weighted certificate reflecting documented contribution"
+    },
+    {
+      "id": "TRE-0003",
+      "name": "Operating Reserve Note",
+      "category": "Reserve Instrument",
+      "status": "Active",
+      "custodian": "Treasury Node Beta",
+      "maturity": "90 days",
+      "note": "Short-term instrument for operating liquidity and program continuity"
+    },
+    {
+      "id": "TRE-0004",
+      "name": "Strategic Reserve Bond",
+      "category": "Reserve Instrument",
+      "status": "Active",
+      "custodian": "Treasury Node Gamma",
+      "maturity": "5 years",
+      "note": "Long-duration reserve backstop with Assembly-approved deployment terms"
+    },
+    {
+      "id": "TRE-0005",
+      "name": "Grant Disbursement Token",
+      "category": "Program Instrument",
+      "status": "Scheduled",
+      "custodian": "Grants Registrar",
+      "maturity": "Per program",
+      "note": "Disbursement primitive for public-good grants and civic prizes"
+    },
+    {
+      "id": "TRE-0006",
+      "name": "Attestation Voucher",
+      "category": "Compliance Instrument",
+      "status": "In Review",
+      "custodian": "Audit Office",
+      "maturity": "Annual",
+      "note": "Audit voucher for quarterly attestation and reporting"
+    }
+  ]
+}

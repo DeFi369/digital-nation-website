@@ -58,6 +58,14 @@
     if (isSafetyPage) {
       loadSafetyScript();
     }
+    const isFinancePage = document.body.classList.contains('page-finance') || window.location.pathname.includes('finance.html');
+    const isTreasuryPage = document.body.classList.contains('page-treasury') || window.location.pathname.includes('treasury.html');
+    if (isFinancePage) {
+      loadFinanceScript();
+    }
+    if (isTreasuryPage) {
+      loadTreasuryScript();
+    }
   }
 
   function loadEngageScript() {
@@ -152,6 +160,22 @@
     if (document.querySelector('script[src="assets/js/safety.js"]')) return;
     const script = document.createElement('script');
     script.src = 'assets/js/safety.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadFinanceScript() {
+    if (document.querySelector('script[src="assets/js/finance.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/finance.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadTreasuryScript() {
+    if (document.querySelector('script[src="assets/js/treasury.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/treasury.js';
     script.defer = true;
     document.body.appendChild(script);
   }
