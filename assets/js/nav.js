@@ -158,11 +158,51 @@ var DigitalNationNav = (function () {
     return template.content;
   }
 
+  function engagementLinks() {
+    return [
+      { href: 'engage.html', label: 'Engage' },
+      { href: 'citizen-hub.html', label: 'Citizen Hub' },
+      { href: 'tools.html', label: 'Tools' },
+      { href: 'transparency.html', label: 'Transparency' },
+      { href: 'digital-service-corps.html', label: 'Digital Service Corps' },
+      { href: 'elections.html', label: 'Elections & Petitions' },
+      { href: 'open-records.html', label: 'Open Records' },
+      { href: 'data-governance.html', label: 'Data Governance' },
+      { href: 'situational-awareness.html', label: 'Situational Awareness' }
+    ];
+  }
+
+  function buildEngagementFragment() {
+    var links = engagementLinks();
+    var html = '<details class="nav-dropdown"><summary>Engagement</summary><div class="dropdown-wrap">';
+    for (var i = 0; i < links.length; i++) {
+      html += '<a href="' + links[i].href + '">' + links[i].label + '</a>';
+    }
+    html += '</div></details>';
+    var template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content;
+  }
+
+  function injectEngagement(containerSelector) {
+    var container = document.querySelector(containerSelector);
+    if (!container) {
+      return;
+    }
+    var fragment = buildEngagementFragment();
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+    container.appendChild(fragment);
+  }
+
   return {
     injectHeader: injectHeader,
     injectFooter: injectFooter,
     headerFragment: headerFragment,
-    footerFragment: footerFragment
+    footerFragment: footerFragment,
+    injectEngagement: injectEngagement,
+    buildEngagementFragment: buildEngagementFragment
   };
 
   function inject(parentSelector, fragmentFactory) {
