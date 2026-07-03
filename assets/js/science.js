@@ -11,6 +11,8 @@
     loadResearchFeed();
     loadPolicyFeed();
     loadStandardsFeed();
+    loadStats();
+    loadPillars();
   }
 
   function loadResearchFeed() {
@@ -61,6 +63,58 @@
       })
       .catch(function () {
         feed.innerHTML = '<div class="activity-empty">Technology standards are temporarily unavailable.</div>';
+      });
+  }
+
+  function loadStats() {
+    var container = document.getElementById('science-stats');
+    if (!container) return;
+    fetch('assets/data/science.json')
+      .then(function (response) {
+        if (!response.ok) throw new Error('science data unavailable');
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data.stats) {
+          container.innerHTML = '<div class="activity-empty">Science metrics are temporarily unavailable.</div>';
+          return;
+        }
+        var rows = Object.keys(data.stats).map(function (key) {
+          return '<div class="stat-card">' +
+            '<div class="stat-value">' + escapeHtml(String(data.stats[key])) + '</div>' +
+            '<div class="stat-label">' + escapeHtml(key) + '</div>' +
+          '</div>';
+        }).join('');
+        container.innerHTML = '<div class="stats-grid">' + rows + '</div>';
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Science metrics are temporarily unavailable.</div>';
+      });
+  }
+
+  function loadPillars() {
+    var container = document.getElementById('science-pillars');
+    if (!container) return;
+    fetch('assets/data/science.json')
+      .then(function (response) {
+        if (!response.ok) throw new Error('science data unavailable');
+        return response.json();
+      })
+      .then(function (data) {
+        if (!Array.isArray(data.pillars) || !data.pillars.length) {
+          container.innerHTML = '<div class="activity-empty">No strategic pillars are currently defined.</div>';
+          return;
+        }
+        var rows = data.pillars.map(function (pillar) {
+          return '<article class="pillar-card" aria-label="' + escapeHtml(String(pillar.title || pillar.id || '')) + '">' +
+            '<h3>' + escapeHtml(String(pillar.title || 'Untitled')) + '</h3>' +
+            '<p>' + escapeHtml(String(pillar.summary || '')) + '</p>' +
+          '</article>';
+        }).join('');
+        container.innerHTML = '<div class="pillars-grid">' + rows + '</div>';
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Strategic pillars are temporarily unavailable.</div>';
       });
   }
 

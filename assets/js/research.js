@@ -9,6 +9,8 @@
     renderFeed('res-initiatives-feed', 'initiatives', 'Research initiatives are temporarily unavailable.');
     renderFeed('res-policy-feed', 'policy', 'Innovation policy items are temporarily unavailable.');
     renderFeed('res-standards-feed', 'standards', 'Technology standards are temporarily unavailable.');
+    loadStats();
+    loadPillars();
     initFilters();
   }
 
@@ -67,6 +69,32 @@
         );
       })
       .join('');
+  }
+
+  function loadPillars() {
+    var container = document.getElementById('research-pillars');
+    if (!container) return;
+    fetch('assets/data/research.json')
+      .then(function (response) {
+        if (!response.ok) throw new Error('research data unavailable');
+        return response.json();
+      })
+      .then(function (data) {
+        if (!Array.isArray(data.pillars) || !data.pillars.length) {
+          container.innerHTML = '<div class="activity-empty">No strategic pillars are currently defined.</div>';
+          return;
+        }
+        var rows = data.pillars.map(function (pillar) {
+          return '<article class="pillar-card" aria-label="' + escapeHtml(String(pillar.title || pillar.id || '')) + '">' +
+            '<h3>' + escapeHtml(String(pillar.title || 'Untitled')) + '</h3>' +
+            '<p>' + escapeHtml(String(pillar.summary || '')) + '</p>' +
+          '</article>';
+        }).join('');
+        container.innerHTML = '<div class="pillars-grid">' + rows + '</div>';
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Strategic pillars are temporarily unavailable.</div>';
+      });
   }
 
   function initFilters() {

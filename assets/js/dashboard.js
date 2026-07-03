@@ -543,4 +543,14 @@
       initDashboardCivicFeed();
     }
   };
+
+  window.loadDashboardScript = function () {
+    try {
+      if (typeof init === 'function') {
+        init();
+      }
+    } catch (e) {
+      console && console.warn && console.warn('Dashboard init failed:', e);
+    }
+  };
 })();

@@ -396,47 +396,30 @@
     const menu = document.querySelector('.menu');
     if (!menu) return;
     const dropdowns = menu.querySelectorAll('.nav-dropdown');
+    let openDropdown = null;
     dropdowns.forEach(dropdown => {
       const summary = dropdown.querySelector('summary');
       if (!summary) return;
-      summary.addEventListener('click', (evt) => {
-        const wasOpen = dropdown.hasAttribute('open');
-        dropdowns.forEach(d => {
-          if (d !== dropdown && d.hasAttribute('open')) {
-            d.removeAttribute('open');
-            d.setAttribute('aria-hidden', 'true');
-          }
-        });
-        if (!wasOpen) {
-          dropdown.setAttribute('open', '');
+      dropdown.addEventListener('toggle', () => {
+        if (dropdown.hasAttribute('open')) {
           dropdown.removeAttribute('aria-hidden');
-        } else {
-          dropdown.removeAttribute('open');
-          dropdown.setAttribute('aria-hidden', 'true');
+          openDropdown = dropdown;
+        } else if (openDropdown === dropdown) {
+          openDropdown = null;
         }
-        evt.preventDefault();
-        evt.stopPropagation();
-      });
-      dropdown.addEventListener('keydown', (event) => {
-        summary.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape' && dropdown.hasAttribute('open')) {
-            dropdown.removeAttribute('open');
-            dropdown.setAttribute('aria-hidden', 'true');
-            summary.focus();
-          }
-        });
       });
     });
-    if (menu.dataset.open === 'true') {
-      dropdowns.forEach(d => d.removeAttribute('open'));
-    }
     document.addEventListener('click', (event) => {
       if (!event.target.closest('.nav-dropdown') && !event.target.closest('.menu-toggle')) {
         dropdowns.forEach(d => {
           d.removeAttribute('open');
           d.setAttribute('aria-hidden', 'true');
         });
+        openDropdown = null;
       }
     });
+    if (menu.dataset.open === 'true') {
+      dropdowns.forEach(d => d.removeAttribute('open'));
+    }
   }
 })();
