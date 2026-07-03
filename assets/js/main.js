@@ -291,6 +291,12 @@
         activeFilter = pill.getAttribute('data-filter') || 'all';
         applyFilter(input.value);
       });
+      pill.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          pill.click();
+        }
+      });
     });
   }
 
