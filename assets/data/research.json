@@ -1,85 +1,41 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Research & Laboratory Policy",
-  "count": 9,
+  "ministry": "Technology, Science & Innovation",
+  "secretary": "Secretary of Technology, Science & Innovation",
+  "version": "Protocol v3.0",
+  "stats": {
+    "activeInitiatives": 12,
+    "policyDocuments": 9,
+    "ratifiedStandards": 7,
+    "laboratories": 5,
+    "safetyAudits": 4
+  },
+  "pillars": [
+    { "id": "RES-PIL-01", "title": "Cross-Ministry Alignment", "summary": "Research governance embedded across ministries with shared ethics review, data-access rules, and publication standards." },
+    { "id": "RES-PIL-02", "title": "Laboratory Stewardship", "summary": "Safe, secure, and compliant laboratory operations with asset tracking, waste stewardship, and emergency readiness." },
+    { "id": "RES-PIL-03", "title": "Emerging Technology Oversight", "summary": "Gate reviews, sandbox releases, and readiness criteria for quantum, biotech, and autonomous system research." },
+    { "id": "RES-PIL-04", "title": "Knowledge Transfer", "summary": "Publication, education pipelines, and commercialization tracks for protocol-funded research outputs." },
+    { "id": "RES-PIL-05", "title": "Evidence Grading", "summary": "Hierarchical evidence grades tied to reproducibility, replication, and artifact quality under Protocol v3.0." }
+  ],
   "entries": {
     "initiatives": [
-      {
-        "id": "RES-INI-01",
-        "title": "Participatory Research Equity Initiative",
-        "status": "Active",
-        "category": "Initiative",
-        "lead": "Nia Rahman",
-        "summary": "Community-governed research agenda ensuring marginalized populations co-design study priorities and benefit-sharing."
-      },
-      {
-        "id": "RES-INI-02",
-        "title": "Open Data Infrastructure Program",
-        "status": "Active",
-        "category": "Initiative",
-        "lead": "Kai Voss",
-        "summary": "Interoperable open-data platform with standardized APIs, persistent identifiers, and read/write citizen access."
-      },
-      {
-        "id": "RES-INI-03",
-        "title": "Interdisciplinary Science Corridors",
-        "status": "Planning",
-        "category": "Initiative",
-        "lead": "Mira Chen",
-        "summary": "Cross-department science corridors linking Protocol, Education, and Infrastructure to accelerate applied research."
-      }
+      { "id": "RES-I01", "title": "Laboratory Modernization Program", "category": "Infrastructure", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Capital refresh, safety upgrades, and digital inventory across sovereign research laboratories." },
+      { "id": "RES-I02", "title": "Open Research Data Commons", "category": "Data", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Shared, governed data repository with tiered access, provenance metadata, and release-graded exports." },
+      { "id": "RES-I03", "title": "Replication Fellowship", "category": "Education", "status": "In Progress", "owner": "Education Ministry", "summary": "Funded positions for independent replication studies with registered-report submissions and artifact review." },
+      { "id": "RES-I04", "title": "Autonomous Systems Ethics Board", "category": "Governance", "status": "Active", "owner": "Justice Registrar", "summary": "Cross-ministry review body for autonomous-system research proposals, incident reviews, and policy updates." },
+      { "id": "RES-I05", "title": "Quantum Methods Fellowship", "category": "Quantum", "status": "Scheduled", "owner": "Technology, Science & Innovation Secretary", "summary": "Fellowship for quantum algorithm research with benchmark requirements, artifact submission, and external review." }
     ],
     "policy": [
-      {
-        "id": "RES-POL-01",
-        "title": "Responsible AI Research Charter",
-        "status": "Active",
-        "category": "Policy",
-        "owner": "Aria Solenne",
-        "summary": "Mandatory ethical review, algorithmic impact disclosures, and public audit pathways for all AI research programs."
-      },
-      {
-        "id": "RES-POL-02",
-        "title": "Citizen Science Participation Standard",
-        "status": "Beta",
-        "category": "Policy",
-        "owner": "Nia Rahman",
-        "summary": "Formalized contribution, attribution, and reward mechanisms for citizen-led research activities."
-      },
-      {
-        "id": "RES-POL-03",
-        "title": "Dual-Use Technology Review Policy",
-        "status": "Draft",
-        "category": "Policy",
-        "owner": "Kai Voss",
-        "summary": "Risk-tiered review framework for emerging technologies crossing civil, commercial, and security boundaries."
-      }
+      { "id": "RES-P01", "title": "Laboratory Safety Baseline", "category": "Safety", "status": "Ratified", "owner": "Safety Registrar", "summary": "Minimum biosafety, chemical safety, and emergency-response requirements for all sovereign laboratories.", "effectiveDate": "2026-02-14" },
+      { "id": "RES-P02", "title": "Research Data Classification", "category": "Privacy", "status": "Active", "owner": "Privacy Registrar", "summary": "Data-tier taxonomy, access-control rules, and encryption requirements for research datasets.", "effectiveDate": "2026-03-01" },
+      { "id": "RES-P03", "title": "Emerging Technology Oversight", "category": "Governance", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Gate-process, sandbox rules, and readiness criteria for quantum, biotech, and autonomous research programs.", "effectiveDate": "2026-04-10" },
+      { "id": "RES-P04", "title": "Publication Integrity Policy", "category": "Methods", "status": "In Review", "owner": "Technology, Science & Innovation Secretary", "summary": "Anti-gaming rules, author-contribution attestations, artifact-review requirements, and correction workflows.", "effectiveDate": null }
     ],
     "standards": [
-      {
-        "id": "RES-STD-01",
-        "title": "Open Access Publication Standard",
-        "status": "Active",
-        "category": "Standard",
-        "owner": "Mira Chen",
-        "summary": "All publicly funded research outputs must be published in open-access venues within 12 months."
-      },
-      {
-        "id": "RES-STD-02",
-        "title": "FAIR Data Stewardship Standard",
-        "status": "Active",
-        "category": "Standard",
-        "owner": "Aria Solenne",
-        "summary": "Findable, Accessible, Interoperable, Reusable requirements for all ministry datasets and research artifacts."
-      },
-      {
-        "id": "RES-STD-03",
-        "title": "Research Citation & Attribution Standard",
-        "status": "Pending",
-        "category": "Standard",
-        "owner": "Nia Rahman",
-        "summary": "Persistent identifier schema, citation formatting, and contributor taxonomy for Aetheria research outputs."
-      }
+      { "id": "RES-S01", "title": "Lab Asset Tracking Standard", "category": "Inventory", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Unique identifiers, custody chains, calibration schedules, and disposal records for laboratory equipment.", "effectiveDate": "2026-01-30" },
+      { "id": "RES-S02", "title": "Replication Evidence Grading", "category": "Review", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Evidence hierarchy from preregistered replication through published replication with artifact availability.", "effectiveDate": "2026-03-20" },
+      { "id": "RES-S03", "title": "Biosecurity Review Checklist", "category": "Safety", "status": "Beta", "owner": "Health & Safety Registrar", "summary": "Structured review checklist for projects involving biological agents, dual-use research, and export-controlled methods.", "effectiveDate": "2026-05-10" },
+      { "id": "RES-S04", "title": "Quantum Readiness Criteria", "category": "Quantum", "status": "Draft", "owner": "Technology, Science & Innovation Secretary", "summary": "Security, noise-tolerance, and interoperability criteria for upgrading quantum research to production workloads.", "effectiveDate": null }
     ]
   }
 }

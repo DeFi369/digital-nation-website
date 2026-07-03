@@ -1,85 +1,41 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Technology & Innovation",
-  "count": 3,
+  "ministry": "Technology, Science & Innovation",
+  "secretary": "Secretary of Technology, Science & Innovation",
+  "version": "Protocol v3.0",
+  "stats": {
+    "activePrograms": 18,
+    "papersPublished": 42,
+    "institutionalPartners": 9,
+    "activeGrants": 27,
+    "openDataSets": 14
+  },
+  "pillars": [
+    { "id": "SCI-PIL-01", "title": "Open Science", "summary": "Publication, data, and methodology released under open-access protocols with verifiable provenance." },
+    { "id": "SCI-PIL-02", "title": "Reproducibility", "summary": "Mandatory replication packages, registered reports, and release-ready artifact requirements for funded work." },
+    { "id": "SCI-PIL-03", "title": "Interdisciplinary Platforms", "summary": "Cross-ministry research platforms connecting computation, biotechnology, quantum methods, and social science." },
+    { "id": "SCI-PIL-04", "title": "Citizen Science", "summary": "Governed participation pathways for non-specialist contributors under ethics review and protocol attestation." },
+    { "id": "SCI-PIL-05", "title": "Evidence Stewardship", "summary": "Long-term preservation of datasets, models, and review artifacts in sovereign research repositories." }
+  ],
   "entries": {
     "research": [
-      {
-        "id": "SCI-RES-01",
-        "title": "Aetheria Research Commons",
-        "status": "Active",
-        "category": "Research Program",
-        "lead": "Aria Solenne",
-        "summary": "Open research track for verifiable experimentation, reproducible methodology, and cross-ministry observation networks."
-      },
-      {
-        "id": "SCI-RES-02",
-        "title": "Protocol Engineering Observatory",
-        "status": "Active",
-        "category": "Research Program",
-        "lead": "Kai Voss",
-        "summary": "Core-language and runtime research for protocol correctness, upgrade safety, and formal verification tooling."
-      },
-      {
-        "id": "SCI-RES-03",
-        "title": "Open Standards Track",
-        "status": "Planning",
-        "category": "Research Program",
-        "lead": "Mira Chen",
-        "summary": "Evaluation of open technology standards, interoperability agreements, and licensing models for public infrastructure."
-      }
+      { "id": "SCI-R01", "title": "Open Knowledge Graph", "category": "Infrastructure", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Protocol-indexed knowledge graph for verifiable citations, reproducible methods, and open research artifacts.", "participants": 241 },
+      { "id": "SCI-R02", "title": "Climate Adaptation Observatory", "category": "Environment", "status": "Active", "owner": "Environment Ministry", "summary": "Distributed sensor network with sovereign data provenance, calibration records, and published model weights.", "participants": 186 },
+      { "id": "SCI-R03", "title": "Quantum Methods Registry", "category": "Quantum", "status": "In Review", "owner": "Technology, Science & Innovation Secretary", "summary": "Benchmark suite and reproducible protocol for near-term quantum algorithms under Protocol v3.0 attestation.", "participants": 97 },
+      { "id": "SCI-R04", "title": "Biosecurity Open Data Pilot", "category": "Biotechnology", "status": "Active", "owner": "Health Ministry", "summary": "Governed release of de-identified observational datasets with ethics review and access-audit logs.", "participants": 133 },
+      { "id": "SCI-R05", "title": "Citizen Science Assembly", "category": "Participation", "status": "Scheduled", "owner": "Civic Assembly", "summary": "Annual review of contributed datasets, replication findings, and authorship attribution for volunteer researchers.", "participants": 412 }
     ],
     "policy": [
-      {
-        "id": "SCI-POL-01",
-        "title": "Innovation Sandbox Policy",
-        "status": "Active",
-        "category": "Innovation Policy",
-        "lead": "Nia Rahman",
-        "summary": "Time-limited sandbox operational rules, safety review gates, and graduation criteria for emerging technology work."
-      },
-      {
-        "id": "SCI-POL-02",
-        "title": "Data Stewardship Framework",
-        "status": "Active",
-        "category": "Innovation Policy",
-        "lead": "Aria Solenne",
-        "summary": "Policies for sensitive datasets, consent metadata, retention schedules, and audit access in research environments."
-      },
-      {
-        "id": "SCI-POL-03",
-        "title": "Technology Readiness Review",
-        "status": "Draft",
-        "category": "Innovation Policy",
-        "lead": "Kai Voss",
-        "summary": "Standardized readiness scoring, evidence requirements, and sponsorship workflow before public deployment."
-      }
+      { "id": "SCI-P01", "title": "Open-Access Mandate v3", "category": "Publication", "status": "Ratified", "owner": "Technology, Science & Innovation Secretary", "summary": "All protocol-funded research must publish in open-access venues with machine-readable artifacts within twelve months.", "effectiveDate": "2026-04-01" },
+      { "id": "SCI-P02", "title": "Reproducibility Standards", "category": "Methods", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Mandatory replication packages, deterministic environment specs, and registered-report submission for funded studies.", "effectiveDate": "2026-03-15" },
+      { "id": "SCI-P03", "title": "Research Ethics Framework", "category": "Governance", "status": "Active", "owner": "Justice & Safety Registrar", "summary": "Protocol-aligned ethics review, informed-attestation workflows, and risk classification for human-subject and environmental research.", "effectiveDate": "2026-01-20" },
+      { "id": "SCI-P04", "title": "Sovereign Data Retention", "category": "Storage", "status": "Draft", "owner": "Technology, Science & Innovation Secretary", "summary": "Minimum retention periods, redundant sovereign storage nodes, and cryptographic integrity checks for research artifacts.", "effectiveDate": null }
     ],
     "standards": [
-      {
-        "id": "SCI-STD-01",
-        "title": "API Design Standard",
-        "status": "Active",
-        "category": "Standard",
-        "lead": "Mira Chen",
-        "summary": "REST and event interface patterns for registry, engage, passport, and infrastructure service boundaries."
-      },
-      {
-        "id": "SCI-STD-02",
-        "title": "Security Baseline",
-        "status": "Active",
-        "category": "Standard",
-        "lead": "Kai Voss",
-        "summary": "Mandatory controls for authentication flows, key storage, observability, and incident response readiness."
-      },
-      {
-        "id": "SCI-STD-03",
-        "title": "Accessibility Standard",
-        "status": "Review",
-        "category": "Standard",
-        "lead": "Nia Rahman",
-        "summary": "WCAG-linked requirements, localization expectations, and accessibility review gates for public services."
-      }
+      { "id": "SCI-S01", "title": "Citation Provenance Standard", "category": "Metadata", "status": "Active", "owner": "Protocol Registrar", "summary": "Deterministic citation identifiers, dependency graph exports, and tamper-evident provenance chains.", "effectiveDate": "2026-02-10" },
+      { "id": "SCI-S02", "title": "Artifact Packaging Spec", "category": "Distribution", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Containerized, signed, and reproducible release bundles for code, data, models, and computational notebooks.", "effectiveDate": "2026-03-01" },
+      { "id": "SCI-S03", "title": "Replication Report Schema", "category": "Review", "status": "Beta", "owner": "Technology, Science & Innovation Secretary", "summary": "Machine-readable schema for independent replication reports, divergence notes, and verdict attestations.", "effectiveDate": "2026-05-20" },
+      { "id": "SCI-S04", "title": "Sensitive Data Tiering", "category": "Security", "status": "Draft", "owner": "Privacy Registrar", "summary": "Classification tiers for embargoed, proprietary, personal, and sovereign research data with access-control mappings.", "effectiveDate": null }
     ]
   }
 }
