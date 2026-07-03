@@ -111,6 +111,10 @@
     if (isStructurePage) {
       loadStructureScript();
     }
+    const isDashboardPage = document.body.classList.contains('page-dashboard') || window.location.pathname.includes('dashboard.html');
+    if (isDashboardPage) {
+      loadDashboardScript();
+    }
   }
 
   function loadCharterAddendumScript() {

@@ -341,20 +341,20 @@
 
     var items = data.cases.slice(0, 6);
     var rows = items.map(function (c) {
-      var parties = escapeHtml(c.petitioner || '—') + ' <span class="activity-divider" aria-hidden="true">v.</span> ' + escapeHtml(c.respondent || '—');
+      var parties = escapeHtml(c.petitioner || '—') + ' <span class=\"activity-divider\" aria-hidden=\"true\">v.</span> ' + escapeHtml(c.respondent || '—');
       return '<tr>' +
         '<td>' + escapeHtml(c.caseNumber) + '</td>' +
         '<td>' + escapeHtml(c.title) + '</td>' +
-        '<td><span class="activity-status status-' + c.status.toLowerCase().replace(/\s+/g, '-') + '">' + escapeHtml(c.status) + '</span></td>' +
+        '<td><span class=\"activity-status status-' + c.status.toLowerCase().replace(/\s+/g, '-') + '\">' + escapeHtml(c.status) + '</span></td>' +
         '<td>' + parties + '</td>' +
         '<td>' + formatDate(c.filingDate) + '</td>' +
         '</tr>';
     }).join('');
 
-    return '<section class="dashboard-feed-section" aria-labelledby="dashboard-court-title">' +
-      '<div class="section-header"><h2 id="dashboard-court-title">Court Cases</h2>' +
-      '<span class="feed-badge">court.json</span></div>' +
-      '<div class="table-wrap"><table class="feed-table"><thead><tr>' +
+    return '<section class=\"dashboard-feed-section\" aria-labelledby=\"dashboard-court-title\">' +
+      '<div class=\"section-header\"><h2 id=\"dashboard-court-title\">Court Cases</h2>' +
+      '<span class=\"feed-badge\">court.json</span></div>' +
+      '<div class=\"table-wrap\"><table class=\"feed-table\"><thead><tr>' +
       '<th>Case Number</th><th>Title</th><th>Status</th><th>Parties</th><th>Filed</th>' +
       '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
       '</section>';
@@ -373,73 +373,53 @@
     }
     if (feeds.civic && feeds.civic.feedback) {
       feeds.civic.feedback.forEach(function (f) {
-        var subject = f.subject || '';
-        items.push({ title: f.title + (subject ? ' — ' + subject : ''), type: 'Feedback', status: f.status, timestamp: f.timestamp, source: 'civic.json' });
+        items.push({ title: f.title || f.subject, type: 'Feedback', status: f.status, timestamp: f.timestamp, source: 'civic.json' });
       });
     }
-    if (feeds.civic && feeds.civic.governanceActions) {
-      feeds.civic.governanceActions.forEach(function (g) {
-        items.push({ title: g.title, type: 'Governance', status: g.status, timestamp: g.timestamp, source: 'civic.json' });
+    if (feeds.elections && feeds.elections.elections) {
+      feeds.elections.elections.forEach(function (e) {
+        items.push({ title: e.title || e.office, type: 'Election', status: e.status || 'Scheduled', timestamp: e.date || e.timestamp, source: 'elections.json' });
       });
     }
-
-    if (feeds.petitions && feeds.petitions.petitions) {
-      feeds.petitions.petitions.forEach(function (p) {
-        items.push({ title: p.title, type: 'Petition', status: p.status, timestamp: p.timestamp, source: 'petitions.json' });
+    if (feeds.assembly && feeds.assembly.bills) {
+      feeds.assembly.bills.slice(0, 5).forEach(function (b) {
+        items.push({ title: b.title, type: 'Bill', status: b.status, timestamp: b.timeline && b.timeline[0] && b.timeline[0].date, source: 'assembly.json' });
       });
     }
-
-    if (feeds.elections) {
-      var entries = feeds.elections.entries || {};
-      (entries.elections || []).forEach(function (e) {
-        var status = e.status === 'Scheduled' ? 'scheduled' : 'complete';
-        items.push({ title: e.summary || e.title, type: 'Election', status: status, timestamp: e.opened || e.certified, source: 'elections.json' });
-      });
-      (entries.referendums || []).forEach(function (r) {
-        items.push({ title: r.title, type: 'Referendum', status: (r.status || '').toLowerCase(), timestamp: r.opened || r.certified, source: 'elections.json' });
-      });
-      (entries.petitions || []).forEach(function (p) {
-        items.push({ title: p.title, type: 'Election Petition', status: (p.status || '').toLowerCase(), timestamp: p.submitted || p.validated, source: 'elections.json' });
+    if (feeds.court && feeds.court.cases) {
+      feeds.court.cases.slice(0, 5).forEach(function (c) {
+        items.push({ title: c.title, type: 'Case', status: c.status, timestamp: c.filingDate, source: 'court.json' });
       });
     }
 
-    if (feeds.assemblies && feeds.assemblies.bills) {
-      feeds.assemblies.bills.forEach(function (b) {
-        var latest = b.timeline && b.timeline.length ? b.timeline[b.timeline.length - 1] : null;
-        items.push({ title: b.title, type: 'Assembly', status: b.status, timestamp: latest ? latest.date : null, source: 'assembly.json' });
-      });
-    }
-    if (feeds.courts && feeds.courts.cases) {
-      feeds.courts.cases.forEach(function (c) {
-        items.push({ title: c.title, type: 'Court', status: c.status, timestamp: c.filingDate, source: 'court.json' });
-      });
-    }
+    items.sort(function (a, b) {
+      var ta = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+      var tb = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+      return tb - ta;
+    });
 
-    items.sort(function (a, b) { return new Date(b.timestamp) - new Date(a.timestamp); });
-
-    var limited = items.slice(0, 20);
-    if (!limited.length) {
-      container.innerHTML = '<p class="activity-empty">No activity available.</p>';
-      return;
-    }
-
-    var html = limited.map(function (item) {
-      var statusClass = 'status-' + item.status.toLowerCase().replace(/\s+/g, '-');
-      var dateStr = formatDateTime(item.timestamp);
-      return '<div class="activity-item" role="listitem" data-type="' + escapeHtml(item.type) + '" data-status="' + escapeHtml(item.status) + '" data-source="' + escapeHtml(item.source) + '">' +
-        '<div><div class="activity-label">' + escapeHtml(item.title) + '</div>' +
-        '<div class="activity-meta"><span class="activity-type">' + escapeHtml(item.type) + '</span>' +
-        '<span class="activity-divider" aria-hidden="true">·</span><span>' + escapeHtml(dateStr) + '</span>' +
-        '<span class="activity-divider" aria-hidden="true">·</span><span>' + escapeHtml(item.source) + '</span></div></div>' +
-        '<div class="activity-state ' + statusClass + '">' + escapeHtml(item.status.replace(/-/g, ' ').replace(/\b\w/g, function (l) { return l.toUpperCase(); })) + '</div>' +
-        '</div>';
+    var rows = items.slice(0, 20).map(function (item) {
+      return '<tr>' +
+        '<td>' + escapeHtml(item.type) + '</td>' +
+        '<td>' + escapeHtml(item.title) + '</td>' +
+        '<td><span class=\"activity-status status-' + item.status.toLowerCase().replace(/\s+/g, '-') + '\">' + escapeHtml(item.status) + '</span></td>' +
+        '<td>' + escapeHtml(item.source) + '</td>' +
+        '<td>' + formatDateTime(item.timestamp) + '</td>' +
+        '</tr>';
     }).join('');
 
+    var html = '<section class=\"dashboard-feed-section\" aria-labelledby=\"dashboard-activity-title\">' +
+      '<div class=\"section-header\"><h2 id=\"dashboard-activity-title\">Governance Activity</h2>' +
+      '<span class=\"feed-badge\">unified feed</span></div>' +
+      '<div class=\"table-wrap\"><table class=\"feed-table\"><thead><tr>' +
+      '<th>Type</th><th>Title</th><th>Status</th><th>Source</th><th>Timestamp</th>' +
+      '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '</section>';
+
     container.innerHTML = html;
-    initActivityFilter();
   }
 
-  function initActivityFilter() {
+  function initFeedList() {
     var input = document.getElementById('activity-filter');
     if (!input) return;
 
