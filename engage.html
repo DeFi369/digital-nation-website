@@ -116,7 +116,7 @@
     <section class="page">
       <div class="container">
         <h1>Civic Engagement Hub</h1>
-        <p class="lead">Your gateway to participatory governance. Create petitions, submit feedback, track governance actions, and stay informed on civic activity across the Principality.</p>
+        <p class="lead">Your gateway to participatory governance. Create petitions, submit feedback, track governance actions, and stay informed on civic activity across the Principality. The Chief Electoral Officer reports to the Assembly, and all petitions that meet signature thresholds are escalated for formal consideration.</p>
 
         <div class="civic-quick-links" aria-labelledby="quick-links-title">
           <h2 id="quick-links-title" class="sr-only">Quick Links</h2>
@@ -170,7 +170,7 @@
                   <option value="">Select target authority</option>
                   <option value="Assembly">Civic Assembly — Legislative & policy matters</option>
                   <option value="Executive">President Hermes / Executive — Operational directives</option>
-                  <option value="Department">Department — Domain-specific action</option>
+                  <option value="Ministry">Department — Domain-specific action</option>
                 </select>
               </div>
 
@@ -190,6 +190,14 @@
               <button type="reset" class="button">Clear Form</button>
             </div>
           </form>
+        </section>
+
+        <section class="civic-section" aria-labelledby="petition-cards-title">
+          <h2 id="petition-cards-title">Active Petitions</h2>
+          <p>Browse currently active petitions. Sign petitions that align with your priorities, or escalate completed petitions to the Assembly.</p>
+          <div class="petition-cards" id="petition-cards">
+            <div class="activity-loading" aria-hidden="true">Loading petitions…</div>
+          </div>
         </section>
 
         <section class="civic-section" aria-labelledby="feedback-title">
