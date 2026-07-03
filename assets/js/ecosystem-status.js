@@ -60,7 +60,7 @@
         });
     }
 
-    var identities = document.getElementById('verification-feed');
+    var identities = document.getElementById('verified-identities');
     if (identities) {
       fetch('assets/data/ecosystem-status.json')
         .then(function (res) { return res.json(); })
@@ -68,7 +68,7 @@
           renderVerifiedIdentities(identities, data);
         })
         .catch(function () {
-          identities.innerHTML = '<div class="activity-empty">Identity verification status is temporarily unavailable.</div>';
+          identities.innerHTML = '<div class="activity-empty">Verified identity data is temporarily unavailable.</div>';
         });
     }
 
