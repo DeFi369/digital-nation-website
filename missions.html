@@ -121,6 +121,19 @@
   <main id="main">
     <section class="page">
       <div class="container">
+        <section class="stats-section" aria-labelledby="missions-stats-title">
+          <h2 id="missions-stats-title" class="sr-only">Summary Statistics</h2>
+          <div id="missions-stats" class="stats-grid" aria-live="polite" aria-label="Missions summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading statistics...</div>
+          </div>
+        </section>
+        <section class="pillars-section" aria-labelledby="missions-pillars-title">
+          <h2 id="missions-pillars-title" class="sr-only">Strategic Pillars</h2>
+          <div id="missions-pillars" class="pillars-grid" aria-live="polite" aria-label="Missions strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+        </section>
+
         <h1>Diplomatic Missions &amp; Consular Network</h1>
         <p class="lead">
           Under the Secretary of External Affairs, AETHERIA’s layered republic maintains a distributed
@@ -272,5 +285,6 @@
   </footer>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/missions.js"></script>
 </body>
 </html>

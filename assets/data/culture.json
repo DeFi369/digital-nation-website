@@ -1,74 +1,7 @@
 {
   "generated": "2026-07-02",
-  "office": "Secretary of External Affairs",
-  "layer": "Layered Republic",
-  "count": 8,
-  "entries": [
-    {
-      "id": "CUL-01",
-      "title": "Public Narrative Charter",
-      "theme": "Narrative",
-      "status": "Active",
-      "owner": "Secretary of External Affairs",
-      "summary": "Sets clear publication standards for tone, attribution, versioning, and channel consistency across citizen-facing materials under the layered republic v3.0 governance substrate."
-    },
-    {
-      "id": "CUL-02",
-      "title": "Visual Identity Guidelines",
-      "theme": "Media",
-      "status": "Active",
-      "owner": "Design Guild / Secretary of External Affairs",
-      "summary": "Canonical palette, typography, layout guidance, and cross-platform asset rules for external-facing representation aligned with protocol v3.0 metadata and interchange standards."
-    },
-    {
-      "id": "CUL-03",
-      "title": "Community Reading Channel",
-      "theme": "Program",
-      "status": "Active",
-      "owner": "Civic Assembly / Secretary of External Affairs",
-      "summary": "Rotating study cadence for charter, manifesto, protocol, and treaty documents with synchronized translation tabs and accessibility overlays under treaty obligations."
-    },
-    {
-      "id": "CUL-04",
-      "title": "Cultural Exchange Series",
-      "theme": "Program",
-      "status": "Draft",
-      "owner": "Secretary of External Affairs",
-      "summary": "Curated regional contributions, open-collaborative storytelling sprints, and external outreach aligned with layered-republic values and diplomatic framing under consular guidance."
-    },
-    {
-      "id": "CUL-05",
-      "title": "Media Standards Playbook",
-      "theme": "Media",
-      "status": "Archived",
-      "owner": "Protocol Committee / Secretary of External Affairs",
-      "summary": "Superseded publication rules retained for historical compliance audits and changelog review under layered republic v3.0 standards."
-    },
-    {
-      "id": "CUL-06",
-      "title": "Open Contribution Framework",
-      "theme": "Program",
-      "status": "Active",
-      "owner": "Secretary of External Affairs",
-      "summary": "Transparent, protocol-compliant submission rules for approved work, citizen contributions, and external outreach channels across the layered republic with attribution verification gates."
-    },
-    {
-      "id": "CUL-07",
-      "title": "Ambassador Storytelling Campaign",
-      "theme": "Program",
-      "status": "Scheduled",
-      "owner": "Consular Network / Secretary of External Affairs",
-      "summary": "Coordinated ambassador-led community events, narrative recordings, and cross-regional cultural exchange coordinated under diplomatic protocols and reciprocity commitments."
-    },
-    {
-      "id": "CUL-08",
-      "title": "Accessibility Review Sprint",
-      "theme": "Media",
-      "status": "In Progress",
-      "owner": "Protocol Committee / Accessibility Guild",
-      "summary": "Multi-pass accessibility review for public-facing narrative, media, and external assets with layered-republic sign-off and publication-boundary checks."
-    }
-  ],
+  "ministry": "Office of Public Affairs & Culture",
+  "secretary": "Secretary of Public Affairs & Culture",
   "stats": {
     "activePrograms": 14,
     "participatingCitizens": 8420,
@@ -91,5 +24,10 @@
       "title": "Heritage Continuity",
       "summary": "Long-term archival of founding documents, debates, and cultural milestones."
     }
-  ]
+  ],
+  "entries": {
+    "programs": [],
+    "exchanges": [],
+    "archives": []
+  }
 }

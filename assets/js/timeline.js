@@ -17,9 +17,9 @@
 
   /* ---- stats ---- */
   function renderStats() {
-    const container = document.getElementById('communications-stats');
+    const container = document.getElementById('timeline-stats');
     if (!container) return;
-    fetch('assets/data/communications.json')
+    fetch('assets/data/timeline.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
         const stats = data.stats || {};
@@ -46,9 +46,9 @@
 
   /* ---- pillars ---- */
   function renderPillars() {
-    const container = document.getElementById('communications-pillars');
+    const container = document.getElementById('timeline-pillars');
     if (!container) return;
-    fetch('assets/data/communications.json')
+    fetch('assets/data/timeline.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
         const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
@@ -68,12 +68,12 @@
 
   /* ---- filters ---- */
   function initFilters() {
-    var searchField = document.getElementById('communications-search');
-    var scopeField = document.getElementById('communications-scope');
+    var searchField = document.getElementById('timeline-search');
+    var scopeField = document.getElementById('timeline-scope');
     if (!searchField || !scopeField) return;
 
     var cachedData = null;
-    fetch('assets/data/communications.json')
+    fetch('assets/data/timeline.json')
       .then(function (res) {
         return res.json();
       })
@@ -110,7 +110,7 @@
         return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
       });
 
-      renderMixedList('communications-mixed-feed', filtered);
+      renderMixedList('timeline-mixed-feed', filtered);
     }
 
     searchField.addEventListener('input', function () { applyFilter(); });

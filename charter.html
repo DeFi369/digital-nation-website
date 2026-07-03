@@ -121,6 +121,19 @@
   <main id="main">
     <section class="page">
       <div class="container">
+        <section class="stats-section" aria-labelledby="charter-stats-title">
+          <h2 id="charter-stats-title" class="sr-only">Summary Statistics</h2>
+          <div id="charter-stats" class="stats-grid" aria-live="polite" aria-label="Charter summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading statistics...</div>
+          </div>
+        </section>
+        <section class="pillars-section" aria-labelledby="charter-pillars-title">
+          <h2 id="charter-pillars-title" class="sr-only">Strategic Pillars</h2>
+          <div id="charter-pillars" class="pillars-grid" aria-live="polite" aria-label="Charter strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+        </section>
+
         <h1>Founding Charter</h1>
         <p class="lead">
           The founding text of THE PRINCIPALITY OF AETHERIA.
@@ -320,5 +333,6 @@
   </footer>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/charter.js"></script>
 </body>
 </html>

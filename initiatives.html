@@ -121,6 +121,19 @@
   <main id="main">
     <section class="page">
       <div class="container">
+        <section class="stats-section" aria-labelledby="initiatives-stats-title">
+          <h2 id="initiatives-stats-title" class="sr-only">Summary Statistics</h2>
+          <div id="initiatives-stats" class="stats-grid" aria-live="polite" aria-label="Initiatives summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading statistics...</div>
+          </div>
+        </section>
+        <section class="pillars-section" aria-labelledby="initiatives-pillars-title">
+          <h2 id="initiatives-pillars-title" class="sr-only">Strategic Pillars</h2>
+          <div id="initiatives-pillars" class="pillars-grid" aria-live="polite" aria-label="Initiatives strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+        </section>
+
         <h1>Initiatives</h1>
         <p class="lead">
           Active programs, infrastructure projects, and standards work run under the Principality charter.
@@ -303,5 +316,6 @@
   </footer>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/initiatives.js"></script>
 </body>
 </html>

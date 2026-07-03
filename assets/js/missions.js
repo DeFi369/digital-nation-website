@@ -1,4 +1,6 @@
 (function () {
+  'use strict';
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
@@ -6,115 +8,195 @@
   }
 
   function init() {
-    try {
-      const feed = document.getElementById('missions-feed');
-      const searchField = document.getElementById('missions-search');
-      const regionField = document.getElementById('missions-region');
-      const typeField = document.getElementById('missions-type');
+    setupMenu();
+    liveYear();
+    renderStats();
+    renderPillars();
+    initFilters();
+  }
 
-      if (!feed || !searchField || !regionField || !typeField) return;
-
-      let missionItems = [];
-
-      fetch('assets/data/missions.json')
-        .then(function (response) {
-          if (!response.ok) throw new Error('missions data unavailable');
-          return response.json();
-        })
-        .then(function (data) {
-          missionItems = Array.isArray(data.entries) ? data.entries.slice() : [];
-          render(missionItems);
-        })
-        .catch(function () {
-          feed.innerHTML = '<div class=\"activity-empty\">Mission directory is temporarily unavailable.</div>';
+  /* ---- stats ---- */
+  function renderStats() {
+    const container = document.getElementById('missions-stats');
+    if (!container) return;
+    fetch('assets/data/missions.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        const stats = data.stats || {};
+        var html = '';
+        Object.keys(stats).forEach(function (key) {
+          html += '<div class="stat">' +
+            '<span class="stat-value">' + escapeHtml(String(stats[key])) + '</span>' +
+            '<span class="stat-label">' + escapeHtml(pascalToTitle(key)) + '</span>' +
+          '</div>';
         });
+        container.innerHTML = html;
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Summary is temporarily unavailable.</div>';
+      });
+  }
 
-      function render(items) {
-        const term = searchField.value.trim().toLowerCase();
-        const region = regionField.value;
-        const type = typeField.value;
+  function pascalToTitle(value) {
+    return String(value)
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, function (s) { return s.toUpperCase(); })
+      .trim();
+  }
 
-        const filtered = items.filter(function (entry) {
-          const matchesTerm =
-            !term ||
-            String(entry.name || '').toLowerCase().includes(term) ||
-            String(entry.representative || '').toLowerCase().includes(term) ||
-            String(entry.region || '').toLowerCase().includes(term);
-          const matchesRegion = region === 'all' || entry.region === region;
-          const matchesType = type === 'all' || entry.type === type;
-          return matchesTerm && matchesRegion && matchesType;
+  /* ---- pillars ---- */
+  function renderPillars() {
+    const container = document.getElementById('missions-pillars');
+    if (!container) return;
+    fetch('assets/data/missions.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
+        container.innerHTML = items.map(function (item) {
+          return '<article class="activity-item pillar">' +
+            '<div class="activity-content">' +
+            '<h3 class="activity-title">' + escapeHtml(String(item.title || '')) + '</h3>' +
+            '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+            '</div>' +
+            '</article>';
+        }).join('');
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Pillar data is temporarily unavailable.</div>';
+      });
+  }
+
+  /* ---- filters ---- */
+  function initFilters() {
+    var searchField = document.getElementById('missions-search');
+    var scopeField = document.getElementById('missions-scope');
+    if (!searchField || !scopeField) return;
+
+    var cachedData = null;
+    fetch('assets/data/missions.json')
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        cachedData = data;
+      })
+      .catch(function () {
+        cachedData = null;
+      });
+
+    function applyFilter() {
+      if (!cachedData) return;
+      var term = searchField.value.trim().toLowerCase();
+      var scope = scopeField.value;
+
+      var items = [];
+      if (scope === 'all' || scope === 'entries') {
+        var entries = cachedData.entries || {};
+        Object.keys(entries).forEach(function (key) {
+          (entries[key] || []).forEach(function (entry) {
+            items.push(entry);
+          });
         });
-
-        if (!filtered.length) {
-          feed.innerHTML = '<div class=\"activity-empty\">No matching missions found.</div>';
-          return;
-        }
-
-        feed.innerHTML = filtered
-          .map(
-            function (entry) {
-              return (
-                '<article class=\"activity-item mission-item\" role=\"article\" aria-label=\"' +
-                escapeHtml(String(entry.id || '')) +
-                '\">' +
-                '<div class=\"mission-primary\">' +
-                '<div class=\"activity-label\">' +
-                escapeHtml(String(entry.name || 'Unnamed Mission')) +
-                '</div>' +
-                '<div class=\"activity-meta\">' +
-                escapeHtml(String(entry.id || '')) +
-                ' · ' +
-                escapeHtml(String(entry.region || 'Unknown region')) +
-                '</div>' +
-                '</div>' +
-                '<div class=\"mission-meta\">' +
-                '<span class=\"mission-badge mission-type-' +
-                slugify(String(entry.type || '')) +
-                '\">' +
-                escapeHtml(String(entry.type || '')) +
-                '</span>' +
-                '<span class=\"mission-badge mission-status-' +
-                slugify(String(entry.status || '')) +
-                '\">' +
-                escapeHtml(String(entry.status || '')) +
-                '</span>' +
-                '</div>' +
-                '<div class=\"activity-meta\">' +
-                escapeHtml(String(entry.representative || '')) +
-                '</div>' +
-                '<div class=\"activity-meta\">' +
-                escapeHtml(String(entry.note || '')) +
-                '</div>' +
-                '<div class=\"mission-contact\">' +
-                '<a class=\"button\" href=\"mailto:' +
-                escapeHtml(String(entry.contact || 'contact@example.aetheria')) +
-                '\">Contact</a>' +
-                '</div>' +
-                '</article>'
-              );
-            }
-          )
-          .join('');
       }
 
-      searchField.addEventListener('input', function () {
-        render(missionItems);
+      var filtered = items.filter(function (entry) {
+        var searchable =
+          (entry.title || '') + ' ' +
+          (entry.id || '') + ' ' +
+          (entry.summary || '') + ' ' +
+          (entry.category || '') + ' ' +
+          (entry.owner || '') + ' ' +
+          (entry.status || '');
+        return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
       });
-      regionField.addEventListener('change', function () {
-        render(missionItems);
-      });
-      typeField.addEventListener('change', function () {
-        render(missionItems);
-      });
+
+      renderMixedList('missions-mixed-feed', filtered);
+    }
+
+    searchField.addEventListener('input', function () { applyFilter(); });
+    scopeField.addEventListener('change', function () { applyFilter(); });
+  }
+
+  function renderMixedList(feedId, items) {
+    var feed = document.getElementById(feedId);
+    if (!feed) return;
+    if (!items.length) {
+      feed.innerHTML = '<div class="activity-empty">No matching entries found.</div>';
+      return;
+    }
+    feed.innerHTML = items.map(function (item) {
+      var statusClass = 'status-' + slugify(String(item.status || 'unknown'));
+      var extra = buildExtraMeta(item);
+      return '<article class="activity-item" role="article" aria-label="' + escapeHtml(String(item.id || item.title || '')) + '">' +
+        '<div class="activity-content">' +
+          '<h3 class="activity-title">' + escapeHtml(String(item.title || 'Untitled')) + '</h3>' +
+          '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+          '<div class="activity-meta">' +
+            '<span class="activity-type">' + escapeHtml(String(item.category || 'Entry')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.id || '')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.owner || item.lead || '—')) + '</span>' +
+          '</div>' +
+          (extra ? '<div class="activity-meta economics-meta">' + extra + '</div>' : '') +
+        '</div>' +
+        '<div class="activity-sidebar">' +
+          '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '—')) + '</span>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
+
+  function buildExtraMeta(item) {
+    var parts = [];
+    if (item.budget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.budget)) + '</span>');
+    if (item.participants) parts.push('<span class="metric">Participants: ' + escapeHtml(String(item.participants)) + '</span>');
+    if (item.published) parts.push('<span class="meta-date">Published: ' + escapeHtml(String(item.published)) + '</span>');
+    if (item.teamSize) parts.push('<span class="metric">Team: ' + escapeHtml(String(item.teamSize)) + '</span>');
+    if (item.monthlyBudget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.monthlyBudget)) + '</span>');
+    if (item.beneficiaries) parts.push('<span class="metric">Beneficiaries: ' + escapeHtml(String(item.beneficiaries)) + '</span>');
+    return parts.join('<span class="activity-divider">·</span>');
+  }
+
+  /* ---- menu / year ---- */
+  function setupMenu() {
+    var menuButton = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.menu');
+    if (!menuButton || !menu) return;
+    menuButton.addEventListener('click', function () {
+      var open = menu.dataset.open === 'true';
+      menu.dataset.open = String(!open);
+      menu.setAttribute('aria-hidden', String(open));
+      menuButton.setAttribute('aria-expanded', String(!open));
+      if (!open) {
+        var firstLink = menu.querySelector('a');
+        if (firstLink) setTimeout(function () { firstLink.focus(); }, 0);
+      }
+    });
+    menu.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.dataset.open === 'true') {
+        menu.dataset.open = 'false';
+        menu.setAttribute('aria-hidden', 'true');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.focus();
+      }
+    });
+  }
+
+  function liveYear() {
+    try {
+      var yearEl = document.querySelector('[data-year]');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     } catch {}
   }
 
   function escapeHtml(value) {
     return String(value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/&/g, '&')
+      .replace(/</g, '<')
+      .replace(/>/g, '>')
+      .replace(/"/g, '"')
+      .replace(/'/g, '&apos;');
   }
 
   function slugify(value) {

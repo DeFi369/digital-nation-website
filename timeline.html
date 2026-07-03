@@ -121,6 +121,19 @@
   <main id="main">
     <section class="page">
       <div class="container">
+        <section class="stats-section" aria-labelledby="timeline-stats-title">
+          <h2 id="timeline-stats-title" class="sr-only">Summary Statistics</h2>
+          <div id="timeline-stats" class="stats-grid" aria-live="polite" aria-label="Timeline summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading statistics...</div>
+          </div>
+        </section>
+        <section class="pillars-section" aria-labelledby="timeline-pillars-title">
+          <h2 id="timeline-pillars-title" class="sr-only">Strategic Pillars</h2>
+          <div id="timeline-pillars" class="pillars-grid" aria-live="polite" aria-label="Timeline strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+        </section>
+
         <h1>History &amp; Timeline</h1>
         <p class="lead">From early protocol experiments to a sovereign digital republic.</p>
 
@@ -286,5 +299,6 @@
   </footer>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/timeline.js"></script>
 </body>
 </html>

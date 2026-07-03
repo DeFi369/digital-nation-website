@@ -1,0 +1,35 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Constitutional Council",
+  "secretary": "Chair, Constitutional Council",
+  "stats": {
+    "articles": 12,
+    "sections": 47,
+    "amendments": 8,
+    "ratificationThreshold": "60%",
+    "lastAmended": "2025-11-15",
+    "complianceScore": "98.2%"
+  },
+  "pillars": [
+    {
+      "id": "CHT-PIL-01",
+      "title": "Living Document",
+      "summary": "Structured amendment process with citizen review periods and supermajority thresholds."
+    },
+    {
+      "id": "CHT-PIL-02",
+      "title": "Rights Architecture",
+      "summary": "Digital-native rights: data sovereignty, algorithmic due process, identity portability."
+    },
+    {
+      "id": "CHT-PIL-03",
+      "title": "Institutional Checks",
+      "summary": "Co-equal branches with binding judicial review and legislative oversight."
+    }
+  ],
+  "entries": {
+    "articles": [],
+    "amendments": [],
+    "interpretations": []
+  }
+}

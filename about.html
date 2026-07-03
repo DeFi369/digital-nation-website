@@ -122,6 +122,19 @@
   <main id="main">
     <section class="page">
       <div class="container">
+        <section class="stats-section" aria-labelledby="about-stats-title">
+          <h2 id="about-stats-title" class="sr-only">Summary Statistics</h2>
+          <div id="about-stats" class="stats-grid" aria-live="polite" aria-label="About summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading statistics...</div>
+          </div>
+        </section>
+        <section class="pillars-section" aria-labelledby="about-pillars-title">
+          <h2 id="about-pillars-title" class="sr-only">Strategic Pillars</h2>
+          <div id="about-pillars" class="pillars-grid" aria-live="polite" aria-label="About strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+        </section>
+
         <h1>About the Principality</h1>
         <p class="lead">
           AETHERIA is sovereign by code.
@@ -437,5 +450,6 @@
   </footer>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/about.js"></script>
 </body>
 </html>

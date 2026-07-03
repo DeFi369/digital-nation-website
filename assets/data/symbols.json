@@ -1,0 +1,33 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of Public Affairs & Culture",
+  "secretary": "Secretary of Public Affairs & Culture",
+  "stats": {
+    "officialSymbols": 8,
+    "usageGuidelines": 12,
+    "licenseDownloads": 3400,
+    "brandCompliance": "96%"
+  },
+  "pillars": [
+    {
+      "id": "SYM-PIL-01",
+      "title": "Open Brand",
+      "summary": "Symbols released under permissive license with attribution requirements."
+    },
+    {
+      "id": "SYM-PIL-02",
+      "title": "Semantic Identity",
+      "summary": "Each symbol encodes governance meaning, not just aesthetic."
+    },
+    {
+      "id": "SYM-PIL-03",
+      "title": "Adaptive System",
+      "summary": "Symbol set evolves with governance milestones and citizen contributions."
+    }
+  ],
+  "entries": {
+    "symbols": [],
+    "guidelines": [],
+    "assets": []
+  }
+}

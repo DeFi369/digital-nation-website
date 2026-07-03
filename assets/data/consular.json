@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Secretary of External Affairs",
+  "secretary": "Secretary of External Affairs",
+  "stats": {
+    "consularCases": 280,
+    "avgResolutionDays": 6,
+    "citizensAssisted": 1450,
+    "emergencyEvacuations": 3,
+    "documentServices": 840
+  },
+  "pillars": [
+    {
+      "id": "CON-PIL-01",
+      "title": "Citizen-First",
+      "summary": "Every consular action prioritizes citizen safety, dignity, and rights."
+    },
+    {
+      "id": "CON-PIL-02",
+      "title": "Digital Access",
+      "summary": "Consular services available via secure digital channels with biometric verification."
+    },
+    {
+      "id": "CON-PIL-03",
+      "title": "Host Nation Partnership",
+      "summary": "Cooperative frameworks with local authorities for rapid response."
+    }
+  ],
+  "entries": {
+    "services": [],
+    "cases": [],
+    "agreements": []
+  }
+}

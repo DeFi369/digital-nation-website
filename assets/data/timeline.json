@@ -1,0 +1,33 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of the President",
+  "secretary": "President of the Digital Nation",
+  "stats": {
+    "recordedEvents": 87,
+    "milestones": 23,
+    "futureProjected": 12,
+    "verifiedSources": "100%"
+  },
+  "pillars": [
+    {
+      "id": "TIM-PIL-01",
+      "title": "Immutable Record",
+      "summary": "Timeline entries anchored to verifiable ledger with cryptographic proofs."
+    },
+    {
+      "id": "TIM-PIL-02",
+      "title": "Participatory History",
+      "summary": "Citizens can propose timeline entries with evidence for community review."
+    },
+    {
+      "id": "TIM-PIL-03",
+      "title": "Forward Projection",
+      "summary": "Planned milestones published with confidence intervals and dependency mapping."
+    }
+  ],
+  "entries": {
+    "events": [],
+    "milestones": [],
+    "projections": []
+  }
+}

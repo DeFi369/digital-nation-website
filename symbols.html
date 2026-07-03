@@ -121,6 +121,19 @@
   <main id="main">
     <section class="page">
       <div class="container">
+        <section class="stats-section" aria-labelledby="symbols-stats-title">
+          <h2 id="symbols-stats-title" class="sr-only">Summary Statistics</h2>
+          <div id="symbols-stats" class="stats-grid" aria-live="polite" aria-label="Symbols summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading statistics...</div>
+          </div>
+        </section>
+        <section class="pillars-section" aria-labelledby="symbols-pillars-title">
+          <h2 id="symbols-pillars-title" class="sr-only">Strategic Pillars</h2>
+          <div id="symbols-pillars" class="pillars-grid" aria-live="polite" aria-label="Symbols strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+        </section>
+
         <h1>National Symbols</h1>
         <p class="lead">
           The visual and ceremonial identity of AETHERIA — flag concept, anthem direction, founding date,
@@ -304,5 +317,6 @@
   </footer>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/symbols.js"></script>
 </body>
 </html>

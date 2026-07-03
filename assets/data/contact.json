@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of Public Affairs & Culture",
+  "secretary": "Secretary of Public Affairs & Culture",
+  "stats": {
+    "channels": 6,
+    "avgResponseHours": 4,
+    "monthlyInquiries": 1240,
+    "resolutionRate": "94%",
+    "languagesSupported": 8
+  },
+  "pillars": [
+    {
+      "id": "CON-PIL-01",
+      "title": "Accessible Entry",
+      "summary": "Multiple contact channels with no gatekeeping or tiered access."
+    },
+    {
+      "id": "CON-PIL-02",
+      "title": "Transparent Tracking",
+      "summary": "Every inquiry gets a public ticket with status visibility and SLA."
+    },
+    {
+      "id": "CON-PIL-03",
+      "title": "Knowledge Capture",
+      "summary": "FAQ generation from inquiry patterns with multilingual publishing."
+    }
+  ],
+  "entries": {
+    "channels": [],
+    "faqs": [],
+    "offices": []
+  }
+}

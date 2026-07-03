@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of the President",
+  "secretary": "President of the Digital Nation",
+  "stats": {
+    "activeInitiatives": 18,
+    "pilotPrograms": 6,
+    "citizenLed": 11,
+    "crossMinistry": 8,
+    "budgetAllocated": "\u00a51.2B"
+  },
+  "pillars": [
+    {
+      "id": "INI-PIL-01",
+      "title": "Experimental Governance",
+      "summary": "Sandbox environments for policy innovation with automatic sunset clauses."
+    },
+    {
+      "id": "INI-PIL-02",
+      "title": "Citizen Co-Creation",
+      "summary": "Initiative design driven by participant feedback loops and open design sprints."
+    },
+    {
+      "id": "INI-PIL-03",
+      "title": "Measurable Impact",
+      "summary": "Every initiative has defined KPIs, public dashboards, and retrospective reviews."
+    }
+  ],
+  "entries": {
+    "initiatives": [],
+    "pilots": [],
+    "retrospectives": []
+  }
+}

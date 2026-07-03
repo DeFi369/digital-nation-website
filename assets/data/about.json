@@ -1,0 +1,40 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of the President",
+  "secretary": "President of the Digital Nation",
+  "stats": {
+    "citizens": 12450,
+    "activeMinistries": 7,
+    "operationalNodes": 24,
+    "yearsSinceFounding": 3,
+    "treatyPartners": 8,
+    "recognitionStatus": "Partial"
+  },
+  "pillars": [
+    {
+      "id": "ABT-PIL-01",
+      "title": "Sovereign by Code",
+      "summary": "Governance encoded in transparent, auditable protocols rather than opaque bureaucracies."
+    },
+    {
+      "id": "ABT-PIL-02",
+      "title": "Citizen-First Design",
+      "summary": "Every system built for human flourishing, dignity, and verifiable participation."
+    },
+    {
+      "id": "ABT-PIL-03",
+      "title": "Open by Default",
+      "summary": "Algorithms, ledgers, and decisions public unless charter-classified with sunset review."
+    },
+    {
+      "id": "ABT-PIL-04",
+      "title": "Global Interoperability",
+      "summary": "Standards alignment with international bodies for eventual recognition and integration."
+    }
+  ],
+  "entries": {
+    "milestones": [],
+    "principles": [],
+    "structure": []
+  }
+}

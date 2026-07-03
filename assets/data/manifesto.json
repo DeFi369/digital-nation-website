@@ -1,0 +1,39 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of the President",
+  "secretary": "President of the Digital Nation",
+  "stats": {
+    "principles": 9,
+    "commitments": 24,
+    "signatories": 8920,
+    "translations": 12,
+    "lastUpdated": "2026-01-15"
+  },
+  "pillars": [
+    {
+      "id": "MAN-PIL-01",
+      "title": "Code as Constitution",
+      "summary": "Governance logic expressed in executable, verifiable protocols."
+    },
+    {
+      "id": "MAN-PIL-02",
+      "title": "Networked Citizenship",
+      "summary": "Identity, rights, and participation portable across digital and physical borders."
+    },
+    {
+      "id": "MAN-PIL-03",
+      "title": "Prosperity Through Openness",
+      "summary": "Shared innovation, transparent markets, and composable public goods."
+    },
+    {
+      "id": "MAN-PIL-04",
+      "title": "Planetary Stewardship",
+      "summary": "Ecological limits encoded in resource accounting and allocation protocols."
+    }
+  ],
+  "entries": {
+    "principles": [],
+    "commitments": [],
+    "signatures": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of the President",
+  "secretary": "President of the Digital Nation",
+  "stats": {
+    "activeGoals": 12,
+    "completedGoals": 7,
+    "onTrack": 9,
+    "atRisk": 3,
+    "kpisTracked": 34
+  },
+  "pillars": [
+    {
+      "id": "GOL-PIL-01",
+      "title": "Recognition Pathway",
+      "summary": "Achieve sovereign recognition from 3 UN member states by 2027."
+    },
+    {
+      "id": "GOL-PIL-02",
+      "title": "Economic Self-Sufficiency",
+      "summary": "Internal economy sustaining 80% of operational costs without external grants."
+    },
+    {
+      "id": "GOL-PIL-03",
+      "title": "Civic Participation",
+      "summary": "75% citizen engagement rate in governance actions annually."
+    },
+    {
+      "id": "GOL-PIL-04",
+      "title": "Infrastructure Resilience",
+      "summary": "99.99% uptime across all critical civic services."
+    }
+  ],
+  "entries": {
+    "goals": [],
+    "kpis": [],
+    "milestones": []
+  }
+}
