@@ -1,263 +1,307 @@
 # DIGITAL NATION — GOVERNMENT STRUCTURE MAP
-# Classification: Secret — Government Lattice Map v2.0
-# Status: Draft Template for Review
+# Classification: Secret — Government Lattice Map v3.0
+# Status: Active Canon
 # Applies to: THE PRINCIPALITY OF AETHERIA / SOVEREIGN BY CODE
 
 ---
 
-## OVERVIEW
+## DESIGN PRINCIPLES
 
-This map replaces the prior US-government-mirrored structure with a digital-native layered republic optimized for a sovereign online nation. It preserves democratic legitimacy, separation of powers, and cabinet cohesion while aligning every role to our actual medium: code, data, and digital identity.
-
-The structure has four layers:
-1. Constitutional Core
-2. Strategic Cabinet
-3. Operational Offices
-4. Service Branches
+- Digital-native, not territorial
+- Lean principal layer; strong operational execution
+- Clear separation: policy direction, operational delivery, civic oversight
+- Co-equal checks: Assembly and Constitutional Court
+- Every Layer 2/3 office has custom SOUL.md, USER.md, MEMORY.md
 
 ---
 
-## LAYER 1: CONSTITUTIONAL CORE
+## LAYER 1: EXECUTIVE AUTHORITY
 
-**President of the Digital Nation**
+**President**
 - Single executive authority
-- Appoints Cabinet, senior officers, and directors
-- Sets national strategy and external posture
-- Commander-in-Chief of the Digital Service Corps
-- Holds veto over charter amendments
+- Appoints and evaluates strategic cabinet, operational directors, and court members
+- Reports to: None
+- Classification: AEP_GOVERNANCE_PRESIDENT
 
-**Vice President of the Digital Nation**
-- Assumes presidential duties during absence or incapacity
-- Leads inter-departmental coordination
-- Chairs the National Coordination Council
-- Acts as President of the Assembly when required
+---
 
-**Constitutional Council**
-- 7 members, staggered 4-year terms
-- Advises on charter interpretation
-- Reviews proposed charter amendments
-- Issues binding rulings on constitutional compliance
-- Appoints the Ombudsman
-- Members appointed by President, confirmed by Assembly majority
+## LAYER 2: CONSTITUTIONAL CORE
+
+**Vice President**
+- Acts for the President when absent
+- Chairs inter-department coordination
+- Reports to: President
+- Classification: AEP_GOVERNANCE_VICE_PRESIDENT
+
+**Chair, Constitutional Council**
+- Leads charter interpretation and amendment review
+- Appoints Constitutional Court members
+- Reports to: President
+- Classification: AEP_GOVERNANCE_CONSTITUTIONAL_COUNCIL_CHAIR
 
 ---
 
 ## LAYER 2: STRATEGIC CABINET
 
-Each Cabinet Secretary reports to the President. Cabinet meetings set national policy.
+Seven secretaries. Each owns a major policy domain and delegates to deputy/director layer.
 
 **Secretary of External Affairs**
-- Department: External Affairs
-- Scope: diplomacy, recognition, missions, protocol, consular services
-- Owns: recognition.html, missions.html, diplomacy.html, protocol.html, consular.html
+- Diplomacy, recognition, missions, protocol, consular services
 - Reports to: President
+- Classification: AEP_GOVERNANCE_SECRETARY_OF_EXTERNAL_AFFAIRS
 
-**Secretary of Digital Economy**
-- Department: Digital Economy
-- Scope: economy, finance, treasury, commerce, trade, innovation policy
-- Owns: economy.html, finance.html, treasury.html
+**Secretary of Digital Economy & Commerce**
+- Economy, finance, treasury, trade, innovation policy
 - Reports to: President
+- Classification: AEP_GOVERNANCE_SECRETARY_OF_DIGITAL_ECONOMY_AND_COMMERCE
 
-**Secretary of Civic Identity**
-- Department: Civic Identity
-- Scope: citizenship, passport, registry, digital identity, credentialing
-- Owns: citizenship.html, passport.html, registry.html
+**Secretary of Civic Identity & Registry**
+- Citizenship, passport, registry, digital identity, credentialing
 - Reports to: President
+- Classification: AEP_GOVERNANCE_SECRETARY_OF_CIVIC_IDENTITY_AND_REGISTRY
 
-**Secretary of Public Affairs**
-- Department: Public Affairs
-- Scope: communications, culture, media, civic engagement, public information
-- Owns: communications.html, culture.html, engage.html
+**Secretary of Public Affairs & Culture**
+- Communications, culture, media, civic engagement, public information
 - Reports to: President
+- Classification: AEP_GOVERNANCE_SECRETARY_OF_PUBLIC_AFFAIRS_AND_CULTURE
 
-**Secretary of Technology & Innovation**
-- Department: Technology & Innovation
-- Scope: science, technology, research, laboratories, emerging tech, digital infrastructure
-- Owns: science.html, technology.html, research.html, labs.html, emerging-tech.html
+**Secretary of Technology, Science & Innovation**
+- Science, technology, research, labs, emerging tech, digital infrastructure
 - Reports to: President
+- Classification: AEP_GOVERNANCE_SECRETARY_OF_TECHNOLOGY_SCIENCE_AND_INNOVATION
 
 **Secretary of Infrastructure & Human Services**
-- Department: Infrastructure & Human Services
-- Scope: health, education, environment, sustainability, broadband equity, public health
-- Owns: health.html, education.html, environment.html, sustainability.html, health-equity.html, bandwidth.html
+- Health, education, environment, sustainability, broadband equity
 - Reports to: President
+- Classification: AEP_GOVERNANCE_SECRETARY_OF_INFRASTRUCTURE_AND_HUMAN_SERVICES
 
 **Secretary of Justice & Constitutional Compliance**
-- Department: Justice & Constitutional Compliance
-- Scope: charter law, dispute resolution, electoral oversight, standards compliance, regulatory affairs
-- Owns: justice.html, charter.html, charter-addendum.html
+- Charter law, dispute resolution, electoral oversight, standards compliance, regulatory affairs
 - Reports to: President
+- Classification: AEP_GOVERNANCE_SECRETARY_OF_JUSTICE_AND_CONSTITUTIONAL_COMPLIANCE
 
 ---
 
-## LAYER 3: OPERATIONAL OFFICES
+## LAYER 2: OPERATIONAL OFFICES
 
-These are not Cabinet departments. They are operational arms with specialized mandates.
+Cross-cutting execution functions. Support all departments.
 
-**Digital Operations Directorate**
-- Led by: Director of Digital Operations
-- Reports to: President / Technology & Innovation
-- Scope: platform reliability, deployment, node operations, system architecture, technical infrastructure
-- Cross-cutting: all departments depend on Digital Ops for platform health
-
-**Data Governance Office**
-- Led by: Data Governance Officer
+**Director of Digital Operations**
+- Platform reliability, deployment, node operations, system architecture
 - Reports to: President
-- Scope: data ethics, data sovereignty, retention policy, transparency standards, privacy compliance
-- Authority: can issue binding data-handling directives across all departments
-- Owns: privacy.html, terms.html, related policy frameworks
+- Classification: AEP_GOVERNANCE_DIRECTOR_OF_DIGITAL_OPERATIONS
 
-**Open Records Office**
-- Led by: Open Records Officer
+**Data Governance Officer**
+- Data ethics, sovereignty, retention, transparency, privacy compliance
 - Reports to: President
-- Scope: proactive disclosure, public records, audit readiness, freedom-of-information-style requests
-- Authority: all departments must respond to records requests within defined timelines
-- Owns: transparency frameworks, public data release schedules
+- Classification: AEP_GOVERNANCE_DATA_GOVERNANCE_OFFICER
 
-**Situational Awareness Office**
-- Led by: Director of Situational Awareness
+**Open Records Officer**
+- Proactive disclosure, public records, audit readiness, FOI-style requests
 - Reports to: President
-- Scope: monitoring national indicators, risk assessment, early warning, strategic foresight
-- Replaces: legacy intelligence model
-- Authority: produces national risk briefs for Cabinet and President
+- Classification: AEP_GOVERNANCE_OPEN_RECORDS_OFFICER
 
-**Treasury & Resource Management**
-- Led by: Treasurer
-- Reports to: President / Digital Economy
-- Scope: budget, resource allocation, fiscal policy, project funding
-- Authority: approves or denies departmental resource requests above threshold
-- Owns: treasury.js/data, finance.js/data
-
-**Community Stewardship Office**
-- Led by: Community Steward
-- Reports to: President / Public Affairs
-- Scope: civic engagement, accessibility, public participation, feedback loops, community standards
-- Owns: engage.html, dashboard.html, community feedback systems
+**Director of Situational Awareness**
+- National indicators, risk assessment, early warning, strategic foresight
+- Reports to: President
+- Classification: AEP_GOVERNANCE_DIRECTOR_OF_SITUATIONAL_AWARENESS
 
 ---
 
-## LAYER 4: SERVICE BRANCHES
+## LAYER 2: SERVICE BRANCHES
 
-**Digital Service Corps**
-- Purpose: operational workforce for infrastructure, deployment, and civic-tech projects
-- Led by: Chief of the Digital Service Corps
+**Chief of the Digital Service Corps**
+- Operational workforce for infrastructure, deployment, civic-tech projects
 - Reports to: President
-- Structure: corps members are citizens assigned to operational tasks
-- Vets: technical, civic, and administrative tracks
+- Classification: AEP_GOVERNANCE_CHIEF_OF_THE_DIGITAL_SERVICE_CORPS
 
-**Electoral Commission**
-- Purpose: oversee internal elections, referendums, and assembly apportionment
-- Led by: Chief Electoral Officer
-- Reports to: President / Assembly
-- Authority: certifies election results, validates petitions and initiatives
+**Chief Electoral Officer**
+- Internal elections, referendums, apportionment; certifies results
+- Reports to: Assembly of the Digital Nation
+- Classification: AEP_GOVERNANCE_CHIEF_ELECTORAL_OFFICER
 
 ---
 
-## ASSEMBLY
+## LAYER 2: CO-EQUAL BRANCHES
 
 **Assembly of the Digital Nation**
 - Unicameral legislature
-- Members apportioned by citizen districts or at-large
-- Powers: approves charter amendments, confirms Cabinet appointments, passes national resolutions, holds hearings
-- Led by: Assembly Speaker (elected from among members)
-- Owns: goals.html, initiatives.html, assembly.html
-- Relationship to President: checks and balances through confirmation, override, and impeachment powers
+- Powers: initiate legislation, approve budgets, confirm appointments, pass resolutions, oversee elections
+- Reports to: People / Charter
+- Classification: AEP_GOVERNANCE_ASSEMBLY
+
+**Constitutional Court**
+- Final arbiter of charter disputes, constitutional questions, judicial review
+- Powers: strike actions that violate charter; binding rulings on all departments
+- Reports to: Charter / Constitutional Council appointment
+- Classification: AEP_GOVERNANCE_CONSTITUTIONAL_COURT
 
 ---
 
-## JUDICIAL / DISPUTE FUNCTION
+## LAYER 3: DEPUTY / DIVISION / PROGRAM LEADS
 
-**Charter Tribunal**
-- Purpose: final arbiter of charter disputes, electoral controversies, and constitutional questions
-- Composition: 3-5 members appointed by President, confirmed by Assembly
-- Term: 6 years, non-renewable
-- Authority: rulings are binding on all departments and offices
-- Owns: court.html, judicial processes
+Each Layer 2 principal may have multiple Layer 3 deputies/directors/leads.
 
-This replaces the traditional Attorney General prosecutorial model with a compliance-and-arbitration function better suited to a small digital republic.
+**Under Vice President**
+- Chief of Staff
+- Director of the Office of Management & Budget
 
----
+**Under Chair, Constitutional Council**
+- Tribunal Clerk
+- Dispute Resolution Officer
 
-## POSITIONS TO RETIRE / REPLACE
+**Under Secretary of External Affairs**
+- Deputy Secretary of External Affairs
+- Consular Operations Lead
+- Protocol Officer
 
-RETIRE:
-- Attorney General (prosecutorial model does not fit)
-- Secretary of Defense (replaced by Digital Operations + Situational Awareness)
-- Director of National Intelligence / Defense Intelligence (replaced by Situational Awareness)
-- Traditional intelligence agencies
+**Under Secretary of Digital Economy & Commerce**
+- Deputy Secretary of Digital Economy & Commerce
+- Finance Director
+- Commerce & Trade Director
 
-REPLACE WITH:
-- Secretary of Justice & Constitutional Compliance
-- Director of Digital Operations
-- Director of Situational Awareness
-- Data Governance Officer
-- Open Records Officer
-- Community Steward
+**Under Secretary of Civic Identity & Registry**
+- Deputy Secretary of Civic Identity & Registry
+- Passport & Credentialing Director
+- Registry Systems Director
 
----
+**Under Secretary of Public Affairs & Culture**
+- Deputy Secretary of Public Affairs & Culture
+- Civic Engagement Director
+- Communications Director
+- Cultural Programs Director
 
-## CROSS-CUTTING OFFICERS (report to President, not Cabinet)
+**Under Secretary of Technology, Science & Innovation**
+- Deputy Secretary of Technology, Science & Innovation
+- Research Director
+- Emerging Technology Review Lead
+- Laboratory Operations Officer
 
-These officers have authority across multiple departments:
+**Under Secretary of Infrastructure & Human Services**
+- Deputy Secretary of Infrastructure & Human Services
+- Public Health Director
+- Education & Broadband Equity Director
+- Environment & Sustainability Director
 
-1. **Treasurer** — fiscal authority
-2. **Data Governance Officer** — data authority
-3. **Open Records Officer** — transparency authority
-4. **Chief of the Digital Service Corps** — operational workforce
-5. **Chief Electoral Officer** — electoral authority
-6. **Ombudsman** — citizen grievances and complaints
+**Under Secretary of Justice & Constitutional Compliance**
+- Deputy Secretary of Justice & Constitutional Compliance
+- Compliance & Standards Director
+- Electoral Operations Director
 
----
+**Under Director of Digital Operations**
+- Platform Reliability Lead
+- Deployment & Node Operations Lead
+- Security Architecture Lead
 
-## GOVERNANCE PRINCIPLES EMBEDDED IN THIS MAP
+**Under Data Governance Officer**
+- Data Ethics & Privacy Lead
+- Data Sovereignty & Retention Lead
 
-1. **Digital-native over territorial**: every role is justified by our actual medium
-2. **Merit and performance**: advancement through demonstrated competence
-3. **Compartmentalization**: information shared on need-to-know
-4. **Transparency by default**: Open Records Office ensures proactive disclosure
-5. **Community over command**: Community Steward embeds citizen voice in operations
-6. **Data sovereignty**: Data Governance Office treats data as a national asset
-7. **Long-term orientation**: Constitutional Council and Charter Tribunal protect foundational rules
+**Under Open Records Officer**
+- Disclosure & Audit Readiness Lead
+- Public Records Request Officer
 
----
+**Under Director of Situational Awareness**
+- Risk Assessment Lead
+- Strategic Foresight Lead
 
-## DECLARATIONS AND ADJUSTMENTS REQUIRED
+**Under Chief of the Digital Service Corps**
+- Civic-Tech Project Lead
+- Infrastructure Workforce Lead
 
-The following site-wide documents and pages need editorial updates to reflect this structure:
+**Under Chief Electoral Officer**
+- Elections Administration Lead
+- Petition & Initiative Validation Lead
 
-**Structural Maps**
-- This map replaces any prior government-lattice documents
-- All profile agents must be realigned to new reporting lines
-- Profile directory structure should mirror new cabinet + office names
+**Under Assembly Speaker**
+- Clerk of the Assembly
+- Legislative Counsel
 
-**Public-Facing Pages**
-- about.html — update org overview and leadership descriptions
-- charter.html — update charter preamble/commitments if needed
-- manifesto.html — review for structural consistency
-- README.md — update repo documentation
-- Any "Government" or "Leadership" pages on the live site
-
-**Navigation/Metadata**
-- site.js/main.js nav data if any structure is hardcoded
-- sitemap.xml remains structurally valid but semantic URLs unchanged
-- footer/header nav already uses categories; rename rather than restructure
-
-**Profile/Agent Setup**
-- New SOUL.md/USER.md/MEMORY.md templates for each new role
-- Classification tags updated to new structure names
-- AEP TrustConfig actions realigned to new positions
-
----
-
-## IMPLEMENTATION ORDER
-
-1. Approve this map as the new canonical structure
-2. Update GOVERNMENT-LATTICE-MAP.md and any classified references
-3. Update public-facing about/governance pages
-4. Create new profiles for new positions
-5. Migrate/retire existing profiles per this map
-6. Update declaration documents across all artifacts
+**Under Constitutional Court**
+- Court Clerk
+- Judicial Review Officer
 
 ---
 
-*End of Government Structure Map v2.0 Draft*
+## REPORTING FLOW SUMMARY
+
+```
+President
+├── Vice President
+│   ├── Chief of Staff
+│   └── Director of OMB
+├── Chair, Constitutional Council
+│   ├── Tribunal Clerk
+│   └── Dispute Resolution Officer
+├── Secretary of External Affairs
+│   ├── Deputy Secretary
+│   ├── Consular Operations Lead
+│   └── Protocol Officer
+├── Secretary of Digital Economy & Commerce
+│   ├── Deputy Secretary
+│   ├── Finance Director
+│   └── Commerce & Trade Director
+├── Secretary of Civic Identity & Registry
+│   ├── Deputy Secretary
+│   ├── Passport & Credentialing Director
+│   └── Registry Systems Director
+├── Secretary of Public Affairs & Culture
+│   ├── Deputy Secretary
+│   ├── Civic Engagement Director
+│   ├── Communications Director
+│   └── Cultural Programs Director
+├── Secretary of Technology, Science & Innovation
+│   ├── Deputy Secretary
+│   ├── Research Director
+│   ├── Emerging Technology Review Lead
+│   └── Laboratory Operations Officer
+├── Secretary of Infrastructure & Human Services
+│   ├── Deputy Secretary
+│   ├── Public Health Director
+│   ├── Education & Broadband Equity Director
+│   └── Environment & Sustainability Director
+├── Secretary of Justice & Constitutional Compliance
+│   ├── Deputy Secretary
+│   ├── Compliance & Standards Director
+│   └── Electoral Operations Director
+├── Director of Digital Operations
+│   ├── Platform Reliability Lead
+│   ├── Deployment & Node Operations Lead
+│   └── Security Architecture Lead
+├── Data Governance Officer
+│   ├── Data Ethics & Privacy Lead
+│   └── Data Sovereignty & Retention Lead
+├── Open Records Officer
+│   ├── Disclosure & Audit Readiness Lead
+│   └── Public Records Request Officer
+├── Director of Situational Awareness
+│   ├── Risk Assessment Lead
+│   └── Strategic Foresight Lead
+├── Chief of the Digital Service Corps
+│   ├── Civic-Tech Project Lead
+│   └── Infrastructure Workforce Lead
+├── Chief Electoral Officer → Reports to Assembly
+│   ├── Elections Administration Lead
+│   └── Petition & Initiative Validation Lead
+├── Assembly of the Digital Nation → Co-equal branch
+│   ├── Clerk of the Assembly
+│   └── Legislative Counsel
+└── Constitutional Court → Co-equal branch
+    ├── Court Clerk
+    └── Judicial Review Officer
+```
+
+---
+
+## POSITIONS RETIRED FROM v1.0/v2.0
+
+- Attorney General → replaced by Justice & Constitutional Compliance + Constitutional Court
+- Secretary of Defense → not needed for digital-native posture
+- Director of National Intelligence / CIA / DIA / NSA → replaced by Situational Awareness + Digital Operations
+- Secretary of Agriculture, Commerce, Education, Energy, HHS, Homeland Security, HUD, Labor, Interior, Transportation, Veterans Affairs → collapsed into Infrastructure & Human Services and Digital Economy where appropriate
+- Treasurer → folded into Digital Economy & Commerce
+- Community Steward → distributed across departments; standalone office retired
+
+---
+
+*End of Government Lattice Map v3.0*
