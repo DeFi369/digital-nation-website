@@ -2,15 +2,15 @@
   "generated": "2026-07-02",
   "office": "Secretary of External Affairs",
   "layer": "Layered Republic",
-  "count": 6,
+  "count": 8,
   "entries": [
     {
       "id": "COM-01",
       "title": "Executive Public Notice",
       "channel": "Public Affairs",
       "status": "Active",
-      "owner": "Office of Communications",
-      "summary": "Timed announcements covering executive decisions and protocol updates under the layered republic external affairs layer."
+      "owner": "Office of Communications / Secretary of External Affairs",
+      "summary": "Timed, versioned announcements covering executive decisions, treaty updates, and protocol changes under the layered republic external affairs layer."
     },
     {
       "id": "COM-02",
@@ -18,7 +18,7 @@
       "channel": "Press",
       "status": "Active",
       "owner": "Secretary of External Affairs",
-      "summary": "Standard response timelines, attribution rules, and spokesperson routing aligned with layered republic governance standards."
+      "summary": "Standard response timelines, transparency routing rules, spokesperson assignments, and attribution boundaries aligned with v3.0 governance standards."
     },
     {
       "id": "COM-03",
@@ -26,7 +26,7 @@
       "channel": "Digital",
       "status": "Scheduled",
       "owner": "Secretary of External Affairs",
-      "summary": "Publication schedule aligned with civic-calendar milestones, coordinated across the layered republic external affairs layer."
+      "summary": "Publication and broadcast schedule aligned with civic-calendar milestones and coordinated across the layered republic external affairs layer."
     },
     {
       "id": "COM-04",
@@ -34,7 +34,7 @@
       "channel": "Public Affairs",
       "status": "Archived",
       "owner": "Secretary of External Affairs",
-      "summary": "Reference archive for consular-field communication practices under the layered republic structure."
+      "summary": "Reference archive for consular-field communication practices, authentication procedures, and emergency protocols under the layered republic structure."
     },
     {
       "id": "COM-05",
@@ -42,7 +42,7 @@
       "channel": "Press",
       "status": "Active",
       "owner": "Secretary of External Affairs",
-      "summary": "Managed intake for interview coordination and record logging within the layered republic external affairs layer."
+      "summary": "Managed intake workflow for interview coordination, verification, and record logging within the layered republic external affairs layer."
     },
     {
       "id": "COM-06",
@@ -50,7 +50,23 @@
       "channel": "Digital",
       "status": "Archived",
       "owner": "Secretary of External Affairs",
-      "summary": "Retrospective archive for public outreach initiatives aligned with layered republic values."
+      "summary": "Retrospective archive for public outreach initiatives with categorized metrics aligned with layered republic values and protocol compliance."
+    },
+    {
+      "id": "COM-07",
+      "title": "Diplomatic Statement Release",
+      "channel": "Public Affairs",
+      "status": "Active",
+      "owner": "Secretary of External Affairs",
+      "summary": "Standardized release patterns for treaty signatures, accreditation notices, and multilateral statements coordinated under diplomatic protocols."
+    },
+    {
+      "id": "COM-08",
+      "title": "Community Newsletter Pipeline",
+      "channel": "Digital",
+      "status": "Scheduled",
+      "owner": "Secretary of External Affairs",
+      "summary": "Multi-segment newsletter pipeline covering diplomacy, culture, missions, and protocol updates with subscriber-specific routing rules."
     }
   ]
 }

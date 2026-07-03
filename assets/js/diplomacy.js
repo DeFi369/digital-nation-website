@@ -8,16 +8,18 @@
   }
 
   function init() {
+    setupTreatyFilter();
+    renderMultilateral();
+  }
+
+  function setupTreatyFilter() {
     const filterInput = document.getElementById('diplomacy-treaty-filter');
     if (filterInput) {
       filterInput.addEventListener('input', function () {
         renderTreaties(String(this.value || '').trim());
       });
-      renderTreaties('');
-    } else {
-      renderTreaties('');
     }
-    renderMultilateral();
+    renderTreaties('');
   }
 
   function renderTreaties(keyword) {
@@ -33,7 +35,7 @@
       })
       .then(function (data) {
         let items = [];
-        if (Array.isArray(data.entries?.treaties)) {
+        if (Array.isArray(data.entries && data.entries.treaties)) {
           items = data.entries.treaties.slice();
         }
         if (keyword) {
@@ -43,6 +45,7 @@
               String(t.title || '').toLowerCase().indexOf(q) !== -1 ||
               String(t.party || '').toLowerCase().indexOf(q) !== -1 ||
               String(t.status || '').toLowerCase().indexOf(q) !== -1 ||
+              String(t.type || '').toLowerCase().indexOf(q) !== -1 ||
               String(t.id || '').toLowerCase().indexOf(q) !== -1
             );
           });
@@ -57,7 +60,7 @@
   function renderTreatyList(container, items, keyword) {
     if (!items.length) {
       const msg = keyword
-        ? 'No treaties match "' + escapeHtml(keyword) + '".'
+        ? 'No treaties match \u201c' + escapeHtml(keyword) + '\u201d.'
         : 'No treaties are registered.';
       container.innerHTML = '<div class="activity-empty">' + msg + '</div>';
       return;
@@ -103,7 +106,7 @@
         return response.json();
       })
       .then(function (data) {
-        const items = Array.isArray(data.entries?.multilateral) ? data.entries.multilateral.slice() : [];
+        const items = Array.isArray(data.entries && data.entries.multilateral) ? data.entries.multilateral.slice() : [];
         renderMultilateralList(feed, items);
       })
       .catch(function () {
@@ -147,7 +150,8 @@
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   function slugify(value) {
