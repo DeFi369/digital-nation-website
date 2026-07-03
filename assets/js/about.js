@@ -16,13 +16,6 @@
     initFilters();
   }
 
-  function injectHeaderNav() {
-    if (typeof DigitalNationNav === 'undefined' || !DigitalNationNav.injectHeader) {
-      return;
-    }
-    DigitalNationNav.injectHeader('#site-menu');
-  }
-
   /* ---- stats ---- */
   function renderStats() {
     const container = document.getElementById('about-stats');
