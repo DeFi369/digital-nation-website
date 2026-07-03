@@ -60,7 +60,11 @@
         "reportedDate": "2026-07-01",
         "resolvedDate": "2026-07-04",
         "summary": "Security vulnerability in consensus layer requiring emergency patch deployment across all active nodes. Successfully mitigated within 72 hours.",
-        "affectedServices": ["Consensus Layer", "Registry", "Treasury Queries"]
+        "affectedServices": [
+          "Consensus Layer",
+          "Registry",
+          "Treasury Queries"
+        ]
       },
       {
         "id": "SEC-INC-02",
@@ -71,7 +75,10 @@
         "reportedDate": "2026-06-15",
         "resolvedDate": "2026-06-15",
         "summary": "Coordinated DDoS attempt on citizen registry infrastructure. Mitigated through traffic filtering and redundant gateway activation within 4 hours.",
-        "affectedServices": ["Registry API", "Verification Endpoints"]
+        "affectedServices": [
+          "Registry API",
+          "Verification Endpoints"
+        ]
       },
       {
         "id": "SEC-INC-03",
@@ -82,7 +89,10 @@
         "reportedDate": "2026-06-28",
         "resolvedDate": null,
         "summary": "Coordinated phishing campaign targeting node operators with fake security update notifications. Investigation ongoing.",
-        "affectedServices": ["Node Operations", "Key Management"]
+        "affectedServices": [
+          "Node Operations",
+          "Key Management"
+        ]
       },
       {
         "id": "SEC-INC-04",
@@ -93,7 +103,10 @@
         "reportedDate": "2026-05-22",
         "resolvedDate": "2026-05-22",
         "summary": "Brief latency spike on treasury query endpoints caused by cache invalidation bug. Hotfix deployed within 90 minutes.",
-        "affectedServices": ["Treasury API", "Finance Dashboard"]
+        "affectedServices": [
+          "Treasury API",
+          "Finance Dashboard"
+        ]
       }
     ],
     "protocols": [
@@ -134,5 +147,22 @@
         "lastReviewed": "2026-03-11"
       }
     ]
-  }
+  },
+  "pillars": [
+    {
+      "id": "SAF-PIL-01",
+      "title": "Operational Awareness",
+      "summary": "Real-time threat monitoring, incident correlation, and automated alerting."
+    },
+    {
+      "id": "SAF-PIL-02",
+      "title": "Resilient Architecture",
+      "summary": "Distributed systems with graceful degradation and rapid recovery."
+    },
+    {
+      "id": "SAF-PIL-03",
+      "title": "Citizen Protection",
+      "summary": "Identity safeguards, fraud detection, and privacy-preserving security."
+    }
+  ]
 }

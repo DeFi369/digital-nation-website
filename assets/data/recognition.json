@@ -10,7 +10,11 @@
       "criteria": "Montevideo + Digital",
       "status": "Active",
       "summary": "Codified mutual recognition of citizen credentials, shared anti-fraud measures, and consular referral channels across a layered digital governance structure.",
-      "evidence": ["Published governance charter", "Transparent voting logs", "Node uptime reports"],
+      "evidence": [
+        "Published governance charter",
+        "Transparent voting logs",
+        "Node uptime reports"
+      ],
       "effectiveDate": "2026-03-14",
       "renewable": true
     },
@@ -20,7 +24,11 @@
       "criteria": "Observer Pathway",
       "status": "Under Review",
       "summary": "Data-residency requirements, cross-border incident reporting, and standard API surface definitions for multilateral interoperability.",
-      "evidence": ["API standard proposals", "Incident reports", "Consortium participation record"],
+      "evidence": [
+        "API standard proposals",
+        "Incident reports",
+        "Consortium participation record"
+      ],
       "effectiveDate": "2026-08-01",
       "renewable": true
     },
@@ -30,7 +38,11 @@
       "criteria": "Bilateral Recognition",
       "status": "Signed",
       "summary": "Honorary consular officers, document authentication workflows, and citizen-support call routing aligned with the layered republic model.",
-      "evidence": ["Signed accord", "Consular protocols", "Authentication flow documentation"],
+      "evidence": [
+        "Signed accord",
+        "Consular protocols",
+        "Authentication flow documentation"
+      ],
       "effectiveDate": "2026-05-19",
       "renewable": false
     },
@@ -40,7 +52,11 @@
       "criteria": "Observer Status",
       "status": "Active",
       "summary": "Observer rights in standards proceedings with voting rights on technical amendments and governance-layer specifications.",
-      "evidence": ["Observer agreement", "Participation logs", "Standard amendment votes"],
+      "evidence": [
+        "Observer agreement",
+        "Participation logs",
+        "Standard amendment votes"
+      ],
       "effectiveDate": "2026-01-01",
       "renewable": false
     },
@@ -50,19 +66,50 @@
       "criteria": "Passport Diplomacy",
       "status": "Ratified",
       "summary": "Recommends favorable treatment for AETHERIA passport holders with reciprocal arrangements across friendly networks.",
-      "evidence": ["Reciprocity notice", "Passport samples", "Member directory"],
+      "evidence": [
+        "Reciprocity notice",
+        "Passport samples",
+        "Member directory"
+      ],
       "effectiveDate": "2026-04-22",
       "renewable": true
     },
     {
       "id": "REC-06",
-      "title": "Open Government Partnership — Digital Track",
+      "title": "Open Government Partnership \u2014 Digital Track",
       "criteria": "Multilateral Observer",
       "status": "Observer",
       "summary": "Open-data commitments, participatory budgeting standards, and public accountability frameworks through layered external representation.",
-      "evidence": ["Open data commitments", "Budget transparency reports", "Assembly minutes"],
+      "evidence": [
+        "Open data commitments",
+        "Budget transparency reports",
+        "Assembly minutes"
+      ],
       "effectiveDate": "2026-01-18",
       "renewable": false
+    }
+  ],
+  "stats": {
+    "sovereignRecognitions": 3,
+    "pendingApplications": 12,
+    "treatyPartners": 8,
+    "observerStatus": 5
+  },
+  "pillars": [
+    {
+      "id": "REC-PIL-01",
+      "title": "Statehood Criteria",
+      "summary": "Montevideo criteria fulfillment with digital-native evidence packages."
+    },
+    {
+      "id": "REC-PIL-02",
+      "title": "Bilateral Engagement",
+      "summary": "Targeted recognition campaigns with mutual interest mappings."
+    },
+    {
+      "id": "REC-PIL-03",
+      "title": "Multilateral Access",
+      "summary": "Observer status and committee participation in relevant international bodies."
     }
   ]
 }

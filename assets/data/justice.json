@@ -158,5 +158,22 @@
         "lastReviewed": "2026-03-21"
       }
     ]
-  }
+  },
+  "pillars": [
+    {
+      "id": "JUS-PIL-01",
+      "title": "Constitutional Primacy",
+      "summary": "All law and policy subordinate to charter; judicial review with binding effect."
+    },
+    {
+      "id": "JUS-PIL-02",
+      "title": "Dispute Resolution",
+      "summary": "Tiered mediation, arbitration, and adjudication with citizen-accessible entry."
+    },
+    {
+      "id": "JUS-PIL-03",
+      "title": "Compliance Culture",
+      "summary": "Proactive compliance frameworks replacing punitive enforcement where possible."
+    }
+  ]
 }

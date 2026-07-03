@@ -89,5 +89,28 @@
         "summary": "Defines secondary governance jurisdictions activated when primary nodes become unreachable or compromised, preserving layered republic continuity."
       }
     ]
-  }
+  },
+  "stats": {
+    "activeStandards": 22,
+    "sovereigntyProtocols": 8,
+    "interopAgreements": 14,
+    "complianceRate": "94.3%"
+  },
+  "pillars": [
+    {
+      "id": "PRO-PIL-01",
+      "title": "Protocol Sovereignty",
+      "summary": "Standards owned, governed, and evolvable by the republic without vendor lock-in."
+    },
+    {
+      "id": "PRO-PIL-02",
+      "title": "Interoperability",
+      "summary": "Cross-protocol bridges with verified translation layers and audit trails."
+    },
+    {
+      "id": "PRO-PIL-03",
+      "title": "Upgrade Governance",
+      "summary": "Staged deployments with rollback, citizen review, and fork protection."
+    }
+  ]
 }

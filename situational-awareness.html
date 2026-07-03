@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Situational Awareness for AETHERIA: national indicators, risk assessment, strategic foresight, and early warning reporting through the President's operational layer.">
+  <meta name="description" content="Situational Awareness for the Principality of Aetheria: national indicators, risk assessment, strategic foresight, and early warning reporting through the President's operational layer, under the oversight of the Secretary of Public Affairs & Culture.">
   <link rel="canonical" href="https://defi369.github.io/digital-nation-website/situational-awareness.html">
   <meta property="og:title" content="Situational Awareness — The Principality of Aetheria">
-  <meta property="og:description" content="National indicators, risk assessment, strategic foresight, and early warning.">
+  <meta property="og:description" content="National indicators, risk assessment, strategic foresight, and early warning under the Secretary of Public Affairs & Culture.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://defi369.github.io/digital-nation-website/situational-awareness.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Situational Awareness — The Principality of Aetheria">
-  <meta name="twitter:description" content="National indicators, risk assessment, and strategic foresight.">
+  <meta name="twitter:description" content="National indicators, risk assessment, and strategic foresight under the Secretary of Public Affairs & Culture.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <title>Situational Awareness — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,7 @@
           <summary>Engagement</summary>
           <div class="dropdown-wrap">
             <a href="engage.html">Engage</a>
-                <a href="citizen-hub.html">Citizen Hub</a>
+            <a href="citizen-hub.html">Citizen Hub</a>
             <a href="tools.html">Tools</a>
             <a href="transparency.html">Transparency</a>
             <a href="digital-service-corps.html">Digital Service Corps</a>
@@ -122,18 +122,21 @@
     <section class="page">
       <div class="container">
         <h1>Situational Awareness</h1>
-        <p class="lead">The Situational Awareness Office is an operational arm supporting early warning, risk assessment, and strategic foresight across AETHERIA. Reporting through the President's operational layer, it curates national indicators and analytic products for senior decision-makers.</p>
+        <p class="lead">
+          Under the <strong>Secretary of Public Affairs & Culture</strong>, the <strong>Situational Awareness Office</strong> operates as an operational arm supporting early warning, risk assessment, and strategic foresight across Aetheria. Reporting through the President's operational layer, it curates national indicators and analytic products for senior decision-makers and publishes summary intelligence for public awareness.
+        </p>
 
-        <div class="activity-filters" aria-label="Filter situational awareness items">
-          <input type="search" id="situational-awareness-search" placeholder="Search indicators, assessments, briefings..." autocomplete="off" aria-label="Search situational awareness items"/>
-          <select id="situational-awareness-status" aria-label="Filter by status">
+        <div class="activity-filters" id="situational-awareness-filters" aria-label="Filter situational awareness items">
+          <label for="situational-awareness-search" class="sr-only">Search indicators, assessments, briefings</label>
+          <input type="search" id="situational-awareness-search" class="activity-filter" placeholder="Search indicators, assessments, briefings..." autocomplete="off" />
+          <select id="situational-awareness-status" class="activity-select" aria-label="Filter by status">
             <option value="all">All Statuses</option>
-            <option value="active">Active</option>
-            <option value="watch">Watch</option>
-            <option value="elevated">Elevated</option>
-            <option value="dormant">Dormant</option>
-            <option value="completed">Completed</option>
-            <option value="scheduled">Scheduled</option>
+            <option value="Active">Active</option>
+            <option value="Watch">Watch</option>
+            <option value="Elevated">Elevated</option>
+            <option value="Dormant">Dormant</option>
+            <option value="Completed">Completed</option>
+            <option value="Scheduled">Scheduled</option>
           </select>
         </div>
 
@@ -153,12 +156,12 @@
         </div>
 
         <h2>Cross-Links</h2>
-        <p>Situational Awareness informs <a href="data-governance.html">Data Governance</a>, <a href="safety.html">Safety</a>, <a href="technology.html">Technology</a>, and <a href="health.html">Health</a> planning.</p>
+        <p>Situational Awareness informs <a href="data-governance.html">Data Governance</a>, <a href="safety.html">Safety</a>, <a href="technology.html">Technology</a>, <a href="health.html">Health</a>, <a href="infrastructure.html">Infrastructure</a>, and <a href="diplomacy.html">Diplomacy</a> planning.</p>
 
         <div class="cta">
-          <a class="button primary" href="assets/data/situational-awareness.json">Download Situational Awareness Data</a>
-          <a class="button" href="open-records.html">Open Records</a>
+          <a class="button primary" href="open-records.html">Open Records</a>
           <a class="button" href="engage.html">Engage</a>
+          <a class="button" href="data-governance.html">Data Governance</a>
         </div>
       </div>
     </section>
@@ -172,7 +175,7 @@
           <span class="footer-tagline">Sovereign by code</span>
         </div>
         <div class="footer-meta">
-          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
+          <span class="protocol-version" aria-label="Protocol version">Protocol v3.0.0</span>
           <span class="footer-status" aria-label="Public network status">
             <span class="status-dot" aria-hidden="true"></span>
             Network Active
@@ -258,8 +261,8 @@
       </div>
     </div>
   </footer>
-  <script src="assets/js/site.js"></script>
   <script src="assets/js/situational-awareness.js"></script>
+  <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

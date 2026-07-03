@@ -81,5 +81,28 @@
         "summary": "Shared identity, messaging, and safety-interlock protocol for multi-vendor robot fleets in civic deployments."
       }
     ]
-  }
+  },
+  "stats": {
+    "reviewedProposals": 28,
+    "sandboxProjects": 7,
+    "gateApprovals": 12,
+    "redLinesDeclared": 4
+  },
+  "pillars": [
+    {
+      "id": "EMT-PIL-01",
+      "title": "Responsible Innovation",
+      "summary": "Staged gate reviews with safety, ethics, and dual-use assessments."
+    },
+    {
+      "id": "EMT-PIL-02",
+      "title": "Sandbox Governance",
+      "summary": "Controlled deployment environments with rollback triggers and monitoring."
+    },
+    {
+      "id": "EMT-PIL-03",
+      "title": "Red Line Clarity",
+      "summary": "Explicitly prohibited research domains with international coordination."
+    }
+  ]
 }

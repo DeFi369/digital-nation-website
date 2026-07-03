@@ -92,5 +92,30 @@
         "period": "Ongoing"
       }
     ]
-  }
+  },
+  "ministry": "Open Records Office",
+  "secretary": "Open Records Officer",
+  "stats": {
+    "pendingRequests": 12,
+    "avgResponseDays": 8,
+    "disclosureRate": "87%",
+    "appealsFiled": 3
+  },
+  "pillars": [
+    {
+      "id": "ORO-PIL-01",
+      "title": "Proactive Disclosure",
+      "summary": "Default-open publication with narrow, time-limited exemptions."
+    },
+    {
+      "id": "ORO-PIL-02",
+      "title": "Requestor Rights",
+      "summary": "Fee-free requests, status tracking, and appeal mechanisms with deadlines."
+    },
+    {
+      "id": "ORO-PIL-03",
+      "title": "Audit Readiness",
+      "summary": "Structured logging of all access decisions for internal and external review."
+    }
+  ]
 }

@@ -12,20 +12,18 @@
     liveYear();
     renderStats();
     renderPillars();
-    renderPrograms();
     renderTools();
-    renderReports();
     initFilters();
   }
 
   /* ---- stats ---- */
   function renderStats() {
-    var container = document.getElementById('engage-stats');
+    const container = document.getElementById('tools-stats');
     if (!container) return;
-    fetch('assets/data/engage.json')
+    fetch('assets/data/tools.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
-        var stats = data.stats || {};
+        const stats = data.stats || {};
         var html = '';
         Object.keys(stats).forEach(function (key) {
           html += '<div class="stat">' +
@@ -36,7 +34,7 @@
         container.innerHTML = html;
       })
       .catch(function () {
-        container.innerHTML = '<div class="activity-empty">Engagement summary is temporarily unavailable.</div>';
+        container.innerHTML = '<div class="activity-empty">Tools summary is temporarily unavailable.</div>';
       });
   }
 
@@ -49,12 +47,12 @@
 
   /* ---- pillars ---- */
   function renderPillars() {
-    var container = document.getElementById('engage-pillars');
+    const container = document.getElementById('tools-pillars');
     if (!container) return;
-    fetch('assets/data/engage.json')
+    fetch('assets/data/tools.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
-        var items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
+        const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
         container.innerHTML = items.map(function (item) {
           return '<article class="activity-item pillar">' +
             '<div class="activity-content">' +
@@ -69,17 +67,9 @@
       });
   }
 
-  /* ---- programs / tools / reports ---- */
-  function renderPrograms() {
-    loadSection('engage-programs-feed', 'programs', 'Engagement programs');
-  }
-
+  /* ---- tools ---- */
   function renderTools() {
-    loadSection('engage-tools-feed', 'tools', 'Civic tools');
-  }
-
-  function renderReports() {
-    loadSection('engage-reports-feed', 'reports', 'Engagement reports');
+    loadSection('tools-feed', 'tools', 'Civic tools');
   }
 
   /* ---- shared loader ---- */
@@ -88,9 +78,9 @@
     if (!feed) return;
     feed.innerHTML = '<div class="activity-loading" aria-hidden="true">Loading ' + escapeHtml(placeholderText || sectionKey) + '...</div>';
 
-    fetch('assets/data/engage.json')
+    fetch('assets/data/tools.json')
       .then(function (response) {
-        if (!response.ok) throw new Error('engage data unavailable');
+        if (!response.ok) throw new Error('tools data unavailable');
         return response.json();
       })
       .then(function (data) {
@@ -111,23 +101,22 @@
     }
     container.innerHTML = items.map(function (item) {
       var statusClass = 'status-' + slugify(String(item.status || 'unknown'));
-      var meta = escapeHtml(String(item.id || '')) + ' \u00b7 ' + escapeHtml(String(item.category || '')) + ' \u00b7 ' + escapeHtml(String(item.owner || item.lead || '\u2014'));
       var extra = buildExtraMeta(item);
       return '<article class="activity-item" role="article" aria-label="' + escapeHtml(String(item.id || item.title || '')) + '">' +
         '<div class="activity-content">' +
           '<h3 class="activity-title">' + escapeHtml(String(item.title || 'Untitled')) + '</h3>' +
           '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
           '<div class="activity-meta">' +
-            '<span class="activity-type">' + escapeHtml(String(item.category || 'Program')) + '</span>' +
-            '<span class="activity-divider">\u00b7</span>' +
+            '<span class="activity-type">' + escapeHtml(String(item.category || 'Tool')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
             '<span>' + escapeHtml(String(item.id || '')) + '</span>' +
-            '<span class="activity-divider">\u00b7</span>' +
-            '<span>' + escapeHtml(String(item.owner || item.lead || '\u2014')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.owner || '—')) + '</span>' +
           '</div>' +
           (extra ? '<div class="activity-meta economics-meta">' + extra + '</div>' : '') +
         '</div>' +
         '<div class="activity-sidebar">' +
-          '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '\u2014')) + '</span>' +
+          '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '—')) + '</span>' +
         '</div>' +
       '</article>';
     }).join('');
@@ -135,40 +124,46 @@
 
   function buildExtraMeta(item) {
     var parts = [];
-    if (item.budget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.budget)) + '</span>');
     if (item.participants) parts.push('<span class="metric">Participants: ' + escapeHtml(String(item.participants)) + '</span>');
+    if (item.completionRate) parts.push('<span class="metric">Completion: ' + escapeHtml(String(item.completionRate)) + '</span>');
+    if (item.averageScore) parts.push('<span class="metric">Avg Score: ' + escapeHtml(String(item.averageScore)) + '</span>');
+    if (item.topTrack) parts.push('<span class="metric">Top Track: ' + escapeHtml(String(item.topTrack)) + '</span>');
+    if (item.budget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.budget)) + '</span>');
     if (item.published) parts.push('<span class="meta-date">Published: ' + escapeHtml(String(item.published)) + '</span>');
-    return parts.join('<span class="activity-divider">\u00b7</span>');
+    return parts.join('<span class="activity-divider">·</span>');
   }
 
   /* ---- filters ---- */
   function initFilters() {
-    var searchField = document.getElementById('engage-search');
-    var typeField = document.getElementById('engage-type');
-    var statusField = document.getElementById('engage-status');
-    if (!searchField || !typeField || !statusField) return;
+    var searchField = document.getElementById('tools-search');
+    var scopeField = document.getElementById('tools-scope');
+    if (!searchField || !scopeField) return;
 
     var cachedData = null;
-    fetch('assets/data/engage.json')
-      .then(function (res) { return res.json(); })
-      .then(function (data) { cachedData = data; })
-      .catch(function () { cachedData = null; });
+    fetch('assets/data/tools.json')
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        cachedData = data;
+      })
+      .catch(function () {
+        cachedData = null;
+      });
 
     function applyFilter() {
       if (!cachedData) return;
       var term = searchField.value.trim().toLowerCase();
-      var type = typeField.value;
-      var status = statusField.value;
+      var scope = scopeField.value;
 
-      var allItems = [];
-      var entries = cachedData.entries || {};
-      ['programs', 'tools', 'reports'].forEach(function (key) {
-        (entries[key] || []).forEach(function (entry) {
-          allItems.push(entry);
+      var items = [];
+      if (scope === 'all' || scope === 'tools') {
+        (cachedData.entries && cachedData.entries.tools || []).forEach(function (entry) {
+          items.push(entry);
         });
-      });
+      }
 
-      var filtered = allItems.filter(function (entry) {
+      var filtered = items.filter(function (entry) {
         var searchable =
           (entry.title || '') + ' ' +
           (entry.id || '') + ' ' +
@@ -176,28 +171,14 @@
           (entry.category || '') + ' ' +
           (entry.owner || '') + ' ' +
           (entry.status || '');
-        var matchesTerm = !term || String(searchable).toLowerCase().indexOf(term) !== -1;
-        var matchesType = type === 'all' || entry.category === type || (type === 'petition' && entry.category === 'Governance') || (type === 'feedback' && entry.category === 'Operations') || (type === 'governance' && entry.category === 'Governance');
-        var matchesStatus = status === 'all' || entry.status === status;
-        return matchesTerm && matchesType && matchesStatus;
+        return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
       });
 
-      renderMixedList('engage-mixed-feed', filtered);
+      renderList('tools-mixed-feed', filtered);
     }
 
     searchField.addEventListener('input', function () { applyFilter(); });
-    typeField.addEventListener('change', function () { applyFilter(); });
-    statusField.addEventListener('change', function () { applyFilter(); });
-  }
-
-  function renderMixedList(feedId, items) {
-    var feed = document.getElementById(feedId);
-    if (!feed) return;
-    if (!items.length) {
-      feed.innerHTML = '<div class="activity-empty">No matching entries found.</div>';
-      return;
-    }
-    renderList(feed, items);
+    scopeField.addEventListener('change', function () { applyFilter(); });
   }
 
   /* ---- menu / year ---- */
@@ -237,7 +218,7 @@
       .replace(/&/g, '&')
       .replace(/</g, '<')
       .replace(/>/g, '>')
-      .replace(/\"/g, '"')
+      .replace(/"/g, '"')
       .replace(/'/g, '&apos;');
   }
 

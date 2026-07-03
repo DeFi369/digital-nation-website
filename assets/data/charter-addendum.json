@@ -6,7 +6,7 @@
     "proposed": [
       {
         "id": "CHA-AM-01",
-        "title": "Digital Rights Expansion — Privacy & Surveillance",
+        "title": "Digital Rights Expansion \u2014 Privacy & Surveillance",
         "status": "Voting",
         "category": "Rights",
         "lead": "Mira Chen",
@@ -63,5 +63,28 @@
         "summary": "Set a 12-month compliance review cycle in Article VIII with automated reminder and remediation-plan deadlines."
       }
     ]
-  }
+  },
+  "stats": {
+    "proposedAmendments": 12,
+    "ratifiedAmendments": 8,
+    "pendingReview": 4,
+    "publicCommentPeriods": 6
+  },
+  "pillars": [
+    {
+      "id": "CHA-PIL-01",
+      "title": "Living Charter",
+      "summary": "Amendment process balancing stability with adaptive governance for a digital republic."
+    },
+    {
+      "id": "CHA-PIL-02",
+      "title": "Rights Expansion",
+      "summary": "Periodic review of digital rights, data sovereignty, and algorithmic due process."
+    },
+    {
+      "id": "CHA-PIL-03",
+      "title": "Institutional Renewal",
+      "summary": "Structured mechanisms for constitutional court appointments and electoral reform."
+    }
+  ]
 }

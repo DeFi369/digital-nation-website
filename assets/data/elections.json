@@ -130,5 +130,30 @@
         "signatures": 124
       }
     ]
-  }
+  },
+  "ministry": "Electoral Commission",
+  "secretary": "Chief Electoral Officer",
+  "stats": {
+    "registeredVoters": 12450,
+    "turnoutLastElection": "73.2%",
+    "activePetitions": 8,
+    "thresholdMet": 5
+  },
+  "pillars": [
+    {
+      "id": "ELE-PIL-01",
+      "title": "Verifiable Voting",
+      "summary": "End-to-end verifiable elections with zero-knowledge proofs and public audit logs."
+    },
+    {
+      "id": "ELE-PIL-02",
+      "title": "Petition Pathways",
+      "summary": "Tiered petition thresholds triggering Assembly debate, referendum, or constitutional review."
+    },
+    {
+      "id": "ELE-PIL-03",
+      "title": "Apportionment Integrity",
+      "summary": "Algorithmic district drawing with population parity and community-of-interest preservation."
+    }
+  ]
 }

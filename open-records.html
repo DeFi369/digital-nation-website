@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Open Records for AETHERIA: proactive disclosure, public records access, FOI-style requests, and audit-ready documentation.">
+  <meta name="description" content="Open Records for the Principality of Aetheria: proactive disclosure, public records access, FOI-style requests, and audit-ready documentation. Overseen by the Secretary of Public Affairs & Culture.">
   <link rel="canonical" href="https://defi369.github.io/digital-nation-website/open-records.html">
   <meta property="og:title" content="Open Records — The Principality of Aetheria">
-  <meta property="og:description" content="Proactive disclosure, public records access, and audit-ready documentation.">
+  <meta property="og:description" content="Proactive disclosure, public records access, and audit-ready documentation under the Secretary of Public Affairs & Culture.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://defi369.github.io/digital-nation-website/open-records.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Open Records — The Principality of Aetheria">
-  <meta name="twitter:description" content="Proactive disclosure, public records access, and FOI-style requests.">
+  <meta name="twitter:description" content="Proactive disclosure, public records access, and FOI-style requests under the Secretary of Public Affairs & Culture.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <title>Open Records — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,7 @@
           <summary>Engagement</summary>
           <div class="dropdown-wrap">
             <a href="engage.html">Engage</a>
-                <a href="citizen-hub.html">Citizen Hub</a>
+            <a href="citizen-hub.html">Citizen Hub</a>
             <a href="tools.html">Tools</a>
             <a href="transparency.html">Transparency</a>
             <a href="digital-service-corps.html">Digital Service Corps</a>
@@ -122,18 +122,21 @@
     <section class="page">
       <div class="container">
         <h1>Open Records</h1>
-        <p class="lead">Open Records is an operational arm providing proactive disclosure, public records access, and FOI-style request processing. Reporting through the President's operational layer, it ensures audit-ready documentation and default-open governance.</p>
+        <p class="lead">
+          Under the <strong>Secretary of Public Affairs & Culture</strong>, the <strong>Open Records Office</strong> operates as an operational arm providing proactive disclosure, public records access, FOI-style request processing, and audit-ready documentation. Reporting through the President's operational layer, it ensures default-open governance and operational accountability across all ministries and offices.
+        </p>
 
-        <div class="activity-filters" aria-label="Filter open records items">
-          <input type="search" id="open-records-search" placeholder="Search records, disclosures, and releases..." autocomplete="off" aria-label="Search records items"/>
-          <select id="open-records-status" aria-label="Filter by status">
+        <div class="activity-filters" id="open-records-filters" aria-label="Filter open records items">
+          <label for="open-records-search" class="sr-only">Search records, disclosures, and releases</label>
+          <input type="search" id="open-records-search" class="activity-filter" placeholder="Search records, disclosures, and releases..." autocomplete="off" />
+          <select id="open-records-status" class="activity-select" aria-label="Filter by status">
             <option value="all">All Statuses</option>
-            <option value="active">Active</option>
-            <option value="published">Published</option>
-            <option value="in_review">In Review</option>
-            <option value="completed">Completed</option>
-            <option value="scheduled">Scheduled</option>
-            <option value="classified">Classified Exception</option>
+            <option value="Active">Active</option>
+            <option value="Published">Published</option>
+            <option value="In Review">In Review</option>
+            <option value="Completed">Completed</option>
+            <option value="Scheduled">Scheduled</option>
+            <option value="Classified Exception">Classified Exception</option>
           </select>
         </div>
 
@@ -153,12 +156,12 @@
         </div>
 
         <h2>Cross-Links</h2>
-        <p>Open Records connects to <a href="transparency.html">Transparency</a>, <a href="data-governance.html">Data Governance</a>, <a href="assembly.html">Assembly</a>, and <a href="engage.html">Engage</a>.</p>
+        <p>Open Records connects to <a href="transparency.html">Transparency</a>, <a href="data-governance.html">Data Governance</a>, <a href="assembly.html">Assembly</a>, <a href="engage.html">Engage</a>, and <a href="finance.html">Finance</a>.</p>
 
         <div class="cta">
-          <a class="button primary" href="assets/data/open-records.json">Download Open Records Data</a>
-          <a class="button" href="engage.html">Submit a Request</a>
+          <a class="button primary" href="engage.html">Submit a Request</a>
           <a class="button" href="transparency.html">Transparency</a>
+          <a class="button" href="data-governance.html">Data Governance</a>
         </div>
       </div>
     </section>
@@ -172,7 +175,7 @@
           <span class="footer-tagline">Sovereign by code</span>
         </div>
         <div class="footer-meta">
-          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
+          <span class="protocol-version" aria-label="Protocol version">Protocol v3.0.0</span>
           <span class="footer-status" aria-label="Public network status">
             <span class="status-dot" aria-hidden="true"></span>
             Network Active
@@ -258,8 +261,8 @@
       </div>
     </div>
   </footer>
-  <script src="assets/js/site.js"></script>
   <script src="assets/js/open-records.js"></script>
+  <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

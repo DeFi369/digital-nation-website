@@ -56,5 +56,30 @@
         "summary": "Funds earmarked for public-good grants, bounties, and civic prizes."
       }
     ]
-  }
+  },
+  "ministry": "Treasury",
+  "secretary": "Secretary of Digital Economy & Commerce",
+  "stats": {
+    "reserves": "\u00a5840M",
+    "assetClasses": 6,
+    "yieldAnnual": "4.2%",
+    "liquidityDays": 45
+  },
+  "pillars": [
+    {
+      "id": "TRE-PIL-01",
+      "title": "Reserve Diversification",
+      "summary": "Multi-asset portfolio with crypto, fiat, and sovereign bond allocations."
+    },
+    {
+      "id": "TRE-PIL-02",
+      "title": "Liquidity Management",
+      "summary": "Tiered liquidity buffers with automated rebalancing triggers."
+    },
+    {
+      "id": "TRE-PIL-03",
+      "title": "Transparency Ledger",
+      "summary": "On-chain reserve attestation with quarterly independent audit."
+    }
+  ]
 }

@@ -68,5 +68,28 @@
       "owner": "Protocol Committee / Accessibility Guild",
       "summary": "Multi-pass accessibility review for public-facing narrative, media, and external assets with layered-republic sign-off and publication-boundary checks."
     }
+  ],
+  "stats": {
+    "activePrograms": 14,
+    "participatingCitizens": 8420,
+    "crossBorderExchanges": 6,
+    "archivedArtifacts": 1250
+  },
+  "pillars": [
+    {
+      "id": "CUL-PIL-01",
+      "title": "Cultural Sovereignty",
+      "summary": "Preserve and evolve digital-native cultural forms with verifiable provenance."
+    },
+    {
+      "id": "CUL-PIL-02",
+      "title": "Creative Commons",
+      "summary": "Shared creative infrastructure with attribution, remix rights, and fair compensation."
+    },
+    {
+      "id": "CUL-PIL-03",
+      "title": "Heritage Continuity",
+      "summary": "Long-term archival of founding documents, debates, and cultural milestones."
+    }
   ]
 }

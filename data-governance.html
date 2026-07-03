@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Data Governance for AETHERIA: data ethics, sovereignty, retention, and privacy compliance. AVIDA operational arm reporting through the President's operational layer.">
+  <meta name="description" content="Data Governance for the Principality of Aetheria: data ethics, sovereignty, retention, and privacy compliance. Operational arm reporting through the President's operational layer, under the oversight of the Secretary of Public Affairs & Culture.">
   <link rel="canonical" href="https://defi369.github.io/digital-nation-website/data-governance.html">
   <meta property="og:title" content="Data Governance — The Principality of Aetheria">
-  <meta property="og:description" content="Data ethics, sovereignty, retention, and privacy compliance across AETHERIA.">
+  <meta property="og:description" content="Data ethics, sovereignty, retention, and privacy compliance under the Secretary of Public Affairs & Culture.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://defi369.github.io/digital-nation-website/data-governance.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Data Governance — The Principality of Aetheria">
-  <meta name="twitter:description" content="Data ethics, governance standards, and privacy compliance.">
+  <meta name="twitter:description" content="Data ethics, governance standards, and privacy compliance under the Secretary of Public Affairs & Culture.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <title>Data Governance — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,7 @@
           <summary>Engagement</summary>
           <div class="dropdown-wrap">
             <a href="engage.html">Engage</a>
-                <a href="citizen-hub.html">Citizen Hub</a>
+            <a href="citizen-hub.html">Citizen Hub</a>
             <a href="tools.html">Tools</a>
             <a href="transparency.html">Transparency</a>
             <a href="digital-service-corps.html">Digital Service Corps</a>
@@ -122,17 +122,20 @@
     <section class="page">
       <div class="container">
         <h1>Data Governance</h1>
-        <p class="lead">Data Governance is an operational arm of AETHERIA, responsible for data ethics, sovereignty, retention, and privacy compliance. Reporting through the President's operational layer, the Data Governance Officer ensures every dataset and inference policy respects citizen rights and national protocol.</p>
+        <p class="lead">
+          Under the <strong>Secretary of Public Affairs & Culture</strong>, the <strong>Data Governance Officer</strong> operates as an operational arm of Aetheria responsible for data ethics, sovereignty, retention, and privacy compliance. Reporting through the President's operational layer, Data Governance ensures every dataset, inference policy, and algorithmic process respects citizen rights and national protocol.
+        </p>
 
-        <div class="activity-filters" aria-label="Filter governance items">
-          <input type="search" id="data-governance-search" placeholder="Search policies, frameworks, and assessments..." autocomplete="off" aria-label="Search governance items"/>
-          <select id="data-governance-status" aria-label="Filter by status">
+        <div class="activity-filters" id="data-governance-filters" aria-label="Filter governance items">
+          <label for="data-governance-search" class="sr-only">Search policies, frameworks, and assessments</label>
+          <input type="search" id="data-governance-search" class="activity-filter" placeholder="Search policies, frameworks, and assessments..." autocomplete="off" />
+          <select id="data-governance-status" class="activity-select" aria-label="Filter by status">
             <option value="all">All Statuses</option>
-            <option value="active">Active</option>
-            <option value="effective">Effective</option>
-            <option value="in_review">In Review</option>
-            <option value="scheduled">Scheduled</option>
-            <option value="classified">Classified Exception</option>
+            <option value="Active">Active</option>
+            <option value="Effective">Effective</option>
+            <option value="In Review">In Review</option>
+            <option value="Scheduled">Scheduled</option>
+            <option value="Classified Exception">Classified Exception</option>
           </select>
         </div>
 
@@ -152,12 +155,12 @@
         </div>
 
         <h2>Cross-Links</h2>
-        <p>Data Governance supports <a href="transparency.html">Transparency</a>, <a href="open-records.html">Open Records</a>, <a href="technology.html">Technology</a>, and <a href="privacy.html">Privacy</a> commitments.</p>
+        <p>Data Governance supports <a href="transparency.html">Transparency</a>, <a href="open-records.html">Open Records</a>, <a href="technology.html">Technology</a>, <a href="privacy.html">Privacy</a>, <a href="justice.html">Justice & Constitutional Compliance</a>, and <a href="situational-awareness.html">Situational Awareness</a>.</p>
 
         <div class="cta">
-          <a class="button primary" href="assets/data/data-governance.json">Download Data Governance Data</a>
-          <a class="button" href="open-records.html">Open Records</a>
+          <a class="button primary" href="open-records.html">Open Records</a>
           <a class="button" href="engage.html">Engage</a>
+          <a class="button" href="technology.html">Technology</a>
         </div>
       </div>
     </section>
@@ -171,7 +174,7 @@
           <span class="footer-tagline">Sovereign by code</span>
         </div>
         <div class="footer-meta">
-          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
+          <span class="protocol-version" aria-label="Protocol version">Protocol v3.0.0</span>
           <span class="footer-status" aria-label="Public network status">
             <span class="status-dot" aria-hidden="true"></span>
             Network Active
@@ -257,8 +260,8 @@
       </div>
     </div>
   </footer>
-  <script src="assets/js/site.js"></script>
   <script src="assets/js/data-governance.js"></script>
+  <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

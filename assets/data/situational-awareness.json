@@ -98,5 +98,30 @@
         "delivery": "2026-06-30"
       }
     ]
-  }
+  },
+  "ministry": "Office of Situational Awareness",
+  "secretary": "Director of Situational Awareness",
+  "stats": {
+    "monitoredIndicators": 42,
+    "alertsGenerated": 128,
+    "foresightHorizonDays": 90,
+    "accuracyRate": "84.7%"
+  },
+  "pillars": [
+    {
+      "id": "SAW-PIL-01",
+      "title": "Indicator Discipline",
+      "summary": "Curated signal library with noise reduction and false-positive minimization."
+    },
+    {
+      "id": "SAW-PIL-02",
+      "title": "Foresight Integration",
+      "summary": "Scenario planning, red-teaming, and horizon scanning embedded in decisions."
+    },
+    {
+      "id": "SAW-PIL-03",
+      "title": "Actionable Intelligence",
+      "summary": "Structured briefings with confidence intervals, options, and decision deadlines."
+    }
+  ]
 }

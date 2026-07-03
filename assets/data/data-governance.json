@@ -92,5 +92,30 @@
         "summary": "Financial records require 10-year retention with sealed exception status due to cross-jurisdictional settlement requirements."
       }
     ]
-  }
+  },
+  "ministry": "Data Governance Office",
+  "secretary": "Data Governance Officer",
+  "stats": {
+    "activePolicies": 18,
+    "dataSubjects": 42000,
+    "auditScore": "96.4%",
+    "retentionCompliance": "98.1%"
+  },
+  "pillars": [
+    {
+      "id": "DGO-PIL-01",
+      "title": "Data Sovereignty",
+      "summary": "Citizen-owned data with consent-based sharing and portable export rights."
+    },
+    {
+      "id": "DGO-PIL-02",
+      "title": "Ethical Stewardship",
+      "summary": "Algorithmic transparency, bias audits, and fairness review for all automated decisions."
+    },
+    {
+      "id": "DGO-PIL-03",
+      "title": "Retention Discipline",
+      "summary": "Time-bounded retention schedules with automated purge and audit trails."
+    }
+  ]
 }

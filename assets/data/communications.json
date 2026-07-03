@@ -68,5 +68,28 @@
       "owner": "Secretary of External Affairs",
       "summary": "Multi-segment newsletter pipeline covering diplomacy, culture, missions, and protocol updates with subscriber-specific routing rules."
     }
+  ],
+  "stats": {
+    "channelsManaged": 8,
+    "activeCampaigns": 12,
+    "reachMillions": 2.4,
+    "engagementRate": "4.7%"
+  },
+  "pillars": [
+    {
+      "id": "COM-PIL-01",
+      "title": "Strategic Narrative",
+      "summary": "Coherent messaging across all public channels aligned with charter values."
+    },
+    {
+      "id": "COM-PIL-02",
+      "title": "Crisis Readiness",
+      "summary": "Rapid response protocols for reputational, security, and operational incidents."
+    },
+    {
+      "id": "COM-PIL-03",
+      "title": "Accessibility First",
+      "summary": "All communications meet WCAG 2.1 AA with multi-language and format support."
+    }
   ]
 }

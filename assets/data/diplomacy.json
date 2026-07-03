@@ -15,7 +15,7 @@
     "treaties": [
       {
         "id": "DIP-TRE-01",
-        "title": "Mutual Recognition Accord — Network Republic",
+        "title": "Mutual Recognition Accord \u2014 Network Republic",
         "party": "Network Republic",
         "status": "Ratified",
         "type": "Bilateral",
@@ -55,7 +55,7 @@
       },
       {
         "id": "DIP-TRE-05",
-        "title": "Passport Reciprocity Notice — Micronation Fellowship",
+        "title": "Passport Reciprocity Notice \u2014 Micronation Fellowship",
         "party": "Micronation Fellowship",
         "status": "Ratified",
         "type": "Multilateral",
@@ -97,7 +97,7 @@
     "multilateral": [
       {
         "id": "DIP-MLT-01",
-        "title": "Digital States Caucus — UN Civil Society",
+        "title": "Digital States Caucus \u2014 UN Civil Society",
         "status": "Active",
         "participants": "12 polities",
         "topic": "Digital-state participation in multilateral civil-society mechanisms under the Secretary of External Affairs",
@@ -105,7 +105,7 @@
       },
       {
         "id": "DIP-MLT-02",
-        "title": "Open Government Partnership — Digital Track",
+        "title": "Open Government Partnership \u2014 Digital Track",
         "status": "Observer",
         "participants": "4 observers",
         "topic": "Open-data commitments, participatory budgeting standards, and layered-republic accountability disclosures",
@@ -128,5 +128,22 @@
         "lastMeeting": "2026-04-22"
       }
     ]
-  }
+  },
+  "pillars": [
+    {
+      "id": "DIP-PIL-01",
+      "title": "Recognition First",
+      "summary": "Prioritize sovereign recognition from established states and international bodies."
+    },
+    {
+      "id": "DIP-PIL-02",
+      "title": "Protocol Interoperability",
+      "summary": "Align diplomatic, consular, and treaty frameworks with digital-native standards."
+    },
+    {
+      "id": "DIP-PIL-03",
+      "title": "Soft Power",
+      "summary": "Cultural, technical, and humanitarian engagement as recognition catalysts."
+    }
+  ]
 }

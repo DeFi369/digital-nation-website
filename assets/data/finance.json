@@ -56,5 +56,30 @@
         "summary": "Annual attestation of accounting controls, custody proofs, and policy adherence."
       }
     ]
-  }
+  },
+  "ministry": "Ministry of Finance",
+  "secretary": "Secretary of Digital Economy & Commerce",
+  "stats": {
+    "budgetAnnual": "\u00a52.4B",
+    "capitalAllocation": "68%",
+    "auditRating": "Unqualified",
+    "debtToGDP": "12.4%"
+  },
+  "pillars": [
+    {
+      "id": "FIN-PIL-01",
+      "title": "Fiscal Transparency",
+      "summary": "Real-time budget execution dashboards with citizen drill-down capability."
+    },
+    {
+      "id": "FIN-PIL-02",
+      "title": "Capital Efficiency",
+      "summary": "Outcome-based allocation with quarterly rebalancing and sunset reviews."
+    },
+    {
+      "id": "FIN-PIL-03",
+      "title": "Reserve Adequacy",
+      "summary": "Multi-asset sovereign reserve with stress-tested liquidity buffers."
+    }
+  ]
 }

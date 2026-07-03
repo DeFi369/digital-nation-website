@@ -81,5 +81,28 @@
         "summary": "PIs must complete annual safety leadership training covering risk assessment, delegation, and incident review."
       }
     ]
-  }
+  },
+  "stats": {
+    "activeFacilities": 5,
+    "safetyIncidents": 0,
+    "crossLabProjects": 8,
+    "trainingCompletions": 142
+  },
+  "pillars": [
+    {
+      "id": "LAB-PIL-01",
+      "title": "Safety First",
+      "summary": "Mandatory biosafety levels, incident reporting, and emergency response drills."
+    },
+    {
+      "id": "LAB-PIL-02",
+      "title": "Open Science",
+      "summary": "Pre-registration, open data, and replication requirements for funded research."
+    },
+    {
+      "id": "LAB-PIL-03",
+      "title": "Talent Pipeline",
+      "summary": "Fellowships, apprenticeships, and credential pathways for lab workforce."
+    }
+  ]
 }

@@ -92,5 +92,30 @@
         "period": "FY2026"
       }
     ]
-  }
+  },
+  "ministry": "Transparency Office",
+  "secretary": "Open Records Officer",
+  "stats": {
+    "publishedReports": 34,
+    "activeDisclosures": 18,
+    "requestFulfillmentRate": "91%",
+    "proactivePublications": 12
+  },
+  "pillars": [
+    {
+      "id": "TRA-PIL-01",
+      "title": "Default Open",
+      "summary": "Proactive publication of decisions, finances, and performance metrics."
+    },
+    {
+      "id": "TRA-PIL-02",
+      "title": "Machine Readable",
+      "summary": "All structured data published in open formats with schema documentation."
+    },
+    {
+      "id": "TRA-PIL-03",
+      "title": "Citizen Accessible",
+      "summary": "Plain-language summaries, visualizations, and multilingual support."
+    }
+  ]
 }

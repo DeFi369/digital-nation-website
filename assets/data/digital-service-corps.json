@@ -89,5 +89,30 @@
         "cohort": "2026-2027"
       }
     ]
-  }
+  },
+  "ministry": "Digital Service Corps",
+  "secretary": "Chief of the Digital Service Corps",
+  "stats": {
+    "activeProjects": 24,
+    "corpsMembers": 380,
+    "deployedServices": 12,
+    "openSourceContributions": 45
+  },
+  "pillars": [
+    {
+      "id": "DSC-PIL-01",
+      "title": "Civic Engineering",
+      "summary": "Build, maintain, and open-source the digital infrastructure of the republic."
+    },
+    {
+      "id": "DSC-PIL-02",
+      "title": "Service Rotation",
+      "summary": "Structured tours of duty across ministries with skill development and credentialing."
+    },
+    {
+      "id": "DSC-PIL-03",
+      "title": "Open Standards",
+      "summary": "All corps code released under permissive licenses with interoperability mandates."
+    }
+  ]
 }
