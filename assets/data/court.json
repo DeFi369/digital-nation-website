@@ -1,4 +1,31 @@
 {
+  "court": {
+    "title": "Constitutional Court",
+    "description": "The co-equal judicial branch of AETHERIA. Members are appointed by the Chair of the Constitutional Council.",
+    "judges": [
+      {
+        "id": "judge-vortex",
+        "displayName": "Justice Vortex",
+        "role": "Presiding Justice",
+        "appointedBy": "Chair of the Constitutional Council",
+        "focus": "Constitutional review, interoperability doctrine, and separation-of-powers disputes."
+      },
+      {
+        "id": "judge-cipher",
+        "displayName": "Justice Cipher",
+        "role": "Associate Justice",
+        "appointedBy": "Chair of the Constitutional Council",
+        "focus": "Administrative law, due process, and procedural regularity in ministerial action."
+      },
+      {
+        "id": "judge-node",
+        "displayName": "Justice Node",
+        "role": "Associate Justice",
+        "appointedBy": "Chair of the Constitutional Council",
+        "focus": "Technical governance, protocol specification interpretation, and statutory implementation."
+      }
+    ]
+  },
   "cases": [
     {
       "caseNumber": "AETH-2026-001",
@@ -10,7 +37,7 @@
       "decisionDate": "2026-06-20T14:00:00Z",
       "ruling": "Petitioner granted partial relief. Ministry ordered to implement transparent allocation algorithm within 60 days.",
       "rulingType": "Partial Relief",
-      "facts": "Petitioner citizen-203@aetheria.network alleged that the Ministry of Infrastructure's compute allocation system for the Universal Basic Compute pilot program (pre-Bill-001) operated opaquely, with allocations varying by up to 40% between similarly situated citizens without published criteria. Petitioner requested declaratory judgment that the allocation process violated Charter Article 7 (Equal Protection) and an injunction requiring publication of allocation criteria.",
+      "facts": "Petitioner citizen-203@aetheria.network alleged that the Ministry of Infrastructure's compute allocation system for the Universal Basic Compute pilot program operated opaquely, with allocations varying by up to 40% between similarly situated citizens without published criteria. Petitioner requested declaratory judgment that the allocation process violated Charter Article 7 (Equal Protection) and an injunction requiring publication of allocation criteria.",
       "legalQuestions": [
         "Does the Ministry's compute allocation process constitute state action subject to Charter Article 7?",
         "Whether unpublished allocation criteria violate the principle of equal protection under the Digital Sovereignty Charter?",
@@ -20,7 +47,7 @@
         "petitioner": "The compute allocation system is a public benefit program administered by a Ministry. Charter Article 7 guarantees equal protection of the laws. The 40% variance without published criteria creates arbitrary distinctions between citizens. The Ministry must publish clear, objective allocation criteria and apply them consistently.",
         "respondent": "The pilot program used a dynamic allocation algorithm that adjusts for network load, geographic latency, and historical usage to optimize network efficiency. Publishing the exact algorithm would enable gaming. The variance reflects technical optimization, not discrimination. The Ministry commits to publishing high-level allocation principles."
       },
-      "opinion": "The Court holds that the Ministry's compute allocation constitutes state action subject to Charter Article 7. While the Ministry has legitimate interests in network optimization, the complete opacity of the allocation criteria fails the rationality review required for public benefit distributions. The 40% variance without any published standard is incompatible with equal protection.\n\nThe Court grants declaratory relief: the allocation process must operate under published criteria. The Court orders the Ministry to:\n(1) Publish high-level allocation principles (network load, geographic fairness, anti-abuse) within 30 days;\n(2) Implement a transparent allocation algorithm with audit trail within 60 days;\n(3) Submit quarterly compliance reports to the Assembly Committee on Digital Rights.\n\nThe Court denies the injunction to halt the pilot program, finding that the public interest in continued operation outweighs the harm pending remediation.\n\nJustice Vortex, writing for the majority. Justice Cipher concurring. Justice Node dissenting in part (would have granted full injunction).",
+      "opinion": "The Court holds that the Ministry's compute allocation constitutes state action subject to Charter Article 7. While the Ministry has legitimate interests in network optimization, the complete opacity of the allocation criteria fails the rationality review required for public benefit distributions. The 40% variance without any published standard is incompatible with equal protection.\n\nThe Court grants declaratory relief: the allocation process must operate under published criteria. The Court orders the Ministry to:\n(1) Publish high-level allocation principles (network load, geographic fairness, anti-abuse) within 30 days;\n(2) Implement a transparent allocation algorithm with audit trail within 60 days;\n(3) Submit quarterly compliance reports to the Assembly Committee on Digital Rights.\n\nThe Court denies the injunction to halt the pilot program, finding that the public interest in continued operation outweighs the harm pending remission.\n\nJustice Vortex, writing for the majority. Justice Cipher concurring. Justice Node dissenting in part (would have granted full injunction).",
       "precedentTags": ["Equal Protection", "Administrative Transparency", "Public Benefits", "Charter Article 7"]
     },
     {

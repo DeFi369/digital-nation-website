@@ -227,6 +227,12 @@
     var courtSection = buildCourtSection();
     if (courtSection) sections.push(courtSection);
 
+    var assemblyRosterSection = buildAssemblyRosterSection();
+    if (assemblyRosterSection) sections.push(assemblyRosterSection);
+
+    var courtRosterSection = buildCourtRosterSection();
+    if (courtRosterSection) sections.push(courtRosterSection);
+
     if (!sections.length) {
       sectionEl.innerHTML = '<p class="activity-empty">No structured feed data is currently available.</p>';
       return;
@@ -341,21 +347,66 @@
 
     var items = data.cases.slice(0, 6);
     var rows = items.map(function (c) {
-      var parties = escapeHtml(c.petitioner || '—') + ' <span class=\"activity-divider\" aria-hidden=\"true\">v.</span> ' + escapeHtml(c.respondent || '—');
+      var parties = escapeHtml(c.petitioner || '—') + ' <span class="activity-divider" aria-hidden="true">v.</span> ' + escapeHtml(c.respondent || '—');
       return '<tr>' +
         '<td>' + escapeHtml(c.caseNumber) + '</td>' +
         '<td>' + escapeHtml(c.title) + '</td>' +
-        '<td><span class=\"activity-status status-' + c.status.toLowerCase().replace(/\s+/g, '-') + '\">' + escapeHtml(c.status) + '</span></td>' +
+        '<td><span class="activity-status status-' + c.status.toLowerCase().replace(/\s+/g, '-') + '">' + escapeHtml(c.status) + '</span></td>' +
         '<td>' + parties + '</td>' +
         '<td>' + formatDate(c.filingDate) + '</td>' +
         '</tr>';
     }).join('');
 
-    return '<section class=\"dashboard-feed-section\" aria-labelledby=\"dashboard-court-title\">' +
-      '<div class=\"section-header\"><h2 id=\"dashboard-court-title\">Court Cases</h2>' +
-      '<span class=\"feed-badge\">court.json</span></div>' +
-      '<div class=\"table-wrap\"><table class=\"feed-table\"><thead><tr>' +
+    return '<section class="dashboard-feed-section" aria-labelledby="dashboard-court-title">' +
+      '<div class="section-header"><h2 id="dashboard-court-title">Court Cases</h2>' +
+      '<span class="feed-badge">court.json</span></div>' +
+      '<div class="table-wrap"><table class="feed-table"><thead><tr>' +
       '<th>Case Number</th><th>Title</th><th>Status</th><th>Parties</th><th>Filed</th>' +
+      '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '</section>';
+  }
+
+  function buildAssemblyRosterSection() {
+    var data = feeds.assemblies;
+    if (!data || !data.members) return null;
+
+    var items = data.members.slice(0, 6);
+    var rows = items.map(function (m) {
+      return '<tr>' +
+        '<td>' + escapeHtml(m.displayName || m.id) + '</td>' +
+        '<td>' + escapeHtml(m.role || 'Member') + '</td>' +
+        '<td>' + escapeHtml(m.committee || '—') + '</td>' +
+        '</tr>';
+    }).join('');
+
+    return '<section class="dashboard-feed-section" aria-labelledby="dashboard-assembly-roster-title">' +
+      '<div class="section-header"><h2 id="dashboard-assembly-roster-title">Assembly Roster</h2>' +
+      '<span class="feed-badge">assembly.json</span></div>' +
+      '<div class="table-wrap"><table class="feed-table"><thead><tr>' +
+      '<th>Name</th><th>Role</th><th>Committee</th>' +
+      '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '</section>';
+  }
+
+  function buildCourtRosterSection() {
+    var data = feeds.courts;
+    if (!data || !data.court || !data.court.judges) return null;
+
+    var items = data.court.judges.slice(0, 6);
+    var rows = items.map(function (j) {
+      return '<tr>' +
+        '<td>' + escapeHtml(j.displayName || j.id) + '</td>' +
+        '<td>' + escapeHtml(j.role || 'Member') + '</td>' +
+        '<td>' + escapeHtml(j.focus || '—') + '</td>' +
+        '<td>' + escapeHtml(j.appointedBy || '—') + '</td>' +
+        '</tr>';
+    }).join('');
+
+    return '<section class="dashboard-feed-section" aria-labelledby="dashboard-court-roster-title">' +
+      '<div class="section-header"><h2 id="dashboard-court-roster-title">Constitutional Court Roster</h2>' +
+      '<span class="feed-badge">court.json</span></div>' +
+      '<div class="table-wrap"><table class="feed-table"><thead><tr>' +
+      '<th>Name</th><th>Role</th><th>Focus</th><th>Appointed By</th>' +
       '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
       '</section>';
   }

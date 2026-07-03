@@ -128,10 +128,25 @@
         <div class="civic-quick-links" aria-labelledby="assembly-quick-links-title">
           <h2 id="assembly-quick-links-title" class="sr-only">Assembly Quick Links</h2>
           <div class="quick-link-grid">
+            <a class="quick-link-card" href="#assembly-committees">
+              <span class="quick-link-icon" aria-hidden="true">🏛️</span>
+              <h3>Committee Structure</h3>
+              <p>Explore Assembly committees, chairs, focus areas, and membership rosters</p>
+            </a>
+            <a class="quick-link-card" href="#assembly-committees">
+              <span class="quick-link-icon" aria-hidden="true">👥</span>
+              <h3>Assembly Roster</h3>
+              <p>View the member roster, committee assignments, and focus areas</p>
+            </a>
             <a class="quick-link-card" href="#bill-tracker">
               <span class="quick-link-icon" aria-hidden="true">📋</span>
               <h3>Bill Tracker</h3>
               <p>Live tracker with status, vote tallies, and timeline for all legislation</p>
+            </a>
+            <a class="quick-link-card" href="#bill-vote-bars">
+              <span class="quick-link-icon" aria-hidden="true">📊</span>
+              <h3>Vote Visualization</h3>
+              <p>Compare yea/nay/abstain vote counts across active legislation</p>
             </a>
             <a class="quick-link-card" href="engage.html#petitions-title">
               <span class="quick-link-icon" aria-hidden="true">📝</span>
@@ -188,6 +203,36 @@
 
           <div id="bill-tracker" class="bill-tracker" role="region" aria-label="Assembly bill tracker" aria-live="polite">
             <div class="activity-loading" aria-hidden="true">Loading bill tracker…</div>
+          </div>
+        </section>
+
+        <section class="civic-section" aria-labelledby="assembly-roster-title">
+          <div class="section-header">
+            <h2 id="assembly-roster-title">Assembly Member Roster</h2>
+            <span class="feed-badge">assembly.json</span>
+          </div>
+          <div id="assembly-roster" class="roster-grid" aria-live="polite">
+            <div class="activity-loading" aria-hidden="true">Loading Assembly roster…</div>
+          </div>
+        </section>
+
+        <section class="civic-section" aria-labelledby="assembly-committees-title">
+          <div class="section-header">
+            <h2 id="assembly-committees-title">Committee Structure</h2>
+            <span class="feed-badge">assembly.json</span>
+          </div>
+          <div id="assembly-committees" class="committee-grid" aria-live="polite">
+            <div class="activity-loading" aria-hidden="true">Loading committees…</div>
+          </div>
+        </section>
+
+        <section class="civic-section" aria-labelledby="bill-vote-bars-title">
+          <div class="section-header">
+            <h2 id="bill-vote-bars-title">Vote Visualization</h2>
+            <span class="feed-badge">assembly.json</span>
+          </div>
+          <div id="bill-vote-bars" class="vote-viz" aria-live="polite">
+            <div class="activity-loading" aria-hidden="true">Loading vote visualization…</div>
           </div>
         </section>
       </div>

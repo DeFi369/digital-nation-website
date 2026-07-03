@@ -127,10 +127,20 @@
         <div class="civic-quick-links" aria-labelledby="court-quick-links-title">
           <h2 id="court-quick-links-title" class="sr-only">Court Quick Links</h2>
           <div class="quick-link-grid">
+            <a class="quick-link-card" href="#court-judges">
+              <span class="quick-link-icon" aria-hidden="true">👥</span>
+              <h3>Judge Roster</h3>
+              <p>Constitutional Court membership, appointment information, and focus areas</p>
+            </a>
             <a class="quick-link-card" href="#case-docket">
               <span class="quick-link-icon" aria-hidden="true">📋</span>
               <h3>Case Docket</h3>
               <p>Browse all cases, filter by status, ruling type, and date</p>
+            </a>
+            <a class="quick-link-card" href="#case-detail">
+              <span class="quick-link-icon" aria-hidden="true">📁</span>
+              <h3>Case Detail</h3>
+              <p>Open case detail modals with opinions, arguments, and precedent citations</p>
             </a>
             <a class="quick-link-card" href="#precedent-search">
               <span class="quick-link-icon" aria-hidden="true">🔍</span>
@@ -193,6 +203,16 @@
 
           <div id="case-docket" class="case-docket" role="region" aria-label="Case docket">
             <div class="activity-loading" aria-hidden="true">Loading case docket…</div>
+          </div>
+        </section>
+
+        <section class="civic-section" aria-labelledby="court-judges-title">
+          <div class="section-header">
+            <h2 id="court-judges-title">Constitutional Court Roster</h2>
+            <span class="feed-badge">court.json</span>
+          </div>
+          <div id="court-judges" class="judge-grid" aria-live="polite">
+            <div class="activity-loading" aria-hidden="true">Loading Constitutional Court roster…</div>
           </div>
         </section>
 

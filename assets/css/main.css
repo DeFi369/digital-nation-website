@@ -1547,6 +1547,188 @@ a {
   color: var(--color-muted);
 }
 
+.dashboard-feed-section {
+  margin-top: 28px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #1f2630;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+}
+
+.dashboard-feed-section h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.feed-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #232a34;
+  background: rgba(122,167,255,.12);
+  color: #e6e8eb;
+  font-size: 0.8rem;
+}
+
+.dashboard-feed-section .table-wrap {
+  overflow-x: auto;
+}
+
+.dashboard-feed-section .feed-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-feed-section th,
+.dashboard-feed-section td {
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #1f2630;
+}
+
+.dashboard-feed-section th {
+  color: var(--color-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* Assembly / Court structured section helpers */
+.committee-grid-inner,
+.member-grid-inner,
+.judge-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.roster-grid,
+.committee-grid,
+.judge-grid,
+.vote-viz {
+  margin-top: 18px;
+}
+
+.member-card .member-header,
+.judge-card .judge-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.member-badge,
+.judge-badge {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(122,167,255,.14), rgba(122,167,255,.04));
+  border: 1px solid #232a34;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.member-name,
+.judge-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.member-role,
+.judge-role {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.member-bio,
+.judge-focus {
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.member-meta,
+.judge-meta,
+.committee-meta {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.member-meta code {
+  color: #e6e8eb;
+}
+
+.committee-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.committee-card .member-stack {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin-top: 12px;
+}
+
+.vote-viz-item {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #1f2630;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+}
+
+.vote-viz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.vote-viz-title {
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.vote-viz-meta {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.vote-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.vote-count {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.vote-count.yea { color: #86efac; }
+.vote-count.nay { color: #fca5a5; }
+.vote-count.abstain { color: #fde047; }
+
+.case-modal .precedent-tag {
+  cursor: pointer;
+}
+
+.case-modal .precedent-tag:hover {
+  border-color: rgba(122,167,255,.35);
+  background: rgba(122,167,255,.12);
+}
+
 .civic-quick-links {
   margin-top: 32px;
 }

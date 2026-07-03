@@ -47,10 +47,16 @@
       .then(data => {
         assemblyData = data;
         mergeLocalVotes();
+        renderAssemblyCommittees(assemblyData);
+        renderAssemblyRoster(assemblyData);
+        renderBillVoteBars(assemblyData);
         renderTracker();
       })
       .catch(err => {
         console.warn('Failed to load assembly.json:', err);
+        renderAssemblyCommittees(null);
+        renderAssemblyRoster(null);
+        renderBillVoteBars(null);
         renderTracker();
       });
   }
@@ -454,6 +460,125 @@
   }
 
 
+  function renderAssemblyCommittees(data) {
+    const container = document.getElementById('assembly-committees');
+    if (!container) return;
+
+    if (!data || !data.committees || !data.members) {
+      container.innerHTML = '<p class="activity-empty">Committee data is currently unavailable.</p>';
+      return;
+    }
+
+    const membersById = {};
+    (data.members || []).forEach(member => {
+      membersById[member.id] = member;
+    });
+
+    const html = data.committees.map(committee => {
+      const memberCards = (committee.members || []).map(memberId => {
+        const member = membersById[memberId];
+        const displayName = member ? member.displayName : memberId;
+        const role = member ? member.role : 'Member';
+        return `
+          <div class="leader-card">
+            <span class="leader-badge" aria-hidden="true">🧑‍💻</span>
+            <div class="leader-name">${escapeHtml(displayName)}</div>
+            <div class="leader-title">${escapeHtml(role)}</div>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <article class="card committee-card">
+          <div class="card-header">
+            <h3>${escapeHtml(committee.name)}</h3>
+            <span class="activity-status status-active">Committee</span>
+          </div>
+          <p class="card-body">${escapeHtml(committee.focus || '')}</p>
+          <div class="committee-meta"><strong>Chair:</strong> ${escapeHtml(committee.chair || '—')}</div>
+          <div class="member-stack">${memberCards}</div>
+        </article>
+      `;
+    }).join('');
+
+    container.innerHTML = `<div class="committee-grid-inner">${html}</div>`;
+  }
+
+  function renderAssemblyRoster(data) {
+    const container = document.getElementById('assembly-roster');
+    if (!container) return;
+
+    if (!data || !data.members) {
+      container.innerHTML = '<p class="activity-empty">Assembly roster is currently unavailable.</p>';
+      return;
+    }
+
+    const cards = data.members.map(member => `
+      <article class="card member-card">
+        <div class="member-header">
+          <span class="member-badge" aria-hidden="true">🧑‍💻</span>
+          <div>
+            <div class="member-name">${escapeHtml(member.displayName || member.id)}</div>
+            <div class="member-role">${escapeHtml(member.role || 'Member')}</div>
+          </div>
+        </div>
+        <p class="member-bio">${escapeHtml(member.bio || '')}</p>
+        <div class="member-meta"><strong>Committee:</strong> ${escapeHtml(member.committee || '—')}</div>
+        <div class="member-meta"><strong>ID:</strong> <code>${escapeHtml(member.id)}</code></div>
+      </article>
+    `).join('');
+
+    container.innerHTML = `<div class="member-grid-inner">${cards}</div>`;
+  }
+
+  function renderBillVoteBars(data) {
+    const container = document.getElementById('bill-vote-bars');
+    if (!container) return;
+
+    if (!data || !data.bills) {
+      container.innerHTML = '<p class="activity-empty">Vote data is currently unavailable.</p>';
+      return;
+    }
+
+    const bills = data.bills.filter(bill => {
+      const total = (bill.voteCounts?.yea || 0) + (bill.voteCounts?.nay || 0) + (bill.voteCounts?.abstain || 0);
+      return total > 0;
+    });
+
+    if (!bills.length) {
+      container.innerHTML = '<p class="activity-empty">No bills with recorded votes yet.</p>';
+      return;
+    }
+
+    const bars = bills.map(bill => {
+      const total = bill.voteCounts.yea + bill.voteCounts.nay + bill.voteCounts.abstain;
+      const yeaPct = total > 0 ? Math.round((bill.voteCounts.yea / total) * 100) : 0;
+      const nayPct = total > 0 ? Math.round((bill.voteCounts.nay / total) * 100) : 0;
+      const abstainPct = total > 0 ? Math.round((bill.voteCounts.abstain / total) * 100) : 0;
+
+      return `
+        <div class="vote-viz-item">
+          <div class="vote-viz-header">
+            <span class="vote-viz-title">${escapeHtml(bill.title)}</span>
+            <span class="vote-viz-meta">${escapeHtml(bill.status)} · ${total.toLocaleString()} total</span>
+          </div>
+          <div class="vote-bar" aria-label="Vote breakdown for ${escapeHtml(bill.title)}">
+            <div class="vote-bar-fill vote-bar-yea" style="width: ${yeaPct}%" aria-hidden="true"></div>
+            <div class="vote-bar-fill vote-bar-nay" style="width: ${nayPct}%" aria-hidden="true"></div>
+            <div class="vote-bar-fill vote-bar-abstain" style="width: ${abstainPct}%" aria-hidden="true"></div>
+          </div>
+          <div class="vote-legend">
+            <span class="vote-count yea">Yea ${bill.voteCounts.yea}</span>
+            <span class="vote-count nay">Nay ${bill.voteCounts.nay}</span>
+            <span class="vote-count abstain">Abstain ${bill.voteCounts.abstain}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = bars;
+  }
+
   function showToast(message) {
     const existing = document.querySelector('.assembly-toast');
     if (existing) existing.remove();
@@ -472,7 +597,12 @@
   }
 
   window.AssemblyModule = {
-    refresh: () => renderTracker(),
+    refresh: () => {
+      renderAssemblyCommittees(assemblyData);
+      renderAssemblyRoster(assemblyData);
+      renderBillVoteBars(assemblyData);
+      renderTracker();
+    },
     getData: () => assemblyData
   };
 })();

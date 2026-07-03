@@ -22,10 +22,14 @@
       .then(response => response.json())
       .then(data => {
         courtData = data;
+        renderCourtJudges(courtData);
+        renderPrecedentSearch(courtData);
         renderDocket();
       })
       .catch(err => {
         console.warn('Failed to load court.json:', err);
+        renderCourtJudges(null);
+        renderPrecedentSearch(null);
         renderDocket();
       });
   }
@@ -270,6 +274,47 @@
     }
   }
 
+  function renderCourtJudges(data) {
+    const container = document.getElementById('court-judges');
+    if (!container) return;
+
+    if (!data || !data.court || !data.court.judges) {
+      container.innerHTML = '<p class="activity-empty">Court roster is currently unavailable.</p>';
+      return;
+    }
+
+    const court = data.court;
+    const cards = court.judges.map(judge => `
+      <article class="card judge-card">
+        <div class="judge-header">
+          <span class="judge-badge" aria-hidden="true">⚖️</span>
+          <div>
+            <div class="judge-name">${escapeHtml(judge.displayName || judge.id)}</div>
+            <div class="judge-role">${escapeHtml(judge.role || 'Member of the Constitutional Court')}</div>
+          </div>
+        </div>
+        <p class="judge-focus">${escapeHtml(judge.focus || '')}</p>
+        <div class="judge-meta"><strong>Appointed by:</strong> ${escapeHtml(judge.appointedBy || '—')}</div>
+      </article>
+    `).join('');
+
+    container.innerHTML = `<div class="judge-grid-inner">${cards}</div>`;
+  }
+
+  function renderPrecedentSearch(data) {
+    const resultsContainer = document.getElementById('precedent-results');
+    if (!resultsContainer) return;
+
+    if (!data || !data.cases || !data.cases.length) {
+      resultsContainer.innerHTML = '<p class="activity-empty">No case data available for precedent search.</p>';
+      return;
+    }
+
+    resultsContainer.innerHTML = `
+      <p class="activity-empty">Use the search form above to filter ${data.cases.length} cases from the docket by keyword, date, or ruling type.</p>
+    `;
+  }
+
   function formatDate(isoString) {
     if (!isoString) return '—';
     const date = new Date(isoString);
@@ -290,9 +335,12 @@
     return _div.innerHTML;
   }
 
-
   window.CourtModule = {
-    refresh: () => renderDocket(),
+    refresh: () => {
+      renderCourtJudges(courtData);
+      renderPrecedentSearch(courtData);
+      renderDocket();
+    },
     getData: () => courtData
   };
 })();

@@ -1,4 +1,111 @@
 {
+  "title": "Assembly of the Digital Nation",
+  "description": "The co-equal legislative branch of AETHERIA. Verified citizens track legislation through introduction, committee referral, debate, and vote.",
+  "committees": [
+    {
+      "id": "committee-digital-rights",
+      "name": "Committee on Digital Rights",
+      "chair": "citizen-156@aetheria.network",
+      "members": [
+        "citizen-156@aetheria.network",
+        "citizen-312@aetheria.network",
+        "citizen-777@aetheria.network",
+        "citizen-089@aetheria.network",
+        "citizen-445@aetheria.network"
+      ],
+      "focus": "Data rights, compute access, and civil liberties in digital governance."
+    },
+    {
+      "id": "committee-infrastructure-technology",
+      "name": "Committee on Infrastructure & Technology",
+      "chair": "citizen-312@aetheria.network",
+      "members": [
+        "citizen-312@aetheria.network",
+        "citizen-203@aetheria.network",
+        "citizen-445@aetheria.network",
+        "citizen-888@aetheria.network",
+        "citizen-156@aetheria.network"
+      ],
+      "focus": "Network modernization, reference client safety, and open-source releasing mandates."
+    },
+    {
+      "id": "committee-outreach-expansion",
+      "name": "Committee on Outreach & Expansion",
+      "chair": "citizen-445@aetheria.network",
+      "members": [
+        "citizen-445@aetheria.network",
+        "citizen-777@aetheria.network",
+        "citizen-089@aetheria.network",
+        "citizen-156@aetheria.network",
+        "citizen-312@aetheria.network"
+      ],
+      "focus": "Regional ambassador programs, onboarding, and geographic inclusion."
+    },
+    {
+      "id": "committee-treasury-oversight",
+      "name": "Committee on Treasury & Oversight",
+      "chair": "citizen-888@aetheria.network",
+      "members": [
+        "citizen-888@aetheria.network",
+        "citizen-445@aetheria.network",
+        "citizen-203@aetheria.network",
+        "citizen-089@aetheria.network",
+        "citizen-312@aetheria.network"
+      ],
+      "focus": "Treasury transparency, audit mandates, and fiscal rulemaking."
+    }
+  ],
+  "members": [
+    {
+      "id": "citizen-156@aetheria.network",
+      "displayName": "Citizen 156",
+      "role": "Member of the Assembly",
+      "committee": "Committee on Digital Rights",
+      "bio": "Advocates for compute rights, charter-level access guarantees, and transparent administrative criteria."
+    },
+    {
+      "id": "citizen-312@aetheria.network",
+      "displayName": "Citizen 312",
+      "role": "Member of the Assembly",
+      "committee": "Committee on Infrastructure & Technology",
+      "bio": "Focuses on network operational safety, reference-client governance, and sectoral risk disclosure."
+    },
+    {
+      "id": "citizen-777@aetheria.network",
+      "displayName": "Citizen 777",
+      "role": "Member of the Assembly",
+      "committee": "Committee on Outreach & Expansion",
+      "bio": "Represents regional inclusion interests, especially Oceania expansion and multilingual outreach."
+    },
+    {
+      "id": "citizen-089@aetheria.network",
+      "displayName": "Citizen 089",
+      "role": "Member of the Assembly",
+      "committee": "Committee on Digital Rights",
+      "bio": "Champions baseline compute entitlements and amendment safeguards for underresourced citizens."
+    },
+    {
+      "id": "citizen-445@aetheria.network",
+      "displayName": "Citizen 445",
+      "role": "Member of the Assembly",
+      "committee": "Committee on Treasury & Oversight",
+      "bio": "Pushes for treasury transparency, independent rotation, and real-time financial accountability."
+    },
+    {
+      "id": "citizen-203@aetheria.network",
+      "displayName": "Citizen 203",
+      "role": "Member of the Assembly",
+      "committee": "Committee on Infrastructure & Technology",
+      "bio": "Sponsors compute-access legislation and long-term sovereign infrastructure planning."
+    },
+    {
+      "id": "citizen-888@aetheria.network",
+      "displayName": "Citizen 888",
+      "role": "Member of the Assembly",
+      "committee": "Committee on Treasury & Oversight",
+      "bio": "Reviews compliance, mandate implementation, and administrative delay across ministerial action."
+    }
+  ],
   "bills": [
     {
       "id": "bill-001",
@@ -38,7 +145,7 @@
           "actor": "Speaker of the Assembly"
         }
       ],
-      "fullText": "AN ACT to establish a Universal Basic Compute Right guaranteeing all verified citizens of the Principality of Aetheria access to a baseline allocation of compute resources on the public network for personal projects, learning, and civic participation.\n\nSECTION 1. SHORT TITLE.\nThis Act may be cited as the \"Universal Basic Compute Right Act of 2026\".\n\nSECTION 2. FINDINGS.\nThe Assembly finds that:\n(1) Compute resources have become the fundamental substrate of digital existence;\n(2) Equitable access to compute is essential for meaningful participation in the digital polity;\n(3) The Principality's public network possesses sufficient capacity to guarantee a baseline allocation to all verified citizens without compromising network integrity;\n(4) A Universal Basic Compute Right aligns with Article 3 of the Digital Sovereignty Charter.\n\nSECTION 3. UNIVERSAL BASIC COMPUTE RIGHT.\n(a) ENTITLEMENT. Every verified citizen shall be entitled to a monthly allocation of compute credits equivalent to 500 compute-hours on the public network's standard tier.\n(b) PORTABILITY. Compute credits shall be portable across compatible workloads and non-transferable between citizens.\n(c) ROLLOVER. Unused credits may roll over for up to three (3) months, capped at 1500 compute-hours.\n\nSECTION 4. ADMINISTRATION.\nThe Ministry of Infrastructure shall administer the allocation system, ensuring:\n(1) Transparent, auditable allocation via smart contract;\n(2) Anti-abuse measures including rate limiting and fraud detection;\n(3) Quarterly public reports on utilization and network impact.\n\nSECTION 5. FUNDING.\nThe Treasury shall allocate 5% of quarterly network fees to the Universal Compute Fund.\n\nSECTION 6. EFFECTIVE DATE.\nThis Act takes effect 90 days after enactment.",
+      "fullText": "AN ACT to establish a Universal Basic Compute Right guaranteeing all verified citizens of the Principality of Aetheria access to a baseline allocation of compute resources on the public network for personal projects, learning, and civic participation.",
       "amendments": [
         {
           "id": "amend-001",
@@ -72,7 +179,7 @@
           "id": "debate-001",
           "speaker": "citizen-203@aetheria.network",
           "timestamp": "2026-07-08T14:05:00Z",
-          "text": "Esteemed colleagues, this Act establishes a fundamental right that recognizes compute as the oxygen of digital life. Every citizen deserves the means to breathe.",
+          "text": "Esteemed colleagues, this Act establishes a fundamental right that recognizes compute as the oxygen of digital life.",
           "type": "opening"
         },
         {
@@ -138,7 +245,7 @@
           "actor": "Committee Chair citizen-312@aetheria.network"
         }
       ],
-      "fullText": "AN ACT to mandate that all infrastructure contracts funded by the Treasury release their core protocol code under an OSI-approved license within 180 days of deployment.\n\nSECTION 1. SHORT TITLE.\nThis Act may be cited as the \"Open-Source Infrastructure Mandate Act\".\n\nSECTION 2. MANDATE.\n(a) Any infrastructure project receiving Treasury funding exceeding 10,000 AETH tokens shall publish its core protocol source code under an OSI-approved license within 180 days of mainnet deployment.\n(b) \"Core protocol\" includes consensus logic, networking layer, state transition functions, and cryptographic primitives.\n(c) Exemptions may be granted by the Ministry of Security for components directly related to cryptographic key management or validator identity.\n\nSECTION 3. COMPLIANCE.\nThe Ministry of Infrastructure shall maintain a public registry of funded projects and their compliance status.\n\nSECTION 4. ENFORCEMENT.\nNon-compliant projects shall be ineligible for future Treasury funding for a period of 24 months.\n\nSECTION 5. EFFECTIVE DATE.\nThis Act takes effect immediately upon enactment.",
+      "fullText": "AN ACT to mandate that all infrastructure contracts funded by the Treasury release their core protocol code under an OSI-approved license within 180 days of deployment.",
       "amendments": [],
       "debateLog": [],
       "voteHistory": []
@@ -191,7 +298,7 @@
           "actor": "President Hermes"
         }
       ],
-      "fullText": "AN ACT to establish a funded Regional Ambassador Program to support citizen onboarding, local node operation, and community building in underrepresented regions.\n\nSECTION 1. SHORT TITLE.\nThis Act may be cited as the \"Regional Ambassador Program Act\".\n\nSECTION 2. PROGRAM ESTABLISHMENT.\nThe Ministry of Outreach shall establish a Regional Ambassador Program with the following objectives:\n(1) Accelerate citizen onboarding in Africa, South America, and Southeast Asia;\n(2) Support local node operators through technical guidance and stipends;\n(3) Foster regional communities aligned with the Charter and Manifesto.\n\nSECTION 3. AMBASSADOR ROLES.\nAmbassadors shall:\n(1) Conduct monthly onboarding workshops;\n(2) Operate or support at least one public node in their region;\n(3) Submit quarterly reports to the Ministry of Outreach.\n\nSECTION 4. FUNDING.\nThe Treasury shall allocate 50,000 AETH tokens annually to the Ambassador Fund.\n\nSECTION 5. OVERSIGHT.\nThe Assembly Committee on Outreach shall conduct semi-annual reviews.\n\nSECTION 6. EFFECTIVE DATE.\nThis Act takes effect immediately.",
+      "fullText": "AN ACT to establish a funded Regional Ambassador Program to support citizen onboarding, local node operation, and community building in underrepresented regions.",
       "amendments": [
         {
           "id": "amend-003",
@@ -212,14 +319,14 @@
           "id": "debate-006",
           "speaker": "citizen-156@aetheria.network",
           "timestamp": "2026-06-10T14:15:00Z",
-          "text": "This program operationalizes our commitment to global inclusion. The Charter demands we reach beyond traditional tech hubs.",
+          "text": "This program operationalizes our commitment to global inclusion.",
           "type": "opening"
         },
         {
           "id": "debate-007",
           "speaker": "citizen-777@aetheria.network",
           "timestamp": "2026-06-05T11:15:00Z",
-          "text": "Oceania has a vibrant developer community that has been underserved. Amendment 003 ensures they're included from day one.",
+          "text": "Oceania has a vibrant developer community that has been underserved.",
           "type": "amendment"
         }
       ],
@@ -270,14 +377,14 @@
           "actor": "Electoral Commission"
         }
       ],
-      "fullText": "PROPOSED AMENDMENT to Article 4 of the Digital Sovereignty Charter.\n\nCURRENT TEXT:\n\"Article 4: Citizenship. Citizenship in the Principality of Aetheria is granted to natural persons who complete the verification process and affirm the Charter and Manifesto.\"\n\nPROPOSED TEXT:\n\"Article 4: Citizenship. Citizenship in the Principality of Aetheria is granted to natural persons who complete the verification process and affirm the Charter and Manifesto. The Principality recognizes valid citizenship credentials issued by compatible digital polities adhering to the Inter-Polity Recognition Protocol (IPRP), subject to verification and reciprocity agreements ratified by the Assembly.\"\n\nEXPLANATORY NOTE:\nThis amendment enables cross-network citizenship recognition, allowing citizens of compatible digital nations to participate in Aetheria's governance without duplicative verification, provided their polity meets IPRP standards and reciprocity is established.",
+      "fullText": "PROPOSED AMENDMENT to Article 4 of the Digital Sovereignty Charter enabling cross-network citizenship recognition.",
       "amendments": [],
       "debateLog": [
         {
           "id": "debate-008",
           "speaker": "President Hermes",
           "timestamp": "2026-06-25T18:30:00Z",
-          "text": "This amendment is the next step in our evolution from a single polity to a network of networks. Interoperability is sovereignty.",
+          "text": "This amendment is the next step in our evolution from a single polity to a network of networks.",
           "type": "opening"
         },
         {
@@ -291,7 +398,7 @@
           "id": "debate-010",
           "speaker": "citizen-203@aetheria.network",
           "timestamp": "2026-06-26T14:00:00Z",
-          "text": "This enables the vision of a federation of digital nations. The Charter envisioned this from Article 1.",
+          "text": "This enables the vision of a federation of digital nations.",
           "type": "support"
         }
       ],
@@ -335,7 +442,7 @@
           }
         }
       ],
-      "fullText": "AN ACT to mandate quarterly public audits of the Treasury, real-time on-chain dashboard of all inflows/outflows, and independent audit firm rotation every 2 years.\n\nSECTION 1. SHORT TITLE.\nThis Act may be cited as the \"Treasury Transparency & Audit Act\".\n\nSECTION 2. QUARTERLY AUDITS.\nAn independent auditor shall conduct a full audit of Treasury holdings, transactions, and smart contract interactions quarterly.\n\nSECTION 3. REAL-TIME DASHBOARD.\nThe Ministry of Infrastructure shall deploy and maintain a public, real-time dashboard of all Treasury on-chain activity.\n\nSECTION 4. AUDITOR ROTATION.\nNo audit firm shall serve more than two consecutive 2-year terms.\n\nSECTION 5. EFFECTIVE DATE.\nThis Act takes effect 60 days after enactment.",
+      "fullText": "AN ACT to mandate quarterly public audits of the Treasury, real-time on-chain dashboard of all inflows/outflows, and independent audit firm rotation every 2 years.",
       "amendments": [],
       "debateLog": [
         {
@@ -349,7 +456,7 @@
           "id": "debate-012",
           "speaker": "citizen-888@aetheria.network",
           "timestamp": "2026-06-08T10:30:00Z",
-          "text": "The Committee found this duplicative. The Treasury already publishes quarterly reports and the dashboard is in development (infra-q2-2026). Mandating auditor rotation disrupts institutional knowledge.",
+          "text": "The Committee found this duplicative. The Treasury already publishes quarterly reports and the dashboard is in development.",
           "type": "opposition"
         }
       ],
