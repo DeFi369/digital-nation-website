@@ -10,6 +10,7 @@
   function init() {
     renderStack();
     renderMetrics();
+    renderAttestation();
     renderQuantumStatus();
     renderBenefits();
   }
@@ -109,6 +110,33 @@
       })
       .catch(function () {
         container.innerHTML = '<div class="activity-empty">Quantum status is temporarily unavailable.</div>';
+      });
+  }
+
+  function renderAttestation() {
+    var container = document.getElementById('protocol-attestation');
+    if (!container) return;
+    fetch('assets/data/protocol-data.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var metrics = data.metrics || {};
+        var manifestCount = metrics.identityManifestCount || 0;
+        var keyCount = metrics.identityKeyCount || 0;
+        var signatureStatus = metrics.signatureStatus || 'pre-v1.0';
+        var items = [
+          { label: 'Verified Profiles', value: String(manifestCount) },
+          { label: 'Identity Keys', value: String(keyCount) },
+          { label: 'Signature Status', value: signatureStatus }
+        ];
+        container.innerHTML = items.map(function (item) {
+          return '<div class="stat">' +
+            '<span class="stat-value">' + escapeHtml(String(item.value)) + '</span>' +
+            '<span class="stat-label">' + escapeHtml(String(item.label)) + '</span>' +
+          '</div>';
+        }).join('');
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Protocol attestation is temporarily unavailable.</div>';
       });
   }
 
