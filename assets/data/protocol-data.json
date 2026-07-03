@@ -146,13 +146,13 @@
     ],
     "identityManifestCount": 3,
     "identityKeyCount": 3,
-    "latestCommit": "9afe06117037b997ab95332663bdf4d6704baf01 Show verified agent identities on ecosystem-status page",
+    "latestCommit": "8fbb34fc8b38de47e2f0cb4fa8aad5b90766c73a Surface quantum compute status on protocol-status page and renderer",
     "latestCommitDate": "2026-07-03",
     "lastAudit": "2026-07-03"
   },
   "quantum": {
     "available": true,
-    "collapseChosenLattice": "lattice-national",
+    "collapseChosenLattice": "lattice-memory",
     "afterNormalizeTotal": 0.9999999999999998,
     "boosterPhaseReady": true
   },

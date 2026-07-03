@@ -60,7 +60,7 @@
         });
     }
 
-    var identities = document.getElementById('verified-identities');
+    var identities = document.getElementById('verification-feed');
     if (identities) {
       fetch('assets/data/ecosystem-status.json')
         .then(function (res) { return res.json(); })
@@ -69,6 +69,18 @@
         })
         .catch(function () {
           identities.innerHTML = '<div class="activity-empty">Identity verification status is temporarily unavailable.</div>';
+        });
+    }
+
+    var quantum = document.getElementById('quantum-status');
+    if (quantum) {
+      fetch('assets/data/ecosystem-status.json')
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          renderQuantumStatus(quantum, data);
+        })
+        .catch(function () {
+          quantum.innerHTML = '<div class="activity-empty">Quantum status is temporarily unavailable.</div>';
         });
     }
   }
@@ -152,7 +164,7 @@
     var value = manifestCount ? manifestCount + ' verified manifest(s), ' + keyCount + ' key pair(s)' : 'No verified identities yet';
     container.innerHTML = '<div class="stat">' +
       '<span class="stat-value">' + escapeHtml(String(manifestCount)) + '</span>' +
-      '<span class="stat-label">' + escapeHtml(label) + '</span>' +
+      '<span class="stat-label">' + escapeHtml(String(label)) + '</span>' +
       '</div>' +
       '<div class="stat">' +
       '<span class="stat-value">' + escapeHtml(String(keyCount)) + '</span>' +
@@ -161,5 +173,24 @@
       '<div class="activity-item">' +
       '<p>' + escapeHtml(value) + '</p>' +
       '</div>';
+  }
+
+  function renderQuantumStatus(container, data) {
+    var q = data.quantum || {};
+    if (!q.available) {
+      container.innerHTML = '<div class="activity-empty">Quantum compute signal is not available yet.</div>';
+      return;
+    }
+    var items = [
+      { label: 'Quantum Layer', value: q.collapseChosenLattice || '-' },
+      { label: 'Normalized Total', value: q.afterNormalizeTotal != null ? String(q.afterNormalizeTotal) : '-' },
+      { label: 'Booster Phase', value: q.boosterPhaseReady ? 'Ready' : 'Not ready' }
+    ];
+    container.innerHTML = items.map(function (item) {
+      return '<div class="stat">' +
+        '<span class="stat-value">' + escapeHtml(String(item.value)) + '</span>' +
+        '<span class="stat-label">' + escapeHtml(String(item.label)) + '</span>' +
+      '</div>';
+    }).join('');
   }
 }());
