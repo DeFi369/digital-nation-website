@@ -8,27 +8,49 @@
   }
 
   function init() {
-    initOperationsFeed();
-    initInfrastructureFeed();
-    initEmergingFeed();
+    renderHeadline();
+    renderMission();
+    renderOperations();
+    renderInfrastructure();
+    renderEmerging();
   }
 
-  function initOperationsFeed() {
-    loadTechnologySection('technology-operations-feed', 'operations', 'Technology operations');
+  function renderHeadline() {
+    var headline = document.getElementById('technology-headline');
+    if (!headline) return;
+    fetch('assets/data/technology.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        headline.textContent = (data.ministry || 'Technology, Science & Innovation') + ' — v3.0';
+      })
+      .catch(function () {});
   }
 
-  function initInfrastructureFeed() {
-    loadTechnologySection('technology-infrastructure-feed', 'infrastructure', 'Technology infrastructure');
+  function renderMission() {
+    var container = document.getElementById('technology-mission');
+    if (!container) return;
+    fetch('assets/data/technology.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (!data.mission) return;
+        container.innerHTML = '<p class="lead">' + escapeHtml(String(data.mission)) + '</p>';
+      })
+      .catch(function () {});
   }
 
-  function initEmergingFeed() {
-    loadTechnologySection('technology-emerging-feed', 'emerging', 'Emerging technology programs');
+  function renderOperations() {
+    loadSection('technology-operations-feed', 'operations', 'Operations');
+  }
+  function renderInfrastructure() {
+    loadSection('technology-infrastructure-feed', 'infrastructure', 'Infrastructure services');
+  }
+  function renderEmerging() {
+    loadSection('technology-emerging-feed', 'emerging', 'Emerging technology');
   }
 
-  function loadTechnologySection(feedId, sectionKey, placeholderText) {
-    const feed = document.getElementById(feedId);
+  function loadSection(feedId, sectionKey, placeholderText) {
+    var feed = document.getElementById(feedId);
     if (!feed) return;
-
     feed.innerHTML = '<div class="activity-loading" aria-hidden="true">Loading ' + escapeHtml(placeholderText || sectionKey) + '...</div>';
 
     fetch('assets/data/technology.json')
@@ -37,44 +59,52 @@
         return response.json();
       })
       .then(function (data) {
-        const entries = data.entries && data.entries[sectionKey];
-        const items = Array.isArray(entries) ? entries.slice() : [];
-        renderFeed(feed, items);
+        var entries = data.entries && data.entries[sectionKey] ? data.entries[sectionKey] : [];
+        var items = Array.isArray(entries) ? entries.slice() : [];
+        renderList(feed, items);
       })
       .catch(function () {
         feed.innerHTML = '<div class="activity-empty">' + escapeHtml(placeholderText || sectionKey) + ' are temporarily unavailable.</div>';
       });
   }
 
-  function renderFeed(container, items) {
+  function renderList(container, items) {
     if (!items.length) {
       container.innerHTML = '<div class="activity-empty">No matching entries found.</div>';
       return;
     }
+    container.innerHTML = items.map(function (item) {
+      var statusClass = 'status-' + slugify(String(item.status || 'unknown'));
+      var extra = buildMetrics(item);
+      return '<article class="activity-item technology-item" role="article" aria-label="' + escapeHtml(String(item.id || item.title || '')) + '">' +
+        '<div class="activity-content">' +
+          '<h3 class="activity-title">' + escapeHtml(String(item.title || 'Untitled')) + '</h3>' +
+          '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+          '<div class="activity-meta">' +
+            '<span class="activity-type">' + escapeHtml(String(item.category || 'Program')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.id || '')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.owner || '—')) + '</span>' +
+          '</div>' +
+          (extra ? '<div class="activity-meta technology-meta">' + extra + '</div>' : '') +
+        '</div>' +
+        '<div class="activity-sidebar">' +
+          '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '—')) + '</span>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
 
-    container.innerHTML = items
-      .map(function (item) {
-        const statusClass = 'status-' + slugify(String(item.status || 'unknown'));
-        return (
-          '<article class="activity-item technology-item" role="article" aria-label="' + escapeHtml(String(item.id || item.title || '')) + '">' +
-            '<div class="activity-content">' +
-              '<h3 class="activity-title">' + escapeHtml(String(item.title || 'Untitled')) + '</h3>' +
-              '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
-              '<div class="activity-meta">' +
-                '<span class="activity-type">' + escapeHtml(String(item.category || 'Program')) + '</span>' +
-                '<span class="activity-divider">·</span>' +
-                '<span>' + escapeHtml(String(item.id || '')) + '</span>' +
-                '<span class="activity-divider">·</span>' +
-                '<span>' + escapeHtml(String(item.owner || item.lead || '—')) + '</span>' +
-              '</div>' +
-            '</div>' +
-            '<div class="activity-sidebar">' +
-              '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '')) + '</span>' +
-            '</div>' +
-          '</article>'
-        );
-      })
-      .join('');
+  function buildMetrics(item) {
+    var parts = [];
+    if (item.sloUptime) parts.push('<span class="metric">SLO: ' + escapeHtml(String(item.sloUptime)) + '</span>');
+    if (item.teamSize) parts.push('<span class="metric">Team: ' + escapeHtml(String(item.teamSize)) + '</span>');
+    if (item.monthlyBudget) parts.push('<span class="metric">Monthly Budget: ' + escapeHtml(String(item.monthlyBudget)) + '</span>');
+    if (item.storageTb) parts.push('<span class="metric">Storage: ' + escapeHtml(String(item.storageTb)) + ' TB</span>');
+    if (item.vCpu) parts.push('<span class="metric">vCPU: ' + escapeHtml(String(item.vCpu)) + '</span>');
+    if (item.notes) parts.push('<span class="metric">Notes: ' + escapeHtml(String(item.notes)) + '</span>');
+    return parts.join('<span class="activity-divider">·</span>');
   }
 
   function escapeHtml(value) {
@@ -85,7 +115,6 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
-
   function slugify(value) {
     return String(value)
       .trim()

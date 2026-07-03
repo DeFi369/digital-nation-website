@@ -1,85 +1,24 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Technology Operations & Infrastructure",
-  "count": 3,
+  "ministry": "Technology, Science & Innovation",
+  "secretary": "Secretary of Technology, Science & Innovation",
+  "mission": "Operational technology, digital infrastructure, enterprise care, and healthy pipeline management for Technology, Science & Innovation and cross-ministry beneficiaries.",
+  "count": 8,
   "entries": {
     "operations": [
-      {
-        "id": "TECH-OPS-01",
-        "title": "Primary Operations Center",
-        "status": "Active",
-        "category": "Operations",
-        "owner": "Kai Voss",
-        "summary": "24-hour operational monitoring, incident triage, and protocol-aligned runbooks for core services."
-      },
-      {
-        "id": "TECH-OPS-02",
-        "title": "Regional Operations Desk",
-        "status": "Active",
-        "category": "Operations",
-        "owner": "Mira Chen",
-        "summary": "Regional coordination, citizen-facing issue routing, and escalation pathways for infrastructure incidents."
-      },
-      {
-        "id": "TECH-OPS-03",
-        "title": "Incident Review Board",
-        "status": "Beta",
-        "category": "Operations",
-        "owner": "Aria Solenne",
-        "summary": "Blameless review board, publication policy, and follow-up action tracking for major operational events."
-      }
+      {"id":"TECH-OPS-01","title":"Primary Operations Center","category":"Operations","status":"Active","owner":"Director of Service Operations","summary":"24x7 NOC, incident intake, runbook enforcement, and service-health reporting for technology services.","teamSize":18,"sloUptime":"99.97%"},
+      {"id":"TECH-OPS-02","title":"Enterprise Care Desk","category":"Operations","status":"Active","owner":"Enterprise Care Lead","summary":"Dedicated care track for internal stakeholders: requests, escalations, and change coordination.","teamSize":9,"sloUptime":"96.4%"},
+      {"id":"TECH-OPS-03","title":"Delivery Response Unit","category":"Operations","status":"Beta","owner":"Delivery Operations Manager","summary":"Cross-team response unit accelerating high-priority delivery remediation and blocker removal.","teamSize":7,"sloUptime":"Pilot"}
     ],
     "infrastructure": [
-      {
-        "id": "TECH-INF-01",
-        "title": "Edge Service Network",
-        "status": "Operational",
-        "category": "Technology Infrastructure",
-        "owner": "Mira Chen",
-        "summary": "Regional gateway infrastructure for low-latency access to registry, engage, and passport services."
-      },
-      {
-        "id": "TECH-INF-02",
-        "title": "Primary Storage Grid",
-        "status": "Operational",
-        "category": "Technology Infrastructure",
-        "owner": "Kai Voss",
-        "summary": "Redundant object storage for public records, archives, and proof bundles with integrity verification."
-      },
-      {
-        "id": "TECH-INF-03",
-        "title": "Observability Pipeline",
-        "status": "Active",
-        "category": "Technology Infrastructure",
-        "owner": "Aria Solenne",
-        "summary": "Metrics, logs, and tracing streams for engineering, ops, and governance review workflows."
-      }
+      {"id":"TECH-INF-01","title":"Compute Environment","category":"Infrastructure","status":"Active","owner":"Infrastructure Architect","summary":"Containerized compute plane for registry, engage, passport, and tooling workloads.","vCpu":480,"monthlyBudget":"¥19.8M"},
+      {"id":"TECH-INF-02","title":"Data Persistence Tier","category":"Infrastructure","status":"Active","owner":"Data Platform Lead","summary":"Object storage, database clusters, and backup pipeline for public records and proof bundles.","storageTb":86.4,"monthlyBudget":"¥8.5M"},
+      {"id":"TECH-INF-03","title":"Edge Delivery Network","category":"Infrastructure","status":"Active","owner":"Edge Engineer","summary":"CDN-backed front-end delivery and DNS management for citizen-facing applications.","monthlyBudget":"¥6.1M"}
     ],
     "emerging": [
-      {
-        "id": "TECH-EMG-01",
-        "title": "Formal Verification Pipeline",
-        "status": "Pilot",
-        "category": "Emerging Technology",
-        "owner": "Nia Rahman",
-        "summary": "Model-checking pipeline for protocol modules, smart-style rule bundles, and upgrade candidates."
-      },
-      {
-        "id": "TECH-EMG-02",
-        "title": "Agentic Workflow Layer",
-        "status": "Pilot",
-        "category": "Emerging Technology",
-        "owner": "Aria Solenne",
-        "summary": "Verified workflow agents for onboarding, appeals, and outreach with human-in-the-loop guardrails."
-      },
-      {
-        "id": "TECH-EMG-03",
-        "title": "Zero-Knowledge Access Layer",
-        "status": "Planning",
-        "category": "Emerging Technology",
-        "owner": "Kai Voss",
-        "summary": "Privacy-preserving access controls for sensitive records while preserving verifiable audit trails."
-      }
+      {"id":"TECH-EMG-01","title":"AI Copilot Pipeline","category":"Emerging Technology","status":"Active","owner":"AI Platform Lead","summary":"Assistive copilot for internal support workflows with safety rails and content governance controls.","monthlyBudget":"¥22.4M","notes":"Published use policy: v3.0"},
+      {"id":"TECH-EMG-02","title":"Deep Research Pilot","category":"Emerging Technology","status":"Planning","owner":"Office of Technology Transfer","summary":"Research track evaluating deep research methods for internal knowledge work.","monthlyBudget":"¥4.6M","notes":"Kickoff pending charter approval"},
+      {"id":"TECH-EMG-03","title":"Brain-Computer Interface Review","category":"Emerging Technology","status":"Planning","owner":"Chief Scientific Officer","summary":"Safety, ethics, and interoperability assessment for state-of-the-art assistive devices.","monthlyBudget":"¥7.2M","notes":"3-way review: Technology, Science, Health Equity"}
     ]
   }
 }

@@ -1,0 +1,45 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Digital Economy & Commerce",
+  "secretary": "Secretary of Digital Economy & Commerce",
+  "count": 5,
+  "stats": {
+    "annualBudget": "¥128.4M",
+    "programsActive": 24,
+    "instrumentsIssued": 16,
+    "recentReports": 3,
+    "citizenParticipation": "91.2%"
+  },
+  "pillars": [
+    {"id":"ECON-PIL-01","title":"Open Markets","summary":"Permissionless order books with on-protocol settlement, audit trails, and transparent fee policies."},
+    {"id":"ECON-PIL-02","title":"Transparent Treasury","summary":"All inflows, outflows, and balances published on-protocol and subject to Civic Assembly approval."},
+    {"id":"ECON-PIL-03","title":"Bounty Networks","summary":"Automated bounty posting, milestone verification, and escrow release with verifiable acceptance criteria."},
+    {"id":"ECON-PIL-04","title":"Quadratic Funding","summary":"Public goods funded by quadratic matching to amplify underfunded, widely-valued projects."},
+    {"id":"ECON-PIL-05","title":"Merit Governance","summary":"Governance and disbursement weights derived from contribution and verifiable participation, not stake size."}
+  ],
+  "entries": {
+    "programs": [
+      {"id":"ECON-P01","title":"Open Market Protocol","category":"Markets","status":"Active","owner":"Digital Economy & Commerce Secretary","summary":"Permissionless order-book infrastructure with on-protocol matching and settlement guarantees for verified citizens.","budget":"¥42.1M","participants":1847},
+      {"id":"ECON-P02","title":"Bounty Dispatch Bureau","category":"Labor","status":"Active","owner":"Digital Economy & Commerce Secretary","summary":"Automated bounty posting, milestone verification, and escrow release for civic and commercial deliverables.","budget":"¥18.7M","participants":3214},
+      {"id":"ECON-P03","title":"Public Goods Quadratic Match","category":"Finance","status":"Active","owner":"Assembly Grants Committee","summary":"Quadratic matching fund for public goods amplified by protocol to support high-value, low-income projects.","budget":"¥24.3M","participants":5421},
+      {"id":"ECON-P04","title":"Merit Weighting Review","category":"Governance","status":"In Review","owner":"Governance Registrar","summary":"Periodic calibration of contribution-weight algorithms to preserve sybil resistance and prevent gaming.","budget":"¥4.2M","participants":892},
+      {"id":"ECON-P05","title":"Citizen Commerce Enablement","category":"Education","status":"In Progress","owner":"Education & Workforce Cabinet","summary":"Onboarding curriculum, instrument workshops, and dispute-resolution playbooks for new market participants.","budget":"¥7.8M","participants":1104},
+      {"id":"ECON-P06","title":"Cross-Border Trade Pilot","category":"Diplomacy","status":"Scheduled","owner":"Digital Economy & Commerce Secretary","summary":"Interoperability pilot with recognized external partners to exchange verifiable credentials and instruments.","budget":"¥5.5M","participants":256},
+      {"id":"ECON-P07","title":"Currency Stability Oversight","category":"Treasury","status":"Active","owner":"Treasury Node Alpha","summary":"Reserve-backed liquidity monitoring, volatility guards, and redemption pathways for citizen-held stable instruments.","budget":"¥12.6M","participants":643}
+    ],
+    "instruments": [
+      {"id":"ECON-I01","title":"Aether Credit","category":"Stable Instrument","status":"Active","owner":"Treasury Node Alpha","summary":"Protocol-backed liquidity with deterministic settlement, reserve attestation, and merchant acceptance.","issuance":"¥64.2M","holders":8123},
+      {"id":"ECON-I02","title":"Participation Certificate","category":"Merit Instrument","status":"Ratified","owner":"Governance Registrar","summary":"Merit-weighted certificate reflecting documented contribution, civic participation, and verifiable skill attestations.","issuance":"¥12.1M","holders":5647},
+      {"id":"ECON-I03","title":"Grant Note","category":"Public Goods","status":"Active","owner":"Assembly Grants Committee","summary":"Time-limited instrument minted against approved public-good grants with milestone-linked release.","issuance":"¥18.9M","holders":1210},
+      {"id":"ECON-I04","title":"Bounty Bond","category":"Crowd Labor","status":"Beta","owner":"Bounty Dispatch Bureau","summary":"Instant-issue bond enabling upfront funding for multi-milestone deliverables for high-trust citizens.","issuance":"¥3.4M","holders":389},
+      {"id":"ECON-I05","title":"Merit Stablecoin","category":"Stable Instrument","status":"Draft","owner":"Digital Economy & Commerce Secretary","summary":"Governance-tethered stable unit with bandwidth adjustment tied to throughput and reserve coverage ratio.","issuance":"¥0","holders":0}
+    ],
+    "reports": [
+      {"id":"ECON-R01","title":"Q1 Market Integrity Review","category":"Audit","status":"Published","owner":"Independent Auditors","summary":"Order-book fairness, fee transparency, and settlement latency review across open-market runtimes.","published":"2026-03-31"},
+      {"id":"ECON-R02","title":"Midyear Treasury Reconciliation","category":"Governance","status":"In Progress","owner":"Audit Office","summary":"Line-item reconciliation of ministry budgets, instrument flows, and public-goods disbursements through Q2.","published":null},
+      {"id":"ECON-R03","title":"Citizen Participation Survey","category":"Research","status":"Scheduled","owner":"Research & Laboratory Policy","summary":"Annual survey of citizen engagement, satisfaction, and trust across economy ministries and programs.","published":null},
+      {"id":"ECON-R04","title":"Instruments Depth & Distribution Review","category":"Governance","status":"Published","owner":"Treasury Node Alpha","summary":"Analysis of instrument distribution, concentration, and reserve coverage across Aetheria markets.","published":"2026-01-15"},
+      {"id":"ECON-R05","title":"Quadratic Funding Efficacy Report","category":"Research","status":"Draft","owner":"Assembly Grants Committee","summary":"Capital efficiency, project diversity, and long-term outcomes metrics for quadratic matching pools.","published":null}
+    ]
+  }
+}
