@@ -77,8 +77,8 @@
         "owner": "Secretary of Public Affairs & Culture",
         "summary": "Filterable, sortable feed of petitions, feedback, and governance actions with type, status, and date controls.",
         "participants": 8421,
-        "dailyActiveUsers": 1234,
-        "filtersAvailable": 12
+        "completionRate": "94.2%",
+        "avgSessionMinutes": 3.1
       },
       {
         "id": "TOL-06",
@@ -88,63 +88,30 @@
         "owner": "Secretary of Public Affairs & Culture",
         "summary": "One-click signing with localStorage persistence, duplicate prevention, and real-time progress tracking toward escalation thresholds.",
         "participants": 5234,
-        "signaturesThisMonth": 3421,
-        "escalationsTriggered": 5
+        "completionRate": "89.6%",
+        "signaturesRecorded": 12847
       },
       {
         "id": "TOL-07",
         "title": "Escalation Tracker",
-        "category": "Accountability Tool",
-        "status": "Active",
-        "owner": "Assembly Clerk",
-        "summary": "Public dashboard tracking petition escalations to Assembly, debate scheduling, voting records, and implementation status.",
-        "participants": 2156,
-        "escalationsTracked": 18,
-        "debatesScheduled": 12
+        "category": "Governance Tool",
+        "status": "Beta",
+        "owner": "Secretary of Public Affairs & Culture",
+        "summary": "Public dashboard tracking Assembly debate scheduling, committee assignment, and voting outcomes for escalated petitions.",
+        "participants": 652,
+        "completionRate": "43.1%",
+        "escalationsTracked": 23
       },
       {
         "id": "TOL-08",
-        "title": "Judicial Review Request",
+        "title": "Judicial Review Portal",
         "category": "Legal Tool",
         "status": "Active",
-        "owner": "Court Clerk",
-        "summary": "Structured request form for citizens to seek judicial review of feedback items, with docket tracking and precedent search.",
-        "participants": 892,
-        "reviewsFiled": 23,
-        "precedentsCited": 156
-      }
-    ],
-    "guides": [
-      {
-        "id": "TOL-G01",
-        "title": "Citizen Onboarding Guide",
-        "category": "Documentation",
-        "status": "Active",
-        "owner": "Education & Workforce Cabinet",
-        "summary": "Step-by-step walkthrough from charter review through first petition, feedback, or Corps application.",
-        "participants": 5234,
-        "lastUpdated": "2026-06-15"
-      },
-      {
-        "id": "TOL-G02",
-        "title": "Governance Participation Handbook",
-        "category": "Documentation",
-        "status": "Active",
-        "owner": "Secretary of Public Affairs & Culture",
-        "summary": "Comprehensive guide to Assembly sessions, committee work, petition thresholds, and escalation procedures.",
-        "participants": 3128,
-        "lastUpdated": "2026-05-20"
-      }
-    ],
-    "reports": [
-      {
-        "id": "TOL-R01",
-        "title": "Tool Adoption & Effectiveness Q2 2026",
-        "category": "Research",
-        "status": "Published",
-        "owner": "Assembly Grants Committee",
-        "summary": "Usage analytics, completion funnels, user satisfaction scores, and correlation with subsequent civic participation.",
-        "published": "2026-06-30"
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Structured intake for requesting judicial review of feedback items, with case assignment, docket tracking, and opinion publication.",
+        "participants": 317,
+        "completionRate": "71.8%",
+        "reviewsFiled": 41
       }
     ]
   }

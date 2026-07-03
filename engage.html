@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Civic Engagement Hub for the Principality of Aetheria. Create petitions, submit feedback, track governance activity.">
+  <meta name="description" content="Civic Engagement Hub for the Principality of Aetheria. Create petitions, submit feedback, track governance activity, and access interactive citizenship tools. Overseen by the Secretary of Public Affairs & Culture.">
   <link rel="canonical" href="https://defi369.github.io/digital-nation-website/engage.html">
   <meta property="og:title" content="Civic Engagement Hub — The Principality of Aetheria">
-  <meta property="og:description" content="Civic Engagement Hub for the Principality of Aetheria. Create petitions, submit feedback, track governance activity.">
+  <meta property="og:description" content="Participatory governance under the Secretary of Public Affairs & Culture: petitions, feedback, civic tools, and transparent activity tracking.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://defi369.github.io/digital-nation-website/engage.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Civic Engagement Hub — The Principality of Aetheria">
-  <meta name="twitter:description" content="Civic Engagement Hub for the Principality of Aetheria. Create petitions, submit feedback, track governance activity.">
+  <meta name="twitter:description" content="Participatory governance under the Secretary of Public Affairs & Culture: petitions, feedback, civic tools, and transparent activity tracking.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
 
   <title>Civic Engagement Hub — The Principality of Aetheria</title>
@@ -123,8 +123,11 @@
     <section class="page">
       <div class="container">
         <h1>Civic Engagement Hub</h1>
-        <p class="lead">Your gateway to participatory governance. Create petitions, submit feedback, track governance actions, and stay informed on civic activity across the Principality. The Chief Electoral Officer reports to the Assembly, and all petitions that meet signature thresholds are escalated for formal consideration.</p>
+        <p class="lead">
+          Under the <strong>Secretary of Public Affairs & Culture</strong>, Aetheria operates a structured participatory governance layer connecting citizens directly to the Assembly, Executive, and Ministries. This hub provides petition creation, feedback submission, interactive citizenship tools, and a transparent civic activity feed with real-time status tracking.
+        </p>
 
+        <h2>Quick Access</h2>
         <div class="civic-quick-links" aria-labelledby="quick-links-title">
           <h2 id="quick-links-title" class="sr-only">Quick Links</h2>
           <div class="quick-link-grid">
@@ -151,9 +154,38 @@
           </div>
         </div>
 
+        <div class="activity-filters" id="engage-filters" aria-label="Filter engagement directory">
+          <label for="engage-search" class="sr-only">Search petitions, feedback, and governance actions</label>
+          <input type="search" id="engage-search" class="activity-filter" placeholder="Search petitions, feedback, or governance actions..." autocomplete="off" />
+          <select id="engage-type" class="activity-select" aria-label="Filter by type">
+            <option value="all">All Types</option>
+            <option value="petition">Petitions</option>
+            <option value="feedback">Feedback</option>
+            <option value="governance">Governance Actions</option>
+          </select>
+          <select id="engage-status" class="activity-select" aria-label="Filter by status">
+            <option value="all">All Statuses</option>
+            <option value="open">Open</option>
+            <option value="in-progress">In Progress</option>
+            <option value="complete">Complete</option>
+            <option value="scheduled">Scheduled</option>
+            <option value="closed">Closed</option>
+          </select>
+        </div>
+
+        <h2>Ministry Summary</h2>
+        <div id="engage-stats" class="stats-grid" aria-live="polite" aria-label="Engagement summary statistics">
+          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+        </div>
+
+        <h2>Engagement Pillars</h2>
+        <div id="engage-pillars" class="pillars-grid" aria-live="polite" aria-label="Engagement pillars">
+          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+        </div>
+
         <section class="civic-section" aria-labelledby="petitions-title">
           <h2 id="petitions-title">Create a Petition</h2>
-          <p>Propose formal requests to the Assembly, Executive, or Ministries. Petitions meeting signature thresholds trigger formal review.</p>
+          <p>Propose formal requests to the Assembly, Executive, or Ministries. Petitions meeting signature thresholds trigger formal review and potential escalation to the Assembly docket.</p>
 
           <form id="petition-form" class="civic-form" novalidate>
             <div class="form-row">
@@ -209,7 +241,7 @@
 
         <section class="civic-section" aria-labelledby="feedback-title">
           <h2 id="feedback-title">Submit Feedback or Issue</h2>
-          <p>Report platform issues, suggest improvements, or provide feedback on governance processes. Submissions are reviewed by the relevant team.</p>
+          <p>Report platform issues, suggest improvements, or provide feedback on governance processes. Submissions are reviewed by the relevant team and tracked publicly.</p>
 
           <form id="feedback-form" class="civic-form" novalidate>
             <div class="form-row">
@@ -299,6 +331,15 @@
             <div class="activity-loading" aria-hidden="true">Loading activity feed…</div>
           </div>
         </section>
+
+        <h2>Cross-Links</h2>
+        <p>Engagement connects to <a href="tools.html">Tools</a>, <a href="transparency.html">Transparency</a>, <a href="digital-service-corps.html">Digital Service Corps</a>, <a href="elections.html">Elections & Petitions</a>, and <a href="assembly.html">Assembly</a>.</p>
+
+        <div class="cta">
+          <a class="button primary" href="tools.html">Explore Tools</a>
+          <a class="button" href="transparency.html">Transparency</a>
+          <a class="button" href="digital-service-corps.html">Join the Corps</a>
+        </div>
       </div>
     </section>
   </main>
@@ -312,14 +353,14 @@
           <span class="footer-tagline">Sovereign by code</span>
         </div>
         <div class="footer-meta">
-          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
+          <span class="protocol-version" aria-label="Protocol version">Protocol v3.0.0</span>
           <span class="footer-status" aria-label="Public network status">
             <span class="status-dot" aria-hidden="true"></span>
             Network Active
           </span>
           <span class="footer-year" data-year>2026</span>
         </div>
-                                        <nav class="footer-nav" aria-label="Footer">
+        <nav class="footer-nav" aria-label="Footer">
           <details class="nav-dropdown footer-dropdown">
             <summary>Foundations</summary>
             <div class="dropdown-wrap">
@@ -359,6 +400,8 @@
               <a href="sustainability.html">Sustainability</a>
               <a href="science.html">Science</a>
               <a href="technology.html">Technology</a>
+              <a href="health-equity.html">Health Equity</a>
+              <a href="bandwidth.html">Bandwidth</a>
               <a href="education.html">Education</a>
               <a href="health.html">Health</a>
               <a href="infrastructure.html">Infrastructure</a>
@@ -381,6 +424,12 @@
             <div class="dropdown-wrap">
               <a href="engage.html">Engage</a>
               <a href="tools.html">Tools</a>
+              <a href="transparency.html">Transparency</a>
+              <a href="digital-service-corps.html">Digital Service Corps</a>
+              <a href="elections.html">Elections & Petitions</a>
+              <a href="open-records.html">Open Records</a>
+              <a href="data-governance.html">Data Governance</a>
+              <a href="situational-awareness.html">Situational Awareness</a>
             </div>
           </details>
         </nav>
@@ -392,8 +441,8 @@
       </div>
     </div>
   </footer>
+  <script src="assets/js/engage.js"></script>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/engage.js"></script>
 </body>
 </html>
