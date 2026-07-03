@@ -105,6 +105,12 @@
               <div class="dropdown-wrap">
                 <a href="engage.html">Engage</a>
                 <a href="tools.html">Tools</a>
+                <a href="transparency.html">Transparency</a>
+                <a href="digital-service-corps.html">Digital Service Corps</a>
+                <a href="elections.html">Elections & Petitions</a>
+                <a href="open-records.html">Open Records</a>
+                <a href="data-governance.html">Data Governance</a>
+                <a href="situational-awareness.html">Situational Awareness</a>
               </div>
             </details>
           </nav>
@@ -115,49 +121,49 @@
     <section class="page">
       <div class="container">
         <h1>Citizen Registry / Public Dashboard</h1>
-        <p>Public participation metrics for the Republic. Figures reflect protocol-reported data,
+        <p>Public participation metrics for the Principality. Figures reflect protocol-reported data,
         not external polling or private derivations. The Chief Electoral Officer reports to the Assembly,
         and participation metrics are published in coordination with the Open Records Office.</p>
 
         <h2>Participation Metrics</h2>
         <div class="dashboard-grid">
           <div class="dash-card">
-            <div class="metric-value" data-count-to="12" aria-atomic="true" aria-live="polite">0</div>
-            <div class="metric-label">Verified Citizens</div>
-            <div class="metric-delta">+2 this month</div>
+            <div class="metric-value" id="metric-verified-citizens" data-count-to="12" aria-atomic="true" aria-live="polite">0</div>
+            <div class="metric-label">Election Entries</div>
+            <div class="metric-delta" id="metric-verified-citizens-delta">Updated from elections.json</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value" data-count-to="8" aria-atomic="true" aria-live="polite">0</div>
+            <div class="metric-value" id="metric-active-nodes" data-count-to="8" aria-atomic="true" aria-live="polite">0</div>
             <div class="metric-label">Active Nodes</div>
-            <div class="metric-delta">3 regions</div>
+            <div class="metric-delta" id="metric-active-nodes-delta">Updated from service feeds</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value" data-count-to="4" aria-atomic="true" aria-live="polite">0</div>
+            <div class="metric-value" id="metric-active-petitions" data-count-to="4" aria-atomic="true" aria-live="polite">0</div>
             <div class="metric-label">Active Petitions</div>
-            <div class="metric-delta">2 open</div>
+            <div class="metric-delta" id="metric-active-petitions-delta">Open petitions across civic feeds</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value" data-count-to="1" aria-atomic="true" aria-live="polite">0</div>
+            <div class="metric-value" id="metric-pending-reviews" data-count-to="1" aria-atomic="true" aria-live="polite">0</div>
             <div class="metric-label">Pending Reviews</div>
-            <div class="metric-delta">In progress</div>
+            <div class="metric-delta" id="metric-pending-reviews-delta">Pending court and governance review</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value" data-count-to="6" aria-atomic="true" aria-live="polite">0</div>
+            <div class="metric-value" id="metric-governance-actions" data-count-to="6" aria-atomic="true" aria-live="polite">0</div>
             <div class="metric-label">Governance Actions</div>
-            <div class="metric-delta">31-day window</div>
+            <div class="metric-delta" id="metric-governance-actions-delta">Open / active governance items</div>
           </div>
           <div class="dash-card">
-            <div class="metric-value" data-count-to="3" aria-atomic="true" aria-live="polite">0</div>
+            <div class="metric-value" id="metric-regional-clusters" data-count-to="3" aria-atomic="true" aria-live="polite">0</div>
             <div class="metric-label">Regional Clusters</div>
-            <div class="metric-delta">Stable</div>
+            <div class="metric-delta" id="metric-regional-clusters-delta">Stable clusters from registry data</div>
           </div>
         </div>
 
         <h2>Network Indicators</h2>
         <div class="dashboard-chart" role="region" aria-label="Participation chart">
           <noscript>
-            <div class="chart-fallback" role="img" aria-label="Summary: 12 verified citizens, 8 active nodes, 4 governance actions, 3 stable regional clusters.">
-              12 verified citizens, 8 active nodes, 4 governance actions, 3 stable regional clusters.
+            <div class="chart-fallback" role="img" aria-label="Summary: 12 election entries, 8 active nodes, 4 governance actions, 3 stable regional clusters.">
+              12 election entries, 8 active nodes, 4 governance actions, 3 stable regional clusters.
             </div>
           </noscript>
         </div>
@@ -165,8 +171,8 @@
           <div class="dash-meta-card">
             <strong>Protocol Version:</strong> v0.1.0
           </div>
-          <div class="dash-meta-card">
-            <strong>Metric Source:</strong> civic.json + petitions.json
+          <div class="dash-meta-card" id="metric-source-card">
+            <strong>Metric Source:</strong> civic.json, elections.json, petitions.json, assembly.json, court.json
           </div>
           <div class="dash-meta-card">
             <strong>Last Cycle:</strong> Current governance period
@@ -177,27 +183,35 @@
         </div>
 
         <h2>Citizen & Governance Activity</h2>
-                <div class="activity-actions">
-                  <input type="search" id="activity-filter" placeholder="Filter activity..." autocomplete="off" aria-label="Filter activity"/>
-                  <div class="activity-meta-chips" aria-label="Status filters">
-                    <button class="pill" type="button" data-filter="all" aria-pressed="true">All</button>
-                    <button class="pill" type="button" data-filter="open" aria-pressed="false">Open</button>
-                    <button class="pill" type="button" data-filter="complete" aria-pressed="false">Complete</button>
-                    <button class="pill" type="button" data-filter="scheduled" aria-pressed="false">Scheduled</button>
-                    <button class="pill" type="button" data-filter="in-progress" aria-pressed="false">In Progress</button>
-                  </div>
-                </div>
-                <div class="activity-list" role="list" id="dashboard-activity-feed">
-                  <div class="activity-loading" aria-hidden="true">Loading activity feed...</div>
-                </div>
+        <div class="activity-actions">
+          <input type="search" id="activity-filter" placeholder="Filter activity..." autocomplete="off" aria-label="Filter activity"/>
+          <div class="activity-meta-chips" aria-label="Status filters">
+            <button class="pill" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="pill" type="button" data-filter="open" aria-pressed="false">Open</button>
+            <button class="pill" type="button" data-filter="complete" aria-pressed="false">Complete</button>
+            <button class="pill" type="button" data-filter="scheduled" aria-pressed="false">Scheduled</button>
+            <button class="pill" type="button" data-filter="in-progress" aria-pressed="false">In Progress</button>
+          </div>
+        </div>
+        <div class="activity-list" role="list" id="dashboard-activity-feed">
+          <div class="activity-loading" aria-hidden="true">Loading feeds…</div>
+        </div>
+
+        <div id="dashboard-feed-list" class="dashboard-feed-list" aria-label="Loaded data feeds"></div>
+
+        <section class="civic-section" id="dashboard-data-section" aria-labelledby="dashboard-data-title">
+          <div class="section-header">
+            <h2 id="dashboard-data-title">Structured Feed Views</h2>
+          </div>
+        </section>
 
         <aside class="legal-block" aria-labelledby="dashboard-legal">
           <h2 id="dashboard-legal">Legal &amp; Policy Notice</h2>
           <p>
             Dashboard figures are illustrative summaries derived from public protocol sources.
             They do not constitute legal personhood evidence, financial reporting, or regulated
-            attestations. Participation is governed by the <a href="charter.html">Charter</a>
-                <a href="charter-addendum.html">Charter Addendum</a> and
+            attestations. Participation is governed by the <a href="charter.html">Charter</a>,
+            <a href="charter-addendum.html">Charter Addendum</a>, and
             <a href="manifesto.html">Manifesto</a>.
           </p>
         </aside>

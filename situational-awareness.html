@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Charter Amendments & Revisions for THE PRINCIPALITY OF AETHERIA. Explore proposed changes, revision history, and live amendment processes under the Civic Assembly.">
-  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/charter-addendum.html">
-  <meta property="og:title" content="Charter Addendum — The Principality of Aetheria">
-  <meta property="og:description" content="Charter Amendments & Revisions framework for the Principality of Aetheria.">
+  <meta name="description" content="Situational Awareness for AETHERIA: national indicators, risk assessment, strategic foresight, and early warning reporting through the President's operational layer.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/situational-awareness.html">
+  <meta property="og:title" content="Situational Awareness — The Principality of Aetheria">
+  <meta property="og:description" content="National indicators, risk assessment, strategic foresight, and early warning.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/charter-addendum.html">
+  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/situational-awareness.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Charter Addendum — The Principality of Aetheria">
-  <meta name="twitter:description" content="Charter Amendments & Revisions for the Principality of Aetheria.">
+  <meta name="twitter:title" content="Situational Awareness — The Principality of Aetheria">
+  <meta name="twitter:description" content="National indicators, risk assessment, and strategic foresight.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
-  <title>Charter Addendum — The Principality of Aetheria</title>
+  <title>Situational Awareness — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="icon" href="./favicon.ico">
 </head>
-<body class="page-charter-addendum">
+<body class="page-situational-awareness">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav">
@@ -50,6 +50,7 @@
             <a href="manifesto.html">Manifesto</a>
             <a href="charter.html">Charter</a>
             <a href="charter-addendum.html">Charter Addendum</a>
+            <a href="structure.html">Structure</a>
             <a href="contact.html">Contact</a>
           </div>
         </details>
@@ -80,9 +81,6 @@
             <a href="sustainability.html">Sustainability</a>
             <a href="science.html">Science</a>
             <a href="technology.html">Technology</a>
-            <a href="research.html">Research & Laboratory Policy</a>
-            <a href="labs.html">Laboratory Operations & Safety</a>
-            <a href="emerging-tech.html">Emerging Technologies</a>
             <a href="health-equity.html">Health Equity</a>
             <a href="bandwidth.html">Bandwidth</a>
             <a href="education.html">Education</a>
@@ -110,6 +108,9 @@
             <a href="transparency.html">Transparency</a>
             <a href="digital-service-corps.html">Digital Service Corps</a>
             <a href="elections.html">Elections & Petitions</a>
+            <a href="open-records.html">Open Records</a>
+            <a href="data-governance.html">Data Governance</a>
+            <a href="situational-awareness.html">Situational Awareness</a>
           </div>
         </details>
       </nav>
@@ -119,102 +120,49 @@
   <main id="main">
     <section class="page">
       <div class="container">
-        <h1>Charter Amendments &amp; Revisions</h1>
-        <p class="lead">
-          The Charter is a living document. Every revision flows through a recorded,
-          transparent process before reaching a vote of the Civic Assembly.
-          This page tracks the amendment queue, revision history, and cross-links
-          to the governing instruments that shape each change.
-        </p>
+        <h1>Situational Awareness</h1>
+        <p class="lead">The Situational Awareness Office is an operational arm supporting early warning, risk assessment, and strategic foresight across AETHERIA. Reporting through the President's operational layer, it curates national indicators and analytic products for senior decision-makers.</p>
 
-        <h2>Amendment Process</h2>
-        <p>
-          Every citizen may propose an amendment. The timeline below reflects the
-          current standing process, codified in <a href="charter.html">Article V</a>
-          and administered through <a href="assembly.html">Assembly</a> procedures:
-        </p>
-        <ol>
-          <li>A verified citizen submits a draft amendment with a clear statement of purpose,
-              the affected articles, and any supporting data or precedent.</li>
-          <li>The proposal enters a minimum 14-day comment period published to
-              <a href="assembly.html">Assembly</a> and visible through
-              <a href="protocol.html">Protocol</a> feeds.</li>
-          <li>A volunteer or appointed review committee classifies impact and schedules
-              at least one recorded deliberation session.</li>
-          <li>The <a href="justice.html">Justice</a> office reviews the amendment for
-              consistency with existing articles and <a href="court.html">Court</a> precedent
-              before the vote opens.</li>
-          <li>Assembly vote opens; quorum threshold and approval margin are displayed
-              explicitly on this page via live data below.</li>
-          <li>Ratified amendments are appended to this page as revision entries and
-              incorporated into the canonical Charter text.</li>
-        </ol>
-
-        <h2>Proposed Changes</h2>
-        <div id="addendum-proposed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Proposed charter amendments feed">
-          <div class="activity-loading" aria-hidden="true">Loading proposed amendments...</div>
+        <div class="activity-filters" aria-label="Filter situational awareness items">
+          <input type="search" id="situational-awareness-search" placeholder="Search indicators, assessments, briefings..." autocomplete="off" aria-label="Search situational awareness items"/>
+          <select id="situational-awareness-status" aria-label="Filter by status">
+            <option value="all">All Statuses</option>
+            <option value="active">Active</option>
+            <option value="watch">Watch</option>
+            <option value="elevated">Elevated</option>
+            <option value="dormant">Dormant</option>
+            <option value="completed">Completed</option>
+            <option value="scheduled">Scheduled</option>
+          </select>
         </div>
-        <form class="activity-actions" aria-label="Filter proposed amendments">
-          <label for="addendum-search" class="sr-only">Search proposed amendments</label>
-          <input id="addendum-search" class="activity-filter" placeholder="Search amendments by ID, title, or keyword..." />
-          <select id="addendum-status" class="activity-select" aria-label="Filter by status">
-            <option value="all">All statuses</option>
-            <option value="Draft">Draft</option>
-            <option value="In Review">In Review</option>
-            <option value="Voting">Voting</option>
-            <option value="Passed">Passed</option>
-            <option value="Rejected">Rejected</option>
-            <option value="Ratified">Ratified</option>
-          </select>
-          <select id="addendum-category" class="activity-select" aria-label="Filter by category">
-            <option value="all">All categories</option>
-            <option value="Governance">Governance</option>
-            <option value="Rights">Rights</option>
-            <option value="Procedure">Procedure</option>
-            <option value="Compliance">Compliance</option>
-            <option value="Finance">Finance</option>
-            <option value="Technology">Technology</option>
-          </select>
-        </form>
 
-        <h2>Revision History</h2>
-        <div id="addendum-revision-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Charter revision history feed">
-          <div class="activity-loading" aria-hidden="true">Loading revision history...</div>
+        <h2>National Indicators</h2>
+        <div id="situational-awareness-indicators-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Indicators feed">
+          <div class="activity-loading" aria-hidden="true">Loading national indicators...</div>
+        </div>
+
+        <h2>Risk Assessments</h2>
+        <div id="situational-awareness-risks-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Risk assessments feed">
+          <div class="activity-loading" aria-hidden="true">Loading risk assessments...</div>
+        </div>
+
+        <h2>Foresight & Early Warning</h2>
+        <div id="situational-awareness-foresight-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Foresight feed">
+          <div class="activity-loading" aria-hidden="true">Loading foresight briefings...</div>
         </div>
 
         <h2>Cross-Links</h2>
-        <p>
-          Amendments reference the following foundational instruments.
-          Each link opens the governing document or the relevant ministry view:
-        </p>
-        <ul>
-          <li><a href="charter.html">Charter</a> — the current standing constitutional text</li>
-          <li><a href="missions.html">Missions</a> — operational mandates shaped by or requiring charter change</li>
-          <li><a href="assembly.html">Civic Assembly</a> — deliberation, vote records, and quorum settings</li>
-          <li><a href="justice.html">Justice</a> and <a href="court.html">Court</a> — precedent review and dispute escalation context</li>
-          <li><a href="protocol.html">Protocol</a> — implementation mechanics and publication format rules</li>
-          <li><a href="about.html">About</a> and <a href="manifesto.html">Manifesto</a> — philosophical grounding for amendments</li>
-          <li><a href="goals.html">Goals</a> — the strategic targets that amendments are meant to serve</li>
-        </ul>
-
-        <h2>How to Propose</h2>
-        <p>
-          Ready to contribute? Read the <a href="charter.html">Charter</a> and the amendment
-          rubric on the <a href="assembly.html">Assembly</a> page, then submit a draft through
-          the <a href="engage.html">Engage</a> portal. Your amendment will appear here once
-          it clears initial validation.
-        </p>
+        <p>Situational Awareness informs <a href="data-governance.html">Data Governance</a>, <a href="safety.html">Safety</a>, <a href="technology.html">Technology</a>, and <a href="health.html">Health</a> planning.</p>
 
         <div class="cta">
-          <a class="button primary" href="assembly.html">Civic Assembly</a>
-          <a class="button" href="charter.html">Founding Charter</a>
-          <a class="button" href="missions.html">Missions</a>
+          <a class="button primary" href="assets/data/situational-awareness.json">Download Situational Awareness Data</a>
+          <a class="button" href="open-records.html">Open Records</a>
+          <a class="button" href="engage.html">Engage</a>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="cityscape" aria-hidden="true"></div>
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
@@ -270,9 +218,6 @@
               <a href="sustainability.html">Sustainability</a>
               <a href="science.html">Science</a>
               <a href="technology.html">Technology</a>
-              <a href="research.html">Research & Laboratory Policy</a>
-              <a href="labs.html">Laboratory Operations & Safety</a>
-              <a href="emerging-tech.html">Emerging Technologies</a>
               <a href="health-equity.html">Health Equity</a>
               <a href="bandwidth.html">Bandwidth</a>
               <a href="education.html">Education</a>
@@ -307,14 +252,13 @@
           </details>
         </nav>
         <div class="footer-extras">
-          <a class="social-link" href="https://github.com" rel="noopener noreferrer" target="_blank" aria-label="GitHub repository">
-            <span aria-hidden="true">GitHub</span>
-          </a>
+          <a class="social-link" href="https://github.com" rel="noopener noreferrer" target="_blank" aria-label="GitHub repository">GitHub</a>
         </div>
       </div>
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
-  <script src="assets/js/charter-addendum.js" defer></script>
+  <script src="assets/js/situational-awareness.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

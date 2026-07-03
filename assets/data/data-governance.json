@@ -1,0 +1,96 @@
+{
+  "generated": "2026-07-02",
+  "count": 9,
+  "entries": {
+    "policies": [
+      {
+        "id": "DG-PL-001",
+        "title": "Data Minimization Protocol",
+        "category": "Privacy",
+        "status": "Active",
+        "owner": "Data Governance Officer",
+        "summary": "Mandatory minimization rules for all operational stores, with schema review gates before deployment.",
+        "effective": "2026-04-01T00:00:00Z"
+      },
+      {
+        "id": "DG-PL-002",
+        "title": "Sovereign Data Residency Standard",
+        "category": "Sovereignty",
+        "status": "Effective",
+        "owner": "President's Operational Layer",
+        "summary": "Defines residency boundaries, replication rules, and cross-border transfer controls for citizen records.",
+        "effective": "2026-03-18T00:00:00Z"
+      },
+      {
+        "id": "DG-PL-003",
+        "title": "Retention & Disposition Schedule",
+        "category": "Retention",
+        "status": "In Review",
+        "owner": "Records Management Office",
+        "summary": "Default retention periods for operational, transactional, and audit records with exception workflow.",
+        "effective": null
+      }
+    ],
+    "assessments": [
+      {
+        "id": "DG-AS-001",
+        "title": "Q2 Privacy Impact Review",
+        "category": "Privacy",
+        "status": "Published",
+        "validatedBy": "Data Governance Council",
+        "summary": "Review of new registry schema changes against data minimization, purpose limitation, and retention mandates.",
+        "period": "Q2 2026"
+      },
+      {
+        "id": "DG-AS-002",
+        "title": "Cross-Border Transfer Assessment",
+        "category": "Sovereignty",
+        "status": "In Review",
+        "validatedBy": "Office of the President",
+        "summary": "Assessment of third-party analytics dependencies and proposed safeguards for sovereign data exports.",
+        "period": "Q3 2026"
+      },
+      {
+        "id": "DG-AS-003",
+        "title": "Algorithmic Ethics Audit",
+        "category": "Ethics",
+        "status": "Scheduled",
+        "validatedBy": "Assembly Ethics Committee",
+        "summary": "Audit of scoring, verification, and ranking algorithms used in registry and service delivery.",
+        "period": "FY2026"
+      }
+    ],
+    "retention": [
+      {
+        "id": "DG-RT-001",
+        "title": "Citizen Identity Records",
+        "category": "Identity",
+        "status": "Active",
+        "retentionPeriod": "7 years",
+        "disposition": "Anonymized archive",
+        "administeredBy": "Registry Office",
+        "summary": "Active identity records require 7-year retention with anonymized archival after sunset."
+      },
+      {
+        "id": "DG-RT-002",
+        "title": "Operational Incident Logs",
+        "category": "Operations",
+        "status": "Active",
+        "retentionPeriod": "3 years",
+        "disposition": "Secure deletion",
+        "administeredBy": "Digital Operations",
+        "summary": "Incident logs are retained for 3 years and then securely deleted unless flagged for ongoing legal proceedings."
+      },
+      {
+        "id": "DG-RT-003",
+        "title": "Financial Transaction Ledger",
+        "category": "Finance",
+        "status": "Classified Exception",
+        "retentionPeriod": "10 years",
+        "disposition": "Sealed with annual review",
+        "administeredBy": "Treasury Office",
+        "summary": "Financial records require 10-year retention with sealed exception status due to cross-jurisdictional settlement requirements."
+      }
+    ]
+  }
+}
