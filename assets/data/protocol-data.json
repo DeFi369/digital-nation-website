@@ -1,0 +1,126 @@
+{
+  "generated": "2026-07-03",
+  "generator": "protocol-data-generator",
+  "ministry": "Secretary of Technology & Innovation",
+  "stacks": [
+    {
+      "id": "aep",
+      "name": "AEP",
+      "fullName": "Agent Element Protocol",
+      "version": "2.8.0",
+      "status": "active",
+      "source": "repos/AEP/README.md",
+      "summary": "Build-time structural governance for deterministic scenes, action_path registries, and policy-enabled agent wrappers.",
+      "components": [
+        "Base Node",
+        "Lattice Channels",
+        "AgentMesh & Identity",
+        "POTOMITAN mesh fallback",
+        "Policy & GAP",
+        "CAW Framework",
+        "Conformance & SDKs"
+      ],
+      "highlights": [
+        "PQEncryptedCapsule sealed frames on lattice transport",
+        "One hyperlattice per governed system",
+        "Public CC-01..CC-15 conformance battery",
+        "Composer Lite on :8424"
+      ]
+    },
+    {
+      "id": "dynaep",
+      "name": "dynAEP",
+      "fullName": "Dynamic Agent Element Protocol",
+      "version": "1.1",
+      "status": "active",
+      "source": "repos/dynAEP/README.md",
+      "summary": "Runtime event governance for multi-agent systems via a deterministic Action Lattice, temporal authority, and perception governance.",
+      "components": [
+        "Action Lattice",
+        "Temporal Authority (dynAEP-TA)",
+        "Perception Governance (dynAEP-TA-P)",
+        "Observer Adapters & MCP",
+        "GAP translator"
+      ],
+      "highlights": [
+        "Native MCP server with 7 tools",
+        "Partial-order event validation at arrival time",
+        "GAP-to-dynAEP translation",
+        "Auto-discovery bootstrap"
+      ]
+    },
+    {
+      "id": "gap",
+      "name": "GAP",
+      "fullName": "Governed Agentic Programming",
+      "version": "pre-v1.0",
+      "status": "active",
+      "source": "repos/GAP/README.md",
+      "summary": "Structural instruction language for governed agency with constrained decoding, structural validation, and governance lattice enforcement.",
+      "components": [
+        "Meta-Schema",
+        "Constrained decoding",
+        "Structural validation",
+        "Governance lattice",
+        "Subprotocol validators"
+      ],
+      "highlights": [
+        "Three-layer enforcement",
+        "Self-governing by construction",
+        "YAML-native instruction format",
+        "Provenance and proof chain tracking"
+      ]
+    },
+    {
+      "id": "aep-conformance",
+      "name": "aep-conformance",
+      "fullName": "AEP Conformance Test Suite",
+      "version": "pre-v1.0",
+      "status": "scaffolding",
+      "source": "repos/aep-conformance/README.md",
+      "summary": "Test battery determining AEP-compliance claims. Currently scaffolding with tests under active authoring.",
+      "components": [
+        "Test suite",
+        "Conformance runner"
+      ],
+      "highlights": [
+        "Gates reserved naming: AEP, AEP-compliant, dynAEP",
+        "Fair Core License 1.0, converts to Apache 2.0"
+      ]
+    },
+    {
+      "id": "aep-signatures",
+      "name": "aep-signatures",
+      "fullName": "AEP Signatures",
+      "version": "pre-v1.0",
+      "status": "active",
+      "source": "repos/aep-signatures/README.md",
+      "summary": "Detection signatures and trust-bundle validation for the Agent Element Protocol ecosystem.",
+      "components": [
+        "YAML signatures",
+        "Schemas",
+        "Trust bundle",
+        "Verifier tooling"
+      ],
+      "highlights": [
+        "Dual licensing: content CC-BY-SA 4.0, tooling Apache 2.0",
+        "EPSCOM-maintained signature set"
+      ]
+    }
+  ],
+  "metrics": {
+    "aepVersion": "2.8.0",
+    "dynaepVersion": "1.1",
+    "gapStatus": "pre-v1.0",
+    "conformanceStatus": "scaffolding",
+    "signatureStatus": "pre-v1.0",
+    "totalComponents": 21,
+    "lastAudit": "2026-07-03"
+  },
+  "citizenBenefits": [
+    "Deterministic transparency for public services",
+    "Auditable automation via evidence ledgers",
+    "Sovereign resilience without vendor lock-in",
+    "Temporal governance for trustworthy timestamps"
+  ]
+}
