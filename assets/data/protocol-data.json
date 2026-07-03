@@ -146,7 +146,7 @@
     ],
     "identityManifestCount": 3,
     "identityKeyCount": 3,
-    "latestCommit": "03be1558a064292c62443a8981c30a2b34c555bf Add unified ecosystem-status page aggregating AEP/dynAEP/GAP/conformance/signatures/website status",
+    "latestCommit": "b7d531f86ef530b7c1f3559cfb341773b1643eac Add memory-lattice.html citizen-facing status page and site navigation links",
     "latestCommitDate": "2026-07-03",
     "lastAudit": "2026-07-03"
   },
