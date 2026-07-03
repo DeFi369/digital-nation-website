@@ -2,39 +2,59 @@
   "generated": "2026-07-02",
   "ministry": "Health Equity & Public Health Access",
   "secretary": "Secretary of Infrastructure & Human Services",
-  "count": 13,
+  "count": 24,
   "stats": {
-    "equityFrameworks": 5,
-    "activePrograms": 7,
-    "communityStandards": 4,
-    "mobileClinics": 12,
-    "languageAccessCoveragePercent": 98
+    "equityFrameworks": 6,
+    "activePrograms": 10,
+    "communityStandards": 6,
+    "mobileClinics": 18,
+    "languageAccessCoveragePercent": 98,
+    "citizensServed": 12450,
+    "ruralReachPercent": 87,
+    "affordabilityCompliancePercent": 94
   },
   "pillars": [
-    {"id":"HEQ-PIL-01","title":"Equity Impact Assessment","summary":"Standardised assessment for evaluating health program impacts across demographic and socioeconomic strata."},
-    {"id":"HEQ-PIL-02","title":"Community Health Governance","summary":"Participatory governance model ensuring marginalised communities have decision-making authority over local services."},
-    {"id":"HEQ-PIL-03","title":"Digital Inclusion","summary":"Policy framework for telehealth, digital records access, and remote care equity across connectivity tiers."},
-    {"id":"HEQ-PIL-04","title":"Accessible Public Health","summary":"WCAG-aligned accessibility and multilingual requirements for all public health platforms."},
-    {"id":"HEQ-PIL-05","title":"Affordability Safeguards","summary":"Cost thresholds ensuring no citizen spends more than 3% of household income on essential care."}
+    {"id": "HEQ-PIL-01", "title": "Equity Impact Assessment", "summary": "Standardised assessment for evaluating health program impacts across demographic and socioeconomic strata."},
+    {"id": "HEQ-PIL-02", "title": "Community Health Governance", "summary": "Participatory governance model ensuring marginalised communities have decision-making authority over local services."},
+    {"id": "HEQ-PIL-03", "title": "Digital Inclusion", "summary": "Policy framework for telehealth, digital records access, and remote care equity across connectivity tiers."},
+    {"id": "HEQ-PIL-04", "title": "Accessible Public Health", "summary": "WCAG-aligned accessibility and multilingual requirements for all public health platforms."},
+    {"id": "HEQ-PIL-05", "title": "Affordability Safeguards", "summary": "Cost thresholds ensuring no citizen spends more than 3% of household income on essential care."},
+    {"id": "HEQ-PIL-06", "title": "Data Justice & Representation", "summary": "Inclusive data collection standards preventing algorithmic bias and ensuring equitable resource allocation."}
   ],
   "entries": {
     "frameworks": [
-      {"id":"HEQ-FRM-01","title":"Equity Impact Assessment Framework","status":"Active","category":"Framework","owner":"Nia Rahman","summary":"Standardized assessment for evaluating health program impacts across demographic and socioeconomic strata."},
-      {"id":"HEQ-FRM-02","title":"Community Health Governance Standard","status":"Active","category":"Framework","owner":"Mira Chen","summary":"Participatory governance model ensuring marginalized communities have decision-making authority over local health services."},
-      {"id":"HEQ-FRM-03","title":"Digital Inclusion Health Policy","status":"Beta","category":"Framework","owner":"Kai Voss","summary":"Policy framework for telehealth, digital records access, and remote care equity across connectivity tiers."},
-      {"id":"HEQ-FRM-04","title":"Socioeconomic Risk Scoring","status":"Draft","category":"Framework","owner":"Aria Solenne","summary":"Standard methodology for identifying at-risk populations and targeting equitable interventions."}
+      {"id": "HEQ-FRM-01", "title": "Equity Impact Assessment Framework", "status": "Active", "category": "Framework", "owner": "Nia Rahman", "summary": "Standardized assessment for evaluating health program impacts across demographic and socioeconomic strata.", "published": "2025-07-01"},
+      {"id": "HEQ-FRM-02", "title": "Community Health Governance Standard", "status": "Active", "category": "Framework", "owner": "Mira Chen", "summary": "Participatory governance model ensuring marginalized communities have decision-making authority over local health services.", "published": "2025-08-15"},
+      {"id": "HEQ-FRM-03", "title": "Digital Inclusion Health Policy", "status": "Beta", "category": "Framework", "owner": "Kai Voss", "summary": "Policy framework for telehealth, digital records access, and remote care equity across connectivity tiers.", "published": "2025-11-01"},
+      {"id": "HEQ-FRM-04", "title": "Socioeconomic Risk Scoring", "status": "Draft", "category": "Framework", "owner": "Aria Solenne", "summary": "Standard methodology for identifying at-risk populations and targeting equitable interventions.", "published": "2026-02-01"},
+      {"id": "HEQ-FRM-05", "title": "Algorithmic Bias Audit Protocol", "status": "Active", "category": "Framework", "owner": "Orion Vale", "summary": "Mandatory bias testing for all health AI systems with public disclosure of results and mitigation plans.", "published": "2025-10-01"},
+      {"id": "HEQ-FRM-06", "title": "Intersectional Health Equity Lens", "status": "Planning", "category": "Framework", "owner": "Nia Rahman", "summary": "Analytical framework addressing compounding barriers across race, gender, disability, income, and geography.", "published": "2026-04-01"}
     ],
     "programs": [
-      {"id":"HEQ-PGM-01","title":"Community Health Worker Corps","status":"Active","category":"Program","lead":"Aria Solenne","summary":"Trained community liaisons bridging digital health platforms with underserved neighborhoods and rural districts."},
-      {"id":"HEQ-PGM-02","title":"Mobile Clinic Network","status":"Active","category":"Program","lead":"Nia Rahman","summary":"Deployable mobile clinics providing primary care, screenings, and health education in connectivity-limited regions."},
-      {"id":"HEQ-PGM-03","title":"School-Based Wellness Initiative","status":"Planning","category":"Program","lead":"Mira Chen","summary":"Integrated wellness services in schools covering mental health, nutrition, and preventive care access."},
-      {"id":"HEQ-PGM-04","title":"Home Monitoring Pilot","status":"Active","category":"Program","lead":"Kai Voss","summary":"Remote patient monitoring devices connected to clinical dashboards for chronic condition management."}
+      {"id": "HEQ-PGM-01", "title": "Community Health Worker Corps", "status": "Active", "category": "Program", "lead": "Aria Solenne", "summary": "Trained community liaisons bridging digital health platforms with underserved neighborhoods and rural districts.", "published": "2025-06-15", "participants": 45, "beneficiaries": 3200},
+      {"id": "HEQ-PGM-02", "title": "Mobile Clinic Network", "status": "Active", "category": "Program", "lead": "Nia Rahman", "summary": "Deployable mobile clinics providing primary care, screenings, and health education in connectivity-limited regions.", "published": "2025-07-01", "participants": 18, "beneficiaries": 4850},
+      {"id": "HEQ-PGM-03", "title": "School-Based Wellness Initiative", "status": "Planning", "category": "Program", "lead": "Mira Chen", "summary": "Integrated wellness services in schools covering mental health, nutrition, and preventive care access.", "published": "2026-03-01", "participants": 0, "beneficiaries": 0},
+      {"id": "HEQ-PGM-04", "title": "Home Monitoring Pilot", "status": "Active", "category": "Program", "lead": "Kai Voss", "summary": "Remote patient monitoring devices connected to clinical dashboards for chronic condition management.", "published": "2025-09-10", "participants": 12, "beneficiaries": 680},
+      {"id": "HEQ-PGM-05", "title": "Language Access Expansion", "status": "Active", "category": "Program", "lead": "Aria Solenne", "summary": "Interpreter services and translated materials for 24 languages covering 98% of citizen population.", "published": "2025-08-01", "participants": 35, "beneficiaries": 8900},
+      {"id": "HEQ-PGM-06", "title": "Affordability Subsidy Programme", "status": "Active", "category": "Program", "lead": "Kai Voss", "summary": "Sliding-scale subsidies ensuring no household exceeds 3% income threshold for essential health services.", "published": "2025-10-15", "participants": 28, "beneficiaries": 5600},
+      {"id": "HEQ-PGM-07", "title": "Digital Navigator Network", "status": "Active", "category": "Program", "lead": "Mira Chen", "summary": "Peer mentors assisting low-digital-literacy citizens with telehealth access, record portals, and appointment systems.", "published": "2025-11-20", "participants": 42, "beneficiaries": 2100},
+      {"id": "HEQ-PGM-08", "title": "Maternal Health Equity Track", "status": "Beta", "category": "Program", "lead": "Nia Rahman", "summary": "Targeted prenatal and postpartum support addressing outcome disparities in underserved communities.", "published": "2026-01-05", "participants": 8, "beneficiaries": 340},
+      {"id": "HEQ-PGM-09", "title": "Disability-Inclusive Health Design", "status": "Active", "category": "Program", "lead": "Orion Vale", "summary": "Co-design sessions with disability communities ensuring all health platforms meet accessibility standards.", "published": "2025-09-01", "participants": 15, "beneficiaries": 1800},
+      {"id": "HEQ-PGM-10", "title": "Rural Specialist Telehealth Network", "status": "Planning", "category": "Program", "lead": "Kai Voss", "summary": "Virtual specialist consultations eliminating travel burden for rural citizens with complex conditions.", "published": "2026-05-01", "participants": 0, "beneficiaries": 0}
     ],
     "standards": [
-      {"id":"HEQ-STD-01","title":"Language Access Standard","status":"Active","category":"Standard","owner":"Aria Solenne","summary":"Mandatory multilingual health materials and interpreter services for all public health communications."},
-      {"id":"HEQ-STD-02","title":"Affordability Benchmark","status":"Draft","category":"Standard","owner":"Kai Voss","summary":"Cost thresholds for essential health services ensuring no citizen spends more than 3% of household income on care."},
-      {"id":"HEQ-STD-03","title":"Accessibility Compliance Tier","status":"Active","category":"Standard","owner":"Mira Chen","summary":"WCAG-aligned accessibility requirements for all digital health platforms and public health facilities."},
-      {"id":"HEQ-STD-04","title":"Telehealth Parity Standard","status":"Active","category":"Standard","owner":"Nia Rahman","summary":"Remote care quality requirements ensuring digital consultations meet in-person standards."}
+      {"id": "HEQ-STD-01", "title": "Language Access Standard", "status": "Active", "category": "Standard", "owner": "Aria Solenne", "summary": "Mandatory multilingual health materials and interpreter services for all public health communications.", "published": "2025-08-01"},
+      {"id": "HEQ-STD-02", "title": "Affordability Benchmark", "status": "Draft", "category": "Standard", "owner": "Kai Voss", "summary": "Cost thresholds for essential health services ensuring no citizen spends more than 3% of household income on care.", "published": "2026-02-15"},
+      {"id": "HEQ-STD-03", "title": "Accessibility Compliance Tier", "status": "Active", "category": "Standard", "owner": "Mira Chen", "summary": "WCAG-aligned accessibility requirements for all digital health platforms and public health facilities.", "published": "2025-07-15"},
+      {"id": "HEQ-STD-04", "title": "Telehealth Parity Standard", "status": "Active", "category": "Standard", "owner": "Nia Rahman", "summary": "Remote care quality requirements ensuring digital consultations meet in-person standards.", "published": "2025-10-10"},
+      {"id": "HEQ-STD-05", "title": "Community Governance Charter", "status": "Active", "category": "Standard", "owner": "Mira Chen", "summary": "Decision-making authority framework for community health councils with binding veto on local service changes.", "published": "2025-08-20"},
+      {"id": "HEQ-STD-06", "title": "Health Data Representation Standard", "status": "Beta", "category": "Standard", "owner": "Orion Vale", "summary": "Minimum demographic granularity requirements for health data collection preventing erasure of marginalized groups.", "published": "2025-12-01"}
+    ],
+    "reports": [
+      {"id": "HEQ-R01", "title": "Annual Health Equity Impact Report", "status": "Published", "category": "Governance", "owner": "Independent Auditors", "summary": "Comprehensive assessment of equity framework effectiveness across all health programmes and populations.", "published": "2026-01-30"},
+      {"id": "HEQ-R02", "title": "Digital Divide in Telehealth Access", "status": "Published", "category": "Research", "owner": "Kai Voss", "summary": "Analysis of connectivity, device, and literacy barriers to remote care with targeted intervention recommendations.", "published": "2026-03-15"},
+      {"id": "HEQ-R03", "title": "Community Governance Outcomes Review", "status": "In Progress", "category": "Audit", "owner": "Aria Solenne", "summary": "Evaluation of community health council decisions, service changes, and citizen satisfaction metrics.", "published": "2026-05-10"},
+      {"id": "HEQ-R04", "title": "Affordability Compliance Audit", "status": "Published", "category": "Audit", "owner": "Independent Auditors", "summary": "Verification that 94% of households remain below 3% income threshold for essential health expenditures.", "published": "2026-04-20"}
     ]
   }
 }

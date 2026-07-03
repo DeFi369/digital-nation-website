@@ -119,74 +119,79 @@
   </header>
 
   <main id="main">
-    <section class="page">
-      <div class="container">
-        <h1>Environment &amp; Sustainability</h1>
-        <p class="lead">
-          Under the Secretary of Infrastructure &amp; Human Services, Aetheria aligns environmental stewardship,
-          sustainability operations, and green protocol standards within a verifiable v3.0 governance framework.
-          This layer connects <a href="sustainability.html">Sustainability Operations</a>, <a href="infrastructure.html">Infrastructure</a>,
-          and <a href="protocol.html">Protocol</a> within a single accountable operational substrate.
-        </p>
+      <section class="page">
+        <div class="container">
+          <h1>Environment & Sustainability</h1>
+          <p class="lead">
+            Under the Secretary of Infrastructure & Human Services, Aetheria aligns environmental stewardship,
+            sustainability operations, and green protocol standards within a verifiable v3.0 governance framework.
+            This layer connects <a href="sustainability.html">Sustainability Operations</a>, <a href="infrastructure.html">Infrastructure</a>,
+            and <a href="protocol.html">Protocol</a> within a single accountable operational substrate.
+          </p>
 
-        <div class="activity-filters" id="environment-filters" aria-label="Filter environment directory">
-          <label for="environment-search" class="sr-only">Search environment policy, programs, standards, or reports</label>
-          <input type="search" id="environment-search" class="activity-filter" placeholder="Search policy, programs, standards, or reports..." autocomplete="off" />
-          <select id="environment-scope" class="activity-select" aria-label="Filter by scope">
-            <option value="all">All Scopes</option>
-            <option value="policy">Policy</option>
-            <option value="programs">Programs</option>
-            <option value="standards">Standards</option>
-            <option value="reports">Reports</option>
-          </select>
+          <div class="ministerial-context">
+            <h3>Ministerial Mandate</h3>
+            <p>The Environment portfolio sets the carbon accounting, resource efficiency, and green protocol eligibility standards that bind all civic infrastructure. From mandatory node-level disclosures to sustainable procurement and citizen fellowship programmes, every instrument is designed for public audit and cross-ministry enforcement within the v3.0 substrate.</p>
+          </div>
+
+          <div class="activity-filters" id="environment-filters" aria-label="Filter environment directory">
+            <label for="environment-search" class="sr-only">Search environment policy, programs, standards, or reports</label>
+            <input type="search" id="environment-search" class="activity-filter" placeholder="Search policy, programs, standards, or reports..." autocomplete="off" />
+            <select id="environment-scope" class="activity-select" aria-label="Filter by scope">
+              <option value="all">All Scopes</option>
+              <option value="policy">Policy</option>
+              <option value="programs">Programs</option>
+              <option value="standards">Standards</option>
+              <option value="reports">Reports</option>
+            </select>
+          </div>
+
+          <h2>Ministry Summary</h2>
+          <div id="environment-stats" class="stats-grid" aria-live="polite" aria-label="Environment summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+          </div>
+
+          <h2>Strategic Pillars</h2>
+          <div id="environment-pillars" class="pillars-grid" aria-live="polite" aria-label="Environment strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+
+          <h2>Environmental Policy</h2>
+          <div id="environment-policy-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Environmental policy feed">
+            <div class="activity-loading" aria-hidden="true">Loading environmental policy...</div>
+          </div>
+
+          <h2>Sustainability Programs</h2>
+          <div id="environment-programs-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Sustainability programs feed">
+            <div class="activity-loading" aria-hidden="true">Loading sustainability programs...</div>
+          </div>
+
+          <h2>Green Protocol Standards</h2>
+          <div id="environment-standards-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Green protocol standards feed">
+            <div class="activity-loading" aria-hidden="true">Loading protocol standards...</div>
+          </div>
+
+          <h2>Governance & Audit Reports</h2>
+          <div id="environment-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Environment reports">
+            <div class="activity-loading" aria-hidden="true">Loading reports...</div>
+          </div>
+
+          <h2>Directory</h2>
+          <div id="environment-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Environment directory">
+            <p class="activity-empty">Use the filters above to search across policy, programs, standards, and reports.</p>
+          </div>
+
+          <h2>Cross-Links</h2>
+          <p>Environmental standards align with <a href="economy.html">Economy</a> incentives, <a href="protocol.html">Protocol</a> eligibility, and <a href="sustainability.html">Sustainability Operations</a>.</p>
+
+          <div class="cta">
+            <a class="button primary" href="sustainability.html">Sustainability Operations</a>
+            <a class="button" href="protocol.html">Protocol</a>
+            <a class="button" href="economy.html">Economy</a>
+          </div>
         </div>
-
-        <h2>Ministry Summary</h2>
-        <div id="environment-stats" class="stats-grid" aria-live="polite" aria-label="Environment summary statistics">
-          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
-        </div>
-
-        <h2>Strategic Pillars</h2>
-        <div id="environment-pillars" class="pillars-grid" aria-live="polite" aria-label="Environment strategic pillars">
-          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
-        </div>
-
-        <h2>Environmental Policy</h2>
-        <div id="environment-policy-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Environmental policy feed">
-          <div class="activity-loading" aria-hidden="true">Loading environmental policy...</div>
-        </div>
-
-        <h2>Sustainability Programs</h2>
-        <div id="environment-programs-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Sustainability programs feed">
-          <div class="activity-loading" aria-hidden="true">Loading sustainability programs...</div>
-        </div>
-
-        <h2>Green Protocol Standards</h2>
-        <div id="environment-standards-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Green protocol standards feed">
-          <div class="activity-loading" aria-hidden="true">Loading protocol standards...</div>
-        </div>
-
-        <h2>Governance &amp; Audit Reports</h2>
-        <div id="environment-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Environment reports">
-          <div class="activity-loading" aria-hidden="true">Loading reports...</div>
-        </div>
-
-        <h2>Directory</h2>
-        <div id="environment-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Environment directory">
-          <p class="activity-empty">Use the filters above to search across policy, programs, standards, and reports.</p>
-        </div>
-
-        <h2>Cross-Links</h2>
-        <p>Environmental standards align with <a href="economy.html">Economy</a> incentives, <a href="protocol.html">Protocol</a> eligibility, and <a href="sustainability.html">Sustainability Operations</a>.</p>
-
-        <div class="cta">
-          <a class="button primary" href="sustainability.html">Sustainability Operations</a>
-          <a class="button" href="protocol.html">Protocol</a>
-          <a class="button" href="economy.html">Economy</a>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
   <div class="cityscape" aria-hidden="true"></div>
   <footer class="site-footer">

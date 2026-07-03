@@ -119,77 +119,82 @@
   </header>
 
   <main id="main">
-    <section class="page">
-      <div class="container">
-        <h1>Health Equity &amp; Public Health Access</h1>
-        <p class="lead">
-          Closing gaps in health access through equity frameworks, community health standards,
-          access programmes, and coordinated services across <a href="health.html">Health</a>,
-          <a href="education.html">Education</a>, and <a href="engage.html">Engagement</a> under the
-          Secretary of Infrastructure &amp; Human Services.
-        </p>
+      <section class="page">
+        <div class="container">
+          <h1>Health Equity & Public Health Access</h1>
+          <p class="lead">
+            Closing gaps in health access through equity frameworks, community health standards,
+            access programmes, and coordinated services across <a href="health.html">Health</a>,
+            <a href="education.html">Education</a>, and <a href="engage.html">Engagement</a> under the
+            Secretary of Infrastructure & Human Services.
+          </p>
 
-        <div class="activity-filters" id="health-equity-filters" aria-label="Filter health equity directory">
-          <label for="health-equity-search" class="sr-only">Search frameworks, programmes, or standards</label>
-          <input type="search" id="health-equity-search" class="activity-filter" placeholder="Search frameworks, programmes, or standards..." autocomplete="off" />
-          <select id="health-equity-scope" class="activity-select" aria-label="Filter by scope">
-            <option value="all">All Scopes</option>
-            <option value="frameworks">Frameworks</option>
-            <option value="programs">Programmes</option>
-            <option value="standards">Standards</option>
-          </select>
+          <div class="ministerial-context">
+            <h3>Ministerial Mandate</h3>
+            <p>The Health Equity portfolio ensures no citizen faces barriers to essential care — through equity impact assessments, community governance models, digital inclusion policies, accessible public health standards, and affordability safeguards. All frameworks are participatory, enforceable, and auditable within the v3.0 governance substrate.</p>
+          </div>
+
+          <div class="activity-filters" id="health-equity-filters" aria-label="Filter health equity directory">
+            <label for="health-equity-search" class="sr-only">Search frameworks, programmes, or standards</label>
+            <input type="search" id="health-equity-search" class="activity-filter" placeholder="Search frameworks, programmes, or standards..." autocomplete="off" />
+            <select id="health-equity-scope" class="activity-select" aria-label="Filter by scope">
+              <option value="all">All Scopes</option>
+              <option value="frameworks">Frameworks</option>
+              <option value="programs">Programmes</option>
+              <option value="standards">Standards</option>
+            </select>
+          </div>
+
+          <h2>Ministry Summary</h2>
+          <div id="health-equity-stats" class="stats-grid" aria-live="polite" aria-label="Health equity summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+          </div>
+
+          <h2>Strategic Pillars</h2>
+          <div id="health-equity-pillars" class="pillars-grid" aria-live="polite" aria-label="Health equity strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+
+          <h2>Equity Frameworks</h2>
+          <div id="health-equity-frameworks-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Equity frameworks feed">
+            <div class="activity-loading" aria-hidden="true">Loading equity frameworks...</div>
+          </div>
+
+          <h2>Access Programmes</h2>
+          <div id="health-equity-programmes-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Access programmes feed">
+            <div class="activity-loading" aria-hidden="true">Loading access programmes...</div>
+          </div>
+
+          <h2>Community Health Standards</h2>
+          <div id="health-equity-standards-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Community health standards feed">
+            <div class="activity-loading" aria-hidden="true">Loading community health standards...</div>
+          </div>
+
+          <h2>Governance & Audit Reports</h2>
+          <div id="health-equity-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health equity reports">
+            <div class="activity-loading" aria-hidden="true">Loading reports...</div>
+          </div>
+
+          <h2>Directory</h2>
+          <div id="health-equity-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health equity directory">
+            <p class="activity-empty">Use the filters above to search across frameworks, programmes, and standards.</p>
+          </div>
+
+          <h2>Cross-Links</h2>
+          <p>
+            Equity programmes connect to <a href="health.html">Health</a> services,
+            <a href="education.html">Education</a> literacy programmes, and
+            <a href="engage.html">Engagement</a> participation pathways.
+          </p>
+
+          <div class="cta">
+            <a class="button primary" href="health.html">Public Health</a>
+            <a class="button" href="bandwidth.html">Digital Access</a>
+            <a class="button" href="education.html">Education</a>
+          </div>
         </div>
-
-        <h2>Ministry Summary</h2>
-        <div id="health-equity-stats" class="stats-grid" aria-live="polite" aria-label="Health equity summary statistics">
-          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
-        </div>
-
-        <h2>Strategic Pillars</h2>
-        <div id="health-equity-pillars" class="pillars-grid" aria-live="polite" aria-label="Health equity strategic pillars">
-          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
-        </div>
-
-        <h2>Equity Frameworks</h2>
-        <div id="health-equity-frameworks-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Equity frameworks feed">
-          <div class="activity-loading" aria-hidden="true">Loading equity frameworks...</div>
-        </div>
-
-        <h2>Access Programmes</h2>
-        <div id="health-equity-programmes-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Access programmes feed">
-          <div class="activity-loading" aria-hidden="true">Loading access programmes...</div>
-        </div>
-
-        <h2>Community Health Standards</h2>
-        <div id="health-equity-standards-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Community health standards feed">
-          <div class="activity-loading" aria-hidden="true">Loading community health standards...</div>
-        </div>
-
-        <h2>Governance &amp; Audit Reports</h2>
-        <div id="health-equity-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health equity reports">
-          <div class="activity-loading" aria-hidden="true">Loading reports...</div>
-        </div>
-
-        <h2>Directory</h2>
-        <div id="health-equity-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health equity directory">
-          <p class="activity-empty">Use the filters above to search across frameworks, programmes, and standards.</p>
-        </div>
-
-        <h2>Cross-Links</h2>
-        <p>
-          Equity programmes connect to <a href="health.html">Health</a> services,
-          <a href="education.html">Education</a> literacy programmes, and
-          <a href="engage.html">Engagement</a> participation pathways.
-        </p>
-
-        <div class="cta">
-          <a class="button primary" href="health.html">Public Health</a>
-          <a class="button" href="bandwidth.html">Digital Access</a>
-          <a class="button" href="education.html">Education</a>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
   <div class="cityscape" aria-hidden="true"></div>
   <footer class="site-footer">

@@ -119,71 +119,76 @@
   </header>
 
   <main id="main">
-    <section class="page">
-      <div class="container">
-        <h1>Infrastructure &amp; Human Services — Infrastructure</h1>
-        <p class="lead">
-          The backbone of Aetheria: resilient digital infrastructure, civic technology, broadband equity, campus networks,
-          and citizen-facing connectivity services under the Secretary of Infrastructure &amp; Human Services.
-        </p>
+      <section class="page">
+        <div class="container">
+          <h1>Infrastructure & Human Services — Infrastructure</h1>
+          <p class="lead">
+            The backbone of Aetheria: resilient digital infrastructure, civic technology, broadband equity, campus networks,
+            and citizen-facing connectivity services under the Secretary of Infrastructure & Human Services.
+          </p>
 
-        <div class="activity-filters" id="infrastructure-filters" aria-label="Filter infrastructure directory">
-          <label for="infrastructure-search" class="sr-only">Search infrastructure services, civic technology, or projects</label>
-          <input type="search" id="infrastructure-search" class="activity-filter" placeholder="Search services, civic technology, or projects..." autocomplete="off" />
-          <select id="infrastructure-scope" class="activity-select" aria-label="Filter by scope">
-            <option value="all">All Scopes</option>
-            <option value="services">Services</option>
-            <option value="civicTech">Civic Technology</option>
-            <option value="projects">Projects</option>
-          </select>
+          <div class="ministerial-context">
+            <h3>Ministerial Mandate</h3>
+            <p>The Infrastructure portfolio operates the Principality's digital substrate — distributed node grids, edge delivery networks, civic service mesh, and data durability systems. All services are engineered for verifiable uptime, cross-region replication, and offline-capable operation on low-connectivity networks within the v3.0 governance framework.</p>
+          </div>
+
+          <div class="activity-filters" id="infrastructure-filters" aria-label="Filter infrastructure directory">
+            <label for="infrastructure-search" class="sr-only">Search infrastructure services, civic technology, or projects</label>
+            <input type="search" id="infrastructure-search" class="activity-filter" placeholder="Search services, civic technology, or projects..." autocomplete="off" />
+            <select id="infrastructure-scope" class="activity-select" aria-label="Filter by scope">
+              <option value="all">All Scopes</option>
+              <option value="services">Services</option>
+              <option value="civicTech">Civic Technology</option>
+              <option value="projects">Projects</option>
+            </select>
+          </div>
+
+          <h2>Ministry Summary</h2>
+          <div id="infrastructure-stats" class="stats-grid" aria-live="polite" aria-label="Infrastructure summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+          </div>
+
+          <h2>Strategic Pillars</h2>
+          <div id="infrastructure-pillars" class="pillars-grid" aria-live="polite" aria-label="Infrastructure strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+
+          <h2>Digital Infrastructure</h2>
+          <div id="infrastructure-services-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Infrastructure services feed">
+            <div class="activity-loading" aria-hidden="true">Loading infrastructure services...</div>
+          </div>
+
+          <h2>Civic Tech Stack</h2>
+          <div id="infrastructure-civic-tech-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Civic technology feed">
+            <div class="activity-loading" aria-hidden="true">Loading civic technology stack...</div>
+          </div>
+
+          <h2>Project Directory</h2>
+          <div id="infrastructure-projects-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Infrastructure project feed">
+            <div class="activity-loading" aria-hidden="true">Loading projects...</div>
+          </div>
+
+          <h2>Governance & Audit Reports</h2>
+          <div id="infrastructure-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Infrastructure reports">
+            <div class="activity-loading" aria-hidden="true">Loading reports...</div>
+          </div>
+
+          <h2>Directory</h2>
+          <div id="infrastructure-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Infrastructure directory">
+            <p class="activity-empty">Use the filters above to search across services, civic technology, and projects.</p>
+          </div>
+
+          <h2>Cross-Links</h2>
+          <p>Infrastructure supports digital access for <a href="economy.html">Economy</a> services, <a href="symbols.html">Symbols</a> issuance contexts, and <a href="engage.html">Engage</a> participation.</p>
+
+          <div class="cta">
+            <a class="button primary" href="engage.html">Engage</a>
+            <a class="button" href="economy.html">Economy</a>
+            <a class="button" href="symbols.html">Symbols</a>
+          </div>
         </div>
-
-        <h2>Ministry Summary</h2>
-        <div id="infrastructure-stats" class="stats-grid" aria-live="polite" aria-label="Infrastructure summary statistics">
-          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
-        </div>
-
-        <h2>Strategic Pillars</h2>
-        <div id="infrastructure-pillars" class="pillars-grid" aria-live="polite" aria-label="Infrastructure strategic pillars">
-          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
-        </div>
-
-        <h2>Digital Infrastructure</h2>
-        <div id="infrastructure-services-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Infrastructure services feed">
-          <div class="activity-loading" aria-hidden="true">Loading infrastructure services...</div>
-        </div>
-
-        <h2>Civic Tech Stack</h2>
-        <div id="infrastructure-civic-tech-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Civic technology feed">
-          <div class="activity-loading" aria-hidden="true">Loading civic technology stack...</div>
-        </div>
-
-        <h2>Project Directory</h2>
-        <div id="infrastructure-projects-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Infrastructure project feed">
-          <div class="activity-loading" aria-hidden="true">Loading projects...</div>
-        </div>
-
-        <h2>Governance &amp; Audit Reports</h2>
-        <div id="infrastructure-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Infrastructure reports">
-          <div class="activity-loading" aria-hidden="true">Loading reports...</div>
-        </div>
-
-        <h2>Directory</h2>
-        <div id="infrastructure-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Infrastructure directory">
-          <p class="activity-empty">Use the filters above to search across services, civic technology, and projects.</p>
-        </div>
-
-        <h2>Cross-Links</h2>
-        <p>Infrastructure supports digital access for <a href="economy.html">Economy</a> services, <a href="symbols.html">Symbols</a> issuance contexts, and <a href="engage.html">Engage</a> participation.</p>
-
-        <div class="cta">
-          <a class="button primary" href="engage.html">Engage</a>
-          <a class="button" href="economy.html">Economy</a>
-          <a class="button" href="symbols.html">Symbols</a>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
   <div class="cityscape" aria-hidden="true"></div>
   <footer class="site-footer">

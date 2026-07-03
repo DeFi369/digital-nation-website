@@ -119,72 +119,77 @@
   </header>
 
   <main id="main">
-    <section class="page">
-      <div class="container">
-        <h1>National Broadband &amp; Digital Equity</h1>
-        <p class="lead">
-          Universal connectivity access through deployment programmes, access standards, coverage metrics, and
-          digital equity policy aligned with <a href="infrastructure.html">Infrastructure</a>,
-          <a href="technology.html">Technology</a>, and <a href="education.html">Education</a> under the
-          Secretary of Infrastructure &amp; Human Services.
-        </p>
+      <section class="page">
+        <div class="container">
+          <h1>National Broadband & Digital Equity</h1>
+          <p class="lead">
+            Universal connectivity access through deployment programmes, access standards, coverage metrics, and
+            digital equity policy aligned with <a href="infrastructure.html">Infrastructure</a>,
+            <a href="technology.html">Technology</a>, and <a href="education.html">Education</a> under the
+            Secretary of Infrastructure & Human Services.
+          </p>
 
-        <div class="activity-filters" id="bandwidth-filters" aria-label="Filter broadband directory">
-          <label for="bandwidth-search" class="sr-only">Search coverage, standards, or deployment programmes</label>
-          <input type="search" id="bandwidth-search" class="activity-filter" placeholder="Search coverage, standards, or deployment..." autocomplete="off" />
-          <select id="bandwidth-scope" class="activity-select" aria-label="Filter by scope">
-            <option value="all">All Scopes</option>
-            <option value="coverage">Coverage</option>
-            <option value="standards">Standards</option>
-            <option value="programs">Programmes</option>
-            <option value="reports">Reports</option>
-          </select>
+          <div class="ministerial-context">
+            <h3>Ministerial Mandate</h3>
+            <p>The Broadband portfolio delivers universal connectivity as a civic right — through high-capacity fiber backbone, rural last-mile mesh, community Wi-Fi, and submarine cable redundancy. All programmes enforce affordable access tariffs, digital equity ratings, and device distribution with setup support, ensuring connectivity costs never block civic participation.</p>
+          </div>
+
+          <div class="activity-filters" id="bandwidth-filters" aria-label="Filter broadband directory">
+            <label for="bandwidth-search" class="sr-only">Search coverage, standards, or deployment programmes</label>
+            <input type="search" id="bandwidth-search" class="activity-filter" placeholder="Search coverage, standards, or deployment..." autocomplete="off" />
+            <select id="bandwidth-scope" class="activity-select" aria-label="Filter by scope">
+              <option value="all">All Scopes</option>
+              <option value="coverage">Coverage</option>
+              <option value="standards">Standards</option>
+              <option value="programs">Programmes</option>
+              <option value="reports">Reports</option>
+            </select>
+          </div>
+
+          <h2>Ministry Summary</h2>
+          <div id="bandwidth-stats" class="stats-grid" aria-live="polite" aria-label="Broadband summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+          </div>
+
+          <h2>Strategic Pillars</h2>
+          <div id="bandwidth-pillars" class="pillars-grid" aria-live="polite" aria-label="Broadband strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+
+          <h2>Connectivity Coverage</h2>
+          <div id="bandwidth-coverage-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Connectivity coverage feed">
+            <div class="activity-loading" aria-hidden="true">Loading connectivity coverage...</div>
+          </div>
+
+          <h2>Access Standards</h2>
+          <div id="bandwidth-standards-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Access standards feed">
+            <div class="activity-loading" aria-hidden="true">Loading access standards...</div>
+          </div>
+
+          <h2>Deployment Programmes</h2>
+          <div id="bandwidth-programmes-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Deployment programmes feed">
+            <div class="activity-loading" aria-hidden="true">Loading deployment programmes...</div>
+          </div>
+
+          <h2>Directory</h2>
+          <div id="bandwidth-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Broadband directory">
+            <p class="activity-empty">Use the filters above to search across coverage, standards, and programmes.</p>
+          </div>
+
+          <h2>Cross-Links</h2>
+          <p>
+            Connectivity and equity programmes depend on <a href="infrastructure.html">Infrastructure</a> nodes,
+            <a href="technology.html">Technology</a> standards, and <a href="education.html">Education</a> digital literacy programmes.
+          </p>
+
+          <div class="cta">
+            <a class="button primary" href="infrastructure.html">Infrastructure</a>
+            <a class="button" href="technology.html">Technology</a>
+            <a class="button" href="health-equity.html">Health Equity</a>
+          </div>
         </div>
-
-        <h2>Ministry Summary</h2>
-        <div id="bandwidth-stats" class="stats-grid" aria-live="polite" aria-label="Broadband summary statistics">
-          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
-        </div>
-
-        <h2>Strategic Pillars</h2>
-        <div id="bandwidth-pillars" class="pillars-grid" aria-live="polite" aria-label="Broadband strategic pillars">
-          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
-        </div>
-
-        <h2>Connectivity Coverage</h2>
-        <div id="bandwidth-coverage-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Connectivity coverage feed">
-          <div class="activity-loading" aria-hidden="true">Loading connectivity coverage...</div>
-        </div>
-
-        <h2>Access Standards</h2>
-        <div id="bandwidth-standards-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Access standards feed">
-          <div class="activity-loading" aria-hidden="true">Loading access standards...</div>
-        </div>
-
-        <h2>Deployment Programmes</h2>
-        <div id="bandwidth-programmes-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Deployment programmes feed">
-          <div class="activity-loading" aria-hidden="true">Loading deployment programmes...</div>
-        </div>
-
-        <h2>Directory</h2>
-        <div id="bandwidth-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Broadband directory">
-          <p class="activity-empty">Use the filters above to search across coverage, standards, and programmes.</p>
-        </div>
-
-        <h2>Cross-Links</h2>
-        <p>
-          Connectivity and equity programmes depend on <a href="infrastructure.html">Infrastructure</a> nodes,
-          <a href="technology.html">Technology</a> standards, and <a href="education.html">Education</a> digital literacy programmes.
-        </p>
-
-        <div class="cta">
-          <a class="button primary" href="infrastructure.html">Infrastructure</a>
-          <a class="button" href="technology.html">Technology</a>
-          <a class="button" href="health-equity.html">Health Equity</a>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
   <div class="cityscape" aria-hidden="true"></div>
   <footer class="site-footer">

@@ -119,67 +119,72 @@
   </header>
 
   <main id="main">
-    <section class="page">
-      <div class="container">
-        <h1>Infrastructure &amp; Human Services — Health</h1>
-        <p class="lead">
-          Health is foundational to national productivity. Under the Secretary of Infrastructure &amp; Human Services,
-          this ministry coordinates privacy-preserving digital health services, wellness programmes, and resilient
-          public-health infrastructure within Aetheria’s v3.0 civic substrate.
-        </p>
+      <section class="page">
+        <div class="container">
+          <h1>Infrastructure & Human Services — Health</h1>
+          <p class="lead">
+            Health is foundational to national productivity. Under the Secretary of Infrastructure & Human Services,
+            this ministry coordinates privacy-preserving digital health services, wellness programmes, and resilient
+            public-health infrastructure within Aetheria's v3.0 civic substrate.
+          </p>
 
-        <div class="activity-filters" id="health-filters" aria-label="Filter health directory">
-          <label for="health-search" class="sr-only">Search health services, wellness, or reports</label>
-          <input type="search" id="health-search" class="activity-filter" placeholder="Search services, wellness, or reports..." autocomplete="off" />
-          <select id="health-scope" class="activity-select" aria-label="Filter by scope">
-            <option value="all">All Scopes</option>
-            <option value="services">Services</option>
-            <option value="wellness">Wellness</option>
-            <option value="reports">Reports</option>
-          </select>
+          <div class="ministerial-context">
+            <h3>Ministerial Mandate</h3>
+            <p>The Health portfolio delivers identity-anchored, privacy-preserving health services to all citizens — from secure telehealth access and emergency response readiness to accessible wellness tooling and civic health interoperability. All services operate on auditable consent controls and verifiable provider identities within the v3.0 governance framework.</p>
+          </div>
+
+          <div class="activity-filters" id="health-filters" aria-label="Filter health directory">
+            <label for="health-search" class="sr-only">Search health services, wellness, or reports</label>
+            <input type="search" id="health-search" class="activity-filter" placeholder="Search services, wellness, or reports..." autocomplete="off" />
+            <select id="health-scope" class="activity-select" aria-label="Filter by scope">
+              <option value="all">All Scopes</option>
+              <option value="services">Services</option>
+              <option value="wellness">Wellness</option>
+              <option value="reports">Reports</option>
+            </select>
+          </div>
+
+          <h2>Ministry Summary</h2>
+          <div id="health-stats" class="stats-grid" aria-live="polite" aria-label="Health summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+          </div>
+
+          <h2>Strategic Pillars</h2>
+          <div id="health-pillars" class="pillars-grid" aria-live="polite" aria-label="Health strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+
+          <h2>Digital Health Services</h2>
+          <div id="health-services-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health services feed">
+            <div class="activity-loading" aria-hidden="true">Loading digital health services...</div>
+          </div>
+
+          <h2>Wellness Programmes</h2>
+          <div id="health-wellness-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Wellness programs feed">
+            <div class="activity-loading" aria-hidden="true">Loading wellness programmes...</div>
+          </div>
+
+          <h2>Governance & Audit Reports</h2>
+          <div id="health-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health reports">
+            <div class="activity-loading" aria-hidden="true">Loading reports...</div>
+          </div>
+
+          <h2>Directory</h2>
+          <div id="health-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health directory">
+            <p class="activity-empty">Use the filters above to search across services, wellness, and reports.</p>
+          </div>
+
+          <h2>Cross-Links</h2>
+          <p>Health verification and wellness status connect to <a href="citizenship.html">Citizenship</a>, <a href="passport.html">Passport</a>, and <a href="health-equity.html">Health Equity</a> pathways.</p>
+
+          <div class="cta">
+            <a class="button primary" href="health-equity.html">Health Equity</a>
+            <a class="button" href="citizenship.html">Citizenship</a>
+            <a class="button" href="engage.html">Engage</a>
+          </div>
         </div>
-
-        <h2>Ministry Summary</h2>
-        <div id="health-stats" class="stats-grid" aria-live="polite" aria-label="Health summary statistics">
-          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
-        </div>
-
-        <h2>Strategic Pillars</h2>
-        <div id="health-pillars" class="pillars-grid" aria-live="polite" aria-label="Health strategic pillars">
-          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
-        </div>
-
-        <h2>Digital Health Services</h2>
-        <div id="health-services-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health services feed">
-          <div class="activity-loading" aria-hidden="true">Loading digital health services...</div>
-        </div>
-
-        <h2>Wellness Programmes</h2>
-        <div id="health-wellness-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Wellness programs feed">
-          <div class="activity-loading" aria-hidden="true">Loading wellness programmes...</div>
-        </div>
-
-        <h2>Governance &amp; Audit Reports</h2>
-        <div id="health-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health reports">
-          <div class="activity-loading" aria-hidden="true">Loading reports...</div>
-        </div>
-
-        <h2>Directory</h2>
-        <div id="health-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Health directory">
-          <p class="activity-empty">Use the filters above to search across services, wellness, and reports.</p>
-        </div>
-
-        <h2>Cross-Links</h2>
-        <p>Health verification and wellness status connect to <a href="citizenship.html">Citizenship</a>, <a href="passport.html">Passport</a>, and <a href="health-equity.html">Health Equity</a> pathways.</p>
-
-        <div class="cta">
-          <a class="button primary" href="health-equity.html">Health Equity</a>
-          <a class="button" href="citizenship.html">Citizenship</a>
-          <a class="button" href="engage.html">Engage</a>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
   <div class="cityscape" aria-hidden="true"></div>
   <footer class="site-footer">

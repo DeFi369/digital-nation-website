@@ -2,35 +2,50 @@
   "generated": "2026-07-02",
   "ministry": "Sustainability Operations & Reporting",
   "secretary": "Secretary of Infrastructure & Human Services",
-  "count": 8,
+  "count": 18,
   "stats": {
-    "operationalPrograms": 5,
-    "impactReportsPublished": 4,
-    "greenNodesDeployed": 8,
+    "operationalPrograms": 7,
+    "impactReportsPublished": 6,
+    "greenNodesDeployed": 12,
     "coverageTargetPercent": 94,
-    "wasteReductionPercent": 18
+    "wasteReductionPercent": 23,
+    "renewableEnergyPercent": 67,
+    "pueAverage": 1.28,
+    "carbonIntensityGco2eqKwh": 145
   },
   "pillars": [
-    {"id":"SUS-PIL-01","title":"Operational Efficiency","summary":"Continuous monitoring and optimisation of node energy, throughput, and hardware utilisation with threshold-based governance alerts."},
-    {"id":"SUS-PIL-02","title":"Impact Transparency","summary":"Public reporting of sustainability metrics, waste reductions, and resource resets aligned to v3.0 disclosure standards."},
-    {"id":"SUS-PIL-03","title":"Green Infrastructure Planning","summary":"Regional renewable-energy preference mapping and low-power service mesh design for civic workloads."},
-    {"id":"SUS-PIL-04","title":"Waste Reduction","summary":"Systemic reduction of operational waste across node maintenance, documentation, and civic logistics."},
-    {"id":"SUS-PIL-05","title":"Sustainable Deployment","summary":"Build and release pipelines optimised for minimal rebuilds, smaller artifacts, and greener hosting choices."}
+    {"id": "SUS-PIL-01", "title": "Operational Efficiency", "summary": "Continuous monitoring and optimisation of node energy, throughput, and hardware utilisation with threshold-based governance alerts."},
+    {"id": "SUS-PIL-02", "title": "Impact Transparency", "summary": "Public reporting of sustainability metrics, waste reductions, and resource resets aligned to v3.0 disclosure standards."},
+    {"id": "SUS-PIL-03", "title": "Green Infrastructure Planning", "summary": "Regional renewable-energy preference mapping and low-power service mesh design for civic workloads."},
+    {"id": "SUS-PIL-04", "title": "Waste Reduction", "summary": "Systemic reduction of operational waste across node maintenance, documentation, and civic logistics."},
+    {"id": "SUS-PIL-05", "title": "Sustainable Deployment", "summary": "Build and release pipelines optimised for minimal rebuilds, smaller artifacts, and greener hosting choices."},
+    {"id": "SUS-PIL-06", "title": "Circular Economy Integration", "summary": "Closed-loop material flows for hardware, packaging, and consumables across all civic operations."}
   ],
   "entries": {
     "operations": [
-      {"id":"SUS-OPS-01","title":"Node Efficiency Monitoring","status":"Operational","category":"Operations","owner":"Mira Chen","summary":"Continuous monitoring of node energy, throughput, and hardware utilization with threshold-based alerts."},
-      {"id":"SUS-OPS-02","title":"Sustainable Deployment Pipeline","status":"Beta","category":"Operations","owner":"Kai Voss","summary":"Build and release pipelines optimized for minimal rebuilds, smaller artifacts, and greener hosting choices."},
-      {"id":"SUS-OPS-03","title":"Workload Scheduling Optimisation","status":"Planning","category":"Operations","owner":"Orion Vale","summary":"Schedule civic workloads to align with renewable-energy availability windows."}
+      {"id": "SUS-OPS-01", "title": "Node Efficiency Monitoring", "status": "Operational", "category": "Operations", "owner": "Mira Chen", "summary": "Continuous monitoring of node energy, throughput, and hardware utilization with threshold-based alerts.", "published": "2025-07-01", "participants": 24},
+      {"id": "SUS-OPS-02", "title": "Sustainable Deployment Pipeline", "status": "Beta", "category": "Operations", "owner": "Kai Voss", "summary": "Build and release pipelines optimized for minimal rebuilds, smaller artifacts, and greener hosting choices.", "published": "2025-11-15", "participants": 6},
+      {"id": "SUS-OPS-03", "title": "Workload Scheduling Optimisation", "status": "Planning", "category": "Operations", "owner": "Orion Vale", "summary": "Schedule civic workloads to align with renewable-energy availability windows.", "published": "2026-03-01", "participants": 0},
+      {"id": "SUS-OPS-04", "title": "Real-Time PUE Dashboard", "status": "Operational", "category": "Operations", "owner": "Nia Rahman", "summary": "Live Power Usage Effectiveness metrics across all 24 edge locations with anomaly alerting.", "published": "2025-09-01", "participants": 8},
+      {"id": "SUS-OPS-05", "title": "Carbon-Aware Autoscaling", "status": "Active", "category": "Operations", "owner": "Kai Voss", "summary": "Kubernetes scheduler plugin preferring nodes with surplus renewable energy for batch workloads.", "published": "2025-12-10", "participants": 5},
+      {"id": "SUS-OPS-06", "title": "Thermal Energy Recovery", "status": "Planning", "category": "Operations", "owner": "Mira Chen", "summary": "Capture and reuse of waste heat from node operations for district heating and facility climate control.", "published": "2026-04-01", "participants": 0},
+      {"id": "SUS-OPS-07", "title": "Green CI/CD Artefact Optimisation", "status": "Active", "category": "Operations", "owner": "Orion Vale", "summary": "Dependency pruning, layer caching, and multi-arch builds reducing container image sizes by 40%.", "published": "2025-10-01", "participants": 7}
     ],
     "impact": [
-      {"id":"SUS-IMP-01","title":"Annual Impact Report","status":"Published","category":"Reporting","lead":"Aria Solenne","summary":"Aggregates operational efficiency changes, waste reductions, and green protocol adoption metrics across services."},
-      {"id":"SUS-IMP-02","title":"Q2 Efficiency Snapshot","status":"In Review","category":"Reporting","lead":"Kai Voss","summary":"Midyear snapshot of node efficiency deltas and green protocol adoption progress."}
+      {"id": "SUS-IMP-01", "title": "Annual Impact Report 2025", "status": "Published", "category": "Reporting", "lead": "Aria Solenne", "summary": "Aggregates operational efficiency changes, waste reductions, and green protocol adoption metrics across services.", "published": "2026-01-20"},
+      {"id": "SUS-IMP-02", "title": "Q2 2026 Efficiency Snapshot", "status": "In Review", "category": "Reporting", "lead": "Kai Voss", "summary": "Midyear snapshot of node efficiency deltas and green protocol adoption progress.", "published": "2026-07-01"},
+      {"id": "SUS-IMP-03", "title": "Waste Reduction Progress Report", "status": "Published", "category": "Reporting", "lead": "Mira Chen", "summary": "23% reduction in operational waste through hardware lifecycle extension and zero-waste sprints.", "published": "2026-04-15"},
+      {"id": "SUS-IMP-04", "title": "Renewable Energy Milestone Report", "status": "Published", "category": "Reporting", "lead": "Nia Rahman", "summary": "67% renewable energy across node operations, on track for 80% target by 2027.", "published": "2026-03-10"},
+      {"id": "SUS-IMP-05", "title": "Carbon Intensity Trend Analysis", "status": "Published", "category": "Reporting", "lead": "Orion Vale", "summary": "Year-over-year carbon intensity reduction from 198 to 145 gCO2eq/kWh across all civic infrastructure.", "published": "2026-02-28"},
+      {"id": "SUS-IMP-06", "title": "Circular Economy Baseline Assessment", "status": "Draft", "category": "Reporting", "lead": "Aria Solenne", "summary": "Material flow analysis identifying closure opportunities for hardware, packaging, and consumable streams.", "published": "2026-05-01"}
     ],
     "greenInfrastructure": [
-      {"id":"SUS-GI-01","title":"Regional Green Node Pools","status":"Planning","category":"Infrastructure","lead":"Nia Rahman","summary":"Preference map for renewable-energy-first regions, with deployment scheduling tied to availability and policy thresholds."},
-      {"id":"SUS-GI-02","title":"Low-Power Service Mesh","status":"Planning","category":"Infrastructure","lead":"Orion Vale","summary":"Service mesh design targeting reduced idle power draw and adaptive scaling for civic workloads with variable demand."},
-      {"id":"SUS-GI-03","title":"Edge Energy-Aware Routing","status":"Active","category":"Infrastructure","lead":"Mira Chen","summary":"Routing layer that shifts traffic toward nodes with surplus renewable energy."}
+      {"id": "SUS-GI-01", "title": "Regional Green Node Pools", "status": "Planning", "category": "Infrastructure", "lead": "Nia Rahman", "summary": "Preference map for renewable-energy-first regions, with deployment scheduling tied to availability and policy thresholds.", "published": "2026-03-15"},
+      {"id": "SUS-GI-02", "title": "Low-Power Service Mesh", "status": "Planning", "category": "Infrastructure", "lead": "Orion Vale", "summary": "Service mesh design targeting reduced idle power draw and adaptive scaling for civic workloads with variable demand.", "published": "2026-04-01"},
+      {"id": "SUS-GI-03", "title": "Edge Energy-Aware Routing", "status": "Active", "category": "Infrastructure", "lead": "Mira Chen", "summary": "Routing layer that shifts traffic toward nodes with surplus renewable energy.", "published": "2025-11-01"},
+      {"id": "SUS-GI-04", "title": "Solar-Powered Edge Nodes", "status": "Active", "category": "Infrastructure", "lead": "Kai Voss", "summary": "12 edge locations with on-site solar generation covering 40-60% of daytime load.", "published": "2025-09-15"},
+      {"id": "SUS-GI-05", "title": "Green Data Centre Retrofit", "status": "Active", "category": "Infrastructure", "lead": "Orion Vale", "summary": "Liquid cooling upgrade and airflow optimisation reducing PUE from 1.45 to 1.28 at primary facility.", "published": "2025-10-20"},
+      {"id": "SUS-GI-06", "title": "Battery Storage Integration", "status": "Planning", "category": "Infrastructure", "lead": "Mira Chen", "summary": "Grid-scale battery deployment for renewable energy time-shifting and backup power at 6 edge sites.", "published": "2026-05-15"}
     ]
   }
 }

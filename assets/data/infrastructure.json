@@ -2,37 +2,57 @@
   "generated": "2026-07-02",
   "ministry": "Infrastructure & Human Services — Infrastructure",
   "secretary": "Secretary of Infrastructure & Human Services",
-  "count": 10,
+  "count": 22,
   "stats": {
-    "operationalServices": 7,
-    "civicTechProjects": 4,
+    "operationalServices": 9,
+    "civicTechProjects": 6,
     "nodeUptimePercent": 99.97,
-    "edgeLocations": 16,
-    "backupLedgerLagMs": 120
+    "edgeLocations": 24,
+    "backupLedgerLagMs": 85,
+    "crossRegionReplicas": 8,
+    "incidentResponseTimeMin": 12,
+    "sloCompliancePercent": 99.94
   },
   "pillars": [
-    {"id":"INF-PIL-01","title":"Node Resilience","summary":"Distributed node grid for protocol validation, failover routing, and secure key ceremonies with redundant path diversity."},
-    {"id":"INF-PIL-02","title":"Edge Delivery","summary":"Regional edge-cache nodes reducing latency on passport, registry, and engage interactions."},
-    {"id":"INF-PIL-03","title":"Civic Service Mesh","summary":"Offline-capable service mesh connecting health, registry, and engage on low-connectivity networks."},
-    {"id":"INF-PIL-04","title":"Data Durability","summary":"Time-locked replica ledgers for disaster recovery and compliance audit chains."},
-    {"id":"INF-PIL-05","title":"Inter-Region Replication","summary":"Multi-region replication protocol for stronger defence against regional outages."}
+    {"id": "INF-PIL-01", "title": "Node Resilience", "summary": "Distributed node grid for protocol validation, failover routing, and secure key ceremonies with redundant path diversity."},
+    {"id": "INF-PIL-02", "title": "Edge Delivery", "summary": "Regional edge-cache nodes reducing latency on passport, registry, and engage interactions."},
+    {"id": "INF-PIL-03", "title": "Civic Service Mesh", "summary": "Offline-capable service mesh connecting health, registry, and engage on low-connectivity networks."},
+    {"id": "INF-PIL-04", "title": "Data Durability", "summary": "Time-locked replica ledgers for disaster recovery and compliance audit chains."},
+    {"id": "INF-PIL-05", "title": "Inter-Region Replication", "summary": "Multi-region replication protocol for stronger defence against regional outages."},
+    {"id": "INF-PIL-06", "title": "Observability & Telemetry", "summary": "Unified metrics, traces, and logs across all infrastructure layers with automated anomaly detection."}
   ],
   "entries": {
     "services": [
-      {"id":"INF-SVC-01","title":"Primary Node Grid","status":"Operational","category":"Infrastructure","owner":"Kai Voss","summary":"Distributed node grid for protocol validation, failover routing, and secure key ceremonies."},
-      {"id":"INF-SVC-02","title":"Edge Cache Layer","status":"Operational","category":"Infrastructure","owner":"Mira Chen","summary":"Regional edge-cache nodes reducing latency on passport, registry, and engage interactions."},
-      {"id":"INF-SVC-03","title":"Backup Ledger","status":"Active","category":"Infrastructure","owner":"Aria Solenne","summary":"Time-locked replica ledgers for disaster recovery and compliance audit chains."},
-      {"id":"INF-SVC-04","title":"Network Operations Centre","status":"Operational","category":"Infrastructure","owner":"Orion Vale","summary":"24x7 monitoring, incident intake, and runbook enforcement for infrastructure services."}
+      {"id": "INF-SVC-01", "title": "Primary Node Grid", "status": "Operational", "category": "Infrastructure", "owner": "Kai Voss", "summary": "Distributed node grid for protocol validation, failover routing, and secure key ceremonies.", "published": "2025-05-01", "vCpu": 128, "storageTb": 45, "sloUptime": "99.97%"},
+      {"id": "INF-SVC-02", "title": "Edge Cache Layer", "status": "Operational", "category": "Infrastructure", "owner": "Mira Chen", "summary": "Regional edge-cache nodes reducing latency on passport, registry, and engage interactions.", "published": "2025-06-15", "vCpu": 64, "storageTb": 12, "sloUptime": "99.95%"},
+      {"id": "INF-SVC-03", "title": "Backup Ledger", "status": "Active", "category": "Infrastructure", "owner": "Aria Solenne", "summary": "Time-locked replica ledgers for disaster recovery and compliance audit chains.", "published": "2025-07-20", "vCpu": 32, "storageTb": 120, "sloUptime": "99.99%"},
+      {"id": "INF-SVC-04", "title": "Network Operations Centre", "status": "Operational", "category": "Infrastructure", "owner": "Orion Vale", "summary": "24x7 monitoring, incident intake, and runbook enforcement for infrastructure services.", "published": "2025-05-15", "teamSize": 8, "monthlyBudget": "$45,000"},
+      {"id": "INF-SVC-05", "title": "Inter-Region Sync Service", "status": "Operational", "category": "Infrastructure", "owner": "Kai Voss", "summary": "Multi-region replication with conflict-free eventual consistency for all civic ledgers.", "published": "2025-09-10", "vCpu": 48, "storageTb": 80, "sloUptime": "99.96%"},
+      {"id": "INF-SVC-06", "title": "DNS & Identity Resolution", "status": "Operational", "category": "Infrastructure", "owner": "Mira Chen", "summary": "Globally distributed authoritative DNS with DNSSEC and DANE for citizen identity resolution.", "published": "2025-06-01", "vCpu": 16, "storageTb": 2, "sloUptime": "99.99%"},
+      {"id": "INF-SVC-07", "title": "Certificate Authority", "status": "Operational", "category": "Infrastructure", "owner": "Aria Solenne", "summary": "Root and intermediate CA for TLS, code signing, and document verification across all services.", "published": "2025-05-10", "vCpu": 8, "storageTb": 1, "sloUptime": "99.99%"},
+      {"id": "INF-SVC-08", "title": "Secrets & Key Management", "status": "Active", "category": "Infrastructure", "owner": "Orion Vale", "summary": "Hardware-backed HSM cluster for key generation, rotation, and emergency revocation.", "published": "2025-08-01", "vCpu": 12, "storageTb": 0.5, "sloUptime": "99.99%"},
+      {"id": "INF-SVC-09", "title": "Log Aggregation & Audit", "status": "Operational", "category": "Infrastructure", "owner": "Nia Rahman", "summary": "Immutable log storage with tamper-evident indexing for compliance and forensic analysis.", "published": "2025-07-01", "vCpu": 32, "storageTb": 200, "sloUptime": "99.95%"}
     ],
     "civicTech": [
-      {"id":"INF-TECH-01","title":"Citizen Console","status":"Operational","category":"Civic Tech","owner":"Nia Rahman","summary":"Single sign-on surface for registry, engage, passport, and mission workflows."},
-      {"id":"INF-TECH-02","title":"Assembly Session Bus","status":"Beta","category":"Civic Tech","owner":"Aria Solenne","summary":"Real-time session bus for debates, votes, and amendment streaming with archival guarantees."},
-      {"id":"INF-TECH-03","title":"Civic Analytics Pipeline","status":"Planning","category":"Civic Tech","owner":"Kai Voss","summary":"Aggregated analytics for service usage, performance, and citizen engagement patterns."}
+      {"id": "INF-TECH-01", "title": "Citizen Console", "status": "Operational", "category": "Civic Tech", "owner": "Nia Rahman", "summary": "Single sign-on surface for registry, engage, passport, and mission workflows.", "published": "2025-06-10", "teamSize": 5, "monthlyBudget": "$28,000"},
+      {"id": "INF-TECH-02", "title": "Assembly Session Bus", "status": "Beta", "category": "Civic Tech", "owner": "Aria Solenne", "summary": "Real-time session bus for debates, votes, and amendment streaming with archival guarantees.", "published": "2025-11-01", "teamSize": 4, "monthlyBudget": "$22,000"},
+      {"id": "INF-TECH-03", "title": "Civic Analytics Pipeline", "status": "Planning", "category": "Civic Tech", "owner": "Kai Voss", "summary": "Aggregated analytics for service usage, performance, and citizen engagement patterns.", "published": "2026-02-01", "teamSize": 3, "monthlyBudget": "$18,000"},
+      {"id": "INF-TECH-04", "title": "Offline-First SDK", "status": "Active", "category": "Civic Tech", "owner": "Mira Chen", "summary": "Client-side library enabling civic service interaction with intermittent connectivity.", "published": "2025-10-15", "teamSize": 3, "monthlyBudget": "$15,000"},
+      {"id": "INF-TECH-05", "title": "Policy-as-Code Engine", "status": "Beta", "category": "Civic Tech", "owner": "Orion Vale", "summary": "Declarative policy engine for automated compliance checking and governance rule enforcement.", "published": "2025-12-01", "teamSize": 4, "monthlyBudget": "$20,000"},
+      {"id": "INF-TECH-06", "title": "Credential Verification API", "status": "Operational", "category": "Civic Tech", "owner": "Mira Chen", "summary": "REST and GraphQL endpoints for verifiable credential issuance, presentation, and verification.", "published": "2025-09-01", "teamSize": 2, "monthlyBudget": "$12,000"}
     ],
     "projects": [
-      {"id":"INF-PROJ-01","title":"Interplanetary Replication","status":"Planning","category":"Project","lead":"Kai Voss","summary":"Multi-region replication protocol targeting stronger defence against regional outages."},
-      {"id":"INF-PROJ-02","title":"Mobile Service Mesh","status":"Planning","category":"Project","lead":"Mira Chen","summary":"Offline-capable service mesh for health, registry, and engage on low-connectivity networks."},
-      {"id":"INF-PROJ-03","title":"Edge Compute Expansion","status":"Active","category":"Project","lead":"Nia Rahman","summary":"Expanding edge compute capacity to support latency-sensitive civic services."}
+      {"id": "INF-PROJ-01", "title": "Interplanetary Replication", "status": "Planning", "category": "Project", "lead": "Kai Voss", "summary": "Multi-region replication protocol targeting stronger defence against regional outages.", "published": "2026-03-01", "teamSize": 6, "monthlyBudget": "$65,000"},
+      {"id": "INF-PROJ-02", "title": "Mobile Service Mesh", "status": "Planning", "category": "Project", "lead": "Mira Chen", "summary": "Offline-capable service mesh for health, registry, and engage on low-connectivity networks.", "published": "2026-04-01", "teamSize": 5, "monthlyBudget": "$48,000"},
+      {"id": "INF-PROJ-03", "title": "Edge Compute Expansion", "status": "Active", "category": "Project", "lead": "Nia Rahman", "summary": "Expanding edge compute capacity to support latency-sensitive civic services.", "published": "2025-11-15", "teamSize": 7, "monthlyBudget": "$85,000"},
+      {"id": "INF-PROJ-04", "title": "Quantum-Resistant Key Migration", "status": "Planning", "category": "Project", "lead": "Orion Vale", "summary": "Phased migration to post-quantum cryptography for all key ceremonies and document signing.", "published": "2026-01-20", "teamSize": 4, "monthlyBudget": "$55,000"},
+      {"id": "INF-PROJ-05", "title": "Automated Incident Remediation", "status": "Active", "category": "Project", "lead": "Kai Voss", "summary": "Self-healing runbooks for common failure modes with human-in-the-loop escalation.", "published": "2025-10-01", "teamSize": 5, "monthlyBudget": "$42,000"},
+      {"id": "INF-PROJ-06", "title": "Zero-Trust Network Segmentation", "status": "Active", "category": "Project", "lead": "Aria Solenne", "summary": "Micro-segmentation of all infrastructure tiers with continuous verification and least-privilege access.", "published": "2025-12-10", "teamSize": 6, "monthlyBudget": "$52,000"}
+    ],
+    "reports": [
+      {"id": "INF-R01", "title": "Q1 2026 Infrastructure SLO Review", "status": "Published", "category": "Audit", "owner": "Independent Auditors", "summary": "Comprehensive review of uptime, latency, error budgets, and incident post-mortems across all services.", "published": "2026-04-20"},
+      {"id": "INF-R02", "title": "Edge Performance Benchmark", "status": "In Progress", "category": "Research", "owner": "Mira Chen", "summary": "Latency and throughput measurements across all 24 edge locations under varying load conditions.", "published": "2026-05-15"},
+      {"id": "INF-R03", "title": "Disaster Recovery Exercise Report", "status": "Published", "category": "Governance", "owner": "Aria Solenne", "summary": "Full failover test results including RTO, RPO, and data integrity verification for backup ledgers.", "published": "2026-03-10"}
     ]
   }
 }

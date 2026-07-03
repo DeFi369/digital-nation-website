@@ -119,72 +119,77 @@
   </header>
 
   <main id="main">
-    <section class="page">
-      <div class="container">
-        <h1>Infrastructure &amp; Human Services — Education</h1>
-        <p class="lead">
-          Advancing knowledge, curriculum integrity, digital literacy, and cross-border research collaboration
-          within a verifiable v3.0 education and research framework under the Secretary of Infrastructure &amp; Human Services.
-        </p>
+      <section class="page">
+        <div class="container">
+          <h1>Infrastructure & Human Services — Education</h1>
+          <p class="lead">
+            Advancing knowledge, curriculum integrity, digital literacy, and cross-border research collaboration
+            within a verifiable v3.0 education and research framework under the Secretary of Infrastructure & Human Services.
+          </p>
 
-        <div class="activity-filters" id="education-filters" aria-label="Filter education directory">
-          <label for="education-search" class="sr-only">Search education research, literacy, or programmes</label>
-          <input type="search" id="education-search" class="activity-filter" placeholder="Search research, literacy, or programmes..." autocomplete="off" />
-          <select id="education-scope" class="activity-select" aria-label="Filter by scope">
-            <option value="all">All Scopes</option>
-            <option value="research">Research</option>
-            <option value="literacy">Digital Literacy</option>
-            <option value="programs">Programmes</option>
-            <option value="reports">Reports</option>
-          </select>
+          <div class="ministerial-context">
+            <h3>Ministerial Mandate</h3>
+            <p>The Education portfolio stewards the Principality's knowledge infrastructure — from foundational digital literacy and governance onboarding to advanced research fellowships and protocol governance studies. All programmes are designed for verifiable completion credentials, portable across recognised jurisdictions, and auditable within the v3.0 governance substrate.</p>
+          </div>
+
+          <div class="activity-filters" id="education-filters" aria-label="Filter education directory">
+            <label for="education-search" class="sr-only">Search education research, literacy, or programmes</label>
+            <input type="search" id="education-search" class="activity-filter" placeholder="Search research, literacy, or programmes..." autocomplete="off" />
+            <select id="education-scope" class="activity-select" aria-label="Filter by scope">
+              <option value="all">All Scopes</option>
+              <option value="research">Research</option>
+              <option value="literacy">Digital Literacy</option>
+              <option value="programs">Programmes</option>
+              <option value="reports">Reports</option>
+            </select>
+          </div>
+
+          <h2>Ministry Summary</h2>
+          <div id="education-stats" class="stats-grid" aria-live="polite" aria-label="Education summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+          </div>
+
+          <h2>Strategic Pillars</h2>
+          <div id="education-pillars" class="pillars-grid" aria-live="polite" aria-label="Education strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+
+          <h2>Research Initiatives</h2>
+          <div id="education-research-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Education research feed">
+            <div class="activity-loading" aria-hidden="true">Loading research...</div>
+          </div>
+
+          <h2>Digital Literacy</h2>
+          <div id="education-literacy-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Digital literacy feed">
+            <div class="activity-loading" aria-hidden="true">Loading literacy programmes...</div>
+          </div>
+
+          <h2>Programme Directory</h2>
+          <div id="education-programs-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Education programmes feed">
+            <div class="activity-loading" aria-hidden="true">Loading programmes...</div>
+          </div>
+
+          <h2>Governance & Audit Reports</h2>
+          <div id="education-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Education reports">
+            <div class="activity-loading" aria-hidden="true">Loading reports...</div>
+          </div>
+
+          <h2>Directory</h2>
+          <div id="education-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Education directory">
+            <p class="activity-empty">Use the filters above to search across research, literacy, programmes, and reports.</p>
+          </div>
+
+          <h2>Cross-Links</h2>
+          <p>Education programmes connect to <a href="citizenship.html">Citizenship</a>, <a href="engage.html">Engage</a>, and <a href="registry.html">Registry</a> verification pathways.</p>
+
+          <div class="cta">
+            <a class="button primary" href="engage.html">Participate</a>
+            <a class="button" href="citizenship.html">Citizenship</a>
+            <a class="button" href="registry.html">Registry</a>
+          </div>
         </div>
-
-        <h2>Ministry Summary</h2>
-        <div id="education-stats" class="stats-grid" aria-live="polite" aria-label="Education summary statistics">
-          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
-        </div>
-
-        <h2>Strategic Pillars</h2>
-        <div id="education-pillars" class="pillars-grid" aria-live="polite" aria-label="Education strategic pillars">
-          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
-        </div>
-
-        <h2>Research Initiatives</h2>
-        <div id="education-research-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Education research feed">
-          <div class="activity-loading" aria-hidden="true">Loading research...</div>
-        </div>
-
-        <h2>Digital Literacy</h2>
-        <div id="education-literacy-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Digital literacy feed">
-          <div class="activity-loading" aria-hidden="true">Loading literacy programmes...</div>
-        </div>
-
-        <h2>Programme Directory</h2>
-        <div id="education-programs-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Education programmes feed">
-          <div class="activity-loading" aria-hidden="true">Loading programmes...</div>
-        </div>
-
-        <h2>Governance &amp; Audit Reports</h2>
-        <div id="education-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Education reports">
-          <div class="activity-loading" aria-hidden="true">Loading reports...</div>
-        </div>
-
-        <h2>Directory</h2>
-        <div id="education-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Education directory">
-          <p class="activity-empty">Use the filters above to search across research, literacy, programmes, and reports.</p>
-        </div>
-
-        <h2>Cross-Links</h2>
-        <p>Education programmes connect to <a href="citizenship.html">Citizenship</a>, <a href="engage.html">Engage</a>, and <a href="registry.html">Registry</a> verification pathways.</p>
-
-        <div class="cta">
-          <a class="button primary" href="engage.html">Participate</a>
-          <a class="button" href="citizenship.html">Citizenship</a>
-          <a class="button" href="registry.html">Registry</a>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
   <div class="cityscape" aria-hidden="true"></div>
   <footer class="site-footer">

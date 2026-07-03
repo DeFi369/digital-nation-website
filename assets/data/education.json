@@ -2,37 +2,54 @@
   "generated": "2026-07-02",
   "ministry": "Infrastructure & Human Services — Education",
   "secretary": "Secretary of Infrastructure & Human Services",
-  "count": 10,
+  "count": 22,
   "stats": {
-    "researchPrograms": 5,
-    "digitalLiteracyPrograms": 4,
-    "enrolledCitizens": 5670,
-    "curriculumModules": 18,
-    "certificationsIssued": 1203
+    "researchPrograms": 7,
+    "digitalLiteracyPrograms": 6,
+    "enrolledCitizens": 7842,
+    "curriculumModules": 28,
+    "certificationsIssued": 2456,
+    "activeFellowships": 12,
+    "partnerInstitutions": 9,
+    "crossBorderAgreements": 4
   },
   "pillars": [
-    {"id":"EDU-PIL-01","title":"Curriculum Integrity","summary":"Shared authorship framework for curriculum modules, licensing models, and verifiable completion credentials."},
-    {"id":"EDU-PIL-02","title":"Digital Literacy","summary":"Onboarding curriculum, instrument workshops, and dispute-resolution playbooks for new citizens."},
-    {"id":"EDU-PIL-03","title":"Research Commons","summary":"Open research track for constitutional protocols, tokenised representation, and verifiable decision structures."},
-    {"id":"EDU-PIL-04","title":"Governance Literacy","summary":"Simulated assemblies, voting mechanics, and constitutional interpretation for new participants."},
-    {"id":"EDU-PIL-05","title":"Cross-Border Knowledge Exchange","summary":"Interoperability with recognised external education programmes and reciprocal credentialing."}
+    {"id": "EDU-PIL-01", "title": "Curriculum Integrity", "summary": "Shared authorship framework for curriculum modules, licensing models, and verifiable completion credentials."},
+    {"id": "EDU-PIL-02", "title": "Digital Literacy", "summary": "Onboarding curriculum, instrument workshops, and dispute-resolution playbooks for new citizens."},
+    {"id": "EDU-PIL-03", "title": "Research Commons", "summary": "Open research track for constitutional protocols, tokenised representation, and verifiable decision structures."},
+    {"id": "EDU-PIL-04", "title": "Governance Literacy", "summary": "Simulated assemblies, voting mechanics, and constitutional interpretation for new participants."},
+    {"id": "EDU-PIL-05", "title": "Cross-Border Knowledge Exchange", "summary": "Interoperability with recognised external education programmes and reciprocal credentialing."},
+    {"id": "EDU-PIL-06", "title": "Credential Portability", "summary": "Verifiable credential standards enabling recognition across jurisdictional boundaries and partner institutions."}
   ],
   "entries": {
     "research": [
-      {"id":"EDU-RES-01","title":"Protocol Governance Research","status":"Active","category":"Research","lead":"Aria Solenne","summary":"Long-horizon research on constitutional protocols, tokenised representation, and verifiable decision structures."},
-      {"id":"EDU-RES-02","title":"Digital Literacy Observatory","status":"Active","category":"Research","lead":"Nia Rahman","summary":"Cross-border assessment of digital literacy outcomes, onboarding friction, and citizenship readiness."},
-      {"id":"EDU-RES-03","title":"Open Curriculum Commons","status":"Planning","category":"Research","lead":"Kai Voss","summary":"Shared authorship framework for curriculum modules, licensing models, and contribution incentives."},
-      {"id":"EDU-RES-04","title":"Civic AI Literacy Review","status":"Active","category":"Research","lead":"Orion Vale","summary":"Curriculum assessment for AI-assisted civic participation and algorithm transparency."}
+      {"id": "EDU-RES-01", "title": "Protocol Governance Research", "status": "Active", "category": "Research", "lead": "Aria Solenne", "summary": "Long-horizon research on constitutional protocols, tokenised representation, and verifiable decision structures.", "published": "2025-11-15", "participants": 8},
+      {"id": "EDU-RES-02", "title": "Digital Literacy Observatory", "status": "Active", "category": "Research", "lead": "Nia Rahman", "summary": "Cross-border assessment of digital literacy outcomes, onboarding friction, and citizenship readiness.", "published": "2025-09-22", "participants": 12},
+      {"id": "EDU-RES-03", "title": "Open Curriculum Commons", "status": "Planning", "category": "Research", "lead": "Kai Voss", "summary": "Shared authorship framework for curriculum modules, licensing models, and contribution incentives.", "published": "2026-01-10", "participants": 6},
+      {"id": "EDU-RES-04", "title": "Civic AI Literacy Review", "status": "Active", "category": "Research", "lead": "Orion Vale", "summary": "Curriculum assessment for AI-assisted civic participation and algorithm transparency.", "published": "2025-12-03", "participants": 5},
+      {"id": "EDU-RES-05", "title": "Credential Verification Standards", "status": "Beta", "category": "Research", "lead": "Mira Chen", "summary": "Interoperable credential format for cross-jurisdictional recognition and automated verification.", "published": "2026-02-18", "participants": 7},
+      {"id": "EDU-RES-06", "title": "Governance Simulation Effectiveness", "status": "Active", "category": "Research", "lead": "Aria Solenne", "summary": "Longitudinal study on simulated assembly participation and real-world governance engagement.", "published": "2025-10-05", "participants": 9},
+      {"id": "EDU-RES-07", "title": "Adaptive Learning Architecture", "status": "Planning", "category": "Research", "lead": "Nia Rahman", "summary": "Personalised learning pathways using on-chain skill attestation and competency mapping.", "published": "2026-03-01", "participants": 4}
     ],
     "literacy": [
-      {"id":"EDU-LIT-01","title":"Crypto Citizenship 101","status":"Active","category":"Digital Literacy","lead":"Mira Chen","summary":"Foundational onboarding on identity, consent, sovereignty, and secure participation in digital governance."},
-      {"id":"EDU-LIT-02","title":"Governance Literacy Lab","status":"Active","category":"Digital Literacy","lead":"Aria Solenne","summary":"Simulated assemblies, voting mechanics, and constitutional interpretation for new citizens."},
-      {"id":"EDU-LIT-03","title":"Node Operator Training","status":"Active","category":"Digital Literacy","lead":"Kai Voss","summary":"Technical onboarding for distributed node operation, incident response, and protocol upgrades."}
+      {"id": "EDU-LIT-01", "title": "Crypto Citizenship 101", "status": "Active", "category": "Digital Literacy", "lead": "Mira Chen", "summary": "Foundational onboarding on identity, consent, sovereignty, and secure participation in digital governance.", "published": "2025-06-12", "participants": 3400},
+      {"id": "EDU-LIT-02", "title": "Governance Literacy Lab", "status": "Active", "category": "Digital Literacy", "lead": "Aria Solenne", "summary": "Simulated assemblies, voting mechanics, and constitutional interpretation for new citizens.", "published": "2025-07-08", "participants": 2150},
+      {"id": "EDU-LIT-03", "title": "Node Operator Training", "status": "Active", "category": "Digital Literacy", "lead": "Kai Voss", "summary": "Technical onboarding for distributed node operation, incident response, and protocol upgrades.", "published": "2025-08-20", "participants": 890},
+      {"id": "EDU-LIT-04", "title": "Credential Wallet Workshop", "status": "Beta", "category": "Digital Literacy", "lead": "Nia Rahman", "summary": "Hands-on training for verifiable credential management, presentation, and selective disclosure.", "published": "2026-01-15", "participants": 560},
+      {"id": "EDU-LIT-05", "title": "Civic Writing & Advocacy", "status": "Active", "category": "Digital Literacy", "lead": "Orion Vale", "summary": "Structured communication for policy proposals, amendment drafting, and public deliberation.", "published": "2025-09-30", "participants": 1200},
+      {"id": "EDU-LIT-06", "title": "Cross-Border Credential Navigation", "status": "Planning", "category": "Digital Literacy", "lead": "Mira Chen", "summary": "Guidance on reciprocal recognition, credential translation, and jurisdictional equivalence mapping.", "published": "2026-04-01", "participants": 0}
     ],
     "programs": [
-      {"id":"EDU-PROG-01","title":"Ambassador Academy","status":"Recruiting","category":"Program","lead":"Aria Solenne","summary":"A government-relations and diplomatic communication track for elevated-tier citizens."},
-      {"id":"EDU-PROG-02","title":"Node Operator School","status":"Active","category":"Program","lead":"Kai Voss","summary":"Technical training for distributed node operation, incident response, and protocol upgrades."},
-      {"id":"EDU-PROG-03","title":"Research Fellowship Programme","status":"Planning","category":"Program","lead":"Nia Rahman","summary":"Fellowship placements pairing researchers with ministry mentors for applied civic R&amp;D."}
+      {"id": "EDU-PROG-01", "title": "Ambassador Academy", "status": "Recruiting", "category": "Program", "lead": "Aria Solenne", "summary": "A government-relations and diplomatic communication track for elevated-tier citizens.", "published": "2025-11-01", "participants": 45},
+      {"id": "EDU-PROG-02", "title": "Node Operator School", "status": "Active", "category": "Program", "lead": "Kai Voss", "summary": "Technical training for distributed node operation, incident response, and protocol upgrades.", "published": "2025-08-20", "participants": 180},
+      {"id": "EDU-PROG-03", "title": "Research Fellowship Programme", "status": "Planning", "category": "Program", "lead": "Nia Rahman", "summary": "Fellowship placements pairing researchers with ministry mentors for applied civic R&D.", "published": "2026-02-01", "participants": 0},
+      {"id": "EDU-PROG-04", "title": "Curriculum Contributor Certification", "status": "Active", "category": "Program", "lead": "Orion Vale", "summary": "Certification pathway for citizens authoring and peer-reviewing curriculum modules.", "published": "2025-10-10", "participants": 92},
+      {"id": "EDU-PROG-05", "title": "Governance Mentor Corps", "status": "Active", "category": "Program", "lead": "Aria Solenne", "summary": "Experienced citizens guiding new participants through assembly processes and constitutional tools.", "published": "2025-07-15", "participants": 67}
+    ],
+    "reports": [
+      {"id": "EDU-R01", "title": "Q4 2025 Literacy Outcomes Report", "status": "Published", "category": "Audit", "owner": "Education Operations", "summary": "Analysis of completion rates, competency gains, and onboarding friction across all literacy programmes.", "published": "2026-01-20"},
+      {"id": "EDU-R02", "title": "Curriculum Integrity Audit", "status": "In Progress", "category": "Governance", "owner": "Independent Auditors", "summary": "Review of module licensing compliance, attribution accuracy, and contributor credit verification.", "published": "2026-03-15"},
+      {"id": "EDU-R03", "title": "Cross-Border Credential Pilot Review", "status": "Draft", "category": "Research", "owner": "Mira Chen", "summary": "Assessment of reciprocal recognition agreements with three partner jurisdictions.", "published": "2026-04-10"}
     ]
   }
 }

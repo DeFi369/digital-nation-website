@@ -119,67 +119,72 @@
   </header>
 
   <main id="main">
-    <section class="page">
-      <div class="container">
-        <h1>Sustainability Operations &amp; Reporting</h1>
-        <p class="lead">
-          Measuring and improving Aetheria’s operational footprint, infrastructure sustainability, and
-          real-world impact — with transparent v3.0 reporting and green infrastructure roadmaps under the
-          Secretary of Infrastructure &amp; Human Services.
-        </p>
+      <section class="page">
+        <div class="container">
+          <h1>Sustainability Operations & Reporting</h1>
+          <p class="lead">
+            Measuring and improving Aetheria's operational footprint, infrastructure sustainability, and
+            real-world impact — with transparent v3.0 reporting and green infrastructure roadmaps under the
+            Secretary of Infrastructure & Human Services.
+          </p>
 
-        <div class="activity-filters" id="sustainability-filters" aria-label="Filter sustainability directory">
-          <label for="sustainability-search" class="sr-only">Search sustainability operations, impact, or infrastructure</label>
-          <input type="search" id="sustainability-search" class="activity-filter" placeholder="Search operations, impact, or infrastructure..." autocomplete="off" />
-          <select id="sustainability-scope" class="activity-select" aria-label="Filter by scope">
-            <option value="all">All Scopes</option>
-            <option value="operations">Operations</option>
-            <option value="impact">Impact Reporting</option>
-            <option value="greenInfrastructure">Green Infrastructure</option>
-          </select>
+          <div class="ministerial-context">
+            <h3>Ministerial Mandate</h3>
+            <p>The Sustainability Operations portfolio translates environmental policy into measurable outcomes — monitoring node efficiency, publishing impact reports, and planning green infrastructure deployments. All operations are governed by threshold-based alerts, public disclosure standards, and build-pipeline optimisation for minimal rebuilds and greener hosting choices.</p>
+          </div>
+
+          <div class="activity-filters" id="sustainability-filters" aria-label="Filter sustainability directory">
+            <label for="sustainability-search" class="sr-only">Search sustainability operations, impact, or infrastructure</label>
+            <input type="search" id="sustainability-search" class="activity-filter" placeholder="Search operations, impact, or infrastructure..." autocomplete="off" />
+            <select id="sustainability-scope" class="activity-select" aria-label="Filter by scope">
+              <option value="all">All Scopes</option>
+              <option value="operations">Operations</option>
+              <option value="impact">Impact Reporting</option>
+              <option value="greenInfrastructure">Green Infrastructure</option>
+            </select>
+          </div>
+
+          <h2>Ministry Summary</h2>
+          <div id="sustainability-stats" class="stats-grid" aria-live="polite" aria-label="Sustainability summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+          </div>
+
+          <h2>Strategic Pillars</h2>
+          <div id="sustainability-pillars" class="pillars-grid" aria-live="polite" aria-label="Sustainability strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+
+          <h2>Operational Sustainability</h2>
+          <div id="sustainability-operations-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Operational sustainability feed">
+            <div class="activity-loading" aria-hidden="true">Loading operational sustainability...</div>
+          </div>
+
+          <h2>Impact Reporting</h2>
+          <div id="sustainability-impact-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Impact reporting feed">
+            <div class="activity-loading" aria-hidden="true">Loading impact reporting...</div>
+          </div>
+
+          <h2>Green Infrastructure</h2>
+          <div id="sustainability-infrastructure-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Green infrastructure feed">
+            <div class="activity-loading" aria-hidden="true">Loading green infrastructure...</div>
+          </div>
+
+          <h2>Directory</h2>
+          <div id="sustainability-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Sustainability directory">
+            <p class="activity-empty">Use the filters above to search across operations, impact, and green infrastructure.</p>
+          </div>
+
+          <h2>Cross-Links</h2>
+          <p>Sustainability reporting connects to <a href="environment.html">Environment</a> policy, <a href="infrastructure.html">Infrastructure</a> planning, and <a href="engage.html">Engage</a> participation.</p>
+
+          <div class="cta">
+            <a class="button primary" href="environment.html">Environment Policy</a>
+            <a class="button" href="infrastructure.html">Infrastructure</a>
+            <a class="button" href="engage.html">Engage</a>
+          </div>
         </div>
-
-        <h2>Ministry Summary</h2>
-        <div id="sustainability-stats" class="stats-grid" aria-live="polite" aria-label="Sustainability summary statistics">
-          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
-        </div>
-
-        <h2>Strategic Pillars</h2>
-        <div id="sustainability-pillars" class="pillars-grid" aria-live="polite" aria-label="Sustainability strategic pillars">
-          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
-        </div>
-
-        <h2>Operational Sustainability</h2>
-        <div id="sustainability-operations-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Operational sustainability feed">
-          <div class="activity-loading" aria-hidden="true">Loading operational sustainability...</div>
-        </div>
-
-        <h2>Impact Reporting</h2>
-        <div id="sustainability-impact-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Impact reporting feed">
-          <div class="activity-loading" aria-hidden="true">Loading impact reporting...</div>
-        </div>
-
-        <h2>Green Infrastructure</h2>
-        <div id="sustainability-infrastructure-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Green infrastructure feed">
-          <div class="activity-loading" aria-hidden="true">Loading green infrastructure...</div>
-        </div>
-
-        <h2>Directory</h2>
-        <div id="sustainability-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Sustainability directory">
-          <p class="activity-empty">Use the filters above to search across operations, impact, and green infrastructure.</p>
-        </div>
-
-        <h2>Cross-Links</h2>
-        <p>Sustainability reporting connects to <a href="environment.html">Environment</a> policy, <a href="infrastructure.html">Infrastructure</a> planning, and <a href="engage.html">Engage</a> participation.</p>
-
-        <div class="cta">
-          <a class="button primary" href="environment.html">Environment Policy</a>
-          <a class="button" href="infrastructure.html">Infrastructure</a>
-          <a class="button" href="engage.html">Engage</a>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
   <div class="cityscape" aria-hidden="true"></div>
   <footer class="site-footer">
