@@ -31,7 +31,7 @@
       "id": "dynaep",
       "name": "dynAEP",
       "fullName": "Dynamic Agent Element Protocol",
-      "version": "1.1",
+      "version": "1.0",
       "status": "active",
       "source": "repos/dynAEP/README.md",
       "summary": "Runtime event governance for multi-agent systems via a deterministic Action Lattice, temporal authority, and perception governance.",
@@ -70,51 +70,15 @@
         "YAML-native instruction format",
         "Provenance and proof chain tracking"
       ]
-    },
-    {
-      "id": "aep-conformance",
-      "name": "aep-conformance",
-      "fullName": "AEP Conformance Test Suite",
-      "version": "pre-v1.0",
-      "status": "scaffolding",
-      "source": "repos/aep-conformance/README.md",
-      "summary": "Test battery determining AEP-compliance claims. Currently scaffolding with tests under active authoring.",
-      "components": [
-        "Test suite",
-        "Conformance runner"
-      ],
-      "highlights": [
-        "Gates reserved naming: AEP, AEP-compliant, dynAEP",
-        "Fair Core License 1.0, converts to Apache 2.0"
-      ]
-    },
-    {
-      "id": "aep-signatures",
-      "name": "aep-signatures",
-      "fullName": "AEP Signatures",
-      "version": "pre-v1.0",
-      "status": "active",
-      "source": "repos/aep-signatures/README.md",
-      "summary": "Detection signatures and trust-bundle validation for the Agent Element Protocol ecosystem.",
-      "components": [
-        "YAML signatures",
-        "Schemas",
-        "Trust bundle",
-        "Verifier tooling"
-      ],
-      "highlights": [
-        "Dual licensing: content CC-BY-SA 4.0, tooling Apache 2.0",
-        "EPSCOM-maintained signature set"
-      ]
     }
   ],
   "metrics": {
     "aepVersion": "2.8.0",
-    "dynaepVersion": "1.1",
+    "dynaepVersion": "1.0",
     "gapStatus": "pre-v1.0",
-    "conformanceStatus": "scaffolding",
+    "conformanceStatus": "pre-v1.0",
     "signatureStatus": "pre-v1.0",
-    "totalComponents": 21,
+    "totalComponents": 17,
     "lastAudit": "2026-07-03"
   },
   "citizenBenefits": [

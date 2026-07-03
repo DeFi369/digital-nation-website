@@ -1,0 +1,89 @@
+{
+  "generated": "2026-07-03",
+  "ministry": "Secretary of Technology & Innovation",
+  "site": {
+    "pageCount": 65,
+    "latestCommit": "1fb8e8d",
+    "latestCommitDate": "2026-07-03",
+    "latestCommitMessage": "Add Citizen Press section to homepage and keep Engagement nav link",
+    "phase7Status": "implementation expansion complete",
+    "phase8Status": "cross-repo integration started",
+    "protocolPageStatus": "protocol-status.html live with dynamic AEP/dynAEP/GAP data"
+  },
+  "components": [
+    {
+      "id": "aep",
+      "name": "AEP",
+      "fullName": "Agent Element Protocol",
+      "version": "2.8.0",
+      "stage": "active-release",
+      "summary": "Mandatory local Base Node, PQ-encrypted lattice transport, one hyperlattice per governed system, Composer Lite on :8424, and public CC-01..CC-15 conformance battery.",
+      "knownIssues": [
+        "Composer Lite is experimental",
+        "NPM registry distribution is forbidden; Docker or verified source clone required"
+      ],
+      "lastUpdated": "2026-07-03"
+    },
+    {
+      "id": "dynaep",
+      "name": "dynAEP",
+      "fullName": "Dynamic Agent Element Protocol",
+      "version": "1.0",
+      "stage": "active-release",
+      "summary": "Runtime event governance via deterministic Action Lattice with partial-order validation, temporal authority, perception governance, and MCP server.",
+      "knownIssues": [
+        "GAP Runtime is a closed paid product; dynAEP is the open runtime"
+      ],
+      "lastUpdated": "2026-07-03"
+    },
+    {
+      "id": "gap",
+      "name": "GAP",
+      "fullName": "Governed Agentic Programming",
+      "version": "pre-v1.0",
+      "stage": "pre-release",
+      "summary": "Native YAML instruction language for governed agency with three-layer enforcement: constrained decoding, structural validation, and governance lattice.",
+      "knownIssues": [
+        "Stable spec not yet finalized; meta-schema iterations in progress",
+        "No v1.0 release tag"
+      ],
+      "lastUpdated": "2026-07-03"
+    },
+    {
+      "id": "aep-conformance",
+      "name": "AEP Conformance",
+      "fullName": "AEP Conformance Test Suite",
+      "version": "pre-v1.0",
+      "stage": "scaffolding",
+      "summary": "Test battery that determines AEP-compliance eligibility; runner scaffolding under active authoring.",
+      "knownIssues": [
+        "Runner scaffolding lands in a forthcoming commit",
+        "Conformance report submission format not yet published"
+      ],
+      "lastUpdated": "2026-07-03"
+    },
+    {
+      "id": "aep-signatures",
+      "name": "AEP Signatures",
+      "fullName": "AEP Detection Signatures",
+      "version": "pre-v1.0",
+      "stage": "format-finalization",
+      "summary": "Detection signatures curated by EPSCOM; YAML rules with JSON Schema validation and signed trust bundles.",
+      "knownIssues": [
+        "Signature format and trust-bundle layout still being finalized",
+        "Reference subscriber implementation not yet shipped"
+      ],
+      "lastUpdated": "2026-07-03"
+    }
+  ],
+  "metrics": {
+    "aepVersion": "2.8.0",
+    "dynaepVersion": "1.0",
+    "gapStatus": "pre-v1.0",
+    "conformanceStatus": "pre-v1.0",
+    "signatureStatus": "pre-v1.0",
+    "knownIssueCount": 7,
+    "lastAudit": "2026-07-03"
+  },
+  "citizenAttestation": "The Digital Nation protocol stack is sovereign, deterministic, and auditable. Citizens can rely on transparent governance, auditable automation, and resilient infrastructure without vendor lock-in."
+}
