@@ -1,69 +1,38 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Infrastructure & Human Services",
-  "count": 3,
+  "ministry": "Infrastructure & Human Services — Infrastructure",
+  "secretary": "Secretary of Infrastructure & Human Services",
+  "count": 10,
+  "stats": {
+    "operationalServices": 7,
+    "civicTechProjects": 4,
+    "nodeUptimePercent": 99.97,
+    "edgeLocations": 16,
+    "backupLedgerLagMs": 120
+  },
+  "pillars": [
+    {"id":"INF-PIL-01","title":"Node Resilience","summary":"Distributed node grid for protocol validation, failover routing, and secure key ceremonies with redundant path diversity."},
+    {"id":"INF-PIL-02","title":"Edge Delivery","summary":"Regional edge-cache nodes reducing latency on passport, registry, and engage interactions."},
+    {"id":"INF-PIL-03","title":"Civic Service Mesh","summary":"Offline-capable service mesh connecting health, registry, and engage on low-connectivity networks."},
+    {"id":"INF-PIL-04","title":"Data Durability","summary":"Time-locked replica ledgers for disaster recovery and compliance audit chains."},
+    {"id":"INF-PIL-05","title":"Inter-Region Replication","summary":"Multi-region replication protocol for stronger defence against regional outages."}
+  ],
   "entries": {
     "services": [
-      {
-        "id": "INF-SVC-01",
-        "title": "Primary Node Grid",
-        "status": "Operational",
-        "category": "Infrastructure",
-        "owner": "Kai Voss",
-        "summary": "Distributed node grid for protocol validation, failover routing, and secure key ceremonies."
-      },
-      {
-        "id": "INF-SVC-02",
-        "title": "Edge Cache Layer",
-        "status": "Operational",
-        "category": "Infrastructure",
-        "owner": "Mira Chen",
-        "summary": "Regional edge-cache nodes reducing latency on passport, registry, and engage interactions."
-      },
-      {
-        "id": "INF-SVC-03",
-        "title": "Backup Ledger",
-        "status": "Active",
-        "category": "Infrastructure",
-        "owner": "Aria Solenne",
-        "summary": "Time-locked replica ledgers for disaster recovery and compliance audit chains."
-      }
+      {"id":"INF-SVC-01","title":"Primary Node Grid","status":"Operational","category":"Infrastructure","owner":"Kai Voss","summary":"Distributed node grid for protocol validation, failover routing, and secure key ceremonies."},
+      {"id":"INF-SVC-02","title":"Edge Cache Layer","status":"Operational","category":"Infrastructure","owner":"Mira Chen","summary":"Regional edge-cache nodes reducing latency on passport, registry, and engage interactions."},
+      {"id":"INF-SVC-03","title":"Backup Ledger","status":"Active","category":"Infrastructure","owner":"Aria Solenne","summary":"Time-locked replica ledgers for disaster recovery and compliance audit chains."},
+      {"id":"INF-SVC-04","title":"Network Operations Centre","status":"Operational","category":"Infrastructure","owner":"Orion Vale","summary":"24x7 monitoring, incident intake, and runbook enforcement for infrastructure services."}
     ],
     "civicTech": [
-      {
-        "id": "INF-TECH-01",
-        "title": "Citizen Console",
-        "status": "Operational",
-        "category": "Civic Tech",
-        "owner": "Nia Rahman",
-        "summary": "Single sign-on surface for registry, engage, passport, and mission workflows."
-      },
-      {
-        "id": "INF-TECH-02",
-        "title": "Assembly Session Bus",
-        "status": "Beta",
-        "category": "Civic Tech",
-        "owner": "Aria Solenne",
-        "summary": "Real-time session bus for debates, votes, and amendment streaming with archival guarantees."
-      }
+      {"id":"INF-TECH-01","title":"Citizen Console","status":"Operational","category":"Civic Tech","owner":"Nia Rahman","summary":"Single sign-on surface for registry, engage, passport, and mission workflows."},
+      {"id":"INF-TECH-02","title":"Assembly Session Bus","status":"Beta","category":"Civic Tech","owner":"Aria Solenne","summary":"Real-time session bus for debates, votes, and amendment streaming with archival guarantees."},
+      {"id":"INF-TECH-03","title":"Civic Analytics Pipeline","status":"Planning","category":"Civic Tech","owner":"Kai Voss","summary":"Aggregated analytics for service usage, performance, and citizen engagement patterns."}
     ],
     "projects": [
-      {
-        "id": "INF-PROJ-01",
-        "title": "Interplanetary Replication",
-        "status": "Planning",
-        "category": "Project",
-        "lead": "Kai Voss",
-        "summary": "Multi-region replication protocol targeting stronger defence against regional outages."
-      },
-      {
-        "id": "INF-PROJ-02",
-        "title": "Mobile Service Mesh",
-        "status": "Planning",
-        "category": "Project",
-        "lead": "Mira Chen",
-        "summary": "Offline-capable service mesh for health, registry, and engage on low-connectivity networks."
-      }
+      {"id":"INF-PROJ-01","title":"Interplanetary Replication","status":"Planning","category":"Project","lead":"Kai Voss","summary":"Multi-region replication protocol targeting stronger defence against regional outages."},
+      {"id":"INF-PROJ-02","title":"Mobile Service Mesh","status":"Planning","category":"Project","lead":"Mira Chen","summary":"Offline-capable service mesh for health, registry, and engage on low-connectivity networks."},
+      {"id":"INF-PROJ-03","title":"Edge Compute Expansion","status":"Active","category":"Project","lead":"Nia Rahman","summary":"Expanding edge compute capacity to support latency-sensitive civic services."}
     ]
   }
 }

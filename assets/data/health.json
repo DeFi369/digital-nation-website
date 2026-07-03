@@ -1,51 +1,37 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Infrastructure & Human Services",
-  "count": 2,
+  "ministry": "Infrastructure & Human Services — Health",
+  "secretary": "Secretary of Infrastructure & Human Services",
+  "count": 9,
+  "stats": {
+    "activeServices": 6,
+    "wellnessPrograms": 4,
+    "citizenRecords": 12400,
+    "telehealthSessions": 892,
+    "emergencyAlertsIssued": 24
+  },
+  "pillars": [
+    {"id":"HLT-PIL-01","title":"Privacy-Preserving Health Records","summary":"Identity-anchored health record layer with auditable consent controls and on-protocol access logs."},
+    {"id":"HLT-PIL-02","title":"Secure Telehealth Access","summary":"Low-bandwidth audio and video gateway with metadata minimisation and verified provider identities."},
+    {"id":"HLT-PIL-03","title":"Emergency Response Readiness","summary":"Aetheria-wide broadcast and location-verified alerting for regional health incidents."},
+    {"id":"HLT-PIL-04","title":"Accessible Wellness Tooling","summary":"Theme, motion, and readability tooling designed for neurodiverse citizens and low-vision users."},
+    {"id":"HLT-PIL-05","title":"Civic Health Interoperability","summary":"Cross-ministry integration of health verification with citizenship and engagement pathways."}
+  ],
   "entries": {
     "services": [
-      {
-        "id": "HLT-SVC-01",
-        "title": "Citizen Health Record",
-        "status": "Active",
-        "category": "Service",
-        "owner": "Nia Rahman",
-        "summary": "Privacy-preserving health record layer for identity-anchored citizens with auditable consent controls."
-      },
-      {
-        "id": "HLT-SVC-02",
-        "title": "Telehealth Gateway",
-        "status": "Active",
-        "category": "Service",
-        "owner": "Kai Voss",
-        "summary": "Secure audio and video gateway for low-bandwidth environments with metadata minimization."
-      },
-      {
-        "id": "HLT-SVC-03",
-        "title": "Emergency Response Protocol",
-        "status": "Planning",
-        "category": "Service",
-        "owner": "Aria Solenne",
-        "summary": "Aetheria-wide emergency broadcast and location-verified alerting for regional incidents."
-      }
+      {"id":"HLT-SVC-01","title":"Citizen Health Record","status":"Active","category":"Service","owner":"Nia Rahman","summary":"Privacy-preserving health record layer for identity-anchored citizens with auditable consent controls."},
+      {"id":"HLT-SVC-02","title":"Telehealth Gateway","status":"Active","category":"Service","owner":"Kai Voss","summary":"Secure audio and video gateway for low-bandwidth environments with metadata minimization."},
+      {"id":"HLT-SVC-03","title":"Emergency Response Protocol","status":"Planning","category":"Service","owner":"Aria Solenne","summary":"Aetheria-wide emergency broadcast and location-verified alerting for regional incidents."},
+      {"id":"HLT-SVC-04","title":"Pharmacy Verification Ledger","status":"Active","category":"Service","owner":"Mira Chen","summary":"On-protocol ledger for prescription authenticity and controlled substance tracking."}
     ],
     "wellness": [
-      {
-        "id": "HLT-WEL-01",
-        "title": "Mindful Protocol",
-        "status": "Active",
-        "category": "Wellness",
-        "lead": "Nia Rahman",
-        "summary": "Guided digital detox and workflow hygiene program for node operators and governance contributors."
-      },
-      {
-        "id": "HLT-WEL-02",
-        "title": "Accessible Interfaces",
-        "status": "Active",
-        "category": "Wellness",
-        "lead": "Mira Chen",
-        "summary": "Theme, motion, and readability tooling designed for neurodiverse citizens and low-vision users."
-      }
+      {"id":"HLT-WEL-01","title":"Mindful Protocol","status":"Active","category":"Wellness","lead":"Nia Rahman","summary":"Guided digital detox and workflow hygiene program for node operators and governance contributors."},
+      {"id":"HLT-WEL-02","title":"Accessible Interfaces","status":"Active","category":"Wellness","lead":"Mira Chen","summary":"Theme, motion, and readability tooling designed for neurodiverse citizens and low-vision users."},
+      {"id":"HLT-WEL-03","title":"Nutrition &amp; Activity Tracker","status":"Beta","category":"Wellness","lead":"Aria Solenne","summary":"Privacy-respecting activity and nutrition tracking connected to personalised wellness guidance."}
+    ],
+    "reports": [
+      {"id":"HLT-R01","title":"Q1 Telehealth Utilisation Review","status":"Published","category":"Audit","owner":"Health Operations","summary":"Review of telehealth session volumes, latency, and citizen satisfaction scores."},
+      {"id":"HLT-R02","title":"Health Equity Gap Analysis","status":"In Progress","category":"Research","owner":"Aria Solenne","summary":"Analysis of service access parity across demographics and connectivity tiers."}
     ]
   }
 }

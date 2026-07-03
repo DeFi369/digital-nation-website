@@ -1,85 +1,39 @@
 {
   "generated": "2026-07-02",
   "ministry": "National Broadband & Digital Equity",
-  "count": 3,
+  "secretary": "Secretary of Infrastructure & Human Services",
+  "count": 11,
+  "stats": {
+    "backboneUplinkGbps": 400,
+    "universalServiceMbps": 100,
+    "communityHubs": 24,
+    "devicesDistributed": 6300,
+    "digitalLiteracyGraduates": 2100
+  },
+  "pillars": [
+    {"id":"BW-PIL-01","title":"Universal Coverage","summary":"High-capacity fiber backbone and wireless mesh ensuring connectivity for all citizens and businesses."},
+    {"id":"BW-PIL-02","title":"Affordable Access","summary":"Income-tiered pricing and subsidised device programmes so connectivity costs never block participation."},
+    {"id":"BW-PIL-03","title":"Digital Equity","summary":"Municipal scoring and active interventions to close parity gaps across neighbourhoods and demographics."},
+    {"id":"BW-PIL-04","title":"Community Hubs","summary":"Transformed public spaces with workstations, training rooms, and telehealth kiosks."},
+    {"id":"BW-PIL-05","title":"Literacy Corps","summary":"Volunteer-led workshops teaching essential digital skills, online safety, and civic platform navigation."}
+  ],
   "entries": {
     "coverage": [
-      {
-        "id": "BW-COV-01",
-        "title": "National Fiber Backbone",
-        "status": "Active",
-        "category": "Coverage",
-        "owner": "Kai Voss",
-        "summary": "High-capacity fiber backbone connecting all regional gateways with 400G uplinks and redundant path diversity."
-      },
-      {
-        "id": "BW-COV-02",
-        "title": "Rural Last-Mile Mesh",
-        "status": "Deploying",
-        "category": "Coverage",
-        "owner": "Mira Chen",
-        "summary": "Wireless mesh and satellite backhaul bridging connectivity gaps in remote districts and island communities."
-      },
-      {
-        "id": "BW-COV-03",
-        "title": "Community Wi-Fi Network",
-        "status": "Active",
-        "category": "Coverage",
-        "owner": "Nia Rahman",
-        "summary": "Free municipal Wi-Fi in civic centers, transit hubs, and public health facilities with bandwidth guarantees."
-      }
+      {"id":"BW-COV-01","title":"National Fiber Backbone","status":"Active","category":"Coverage","owner":"Kai Voss","summary":"High-capacity fiber backbone connecting all regional gateways with 400G uplinks and redundant path diversity."},
+      {"id":"BW-COV-02","title":"Rural Last-Mile Mesh","status":"Deploying","category":"Coverage","owner":"Mira Chen","summary":"Wireless mesh and satellite backhaul bridging connectivity gaps in remote districts and island communities."},
+      {"id":"BW-COV-03","title":"Community Wi-Fi Network","status":"Active","category":"Coverage","owner":"Nia Rahman","summary":"Free municipal Wi-Fi in civic centers, transit hubs, and public health facilities with bandwidth guarantees."},
+      {"id":"BW-COV-04","title":"Submarine Cable Redundancy","status":"Active","category":"Coverage","owner":"Orion Vale","summary":"Dual submarine cable landing stations providing inter-region redundancy."}
     ],
     "standards": [
-      {
-        "id": "BW-STD-01",
-        "title": "Universal Service Obligation",
-        "status": "Active",
-        "category": "Standard",
-        "owner": "Aria Solenne",
-        "summary": "Minimum 100 Mbps symmetric service guarantee for all households and small businesses within city limits."
-      },
-      {
-        "id": "BW-STD-02",
-        "title": "Affordable Access Tariff",
-        "status": "Active",
-        "category": "Standard",
-        "owner": "Mira Chen",
-        "summary": "Income-tiered pricing ensuring low-income households pay no more than 2% of income for baseline connectivity."
-      },
-      {
-        "id": "BW-STD-03",
-        "title": "Digital Equity Rating",
-        "status": "Draft",
-        "category": "Standard",
-        "owner": "Kai Voss",
-        "summary": "Municipal scoring system tracking digital access parity across neighborhoods, ages, and ability groups."
-      }
+      {"id":"BW-STD-01","title":"Universal Service Obligation","status":"Active","category":"Standard","owner":"Aria Solenne","summary":"Minimum 100 Mbps symmetric service guarantee for all households and small businesses within city limits."},
+      {"id":"BW-STD-02","title":"Affordable Access Tariff","status":"Active","category":"Standard","owner":"Mira Chen","summary":"Income-tiered pricing ensuring low-income households pay no more than 2% of income for baseline connectivity."},
+      {"id":"BW-STD-03","title":"Digital Equity Rating","status":"Draft","category":"Standard","owner":"Kai Voss","summary":"Municipal scoring system tracking digital access parity across neighborhoods, ages, and ability groups."}
     ],
     "programs": [
-      {
-        "id": "BW-PGM-01",
-        "title": "Device Distribution Program",
-        "status": "Active",
-        "category": "Program",
-        "lead": "Nia Rahman",
-        "summary": "Subsidized device grants for low-income households, students, and seniors with setup and training support."
-      },
-      {
-        "id": "BW-PGM-02",
-        "title": "Digital Literacy Corps",
-        "status": "Planning",
-        "category": "Program",
-        "lead": "Aria Solenne",
-        "summary": "Volunteer-led workshops teaching essential digital skills, online safety, and civic platform navigation."
-      },
-      {
-        "id": "BW-PGM-03",
-        "title": "Connected Community Hubs",
-        "status": "Active",
-        "category": "Program",
-        "lead": "Mira Chen",
-        "summary": "Transformed public spaces into connectivity hubs with workstations, training rooms, and telehealth kiosks."
-      }
+      {"id":"BW-PGM-01","title":"Device Distribution Program","status":"Active","category":"Program","lead":"Nia Rahman","summary":"Subsidized device grants for low-income households, students, and seniors with setup and training support."},
+      {"id":"BW-PGM-02","title":"Digital Literacy Corps","status":"Planning","category":"Program","lead":"Aria Solenne","summary":"Volunteer-led workshops teaching essential digital skills, online safety, and civic platform navigation."},
+      {"id":"BW-PGM-03","title":"Connected Community Hubs","status":"Active","category":"Program","lead":"Mira Chen","summary":"Transformed public spaces into connectivity hubs with workstations, training rooms, and telehealth kiosks."},
+      {"id":"BW-PGM-04","title":"Broadband Adoption Grant","status":"Active","category":"Program","lead":"Orion Vale","summary":"Small grants to community organisations running local connectivity adoption campaigns."}
     ]
   }
 }

@@ -8,148 +8,236 @@
   }
 
   function init() {
-    loadSustainabilityFeeds();
-    setupFilters();
+    setupMenu();
+    liveYear();
+    renderStats();
+    renderPillars();
+    renderOperations();
+    renderImpact();
+    renderGreenInfrastructure();
+    initFilters();
   }
 
-  function loadSustainabilityFeeds() {
-    loadFeed('sustainability-operations-feed', 'assets/data/sustainability.json', 'entries.operations', 'Operational sustainability data is temporarily unavailable.');
-    loadFeed('sustainability-impact-feed', 'assets/data/sustainability.json', 'entries.impact', 'Impact reporting is temporarily unavailable.');
-    loadFeed('sustainability-infrastructure-feed', 'assets/data/sustainability.json', 'entries.greenInfrastructure', 'Green infrastructure projects are temporarily unavailable.');
-  }
-
-  function loadFeed(containerId, dataUrl, path, emptyMessage) {
-    const container = document.getElementById(containerId);
+  /* ---- stats ---- */
+  function renderStats() {
+    const container = document.getElementById('sustainability-stats');
     if (!container) return;
+    fetch('assets/data/sustainability.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        const stats = data.stats || {};
+        var html = '';
+        Object.keys(stats).forEach(function (key) {
+          html += '<div class="stat">' +
+            '<span class="stat-value">' + escapeHtml(String(stats[key])) + '</span>' +
+            '<span class="stat-label">' + escapeHtml(pascalToTitle(key)) + '</span>' +
+          '</div>';
+        });
+        container.innerHTML = html;
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Sustainability summary is temporarily unavailable.</div>';
+      });
+  }
 
-    fetch(dataUrl)
+  function pascalToTitle(value) {
+    return String(value)
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, function (s) { return s.toUpperCase(); })
+      .trim();
+  }
+
+  /* ---- pillars ---- */
+  function renderPillars() {
+    const container = document.getElementById('sustainability-pillars');
+    if (!container) return;
+    fetch('assets/data/sustainability.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
+        container.innerHTML = items.map(function (item) {
+          return '<article class="activity-item pillar">' +
+            '<div class="activity-content">' +
+            '<h3 class="activity-title">' + escapeHtml(String(item.title || '')) + '</h3>' +
+            '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+            '</div>' +
+            '</article>';
+        }).join('');
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Pillar data is temporarily unavailable.</div>';
+      });
+  }
+
+  /* ---- sections ---- */
+  function renderOperations() {
+    loadSection('sustainability-operations-feed', 'operations', 'Operational sustainability');
+  }
+
+  function renderImpact() {
+    loadSection('sustainability-impact-feed', 'impact', 'Impact reporting');
+  }
+
+  function renderGreenInfrastructure() {
+    loadSection('sustainability-infrastructure-feed', 'greenInfrastructure', 'Green infrastructure');
+  }
+
+  /* ---- shared loader ---- */
+  function loadSection(feedId, sectionKey, placeholderText) {
+    var feed = document.getElementById(feedId);
+    if (!feed) return;
+    feed.innerHTML = '<div class="activity-loading" aria-hidden="true">Loading ' + escapeHtml(placeholderText || sectionKey) + '...</div>';
+
+    fetch('assets/data/sustainability.json')
       .then(function (response) {
         if (!response.ok) throw new Error('sustainability data unavailable');
         return response.json();
       })
       .then(function (data) {
-        const items = getNestedArray(data, path);
-        renderList(container, items, emptyMessage, path);
+        var entries = data.entries && data.entries[sectionKey] ? data.entries[sectionKey] : [];
+        var items = Array.isArray(entries) ? entries.slice() : [];
+        renderList(feed, items);
       })
       .catch(function () {
-        container.innerHTML = '<div class="activity-empty">' + escapeHtml(emptyMessage || 'Feed is temporarily unavailable.') + '</div>';
+        feed.innerHTML = '<div class="activity-empty">' + escapeHtml(placeholderText || sectionKey) + ' are temporarily unavailable.</div>';
       });
   }
 
-  function getNestedArray(data, path) {
-    const parts = String(path).split('.');
-    let current = data;
-    for (let i = 0; i < parts.length; i++) {
-      if (current == null) return [];
-      current = current[parts[i]];
-    }
-    return Array.isArray(current) ? current.slice() : [];
-  }
-
-  function setupFilters() {
-    const searchField = document.getElementById('sustainability-search');
-    const categoryField = document.getElementById('sustainability-category');
-    const statusField = document.getElementById('sustainability-status');
-
-    if (!searchField && !categoryField && !statusField) return;
-
-    const operationsFeed = document.getElementById('sustainability-operations-feed');
-    const impactFeed = document.getElementById('sustainability-impact-feed');
-    const infrastructureFeed = document.getElementById('sustainability-infrastructure-feed');
-
-    let operationsItems = [];
-    let impactItems = [];
-    let infrastructureItems = [];
-
-    function refreshAllItems() {
-      const container = operationsFeed || impactFeed || infrastructureFeed;
-      fetch('assets/data/sustainability.json')
-        .then(function (response) {
-          if (!response.ok) throw new Error('sustainability data unavailable');
-          return response.json();
-        })
-        .then(function (data) {
-          operationsItems = getNestedArray(data, 'entries.operations');
-          impactItems = getNestedArray(data, 'entries.impact');
-          infrastructureItems = getNestedArray(data, 'entries.greenInfrastructure');
-          renderAll();
-        })
-        .catch(function () {});
-    }
-
-    function renderAll() {
-      renderList(operationsFeed, filterItems(operationsItems), 'No matching operations entries found.', 'entries.operations');
-      renderList(impactFeed, filterItems(impactItems), 'No matching impact entries found.', 'entries.impact');
-      renderList(infrastructureFeed, filterItems(infrastructureItems), 'No matching infrastructure entries found.', 'entries.greenInfrastructure');
-    }
-
-    function filterItems(items) {
-      const term = searchField ? searchField.value.trim().toLowerCase() : '';
-      const category = categoryField ? categoryField.value : 'all';
-      const status = statusField ? statusField.value : 'all';
-
-      return items.filter(function (entry) {
-        const matchesTerm =
-          !term ||
-          String(entry.title || '').toLowerCase().includes(term) ||
-          String(entry.id || '').toLowerCase().includes(term) ||
-          String(entry.owner || entry.lead || '').toLowerCase().includes(term);
-        const matchesCategory = category === 'all' || entry.category === category;
-        const matchesStatus = status === 'all' || entry.status === status;
-        return matchesTerm && matchesCategory && matchesStatus;
-      });
-    }
-
-    if (searchField) {
-      searchField.addEventListener('input', function () {
-        renderAll();
-      });
-    }
-    if (categoryField) {
-      categoryField.addEventListener('change', function () {
-        renderAll();
-      });
-    }
-    if (statusField) {
-      statusField.addEventListener('change', function () {
-        renderAll();
-      });
-    }
-
-    refreshAllItems();
-  }
-
-  function renderList(container, items, emptyMessage, path) {
-    if (!container) return;
+  /* ---- render list ---- */
+  function renderList(container, items) {
     if (!items.length) {
-      container.innerHTML = '<div class="activity-empty">' + escapeHtml(emptyMessage || 'No matches found.') + '</div>';
+      container.innerHTML = '<div class="activity-empty">No matching entries found.</div>';
       return;
     }
+    container.innerHTML = items.map(function (item) {
+      var statusClass = 'status-' + slugify(String(item.status || 'unknown'));
+      var extra = buildExtraMeta(item);
+      return '<article class="activity-item" role="article" aria-label="' + escapeHtml(String(item.id || item.title || '')) + '">' +
+        '<div class="activity-content">' +
+          '<h3 class="activity-title">' + escapeHtml(String(item.title || 'Untitled')) + '</h3>' +
+          '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+          '<div class="activity-meta">' +
+            '<span class="activity-type">' + escapeHtml(String(item.category || 'Program')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.id || '')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.owner || item.lead || '—')) + '</span>' +
+          '</div>' +
+          (extra ? '<div class="activity-meta economics-meta">' + extra + '</div>' : '') +
+        '</div>' +
+        '<div class="activity-sidebar">' +
+          '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '—')) + '</span>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
 
-    container.innerHTML = items
-      .map(function (item) {
-        const statusClass = 'status-' + slugify(String(item.status || 'unknown'));
-        const categoryClass = 'category-' + slugify(String(item.category || 'general'));
-        return (
-          '<article class="activity-item" role="article" aria-label="' + escapeHtml(String(item.title || item.id || '')) + '">' +
-            '<div class="activity-content">' +
-              '<h3 class="activity-title">' + escapeHtml(String(item.title || 'Untitled')) + '</h3>' +
-              '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
-              '<div class="activity-meta">' +
-                '<span class="activity-type ' + categoryClass + '">' + escapeHtml(String(item.category || 'Program')) + '</span>' +
-                '<span class="activity-divider">·</span>' +
-                '<span>' + escapeHtml(String(item.id || '')) + '</span>' +
-                '<span class="activity-divider">·</span>' +
-                '<span>' + escapeHtml(String(item.owner || item.lead || '—')) + '</span>' +
-              '</div>' +
-            '</div>' +
-            '<div class="activity-sidebar">' +
-              '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '')) + '</span>' +
-            '</div>' +
-          '</article>'
-        );
+  function buildExtraMeta(item) {
+    var parts = [];
+    if (item.budget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.budget)) + '</span>');
+    if (item.participants) parts.push('<span class="metric">Participants: ' + escapeHtml(String(item.participants)) + '</span>');
+    if (item.published) parts.push('<span class="meta-date">Published: ' + escapeHtml(String(item.published)) + '</span>');
+    return parts.join('<span class="activity-divider">·</span>');
+  }
+
+  /* ---- filters ---- */
+  function initFilters() {
+    var searchField = document.getElementById('sustainability-search');
+    var scopeField = document.getElementById('sustainability-scope');
+    if (!searchField || !scopeField) return;
+
+    var cachedData = null;
+    fetch('assets/data/sustainability.json')
+      .then(function (res) {
+        return res.json();
       })
-      .join('');
+      .then(function (data) {
+        cachedData = data;
+      })
+      .catch(function () {
+        cachedData = null;
+      });
+
+    function applyFilter() {
+      if (!cachedData) return;
+      var term = searchField.value.trim().toLowerCase();
+      var scope = scopeField.value;
+
+      var items = [];
+      if (scope === 'all' || scope === 'operations') {
+        (cachedData.entries && cachedData.entries.operations || []).forEach(function (entry) {
+          items.push(entry);
+        });
+      }
+      if (scope === 'all' || scope === 'impact') {
+        (cachedData.entries && cachedData.entries.impact || []).forEach(function (entry) {
+          items.push(entry);
+        });
+      }
+      if (scope === 'all' || scope === 'greenInfrastructure') {
+        (cachedData.entries && cachedData.entries.greenInfrastructure || []).forEach(function (entry) {
+          items.push(entry);
+        });
+      }
+
+      var filtered = items.filter(function (entry) {
+        var searchable =
+          (entry.title || '') + ' ' +
+          (entry.id || '') + ' ' +
+          (entry.summary || '') + ' ' +
+          (entry.category || '') + ' ' +
+          (entry.owner || '') + ' ' +
+          (entry.status || '');
+        return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
+      });
+
+      renderMixedList('sustainability-mixed-feed', filtered);
+    }
+
+    searchField.addEventListener('input', function () { applyFilter(); });
+    scopeField.addEventListener('change', function () { applyFilter(); });
+  }
+
+  function renderMixedList(feedId, items) {
+    var feed = document.getElementById(feedId);
+    if (!feed) return;
+    if (!items.length) {
+      feed.innerHTML = '<div class="activity-empty">No matching entries found.</div>';
+      return;
+    }
+    renderList(feed, items);
+  }
+
+  /* ---- menu / year ---- */
+  function setupMenu() {
+    var menuButton = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.menu');
+    if (!menuButton || !menu) return;
+    menuButton.addEventListener('click', function () {
+      var open = menu.dataset.open === 'true';
+      menu.dataset.open = String(!open);
+      menu.setAttribute('aria-hidden', String(open));
+      menuButton.setAttribute('aria-expanded', String(!open));
+      if (!open) {
+        var firstLink = menu.querySelector('a');
+        if (firstLink) setTimeout(function () { firstLink.focus(); }, 0);
+      }
+    });
+    menu.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.dataset.open === 'true') {
+        menu.dataset.open = 'false';
+        menu.setAttribute('aria-hidden', 'true');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.focus();
+      }
+    });
+  }
+
+  function liveYear() {
+    try {
+      var yearEl = document.querySelector('[data-year]');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    } catch {}
   }
 
   function escapeHtml(value) {
@@ -157,7 +245,8 @@
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   function slugify(value) {

@@ -1,53 +1,36 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Sustainability Operations",
-  "count": 6,
+  "ministry": "Sustainability Operations & Reporting",
+  "secretary": "Secretary of Infrastructure & Human Services",
+  "count": 8,
+  "stats": {
+    "operationalPrograms": 5,
+    "impactReportsPublished": 4,
+    "greenNodesDeployed": 8,
+    "coverageTargetPercent": 94,
+    "wasteReductionPercent": 18
+  },
+  "pillars": [
+    {"id":"SUS-PIL-01","title":"Operational Efficiency","summary":"Continuous monitoring and optimisation of node energy, throughput, and hardware utilisation with threshold-based governance alerts."},
+    {"id":"SUS-PIL-02","title":"Impact Transparency","summary":"Public reporting of sustainability metrics, waste reductions, and resource resets aligned to v3.0 disclosure standards."},
+    {"id":"SUS-PIL-03","title":"Green Infrastructure Planning","summary":"Regional renewable-energy preference mapping and low-power service mesh design for civic workloads."},
+    {"id":"SUS-PIL-04","title":"Waste Reduction","summary":"Systemic reduction of operational waste across node maintenance, documentation, and civic logistics."},
+    {"id":"SUS-PIL-05","title":"Sustainable Deployment","summary":"Build and release pipelines optimised for minimal rebuilds, smaller artifacts, and greener hosting choices."}
+  ],
   "entries": {
     "operations": [
-      {
-        "id": "SUS-OPS-01",
-        "title": "Node Efficiency Monitoring",
-        "status": "Operational",
-        "category": "Operations",
-        "owner": "Mira Chen",
-        "summary": "Continuous monitoring of node energy, throughput, and hardware utilization with threshold-based alerts."
-      },
-      {
-        "id": "SUS-OPS-02",
-        "title": "Sustainable Deployment Pipeline",
-        "status": "Beta",
-        "category": "Operations",
-        "owner": "Kai Voss",
-        "summary": "Build and release pipelines optimized for minimal rebuilds, smaller artifacts, and greener hosting choices."
-      }
+      {"id":"SUS-OPS-01","title":"Node Efficiency Monitoring","status":"Operational","category":"Operations","owner":"Mira Chen","summary":"Continuous monitoring of node energy, throughput, and hardware utilization with threshold-based alerts."},
+      {"id":"SUS-OPS-02","title":"Sustainable Deployment Pipeline","status":"Beta","category":"Operations","owner":"Kai Voss","summary":"Build and release pipelines optimized for minimal rebuilds, smaller artifacts, and greener hosting choices."},
+      {"id":"SUS-OPS-03","title":"Workload Scheduling Optimisation","status":"Planning","category":"Operations","owner":"Orion Vale","summary":"Schedule civic workloads to align with renewable-energy availability windows."}
     ],
     "impact": [
-      {
-        "id": "SUS-IMP-01",
-        "title": "Annual Impact Report",
-        "status": "Published",
-        "category": "Reporting",
-        "lead": "Aria Solenne",
-        "summary": "Aggregates operational efficiency changes, waste reductions, and green protocol adoption metrics across services."
-      }
+      {"id":"SUS-IMP-01","title":"Annual Impact Report","status":"Published","category":"Reporting","lead":"Aria Solenne","summary":"Aggregates operational efficiency changes, waste reductions, and green protocol adoption metrics across services."},
+      {"id":"SUS-IMP-02","title":"Q2 Efficiency Snapshot","status":"In Review","category":"Reporting","lead":"Kai Voss","summary":"Midyear snapshot of node efficiency deltas and green protocol adoption progress."}
     ],
     "greenInfrastructure": [
-      {
-        "id": "SUS-GI-01",
-        "title": "Regional Green Node Pools",
-        "status": "Planning",
-        "category": "Infrastructure",
-        "lead": "Nia Rahman",
-        "summary": "Preference map for renewable-energy-first regions, with deployment scheduling tied to availability and policy thresholds."
-      },
-      {
-        "id": "SUS-GI-02",
-        "title": "Low-Power Service Mesh",
-        "status": "Planning",
-        "category": "Infrastructure",
-        "lead": "Orion Vale",
-        "summary": "Service mesh design targeting reduced idle power draw and adaptive scaling for civic workloads with variable demand."
-      }
+      {"id":"SUS-GI-01","title":"Regional Green Node Pools","status":"Planning","category":"Infrastructure","lead":"Nia Rahman","summary":"Preference map for renewable-energy-first regions, with deployment scheduling tied to availability and policy thresholds."},
+      {"id":"SUS-GI-02","title":"Low-Power Service Mesh","status":"Planning","category":"Infrastructure","lead":"Orion Vale","summary":"Service mesh design targeting reduced idle power draw and adaptive scaling for civic workloads with variable demand."},
+      {"id":"SUS-GI-03","title":"Edge Energy-Aware Routing","status":"Active","category":"Infrastructure","lead":"Mira Chen","summary":"Routing layer that shifts traffic toward nodes with surplus renewable energy."}
     ]
   }
 }

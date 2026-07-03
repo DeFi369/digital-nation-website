@@ -1,61 +1,42 @@
 {
   "generated": "2026-07-02",
   "ministry": "Environment & Sustainability",
-  "count": 6,
+  "secretary": "Secretary of Infrastructure & Human Services",
+  "count": 10,
+  "stats": {
+    "activePrograms": 8,
+    "standardsRatified": 5,
+    "policyInstruments": 6,
+    "citizenParticipants": 3400,
+    "nodesCompliant": 24
+  },
+  "pillars": [
+    {"id":"ENV-PIL-01","title":"Carbon Disclosure","summary":"Mandatory carbon accounting for node operations with quarterly public reporting thresholds aligned to open standards."},
+    {"id":"ENV-PIL-02","title":"Resource Stewardship","summary":"Efficiency targets for compute, storage, and network services with governance review on non-conformance."},
+    {"id":"ENV-PIL-03","title":"Green Protocol Eligibility","summary":"Energy and data-efficiency thresholds for protocol-backed service labelling across civic platforms."},
+    {"id":"ENV-PIL-04","title":"Sustainable Procurement","summary":"Low-carbon vendor preference and verifiable sustainability claims in infrastructure acquisition."},
+    {"id":"ENV-PIL-05","title":"Citizen Environmental Fellowship","summary":"Civic participation in auditing, awareness campaigns, and compliance tooling for green standards."}
+  ],
   "entries": {
     "policy": [
-      {
-        "id": "ENV-POL-01",
-        "title": "Carbon Disclosure Protocol",
-        "status": "Active",
-        "category": "Policy",
-        "owner": "Aria Solenne",
-        "summary": "Mandates published carbon accounting for all node operations, with quarterly disclosure formats aligned to open standards."
-      },
-      {
-        "id": "ENV-POL-02",
-        "title": "Resource Efficiency Directive",
-        "status": "Adopted",
-        "category": "Policy",
-        "owner": "Kai Voss",
-        "summary": "Sets efficiency targets for compute, storage, and network subsystems; non-conformance triggers governance review."
-      }
+      {"id":"ENV-POL-01","title":"Carbon Disclosure Protocol","status":"Active","category":"Policy","owner":"Aria Solenne","summary":"Mandates published carbon accounting for all node operations, with quarterly disclosure formats aligned to open standards."},
+      {"id":"ENV-POL-02","title":"Resource Efficiency Directive","status":"Adopted","category":"Policy","owner":"Kai Voss","summary":"Sets efficiency targets for compute, storage, and network subsystems; non-conformance triggers governance review."},
+      {"id":"ENV-POL-03","title":"Green Protocol Eligibility Framework","status":"Active","category":"Policy","owner":"Kai Voss","summary":"Services and integrations must meet energy and data-efficiency thresholds to carry the green protocol label."}
     ],
     "programs": [
-      {
-        "id": "ENV-PRO-01",
-        "title": "Green Procurement Program",
-        "status": "Open",
-        "category": "Program",
-        "lead": "Mira Chen",
-        "summary": "Prefers low-carbon infrastructure providers and hardware vendors with verifiable sustainability claims."
-      },
-      {
-        "id": "ENV-PRO-02",
-        "title": "Citizen Sustainability Fellowship",
-        "status": "Active",
-        "category": "Program",
-        "lead": "Nia Rahman",
-        "summary": "Supports citizen contributions to environmental auditing, awareness, and compliance tooling."
-      },
-      {
-        "id": "ENV-PRO-03",
-        "title": "Zero-Waste Operations Sprint",
-        "status": "Planning",
-        "category": "Program",
-        "lead": "Orion Vale",
-        "summary": "Targets operational waste reduction across node maintenance, documentation, and civic program logistics."
-      }
+      {"id":"ENV-PRO-01","title":"Green Procurement Program","status":"Active","category":"Program","lead":"Mira Chen","summary":"Prefers low-carbon infrastructure providers and hardware vendors with verifiable sustainability claims."},
+      {"id":"ENV-PRO-02","title":"Citizen Sustainability Fellowship","status":"Active","category":"Program","lead":"Nia Rahman","summary":"Supports citizen contributions to environmental auditing, awareness, and compliance tooling."},
+      {"id":"ENV-PRO-03","title":"Zero-Waste Operations Sprint","status":"Planning","category":"Program","lead":"Orion Vale","summary":"Targets operational waste reduction across node maintenance, documentation, and civic program logistics."},
+      {"id":"ENV-PRO-04","title":"Node Carbon Optimisation","status":"Active","category":"Program","lead":"Kai Voss","summary":"Continuous tuning of node energy profiles, workload scheduling, and thermal efficiency."}
     ],
     "standards": [
-      {
-        "id": "ENV-STD-01",
-        "title": "Green Protocol Eligibility",
-        "status": "Stable",
-        "category": "Standard",
-        "owner": "Kai Voss",
-        "summary": "Services and integrations must meet energy and data-efficiency thresholds to carry the green protocol label."
-      }
+      {"id":"ENV-STD-01","title":"Green Protocol Eligibility","status":"Stable","category":"Standard","owner":"Kai Voss","summary":"Services and integrations must meet energy and data-efficiency thresholds to carry the green protocol label."},
+      {"id":"ENV-STD-02","title":"Carbon Disclosure Format","status":"Adopted","category":"Standard","owner":"Aria Solenne","summary":"Standardised JSON and PDF disclosure templates for node carbon reporting."},
+      {"id":"ENV-STD-03","title":"Sustainable Hardware Standard","status":"Draft","category":"Standard","owner":"Mira Chen","summary":"Lifecycle and repairability criteria for civic hardware procurement."}
+    ],
+    "reports": [
+      {"id":"ENV-R01","title":"Q1 Carbon Disclosure Review","status":"Published","category":"Audit","owner":"Independent Auditors","summary":"Review of node carbon disclosures, data quality, and open-standard conformance."},
+      {"id":"ENV-R02","title":"Annual Efficiency Impact Report","status":"In Progress","category":"Governance","owner":"Aria Solenne","summary":"Aggregates efficiency changes, waste reductions, and green protocol adoption across nodes."}
     ]
   }
 }
