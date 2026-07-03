@@ -146,9 +146,15 @@
     ],
     "identityManifestCount": 3,
     "identityKeyCount": 3,
-    "latestCommit": "b7d531f86ef530b7c1f3559cfb341773b1643eac Add memory-lattice.html citizen-facing status page and site navigation links",
+    "latestCommit": "9afe06117037b997ab95332663bdf4d6704baf01 Show verified agent identities on ecosystem-status page",
     "latestCommitDate": "2026-07-03",
     "lastAudit": "2026-07-03"
+  },
+  "quantum": {
+    "available": true,
+    "collapseChosenLattice": "lattice-national",
+    "afterNormalizeTotal": 0.9999999999999998,
+    "boosterPhaseReady": true
   },
   "citizenBenefits": [
     "Deterministic transparency for public services",

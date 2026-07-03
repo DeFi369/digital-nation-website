@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Refresh digital-nation-website protocol data from AEP/dynAEP/GAP/conformance/signatures artifacts."""
 from pathlib import Path
-import re, json, datetime, subprocess
+import re, json, datetime, subprocess, sys
 
 REPO_ROOT = Path('/home/user/repos')
 SITE_ROOT = REPO_ROOT / 'digital-nation-website'
@@ -27,6 +27,18 @@ def shell(cmd):
         return subprocess.check_output(cmd, shell=True, text=True, stderr=subprocess.STDOUT).strip()
     except Exception as e:
         return ''
+
+def _extract_first_json_object(text: str) -> dict | None:
+    start = text.find('{')
+    if start == -1:
+        return None
+    end = text.rfind('}')
+    if end == -1 or end <= start:
+        return None
+    try:
+        return json.loads(text[start:end + 1])
+    except json.JSONDecodeError:
+        return None
 
 aep_text = read_text(REPO_ROOT / 'AEP' / 'README.md', 3000)
 dynaep_text = read_text(REPO_ROOT / 'dynAEP' / 'README.md', 3000)
@@ -159,12 +171,35 @@ metrics = {
     'lastAudit': datetime.date.today().isoformat(),
 }
 
+# Optional quantum compute signal from hyper-lattice repo
+quantum_harness = Path("/home/user/.hermes/scripts/quantum-lattice-harness.py")
+quantum_status = None
+if quantum_harness.exists():
+    try:
+        raw = subprocess.check_output([sys.executable, str(quantum_harness)], text=True, stderr=subprocess.STDOUT)
+    except Exception:
+        raw = ''
+    if raw.strip():
+        block = _extract_first_json_object(raw)
+        if isinstance(block, dict) and 'result' in block:
+            quantum_status = {
+                'available': True,
+                'collapseChosenLattice': block['result'].get('collapse_chosen_lattice'),
+                'afterNormalizeTotal': block['result'].get('after_normalize_total'),
+                'boosterPhaseReady': block['result'].get('boosted_lattice_memory_amplitude') is not None,
+            }
+        else:
+            quantum_status = None
+    else:
+        quantum_status = None
+
 out = {
     'generated': datetime.date.today().isoformat(),
     'generator': 'protocol-data-generator',
     'ministry': 'Secretary of Technology & Innovation',
     'stacks': stacks,
     'metrics': metrics,
+    'quantum': quantum_status,
     'citizenBenefits': [
         'Deterministic transparency for public services',
         'Auditable automation via evidence ledgers',
