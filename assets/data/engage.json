@@ -1,0 +1,165 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of Public Affairs & Culture",
+  "secretary": "Secretary of Public Affairs & Culture",
+  "count": 24,
+  "stats": {
+    "activePetitions": 12,
+    "pendingFeedback": 28,
+    "escalatedItems": 5,
+    "participationRate": "73.4%",
+    "averageResponseDays": 6,
+    "toolsAvailable": 8
+  },
+  "pillars": [
+    {
+      "id": "ENG-PIL-01",
+      "title": "Participatory Governance",
+      "summary": "Structured petition, feedback, and escalation pathways connecting citizens directly to Assembly and Executive."
+    },
+    {
+      "id": "ENG-PIL-02",
+      "title": "Civic Readiness",
+      "summary": "Self-assessment tools and guided onboarding to prepare citizens for meaningful governance participation."
+    },
+    {
+      "id": "ENG-PIL-03",
+      "title": "Contribution Pathways",
+      "summary": "Skill-matched routing to Corps projects, ministry roles, and community initiatives based on citizen interests."
+    },
+    {
+      "id": "ENG-PIL-04",
+      "title": "Transparent Activity",
+      "summary": "Real-time civic activity feed with filtering, status tracking, and public accountability metrics."
+    }
+  ],
+  "entries": {
+    "programs": [
+      {
+        "id": "ENG-P01",
+        "title": "Petition Escalation Pipeline",
+        "category": "Governance",
+        "status": "Active",
+        "owner": "Secretary of Public Affairs & Culture",
+        "summary": "Automated threshold detection, Assembly routing, and public tracking for citizen petitions meeting signature requirements.",
+        "budget": "¥12.4M",
+        "participants": 2847
+      },
+      {
+        "id": "ENG-P02",
+        "title": "Civic Readiness Self-Check",
+        "category": "Onboarding",
+        "status": "Active",
+        "owner": "Education & Workforce Cabinet",
+        "summary": "Interactive checklist assessing charter knowledge, cryptographic literacy, protocol familiarity, and governance comfort.",
+        "budget": "¥3.1M",
+        "participants": 4129
+      },
+      {
+        "id": "ENG-P03",
+        "title": "Contribution Path Finder",
+        "category": "Workforce",
+        "status": "Active",
+        "owner": "Digital Service Corps",
+        "summary": "Interest-based routing to engineering, governance, outreach, node operation, security, and documentation tracks.",
+        "budget": "¥4.8M",
+        "participants": 3612
+      },
+      {
+        "id": "ENG-P04",
+        "title": "Feedback & Issue Triage",
+        "category": "Operations",
+        "status": "Active",
+        "owner": "Office of Public Affairs & Culture",
+        "summary": "Categorized intake, SLA tracking, and escalation to judicial review for platform, governance, identity, economy, and documentation issues.",
+        "budget": "¥5.6M",
+        "participants": 1983
+      }
+    ],
+    "tools": [
+      {
+        "id": "ENG-T01",
+        "title": "Petition Builder",
+        "category": "Governance Tool",
+        "status": "Active",
+        "owner": "Secretary of Public Affairs & Culture",
+        "summary": "Guided form for creating structured petitions with target authority, signature goals, deadlines, and charter citations.",
+        "participants": 2847
+      },
+      {
+        "id": "ENG-T02",
+        "title": "Readiness Self-Check",
+        "category": "Onboarding Tool",
+        "status": "Active",
+        "owner": "Education & Workforce Cabinet",
+        "summary": "Six-point checklist scoring citizen readiness with personalized guidance for charter review, crypto literacy, and governance participation.",
+        "participants": 4129
+      },
+      {
+        "id": "ENG-T03",
+        "title": "Contribution Path Finder",
+        "category": "Workforce Tool",
+        "status": "Active",
+        "owner": "Digital Service Corps",
+        "summary": "Interest selector mapping to engineering, governance, outreach, node operation, security, and documentation contribution paths.",
+        "participants": 3612
+      },
+      {
+        "id": "ENG-T04",
+        "title": "Feedback Submission",
+        "category": "Operations Tool",
+        "status": "Active",
+        "owner": "Office of Public Affairs & Culture",
+        "summary": "Categorized feedback intake with optional contact, subject tagging, and automatic routing to relevant ministry teams.",
+        "participants": 1983
+      },
+      {
+        "id": "ENG-T05",
+        "title": "Civic Activity Feed",
+        "category": "Transparency Tool",
+        "status": "Active",
+        "owner": "Secretary of Public Affairs & Culture",
+        "summary": "Filterable, sortable feed of petitions, feedback, and governance actions with type, status, and date controls.",
+        "participants": 8421
+      },
+      {
+        "id": "ENG-T06",
+        "title": "Petition Signing",
+        "category": "Participation Tool",
+        "status": "Active",
+        "owner": "Secretary of Public Affairs & Culture",
+        "summary": "One-click signing with localStorage persistence, duplicate prevention, and real-time progress tracking toward escalation thresholds.",
+        "participants": 5234
+      }
+    ],
+    "reports": [
+      {
+        "id": "ENG-R01",
+        "title": "Quarterly Civic Participation Report",
+        "category": "Research",
+        "status": "Published",
+        "owner": "Assembly Grants Committee",
+        "summary": "Analysis of petition volumes, signature rates, feedback categories, tool adoption, and demographic participation patterns.",
+        "published": "2026-03-31"
+      },
+      {
+        "id": "ENG-R02",
+        "title": "Onboarding Effectiveness Study",
+        "category": "Research",
+        "status": "In Progress",
+        "owner": "Education & Workforce Cabinet",
+        "summary": "Correlation of readiness scores with subsequent petition creation, feedback submission, and Corps enrollment.",
+        "published": null
+      },
+      {
+        "id": "ENG-R03",
+        "title": "Escalation Outcomes Review",
+        "category": "Audit",
+        "status": "Scheduled",
+        "owner": "Independent Auditors",
+        "summary": "Review of Assembly actions on escalated petitions, judicial review outcomes for feedback, and citizen satisfaction metrics.",
+        "published": null
+      }
+    ]
+  }
+}

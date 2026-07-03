@@ -1,0 +1,151 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of Public Affairs & Culture",
+  "secretary": "Secretary of Public Affairs & Culture",
+  "count": 8,
+  "stats": {
+    "toolsAvailable": 8,
+    "activeUsers": 12421,
+    "completionRate": "68.2%",
+    "averageSessionMinutes": 4.3,
+    "topTool": "Readiness Self-Check",
+    "newUsersThisMonth": 847
+  },
+  "pillars": [
+    {
+      "id": "TOL-PIL-01",
+      "title": "Self-Assessment",
+      "summary": "Interactive readiness check scoring citizen preparedness across charter knowledge, crypto literacy, protocol familiarity, and governance comfort."
+    },
+    {
+      "id": "TOL-PIL-02",
+      "title": "Path Discovery",
+      "summary": "Interest-based routing to contribution tracks in engineering, governance, outreach, node operation, security, and documentation."
+    }
+  ],
+  "entries": {
+    "tools": [
+      {
+        "id": "TOL-01",
+        "title": "Readiness Self-Check",
+        "category": "Onboarding Tool",
+        "status": "Active",
+        "owner": "Education & Workforce Cabinet",
+        "summary": "Six-point checklist scoring citizen readiness with personalized guidance for charter review, crypto literacy, and governance participation.",
+        "participants": 4129,
+        "completionRate": "72.4%",
+        "averageScore": 3.8
+      },
+      {
+        "id": "TOL-02",
+        "title": "Contribution Path Finder",
+        "category": "Workforce Tool",
+        "status": "Active",
+        "owner": "Digital Service Corps",
+        "summary": "Interest selector mapping to engineering, governance, outreach, node operation, security, and documentation contribution paths.",
+        "participants": 3612,
+        "completionRate": "65.1%",
+        "topTrack": "Engineering"
+      },
+      {
+        "id": "TOL-03",
+        "title": "Petition Builder",
+        "category": "Governance Tool",
+        "status": "Active",
+        "owner": "Secretary of Public Affairs & Culture",
+        "summary": "Guided form for creating structured petitions with target authority, signature goals, deadlines, and charter citations.",
+        "participants": 2847,
+        "completionRate": "58.7%",
+        "petitionsCreated": 142
+      },
+      {
+        "id": "TOL-04",
+        "title": "Feedback Submission",
+        "category": "Operations Tool",
+        "status": "Active",
+        "owner": "Office of Public Affairs & Culture",
+        "summary": "Categorized feedback intake with optional contact, subject tagging, and automatic routing to relevant ministry teams.",
+        "participants": 1983,
+        "completionRate": "81.3%",
+        "resolutionRate": "67.4%"
+      },
+      {
+        "id": "TOL-05",
+        "title": "Civic Activity Feed",
+        "category": "Transparency Tool",
+        "status": "Active",
+        "owner": "Secretary of Public Affairs & Culture",
+        "summary": "Filterable, sortable feed of petitions, feedback, and governance actions with type, status, and date controls.",
+        "participants": 8421,
+        "dailyActiveUsers": 1234,
+        "filtersAvailable": 12
+      },
+      {
+        "id": "TOL-06",
+        "title": "Petition Signing",
+        "category": "Participation Tool",
+        "status": "Active",
+        "owner": "Secretary of Public Affairs & Culture",
+        "summary": "One-click signing with localStorage persistence, duplicate prevention, and real-time progress tracking toward escalation thresholds.",
+        "participants": 5234,
+        "signaturesThisMonth": 3421,
+        "escalationsTriggered": 5
+      },
+      {
+        "id": "TOL-07",
+        "title": "Escalation Tracker",
+        "category": "Accountability Tool",
+        "status": "Active",
+        "owner": "Assembly Clerk",
+        "summary": "Public dashboard tracking petition escalations to Assembly, debate scheduling, voting records, and implementation status.",
+        "participants": 2156,
+        "escalationsTracked": 18,
+        "debatesScheduled": 12
+      },
+      {
+        "id": "TOL-08",
+        "title": "Judicial Review Request",
+        "category": "Legal Tool",
+        "status": "Active",
+        "owner": "Court Clerk",
+        "summary": "Structured request form for citizens to seek judicial review of feedback items, with docket tracking and precedent search.",
+        "participants": 892,
+        "reviewsFiled": 23,
+        "precedentsCited": 156
+      }
+    ],
+    "guides": [
+      {
+        "id": "TOL-G01",
+        "title": "Citizen Onboarding Guide",
+        "category": "Documentation",
+        "status": "Active",
+        "owner": "Education & Workforce Cabinet",
+        "summary": "Step-by-step walkthrough from charter review through first petition, feedback, or Corps application.",
+        "participants": 5234,
+        "lastUpdated": "2026-06-15"
+      },
+      {
+        "id": "TOL-G02",
+        "title": "Governance Participation Handbook",
+        "category": "Documentation",
+        "status": "Active",
+        "owner": "Secretary of Public Affairs & Culture",
+        "summary": "Comprehensive guide to Assembly sessions, committee work, petition thresholds, and escalation procedures.",
+        "participants": 3128,
+        "lastUpdated": "2026-05-20"
+      }
+    ],
+    "reports": [
+      {
+        "id": "TOL-R01",
+        "title": "Tool Adoption & Effectiveness Q2 2026",
+        "category": "Research",
+        "status": "Published",
+        "owner": "Assembly Grants Committee",
+        "summary": "Usage analytics, completion funnels, user satisfaction scores, and correlation with subsequent civic participation.",
+        "published": "2026-06-30"
+      }
+    ]
+  }
+}
