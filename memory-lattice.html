@@ -147,43 +147,29 @@
         <div class="stats-grid" aria-live="polite" aria-label="Memory lattice status">
           <div class="card">
             <h3>Current Layer</h3>
-            <p class="lattice-layer-indicator">Layer 2</p>
+            <p class="lattice-layer-indicator" id="latticeCurrentLayer">--</p>
             <p>Highest active layer with stored energy in the current snapshot.</p>
           </div>
           <div class="card">
             <h3>Memory Count</h3>
-            <p class="stat-value">3</p>
+            <p class="stat-value" id="latticeMemoryCount">--</p>
             <p>Indexed memory entries in the visible surface.</p>
           </div>
           <div class="card">
             <h3>Visited Layers</h3>
-            <p class="stat-value">0 · 1 · 2 · 3 · 6</p>
+            <p class="stat-value" id="latticeVisitedLayers">--</p>
             <p>Layers touched in the latest state history.</p>
           </div>
           <div class="card">
             <h3>Mode</h3>
-            <p class="stat-value">Sequential</p>
+            <p class="stat-value" id="latticeMode">--</p>
             <p>Transition traversal policy for this local snapshot.</p>
           </div>
         </div>
 
         <h2>Visible Memory Index</h2>
-        <div class="activity-feed" role="feed" aria-live="polite" aria-label="Visible memory summaries">
-          <div class="card">
-            <h3>digital_nation.overview</h3>
-            <p class="layer-badge" aria-label="Layer 0">Layer 0</p>
-            <p>Overview summary: Aetheria is a sovereign-by-code digital nation with structured agency governance.</p>
-          </div>
-          <div class="card">
-            <h3>hyper_lattice.prototype</h3>
-            <p class="layer-badge" aria-label="Layer 1">Layer 1</p>
-            <p>Prototype summary: Mirrors LatticeMemoryAdapter store/retrieve/list/shiftLayer and FilePersistenceAdapter checkpoint pattern in local JSON.</p>
-          </div>
-          <div class="card">
-            <h3>tech_stack.hermes</h3>
-            <p class="layer-badge" aria-label="Layer 2">Layer 2</p>
-            <p>Memory summary: Hermes Agent powers the digital-nation agent layer, providing skills, profiles, and memory infrastructure.</p>
-          </div>
+        <div class="activity-feed" role="feed" aria-live="polite" aria-label="Visible memory summaries" id="latticeMemoryIndex">
+          <div class="activity-loading" aria-hidden="true">Loading memory index...</div>
         </div>
 
         <h2>Notes</h2>
@@ -317,5 +303,6 @@
   </footer>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/lattice-memory-renderer.js"></script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+{
+  "agentId": "default",
+  "updatedAt": "2026-07-03",
+  "mode": "sequential",
+  "memoryCount": 5,
+  "currentLayer": 0,
+  "visitedLayers": [
+    0
+  ],
+  "memories": [
+    {
+      "key": "digital_nation.overview",
+      "content": "Aetheria is a sovereign-by-code digital nation with structured agency governance.",
+      "layer": 0,
+      "energy": 0.9,
+      "hops": 0
+    },
+    {
+      "key": "hyper_lattice.prototype",
+      "content": "Mirrors LatticeMemoryAdapter store/retrieve/list/shiftLayer and FilePersistenceAdapter checkpoint pattern in local JSON. Prototype only \u2014 not a TS integration.",
+      "layer": 0,
+      "energy": 0.9,
+      "hops": 1
+    },
+    {
+      "key": "tech_stack.hermes",
+      "content": "Hermes Agent by Nous Research powers the digital-nation agent layer, providing skills, profiles, and memory infrastructure.",
+      "layer": 0,
+      "energy": 0.9,
+      "hops": 2
+    },
+    {
+      "key": "president_workflow",
+      "content": "store list retrieve shift",
+      "layer": 0,
+      "energy": 0.9,
+      "hops": 3
+    },
+    {
+      "key": "strategy",
+      "content": "continue cross-repo integration after bridge validation",
+      "layer": 0,
+      "energy": 0.9,
+      "hops": 4
+    }
+  ]
+}

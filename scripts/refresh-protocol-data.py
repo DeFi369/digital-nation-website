@@ -193,6 +193,41 @@ if quantum_harness.exists():
     else:
         quantum_status = None
 
+# Refresh memory lattice public summary for the website
+lattice_bridge = Path("/home/user/.hermes/scripts/lattice-memory-bridge.py")
+lattice_summary_path = Path("/home/user/repos/digital-nation-website/assets/data/lattice-summary.json")
+if lattice_bridge.exists() and lattice_summary_path.parent.exists():
+    try:
+        lattice_raw = subprocess.check_output([sys.executable, str(lattice_bridge), "--agent-list"], text=True, stderr=subprocess.STDOUT)
+        parsed = json.loads(lattice_raw)
+        live_memories = []
+        if isinstance(parsed, dict):
+            container = parsed.get('memories') or parsed.get('memory') or []
+            live_memories = [m for m in container if isinstance(m, dict) and m.get('key')]
+        elif isinstance(parsed, list):
+            live_memories = [m for m in parsed if isinstance(m, dict) and m.get('key')]
+    except Exception:
+        live_memories = []
+    lattice_summary = {
+        'agentId': 'default',
+        'updatedAt': datetime.date.today().isoformat(),
+        'mode': 'sequential',
+        'memoryCount': len(live_memories),
+        'currentLayer': max((item.get('layer') or 0) for item in live_memories) if live_memories else 0,
+        'visitedLayers': sorted([layer for layer in {item.get('layer') for item in live_memories if item.get('layer') is not None} if layer is not None]),
+        'memories': [
+            {
+                'key': item.get('key'),
+                'content': (item.get('content') or '')[:160],
+                'layer': item.get('layer'),
+                'energy': item.get('energy'),
+                'hops': item.get('hops'),
+            }
+            for item in live_memories
+        ],
+    }
+    lattice_summary_path.write_text(json.dumps(lattice_summary, indent=2) + '\n')
+
 out = {
     'generated': datetime.date.today().isoformat(),
     'generator': 'protocol-data-generator',
