@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of the President",
+  "secretary": "President of the Digital Nation",
+  "stats": {
+    "systemUptime": "99.97%",
+    "activeServices": 24,
+    "registeredCitizens": 12450,
+    "pendingActions": 42,
+    "lastUpdated": "2026-07-02"
+  },
+  "pillars": [
+    {
+      "id": "DASH-PIL-01",
+      "title": "Real-Time Visibility",
+      "summary": "Live metrics across all civic systems with sub-second refresh."
+    },
+    {
+      "id": "DASH-PIL-02",
+      "title": "Actionable Alerts",
+      "summary": "Threshold-based notifications routed to responsible offices with SLAs."
+    },
+    {
+      "id": "DASH-PIL-03",
+      "title": "Citizen Access",
+      "summary": "Personalized dashboard views with role-based data scoping."
+    }
+  ],
+  "entries": {
+    "metrics": [],
+    "alerts": [],
+    "services": []
+  }
+}

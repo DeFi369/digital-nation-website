@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Secretary of Civic Identity & Registry",
+  "secretary": "Secretary of Civic Identity & Registry",
+  "stats": {
+    "pendingApplications": 234,
+    "approvalRate": "87%",
+    "avgProcessingDays": 14,
+    "citizenshipPaths": 5,
+    "referralConversion": "23%"
+  },
+  "pillars": [
+    {
+      "id": "JON-PIL-01",
+      "title": "Accessible Pathways",
+      "summary": "Multiple citizenship tracks for diverse backgrounds and contributions."
+    },
+    {
+      "id": "JON-PIL-02",
+      "title": "Transparent Process",
+      "summary": "Real-time application status with clear criteria and appeal mechanisms."
+    },
+    {
+      "id": "JON-PIL-03",
+      "title": "Community Integration",
+      "summary": "Mentorship pairing, orientation programs, and civic readiness assessment."
+    }
+  ],
+  "entries": {
+    "pathways": [],
+    "requirements": [],
+    "benefits": []
+  }
+}

@@ -1,69 +1,13 @@
 {
   "generated": "2026-07-02",
-  "count": 6,
-  "entries": {
-    "programs": [
-      {
-        "id": "FIN-P01",
-        "title": "Open Budget Review",
-        "category": "Transparency",
-        "status": "Active",
-        "owner": "Fiscal Council",
-        "summary": "Public review window for quarterly spending reports with line-item visibility."
-      },
-      {
-        "id": "FIN-P02",
-        "title": "Sovereign Grant Program",
-        "category": "Public Goods",
-        "status": "Active",
-        "owner": "Assembly Grants Committee",
-        "summary": "Quadratic-matching grants for verified public goods and civic infrastructure."
-      }
-    ],
-    "instruments": [
-      {
-        "id": "FIN-I01",
-        "title": "Aether Credit",
-        "category": "Stable Instrument",
-        "status": "Active",
-        "owner": "Treasury Node Alpha",
-        "summary": "Protocol-backed liquidity instrument with deterministic settlement and reserve attestation."
-      },
-      {
-        "id": "FIN-I02",
-        "title": "Participation Certificate",
-        "category": "Merit Instrument",
-        "status": "Ratified",
-        "owner": "Governance Registrar",
-        "summary": "Merit-weighted certificate reflecting documented contribution and civic participation."
-      }
-    ],
-    "reports": [
-      {
-        "id": "FIN-R01",
-        "title": "Q2 Reconciliation",
-        "category": "Audit",
-        "status": "Published",
-        "owner": "Audit Office",
-        "summary": "Quarterly reconciliation comparing planned versus actual spending across ministries."
-      },
-      {
-        "id": "FIN-R02",
-        "title": "Annual Compliance Review",
-        "category": "Governance",
-        "status": "In Review",
-        "owner": "Independent Auditors",
-        "summary": "Annual attestation of accounting controls, custody proofs, and policy adherence."
-      }
-    ]
-  },
   "ministry": "Ministry of Finance",
   "secretary": "Secretary of Digital Economy & Commerce",
   "stats": {
     "budgetAnnual": "\u00a52.4B",
     "capitalAllocation": "68%",
     "auditRating": "Unqualified",
-    "debtToGDP": "12.4%"
+    "debtToGDP": "12.4%",
+    "revenueGrowth": "8.2%"
   },
   "pillars": [
     {
@@ -81,5 +25,10 @@
       "title": "Reserve Adequacy",
       "summary": "Multi-asset sovereign reserve with stress-tested liquidity buffers."
     }
-  ]
+  ],
+  "entries": {
+    "programs": [],
+    "instruments": [],
+    "reports": []
+  }
 }

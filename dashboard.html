@@ -122,6 +122,19 @@
     <section class="page">
       <div class="container">
         <h1>Citizen Registry / Public Dashboard</h1>
+        <section class="stats-section" aria-labelledby="dashboard-stats-title">
+          <h2 id="dashboard-stats-title" class="sr-only">Summary Statistics</h2>
+          <div id="dashboard-stats" class="stats-grid" aria-live="polite" aria-label="Dashboard summary statistics">
+            <div class="activity-loading" aria-hidden="true">Loading statistics...</div>
+          </div>
+        </section>
+        <section class="pillars-section" aria-labelledby="dashboard-pillars-title">
+          <h2 id="dashboard-pillars-title" class="sr-only">Strategic Pillars</h2>
+          <div id="dashboard-pillars" class="pillars-grid" aria-live="polite" aria-label="Dashboard strategic pillars">
+            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+          </div>
+        </section>
+
         <p>Public participation metrics for the Principality. Figures reflect protocol-reported data,
         not external polling or private derivations. The Chief Electoral Officer reports to the Assembly,
         and participation metrics are published in coordination with the Open Records Office.</p>
@@ -309,5 +322,6 @@
   </footer>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
 </body>
 </html>

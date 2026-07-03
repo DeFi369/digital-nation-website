@@ -17,9 +17,9 @@
 
   /* ---- stats ---- */
   function renderStats() {
-    const container = document.getElementById('treasury-stats');
+    const container = document.getElementById('citizenship-stats');
     if (!container) return;
-    fetch('assets/data/treasury.json')
+    fetch('assets/data/citizenship.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
         const stats = data.stats || {};
@@ -46,9 +46,9 @@
 
   /* ---- pillars ---- */
   function renderPillars() {
-    const container = document.getElementById('treasury-pillars');
+    const container = document.getElementById('citizenship-pillars');
     if (!container) return;
-    fetch('assets/data/treasury.json')
+    fetch('assets/data/citizenship.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
         const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
@@ -68,12 +68,12 @@
 
   /* ---- filters ---- */
   function initFilters() {
-    var searchField = document.getElementById('treasury-search');
-    var scopeField = document.getElementById('treasury-scope');
+    var searchField = document.getElementById('citizenship-search');
+    var scopeField = document.getElementById('citizenship-scope');
     if (!searchField || !scopeField) return;
 
     var cachedData = null;
-    fetch('assets/data/treasury.json')
+    fetch('assets/data/citizenship.json')
       .then(function (res) {
         return res.json();
       })
@@ -110,7 +110,7 @@
         return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
       });
 
-      renderMixedList('treasury-mixed-feed', filtered);
+      renderMixedList('citizenship-mixed-feed', filtered);
     }
 
     searchField.addEventListener('input', function () { applyFilter(); });

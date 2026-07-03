@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of the President",
+  "secretary": "President of the Digital Nation",
+  "stats": {
+    "governmentLayers": 4,
+    "activePositions": 64,
+    "reportingLines": 58,
+    "operationalOffices": 23,
+    "interactiveMap": true
+  },
+  "pillars": [
+    {
+      "id": "STR-PIL-01",
+      "title": "Layered Republic",
+      "summary": "Constitutional core, policy layer, digital operations, civic interface \u2014 each with distinct authority."
+    },
+    {
+      "id": "STR-PIL-02",
+      "title": "Meritocratic Advancement",
+      "summary": "Position eligibility based on demonstrated competence, not appointment or inheritance."
+    },
+    {
+      "id": "STR-PIL-03",
+      "title": "Transparent Accountability",
+      "summary": "All reporting lines public with performance metrics and review cycles."
+    }
+  ],
+  "entries": {
+    "layers": [],
+    "positions": [],
+    "reporting": []
+  }
+}

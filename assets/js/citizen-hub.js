@@ -8,327 +8,171 @@
   }
 
   function init() {
-    try {
-      setupMenu();
-      liveYear();
-      loadHubData();
-    } catch {}
+    setupMenu();
+    liveYear();
+    renderStats();
+    renderPillars();
+    initFilters();
   }
 
-  function loadHubData() {
-    const electionsPromise = fetchAssets('assets/data/elections.json');
-    const civicPromise = fetchAssets('assets/data/civic.json');
-    const petitionsPromise = fetchAssets('assets/data/petitions.json');
-    const transparencyPromise = fetchAssets('assets/data/transparency.json');
-
-    Promise.all([electionsPromise, civicPromise, petitionsPromise, transparencyPromise])
-      .then(function (results) {
-        const elections = results[0] || {};
-        const civic = results[1] || {};
-        const petitions = results[2] || {};
-        const transparency = results[3] || {};
-
-        const localSigned = loadSignedPetitions();
-        const localFeedback = loadLocalFeedback();
-        const localRecords = loadLocalRecords();
-
-        renderSignedPetitions(localSigned, petitions.petitions || []);
-        renderLocalFeedback(localFeedback);
-        renderUpcomingElections(elections.entries || {});
-        renderRecordsRequests(localRecords, transparency.entries || {});
-        updateHubStatus(localSigned, localRecords);
+  /* ---- stats ---- */
+  function renderStats() {
+    const container = document.getElementById('citizen-hub-stats');
+    if (!container) return;
+    fetch('assets/data/citizen-hub.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        const stats = data.stats || {};
+        var html = '';
+        Object.keys(stats).forEach(function (key) {
+          html += '<div class="stat">' +
+            '<span class="stat-value">' + escapeHtml(String(stats[key])) + '</span>' +
+            '<span class="stat-label">' + escapeHtml(pascalToTitle(key)) + '</span>' +
+          '</div>';
+        });
+        container.innerHTML = html;
       })
       .catch(function () {
-        renderHubError('Hub data is temporarily unavailable.');
+        container.innerHTML = '<div class="activity-empty">Summary is temporarily unavailable.</div>';
       });
   }
 
-  function fetchAssets(url) {
-    if (!url) return Promise.resolve(null);
-    return fetch(url)
-      .then(function (response) {
-        if (!response.ok) throw new Error('HTTP ' + response.status);
-        return response.json();
-      })
-      .catch(function () {
-        return null;
-      });
+  function pascalToTitle(value) {
+    return String(value)
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, function (s) { return s.toUpperCase(); })
+      .trim();
   }
 
-  // ----- localStorage helpers -----
-
-  function loadSignedPetitions() {
-    try {
-      const raw = localStorage.getItem('hub-signed-petitions');
-      if (!raw) return {};
-      return JSON.parse(raw);
-    } catch {
-      return {};
-    }
-  }
-
-  function saveSignedPetition(petitionId) {
-    const existing = loadSignedPetitions();
-    existing[petitionId] = {
-      signedAt: new Date().toISOString(),
-      status: 'Signed'
-    };
-    localStorage.setItem('hub-signed-petitions', JSON.stringify(existing));
-    return existing;
-  }
-
-  function loadLocalFeedback() {
-    try {
-      const raw = localStorage.getItem('hub-feedback-queue');
-      if (!raw) return [];
-      return JSON.parse(raw);
-    } catch {
-      return [];
-    }
-  }
-
-  function saveLocalFeedback(feedback) {
-    const existing = loadLocalFeedback();
-    existing.unshift(feedback);
-    localStorage.setItem('hub-feedback-queue', JSON.stringify(existing));
-    return existing;
-  }
-
-  function loadLocalRecords() {
-    try {
-      const raw = localStorage.getItem('hub-records-requests');
-      if (!raw) return [];
-      return JSON.parse(raw);
-    } catch {
-      return [];
-    }
-  }
-
-  function saveLocalRecord(request) {
-    const existing = loadLocalRecords();
-    existing.unshift(request);
-    localStorage.setItem('hub-records-requests', JSON.stringify(existing));
-    return existing;
-  }
-
-  // ----- renderers -----
-
-  function renderSignedPetitions(localSignedIds, remotePetitions) {
-    const container = document.getElementById('hub-signed-petitions');
-    const emptyEl = document.getElementById('hub-signed-empty');
+  /* ---- pillars ---- */
+  function renderPillars() {
+    const container = document.getElementById('citizen-hub-pillars');
     if (!container) return;
-
-    const signedRemote = (remotePetitions || []).filter(function (p) {
-      return localSignedIds[p.id];
-    });
-
-    if (!signedRemote.length) {
-      if (emptyEl) emptyEl.style.display = '';
-      return;
-    }
-
-    if (emptyEl) emptyEl.style.display = 'none';
-
-    container.innerHTML = signedRemote.map(function (p) {
-      const meta = localSignedIds[p.id];
-      const signedDate = meta?.signedAt ? new Date(meta.signedAt).toLocaleDateString() : '';
-      const progress = p.signatureGoal ? Math.min(100, Math.round((p.currentSignatures / p.signatureGoal) * 100)) : 0;
-      return (
-        '<article class="hub-card" data-id="' + escapeHtml(String(p.id)) + '">' +
-          '<div class="hub-card-header">' +
-            '<h3>' + escapeHtml(p.title || 'Untitled petition') + '</h3>' +
-            '<span class="hub-status">Signed · ' + escapeHtml(signedDate) + '</span>' +
-          '</div>' +
-          '<p class="hub-card-description">' + escapeHtml(p.description || '') + '</p>' +
-          '<div class="hub-card-meta">' +
-            '<span class="hub-target">Target: ' + escapeHtml(p.target || '') + '</span>' +
-            '<span class="hub-progress">' + p.currentSignatures + '/' + p.signatureGoal + ' signatures (' + progress + '%)</span>' +
-            '<span class="hub-deadline">Deadline: ' + new Date(p.deadline).toLocaleDateString() + '</span>' +
-          '</div>' +
-        '</article>'
-      );
-    }).join('');
-  }
-
-  function renderLocalFeedback(items) {
-    const container = document.getElementById('hub-feedback-list');
-    const emptyEl = document.getElementById('hub-feedback-empty');
-    if (!container) return;
-
-    if (!items.length) {
-      if (emptyEl) emptyEl.style.display = '';
-      return;
-    }
-
-    if (emptyEl) emptyEl.style.display = 'none';
-
-    container.innerHTML = items.map(function (item) {
-      const date = new Date(item.timestamp).toLocaleString();
-      return (
-        '<article class="hub-card" data-id="' + escapeHtml(String(item.id)) + '">' +
-          '<div class="hub-card-header">' +
-            '<h3>' + escapeHtml(item.title || 'Untitled feedback') + '</h3>' +
-            '<span class="hub-status">' + escapeHtml(item.status || 'Open') + '</span>' +
-          '</div>' +
-          '<p class="hub-card-description">' + escapeHtml(item.description || '') + '</p>' +
-          '<div class="hub-card-meta">' +
-            '<span class="hub-category">Category: ' + escapeHtml(item.category || 'General') + '</span>' +
-            '<span class="hub-timestamp">Submitted: ' + escapeHtml(date) + '</span>' +
-          '</div>' +
-        '</article>'
-      );
-    }).join('');
-  }
-
-  function renderUpcomingElections(entries) {
-    const container = document.getElementById('hub-elections-list');
-    if (!container) return;
-
-    const elections = (entries.elections || []).filter(function (e) {
-      return /scheduled|certified|open|vote/i.test(String(e.status || ''));
-    });
-    const referendums = (entries.referendums || []).filter(function (r) {
-      return /scheduled|certified|open|vote/i.test(String(r.status || ''));
-    });
-    const items = [
-      { _type: 'election', title: 'Elections', data: elections },
-      { _type: 'referendum', title: 'Referendums', data: referendums }
-    ].filter(function (group) { return group.data.length; });
-
-    if (!items.length) {
-      container.innerHTML = '<div class="hub-empty">No upcoming elections or referendums are currently open or scheduled.</div>';
-      return;
-    }
-
-    const html = items.map(function (group) {
-      const cards = group.data.map(function (entry) {
-        const metaItems = [];
-        if (entry.administeredBy) metaItems.push('Administered by: ' + escapeHtml(entry.administeredBy));
-        if (entry.reportsTo) metaItems.push('Reports to: ' + escapeHtml(entry.reportsTo));
-        if (entry.opened) metaItems.push('Opens: ' + escapeHtml(entry.opened));
-        if (entry.closed) metaItems.push('Closes: ' + escapeHtml(entry.closed));
-        if (entry.certified) metaItems.push('Certified: ' + escapeHtml(entry.certified));
-
-        return (
-          '<article class="hub-card">' +
-            '<div class="hub-card-header">' +
-              '<h3>' + escapeHtml(entry.title || 'Untitled election') + '</h3>' +
-              '<span class="hub-status">' + escapeHtml(entry.status || '') + '</span>' +
+    fetch('assets/data/citizen-hub.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
+        container.innerHTML = items.map(function (item) {
+          return '<article class="activity-item pillar">' +
+            '<div class="activity-content">' +
+            '<h3 class="activity-title">' + escapeHtml(String(item.title || '')) + '</h3>' +
+            '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
             '</div>' +
-            '<p class="hub-card-description">' + escapeHtml(entry.summary || '') + '</p>' +
-            '<div class="hub-card-meta">' + metaItems.map(function (m) { return '<span>' + m + '</span>'; }).join('') + '</div>' +
-          '</article>'
-        );
-      }).join('');
-
-      return '<div class="hub-subsection">' +
-        '<h3 class="hub-subsection-title">' + escapeHtml(group.title) + '</h3>' +
-        cards +
-      '</div>';
-    }).join('');
-
-    container.innerHTML = html;
+            '</article>';
+        }).join('');
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Pillar data is temporarily unavailable.</div>';
+      });
   }
 
-  function renderRecordsRequests(localRequests, transparencyEntries) {
-    const container = document.getElementById('hub-records-list');
-    const emptyEl = document.getElementById('hub-records-empty');
-    if (!container) return;
+  /* ---- filters ---- */
+  function initFilters() {
+    var searchField = document.getElementById('citizen-hub-search');
+    var scopeField = document.getElementById('citizen-hub-scope');
+    if (!searchField || !scopeField) return;
 
-    const disclosures = (transparencyEntries.disclosures || []).slice(0, 4);
-    const all = [].concat(localRequests || [], disclosures || []);
+    var cachedData = null;
+    fetch('assets/data/citizen-hub.json')
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        cachedData = data;
+      })
+      .catch(function () {
+        cachedData = null;
+      });
 
-    if (!all.length) {
-      if (emptyEl) emptyEl.style.display = '';
+    function applyFilter() {
+      if (!cachedData) return;
+      var term = searchField.value.trim().toLowerCase();
+      var scope = scopeField.value;
+
+      var items = [];
+      if (scope === 'all' || scope === 'entries') {
+        var entries = cachedData.entries || {};
+        Object.keys(entries).forEach(function (key) {
+          (entries[key] || []).forEach(function (entry) {
+            items.push(entry);
+          });
+        });
+      }
+
+      var filtered = items.filter(function (entry) {
+        var searchable =
+          (entry.title || '') + ' ' +
+          (entry.id || '') + ' ' +
+          (entry.summary || '') + ' ' +
+          (entry.category || '') + ' ' +
+          (entry.owner || '') + ' ' +
+          (entry.status || '');
+        return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
+      });
+
+      renderMixedList('citizen-hub-mixed-feed', filtered);
+    }
+
+    searchField.addEventListener('input', function () { applyFilter(); });
+    scopeField.addEventListener('change', function () { applyFilter(); });
+  }
+
+  function renderMixedList(feedId, items) {
+    var feed = document.getElementById(feedId);
+    if (!feed) return;
+    if (!items.length) {
+      feed.innerHTML = '<div class="activity-empty">No matching entries found.</div>';
       return;
     }
-
-    if (emptyEl) emptyEl.style.display = 'none';
-
-    container.innerHTML = all.map(function (item) {
-      const isLocal = !!localRequests && localRequests.indexOf(item) !== -1 || (item.savedAt || item.local === true);
-      const date = isLocal ? new Date(item.timestamp).toLocaleString() : new Date(item.effective || item.completed || '').toLocaleDateString();
-      return (
-        '<article class="hub-card">' +
-          '<div class="hub-card-header">' +
-            '<h3>' + escapeHtml(item.title || 'Records request') + '</h3>' +
-            '<span class="hub-status">' + escapeHtml(String(item.status || 'Saved')) + '</span>' +
+    feed.innerHTML = items.map(function (item) {
+      var statusClass = 'status-' + slugify(String(item.status || 'unknown'));
+      var extra = buildExtraMeta(item);
+      return '<article class="activity-item" role="article" aria-label="' + escapeHtml(String(item.id || item.title || '')) + '">' +
+        '<div class="activity-content">' +
+          '<h3 class="activity-title">' + escapeHtml(String(item.title || 'Untitled')) + '</h3>' +
+          '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+          '<div class="activity-meta">' +
+            '<span class="activity-type">' + escapeHtml(String(item.category || 'Entry')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.id || '')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.owner || item.lead || '—')) + '</span>' +
           '</div>' +
-          '<p class="hub-card-description">' + escapeHtml(item.summary || '') + '</p>' +
-          '<div class="hub-card-meta">' +
-            '<span class="hub-category">Category: ' + escapeHtml(item.category || 'General') + '</span>' +
-            '<span class="hub-timestamp">' + escapeHtml(date || '') + '</span>' +
-          '</div>' +
-          (isLocal ? '<div class="hub-card-actions"><button class="button secondary remove-record" data-record-id="' + escapeHtml(String(item.id)) + '">Remove</button></div>' : '') +
-        '</article>'
-      );
+          (extra ? '<div class="activity-meta economics-meta">' + extra + '</div>' : '') +
+        '</div>' +
+        '<div class="activity-sidebar">' +
+          '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '—')) + '</span>' +
+        '</div>' +
+      '</article>';
     }).join('');
-
-    container.querySelectorAll('.remove-record').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        const id = e.currentTarget.dataset.recordId;
-        removeLocalRecord(id);
-      });
-    });
   }
 
-  function removeLocalRecord(id) {
-    let existing;
-    try {
-      const raw = localStorage.getItem('hub-records-requests');
-      if (raw) existing = JSON.parse(raw);
-    } catch {
-      existing = [];
-    }
-
-    if (existing) {
-      const next = existing.filter(function (item) { return String(item.id) !== String(id); });
-      localStorage.setItem('hub-records-requests', JSON.stringify(next));
-    }
-
-    // refresh list using previously cached data direction
-    loadHubData();
+  function buildExtraMeta(item) {
+    var parts = [];
+    if (item.budget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.budget)) + '</span>');
+    if (item.participants) parts.push('<span class="metric">Participants: ' + escapeHtml(String(item.participants)) + '</span>');
+    if (item.published) parts.push('<span class="meta-date">Published: ' + escapeHtml(String(item.published)) + '</span>');
+    if (item.teamSize) parts.push('<span class="metric">Team: ' + escapeHtml(String(item.teamSize)) + '</span>');
+    if (item.monthlyBudget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.monthlyBudget)) + '</span>');
+    if (item.beneficiaries) parts.push('<span class="metric">Beneficiaries: ' + escapeHtml(String(item.beneficiaries)) + '</span>');
+    return parts.join('<span class="activity-divider">·</span>');
   }
 
-  function updateHubStatus(signedPetitions, localRecords) {
-    const signedCountEl = document.getElementById('hub-signed-count');
-    const recordsCountEl = document.getElementById('hub-records-count');
-
-    const signedIds = signedPetitions || {};
-    const records = localRecords || [];
-
-    if (signedCountEl) signedCountEl.textContent = Object.keys(signedIds).length;
-    if (recordsCountEl) recordsCountEl.textContent = records.length;
-  }
-
-  // ----- attachments for quick actions -----
-
-  function attachHubActions() {
-    document.querySelectorAll('.hub-action-card').forEach(function (card) {
-      card.addEventListener('click', function () {
-        // page links are anchors, keep default behavior.
-      });
-    });
-  }
-
-  // ----- menu / year -----
-
+  /* ---- menu / year ---- */
   function setupMenu() {
-    const menuButton = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
+    var menuButton = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.menu');
     if (!menuButton || !menu) return;
-
     menuButton.addEventListener('click', function () {
-      const open = menu.dataset.open === 'true';
+      var open = menu.dataset.open === 'true';
       menu.dataset.open = String(!open);
       menu.setAttribute('aria-hidden', String(open));
       menuButton.setAttribute('aria-expanded', String(!open));
       if (!open) {
-        const firstLink = menu.querySelector('a');
+        var firstLink = menu.querySelector('a');
         if (firstLink) setTimeout(function () { firstLink.focus(); }, 0);
       }
     });
-
     menu.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.dataset.open === 'true') {
         menu.dataset.open = 'false';
@@ -341,32 +185,25 @@
 
   function liveYear() {
     try {
-      const yearEl = document.querySelector('[data-year]');
+      var yearEl = document.querySelector('[data-year]');
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     } catch {}
   }
 
-  function renderHubError(message) {
-    const selectors = [
-      '#hub-signed-petitions',
-      '#hub-feedback-list',
-      '#hub-elections-list',
-      '#hub-records-list'
-    ];
-    selectors.forEach(function (sel) {
-      const el = document.querySelector(sel);
-      if (el) el.innerHTML = '<div class="hub-empty">' + escapeHtml(message) + '</div>';
-    });
-  }
-
   function escapeHtml(value) {
-    if (value === null || value === undefined) return '';
     return String(value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/&/g, '&')
+      .replace(/</g, '<')
+      .replace(/>/g, '>')
+      .replace(/"/g, '"')
+      .replace(/'/g, '&apos;');
   }
 
-  attachHubActions();
+  function slugify(value) {
+    return String(value)
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'unknown';
+  }
 })();

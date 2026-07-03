@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Constitutional Council",
+  "secretary": "Chair, Constitutional Council",
+  "stats": {
+    "activeAgreements": 34,
+    "categories": 8,
+    "lastReviewed": "2026-06-15",
+    "complianceRate": "98.1%",
+    "userAcceptances": 12450
+  },
+  "pillars": [
+    {
+      "id": "TER-PIL-01",
+      "title": "Plain Language",
+      "summary": "All terms written in accessible language with plain-language summaries."
+    },
+    {
+      "id": "TER-PIL-02",
+      "title": "Versioned Consent",
+      "summary": "Users accept specific versions with change notifications and opt-out windows."
+    },
+    {
+      "id": "TER-PIL-03",
+      "title": "Rights Preservation",
+      "summary": "Terms cannot waive charter-guaranteed rights or due process protections."
+    }
+  ],
+  "entries": {
+    "agreements": [],
+    "categories": [],
+    "history": []
+  }
+}

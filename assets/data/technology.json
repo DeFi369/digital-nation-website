@@ -1,42 +1,34 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Technology, Science & Innovation",
+  "ministry": "Secretary of Technology, Science & Innovation",
   "secretary": "Secretary of Technology, Science & Innovation",
-  "version": "Protocol v3.0",
   "stats": {
-    "annualBudget": "¥186.4M",
-    "activeServices": 31,
-    "infrastructureNodes": 12,
-    "emergingPrograms": 8,
-    "uptimeTarget": "99.95%"
+    "activeStandards": 22,
+    "sovereigntyProtocols": 8,
+    "interopAgreements": 14,
+    "complianceRate": "94.3%",
+    "openSourceProjects": 45
   },
   "pillars": [
-    { "id": "TECH-PIL-01", "title": "Sovereign Infrastructure", "summary": "Protocol-controlled compute, storage, and networking fabric with verifiable uptime and deterministic provisioning." },
-    { "id": "TECH-PIL-02", "title": "Platform Engineering", "summary": "Reusable service building blocks with standardized APIs, release grading, and cross-ministry composition." },
-    { "id": "TECH-PIL-03", "title": "Operational Resilience", "summary": "Runbooks, chaos testing, upgrade pipelines, and incident attestations under Protocol v3.0 incident taxonomy." },
-    { "id": "TECH-PIL-04", "title": "Emerging Technology Stewardship", "summary": "Gated evaluation, sandbox release, and readiness gates for quantum, biotechnology, and autonomous system capabilities." },
-    { "id": "TECH-PIL-05", "title": "Developer Experience", "summary": "SDKs, documentation, onboarding pipelines, and credentialing for internal and citizen contributors." }
+    {
+      "id": "TEC-PIL-01",
+      "title": "Protocol Sovereignty",
+      "summary": "Standards owned, governed, and evolvable by the republic without vendor lock-in."
+    },
+    {
+      "id": "TEC-PIL-02",
+      "title": "Interoperability",
+      "summary": "Cross-protocol bridges with verified translation layers and audit trails."
+    },
+    {
+      "id": "TEC-PIL-03",
+      "title": "Upgrade Governance",
+      "summary": "Staged deployments with rollback, citizen review, and fork protection."
+    }
   ],
-  "mission": "Deliver sovereign digital infrastructure, operational excellence, and emerging-technology readiness across all ministries under the Secretary of Technology, Science & Innovation. Every service is release-graded, incident-attested, and designed for Protocol v3.0 interoperability.",
   "entries": {
-    "operations": [
-      { "id": "TECH-O01", "title": "Protocol Node Fleet", "category": "Infrastructure", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Consensus-class node infrastructure with deterministic running costs, automated rotation, and audit logs.", "sloUptime": "99.98%", "teamSize": 18, "monthlyBudget": "¥6.2M" },
-      { "id": "TECH-O02", "title": "Artifact Registry", "category": "Platform", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Signed container and model registry with provenance chains, vulnerability scanning, and governed promotion.", "sloUptime": "99.99%", "teamSize": 12, "monthlyBudget": "¥3.1M" },
-      { "id": "TECH-O03", "title": "Incident Attestation System", "category": "Operations", "status": "In Progress", "owner": "Safety Registrar", "summary": "Protocol-aligned incident taxonomy, root-cause reporting, and post-incident review tracking.", "sloUptime": "99.95%", "teamSize": 8, "monthlyBudget": "¥1.8M" },
-      { "id": "TECH-O04", "title": "Identity Credential Broker", "category": "Identity", "status": "Active", "owner": "Identity Registrar", "summary": "Verifiable credential issuance, selective disclosure, and revocation with sovereign key ceremonies.", "sloUptime": "99.97%", "teamSize": 14, "monthlyBudget": "¥4.5M" },
-      { "id": "TECH-O05", "title": "Workflow Orchestration", "category": "Platform", "status": "Beta", "owner": "Technology, Science & Innovation Secretary", "summary": "Deterministic workflow runtime with approval gates, timeout handling, and state persistence.", "sloUptime": "99.9%", "teamSize": 9, "monthlyBudget": "¥2.7M" }
-    ],
-    "infrastructure": [
-      { "id": "TECH-I01", "title": "Sovereign Compute Mesh", "category": "Compute", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Multi-zone compute mesh with heterogeneous workloads, scheduler quotas, and capacity attestations.", "storageTb": 1240, "vCpu": 4800 },
-      { "id": "TECH-I02", "title": "Log Archive Service", "category": "Observability", "status": "Active", "owner": "Protocol Registrar", "summary": "Immutable log storage with indexed search, retention policies, and sovereign integrity verification.", "storageTb": 860, "vCpu": 320 },
-      { "id": "TECH-I03", "title": "Edge Gateway Network", "category": "Networking", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Citizen-facing edge gateways with DDoS mitigation, rate limiting, and protocol upgrade orchestration.", "storageTb": 220, "vCpu": 960 },
-      { "id": "TECH-I04", "title": "Model Training Cluster", "category": "Artificial Intelligence", "status": "In Progress", "owner": "Technology, Science & Innovation Secretary", "summary": "Protocol-grade training cluster for internal and approved research models with energy-aware scheduling.", "storageTb": 540, "vCpu": 1200 }
-    ],
-    "emerging": [
-      { "id": "TECH-E01", "title": "Quantum Sandbox", "category": "Quantum", "status": "Beta", "owner": "Technology, Science & Innovation Secretary", "summary": "Gated quantum-literate environment with benchmark workloads, noise models, and readiness review.", "teamSize": 6, "notes": "Requires Architecture Board sign-off" },
-      { "id": "TECH-E02", "title": "Autonomous Drone Inspection", "category": "Autonomous", "status": "Scheduled", "owner": "Safety & Infrastructure Cabinet", "summary": "BVLOS-capable inspection drones with sovereign telemetry, collision-avoidance voting, and incident logging.", "teamSize": 8, "notes": "Pilot restricted to zone A-7" },
-      { "id": "TECH-E03", "title": "Synthetic Data Studio", "category": "Artificial Intelligence", "status": "Active", "owner": "Technology, Science & Innovation Secretary", "summary": "Privacy-preserving synthetic-data generation with provenance tags, bias auditing, and release-graded outputs.", "teamSize": 5, "monthlyBudget": "¥2.1M", "notes": "Produces open-access corpuses" },
-      { "id": "TECH-E04", "title": "Biotech Compute Gateway", "category": "Biotechnology", "status": "Draft", "owner": "Health & Science Cabinet", "summary": "Isolated compute gateway for approved bioinformatics workflows with encryption-at-rest and ethics review.", "teamSize": 4, "monthlyBudget": "¥1.4M", "notes": "Requires privacy and safety attestation" }
-    ]
+    "standards": [],
+    "sovereignty": [],
+    "interop": []
   }
 }

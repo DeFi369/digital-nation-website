@@ -7,602 +7,203 @@
     init();
   }
 
-  let assemblyData = null;
-  let localVotes = null;
-  let currentFilter = { status: 'all', chamber: 'all', sort: 'date' };
-  let selectedBillId = null;
-
   function init() {
-    loadLocalVotes();
-    loadAssemblyData();
+    setupMenu();
+    liveYear();
+    renderStats();
+    renderPillars();
     initFilters();
-    initModal();
   }
 
-  function loadLocalVotes() {
-    try {
-      const stored = localStorage.getItem('assembly-votes');
-      if (stored) {
-        localVotes = JSON.parse(stored);
-      } else {
-        localVotes = {};
-      }
-    } catch (e) {
-      console.warn('Failed to parse localStorage assembly votes:', e);
-      localVotes = {};
-    }
-  }
-
-  function saveLocalVotes() {
-    try {
-      localStorage.setItem('assembly-votes', JSON.stringify(localVotes));
-    } catch (e) {
-      console.warn('Failed to save assembly votes to localStorage:', e);
-    }
-  }
-
-  function loadAssemblyData() {
+  /* ---- stats ---- */
+  function renderStats() {
+    const container = document.getElementById('assembly-stats');
+    if (!container) return;
     fetch('assets/data/assembly.json')
-      .then(response => response.json())
-      .then(data => {
-        assemblyData = data;
-        mergeLocalVotes();
-        renderAssemblyCommittees(assemblyData);
-        renderAssemblyRoster(assemblyData);
-        renderBillVoteBars(assemblyData);
-        renderTracker();
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        const stats = data.stats || {};
+        var html = '';
+        Object.keys(stats).forEach(function (key) {
+          html += '<div class="stat">' +
+            '<span class="stat-value">' + escapeHtml(String(stats[key])) + '</span>' +
+            '<span class="stat-label">' + escapeHtml(pascalToTitle(key)) + '</span>' +
+          '</div>';
+        });
+        container.innerHTML = html;
       })
-      .catch(err => {
-        console.warn('Failed to load assembly.json:', err);
-        renderAssemblyCommittees(null);
-        renderAssemblyRoster(null);
-        renderBillVoteBars(null);
-        renderTracker();
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Summary is temporarily unavailable.</div>';
       });
   }
 
-  function mergeLocalVotes() {
-    if (!assemblyData || !localVotes) return;
-
-    assemblyData.bills.forEach(bill => {
-      const localVote = localVotes[bill.id];
-      if (localVote) {
-        bill.voteCounts = { ...bill.voteCounts, ...localVote.counts };
-        bill.userVote = localVote.vote;
-      }
-    });
+  function pascalToTitle(value) {
+    return String(value)
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, function (s) { return s.toUpperCase(); })
+      .trim();
   }
 
-  function isCitizenReady() {
-    try {
-      const readiness = localStorage.getItem('citizenship-readiness');
-      if (readiness) {
-        const data = JSON.parse(readiness);
-        return data.ready === true || data.score >= 4;
-      }
-    } catch (e) {}
-    return false;
-  }
-
-  function getCitizenshipStatus() {
-    try {
-      const citizenship = localStorage.getItem('aetheria-citizenship');
-      if (citizenship) {
-        return JSON.parse(citizenship);
-      }
-    } catch (e) {}
-    return null;
-  }
-
-  function renderTracker() {
-    const container = document.getElementById('bill-tracker');
-    if (!container || !assemblyData) return;
-
-    let bills = [...assemblyData.bills];
-
-    // Filter
-    if (currentFilter.status !== 'all') {
-      bills = bills.filter(b => b.status === currentFilter.status);
-    }
-    if (currentFilter.chamber !== 'all') {
-      bills = bills.filter(b => b.chamber === currentFilter.chamber);
-    }
-
-    // Sort
-    bills.sort((a, b) => {
-      if (currentFilter.sort === 'date') {
-        return new Date(b.timeline[0]?.date || 0) - new Date(a.timeline[0]?.date || 0);
-      } else if (currentFilter.sort === 'date-asc') {
-        return new Date(a.timeline[0]?.date || 0) - new Date(b.timeline[0]?.date || 0);
-      } else if (currentFilter.sort === 'title') {
-        return a.title.localeCompare(b.title);
-      } else if (currentFilter.sort === 'status') {
-        const statusOrder = { 'Introduced': 0, 'Debate': 1, 'Vote': 2, 'Enacted': 3, 'Rejected': 4 };
-        return (statusOrder[a.status] || 99) - (statusOrder[b.status] || 99);
-      }
-      return 0;
-    });
-
-    const citizenReady = isCitizenReady();
-    const citizenship = getCitizenshipStatus();
-
-    const html = `
-      <div class="bill-tracker-header">
-        <div class="tracker-stats">
-          <span class="stat"><strong>${bills.length}</strong> bills</span>
-          <span class="stat"><strong>${assemblyData.bills.filter(b => b.status === 'Debate' || b.status === 'Vote').length}</strong> active</span>
-          <span class="stat"><strong>${assemblyData.bills.filter(b => b.status === 'Enacted').length}</strong> enacted</span>
-        </div>
-        ${!citizenReady ? `
-          <div class="citizen-notice">
-            <span class="notice-icon">🔒</span>
-            <span>Complete the <a href="tools.html#readiness">Readiness Self-Check</a> on Tools to unlock voting rights.</span>
-          </div>
-        ` : citizenship ? `
-          <div class="citizen-notice ready">
-            <span class="notice-icon">✓</span>
-            <span>Voting enabled for <strong>${escapeHtml(citizenship.id || 'verified citizen')}</strong></span>
-          </div>
-        ` : `
-          <div class="citizen-notice ready">
-            <span class="notice-icon">✓</span>
-            <span>Voting enabled (readiness verified)</span>
-          </div>
-        `}
-      </div>
-      <table class="bill-table" role="grid" aria-label="Assembly bill tracker">
-        <thead>
-          <tr>
-            <th scope="col">Bill</th>
-            <th scope="col">Sponsor</th>
-            <th scope="col">Chamber</th>
-            <th scope="col">Status</th>
-            <th scope="col">Vote Tally</th>
-            <th scope="col">Timeline</th>
-            <th scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${bills.map(bill => renderBillRow(bill, citizenReady)).join('')}
-        </tbody>
-      </table>
-      ${bills.length === 0 ? '<p class="activity-empty">No bills match the current filters.</p>' : ''}
-    `;
-
-    container.innerHTML = html;
-    attachBillRowListeners();
-  }
-
-  function renderBillRow(bill, citizenReady) {
-    const statusClass = 'status-' + bill.status.toLowerCase().replace(' ', '-');
-    const totalVotes = bill.voteCounts.yea + bill.voteCounts.nay + bill.voteCounts.abstain;
-    const latestEvent = bill.timeline[bill.timeline.length - 1];
-
-    let voteHtml = `
-      <div class="vote-tally">
-        <span class="vote-yeas" title="Yea">${bill.voteCounts.yea}</span>
-        <span class="vote-nays" title="Nay">${bill.voteCounts.nay}</span>
-        <span class="vote-abstains" title="Abstain">${bill.voteCounts.abstain}</span>
-        ${totalVotes > 0 ? `<span class="vote-total">${totalVotes} total</span>` : ''}
-      </div>
-    `;
-
-    let actionsHtml = `
-      <button class="button view-bill" data-bill-id="${bill.id}" aria-label="View details for ${escapeHtml(bill.title)}">View</button>
-    `;
-
-    if ((bill.status === 'Debate' || bill.status === 'Vote') && citizenReady) {
-      const hasVoted = bill.userVote;
-      actionsHtml += `
-        <div class="vote-buttons" data-bill-id="${bill.id}">
-          ${!hasVoted ? `
-            <button class="button vote-btn vote-yea" data-vote="yea" aria-label="Vote Yea">Yea</button>
-            <button class="button vote-btn vote-nay" data-vote="nay" aria-label="Vote Nay">Nay</button>
-            <button class="button vote-btn vote-abstain" data-vote="abstain" aria-label="Abstain">Abstain</button>
-          ` : `
-            <span class="voted-badge">Voted: ${bill.userVote.toUpperCase()}</span>
-          `}
-        </div>
-      `;
-    }
-
-    return `
-      <tr class="bill-row" data-bill-id="${bill.id}">
-        <td class="bill-title-cell">
-          <strong>${escapeHtml(bill.title)}</strong>
-          <span class="bill-id">${escapeHtml(bill.id)}</span>
-        </td>
-        <td>${escapeHtml(bill.sponsor)}</td>
-        <td>${escapeHtml(bill.chamber)}</td>
-        <td><span class="activity-status ${statusClass}">${escapeHtml(bill.status)}</span></td>
-        <td>${voteHtml}</td>
-        <td class="timeline-cell">
-          <span class="timeline-date">${latestEvent ? formatDate(latestEvent.date) : '—'}</span>
-          <span class="timeline-event">${latestEvent ? escapeHtml(latestEvent.event) : 'No events'}</span>
-        </td>
-        <td>${actionsHtml}</td>
-      </tr>
-    `;
-  }
-
-  function attachBillRowListeners() {
-    document.querySelectorAll('.view-bill').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const billId = e.currentTarget.dataset.billId;
-        openBillModal(billId);
+  /* ---- pillars ---- */
+  function renderPillars() {
+    const container = document.getElementById('assembly-pillars');
+    if (!container) return;
+    fetch('assets/data/assembly.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
+        container.innerHTML = items.map(function (item) {
+          return '<article class="activity-item pillar">' +
+            '<div class="activity-content">' +
+            '<h3 class="activity-title">' + escapeHtml(String(item.title || '')) + '</h3>' +
+            '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+            '</div>' +
+            '</article>';
+        }).join('');
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Pillar data is temporarily unavailable.</div>';
       });
-    });
-
-    document.querySelectorAll('.vote-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const billId = e.currentTarget.closest('.vote-buttons').dataset.billId;
-        const vote = e.currentTarget.dataset.vote;
-        castVote(billId, vote);
-      });
-    });
   }
 
-  function castVote(billId, vote) {
-    const bill = assemblyData.bills.find(b => b.id === billId);
-    if (!bill) return;
-
-    if (bill.userVote) {
-      showToast('You have already voted on this bill.');
-      return;
-    }
-
-    if (!localVotes[billId]) {
-      localVotes[billId] = { vote: null, counts: {} };
-    }
-
-    // Update local vote record
-    localVotes[billId].vote = vote;
-    localVotes[billId].counts[vote] = (localVotes[billId].counts[vote] || 0) + 1;
-    saveLocalVotes();
-
-    // Update bill data
-    bill.voteCounts[vote] = (bill.voteCounts[vote] || 0) + 1;
-    bill.userVote = vote;
-
-    // Re-render
-    renderTracker();
-    showToast(`Vote cast: ${vote.toUpperCase()}`);
-  }
-
-  function openBillModal(billId) {
-    const bill = assemblyData.bills.find(b => b.id === billId);
-    if (!bill) return;
-
-    selectedBillId = billId;
-    const modal = document.getElementById('bill-modal');
-    const content = document.getElementById('bill-modal-content');
-
-    const statusClass = 'status-' + bill.status.toLowerCase().replace(' ', '-');
-    const citizenReady = isCitizenReady();
-    const hasVoted = bill.userVote;
-
-    content.innerHTML = `
-      <div class="bill-modal-header">
-        <h2>${escapeHtml(bill.title)}</h2>
-        <span class="activity-status ${statusClass}">${escapeHtml(bill.status)}</span>
-      </div>
-      <div class="bill-modal-meta">
-        <dl>
-          <dt>Bill ID</dt><dd>${escapeHtml(bill.id)}</dd>
-          <dt>Sponsor</dt><dd>${escapeHtml(bill.sponsor)}</dd>
-          <dt>Chamber</dt><dd>${escapeHtml(bill.chamber)}</dd>
-          <dt>Introduced</dt><dd>${formatDateTime(bill.timeline[0]?.date)}</dd>
-          <dt>Current Status</dt><dd>${escapeHtml(bill.status)}</dd>
-        </dl>
-      </div>
-
-      <div class="bill-modal-section">
-        <h3>Vote Tally</h3>
-        <div class="vote-tally-detail">
-          <div class="vote-bar">
-            <div class="vote-bar-fill vote-bar-yea" style="width: ${bill.voteCounts.yea + bill.voteCounts.nay + bill.voteCounts.abstain > 0 ? (bill.voteCounts.yea / (bill.voteCounts.yea + bill.voteCounts.nay + bill.voteCounts.abstain) * 100) : 0}%"></div>
-            <div class="vote-bar-fill vote-bar-nay" style="width: ${bill.voteCounts.yea + bill.voteCounts.nay + bill.voteCounts.abstain > 0 ? (bill.voteCounts.nay / (bill.voteCounts.yea + bill.voteCounts.nay + bill.voteCounts.abstain) * 100) : 0}%"></div>
-            <div class="vote-bar-fill vote-bar-abstain" style="width: ${bill.voteCounts.yea + bill.voteCounts.nay + bill.voteCounts.abstain > 0 ? (bill.voteCounts.abstain / (bill.voteCounts.yea + bill.voteCounts.nay + bill.voteCounts.abstain) * 100) : 0}%"></div>
-          </div>
-          <div class="vote-counts">
-            <span class="vote-count yea">Yea: ${bill.voteCounts.yea}</span>
-            <span class="vote-count nay">Nay: ${bill.voteCounts.nay}</span>
-            <span class="vote-count abstain">Abstain: ${bill.voteCounts.abstain}</span>
-          </div>
-          ${(bill.status === 'Debate' || bill.status === 'Vote') && citizenReady && !hasVoted ? `
-            <div class="modal-vote-actions">
-              <button class="button primary vote-btn" data-vote="yea">Vote Yea</button>
-              <button class="button vote-btn" data-vote="nay">Vote Nay</button>
-              <button class="button vote-btn" data-vote="abstain">Abstain</button>
-            </div>
-          ` : hasVoted ? `<p class="voted-notice">You voted: <strong>${hasVoted.toUpperCase()}</strong></p>` : ''}
-        </div>
-      </div>
-
-      <div class="bill-modal-section">
-        <h3>Full Text</h3>
-        <pre class="bill-full-text">${escapeHtml(bill.fullText)}</pre>
-      </div>
-
-      ${bill.amendments.length > 0 ? `
-      <div class="bill-modal-section">
-        <h3>Amendments (${bill.amendments.length})</h3>
-        <div class="amendments-list">
-          ${bill.amendments.map(amend => `
-            <article class="amendment-card">
-              <div class="amendment-header">
-                <h4>${escapeHtml(amend.title)}</h4>
-                <span class="activity-status status-${amend.status.toLowerCase()}">${escapeHtml(amend.status)}</span>
-              </div>
-              <p class="amendment-meta">Sponsored by ${escapeHtml(amend.sponsor)} · ${formatDate(amend.date)}</p>
-              <p class="amendment-text">${escapeHtml(amend.text)}</p>
-              <div class="amendment-votes">
-                <span>Yea: ${amend.voteCounts.yea}</span>
-                <span>Nay: ${amend.voteCounts.nay}</span>
-                <span>Abstain: ${amend.voteCounts.abstain}</span>
-              </div>
-            </article>
-          `).join('')}
-        </div>
-      </div>
-      ` : ''}
-
-      ${bill.debateLog.length > 0 ? `
-      <div class="bill-modal-section">
-        <h3>Debate Log (${bill.debateLog.length})</h3>
-        <div class="debate-log">
-          ${bill.debateLog.map(entry => `
-            <article class="debate-entry" data-type="${entry.type}">
-              <header>
-                <span class="debate-speaker">${escapeHtml(entry.speaker)}</span>
-                <time class="debate-time" datetime="${entry.timestamp}">${formatDateTime(entry.timestamp)}</time>
-                <span class="debate-type">${escapeHtml(entry.type)}</span>
-              </header>
-              <p>${escapeHtml(entry.text)}</p>
-            </article>
-          `).join('')}
-        </div>
-      </div>
-      ` : ''}
-
-      ${bill.voteHistory.length > 0 ? `
-      <div class="bill-modal-section">
-        <h3>Vote History</h3>
-        <table class="vote-history-table">
-          <thead>
-            <tr><th>Date</th><th>Vote Type</th><th>Result</th><th>Yea</th><th>Nay</th><th>Abstain</th></tr>
-          </thead>
-          <tbody>
-            ${bill.voteHistory.map(v => `
-              <tr>
-                <td>${formatDate(v.date)}</td>
-                <td>${escapeHtml(v.voteType)}</td>
-                <td><span class="activity-status status-${v.result.toLowerCase()}">${escapeHtml(v.result)}</span></td>
-                <td>${v.yea}</td>
-                <td>${v.nay}</td>
-                <td>${v.abstain}</td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      </div>
-      ` : ''}
-    `;
-
-    // Attach modal vote listeners
-    content.querySelectorAll('.vote-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const vote = e.currentTarget.dataset.vote;
-        closeModal();
-        castVote(billId, vote);
-      });
-    });
-
-    modal.classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    const modal = document.getElementById('bill-modal');
-    modal.classList.remove('show');
-    document.body.style.overflow = '';
-    selectedBillId = null;
-  }
-
-  function initModal() {
-    const modal = document.getElementById('bill-modal');
-    if (!modal) return;
-
-    modal.querySelector('.modal-close').addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
-    });
-  }
-
+  /* ---- filters ---- */
   function initFilters() {
-    const statusFilter = document.getElementById('filter-status');
-    const chamberFilter = document.getElementById('filter-chamber');
-    const sortSelect = document.getElementById('filter-sort');
+    var searchField = document.getElementById('assembly-search');
+    var scopeField = document.getElementById('assembly-scope');
+    if (!searchField || !scopeField) return;
 
-    [statusFilter, chamberFilter, sortSelect].forEach(el => {
-      if (el) {
-        el.addEventListener('change', () => {
-          currentFilter.status = statusFilter?.value || 'all';
-          currentFilter.chamber = chamberFilter?.value || 'all';
-          currentFilter.sort = sortSelect?.value || 'date';
-          renderTracker();
+    var cachedData = null;
+    fetch('assets/data/assembly.json')
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        cachedData = data;
+      })
+      .catch(function () {
+        cachedData = null;
+      });
+
+    function applyFilter() {
+      if (!cachedData) return;
+      var term = searchField.value.trim().toLowerCase();
+      var scope = scopeField.value;
+
+      var items = [];
+      if (scope === 'all' || scope === 'entries') {
+        var entries = cachedData.entries || {};
+        Object.keys(entries).forEach(function (key) {
+          (entries[key] || []).forEach(function (entry) {
+            items.push(entry);
+          });
         });
       }
-    });
-  }
 
-  function formatDate(isoString) {
-    if (!isoString) return '—';
-    const date = new Date(isoString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-  }
+      var filtered = items.filter(function (entry) {
+        var searchable =
+          (entry.title || '') + ' ' +
+          (entry.id || '') + ' ' +
+          (entry.summary || '') + ' ' +
+          (entry.category || '') + ' ' +
+          (entry.owner || '') + ' ' +
+          (entry.status || '');
+        return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
+      });
 
-  function formatDateTime(isoString) {
-    if (!isoString) return '—';
-    const date = new Date(isoString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) + ' ' +
-           date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-  }
-
-    function escapeHtml(str) {
-    if (!str) return '';
-    const _div = document.createElement('div');
-    _div.textContent = str;
-    return _div.innerHTML;
-  }
-
-
-  function renderAssemblyCommittees(data) {
-    const container = document.getElementById('assembly-committees');
-    if (!container) return;
-
-    if (!data || !data.committees || !data.members) {
-      container.innerHTML = '<p class="activity-empty">Committee data is currently unavailable.</p>';
-      return;
+      renderMixedList('assembly-mixed-feed', filtered);
     }
 
-    const membersById = {};
-    (data.members || []).forEach(member => {
-      membersById[member.id] = member;
-    });
+    searchField.addEventListener('input', function () { applyFilter(); });
+    scopeField.addEventListener('change', function () { applyFilter(); });
+  }
 
-    const html = data.committees.map(committee => {
-      const memberCards = (committee.members || []).map(memberId => {
-        const member = membersById[memberId];
-        const displayName = member ? member.displayName : memberId;
-        const role = member ? member.role : 'Member';
-        return `
-          <div class="leader-card">
-            <span class="leader-badge" aria-hidden="true">🧑‍💻</span>
-            <div class="leader-name">${escapeHtml(displayName)}</div>
-            <div class="leader-title">${escapeHtml(role)}</div>
-          </div>
-        `;
-      }).join('');
-
-      return `
-        <article class="card committee-card">
-          <div class="card-header">
-            <h3>${escapeHtml(committee.name)}</h3>
-            <span class="activity-status status-active">Committee</span>
-          </div>
-          <p class="card-body">${escapeHtml(committee.focus || '')}</p>
-          <div class="committee-meta"><strong>Chair:</strong> ${escapeHtml(committee.chair || '—')}</div>
-          <div class="member-stack">${memberCards}</div>
-        </article>
-      `;
+  function renderMixedList(feedId, items) {
+    var feed = document.getElementById(feedId);
+    if (!feed) return;
+    if (!items.length) {
+      feed.innerHTML = '<div class="activity-empty">No matching entries found.</div>';
+      return;
+    }
+    feed.innerHTML = items.map(function (item) {
+      var statusClass = 'status-' + slugify(String(item.status || 'unknown'));
+      var extra = buildExtraMeta(item);
+      return '<article class="activity-item" role="article" aria-label="' + escapeHtml(String(item.id || item.title || '')) + '">' +
+        '<div class="activity-content">' +
+          '<h3 class="activity-title">' + escapeHtml(String(item.title || 'Untitled')) + '</h3>' +
+          '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+          '<div class="activity-meta">' +
+            '<span class="activity-type">' + escapeHtml(String(item.category || 'Entry')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.id || '')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.owner || item.lead || '—')) + '</span>' +
+          '</div>' +
+          (extra ? '<div class="activity-meta economics-meta">' + extra + '</div>' : '') +
+        '</div>' +
+        '<div class="activity-sidebar">' +
+          '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '—')) + '</span>' +
+        '</div>' +
+      '</article>';
     }).join('');
-
-    container.innerHTML = `<div class="committee-grid-inner">${html}</div>`;
   }
 
-  function renderAssemblyRoster(data) {
-    const container = document.getElementById('assembly-roster');
-    if (!container) return;
-
-    if (!data || !data.members) {
-      container.innerHTML = '<p class="activity-empty">Assembly roster is currently unavailable.</p>';
-      return;
-    }
-
-    const cards = data.members.map(member => `
-      <article class="card member-card">
-        <div class="member-header">
-          <span class="member-badge" aria-hidden="true">🧑‍💻</span>
-          <div>
-            <div class="member-name">${escapeHtml(member.displayName || member.id)}</div>
-            <div class="member-role">${escapeHtml(member.role || 'Member')}</div>
-          </div>
-        </div>
-        <p class="member-bio">${escapeHtml(member.bio || '')}</p>
-        <div class="member-meta"><strong>Committee:</strong> ${escapeHtml(member.committee || '—')}</div>
-        <div class="member-meta"><strong>ID:</strong> <code>${escapeHtml(member.id)}</code></div>
-      </article>
-    `).join('');
-
-    container.innerHTML = `<div class="member-grid-inner">${cards}</div>`;
+  function buildExtraMeta(item) {
+    var parts = [];
+    if (item.budget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.budget)) + '</span>');
+    if (item.participants) parts.push('<span class="metric">Participants: ' + escapeHtml(String(item.participants)) + '</span>');
+    if (item.published) parts.push('<span class="meta-date">Published: ' + escapeHtml(String(item.published)) + '</span>');
+    if (item.teamSize) parts.push('<span class="metric">Team: ' + escapeHtml(String(item.teamSize)) + '</span>');
+    if (item.monthlyBudget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.monthlyBudget)) + '</span>');
+    if (item.beneficiaries) parts.push('<span class="metric">Beneficiaries: ' + escapeHtml(String(item.beneficiaries)) + '</span>');
+    return parts.join('<span class="activity-divider">·</span>');
   }
 
-  function renderBillVoteBars(data) {
-    const container = document.getElementById('bill-vote-bars');
-    if (!container) return;
-
-    if (!data || !data.bills) {
-      container.innerHTML = '<p class="activity-empty">Vote data is currently unavailable.</p>';
-      return;
-    }
-
-    const bills = data.bills.filter(bill => {
-      const total = (bill.voteCounts?.yea || 0) + (bill.voteCounts?.nay || 0) + (bill.voteCounts?.abstain || 0);
-      return total > 0;
+  /* ---- menu / year ---- */
+  function setupMenu() {
+    var menuButton = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.menu');
+    if (!menuButton || !menu) return;
+    menuButton.addEventListener('click', function () {
+      var open = menu.dataset.open === 'true';
+      menu.dataset.open = String(!open);
+      menu.setAttribute('aria-hidden', String(open));
+      menuButton.setAttribute('aria-expanded', String(!open));
+      if (!open) {
+        var firstLink = menu.querySelector('a');
+        if (firstLink) setTimeout(function () { firstLink.focus(); }, 0);
+      }
     });
-
-    if (!bills.length) {
-      container.innerHTML = '<p class="activity-empty">No bills with recorded votes yet.</p>';
-      return;
-    }
-
-    const bars = bills.map(bill => {
-      const total = bill.voteCounts.yea + bill.voteCounts.nay + bill.voteCounts.abstain;
-      const yeaPct = total > 0 ? Math.round((bill.voteCounts.yea / total) * 100) : 0;
-      const nayPct = total > 0 ? Math.round((bill.voteCounts.nay / total) * 100) : 0;
-      const abstainPct = total > 0 ? Math.round((bill.voteCounts.abstain / total) * 100) : 0;
-
-      return `
-        <div class="vote-viz-item">
-          <div class="vote-viz-header">
-            <span class="vote-viz-title">${escapeHtml(bill.title)}</span>
-            <span class="vote-viz-meta">${escapeHtml(bill.status)} · ${total.toLocaleString()} total</span>
-          </div>
-          <div class="vote-bar" aria-label="Vote breakdown for ${escapeHtml(bill.title)}">
-            <div class="vote-bar-fill vote-bar-yea" style="width: ${yeaPct}%" aria-hidden="true"></div>
-            <div class="vote-bar-fill vote-bar-nay" style="width: ${nayPct}%" aria-hidden="true"></div>
-            <div class="vote-bar-fill vote-bar-abstain" style="width: ${abstainPct}%" aria-hidden="true"></div>
-          </div>
-          <div class="vote-legend">
-            <span class="vote-count yea">Yea ${bill.voteCounts.yea}</span>
-            <span class="vote-count nay">Nay ${bill.voteCounts.nay}</span>
-            <span class="vote-count abstain">Abstain ${bill.voteCounts.abstain}</span>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    container.innerHTML = bars;
+    menu.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.dataset.open === 'true') {
+        menu.dataset.open = 'false';
+        menu.setAttribute('aria-hidden', 'true');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.focus();
+      }
+    });
   }
 
-  function showToast(message) {
-    const existing = document.querySelector('.assembly-toast');
-    if (existing) existing.remove();
-
-    const toast = document.createElement('div');
-    toast.className = 'assembly-toast';
-    toast.textContent = message;
-    document.body.appendChild(toast);
-
-    requestAnimationFrame(() => toast.classList.add('show'));
-
-    setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => toast.remove(), 300);
-    }, 3000);
+  function liveYear() {
+    try {
+      var yearEl = document.querySelector('[data-year]');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    } catch {}
   }
 
-  window.AssemblyModule = {
-    refresh: () => {
-      renderAssemblyCommittees(assemblyData);
-      renderAssemblyRoster(assemblyData);
-      renderBillVoteBars(assemblyData);
-      renderTracker();
-    },
-    getData: () => assemblyData
-  };
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&')
+      .replace(/</g, '<')
+      .replace(/>/g, '>')
+      .replace(/"/g, '"')
+      .replace(/'/g, '&apos;');
+  }
+
+  function slugify(value) {
+    return String(value)
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'unknown';
+  }
 })();

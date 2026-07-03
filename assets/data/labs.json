@@ -1,92 +1,13 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Laboratory Operations & Safety",
-  "count": 9,
-  "entries": {
-    "operations": [
-      {
-        "id": "LAB-OPR-01",
-        "title": "National Laboratory Management Warehouse",
-        "status": "Active",
-        "category": "Operation",
-        "owner": "Mira Chen",
-        "summary": "Centralized asset registry for lab equipment, reagents, consumables, and calibration schedules across Aetheria facilities."
-      },
-      {
-        "id": "LAB-OPR-02",
-        "title": "Sample Chain-of-Custody System",
-        "status": "Active",
-        "category": "Operation",
-        "owner": "Nia Rahman",
-        "summary": "End-to-end tracking for biological, chemical, and materials samples using tamper-evident blockchain logs."
-      },
-      {
-        "id": "LAB-OPR-03",
-        "title": "Laboratory Waste Stewardship Program",
-        "status": "Deploying",
-        "category": "Operation",
-        "owner": "Aria Solenne",
-        "summary": "Segregation, labeling, transport, and disposal workflows compliant with national chemical and biological waste regulation."
-      }
-    ],
-    "safety": [
-      {
-        "id": "LAB-SFT-01",
-        "title": "Laboratory Biosafety Framework",
-        "status": "Active",
-        "category": "Safety",
-        "owner": "Kai Voss",
-        "summary": "Risk-tiered containment requirements, PPE mandates, and exposure-response protocols for BSL-1 through BSL-3 work."
-      },
-      {
-        "id": "LAB-SFT-02",
-        "title": "Chemical Safety Management Standard",
-        "status": "Active",
-        "category": "Safety",
-        "owner": "Mira Chen",
-        "summary": "GHS-compatible labeling, SDS access, spill-response, and emergency shower/eyewash inspection schedules."
-      },
-      {
-        "id": "LAB-SFT-03",
-        "title": "Laboratory Emergency Response Policy",
-        "status": "Draft",
-        "category": "Safety",
-        "owner": "Nia Rahman",
-        "summary": "Unified fire, spill, exposure, and evacuation playbooks with linked responder notification chains."
-      }
-    ],
-    "training": [
-      {
-        "id": "LAB-TRN-01",
-        "title": "Laboratory Safety Training Baseline",
-        "status": "Active",
-        "category": "Training",
-        "lead": "Aria Solenne",
-        "summary": "Mandatory onboarding curriculum covering PPE, hazard identification, waste handling, and emergency response."
-      },
-      {
-        "id": "LAB-TRN-02",
-        "title": "Specialized Instrument Certification",
-        "status": "Beta",
-        "category": "Training",
-        "lead": "Kai Voss",
-        "summary": "Proficiency-based certification tracks for microscopy, spectroscopy, sequencing, and cleanroom equipment."
-      },
-      {
-        "id": "LAB-TRN-03",
-        "title": "Principal Investigator Safety Responsibility Standard",
-        "status": "Pending",
-        "category": "Training",
-        "lead": "Mira Chen",
-        "summary": "PIs must complete annual safety leadership training covering risk assessment, delegation, and incident review."
-      }
-    ]
-  },
+  "ministry": "Secretary of Technology, Science & Innovation",
+  "secretary": "Secretary of Technology, Science & Innovation",
   "stats": {
     "activeFacilities": 5,
     "safetyIncidents": 0,
     "crossLabProjects": 8,
-    "trainingCompletions": 142
+    "trainingCompletions": 142,
+    "publications": 34
   },
   "pillars": [
     {
@@ -104,5 +25,10 @@
       "title": "Talent Pipeline",
       "summary": "Fellowships, apprenticeships, and credential pathways for lab workforce."
     }
-  ]
+  ],
+  "entries": {
+    "operations": [],
+    "safety": [],
+    "training": []
+  }
 }

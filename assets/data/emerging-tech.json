@@ -1,92 +1,13 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Emerging Technology Review",
-  "count": 9,
-  "entries": {
-    "quantum": [
-      {
-        "id": "EMT-QNT-01",
-        "title": "Quantum Readiness Assessment",
-        "status": "Active",
-        "category": "Quantum",
-        "owner": "Kai Voss",
-        "summary": "Inventory of agency systems with post-quantum vulnerability exposure; prioritized migration roadmap to lattice-based cryptography."
-      },
-      {
-        "id": "EMT-QNT-02",
-        "title": "Quantum Communications Test Bed",
-        "status": "Beta",
-        "category": "Quantum",
-        "owner": "Mira Chen",
-        "summary": "Pilot QKD link between Protocol authority nodes to evaluate hardware, key-rate, and integration with existing PKI."
-      },
-      {
-        "id": "EMT-QNT-03",
-        "title": "Quantum Workforce Development Plan",
-        "status": "Draft",
-        "category": "Quantum",
-        "owner": "Nia Rahman",
-        "summary": "Scholarship, curriculum, and industry placement pipeline for quantum engineers, cryptographers, and physicists."
-      }
-    ],
-    "biotechnology": [
-      {
-        "id": "EMT-BIO-01",
-        "title": "Gene Editing Oversight Framework",
-        "status": "Active",
-        "category": "Biotechnology",
-        "owner": "Aria Solenne",
-        "summary": "Permitting, consent, ecological impact, and intergenerational review requirements for somatic and germline research."
-      },
-      {
-        "id": "EMT-BIO-02",
-        "title": "Biosecurity Data Sharing Protocol",
-        "status": "Active",
-        "category": "Biotechnology",
-        "owner": "Kai Voss",
-        "summary": "Encrypted, access-controlled pathogen and bio-design reporting infrastructure coordinated with Health and Safety ministries."
-      },
-      {
-        "id": "EMT-BIO-03",
-        "title": "Synthetic Biology Sandbox Program",
-        "status": "Planning",
-        "category": "Biotechnology",
-        "owner": "Mira Chen",
-        "summary": "Contained experimental zone with monitoring, insurance, and rapid shutdown protocols for engineered organisms."
-      }
-    ],
-    "autonomous": [
-      {
-        "id": "EMT-AUT-01",
-        "title": "Autonomous Vehicle Safety Standard",
-        "status": "Active",
-        "category": "Autonomous",
-        "owner": "Nia Rahman",
-        "summary": "Operational design domain, fallback behavior, data logging, and human-override requirements for ground and aerial systems."
-      },
-      {
-        "id": "EMT-AUT-02",
-        "title": "AI Decision Audit Standard",
-        "status": "Beta",
-        "category": "Autonomous",
-        "owner": "Aria Solenne",
-        "summary": "Explainability, accountability, and counterfactual logging requirements for high-stakes autonomous decision pipelines."
-      },
-      {
-        "id": "EMT-AUT-03",
-        "title": "Robotics Interoperability Charter",
-        "status": "Draft",
-        "category": "Autonomous",
-        "owner": "Kai Voss",
-        "summary": "Shared identity, messaging, and safety-interlock protocol for multi-vendor robot fleets in civic deployments."
-      }
-    ]
-  },
+  "ministry": "Secretary of Technology, Science & Innovation",
+  "secretary": "Secretary of Technology, Science & Innovation",
   "stats": {
     "reviewedProposals": 28,
     "sandboxProjects": 7,
     "gateApprovals": 12,
-    "redLinesDeclared": 4
+    "redLinesDeclared": 4,
+    "ethicsReviews": 19
   },
   "pillars": [
     {
@@ -104,5 +25,10 @@
       "title": "Red Line Clarity",
       "summary": "Explicitly prohibited research domains with international coordination."
     }
-  ]
+  ],
+  "entries": {
+    "quantum": [],
+    "biotechnology": [],
+    "autonomous": []
+  }
 }

@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Secretary of Civic Identity & Registry",
+  "secretary": "Secretary of Civic Identity & Registry",
+  "stats": {
+    "totalCitizens": 12450,
+    "activeCitizens": 9870,
+    "pendingApplications": 234,
+    "renunciations": 12,
+    "dualCitizenships": 450
+  },
+  "pillars": [
+    {
+      "id": "CIT-PIL-01",
+      "title": "Inclusive Eligibility",
+      "summary": "Clear, merit-based pathways to citizenship with no arbitrary barriers."
+    },
+    {
+      "id": "CIT-PIL-02",
+      "title": "Rights & Responsibilities",
+      "summary": "Charter-guaranteed rights paired with civic duty expectations and participation metrics."
+    },
+    {
+      "id": "CIT-PIL-03",
+      "title": "Portable Identity",
+      "summary": "Verifiable credentials interoperable with recognized external systems."
+    }
+  ],
+  "entries": {
+    "pathways": [],
+    "rights": [],
+    "statistics": []
+  }
+}

@@ -1,111 +1,13 @@
 {
   "generated": "2026-07-02",
-  "count": 9,
-  "entries": {
-    "indicators": [
-      {
-        "id": "SA-IN-001",
-        "title": "Network Latency Index",
-        "category": "Infrastructure",
-        "status": "Active",
-        "owner": "Digital Operations",
-        "summary": "Aggregated latency percentile across all operational nodes, updated every 15 minutes.",
-        "period": "Real-time",
-        "trend": "Stable"
-      },
-      {
-        "id": "SA-IN-002",
-        "title": " citizen services load",
-        "category": "Demand",
-        "status": "Active",
-        "owner": "Public Affairs",
-        "summary": "Daily request volume and failure rate for passport, registry, and identity verification services.",
-        "period": "Daily",
-        "trend": "Rising"
-      },
-      {
-        "id": "SA-IN-003",
-        "title": "Transparency Backlog",
-        "category": "Governance",
-        "status": "Watch",
-        "owner": "Open Records Officer",
-        "summary": "Open request backlog, median completion time, and exemption citation rate for FOI-style requests.",
-        "period": "Weekly",
-        "trend": "Declining"
-      }
-    ],
-    "risks": [
-      {
-        "id": "SA-RI-001",
-        "title": "Node Concentration Risk",
-        "category": "Infrastructure",
-        "status": "Elevated",
-        "owner": "Data Governance Officer",
-        "summary": "60% of traffic routes through three regional nodes. Mitigation requires mesh expansion and geographic redistribution.",
-        "period": "Q3 2026",
-        "severity": "High"
-      },
-      {
-        "id": "SA-RI-002",
-        "title": "Privacy Compliance Drift",
-        "category": "Compliance",
-        "status": "Active",
-        "owner": "Registry Office",
-        "summary": "Schema changes in three active services exceed minimization thresholds. Remediation scheduled for Q3 rollout.",
-        "period": "Q2-Q3 2026",
-        "severity": "Medium"
-      },
-      {
-        "id": "SA-RI-003",
-        "title": "Disinformation Response Readiness",
-        "category": "Diplomacy",
-        "status": "Watch",
-        "owner": "Office of the President",
-        "summary": "Gap analysis of public-facing disinformation response playbooks across Communications and External Affairs.",
-        "period": "Q4 2026",
-        "severity": "Medium"
-      }
-    ],
-    "foresight": [
-      {
-        "id": "SA-FS-001",
-        "title": "Strategic Foresight Brief: Digital Sovereignty",
-        "category": "Strategy",
-        "status": "Scheduled",
-        "owner": "Office of the President",
-        "summary": "Multi-year outlook on protocol state resilience, node governance, and inter-network treaty frameworks.",
-        "period": "FY2027",
-        "delivery": "Q4 2026"
-      },
-      {
-        "id": "SA-FS-002",
-        "title": "Early Warning Dashboard Roadmap",
-        "category": "Product",
-        "status": "Active",
-        "owner": "Digital Operations",
-        "summary": "Proposed single-pane indicator dashboard with configurable alerting thresholds for Cabinet review.",
-        "period": "Q3-Q4 2026",
-        "delivery": "Q1 2027"
-      },
-      {
-        "id": "SA-FS-003",
-        "title": "Service Continuity Scenario Playbook",
-        "category": "Operations",
-        "status": "Completed",
-        "owner": "Digital Service Corps",
-        "summary": "Documented load-shedding, failover, and degraded-service procedures for pandemic-scale demand spikes.",
-        "period": "Q2 2026",
-        "delivery": "2026-06-30"
-      }
-    ]
-  },
   "ministry": "Office of Situational Awareness",
   "secretary": "Director of Situational Awareness",
   "stats": {
     "monitoredIndicators": 42,
     "alertsGenerated": 128,
     "foresightHorizonDays": 90,
-    "accuracyRate": "84.7%"
+    "accuracyRate": "84.7%",
+    "briefingsPublished": 34
   },
   "pillars": [
     {
@@ -123,5 +25,10 @@
       "title": "Actionable Intelligence",
       "summary": "Structured briefings with confidence intervals, options, and decision deadlines."
     }
-  ]
+  ],
+  "entries": {
+    "indicators": [],
+    "risks": [],
+    "foresight": []
+  }
 }

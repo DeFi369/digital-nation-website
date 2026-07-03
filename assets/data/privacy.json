@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Data Governance Office",
+  "secretary": "Data Governance Officer",
+  "stats": {
+    "dataSubjects": 42000,
+    "consentRate": "94%",
+    "deletionRequests": 12,
+    "breachIncidents": 0,
+    "auditScore": "96.4%"
+  },
+  "pillars": [
+    {
+      "id": "PRI-PIL-01",
+      "title": "Data Minimization",
+      "summary": "Collect only what is necessary, retain only as long as required."
+    },
+    {
+      "id": "PRI-PIL-02",
+      "title": "Consent Architecture",
+      "summary": "Granular, revocable consent with purpose-binding and audit trails."
+    },
+    {
+      "id": "PRI-PIL-03",
+      "title": "Right to Exit",
+      "summary": "Complete data portability and deletion within 30 days of request."
+    }
+  ],
+  "entries": {
+    "policies": [],
+    "procedures": [],
+    "rights": []
+  }
+}

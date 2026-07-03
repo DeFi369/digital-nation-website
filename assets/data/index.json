@@ -1,0 +1,34 @@
+{
+  "generated": "2026-07-02",
+  "ministry": "Office of the President",
+  "secretary": "President of the Digital Nation",
+  "stats": {
+    "registeredCitizens": 12450,
+    "activeServices": 24,
+    "systemUptime": "99.97%",
+    "governmentLayers": 4,
+    "lastProtocolUpdate": "2026-07-02"
+  },
+  "pillars": [
+    {
+      "id": "IDX-PIL-01",
+      "title": "Sovereign by Code",
+      "summary": "Governance encoded in transparent, auditable protocols rather than opaque bureaucracies."
+    },
+    {
+      "id": "IDX-PIL-02",
+      "title": "Citizen-First Design",
+      "summary": "Every system built for human flourishing, dignity, and verifiable participation."
+    },
+    {
+      "id": "IDX-PIL-03",
+      "title": "Open by Default",
+      "summary": "Algorithms, ledgers, and decisions public unless charter-classified with sunset review."
+    }
+  ],
+  "entries": {
+    "highlights": [],
+    "announcements": [],
+    "quickLinks": []
+  }
+}

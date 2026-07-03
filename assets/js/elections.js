@@ -8,119 +8,157 @@
   }
 
   function init() {
-    try {
-      var searchField = document.getElementById('elections-search');
-      var statusField = document.getElementById('elections-status');
-      if (!searchField && !statusField) return;
-
-      setupMenu();
-      liveYear();
-      loadFeeds();
-    } catch {}
+    setupMenu();
+    liveYear();
+    renderStats();
+    renderPillars();
+    initFilters();
   }
 
-  function loadFeeds() {
+  /* ---- stats ---- */
+  function renderStats() {
+    const container = document.getElementById('elections-stats');
+    if (!container) return;
     fetch('assets/data/elections.json')
-      .then(function (response) {
-        if (!response.ok) throw new Error('elections data unavailable');
-        return response.json();
-      })
+      .then(function (res) { return res.json(); })
       .then(function (data) {
-        var entries = data.entries || {};
-        renderSection('elections-elections-feed', entries.elections || []);
-        renderSection('elections-apportionment-feed', entries.apportionment || []);
-        renderSection('elections-referendums-feed', entries.referendums || []);
-        renderSection('elections-petitions-feed', entries.petitions || []);
+        const stats = data.stats || {};
+        var html = '';
+        Object.keys(stats).forEach(function (key) {
+          html += '<div class="stat">' +
+            '<span class="stat-value">' + escapeHtml(String(stats[key])) + '</span>' +
+            '<span class="stat-label">' + escapeHtml(pascalToTitle(key)) + '</span>' +
+          '</div>';
+        });
+        container.innerHTML = html;
       })
       .catch(function () {
-        var ids = [
-          'elections-elections-feed',
-          'elections-apportionment-feed',
-          'elections-referendums-feed',
-          'elections-petitions-feed'
-        ];
-        ids.forEach(function (id) {
-          var el = document.getElementById(id);
-          if (el) el.innerHTML = '<div class="activity-empty">Elections data is temporarily unavailable.</div>';
-        });
+        container.innerHTML = '<div class="activity-empty">Summary is temporarily unavailable.</div>';
       });
   }
 
-  function renderSection(containerId, items) {
-    var container = document.getElementById(containerId);
-    if (!container) return;
-
-    var searchField = document.getElementById('elections-search');
-    var statusField = document.getElementById('elections-status');
-    var term = searchField ? searchField.value.trim().toLowerCase() : '';
-    var status = statusField ? statusField.value : 'all';
-
-    var filtered = items.filter(function (entry) {
-      var matchesTerm =
-        !term ||
-        String(entry.title || entry.name || '').toLowerCase().indexOf(term) !== -1 ||
-        String(entry.id || '').toLowerCase().indexOf(term) !== -1 ||
-        String(entry.category || '').toLowerCase().indexOf(term) !== -1 ||
-        String(entry.summary || '').toLowerCase().indexOf(term) !== -1;
-      var matchesStatus = status === 'all' || String(entry.status || '').toLowerCase() === status.toLowerCase();
-      return matchesTerm && matchesStatus;
-    });
-
-    if (!filtered.length) {
-      container.innerHTML = '<div class="activity-empty">No matching items found.</div>';
-      return;
-    }
-
-    container.innerHTML = filtered
-      .map(function (entry) {
-        var meta = [
-          escapeHtml(String(entry.id || '')),
-          escapeHtml(String(entry.category || ''))
-        ];
-        if (entry.administeredBy) meta.push('Administered by: ' + escapeHtml(String(entry.administeredBy)));
-        if (entry.reportsTo) meta.push('Reports to: ' + escapeHtml(String(entry.reportsTo)));
-        if (entry.validatedBy) meta.push('Validated by: ' + escapeHtml(String(entry.validatedBy)));
-        if (entry.district) meta.push('District: ' + escapeHtml(String(entry.district)));
-        if (entry.seats !== undefined) meta.push('Seats: ' + escapeHtml(String(entry.seats)));
-        if (entry.population !== undefined) meta.push('Population: ' + escapeHtml(String(entry.population)));
-        if (entry.signatures !== undefined) meta.push('Signatures: ' + escapeHtml(String(entry.signatures)));
-
-        var details = [];
-        if (entry.opened) details.push('Opened: ' + escapeHtml(String(entry.opened)));
-        if (entry.closed) details.push('Closed: ' + escapeHtml(String(entry.closed)));
-        if (entry.certified) details.push('Certified: ' + escapeHtml(String(entry.certified)));
-        if (entry.effective) details.push('Effective: ' + escapeHtml(String(entry.effective)));
-        if (entry.validated) details.push('Validated: ' + escapeHtml(String(entry.validated)));
-
-        var html =
-          '<article class="activity-item elections-item" role="article" aria-label="' +
-          escapeHtml(String(entry.id || '')) +
-          '">' +
-          '<div class="activity-content">' +
-          '<h3 class="activity-label">' +
-          escapeHtml(String(entry.title || entry.name || 'Untitled')) +
-          '</h3>' +
-          '<div class="activity-meta">' + meta.join(' · ') + '</div>' +
-          '<div class="activity-meta">' + escapeHtml(String(entry.summary || '')) + '</div>';
-        if (details.length) {
-          html += '<div class="activity-meta">' + details.join('<br/>') + '</div>';
-        }
-        html +=
-          '<div class="activity-meta">' +
-          '<span class="elections-status elections-status-' +
-          slugify(String(entry.status || '')) +
-          '">' +
-          escapeHtml(String(entry.status || '')) +
-          '</span>' +
-          '</div>' +
-          '</div>' +
-          '</article>';
-
-        return html;
-      })
-      .join('');
+  function pascalToTitle(value) {
+    return String(value)
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, function (s) { return s.toUpperCase(); })
+      .trim();
   }
 
+  /* ---- pillars ---- */
+  function renderPillars() {
+    const container = document.getElementById('elections-pillars');
+    if (!container) return;
+    fetch('assets/data/elections.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
+        container.innerHTML = items.map(function (item) {
+          return '<article class="activity-item pillar">' +
+            '<div class="activity-content">' +
+            '<h3 class="activity-title">' + escapeHtml(String(item.title || '')) + '</h3>' +
+            '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+            '</div>' +
+            '</article>';
+        }).join('');
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Pillar data is temporarily unavailable.</div>';
+      });
+  }
+
+  /* ---- filters ---- */
+  function initFilters() {
+    var searchField = document.getElementById('elections-search');
+    var scopeField = document.getElementById('elections-scope');
+    if (!searchField || !scopeField) return;
+
+    var cachedData = null;
+    fetch('assets/data/elections.json')
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        cachedData = data;
+      })
+      .catch(function () {
+        cachedData = null;
+      });
+
+    function applyFilter() {
+      if (!cachedData) return;
+      var term = searchField.value.trim().toLowerCase();
+      var scope = scopeField.value;
+
+      var items = [];
+      if (scope === 'all' || scope === 'entries') {
+        var entries = cachedData.entries || {};
+        Object.keys(entries).forEach(function (key) {
+          (entries[key] || []).forEach(function (entry) {
+            items.push(entry);
+          });
+        });
+      }
+
+      var filtered = items.filter(function (entry) {
+        var searchable =
+          (entry.title || '') + ' ' +
+          (entry.id || '') + ' ' +
+          (entry.summary || '') + ' ' +
+          (entry.category || '') + ' ' +
+          (entry.owner || '') + ' ' +
+          (entry.status || '');
+        return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
+      });
+
+      renderMixedList('elections-mixed-feed', filtered);
+    }
+
+    searchField.addEventListener('input', function () { applyFilter(); });
+    scopeField.addEventListener('change', function () { applyFilter(); });
+  }
+
+  function renderMixedList(feedId, items) {
+    var feed = document.getElementById(feedId);
+    if (!feed) return;
+    if (!items.length) {
+      feed.innerHTML = '<div class="activity-empty">No matching entries found.</div>';
+      return;
+    }
+    feed.innerHTML = items.map(function (item) {
+      var statusClass = 'status-' + slugify(String(item.status || 'unknown'));
+      var extra = buildExtraMeta(item);
+      return '<article class="activity-item" role="article" aria-label="' + escapeHtml(String(item.id || item.title || '')) + '">' +
+        '<div class="activity-content">' +
+          '<h3 class="activity-title">' + escapeHtml(String(item.title || 'Untitled')) + '</h3>' +
+          '<p class="activity-description">' + escapeHtml(String(item.summary || '')) + '</p>' +
+          '<div class="activity-meta">' +
+            '<span class="activity-type">' + escapeHtml(String(item.category || 'Entry')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.id || '')) + '</span>' +
+            '<span class="activity-divider">·</span>' +
+            '<span>' + escapeHtml(String(item.owner || item.lead || '—')) + '</span>' +
+          '</div>' +
+          (extra ? '<div class="activity-meta economics-meta">' + extra + '</div>' : '') +
+        '</div>' +
+        '<div class="activity-sidebar">' +
+          '<span class="activity-status ' + statusClass + '">' + escapeHtml(String(item.status || '—')) + '</span>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
+
+  function buildExtraMeta(item) {
+    var parts = [];
+    if (item.budget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.budget)) + '</span>');
+    if (item.participants) parts.push('<span class="metric">Participants: ' + escapeHtml(String(item.participants)) + '</span>');
+    if (item.published) parts.push('<span class="meta-date">Published: ' + escapeHtml(String(item.published)) + '</span>');
+    if (item.teamSize) parts.push('<span class="metric">Team: ' + escapeHtml(String(item.teamSize)) + '</span>');
+    if (item.monthlyBudget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.monthlyBudget)) + '</span>');
+    if (item.beneficiaries) parts.push('<span class="metric">Beneficiaries: ' + escapeHtml(String(item.beneficiaries)) + '</span>');
+    return parts.join('<span class="activity-divider">·</span>');
+  }
+
+  /* ---- menu / year ---- */
   function setupMenu() {
     var menuButton = document.querySelector('.menu-toggle');
     var menu = document.querySelector('.menu');
@@ -154,10 +192,11 @@
 
   function escapeHtml(value) {
     return String(value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/&/g, '&')
+      .replace(/</g, '<')
+      .replace(/>/g, '>')
+      .replace(/"/g, '"')
+      .replace(/'/g, '&apos;');
   }
 
   function slugify(value) {

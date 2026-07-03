@@ -17,9 +17,9 @@
 
   /* ---- stats ---- */
   function renderStats() {
-    const container = document.getElementById('treasury-stats');
+    const container = document.getElementById('terms-stats');
     if (!container) return;
-    fetch('assets/data/treasury.json')
+    fetch('assets/data/terms.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
         const stats = data.stats || {};
@@ -46,9 +46,9 @@
 
   /* ---- pillars ---- */
   function renderPillars() {
-    const container = document.getElementById('treasury-pillars');
+    const container = document.getElementById('terms-pillars');
     if (!container) return;
-    fetch('assets/data/treasury.json')
+    fetch('assets/data/terms.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
         const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
@@ -68,12 +68,12 @@
 
   /* ---- filters ---- */
   function initFilters() {
-    var searchField = document.getElementById('treasury-search');
-    var scopeField = document.getElementById('treasury-scope');
+    var searchField = document.getElementById('terms-search');
+    var scopeField = document.getElementById('terms-scope');
     if (!searchField || !scopeField) return;
 
     var cachedData = null;
-    fetch('assets/data/treasury.json')
+    fetch('assets/data/terms.json')
       .then(function (res) {
         return res.json();
       })
@@ -110,7 +110,7 @@
         return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
       });
 
-      renderMixedList('treasury-mixed-feed', filtered);
+      renderMixedList('terms-mixed-feed', filtered);
     }
 
     searchField.addEventListener('input', function () { applyFilter(); });

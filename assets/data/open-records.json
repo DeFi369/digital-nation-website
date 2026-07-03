@@ -1,105 +1,13 @@
 {
   "generated": "2026-07-02",
-  "count": 9,
-  "entries": {
-    "requests": [
-      {
-        "id": "OR-RQ-001",
-        "title": "Q2 Node Deployment Records",
-        "category": "Infrastructure",
-        "status": "Published",
-        "requestor": "citizen-312@aetheria.network",
-        "summary": "Request for deployment manifests, change logs, and rollback records for Q2 node updates across Alpha cluster.",
-        "submitted": "2026-07-03T09:00:00Z",
-        "completed": "2026-07-07T16:45:00Z"
-      },
-      {
-        "id": "OR-RQ-002",
-        "title": "Assembly Budget Reconciliation Notes",
-        "category": "Finance",
-        "status": "Completed",
-        "requestor": "citizen-089@aetheria.network",
-        "summary": "Granular reconciliation notes for Assembly-approved budget lines with variance explanations.",
-        "submitted": "2026-07-04T11:15:00Z",
-        "completed": "2026-07-09T10:20:00Z"
-      },
-      {
-        "id": "OR-RQ-003",
-        "title": "Operational Incident Summary Redux",
-        "category": "Governance",
-        "status": "In Review",
-        "requestor": "press@aetheria.network",
-        "summary": "Redacted and unredacted versions of the operational incident summary requested under FOI-style procedures.",
-        "submitted": "2026-07-10T14:00:00Z",
-        "completed": null
-      }
-    ],
-    "disclosures": [
-      {
-        "id": "OR-DS-001",
-        "title": "Conflict of Interest Registry",
-        "category": "Governance",
-        "status": "Active",
-        "owner": "Assembly Ethics Committee",
-        "summary": "Public registry of declared conflicts of interest for all confirmed officers and senior directors.",
-        "effective": "2026-06-15T00:00:00Z"
-      },
-      {
-        "id": "OR-DS-002",
-        "title": "Smart Contract Source Index",
-        "category": "Technology",
-        "status": "Active",
-        "owner": "Ministry of Technology",
-        "summary": "Index of verified smart contract deployments with commit hashes and audit attestations.",
-        "effective": "2026-06-01T00:00:00Z"
-      },
-      {
-        "id": "OR-DS-003",
-        "title": "Travel & Entertainment Expenditure Ledger",
-        "category": "Finance",
-        "status": "Scheduled",
-        "owner": "Digital Economy & Commerce Secretary",
-        "summary": "Quarterly line-item disclosure of official travel, lodging, and event expenditure by department.",
-        "effective": "2026-09-01T00:00:00Z"
-      }
-    ],
-    "audits": [
-      {
-        "id": "OR-AU-001",
-        "title": "Annual Open Records Report",
-        "category": "Transparency",
-        "status": "Scheduled",
-        "owner": "Open Records Officer",
-        "summary": "Annual report on request volumes, response times, exemptions cited, and backlog trends.",
-        "period": "FY2026"
-      },
-      {
-        "id": "OR-AU-002",
-        "title": "FOI-style Processing Audit",
-        "category": "Operations",
-        "status": "In Review",
-        "owner": "Office of Internal Audit",
-        "summary": "End-to-end audit of request receipt, classification, redaction, and publication workflows.",
-        "period": "Q3 2026"
-      },
-      {
-        "id": "OR-AU-003",
-        "title": "Records Retention Compliance Check",
-        "category": "Retention",
-        "status": "Active",
-        "owner": "Records Management Office",
-        "summary": "Sample-based compliance check across departments against retention and disposition schedules.",
-        "period": "Ongoing"
-      }
-    ]
-  },
   "ministry": "Open Records Office",
   "secretary": "Open Records Officer",
   "stats": {
     "pendingRequests": 12,
     "avgResponseDays": 8,
     "disclosureRate": "87%",
-    "appealsFiled": 3
+    "appealsFiled": 3,
+    "proactivePublications": 18
   },
   "pillars": [
     {
@@ -117,5 +25,10 @@
       "title": "Audit Readiness",
       "summary": "Structured logging of all access decisions for internal and external review."
     }
-  ]
+  ],
+  "entries": {
+    "requests": [],
+    "disclosures": [],
+    "audits": []
+  }
 }

@@ -1,133 +1,13 @@
 {
   "generated": "2026-07-02",
-  "office": "Secretary of External Affairs",
-  "layer": "Layered Republic",
-  "count": 8,
+  "ministry": "Secretary of External Affairs",
+  "secretary": "Secretary of External Affairs",
   "stats": {
-    "activeTreaties": 12,
-    "partnersRecognized": 6,
-    "missions Accredited": 5,
-    "activePrograms": 7,
-    "enrolledInstruments": 4,
-    "recentReports": 3
-  },
-  "entries": {
-    "treaties": [
-      {
-        "id": "DIP-TRE-01",
-        "title": "Mutual Recognition Accord \u2014 Network Republic",
-        "party": "Network Republic",
-        "status": "Ratified",
-        "type": "Bilateral",
-        "effectiveDate": "2026-03-14",
-        "expiryDate": "2031-03-14",
-        "summary": "Establishes mutual recognition of citizen credentials, shared anti-fraud measures, consular referral channels, and layered-republic interoperability obligations for verified digital governance participants."
-      },
-      {
-        "id": "DIP-TRE-02",
-        "title": "Interoperability & Data-Sovereignty Pact",
-        "party": "Nordic Digital Alliance",
-        "status": "In Review",
-        "type": "Multilateral",
-        "effectiveDate": "2026-08-01",
-        "expiryDate": "2032-08-01",
-        "summary": "Defines data-residency requirements, cross-border incident reporting, canonical API surfaces, and layered-republic governance alignment for sovereign data stewardship."
-      },
-      {
-        "id": "DIP-TRE-03",
-        "title": "Consular Cooperation Agreement",
-        "party": "Republic of Solstice Islands",
-        "status": "Signed",
-        "type": "Bilateral",
-        "effectiveDate": "2026-05-19",
-        "expiryDate": "2029-05-19",
-        "summary": "Enables honorary consular officers, document authentication workflows, citizen-support call routing, and credential-verification interoperability under v3.0 protocol contracts."
-      },
-      {
-        "id": "DIP-TRE-04",
-        "title": "Observer Status & Technical Cooperation",
-        "party": "Digital Standards Consortium",
-        "status": "Active",
-        "type": "Observer",
-        "effectiveDate": "2026-01-01",
-        "expiryDate": "PerpetualAnnualReview",
-        "summary": "Grants AETHERIA observer rights in standards proceedings with voting rights on technical amendments, protocol sponsorship, and layered-republic governance-layer specifications."
-      },
-      {
-        "id": "DIP-TRE-05",
-        "title": "Passport Reciprocity Notice \u2014 Micronation Fellowship",
-        "party": "Micronation Fellowship",
-        "status": "Ratified",
-        "type": "Multilateral",
-        "effectiveDate": "2026-04-22",
-        "expiryDate": "2028-04-22",
-        "summary": "Recommends favorable treatment for AETHERIA passport holders across recognized networks; states no binding visa-waiver obligation while reflecting layered-republic reciprocity principles."
-      },
-      {
-        "id": "DIP-TRE-06",
-        "title": "Provisional Science & Technology Exchange",
-        "party": "Inter-Lab Consortium",
-        "status": "Draft",
-        "type": "Bilateral",
-        "effectiveDate": null,
-        "expiryDate": null,
-        "summary": "Proposed research mobility, data-sharing protocol, and joint experiment protocol between AETHERIA laboratories and recognized external science nodes."
-      },
-      {
-        "id": "DIP-TRE-07",
-        "title": "Coastal Resilience Information Partnership",
-        "party": "Coastal Digital Observatory",
-        "status": "In Review",
-        "type": "Observer",
-        "effectiveDate": "2026-09-15",
-        "expiryDate": "2031-09-15",
-        "summary": "Shared environmental telemetry, incident-coordination channel, and public-facing transparency dashboard interoperable with sustainability ministry sensors."
-      },
-      {
-        "id": "DIP-TRE-08",
-        "title": "Open Diagram & Interoperability Charter",
-        "party": "Open-Flow Alliance",
-        "status": "Signed",
-        "type": "Multilateral",
-        "effectiveDate": "2026-06-01",
-        "expiryDate": "2028-06-01",
-        "summary": "Requires open system diagrams, conformant node implementations, and shared incident post-mortems for layered-republic compatibility review."
-      }
-    ],
-    "multilateral": [
-      {
-        "id": "DIP-MLT-01",
-        "title": "Digital States Caucus \u2014 UN Civil Society",
-        "status": "Active",
-        "participants": "12 polities",
-        "topic": "Digital-state participation in multilateral civil-society mechanisms under the Secretary of External Affairs",
-        "lastMeeting": "2026-05-30"
-      },
-      {
-        "id": "DIP-MLT-02",
-        "title": "Open Government Partnership \u2014 Digital Track",
-        "status": "Observer",
-        "participants": "4 observers",
-        "topic": "Open-data commitments, participatory budgeting standards, and layered-republic accountability disclosures",
-        "lastMeeting": "2026-01-18"
-      },
-      {
-        "id": "DIP-MLT-03",
-        "title": "Micronation Education Alliance",
-        "status": "Active",
-        "participants": "6 polities",
-        "topic": "Curriculum exchange, mutual accreditation, student mobility pathways, and layered-republic credential portability",
-        "lastMeeting": "2026-06-09"
-      },
-      {
-        "id": "DIP-MLT-04",
-        "title": "Global Micronation Trade Coalition",
-        "status": "Active",
-        "participants": "9 polities",
-        "topic": "Interoperable commercial instruments, inspectorate protocols, and layered-republic export attestations.",
-        "lastMeeting": "2026-04-22"
-      }
-    ]
+    "activeTreaties": 14,
+    "multilateralEngagements": 8,
+    "recognitionProgress": "3/193",
+    "consularCases": 280,
+    "protocolOfficers": 12
   },
   "pillars": [
     {
@@ -145,5 +25,9 @@
       "title": "Soft Power",
       "summary": "Cultural, technical, and humanitarian engagement as recognition catalysts."
     }
-  ]
+  ],
+  "entries": {
+    "treaties": [],
+    "multilateral": []
+  }
 }

@@ -1,69 +1,13 @@
 {
   "generated": "2026-07-02",
-  "count": 6,
-  "entries": {
-    "operations": [
-      {
-        "id": "TRE-O01",
-        "title": "Operating Reserve Management",
-        "category": "Operations",
-        "status": "Active",
-        "owner": "Treasury Node Alpha",
-        "summary": "Liquidity reserve operations for program continuity and operational expenses."
-      },
-      {
-        "id": "TRE-O02",
-        "title": "Reserve Rebalancing",
-        "category": "Operations",
-        "status": "In Progress",
-        "owner": "Treasury Committee",
-        "summary": "Semi-annual rebalancing of operating and strategic reserve targets."
-      }
-    ],
-    "assets": [
-      {
-        "id": "TRE-A01",
-        "title": "Digital Asset Issuance",
-        "category": "Digital Assets",
-        "status": "Active",
-        "owner": "Asset Registrar",
-        "summary": "Issuance against documented reserves with on-protocol attestation."
-      },
-      {
-        "id": "TRE-A02",
-        "title": "Custody & Settlement Upgrade",
-        "category": "Digital Assets",
-        "status": "Scheduled",
-        "owner": "Protocol Team",
-        "summary": "Deterministic settlement upgrade with verifiable state transitions."
-      }
-    ],
-    "reserves": [
-      {
-        "id": "TRE-R01",
-        "title": "Strategic Reserve Backstop",
-        "category": "Reserves",
-        "status": "Active",
-        "owner": "Treasury Node Gamma",
-        "summary": "Long-duration holdings for systemic stability and protocol backstop."
-      },
-      {
-        "id": "TRE-R02",
-        "title": "Grant Reserve Allocation",
-        "category": "Reserves",
-        "status": "Draft",
-        "owner": "Grants Registrar",
-        "summary": "Funds earmarked for public-good grants, bounties, and civic prizes."
-      }
-    ]
-  },
   "ministry": "Treasury",
   "secretary": "Secretary of Digital Economy & Commerce",
   "stats": {
     "reserves": "\u00a5840M",
     "assetClasses": 6,
     "yieldAnnual": "4.2%",
-    "liquidityDays": 45
+    "liquidityDays": 45,
+    "auditRating": "Unqualified"
   },
   "pillars": [
     {
@@ -81,5 +25,10 @@
       "title": "Transparency Ledger",
       "summary": "On-chain reserve attestation with quarterly independent audit."
     }
-  ]
+  ],
+  "entries": {
+    "operations": [],
+    "assets": [],
+    "reserves": []
+  }
 }
