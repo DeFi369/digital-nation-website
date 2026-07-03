@@ -76,6 +76,10 @@
     if (item.storageTb != null) parts.push('<span class="metric">Storage: ' + escapeHtml(String(item.storageTb)) + ' TB</span>');
     if (item.monthlyBudget) parts.push('<span class="meta-budget">Budget: ' + escapeHtml(String(item.monthlyBudget)) + '</span>');
     if (item.published) parts.push('<span class="meta-date">Published: ' + escapeHtml(String(item.published)) + '</span>');
+    if (item.participants) parts.push('<span class="metric">Participants: ' + escapeHtml(String(item.participants)) + '</span>');
+    if (item.bandwidthMbps) parts.push('<span class="metric">Bandwidth: ' + escapeHtml(String(item.bandwidthMbps)) + ' Mbps</span>');
+    if (item.coveragePercent != null) parts.push('<span class="metric">Coverage: ' + escapeHtml(String(item.coveragePercent)) + '%</span>');
+    if (item.beneficiaries) parts.push('<span class="metric">Beneficiaries: ' + escapeHtml(String(item.beneficiaries)) + '</span>');
     return parts.join('<span class="activity-divider">·</span>');
   }
 
