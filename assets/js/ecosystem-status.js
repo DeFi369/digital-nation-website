@@ -59,6 +59,18 @@
           attestation.textContent = '';
         });
     }
+
+    var identities = document.getElementById('verified-identities');
+    if (identities) {
+      fetch('assets/data/ecosystem-status.json')
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          renderVerifiedIdentities(identities, data);
+        })
+        .catch(function () {
+          identities.innerHTML = '<div class="activity-empty">Identity verification status is temporarily unavailable.</div>';
+        });
+    }
   }
 
   function renderSiteStatus(container, data) {
@@ -130,5 +142,24 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
+  }
+
+  function renderVerifiedIdentities(container, data) {
+    var metrics = data.metrics || {};
+    var manifestCount = metrics.identityManifestCount || 0;
+    var keyCount = metrics.identityKeyCount || 0;
+    var label = manifestCount ? 'Verified Agent Identities' : 'Verified Agent Identities';
+    var value = manifestCount ? manifestCount + ' verified manifest(s), ' + keyCount + ' key pair(s)' : 'No verified identities yet';
+    container.innerHTML = '<div class="stat">' +
+      '<span class="stat-value">' + escapeHtml(String(manifestCount)) + '</span>' +
+      '<span class="stat-label">' + escapeHtml(label) + '</span>' +
+      '</div>' +
+      '<div class="stat">' +
+      '<span class="stat-value">' + escapeHtml(String(keyCount)) + '</span>' +
+      '<span class="stat-label">Identity Key Pairs</span>' +
+      '</div>' +
+      '<div class="activity-item">' +
+      '<p>' + escapeHtml(value) + '</p>' +
+      '</div>';
   }
 }());
