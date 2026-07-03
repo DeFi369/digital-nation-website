@@ -1,7 +1,16 @@
 {
   "generated": "2026-07-02",
-  "office": "Digital Operations & Situational Awareness",
-  "count": 2,
+  "office": "Office of Digital Operations & Situational Awareness",
+  "secretary": "Secretary of Justice & Constitutional Compliance",
+  "threatLevel": "Elevated",
+  "stats": {
+    "activeFrameworks": 8,
+    "resolvedIncidents": 14,
+    "openInvestigations": 2,
+    "protocolsActive": 6,
+    "nodeCoverage": "99.4%",
+    "avgIncidentResolution": "56h"
+  },
   "entries": {
     "frameworks": [
       {
@@ -10,7 +19,8 @@
         "status": "Ratified",
         "category": "Digital Operations",
         "owner": "Digital Operations & Situational Awareness",
-        "summary": "Comprehensive operational awareness framework covering platform reliability, incident response, and threat monitoring for all Aetheria infrastructure."
+        "summary": "Comprehensive operational awareness framework covering platform reliability, incident response, and threat monitoring for all Aetheria infrastructure.",
+        "lastReviewed": "2026-05-10"
       },
       {
         "id": "SEC-FW-02",
@@ -18,7 +28,8 @@
         "status": "Active",
         "category": "Infrastructure Protection",
         "owner": "Digital Operations & Situational Awareness",
-        "summary": "Security standards for node operators, consensus mechanisms, and critical digital infrastructure components."
+        "summary": "Security standards for node operators, consensus mechanisms, and critical digital infrastructure components.",
+        "lastReviewed": "2026-04-18"
       },
       {
         "id": "SEC-FW-03",
@@ -26,7 +37,17 @@
         "status": "Active",
         "category": "Situational Awareness",
         "owner": "Digital Operations & Situational Awareness",
-        "summary": "Structured protocol for continuous monitoring, threat assessment, and early warning across ministries, node operators, and digital infrastructure."
+        "summary": "Structured protocol for continuous monitoring, threat assessment, and early warning across ministries, node operators, and digital infrastructure.",
+        "lastReviewed": "2026-06-30"
+      },
+      {
+        "id": "SEC-FW-04",
+        "title": "Supply Chain Security Framework",
+        "status": "Draft",
+        "category": "Supply Chain",
+        "owner": "Digital Operations & Situational Awareness",
+        "summary": "Framework for securing software supply chain including dependency verification, build integrity, and distribution channel protection.",
+        "lastReviewed": null
       }
     ],
     "incidents": [
@@ -37,7 +58,9 @@
         "category": "Vulnerability",
         "severity": "Critical",
         "reportedDate": "2026-07-01",
-        "summary": "Security vulnerability in consensus layer requiring emergency patch deployment across all active nodes. Successfully mitigated within 72 hours."
+        "resolvedDate": "2026-07-04",
+        "summary": "Security vulnerability in consensus layer requiring emergency patch deployment across all active nodes. Successfully mitigated within 72 hours.",
+        "affectedServices": ["Consensus Layer", "Registry", "Treasury Queries"]
       },
       {
         "id": "SEC-INC-02",
@@ -46,7 +69,9 @@
         "category": "DDoS",
         "severity": "High",
         "reportedDate": "2026-06-15",
-        "summary": "Coordinated DDoS attempt on citizen registry infrastructure. Mitigated through traffic filtering and redundant gateway activation."
+        "resolvedDate": "2026-06-15",
+        "summary": "Coordinated DDoS attempt on citizen registry infrastructure. Mitigated through traffic filtering and redundant gateway activation within 4 hours.",
+        "affectedServices": ["Registry API", "Verification Endpoints"]
       },
       {
         "id": "SEC-INC-03",
@@ -55,7 +80,20 @@
         "category": "Social Engineering",
         "severity": "Medium",
         "reportedDate": "2026-06-28",
-        "summary": "Coordinated phishing campaign targeting node operators with fake security update notifications. Investigation ongoing."
+        "resolvedDate": null,
+        "summary": "Coordinated phishing campaign targeting node operators with fake security update notifications. Investigation ongoing.",
+        "affectedServices": ["Node Operations", "Key Management"]
+      },
+      {
+        "id": "SEC-INC-04",
+        "title": "Treasury Query Latency Degradation",
+        "status": "Resolved",
+        "category": "Performance",
+        "severity": "Low",
+        "reportedDate": "2026-05-22",
+        "resolvedDate": "2026-05-22",
+        "summary": "Brief latency spike on treasury query endpoints caused by cache invalidation bug. Hotfix deployed within 90 minutes.",
+        "affectedServices": ["Treasury API", "Finance Dashboard"]
       }
     ],
     "protocols": [
@@ -65,7 +103,8 @@
         "status": "Active",
         "category": "Incident Response",
         "owner": "Digital Operations & Situational Awareness",
-        "summary": "Standardized incident response procedures including containment, eradication, recovery, and lessons-learned phases."
+        "summary": "Standardized incident response procedures including containment, eradication, recovery, and lessons-learned phases.",
+        "lastReviewed": "2026-06-01"
       },
       {
         "id": "SEC-PROT-02",
@@ -73,7 +112,8 @@
         "status": "Active",
         "category": "Platform Defense",
         "owner": "Digital Operations & Situational Awareness",
-        "summary": "Continuous monitoring and adjustment of platform and infrastructure defensive posture including firewall rules, access controls, and anomaly detection."
+        "summary": "Continuous monitoring and adjustment of platform and infrastructure defensive posture including firewall rules, access controls, and anomaly detection.",
+        "lastReviewed": "2026-05-14"
       },
       {
         "id": "SEC-PROT-03",
@@ -81,7 +121,17 @@
         "status": "Draft",
         "category": "Supply Chain",
         "owner": "Digital Operations & Situational Awareness",
-        "summary": "Framework for securing software supply chain including dependency verification, build integrity, and distribution channel protection."
+        "summary": "Framework for securing software supply chain including dependency verification, build integrity, and distribution channel protection.",
+        "lastReviewed": "2026-04-30"
+      },
+      {
+        "id": "SEC-PROT-04",
+        "title": "Node Operator Security Baseline",
+        "status": "Active",
+        "category": "Node Operations",
+        "owner": "Digital Operations & Situational Awareness",
+        "summary": "Minimum security requirements for node operators including key storage, update hygiene, and incident reporting obligations.",
+        "lastReviewed": "2026-03-11"
       }
     ]
   }

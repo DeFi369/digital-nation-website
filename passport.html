@@ -122,10 +122,31 @@
       <div class="container">
         <h1>Passport / Citizen Credential</h1>
         <p class="lead">
-          The Principality of Aetheria issues a living, portable, machine-verifiable citizen credential —
+          Under the Secretary of Civic Identity &amp; Registry, Aetheria issues a living, portable, machine-verifiable citizen credential —
           designed for digital identity, diplomatic access, and secure service authorization in a
           networked world.
         </p>
+
+        <div class="activity-filters" id="passport-filters" aria-label="Filter passport directory">
+          <label for="passport-search" class="sr-only">Search passport records</label>
+          <input type="search" id="passport-search" class="activity-filter" placeholder="Search credentials, verifiers, or partners..." autocomplete="off" />
+          <select id="passport-scope" class="activity-select" aria-label="Filter by scope">
+            <option value="all">All Scopes</option>
+            <option value="credentials">Credentials</option>
+            <option value="verifications">Verifications</option>
+            <option value="recognitions">Recognitions</option>
+          </select>
+        </div>
+
+        <h2>Passport Office Summary</h2>
+        <div id="passport-stats" class="stats-grid" aria-live="polite" aria-label="Passport summary statistics">
+          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+        </div>
+
+        <h2>Credential Principles</h2>
+        <div id="passport-pillars" class="pillars-grid" aria-live="polite" aria-label="Passport pillars">
+          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+        </div>
 
         <h2>Credential Overview</h2>
         <p>
@@ -337,7 +358,8 @@
         <p>
           Passport value increases through mutual recognition. Aetheria therefore pursues explicit
           agreements with allied micronations, digital polities, and open-standard communities to establish
-          bounded but meaningful acceptance of each other’s sovereign credentials.
+          bounded but meaningful acceptance of each other’s sovereign credentials. These agreements are published
+          as live recognition records on this page.
         </p>
         <div class="columns">
           <div class="card">
@@ -364,6 +386,26 @@
               or unverifiable word-of-mouth agreements.
             </p>
           </div>
+        </div>
+
+        <h2>Credentials</h2>
+        <div id="passport-credentials-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Passport credentials">
+          <div class="activity-loading" aria-hidden="true">Loading credentials...</div>
+        </div>
+
+        <h2>Recent Verifications</h2>
+        <div id="passport-verifications-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Passport verifications">
+          <div class="activity-loading" aria-hidden="true">Loading verifications...</div>
+        </div>
+
+        <h2>Mutual Recognitions</h2>
+        <div id="passport-recognitions-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Passport recognitions">
+          <div class="activity-loading" aria-hidden="true">Loading recognitions...</div>
+        </div>
+
+        <h2>Directory</h2>
+        <div id="passport-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Passport directory">
+          <p class="activity-empty">Use the filters above to search across credentials, verifications, and recognitions.</p>
         </div>
 
         <h2>Links</h2>
@@ -483,6 +525,7 @@
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/passport.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

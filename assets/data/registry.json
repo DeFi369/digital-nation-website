@@ -1,51 +1,146 @@
 {
   "generated": "2026-07-02",
-  "count": 5,
+  "ministry": "Civic Identity & Registry",
+  "secretary": "Secretary of Civic Identity & Registry",
+  "stats": {
+    "totalCitizens": 12487,
+    "activeVerified": 11432,
+    "pendingReview": 843,
+    "regionalNodes": 18,
+    "avgResponseTime": "2.4h"
+  },
+  "pillars": [
+    {
+      "id": "REG-PIL-01",
+      "title": "Holder-Controlled Identity",
+      "summary": "Citizens own their identity anchors. The registry publishes verifiable records, not secrets, so no central gatekeeper can unilaterally revoke access."
+    },
+    {
+      "id": "REG-PIL-02",
+      "title": "Tiered Verification",
+      "summary": "Progressive trust levels reflect documented contribution, governance participation, and operational responsibility — not gatekeeping or exclusion."
+    },
+    {
+      "id": "REG-PIL-03",
+      "title": "Transpublic Record-Keeping",
+      "summary": "Identity events, rotations, and tier changes are logged on-protocol and auditable by design."
+    },
+    {
+      "id": "REG-PIL-04",
+      "title": "Regional Node Integrity",
+      "summary": "18 regional nodes maintain synchronized registry shards with consensus validation, minimizing single-domain failure."
+    }
+  ],
   "entries": [
     {
       "id": "REG-0001",
       "name": "Aria Solenne",
-      "region": "Europe",
+      "region": "North Atlantic Node",
       "tier": "Tier 3",
       "status": "Active",
       "verified": "2026-01-15",
-      "note": "Ambassador-at-large; protocol liaison"
+      "note": "Ambassador-at-large; protocol liaison",
+      "lastActive": "2026-07-02",
+      "contributions": 214
     },
     {
       "id": "REG-0002",
       "name": "Kai Voss",
-      "region": "North America",
+      "region": "North Atlantic Node",
       "tier": "Tier 2",
       "status": "Active",
       "verified": "2026-02-04",
-      "note": "Node operator and governance contributor"
+      "note": "Node operator and governance contributor",
+      "lastActive": "2026-07-01",
+      "contributions": 187
     },
     {
       "id": "REG-0003",
       "name": "Mira Chen",
-      "region": "Asia Pacific",
+      "region": "Asia Pacific Node",
       "tier": "Tier 1",
       "status": "Active",
       "verified": "2026-03-12",
-      "note": "Engineering contributor"
+      "note": "Engineering contributor and onboarding mentor",
+      "lastActive": "2026-06-29",
+      "contributions": 64
     },
     {
       "id": "REG-0004",
       "name": "Orion Vale",
-      "region": "South America",
+      "region": "South America Node",
       "tier": "Tier 2",
       "status": "Pending",
       "verified": "2026-04-08",
-      "note": "Verification review in progress"
+      "note": "Verification review in progress",
+      "lastActive": "2026-05-30",
+      "contributions": 12
     },
     {
       "id": "REG-0005",
       "name": "Nia Rahman",
-      "region": "Africa",
+      "region": "Africa Node",
       "tier": "Tier 1",
       "status": "Active",
       "verified": "2026-05-20",
-      "note": "Outreach and education lead"
+      "note": "Outreach, education, and diplomatic correspondence lead",
+      "lastActive": "2026-07-03",
+      "contributions": 93
+    },
+    {
+      "id": "REG-0006",
+      "name": "Jules Marceau",
+      "region": "Europe Node",
+      "tier": "Tier 2",
+      "status": "Active",
+      "verified": "2026-01-22",
+      "note": "Treasury audit contributor and transparency reviewer",
+      "lastActive": "2026-06-28",
+      "contributions": 156
+    },
+    {
+      "id": "REG-0007",
+      "name": "Ravi Iyer",
+      "region": "Asia Pacific Node",
+      "tier": "Tier 1",
+      "status": "Active",
+      "verified": "2026-03-05",
+      "note": "Infrastructure monitoring and protocol patch reviewer",
+      "lastActive": "2026-07-02",
+      "contributions": 121
+    },
+    {
+      "id": "REG-0008",
+      "name": "Elena Rojas",
+      "region": "South America Node",
+      "tier": "Tier 3",
+      "status": "Active",
+      "verified": "2025-11-30",
+      "note": "External relations coordinator and mutual-recognition negotiator",
+      "lastActive": "2026-07-03",
+      "contributions": 298
+    },
+    {
+      "id": "REG-0009",
+      "name": "Tomás Berg",
+      "region": "Europe Node",
+      "tier": "Tier 1",
+      "status": "Revoked",
+      "verified": "2026-02-14",
+      "note": "Consent revocation per holder request; re-entry pending 90-day cooldown",
+      "lastActive": "2026-02-28",
+      "contributions": 8
+    },
+    {
+      "id": "REG-0010",
+      "name": "Sofia Dantré",
+      "region": "Africa Node",
+      "tier": "Tier 2",
+      "status": "Pending",
+      "verified": "2026-06-10",
+      "note": "Tier 2 upgrade review; awaiting contribution milestone verification",
+      "lastActive": "2026-06-30",
+      "contributions": 45
     }
   ]
 }

@@ -15,7 +15,7 @@
   <meta name="twitter:description" content="Search the public Citizen Registry, view verification tiers, and understand public record notices for Aetheria citizens.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
 
-  <title>Citizen Registry & Verification — The Principality of Aetheria</title>
+  <title>Civic Registry — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
@@ -120,53 +120,48 @@
   <main id="main">
     <section class="page">
       <div class="container">
-        <h1>Citizen Registry & Verification</h1>
+        <h1>Civic Registry</h1>
         <p class="lead">
-          A searchable public record of verified citizens, verification tiers, and public notices.
-          This registry is a living record, not a closed ledger.
+          Under the Secretary of Civic Identity &amp; Registry, Aetheria maintains a living public record of verified citizens,
+          tiered trust statuses, and on-protocol identity events. This layer connects to <a href="passport.html">Passport</a>,
+          <a href="citizenship.html">Citizenship</a>, and <a href="engage.html">Engage</a>.
         </p>
 
-        <h2>Registry Search</h2>
-        <div class="registry-controls">
-          <div class="registry-search">
-            <input type="search" id="registry-search" placeholder="Search by name, ID, or region..." autocomplete="off" aria-label="Search registry"/>
-            <div class="registry-filters">
-              <label for="registry-tier" class="sr-only">Filter by tier</label>
-              <select id="registry-tier" aria-label="Filter by verification tier">
-                <option value="all">All Tiers</option>
-                <option value="Tier 1">Tier 1 — Verified</option>
-                <option value="Tier 2">Tier 2 — Active</option>
-                <option value="Tier 3">Tier 3 — Elevated</option>
-              </select>
-              <label for="registry-status" class="sr-only">Filter by status</label>
-              <select id="registry-status" aria-label="Filter by status">
-                <option value="all">All Statuses</option>
-                <option value="Active">Active</option>
-                <option value="Pending">Pending</option>
-                <option value="Revoked">Revoked</option>
-              </select>
-            </div>
-          </div>
+        <div class="activity-filters" id="registry-filters" aria-label="Filter registry directory">
+          <label for="registry-search" class="sr-only">Search registry entries</label>
+          <input type="search" id="registry-search" class="activity-filter" placeholder="Search by name, ID, region, or note..." autocomplete="off" />
+          <select id="registry-tier" class="activity-select" aria-label="Filter by tier">
+            <option value="all">All Tiers</option>
+            <option value="Tier 1">Tier 1 — Verified</option>
+            <option value="Tier 2">Tier 2 — Active</option>
+            <option value="Tier 3">Tier 3 — Elevated</option>
+          </select>
+          <select id="registry-status" class="activity-select" aria-label="Filter by status">
+            <option value="all">All Statuses</option>
+            <option value="Active">Active</option>
+            <option value="Pending">Pending</option>
+            <option value="Revoked">Revoked</option>
+          </select>
         </div>
 
-        <div id="registry-feed" class="registry-feed" role="feed" aria-live="polite" aria-label="Citizen registry feed">
+        <h2>Ministry Summary</h2>
+        <div id="registry-stats" class="stats-grid" aria-live="polite" aria-label="Registry summary statistics">
+          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+        </div>
+
+        <h2>Registry Pillars</h2>
+        <div id="registry-pillars" class="pillars-grid" aria-live="polite" aria-label="Registry pillars">
+          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+        </div>
+
+        <h2>Registry Feed</h2>
+        <div id="registry-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Citizen registry feed">
           <div class="activity-loading" aria-hidden="true">Loading registry...</div>
         </div>
 
-        <h2>Verification Tiers</h2>
-        <div class="columns">
-          <div class="card">
-            <h3>Tier 1 — Verified</h3>
-            <p>Minimum verified citizen status after completed onboarding and public-record verification.</p>
-          </div>
-          <div class="card">
-            <h3>Tier 2 — Active</h3>
-            <p>Ongoing governance participation, service usage, and documented contribution across protocol channels.</p>
-          </div>
-          <div class="card">
-            <h3>Tier 3 — Elevated</h3>
-            <p>Extended trust level for ambassadors, node operators, and representatives with verified operational responsibilities.</p>
-          </div>
+        <h2>Directory</h2>
+        <div id="registry-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Registry directory">
+          <p class="activity-empty">Use the filters above to search across the full registry.</p>
         </div>
 
         <h2>Public Record Notices</h2>
@@ -277,6 +272,7 @@
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/registry.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

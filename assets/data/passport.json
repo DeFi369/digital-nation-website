@@ -1,0 +1,180 @@
+{
+  "generated": "2026-07-02",
+  "office": "Civic Identity & Registry — Passport Office",
+  "secretary": "Secretary of Civic Identity & Registry",
+  "issuingAuthority": "Civic Assembly Registrar",
+  "stats": {
+    "issuedCredentials": 11432,
+    "activeVerifications": 10891,
+    "revokedCredentials": 121,
+    "recognizedPartners": 7,
+    "zeroKnowledgeProofs": 3421,
+    "averageIssuanceTime": "48m"
+  },
+  "pillars": [
+    {
+      "id": "PP-PIL-01",
+      "title": "Holder-Controlled Keypair",
+      "summary": "Every passport is anchored to a citizen-held keypair. Private material never leaves holder custody; protocol events are append-only."
+    },
+    {
+      "id": "PP-PIL-02",
+      "title": "Living Credential",
+      "summary": "Passports are not static booklets. Status, tier, and claims update through signed protocol events without reissuance ceremonies."
+    },
+    {
+      "id": "PP-PIL-03",
+      "title": "Cross-Polity Interoperability",
+      "summary": "Credential design follows open standards for decentralized identifiers and verifiable credentials, enabling mutual recognition without vendor lock-in."
+    },
+    {
+      "id": "PP-PIL-04",
+      "title": "Selective Disclosure",
+      "summary": "Zero-knowledge optionality lets citizens prove citizenship, age band, or eligibility without exposing the underlying identifier."
+    }
+  ],
+  "entries": {
+    "credentials": [
+      {
+        "id": "PP-CR-0001",
+        "holder": "Aria Solenne",
+        "registryId": "REG-0001",
+        "type": "Ambassador Credential",
+        "status": "Active",
+        "issued": "2026-01-15",
+        "expiry": "Holder-Controlled",
+        "authority": "Civic Assembly Registrar",
+        "claims": ["Identity", "Governance Participation", "Diplomatic Access"]
+      },
+      {
+        "id": "PP-CR-0002",
+        "holder": "Kai Voss",
+        "registryId": "REG-0002",
+        "type": "Node Operator Credential",
+        "status": "Active",
+        "issued": "2026-02-04",
+        "expiry": "Holder-Controlled",
+        "authority": "Civic Assembly Registrar",
+        "claims": ["Identity", "Service Access", "Infrastructure Authorization"]
+      },
+      {
+        "id": "PP-CR-0003",
+        "holder": "Mira Chen",
+        "registryId": "REG-0003",
+        "type": "Citizen Credential",
+        "status": "Active",
+        "issued": "2026-03-12",
+        "expiry": "Holder-Controlled",
+        "authority": "Civic Assembly Registrar",
+        "claims": ["Identity", "Verification"]
+      },
+      {
+        "id": "PP-CR-0004",
+        "holder": "Elena Rojas",
+        "registryId": "REG-0008",
+        "type": "Diplomatic Passport",
+        "status": "Active",
+        "issued": "2026-02-01",
+        "expiry": "Holder-Controlled",
+        "authority": "Civic Assembly Registrar",
+        "claims": ["Identity", "Travel Authorization", "Mutual Recognition", "Diplomatic Access"]
+      },
+      {
+        "id": "PP-CR-0005",
+        "holder": "Jules Marceau",
+        "registryId": "REG-0006",
+        "type": "Citizen Credential",
+        "status": "Suspended",
+        "issued": "2026-01-22",
+        "expiry": "Holder-Controlled",
+        "authority": "Civic Assembly Registrar",
+        "claims": ["Identity", "Verification"]
+      }
+    ],
+    "verifications": [
+      {
+        "id": "PP-VER-0001",
+        "verifier": "Open Market Protocol",
+        "credentialId": "PP-CR-0001",
+        "type": "Governance Eligibility",
+        "status": "Verified",
+        "timestamp": "2026-07-02T14:32:00Z",
+        "disclosure": "Minimal"
+      },
+      {
+        "id": "PP-VER-0002",
+        "verifier": "Bounty Dispatch Bureau",
+        "credentialId": "PP-CR-0002",
+        "type": "Service Authorization",
+        "status": "Verified",
+        "timestamp": "2026-07-01T09:15:00Z",
+        "disclosure": "Tier + Status"
+      },
+      {
+        "id": "PP-VER-0003",
+        "verifier": "Elections & Petitions",
+        "credentialId": "PP-CR-0001",
+        "type": "Voting Eligibility",
+        "status": "Verified",
+        "timestamp": "2026-06-28T18:45:00Z",
+        "disclosure": "Minimal"
+      },
+      {
+        "id": "PP-VER-0004",
+        "verifier": "Treasury Node Alpha",
+        "credentialId": "PP-CR-0004",
+        "type": "Financial Instrument Access",
+        "status": "Verified",
+        "timestamp": "2026-06-25T11:20:00Z",
+        "disclosure": "Tier Only"
+      },
+      {
+        "id": "PP-VER-0005",
+        "verifier": "Infrastructure Node",
+        "credentialId": "PP-CR-0002",
+        "type": "Node Access",
+        "status": "Revoked",
+        "timestamp": "2026-06-20T07:10:00Z",
+        "disclosure": "Minimal"
+      }
+    ],
+    "recognitions": [
+      {
+        "id": "PP-REC-01",
+        "partner": "Freenet Associates",
+        "type": "Mutual Recognition Agreement",
+        "status": "Active",
+        "signed": "2025-09-14",
+        "scope": "Citizen services, event access, and digital identity verification",
+        "reviewDate": "2026-09-14"
+      },
+      {
+        "id": "PP-REC-02",
+        "partner": "Nordic Digital Charter",
+        "type": "Mutual Recognition Agreement",
+        "status": "Active",
+        "signed": "2025-11-02",
+        "scope": "Cross-border digital services and portability verification",
+        "reviewDate": "2026-11-02"
+      },
+      {
+        "id": "PP-REC-03",
+        "partner": "Open Identity Foundation",
+        "type": "Protocol Alignment",
+        "status": "Active",
+        "signed": "2026-01-20",
+        "scope": "DID and verifiable-credential standard interoperability",
+        "reviewDate": "2027-01-20"
+      },
+      {
+        "id": "PP-REC-04",
+        "partner": "Atlantis Digital Network",
+        "type": "Draft Recognition",
+        "status": "In Review",
+        "signed": null,
+        "scope": "Under negotiation for service reciprocity",
+        "reviewDate": "2026-10-01"
+      }
+    ]
+  }
+}

@@ -1,32 +1,66 @@
 {
   "generated": "2026-07-02",
-  "ministry": "Ministry of Justice & Public Safety",
-  "count": 2,
+  "ministry": "Ministry of Justice & Constitutional Compliance",
+  "secretary": "Secretary of Justice & Constitutional Compliance",
+  "stats": {
+    "frameworksRatified": 12,
+    "casesDecided": 47,
+    "pendingCases": 8,
+    "protocolsActive": 9,
+    "digitalRightsAlerts": 3,
+    "averageResolutionDays": 21
+  },
   "entries": {
     "frameworks": [
       {
         "id": "JUS-FW-01",
         "title": "Digital Sovereignty Charter",
         "status": "Ratified",
-        "category": "Legal Framework",
-        "owner": "Ministry of Justice & Public Safety",
-        "summary": "Foundational legal framework defining digital rights, jurisdiction, and enforcement mechanisms for Aetheria."
+        "category": "Constitutional Framework",
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Foundational legal framework defining digital rights, jurisdiction, data sovereignty, and enforcement mechanisms for Aetheria citizens and nodes.",
+        "publicationDate": "2025-06-12",
+        "charterArticle": "Articles 1-8"
       },
       {
         "id": "JUS-FW-02",
         "title": "Citizen Data Protection Act",
         "status": "Active",
-        "category": "Legal Framework",
-        "owner": "Ministry of Justice & Public Safety",
-        "summary": "Comprehensive data protection framework ensuring citizen privacy, consent mechanisms, and breach response protocols."
+        "category": "Privacy & Data",
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Comprehensive data protection framework ensuring informed consent, breach response, retention limits, and citizen right-to-erasure protocols.",
+        "publicationDate": "2025-08-19",
+        "charterArticle": "Article 14"
       },
       {
         "id": "JUS-FW-03",
         "title": "Digital Dispute Resolution Protocol",
         "status": "Active",
         "category": "Dispute Resolution",
-        "owner": "Ministry of Justice & Public Safety",
-        "summary": "Structured mediation and arbitration process for digital disputes between citizens, nodes, and governance bodies."
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Structured mediation, arbitration, and appeal ladders for disputes between citizens, nodes, ministries, and partner polities.",
+        "publicationDate": "2025-10-03",
+        "charterArticle": "Article 15"
+      },
+      {
+        "id": "JUS-FW-04",
+        "title": "Algorithmic Transparency Directive",
+        "status": "In Progress",
+        "category": "Governance & Oversight",
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Requires explainability disclosures for any algorithm that materially affects citizen rights, rewards, or access decisions.",
+        "publicationDate": null,
+        "charterArticle": "Article 11"
+      },
+      {
+        "id": "JUS-FW-05",
+        "title": "Cross-Jurisdictional Cooperation Protocol",
+        "status": "Draft",
+        "category": "International Law",
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Framework for evidence sharing, mutual recognition of rulings, and coordinated response with external legal jurisdictions.",
+        "publicationDate": null,
+        "charterArticle": "Article 16"
       }
     ],
     "cases": [
@@ -37,6 +71,8 @@
         "category": "Administrative Law",
         "petitioner": "citizen-203@aetheria.network",
         "respondent": "Ministry of Infrastructure",
+        "judge": "Constitutional Court Justice Annika Vor",
+        "decisionDate": "2026-03-14",
         "summary": "Ruled that opaque compute allocation violates Charter Article 7 equal protection. Ministry ordered to publish transparent criteria within 60 days."
       },
       {
@@ -46,6 +82,8 @@
         "category": "Regulatory Enforcement",
         "petitioner": "Ministry of Security",
         "respondent": "citizen-312@aetheria.network",
+        "judge": "Constitutional Court Justice R. Okonkwo",
+        "decisionDate": "2026-04-02",
         "summary": "Revocation upheld. Strict liability for consensus violations affirmed. Pre-revocation hearing satisfied due process under Charter Article 5."
       },
       {
@@ -54,8 +92,32 @@
         "status": "Pending",
         "category": "Fiscal Law",
         "petitioner": "citizen-445@aetheria.network",
-        "respondent": "Treasury",
+        "respondent": "Treasury Node Alpha",
+        "judge": null,
+        "decisionDate": null,
         "summary": "Writ of mandamus sought to compel quarterly audits under Charter Article 9. Awaiting judicial determination on self-executing Charter provisions."
+      },
+      {
+        "id": "JUS-CASE-04",
+        "title": "Open Market Coalition v. Ministry of Economy: Fee Transparency",
+        "status": "In Progress",
+        "category": "Economic Regulation",
+        "petitioner": "Open Market Coalition",
+        "respondent": "Ministry of Economy",
+        "judge": "Constitutional Court Justice Lei Tan",
+        "decisionDate": null,
+        "summary": "Challenge to undisclosed fee escalations on validated market instruments. Hearing scheduled for Q3 2026."
+      },
+      {
+        "id": "JUS-CASE-05",
+        "title": "Citizen-891 v. Registry: Tier Denial Appeal",
+        "status": "Pending",
+        "category": "Administrative Law",
+        "petitioner": "citizen-891@aetheria.network",
+        "respondent": "Civic Identity & Registry",
+        "judge": null,
+        "decisionDate": null,
+        "summary": "Appeal against Tier 2 denial. Claimant asserts scorer model bias. Case accepted under Charter Article 7."
       }
     ],
     "protocols": [
@@ -63,25 +125,37 @@
         "id": "JUS-PROT-01",
         "title": "Emergency Response Activation Protocol",
         "status": "Active",
-        "category": "Public Safety",
-        "owner": "Ministry of Justice & Public Safety",
-        "summary": "Tiered activation framework for digital emergencies, defining authority levels, notification chains, and citizen protection measures."
+        "category": "Public Safety & Emergency",
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Tiered activation framework for digital emergencies, defining authority levels, notification chains, and citizen protection measures.",
+        "lastReviewed": "2026-05-18"
       },
       {
         "id": "JUS-PROT-02",
         "title": "Digital Rights Protection Framework",
         "status": "Active",
         "category": "Digital Rights",
-        "owner": "Ministry of Justice & Public Safety",
-        "summary": "Mechanisms for protecting citizen digital rights including access, expression, association, and property in digital environments."
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Mechanisms for protecting citizen digital rights including access, expression, association, and property in digital environments.",
+        "lastReviewed": "2026-04-02"
       },
       {
         "id": "JUS-PROT-03",
         "title": "Cross-Jurisdictional Cooperation Protocol",
         "status": "Draft",
         "category": "International Law",
-        "owner": "Ministry of Justice & Public Safety",
-        "summary": "Framework for cooperation with external legal jurisdictions, evidence sharing, and mutual recognition of digital governance decisions."
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Framework for cooperation with external legal jurisdictions, evidence sharing, and mutual recognition of digital governance decisions.",
+        "lastReviewed": null
+      },
+      {
+        "id": "JUS-PROT-04",
+        "title": "Consensual Dispute Arbitration Protocol",
+        "status": "Active",
+        "category": "Dispute Resolution",
+        "owner": "Secretary of Justice & Constitutional Compliance",
+        "summary": "Rules for volunteer arbitration panels, evidence standards, and binding award publication for consensual digital disputes.",
+        "lastReviewed": "2026-03-21"
       }
     ]
   }

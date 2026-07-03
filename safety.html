@@ -121,7 +121,42 @@
     <section class="page">
       <div class="container">
         <h1>Digital Operations &amp; Situational Awareness</h1>
-        <p class="lead">Protecting Aetheria’s digital frontier: continuous operational awareness, rapid incident response, and resilient platform and infrastructure defense protocols.</p>
+        <p class="lead">Under the Secretary of Justice &amp; Constitutional Compliance, Aetheria maintains continuous operational awareness,
+          rapid incident response, and resilient platform and infrastructure defense protocols.
+          This layer connects to <a href="infrastructure.html">Infrastructure</a>, <a href="protocol.html">Protocol</a>, <a href="economy.html">Economy</a>, and <a href="consular.html">Consular</a>.
+        </p>
+
+        <div class="activity-filters" id="safety-filters" aria-label="Filter operational awareness directory">
+          <label for="safety-search" class="sr-only">Search operational awareness records</label>
+          <input type="search" id="safety-search" class="activity-filter" placeholder="Search frameworks, incidents, and protocols..." autocomplete="off" />
+          <select id="safety-status" class="activity-select" aria-label="Filter by status">
+            <option value="all">All Statuses</option>
+            <option value="Ratified">Ratified</option>
+            <option value="Active">Active</option>
+            <option value="Resolved">Resolved</option>
+            <option value="Under Investigation">Under Investigation</option>
+            <option value="Draft">Draft</option>
+          </select>
+          <select id="safety-type" class="activity-select" aria-label="Filter by type">
+            <option value="all">All Types</option>
+            <option value="Digital Operations">Digital Operations</option>
+            <option value="Infrastructure Protection">Infrastructure Protection</option>
+            <option value="Situational Awareness">Situational Awareness</option>
+            <option value="Incident Response">Incident Response</option>
+            <option value="Platform Defense">Platform Defense</option>
+            <option value="Supply Chain">Supply Chain</option>
+          </select>
+        </div>
+
+        <h2>Operational Summary</h2>
+        <div id="safety-stats" class="stats-grid" aria-live="polite" aria-label="Operational awareness summary">
+          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+        </div>
+
+        <h2>Operational Pillars</h2>
+        <div id="safety-pillars" class="pillars-grid" aria-live="polite" aria-label="Operational pillars">
+          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+        </div>
 
         <h2>Operational Awareness &amp; Threat Monitoring Framework</h2>
         <div id="safety-frameworks-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Operational awareness frameworks feed">
@@ -136,6 +171,11 @@
         <h2>Platform &amp; Infrastructure Defense Protocols</h2>
         <div id="safety-protocols-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Platform and infrastructure defense protocols feed">
           <div class="activity-loading" aria-hidden="true">Loading protocols...</div>
+        </div>
+
+        <h2>Directory</h2>
+        <div id="safety-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Operational awareness directory">
+          <p class="activity-empty">Use the filters above to search across frameworks, incidents, and protocols.</p>
         </div>
 
         <h2>Cross-Links</h2>
@@ -242,6 +282,7 @@
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/safety.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

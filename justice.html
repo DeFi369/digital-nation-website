@@ -113,31 +113,67 @@
     <section class="page">
       <div class="container">
         <h1>Justice &amp; Constitutional Compliance</h1>
-        <p class="lead">Charter law, digital rights, Charter Tribunal proceedings, and dispute resolution for Aetheria.</p>
+        <p class="lead">Under the Secretary of Justice &amp; Constitutional Compliance, Aetheria enforces charter law,
+          protects digital rights, operates the Charter Tribunal for dispute resolution, and publishes compliance reporting.
+          This layer connects to <a href="court.html">Court</a>, <a href="charter.html">Charter</a>,
+          <a href="charter-addendum.html">Charter Addendum</a>, <a href="citizenship.html">Citizenship</a>, and <a href="engage.html">Engage</a>.
+        </p>
 
-        <h2>Case & Framework Directory</h2>
-        <div class="activity-filters" aria-label="Filter justice items">
-          <input type="search" id="justice-search" placeholder="Search cases, frameworks, and protocols..." autocomplete="off" aria-label="Search justice items"/>
-          <select id="justice-status" aria-label="Filter by status">
+        <div class="activity-filters" id="justice-filters" aria-label="Filter justice directory">
+          <label for="justice-search" class="sr-only">Search justice directory</label>
+          <input type="search" id="justice-search" class="activity-filter" placeholder="Search cases, frameworks, and protocols..." autocomplete="off" />
+          <select id="justice-status" class="activity-select" aria-label="Filter by status">
             <option value="all">All Statuses</option>
-            <option value="ratified">Ratified</option>
-            <option value="in_progress">In Progress</option>
-            <option value="draft">Draft</option>
+            <option value="Ratified">Ratified</option>
+            <option value="Active">Active</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Draft">Draft</option>
+            <option value="Decided">Decided</option>
+            <option value="Pending">Pending</option>
           </select>
-          <select id="justice-type" aria-label="Filter by type">
+          <select id="justice-type" class="activity-select" aria-label="Filter by type">
             <option value="all">All Types</option>
-            <option value="framework">Framework</option>
-            <option value="service">Service</option>
-            <option value="protocol">Protocol</option>
-            <option value="policy">Policy</option>
+            <option value="Constitutional Framework">Constitutional Framework</option>
+            <option value="Legal Framework">Legal Framework</option>
+            <option value="Dispute Resolution">Dispute Resolution</option>
+            <option value="Administrative Law">Administrative Law</option>
+            <option value="Protocol">Protocol</option>
+            <option value="Policy">Policy</option>
           </select>
         </div>
-        <div id="justice-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Justice feed">
-          <div class="activity-loading" aria-hidden="true">Loading justice directory...</div>
+
+        <h2>Ministry Summary</h2>
+        <div id="justice-stats" class="stats-grid" aria-live="polite" aria-label="Justice summary statistics">
+          <div class="activity-loading" aria-hidden="true">Loading summary...</div>
+        </div>
+
+        <h2>Justice Pillars</h2>
+        <div id="justice-pillars" class="pillars-grid" aria-live="polite" aria-label="Justice pillars">
+          <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
+        </div>
+
+        <h2>Frameworks</h2>
+        <div id="justice-frameworks-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Justice frameworks">
+          <div class="activity-loading" aria-hidden="true">Loading justice frameworks...</div>
+        </div>
+
+        <h2>Cases</h2>
+        <div id="justice-cases-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Justice cases">
+          <div class="activity-loading" aria-hidden="true">Loading justice cases...</div>
+        </div>
+
+        <h2>Protocols</h2>
+        <div id="justice-protocols-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Justice protocols">
+          <div class="activity-loading" aria-hidden="true">Loading justice protocols...</div>
+        </div>
+
+        <h2>Directory</h2>
+        <div id="justice-mixed-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Justice directory">
+          <p class="activity-empty">Use the filters above to search across frameworks, cases, and protocols.</p>
         </div>
 
         <h2>Cross-Links</h2>
-        <p>Justice connects to <a href="court.html">Court</a>, <a href="charter.html">Charter</a>
+        <p>Justice connects to <a href="court.html">Court</a>, <a href="charter.html">Charter</a>,
                 <a href="charter-addendum.html">Charter Addendum</a>, <a href="citizenship.html">Citizenship</a>, and <a href="engage.html">Engage</a>.</p>
 
         <div class="cta">
@@ -237,6 +273,7 @@
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/justice.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
