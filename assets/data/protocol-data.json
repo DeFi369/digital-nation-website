@@ -144,9 +144,9 @@
       "research.html",
       "sovereign-security.html"
     ],
-    "identityManifestCount": 3,
-    "identityKeyCount": 3,
-    "latestCommit": "8fbb34fc8b38de47e2f0cb4fa8aad5b90766c73a Surface quantum compute status on protocol-status page and renderer",
+    "identityManifestCount": 4,
+    "identityKeyCount": 4,
+    "latestCommit": "744d8acafeaca4b611120cb4a6173602f4d5e4b2 Add OpenAgents decentralized coordination section to research.html",
     "latestCommitDate": "2026-07-03",
     "lastAudit": "2026-07-03"
   },
