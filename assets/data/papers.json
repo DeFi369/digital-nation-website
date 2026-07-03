@@ -1,0 +1,40 @@
+{
+  "generated": "2026-07-03",
+  "ministry": "Technology, Science & Innovation",
+  "secretary": "Secretary of Technology, Science & Innovation",
+  "papers": [
+    {
+      "id": "RES-PAPER-001",
+      "title": "DAL-AEP Research Paper",
+      "authors": ["thePM_001"],
+      "published": "2026-06-30",
+      "summary": "Foundational paper for the Agent Element Protocol, covering DAL and governance primitives.",
+      "evidence": "aep-research-paper-001/DAL-AEP-research-paper.pdf.ots",
+      "tags": ["AEP", "governance", "DAL"],
+      "repo": "aep-research-paper-001",
+      "status": "Published"
+    },
+    {
+      "id": "RES-PAPER-002",
+      "title": "GAP Research Paper",
+      "authors": ["thePM_001"],
+      "published": "2026-06-30",
+      "summary": "Governed Agentic Programming language paper describing structural governance and mathemantically verifiable agency.",
+      "evidence": "gap-research-paper-002/README.md",
+      "tags": ["GAP", "agent language", "structural governance"],
+      "repo": "gap-research-paper-002",
+      "status": "Published"
+    },
+    {
+      "id": "RES-PAPER-005",
+      "title": "Universal Connect Bridge (UCB)",
+      "authors": ["thePM_001"],
+      "published": "2026-06-30",
+      "summary": "Transformer/state-space to structured-system integration paper formalizing AEP's optional UCB airlock design.",
+      "evidence": "UCB-UniversalConnectBridge-research-paper-005/NLA Research Paper 005 - Universal Connect Bridge UCB.pdf.ots",
+      "tags": ["UCB", "AEP", "bridge", "architecture"],
+      "repo": "UCB-UniversalConnectBridge-research-paper-005",
+      "status": "Published"
+    }
+  ]
+}
