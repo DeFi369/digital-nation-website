@@ -144,8 +144,8 @@
       "research.html",
       "sovereign-security.html"
     ],
-    "identityManifestCount": 9,
-    "identityKeyCount": 9,
+    "identityManifestCount": 10,
+    "identityKeyCount": 10,
     "latestCommit": "31a3ee7e1d91d7d355a241023da2b5030e27016f Update protocol-data.json after refresh integration",
     "latestCommitDate": "2026-07-03",
     "lastAudit": "2026-07-03"
