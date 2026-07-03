@@ -12,6 +12,7 @@
     initFeedbackForm();
     initCivicFeed();
     loadCivicData();
+    loadPetitionCards();
   }
 
   let civicData = null;
@@ -208,6 +209,106 @@
     const container = document.getElementById('civic-activity-feed');
     if (!container) return;
     renderFeed({ petitions: [], feedback: [], governanceActions: [] });
+  }
+
+  function loadPetitionCards() {
+    fetch('assets/data/petitions.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to load petitions.json');
+        return response.json();
+      })
+      .then(data => renderPetitionCards(data.petitions || []))
+      .catch(err => {
+        console.warn('Failed to load petitions.json:', err);
+        const container = document.getElementById('petition-cards');
+        if (container) {
+          container.innerHTML = '<p class="activity-empty">Petition data unavailable.</p>';
+        }
+      });
+  }
+
+  function renderPetitionCards(petitions) {
+    const container = document.getElementById('petition-cards');
+    if (!container) return;
+
+    if (!petitions.length) {
+      container.innerHTML = '<p class="activity-empty">No active petitions. Submit the first one above.</p>';
+      return;
+    }
+
+    const html = petitions.map(petition => {
+      const progress = petition.signatureGoal ? Math.min(100, Math.round((petition.currentSignatures / petition.signatureGoal) * 100)) : 0;
+      const statusClass = 'status-' + (petition.status || 'open').toLowerCase().replace(' ', '-');
+      return `
+        <article class="petition-card" data-petition-id="${escapeHtml(petition.id)}">
+          <header class="petition-card-header">
+            <h3>${escapeHtml(petition.title)}</h3>
+            <span class="activity-status ${statusClass}">${escapeHtml((petition.status || 'open').replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()))}</span>
+          </header>
+          <p class="petition-card-description">${escapeHtml(petition.description)}</p>
+          <div class="petition-card-meta">
+            <span class="petition-card-target">Target: ${escapeHtml(petition.target)}</span>
+            <span class="petition-card-deadline">Deadline: ${new Date(petition.deadline).toLocaleDateString()}</span>
+          </div>
+          <div class="petition-card-progress">
+            <div class="petition-progress-bar">
+              <div class="petition-progress-fill" style="width: ${progress}%;" aria-hidden="true"></div>
+            </div>
+            <span class="petition-progress-text">${petition.currentSignatures} / ${petition.signatureGoal} signatures (${progress}%)</span>
+          </div>
+          <div class="petition-card-actions">
+            <button class="button secondary petition-sign" data-petition-id="${escapeHtml(petition.id)}" ${progress >= 100 ? 'disabled' : ''}>${progress >= 100 ? 'Goal Met' : 'Sign Petition'}</button>
+            ${progress >= 100 ? `<button class="button petition-escalate" data-petition-id="${escapeHtml(petition.id)}" data-petition-title="${escapeHtml(petition.title)}">Escalate to Assembly</button>` : ''}
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    container.innerHTML = html;
+    attachPetitionCardListeners();
+  }
+
+  function attachPetitionCardListeners() {
+    document.querySelectorAll('.petition-sign').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const petitionId = e.currentTarget.dataset.petitionId;
+        signPetition(petitionId);
+      });
+    });
+
+    document.querySelectorAll('.petition-escalate').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const petitionId = e.currentTarget.dataset.petitionId;
+        const petitionTitle = e.currentTarget.dataset.petitionTitle;
+        if (confirm(`Escalate petition "${petitionTitle}" to the Assembly for consideration?`)) {
+          showToast(`Petition "${petitionTitle}" escalated to Assembly. It will appear in the Bill Tracker for debate.`);
+        }
+      });
+    });
+  }
+
+  function signPetition(petitionId) {
+    const today = new Date().toISOString();
+    const key = 'petition-signatures';
+
+    let signatures = {};
+    try {
+      const stored = localStorage.getItem(key);
+      if (stored) signatures = JSON.parse(stored);
+    } catch (e) {
+      console.warn('Failed to parse petition signatures:', e);
+      signatures = {};
+    }
+
+    if (signatures[petitionId]) {
+      showToast('You have already signed this petition.');
+      return;
+    }
+
+    signatures[petitionId] = { signedAt: today };
+    localStorage.setItem(key, JSON.stringify(signatures));
+
+    showToast('Signature recorded. Thank you for participating.');
   }
 
   function initPetitionForm() {

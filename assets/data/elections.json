@@ -1,0 +1,134 @@
+{
+  "generated": "2026-07-02",
+  "count": 9,
+  "entries": {
+    "elections": [
+      {
+        "id": "ELC-001",
+        "title": "Assembly At-Large Election Cycle-4",
+        "category": "General",
+        "status": "Certified",
+        "administeredBy": "Chief Electoral Officer",
+        "reportsTo": "Assembly of the Digital Nation",
+        "summary": "Election of twelve at-large Assembly members for the four-year cycle-4 term.",
+        "opened": "2026-03-15T00:00:00Z",
+        "closed": "2026-03-22T23:59:59Z",
+        "certified": "2026-03-27T11:00:00Z"
+      },
+      {
+        "id": "ELC-002",
+        "title": "District 7 Special Election",
+        "category": "Special",
+        "status": "Completed",
+        "administeredBy": "Chief Electoral Officer",
+        "reportsTo": "Assembly of the Digital Nation",
+        "summary": "Special election to fill the District 7 vacancy caused by resignation.",
+        "opened": "2026-05-05T00:00:00Z",
+        "closed": "2026-05-10T23:59:59Z",
+        "certified": "2026-05-14T09:00:00Z"
+      },
+      {
+        "id": "ELC-003",
+        "title": "Constitutional Council Retention Vote",
+        "category": "Retention",
+        "status": "Scheduled",
+        "administeredBy": "Chief Electoral Officer",
+        "reportsTo": "Assembly of the Digital Nation",
+        "summary": "Retention vote for one expiring Constitutional Council seat under staggered-terms rules.",
+        "opened": "2026-08-01T00:00:00Z",
+        "closed": "2026-08-07T23:59:59Z",
+        "certified": null
+      }
+    ],
+    "apportionment": [
+      {
+        "id": "ELC-A01",
+        "cycle": "Cycle-4",
+        "district": "At-Large",
+        "seats": 12,
+        "population": 18420,
+        "status": "Certified",
+        "effective": "2026-04-01T00:00:00Z"
+      },
+      {
+        "id": "ELC-A02",
+        "cycle": "Cycle-4",
+        "district": "District 7",
+        "seats": 1,
+        "population": 1523,
+        "status": "Certified",
+        "effective": "2026-05-20T00:00:00Z"
+      },
+      {
+        "id": "ELC-A03",
+        "cycle": "Cycle-4",
+        "district": "District 12",
+        "seats": 1,
+        "population": 1388,
+        "status": "Pending Review",
+        "effective": null
+      }
+    ],
+    "referendums": [
+      {
+        "id": "REF-001",
+        "title": "Digital Sovereignty Charter Amendment: Cross-Network Citizenship Recognition",
+        "category": "Charter Amendment",
+        "status": "Vote",
+        "administeredBy": "Chief Electoral Officer",
+        "reportsTo": "Assembly of the Digital Nation",
+        "summary": "Proposed amendment to Article 4 recognizing valid citizenship credentials from compatible digital polities under the Inter-Polity Recognition Protocol.",
+        "opened": "2026-07-01T00:00:00Z",
+        "closed": "2026-07-10T00:00:00Z",
+        "certified": null
+      },
+      {
+        "id": "REF-002",
+        "title": "Open-Source Infrastructure Mandate Ratification",
+        "category": "Policy",
+        "status": "Certified",
+        "administeredBy": "Chief Electoral Officer",
+        "reportsTo": "Assembly of the Digital Nation",
+        "summary": "Ratification of the policy requiring open-source disclosure of core protocol code for infrastructure contracts exceeding 10,000 AETH tokens.",
+        "opened": "2026-04-12T00:00:00Z",
+        "closed": "2026-04-19T23:59:59Z",
+        "certified": "2026-04-24T10:00:00Z"
+      }
+    ],
+    "petitions": [
+      {
+        "id": "PET-001",
+        "title": "Public Node Minimum Uptime Standard",
+        "category": "Policy",
+        "status": "Valid",
+        "validatedBy": "Petition & Initiative Validation Lead",
+        "summary": "Petition to establish 99.95% uptime SLA for public nodes receiving municipal funding.",
+        "submitted": "2026-06-28T08:00:00Z",
+        "validated": "2026-07-02T14:00:00Z",
+        "signatures": 842
+      },
+      {
+        "id": "PET-002",
+        "title": "Regional Ambassador Program Expansion",
+        "category": "Program",
+        "status": "Valid",
+        "validatedBy": "Petition & Initiative Validation Lead",
+        "summary": "Petition to expand the ambassador program to six additional regions under the Digital Service Corps.",
+        "submitted": "2026-07-01T10:00:00Z",
+        "validated": "2026-07-05T09:30:00Z",
+        "signatures": 311
+      },
+      {
+        "id": "PET-003",
+        "title": "Repeal of Bandwidth Fee Surcharge",
+        "category": "Finance",
+        "status": "Rejected",
+        "validatedBy": "Petition & Initiative Validation Lead",
+        "summary": "Petition to repeal the 2% surcharge on commercial bandwidth contracts. Failed signature threshold.",
+        "submitted": "2026-06-15T13:00:00Z",
+        "validated": "2026-06-20T11:00:00Z",
+        "signatures": 124
+      }
+    ]
+  }
+}

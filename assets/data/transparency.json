@@ -1,0 +1,96 @@
+{
+  "generated": "2026-07-02",
+  "count": 6,
+  "entries": {
+    "requests": [
+      {
+        "id": "TRN-RQ-001",
+        "title": "Q2 Node Deployment Records",
+        "category": "Infrastructure",
+        "status": "Completed",
+        "requestor": "citizen-312@aetheria.network",
+        "summary": "Request for deployment manifests, change logs, and rollback records for Q2 node updates across Alpha cluster.",
+        "submitted": "2026-07-03T09:00:00Z",
+        "completed": "2026-07-07T16:45:00Z"
+      },
+      {
+        "id": "TRN-RQ-002",
+        "title": "Assembly Budget Reconciliation Notes",
+        "category": "Finance",
+        "status": "Published",
+        "requestor": "citizen-089@aetheria.network",
+        "summary": "Granular reconciliation notes for Assembly-approved budget lines with variance explanations.",
+        "submitted": "2026-07-04T11:15:00Z",
+        "completed": "2026-07-09T10:20:00Z"
+      },
+      {
+        "id": "TRN-RQ-003",
+        "title": "Diplomatic Communications Log",
+        "category": "Diplomacy",
+        "status": "In Review",
+        "requestor": "press@aetheria.network",
+        "summary": "Redacted correspondence between the Secretary of External Affairs and three partner networks.",
+        "submitted": "2026-07-10T14:00:00Z",
+        "completed": null
+      }
+    ],
+    "disclosures": [
+      {
+        "id": "TRN-DS-001",
+        "title": "Conflict of Interest Registry",
+        "category": "Governance",
+        "status": "Active",
+        "owner": "Assembly Ethics Committee",
+        "summary": "Public registry of declared conflicts of interest for all confirmed officers and senior directors.",
+        "effective": "2026-06-15T00:00:00Z"
+      },
+      {
+        "id": "TRN-DS-002",
+        "title": "Smart Contract Source Index",
+        "category": "Technology",
+        "status": "Active",
+        "owner": "Ministry of Technology",
+        "summary": "Index of verified smart contract deployments with commit hashes and audit attestations.",
+        "effective": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "TRN-DS-003",
+        "title": "Travel & Entertainment Expenditure Ledger",
+        "category": "Finance",
+        "status": "Scheduled",
+        "owner": "Digital Economy & Commerce Secretary",
+        "summary": "Quarterly line-item disclosure of official travel, lodging, and event expenditure by department.",
+        "effective": "2026-09-01T00:00:00Z"
+      }
+    ],
+    "reports": [
+      {
+        "id": "TRN-RP-001",
+        "title": "Operational Incident Summary",
+        "category": "Incident Response",
+        "status": "Published",
+        "owner": "Director of Digital Operations",
+        "summary": "Summary of three P2 incidents in Q2 with root-cause findings and remediation status.",
+        "period": "Q2 2026"
+      },
+      {
+        "id": "TRN-RP-002",
+        "title": "Privacy Impact Assessment",
+        "category": "Privacy",
+        "status": "In Review",
+        "owner": "Data Governance Officer",
+        "summary": "Assessment of new registry schema changes against data minimization and retention mandates.",
+        "period": "Q3 2026"
+      },
+      {
+        "id": "TRN-RP-003",
+        "title": "Annual Open Records Report",
+        "category": "Transparency",
+        "status": "Scheduled",
+        "owner": "Open Records Officer",
+        "summary": "Annual report on request volumes, response times, exemptions cited, and backlog trends.",
+        "period": "FY2026"
+      }
+    ]
+  }
+}

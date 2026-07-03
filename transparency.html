@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AETHERIA Operational Transparency & Open Records: proactive disclosure, governance transparency, and public records access.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/transparency.html">
+  <title>Operational Transparency & Open Records — The Principality of Aetheria</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="./favicon.ico">
+</head>
+<body class="page-transparency">
+  <header class="site-header">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="assets/images/digital-nation-logo.svg" alt="The Principality of Aetheria"/>
+        <span class="logo-text">AETHERIA</span>
+      </a>
+      <span class="member-counter" id="member-counter" title="Registered citizens">
+        <span class="member-counter-label" aria-hidden="true">Members</span>
+        <span class="member-counter-value" id="member-count" aria-live="polite" aria-label="Current member total">--</span>
+      </span>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+            <nav class="menu" id="site-menu" aria-hidden="true">
+            <a href="index.html">Home</a>
+            <details class="nav-dropdown">
+              <summary>Foundations</summary>
+              <div class="dropdown-wrap">
+                <a href="about.html">About</a>
+                <a href="goals.html">Goals</a>
+                <a href="initiatives.html">Initiatives</a>
+                <a href="manifesto.html">Manifesto</a>
+                <a href="charter.html">Charter</a>
+                <a href="charter-addendum.html">Charter Addendum</a>
+                <a href="structure.html">Structure</a>
+                <a href="contact.html">Contact</a>
+              </div>
+            </details>
+            <details class="nav-dropdown">
+              <summary>Governance</summary>
+              <div class="dropdown-wrap">
+                <a href="assembly.html">Assembly</a>
+                <a href="court.html">Court</a>
+                <a href="justice.html">Justice</a>
+                <a href="safety.html">Safety</a>
+              </div>
+            </details>
+            <details class="nav-dropdown">
+              <summary>Identity</summary>
+              <div class="dropdown-wrap">
+                <a href="citizenship.html">Citizenship</a>
+                <a href="passport.html">Passport</a>
+                <a href="registry.html">Registry</a>
+              </div>
+            </details>
+            <details class="nav-dropdown">
+              <summary>Policy</summary>
+              <div class="dropdown-wrap">
+                <a href="economy.html">Economy</a>
+                <a href="finance.html">Finance</a>
+                <a href="treasury.html">Treasury</a>
+                <a href="environment.html">Environment</a>
+                <a href="sustainability.html">Sustainability</a>
+                <a href="science.html">Science</a>
+                <a href="technology.html">Technology</a>
+                <a href="health-equity.html">Health Equity</a>
+                <a href="bandwidth.html">Bandwidth</a>
+                <a href="education.html">Education</a>
+                <a href="health.html">Health</a>
+                <a href="infrastructure.html">Infrastructure</a>
+              </div>
+            </details>
+            <details class="nav-dropdown">
+              <summary>Diplomacy</summary>
+              <div class="dropdown-wrap">
+                <a href="recognition.html">Recognition</a>
+                <a href="missions.html">Missions</a>
+                <a href="diplomacy.html">Diplomacy</a>
+                <a href="protocol.html">Protocol</a>
+                <a href="consular.html">Consular</a>
+                <a href="culture.html">Culture</a>
+                <a href="communications.html">Communications</a>
+              </div>
+            </details>
+            <details class="nav-dropdown">
+              <summary>Engagement</summary>
+              <div class="dropdown-wrap">
+                <a href="engage.html">Engage</a>
+                <a href="tools.html">Tools</a>
+              </div>
+            </details>
+          </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page">
+      <div class="container">
+        <h1>Operational Transparency &amp; Open Records</h1>
+        <p class="lead">The Open Records Office is an operational arm of AETHERIA, providing proactive disclosure, public records access, and audit-ready documentation. Governance transparency and operational accountability are built by default.</p>
+
+        <div class="activity-filters" aria-label="Filter transparency items">
+          <input type="search" id="transparency-search" placeholder="Search requests, disclosures, and reports..." autocomplete="off" aria-label="Search transparency items"/>
+          <select id="transparency-status" aria-label="Filter by status">
+            <option value="all">All Statuses</option>
+            <option value="active">Active</option>
+            <option value="published">Published</option>
+            <option value="in_review">In Review</option>
+            <option value="completed">Completed</option>
+            <option value="scheduled">Scheduled</option>
+            <option value="classified">Classified Exception</option>
+          </select>
+        </div>
+
+        <h2>Open Records Requests</h2>
+        <div id="transparency-requests-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Open records requests feed">
+          <div class="activity-loading" aria-hidden="true">Loading open records requests...</div>
+        </div>
+
+        <h2>Governance Disclosures</h2>
+        <div id="transparency-disclosures-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Governance disclosures feed">
+          <div class="activity-loading" aria-hidden="true">Loading governance disclosures...</div>
+        </div>
+
+        <h2>Operational Reports</h2>
+        <div id="transparency-reports-feed" class="activity-feed" role="feed" aria-live="polite" aria-label="Operational reports feed">
+          <div class="activity-loading" aria-hidden="true">Loading operational reports...</div>
+        </div>
+
+        <h2>Cross-Links</h2>
+        <p>Transparency connects to <a href="assembly.html">Assembly</a>, <a href="court.html">Court</a>, <a href="engage.html">Engage</a>, and <a href="finance.html">Finance</a>.</p>
+
+        <div class="cta">
+          <a class="button primary" href="assets/data/transparency.json">Download Transparency Data</a>
+          <a class="button" href="engage.html">Submit a Request</a>
+          <a class="button" href="assembly.html">Assembly Oversight</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <strong>THE PRINCIPALITY OF AETHERIA</strong>
+          <span class="footer-tagline">Sovereign by code</span>
+        </div>
+        <div class="footer-meta">
+          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
+          <span class="footer-status" aria-label="Public network status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Network Active
+          </span>
+          <span class="footer-year" data-year>2026</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Foundations</summary>
+            <div class="dropdown-wrap">
+              <a href="about.html">About</a>
+              <a href="goals.html">Goals</a>
+              <a href="initiatives.html">Initiatives</a>
+              <a href="manifesto.html">Manifesto</a>
+              <a href="charter.html">Charter</a>
+              <a href="charter-addendum.html">Charter Addendum</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Governance</summary>
+            <div class="dropdown-wrap">
+              <a href="assembly.html">Assembly</a>
+              <a href="court.html">Court</a>
+              <a href="justice.html">Justice</a>
+              <a href="safety.html">Safety</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Identity</summary>
+            <div class="dropdown-wrap">
+              <a href="citizenship.html">Citizenship</a>
+              <a href="passport.html">Passport</a>
+              <a href="registry.html">Registry</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Policy</summary>
+            <div class="dropdown-wrap">
+              <a href="economy.html">Economy</a>
+              <a href="finance.html">Finance</a>
+              <a href="treasury.html">Treasury</a>
+              <a href="environment.html">Environment</a>
+              <a href="sustainability.html">Sustainability</a>
+              <a href="science.html">Science</a>
+              <a href="technology.html">Technology</a>
+              <a href="health-equity.html">Health Equity</a>
+              <a href="bandwidth.html">Bandwidth</a>
+              <a href="education.html">Education</a>
+              <a href="health.html">Health</a>
+              <a href="infrastructure.html">Infrastructure</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Diplomacy</summary>
+            <div class="dropdown-wrap">
+              <a href="recognition.html">Recognition</a>
+              <a href="missions.html">Missions</a>
+              <a href="diplomacy.html">Diplomacy</a>
+              <a href="protocol.html">Protocol</a>
+              <a href="consular.html">Consular</a>
+              <a href="culture.html">Culture</a>
+              <a href="communications.html">Communications</a>
+            </div>
+          </details>
+          <details class="nav-dropdown footer-dropdown">
+            <summary>Engagement</summary>
+            <div class="dropdown-wrap">
+              <a href="engage.html">Engage</a>
+              <a href="tools.html">Tools</a>
+            </div>
+          </details>
+        </nav>
+        <div class="footer-extras">
+          <a class="social-link" href="https://github.com" rel="noopener noreferrer" target="_blank" aria-label="GitHub repository">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/transparency.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

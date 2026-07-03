@@ -1,0 +1,93 @@
+{
+  "generated": "2026-07-02",
+  "count": 9,
+  "entries": {
+    "projects": [
+      {
+        "id": "DSC-P01",
+        "title": "Nebula Mesh Upgrade",
+        "category": "Infrastructure",
+        "status": "Active",
+        "lead": "citizen-312@aetheria.network",
+        "summary": "Deploy mesh networking upgrades across twelve regional nodes to reduce latency and improve redundancy.",
+        "started": "2026-06-18T08:00:00Z",
+        "due": "2026-10-05T17:00:00Z"
+      },
+      {
+        "id": "DSC-P02",
+        "title": "Citizen Portal Hardening",
+        "category": "Platform",
+        "status": "Planning",
+        "lead": "citizen-089@aetheria.network",
+        "summary": "Security hardening plan including MFA migration, session rotation, and rate-limiting rollout.",
+        "started": "2026-07-12T09:00:00Z",
+        "due": "2026-11-20T17:00:00Z"
+      },
+      {
+        "id": "DSC-P03",
+        "title": "Open Records Publishing Pipeline",
+        "category": "Transparency",
+        "status": "Active",
+        "lead": "citizen-445@aetheria.network",
+        "summary": "Automated publishing pipeline for proactive disclosure documents with machine-readable metadata.",
+        "started": "2026-05-25T10:00:00Z",
+        "due": "2026-09-15T17:00:00Z"
+      }
+    ],
+    "workforce": [
+      {
+        "id": "DSC-W01",
+        "name": "Regional Node Lead",
+        "category": "Infrastructure",
+        "status": "Active",
+        "station": "Node Alpha-7, North America East",
+        "specialty": "Platform reliability and deployment orchestration"
+      },
+      {
+        "id": "DSC-W02",
+        "name": "Civic-Tech Designer",
+        "category": "Product",
+        "status": "Active",
+        "station": "Remote - Design Guild",
+        "specialty": "Accessibility-first UI/UX for public services"
+      },
+      {
+        "id": "DSC-W03",
+        "name": "Field Integrator",
+        "category": "Deployment",
+        "status": "On Leave",
+        "station": "Node Beta-2, Southeast Asia",
+        "specialty": "Onboarding integration and regional localization"
+      }
+    ],
+    "programs": [
+      {
+        "id": "DSC-C01",
+        "title": "Civic Sprint Fellowship",
+        "category": "Civic-Tech",
+        "status": "Active",
+        "coordinator": "citizen-777@aetheria.network",
+        "summary": "Four-week fellowship pairing citizens with Corps project leads to ship public-interest tooling.",
+        "cohort": "Summer 2026"
+      },
+      {
+        "id": "DSC-C02",
+        "title": "Infrastructure Apprenticeship",
+        "category": "Workforce",
+        "status": "Open",
+        "coordinator": "Infrastructure Workforce Lead",
+        "summary": "Paid apprenticeship covering node operations, observability, incident response, and deployment pipelines.",
+        "cohort": "Fall 2026"
+      },
+      {
+        "id": "DSC-C03",
+        "title": "Voter Tooling Initiative",
+        "category": "Civic-Tech",
+        "status": "Active",
+        "coordinator": "Chief Electoral Officer Office",
+        "summary": "Build and maintain accessible voting interfaces, result visualizers, and petition dashboards.",
+        "cohort": "2026-2027"
+      }
+    ]
+  }
+}
