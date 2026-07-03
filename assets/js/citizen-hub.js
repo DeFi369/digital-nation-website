@@ -13,6 +13,7 @@
     renderStats();
     renderPillars();
     initFilters();
+    initEngagementNav();
   }
 
   /* ---- stats ---- */
@@ -206,4 +207,12 @@
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-+|-+$/g, '') || 'unknown';
   }
+  function initEngagementNav() {
+    try {
+      if (typeof DigitalNationNav !== 'undefined' && DigitalNationNav.injectEngagement) {
+        DigitalNationNav.injectEngagement('#engagement-dropdown');
+      }
+    } catch {}
+  }
+
 })();
