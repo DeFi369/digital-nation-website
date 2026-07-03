@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The visual and ceremonial identity of AETHERIA — flag concept, anthem direction, founding date, and protocol.">
-  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/symbols.html">
-  <meta property="og:title" content="National Symbols — The Principality of Aetheria">
-  <meta property="og:description" content="The visual and ceremonial identity of AETHERIA — flag concept, anthem direction, founding date, and protocol.">
+  <meta name="description" content="Personal citizen dashboard for the Principality of Aetheria. Track signed petitions, submitted feedback, upcoming elections, and records requests.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/citizen-hub.html">
+  <meta property="og:title" content="Citizen Hub — The Principality of Aetheria">
+  <meta property="og:description" content="Your personal action center: petitions, elections, records requests, and civic activity.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/symbols.html">
+  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/citizen-hub.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="National Symbols — The Principality of Aetheria">
-  <meta name="twitter:description" content="The visual and ceremonial identity of AETHERIA — flag concept, anthem direction, founding date, and protocol.">
+  <meta name="twitter:title" content="Citizen Hub — The Principality of Aetheria">
+  <meta name="twitter:description" content="Your personal action center: petitions, elections, records requests, and civic activity.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
 
-  <title>National Symbols — The Principality of Aetheria</title>
+  <title>Citizen Hub — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="icon" href="./favicon.ico">
 </head>
-<body>
+<body class="page-engage">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav">
@@ -39,7 +39,8 @@
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
-      </button>            <nav class="menu" id="site-menu" aria-hidden="true">
+      </button>
+            <nav class="menu" id="site-menu" aria-hidden="true">
             <a href="index.html">Home</a>
             <details class="nav-dropdown">
               <summary>Foundations</summary>
@@ -121,96 +122,87 @@
   <main id="main">
     <section class="page">
       <div class="container">
-        <h1>National Symbols</h1>
-        <p class="lead">
-          The visual and ceremonial identity of AETHERIA — flag concept, anthem direction, founding date,
-          and protocol for national occasions.
-        </p>
+        <h1>Citizen Hub</h1>
+        <p class="lead">Your personal action center for civic participation. Open Records is an operational arm of the transparency system, managed by the Open Records Officer and overseen by the Assembly. The Chief Electoral Officer administers all elections and referendums and reports to the Assembly.</p>
 
-        <h2>Flag Concept</h2>
-        <p>
-          The proposed flag of THE PRINCIPALITY OF AETHERIA is a dark field symbolizing the digital substrate,
-          crossed by two luminous bands representing the twin pillars of sovereignty and openness — code
-          and community. The colors are the same as the web palette: deep night-blue background with
-          light-blue and soft-violet accents.
-        </p>
-        <div class="flag-mockup" aria-hidden="true">
-          <div class="flag">
-            <div class="flag-field">
-              <div class="flag-band band-1"></div>
-              <div class="flag-band band-2"></div>
-              <div class="flag-emblem">🜂</div>
-            </div>
+        <div class="hub-status-bar" id="hub-status-bar" aria-live="polite">
+          <div class="hub-badge">
+            <span class="hub-badge-label">State</span>
+            <span class="hub-badge-value" id="hub-state-label">Loaded</span>
+          </div>
+          <div class="hub-badge">
+            <span class="hub-badge-label">Petitions Signed</span>
+            <span class="hub-badge-value" id="hub-signed-count">0</span>
+          </div>
+          <div class="hub-badge">
+            <span class="hub-badge-label">Open Records Requests</span>
+            <span class="hub-badge-value" id="hub-records-count">0</span>
           </div>
         </div>
 
-        <h2>Anthem Concept</h2>
-        <p>
-          AETHERIA’s anthem is under Civic Assembly deliberation. The design brief calls for an original
-          composition in a modular, algorithmically augmented score — because a digital republic should
-          sing in harmonics that no single human voice could sustain alone.
-        </p>
-        <div class="columns">
-          <div class="card">
-            <h3>Style Direction</h3>
-            <p>Fusion of ambient electronics, choral counterpoint, and live-coded sequencers. The score should feel communal, precise, and alive.</p>
+        <section class="hub-section" aria-labelledby="hub-quick-title">
+          <h2 id="hub-quick-title">Quick Actions</h2>
+          <div class="quick-actions">
+            <a class="hub-action-card" href="engage.html#petition-form">
+              <span class="hub-action-icon" aria-hidden="true">✍️</span>
+              <h3>New Petition</h3>
+              <p>Submit a petition to the Assembly, Executive, or a Ministry.</p>
+            </a>
+            <a class="hub-action-card" href="engage.html#feedback-form">
+              <span class="hub-action-icon" aria-hidden="true">💬</span>
+              <h3>Submit Feedback</h3>
+              <p>Report issues, suggest improvements, or ask questions.</p>
+            </a>
+            <a class="hub-action-card" href="open-records.html">
+              <span class="hub-action-icon" aria-hidden="true">📂</span>
+              <h3>Open Records</h3>
+              <p>File or review requests through the Open Records operational arm.</p>
+            </a>
+            <a class="hub-action-card" href="transparency.html">
+              <span class="hub-action-icon" aria-hidden="true">🔎</span>
+              <h3>Browse Disclosures</h3>
+              <p>View active reports and disclosures published by ministries.</p>
+            </a>
           </div>
-          <div class="card">
-            <h3>Lyrics</h3>
-            <p>A short multilingual manifesto stanza — opening lines drawn from the Charter and Manifesto — sung in the primary language of the performing region.</p>
-          </div>
-          <div class="card">
-            <h3>Performance Protocol</h3>
-            <p>No single canonical recording. Citizens and nodes are encouraged to produce regional and instrumental variations published under open license.</p>
-          </div>
-        </div>
+        </section>
 
-        <h2>Founding Date</h2>
-        <p>
-          AETHERIA’s founding is dated from the publication of its first public protocol specification and
-          founding charter — the moment the nation moved from private coalition to open, auditable institution.
-          The exact calendar date is under final ratification by the Civic Assembly.
-        </p>
-
-        <h2>Protocol &amp; Ceremony</h2>
-        <div class="columns">
-          <div class="card">
-            <h3>Oath of Citizenship</h3>
-            <p>A short, commit-style pledge to the Charter and Manifesto, signed cryptographically rather than sworn on physical text. The signature itself is the oath.</p>
+        <section class="hub-section" aria-labelledby="hub-signed-title">
+          <div class="section-header">
+            <h2 id="hub-signed-title">My Petitions</h2>
           </div>
-          <div class="card">
-            <h3>National Days</h3>
-            <p>Founding Day, Civic Assembly Opening Day, and Protocol Release Day are proposed annual observances. Citizens celebrate by contributing a public good.</p>
+          <div class="hub-list" id="hub-signed-petitions">
+            <div class="hub-empty" id="hub-signed-empty">No signed petitions yet. Browse active petitions on the Elections & Petitions page.</div>
           </div>
-          <div class="card">
-            <h3>Protocol Ceremonies</h3>
-            <p>Voting openings, charter amendments, and passport ceremonies are conducted as public protocol events — timestamped, recorded, and replayable by any citizen.</p>
+        </section>
+
+        <section class="hub-section" aria-labelledby="hub-feedback-title">
+          <div class="section-header">
+            <h2 id="hub-feedback-title">My Feedback</h2>
           </div>
-        </div>
+          <div class="hub-list" id="hub-feedback-list" role="feed" aria-live="polite">
+            <div class="hub-empty" id="hub-feedback-empty">You have not submitted any feedback yet.</div>
+          </div>
+        </section>
 
-        <h2>Ceremonial Objects</h2>
-        <p>
-          Proposed ceremonial objects include a digital minting ceremony for new credential batches, a
-          consensus lantern shown during Assembly openings, and a public ledger archive — a living monument
-          to transparency built from the immutable record of governance itself.
-        </p>
+        <section class="hub-section" aria-labelledby="hub-elections-title">
+          <div class="section-header">
+            <h2 id="hub-elections-title">Upcoming Elections</h2>
+          </div>
+          <div class="hub-list" id="hub-elections-list" role="feed" aria-live="polite">
+            <div class="hub-loading" aria-hidden="true">Loading elections…</div>
+          </div>
+        </section>
 
-        <div class="cta">
-          <a class="button primary" href="citizenship.html">Participate in Design</a>
-        </div>
+        <section class="hub-section" aria-labelledby="hub-records-title">
+          <div class="section-header">
+            <h2 id="hub-records-title">My Records Requests</h2>
+          </div>
+          <div class="hub-list" id="hub-records-list" role="feed" aria-live="polite">
+            <div class="hub-empty" id="hub-records-empty">No Open Records requests saved yet.</div>
+          </div>
+        </section>
       </div>
     </section>
-  <aside class="legal-block" aria-labelledby="legal-title-symbols">
-      <h2 id="legal-title-symbols">Legal &amp; Policy Notice</h2>
-      <p>
-        AETHERIA is an experimental digital polity. Nothing on this site constitutes legal advice,
-        statehood under international law, or an offer of regulated financial services unless
-        explicitly stated in a published protocol document. By participating you agree to the
-        <a href="charter.html">Charter</a>
-                <a href="charter-addendum.html">Charter Addendum</a> and <a href="manifesto.html">Manifesto</a>.
-        Read <a href="recognition.html">Recognition</a> for context on legitimacy frameworks.
-      </p>
-    </aside>
   </main>
 
   <div class="cityscape" aria-hidden="true"></div>
@@ -229,7 +221,7 @@
           </span>
           <span class="footer-year" data-year>2026</span>
         </div>
-                                <nav class="footer-nav" aria-label="Footer">
+                                        <nav class="footer-nav" aria-label="Footer">
           <details class="nav-dropdown footer-dropdown">
             <summary>Foundations</summary>
             <div class="dropdown-wrap">
@@ -290,7 +282,7 @@
             <summary>Engagement</summary>
             <div class="dropdown-wrap">
               <a href="engage.html">Engage</a>
-              <a href="tools.html">Tools</a>
+              <a href="citizen-hub.html">Citizen Hub</a>
             </div>
           </details>
         </nav>
@@ -302,5 +294,8 @@
       </div>
     </div>
   </footer>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/citizen-hub.js"></script>
 </body>
 </html>
