@@ -9,8 +9,8 @@
       "fullName": "Agent Element Protocol",
       "version": "2.8.0",
       "status": "active",
-      "source": "repos/AEP/README.md",
-      "summary": "Build-time structural governance for deterministic scenes, action_path registries, and policy-enabled agent wrappers.",
+      "source": "repos/aep/README.md",
+      "summary": "# AEP 2.8 - Agent Element Protocol **120+ Features. One Ultimate AI Agent Control Protocol.** **Version 2.8.0** - Forked from `NLA-AEP-2.75-open-protocol` **Author:** thePM_001 ([https://x.com/thePM_001](https://x.co",
       "components": [
         "Base Node",
         "Lattice Channels",
@@ -20,12 +20,7 @@
         "CAW Framework",
         "Conformance & SDKs"
       ],
-      "highlights": [
-        "PQEncryptedCapsule sealed frames on lattice transport",
-        "One hyperlattice per governed system",
-        "Public CC-01..CC-15 conformance battery",
-        "Composer Lite on :8424"
-      ]
+      "artifacts": []
     },
     {
       "id": "dynaep",
@@ -33,8 +28,8 @@
       "fullName": "Dynamic Agent Element Protocol",
       "version": "1.0",
       "status": "active",
-      "source": "repos/dynAEP/README.md",
-      "summary": "Runtime event governance for multi-agent systems via a deterministic Action Lattice, temporal authority, and perception governance.",
+      "source": "repos/dynaep/README.md",
+      "summary": "# dynAEP 1.0: Open-Source Real-Time Event Governance Protocol for AI **Version 1.0** - June 2026 **Author:** thePM_001 **License:** Apache-2.0 **Repository:** https://github.com/thePM001/dynAEP dynAEP 1.0 is an open-s",
       "components": [
         "Action Lattice",
         "Temporal Authority (dynAEP-TA)",
@@ -42,21 +37,16 @@
         "Observer Adapters & MCP",
         "GAP translator"
       ],
-      "highlights": [
-        "Native MCP server with 7 tools",
-        "Partial-order event validation at arrival time",
-        "GAP-to-dynAEP translation",
-        "Auto-discovery bootstrap"
-      ]
+      "artifacts": []
     },
     {
       "id": "gap",
       "name": "GAP",
       "fullName": "Governed Agentic Programming",
-      "version": "pre-v1.0",
+      "version": "unknown",
       "status": "active",
-      "source": "repos/GAP/README.md",
-      "summary": "Structural instruction language for governed agency with constrained decoding, structural validation, and governance lattice enforcement.",
+      "source": "repos/gap/README.md",
+      "summary": "# GAP: Governed Agentic Programming Native instructions language for governed, self-improving, mathematically verifiable agency. Part of the Agent Element Protocol ecosystem. GAP is a complete structural programming la",
       "components": [
         "Meta-Schema",
         "Constrained decoding",
@@ -64,27 +54,107 @@
         "Governance lattice",
         "Subprotocol validators"
       ],
-      "highlights": [
-        "Three-layer enforcement",
-        "Self-governing by construction",
-        "YAML-native instruction format",
-        "Provenance and proof chain tracking"
+      "artifacts": []
+    },
+    {
+      "id": "conformance",
+      "name": "aep-conformance",
+      "fullName": "AEP Conformance Suite",
+      "version": "1.0",
+      "status": "pre-v1.0",
+      "source": "repos/conformance/README.md",
+      "summary": "# AEP Conformance Test Suite Test battery that determines who gets to claim AEP-compliance. ## Status Pre-v1.0 scaffolding. Tests under active authoring. ## License Fair Core License 1.0. Converts to Apache 2.0 afte",
+      "components": [
+        "Test harness",
+        "Schema checks"
+      ],
+      "artifacts": [
+        "LICENSE",
+        "README.md",
+        ".gitkeep",
+        "index",
+        "HEAD",
+        "packed-refs",
+        "description",
+        "FETCH_HEAD",
+        "config",
+        "ORIG_HEAD",
+        ".gitkeep",
+        ".gitkeep",
+        "pre-commit.sample",
+        "pre-applypatch.sample",
+        "push-to-checkout.sample",
+        "pre-receive.sample",
+        "pre-push.sample",
+        "fsmonitor-watchman.sample",
+        "applypatch-msg.sample",
+        "prepare-commit-msg.sample"
+      ]
+    },
+    {
+      "id": "signatures",
+      "name": "aep-signatures",
+      "fullName": "AEP Signature Trust Bundle",
+      "version": "1.0.",
+      "status": "pre-v1.0",
+      "source": "repos/signatures/README.md",
+      "summary": "# AEP Signatures Detection signatures for the Agent Element Protocol (AEP). Authored and curated by EPSCOM (Eudaimonic Earth Post-Scarcity Committee). ## Status Pre-v1.0. Signature format and trust-bundle layout are s",
+      "components": [
+        "Trust bundle",
+        "Manifest verifier"
+      ],
+      "artifacts": [
+        "LICENSE-CONTENT",
+        "LICENSE-TOOLING",
+        "README.md",
+        "setup.py",
+        "__init__.py",
+        "README.md",
+        "demo_verifier.py",
+        "index",
+        "HEAD",
+        "packed-refs",
+        "description",
+        "COMMIT_EDITMSG",
+        "FETCH_HEAD",
+        "config",
+        "ORIG_HEAD",
+        ".gitkeep",
+        "example-bundle-001.json",
+        ".gitkeep",
+        "entry_points.txt",
+        "SOURCES.txt"
       ]
     }
   ],
   "metrics": {
     "aepVersion": "2.8.0",
     "dynaepVersion": "1.0",
-    "gapStatus": "pre-v1.0",
+    "gapStatus": "unknown",
     "conformanceStatus": "pre-v1.0",
     "signatureStatus": "pre-v1.0",
-    "totalComponents": 17,
+    "totalComponents": 21,
+    "artifactFileCount": 40,
+    "pageCount": 67,
+    "crossRepoPageCount": 5,
+    "crossRepoPages": [
+      "ecosystem-status.html",
+      "memory-lattice.html",
+      "protocol-status.html",
+      "research.html",
+      "sovereign-security.html"
+    ],
+    "identityManifestCount": 3,
+    "identityKeyCount": 3,
+    "latestCommit": "03be1558a064292c62443a8981c30a2b34c555bf Add unified ecosystem-status page aggregating AEP/dynAEP/GAP/conformance/signatures/website status",
+    "latestCommitDate": "2026-07-03",
     "lastAudit": "2026-07-03"
   },
   "citizenBenefits": [
     "Deterministic transparency for public services",
     "Auditable automation via evidence ledgers",
     "Sovereign resilience without vendor lock-in",
-    "Temporal governance for trustworthy timestamps"
+    "Temporal governance for trustworthy timestamps",
+    "Local identity verification for agent accountability"
   ]
 }
