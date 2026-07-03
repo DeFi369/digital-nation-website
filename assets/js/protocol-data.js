@@ -10,6 +10,7 @@
   function init() {
     renderStack();
     renderMetrics();
+    renderQuantumStatus();
     renderBenefits();
   }
 
@@ -80,6 +81,34 @@
       })
       .catch(function () {
         container.innerHTML = '<li class="activity-empty">Benefit data is temporarily unavailable.</li>';
+      });
+  }
+
+  function renderQuantumStatus() {
+    var container = document.getElementById('quantum-status');
+    if (!container) return;
+    fetch('assets/data/protocol-data.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var q = data.quantum || {};
+        if (!q.available) {
+          container.innerHTML = '<div class="activity-empty">Quantum compute signal is not available yet.</div>';
+          return;
+        }
+        var items = [
+          { label: 'Quantum Layer', value: q.collapseChosenLattice || '-' },
+          { label: 'Normalized Total', value: q.afterNormalizeTotal != null ? String(q.afterNormalizeTotal) : '-' },
+          { label: 'Booster Phase', value: q.boosterPhaseReady ? 'Ready' : 'Not ready' }
+        ];
+        container.innerHTML = items.map(function (item) {
+          return '<div class="stat">' +
+            '<span class="stat-value">' + escapeHtml(String(item.value)) + '</span>' +
+            '<span class="stat-label">' + escapeHtml(String(item.label)) + '</span>' +
+          '</div>';
+        }).join('');
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Quantum status is temporarily unavailable.</div>';
       });
   }
 
