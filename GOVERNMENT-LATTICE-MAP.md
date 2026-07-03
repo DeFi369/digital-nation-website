@@ -29,9 +29,14 @@
 
 **Vice President**
 - Acts for the President when absent
-- Chairs inter-department coordination
-- Reports to: President
-- Classification: AEP_GOVERNANCE_VICE_PRESIDENT
+**Vice President**|- Acts for the President; chairs coordination
+|- Reports to: President
+|- Classification: AEP_GOVERNANCE_VICE_PRESIDENT
+
+**Assistant to the President for National Security Affairs**
+|- National security coordination, policy integration
+|- Reports to: President / Vice President
+|- Classification: AEP_GOVERNANCE_NATIONAL_SECURITY_ADVISOR
 
 **Chair, Constitutional Council**
 - Leads charter interpretation and amendment review

@@ -118,17 +118,18 @@
 ## LAYER 3: DEPUTY / DIVISION / PROGRAM LEADS
 
 **Vice President**
-- Chief of Staff
-- Director of OMB
+|- Chief of Staff
+|- Director of OMB
+|- National Security Advisor
 
 **Chair, Constitutional Council**
 - Tribunal Clerk
 - Dispute Resolution Officer
 
 **Secretary of External Affairs**
-- Deputy Secretary of External Affairs
-- Consular Operations Lead
-- Protocol Officer
+|- Deputy Secretary of External Affairs
+|- Consular Operations Lead
+|- Protocol Officer
 
 **Secretary of Digital Economy & Commerce**
 - Deputy Secretary
