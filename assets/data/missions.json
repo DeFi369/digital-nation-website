@@ -1,5 +1,7 @@
 {
   "generated": "2026-07-02",
+  "office": "Secretary of External Affairs",
+  "layer": "Layered Republic",
   "count": 5,
   "entries": [
     {
@@ -10,7 +12,7 @@
       "status": "Active",
       "representative": "Aria Solenne",
       "contact": "geneva@example.aetheria",
-      "note": "Governance briefings and onboarding"
+      "note": "Governance briefings and onboarding under the Secretary of External Affairs"
     },
     {
       "id": "MIS-0002",
@@ -20,7 +22,7 @@
       "status": "Active",
       "representative": "Kai Voss",
       "contact": "toronto@example.aetheria",
-      "note": "Credential recovery and support"
+      "note": "Credential recovery and support through the layered republic external affairs layer"
     },
     {
       "id": "MIS-0003",
@@ -30,7 +32,7 @@
       "status": "Active",
       "representative": "Mira Chen",
       "contact": "tokyo@example.aetheria",
-      "note": "Engineering coordination"
+      "note": "Engineering coordination aligned with Secretary of External Affairs oversight"
     },
     {
       "id": "MIS-0004",
@@ -40,7 +42,7 @@
       "status": "Pending",
       "representative": "Orion Vale",
       "contact": "saopaulo@example.aetheria",
-      "note": "Opening review"
+      "note": "Opening review under layered republic accreditation standards"
     },
     {
       "id": "MIS-0005",
@@ -50,7 +52,7 @@
       "status": "Active",
       "representative": "Nia Rahman",
       "contact": "nairobi@example.aetheria",
-      "note": "Outreach and education"
+      "note": "Outreach and education coordinated by the Secretary of External Affairs"
     }
   ]
 }

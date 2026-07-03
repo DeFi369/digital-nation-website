@@ -1,6 +1,7 @@
 {
   "generated": "2026-07-02",
-  "office": "Technology & Innovation",
+  "office": "Secretary of External Affairs",
+  "layer": "Layered Republic",
   "count": 3,
   "entries": {
     "standards": [
@@ -11,7 +12,7 @@
         "status": "Ratified",
         "owner": "Technology & Innovation",
         "version": "2.1.0",
-        "summary": "Defines the canonical JWT serialization, claim set, signature algorithm, and validator checklist for citizen identity tokens."
+        "summary": "Defines the canonical JWT serialization, claim set, signature algorithm, and validator checklist for citizen identity tokens under layered republic governance."
       },
       {
         "id": "PRO-STD-02",
@@ -20,7 +21,7 @@
         "status": "Ratified",
         "owner": "Infrastructure & Human Services",
         "version": "1.4.0",
-        "summary": "Mandatory regression tests covering API surface compliance, event ordering guarantees, and graceful degradation."
+        "summary": "Mandatory regression tests covering API surface compliance, event ordering guarantees, and graceful degradation aligned with the layered republic structure."
       },
       {
         "id": "PRO-STD-03",
@@ -29,7 +30,7 @@
         "status": "Draft",
         "owner": "Technology & Innovation",
         "version": "0.9.0",
-        "summary": "Shared event types for Assembly votes, Court rulings, and Civic payments, with enforced schema validation."
+        "summary": "Shared event types for Assembly votes, Court rulings, and Civic payments, with enforced schema validation under the Secretary of External Affairs."
       },
       {
         "id": "PRO-STD-04",
@@ -38,7 +39,7 @@
         "status": "In Review",
         "owner": "Technology & Innovation",
         "version": "0.4.0",
-        "summary": "Mandatory data-classification labels, regional hosting rules, and jurisdictions-of-last-resort for sensitive citizen data."
+        "summary": "Mandatory data-classification labels, regional hosting rules, and jurisdictions-of-last-resort for sensitive citizen data within the layered republic."
       },
       {
         "id": "PRO-STD-05",
@@ -47,7 +48,7 @@
         "status": "Ratified",
         "owner": "Technology & Innovation",
         "version": "1.0.0",
-        "summary": "Canonical JSON-LD and CBOR serializations with checksums, canonical URLs, and schema validation hooks."
+        "summary": "Canonical JSON-LD and CBOR serializations with checksums, canonical URLs, and schema validation hooks for layered republic interoperability."
       }
     ],
     "sovereignty": [
@@ -58,7 +59,7 @@
         "category": "Operational",
         "status": "Active",
         "owner": "Technology & Innovation",
-        "summary": "No single node operator may control more than 15 % of declared runtime capacity without Assembly review."
+        "summary": "No single node operator may control more than 15 % of declared runtime capacity without Assembly review under layered republic governance principles."
       },
       {
         "id": "PRO-SOV-02",
@@ -67,7 +68,7 @@
         "category": "Licensing",
         "status": "Active",
         "owner": "Technology & Innovation",
-        "summary": "All ministerial software paths must use OSI-approved licenses and expose public repositories by default."
+        "summary": "All ministerial software paths must use OSI-approved licenses and expose public repositories by default, consistent with layered republic transparency standards."
       },
       {
         "id": "PRO-SOV-03",
@@ -76,7 +77,7 @@
         "category": "Security",
         "status": "Active",
         "owner": "Infrastructure & Human Services",
-        "summary": "90-day rotation for production credentials; emergency rotation procedures under Court ruling contingency."
+        "summary": "90-day rotation for production credentials; emergency rotation procedures under Court ruling contingency aligned with the layered republic model."
       },
       {
         "id": "PRO-SOV-04",
@@ -85,7 +86,7 @@
         "category": "Legal",
         "status": "Draft",
         "owner": "Technology & Innovation",
-        "summary": "Defines secondary governance jurisdictions activated when primary nodes become unreachable or compromised."
+        "summary": "Defines secondary governance jurisdictions activated when primary nodes become unreachable or compromised, preserving layered republic continuity."
       }
     ]
   }

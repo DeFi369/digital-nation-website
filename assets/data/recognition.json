@@ -1,0 +1,68 @@
+{
+  "generated": "2026-07-02",
+  "office": "Secretary of External Affairs",
+  "layer": "Layered Republic",
+  "count": 6,
+  "entries": [
+    {
+      "id": "REC-01",
+      "title": "Network Republic",
+      "criteria": "Montevideo + Digital",
+      "status": "Active",
+      "summary": "Codified mutual recognition of citizen credentials, shared anti-fraud measures, and consular referral channels across a layered digital governance structure.",
+      "evidence": ["Published governance charter", "Transparent voting logs", "Node uptime reports"],
+      "effectiveDate": "2026-03-14",
+      "renewable": true
+    },
+    {
+      "id": "REC-02",
+      "title": "Nordic Digital Alliance",
+      "criteria": "Observer Pathway",
+      "status": "Under Review",
+      "summary": "Data-residency requirements, cross-border incident reporting, and standard API surface definitions for multilateral interoperability.",
+      "evidence": ["API standard proposals", "Incident reports", "Consortium participation record"],
+      "effectiveDate": "2026-08-01",
+      "renewable": true
+    },
+    {
+      "id": "REC-03",
+      "title": "Republic of Solstice Islands",
+      "criteria": "Bilateral Recognition",
+      "status": "Signed",
+      "summary": "Honorary consular officers, document authentication workflows, and citizen-support call routing aligned with the layered republic model.",
+      "evidence": ["Signed accord", "Consular protocols", "Authentication flow documentation"],
+      "effectiveDate": "2026-05-19",
+      "renewable": false
+    },
+    {
+      "id": "REC-04",
+      "title": "Digital Standards Consortium",
+      "criteria": "Observer Status",
+      "status": "Active",
+      "summary": "Observer rights in standards proceedings with voting rights on technical amendments and governance-layer specifications.",
+      "evidence": ["Observer agreement", "Participation logs", "Standard amendment votes"],
+      "effectiveDate": "2026-01-01",
+      "renewable": false
+    },
+    {
+      "id": "REC-05",
+      "title": "Micronation Fellowship",
+      "criteria": "Passport Diplomacy",
+      "status": "Ratified",
+      "summary": "Recommends favorable treatment for AETHERIA passport holders with reciprocal arrangements across friendly networks.",
+      "evidence": ["Reciprocity notice", "Passport samples", "Member directory"],
+      "effectiveDate": "2026-04-22",
+      "renewable": true
+    },
+    {
+      "id": "REC-06",
+      "title": "Open Government Partnership — Digital Track",
+      "criteria": "Multilateral Observer",
+      "status": "Observer",
+      "summary": "Open-data commitments, participatory budgeting standards, and public accountability frameworks through layered external representation.",
+      "evidence": ["Open data commitments", "Budget transparency reports", "Assembly minutes"],
+      "effectiveDate": "2026-01-18",
+      "renewable": false
+    }
+  ]
+}

@@ -1,17 +1,19 @@
 {
   "generated": "2026-07-02",
-  "count": 4,
+  "office": "Secretary of External Affairs",
+  "layer": "Layered Republic",
+  "count": 5,
   "entries": {
     "treaties": [
       {
         "id": "DIP-TRE-01",
-        "title": "Mutual Recognition Accord —网络共和国",
+        "title": "Mutual Recognition Accord — Network Republic",
         "party": "Network Republic",
         "status": "Ratified",
         "type": "Bilateral",
         "effectiveDate": "2026-03-14",
         "expiryDate": "2031-03-14",
-        "summary": "Establishes mutual recognition of citizen credentials, shared anti-fraud measures, and consular referral channels."
+        "summary": "Establishes mutual recognition of citizen credentials, shared anti-fraud measures, and consular referral channels across the layered republic structure."
       },
       {
         "id": "DIP-TRE-02",
@@ -21,7 +23,7 @@
         "type": "Multilateral",
         "effectiveDate": "2026-08-01",
         "expiryDate": "2032-08-01",
-        "summary": "Defines data-residency requirements, cross-border incident reporting, and standard API surface definitions."
+        "summary": "Defines data-residency requirements, cross-border incident reporting, and standard API surface definitions under layered republic governance."
       },
       {
         "id": "DIP-TRE-03",
@@ -31,7 +33,7 @@
         "type": "Bilateral",
         "effectiveDate": "2026-05-19",
         "expiryDate": "2029-05-19",
-        "summary": "Enables honorary consular officers, document authentication workflows, and citizen-support call routing."
+        "summary": "Enables honorary consular officers, document authentication workflows, and citizen-support call routing aligned with the layered republic model."
       },
       {
         "id": "DIP-TRE-04",
@@ -41,7 +43,7 @@
         "type": "Observer",
         "effectiveDate": "2026-01-01",
         "expiryDate": "PerpetualAnnualReview",
-        "summary": "Grants AETHERIA observer rights in standards proceedings, with voting rights on technical amendments."
+        "summary": "Grants AETHERIA observer rights in standards proceedings, with voting rights on technical amendments under the Secretary of External Affairs."
       },
       {
         "id": "DIP-TRE-05",
@@ -51,7 +53,7 @@
         "type": "Multilateral",
         "effectiveDate": "2026-04-22",
         "expiryDate": "2028-04-22",
-        "summary": "Recommends favorable treatment for AETHERIA passport holders; no binding visa-waiver obligation."
+        "summary": "Recommends favorable treatment for AETHERIA passport holders; no binding visa-waiver obligation. Reflects layered republic reciprocity principles."
       }
     ],
     "multilateral": [

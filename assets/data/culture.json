@@ -1,5 +1,7 @@
 {
   "generated": "2026-07-02",
+  "office": "Secretary of External Affairs",
+  "layer": "Layered Republic",
   "count": 6,
   "entries": [
     {
@@ -7,8 +9,8 @@
       "title": "Public Narrative Charter",
       "theme": "Narrative",
       "status": "Active",
-      "owner": "Office of Culture",
-      "summary": "Sets publication standards for tone, attribution, and accessibility across citizen-facing materials."
+      "owner": "Secretary of External Affairs",
+      "summary": "Sets publication standards for tone, attribution, and accessibility across citizen-facing materials under the layered republic."
     },
     {
       "id": "CUL-02",
@@ -16,7 +18,7 @@
       "theme": "Media",
       "status": "Active",
       "owner": "Design Guild",
-      "summary": "Canonical palette, typography, and layout guidance for external representation."
+      "summary": "Canonical palette, typography, and layout guidance for external representation under the Secretary of External Affairs."
     },
     {
       "id": "CUL-03",
@@ -24,15 +26,15 @@
       "theme": "Program",
       "status": "Active",
       "owner": "Civic Assembly",
-      "summary": "Rotating study cadence for charter, manifesto, and protocol documents."
+      "summary": "Rotating study cadence for charter, manifesto, and protocol documents within the layered republic."
     },
     {
       "id": "CUL-04",
       "title": "Cultural Exchange Series",
       "theme": "Program",
       "status": "Draft",
-      "owner": "Communications Office",
-      "summary": "Curated contributions across regions for open collaborative storytelling."
+      "owner": "Secretary of External Affairs",
+      "summary": "Curated contributions across regions for open collaborative storytelling aligned with the layered republic’s external commitments."
     },
     {
       "id": "CUL-05",
@@ -40,15 +42,15 @@
       "theme": "Media",
       "status": "Archived",
       "owner": "Protocol Committee",
-      "summary": "Superseded publication rules retained for historical compliance audits."
+      "summary": "Superseded publication rules retained for historical compliance audits under layered republic standards."
     },
     {
       "id": "CUL-06",
       "title": "Open Contribution Framework",
       "theme": "Program",
       "status": "Active",
-      "owner": "Engagement Lead",
-      "summary": "Transparent rules for submitting approved work into civic archives and outreach channels."
+      "owner": "Secretary of External Affairs",
+      "summary": "Transparent rules for submitting approved work into civic archives and outreach channels of the layered republic."
     }
   ]
 }
