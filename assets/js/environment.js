@@ -265,7 +265,7 @@
       .replace(/</g, '<')
       .replace(/>/g, '>')
       .replace(/"/g, '"')
-      .replace(/'/g, ''');
+      .replace(/'/g, '&apos;');
   }
 
   function slugify(value) {
