@@ -135,7 +135,7 @@
     "signatureStatus": "pre-v1.0",
     "totalComponents": 21,
     "artifactFileCount": 40,
-    "pageCount": 67,
+    "pageCount": 68,
     "crossRepoPageCount": 5,
     "crossRepoPages": [
       "ecosystem-status.html",
@@ -144,15 +144,15 @@
       "research.html",
       "sovereign-security.html"
     ],
-    "identityManifestCount": 16,
-    "identityKeyCount": 16,
-    "latestCommit": "31a3ee7e1d91d7d355a241023da2b5030e27016f Update protocol-data.json after refresh integration",
+    "identityManifestCount": 19,
+    "identityKeyCount": 19,
+    "latestCommit": "7bf1d73b8e35b8bad2b3420a646d752a97641be8 Refresh protocol attestation counts to 16 verified identities",
     "latestCommitDate": "2026-07-03",
     "lastAudit": "2026-07-03"
   },
   "quantum": {
     "available": true,
-    "collapseChosenLattice": "lattice-memory",
+    "collapseChosenLattice": "lattice-national",
     "afterNormalizeTotal": 0.9999999999999998,
     "boosterPhaseReady": true
   },
