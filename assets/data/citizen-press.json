@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Digital Nation Launches Open Data Portal",
+    "date": "2026-07-03",
+    "summary": "New datasets.html page now publishes open metrics for transparency and civic engagement.",
+    "href": "datasets.html",
+    "tag": "Press"
+  },
+  {
+    "title": "Citizen Hub Adds Service Requests",
+    "date": "2026-07-02",
+    "summary": "citizen-hub.html now includes request tracking and service directory shortcuts.",
+    "href": "citizen-hub.html",
+    "tag": "Update"
+  },
+  {
+    "title": "Protocol Monitoring Page Is Live",
+    "date": "2026-07-01",
+    "summary": "protocol-status.html publishes attestation counts and live component status.",
+    "href": "protocol-status.html",
+    "tag": "Release"
+  }
+]
