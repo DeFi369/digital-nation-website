@@ -11,6 +11,7 @@
     renderStack();
     renderMetrics();
     renderAttestation();
+    renderVerifiedIdentities();
     renderQuantumStatus();
     renderBenefits();
   }
@@ -146,5 +147,30 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
+  }
+
+  function renderVerifiedIdentities() {
+    var container = document.getElementById('verified-identities');
+    if (!container) {
+      return;
+    }
+    fetch('assets/data/protocol-data.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var names = Array.isArray(data.verifiedIdentities) ? data.verifiedIdentities : [];
+        if (!names.length) {
+          container.innerHTML = '<div class="activity-empty">No verified identities yet.</div>';
+          return;
+        }
+        var html = '<ul class="identity-list">';
+        names.forEach(function (name) {
+          html += '<li class="identity-item">' + escapeHtml(String(name)) + '</li>';
+        });
+        html += '</ul>';
+        container.innerHTML = html;
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Identity data is temporarily unavailable.</div>';
+      });
   }
 }());
