@@ -3,30 +3,56 @@
   <title>The Principality of Aetheria</title>
   <link href="https://defi369.github.io/digital-nation-website/feed.xml" rel="self"/>
   <link href="https://defi369.github.io/digital-nation-website/"/>
-  <updated>2026-07-01T00:00:00Z</updated>
-  <author>
-    <name>AETHERIA Editorial</name>
-  </author>
+  <updated>2026-07-03T00:00:00Z</updated>
+  <author><name>AETHERIA Editorial</name></author>
   <id>urn:uuid:aetheria-site-feed</id>
   <entry>
-    <title>Public Dashboard — participation metrics and network indicators</title>
-    <link href="https://defi369.github.io/digital-nation-website/dashboard.html"/>
-    <id>urn:uuid:aetheria-dashboard-2026-07-01</id>
-    <updated>2026-07-01T00:00:00Z</updated>
-    <summary>Verified citizens, active nodes, governance actions, and current activity summary.</summary>
+    <title>Nav Centralization Complete Across All 67 Pages</title>
+    <link href="https://defi369.github.io/digital-nation-website/index.html"/>
+    <id>urn:uuid:aetheria-nav-centralization-complete-across-all-67-pages-2026-07-03</id>
+    <updated>2026-07-03T00:00:00Z</updated>
+    <summary>Every standard page now loads nav.js with shared header; 2 visualization pages remain standalone.</summary>
   </entry>
   <entry>
-    <title>Citizenship Tools — readiness self-check and contribution path finder</title>
-    <link href="https://defi369.github.io/digital-nation-website/tools.html"/>
-    <id>urn:uuid:aetheria-tools-2026-07-01</id>
-    <updated>2026-07-01T00:00:00Z</updated>
-    <summary>Readiness checklist, contribution path finder, and preparation guidance.</summary>
+    <title>Quantum Attestation Integrated Into Protocol Attestation</title>
+    <link href="https://defi369.github.io/digital-nation-website/protocol-status.html"/>
+    <id>urn:uuid:aetheria-quantum-attestation-integrated-into-protocol-att-2026-07-03</id>
+    <updated>2026-07-03T00:00:00Z</updated>
+    <summary>protocol-status.html now shows Quantum Attestation PASS/PENDING and deterministic quantum hash derived from hyper-lattice signal.</summary>
   </entry>
   <entry>
-    <title>Charter — foundational operating principles</title>
-    <link href="https://defi369.github.io/digital-nation-website/charter.html"/>
-    <id>urn:uuid:aetheria-charter-2026-07-01</id>
+    <title>Chief Electoral Officer Identity Verified</title>
+    <link href="https://defi369.github.io/digital-nation-website/protocol-status.html"/>
+    <id>urn:uuid:aetheria-chief-electoral-officer-identity-verified-2026-07-03</id>
+    <updated>2026-07-03T00:00:00Z</updated>
+    <summary>Local cryptographic signature regenerated; 18 of 19 profiles now VALID. Only hyperlightwiz digital twin remains excluded.</summary>
+  </entry>
+  <entry>
+    <title>Lattice Memory Bridge Wired Into Hermes Workflows</title>
+    <link href="https://defi369.github.io/digital-nation-website/index.html"/>
+    <id>urn:uuid:aetheria-lattice-memory-bridge-wired-into-hermes-workflow-2026-07-03</id>
+    <updated>2026-07-03T00:00:00Z</updated>
+    <summary>New lattice-memory-hermes skill enables store/retrieve/list/shiftLayer/checkpoint from any agent via lattice-memory-bridge.py.</summary>
+  </entry>
+  <entry>
+    <title>Digital Nation Launches Open Data Portal</title>
+    <link href="https://defi369.github.io/digital-nation-website/datasets.html"/>
+    <id>urn:uuid:aetheria-digital-nation-launches-open-data-portal-2026-07-03</id>
+    <updated>2026-07-03T00:00:00Z</updated>
+    <summary>New datasets.html page now publishes open metrics for transparency and civic engagement.</summary>
+  </entry>
+  <entry>
+    <title>Citizen Hub Adds Service Requests</title>
+    <link href="https://defi369.github.io/digital-nation-website/citizen-hub.html"/>
+    <id>urn:uuid:aetheria-citizen-hub-adds-service-requests-2026-07-02</id>
+    <updated>2026-07-02T00:00:00Z</updated>
+    <summary>citizen-hub.html now includes request tracking and service directory shortcuts.</summary>
+  </entry>
+  <entry>
+    <title>Protocol Monitoring Page Is Live</title>
+    <link href="https://defi369.github.io/digital-nation-website/protocol-status.html"/>
+    <id>urn:uuid:aetheria-protocol-monitoring-page-is-live-2026-07-01</id>
     <updated>2026-07-01T00:00:00Z</updated>
-    <summary>Operating principles and governance framework for the Principality of Aetheria.</summary>
+    <summary>protocol-status.html publishes attestation counts and live component status.</summary>
   </entry>
 </feed>

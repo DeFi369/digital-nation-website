@@ -1,14 +1,7 @@
 {
-  "generated": "2026-07-02",
+  "generated": "2026-07-04",
   "ministry": "Office of the President",
   "secretary": "President of the Digital Nation",
-  "stats": {
-    "registeredCitizens": 12450,
-    "activeServices": 24,
-    "systemUptime": "99.97%",
-    "governmentLayers": 4,
-    "lastProtocolUpdate": "2026-07-02"
-  },
   "pillars": [
     {
       "id": "IDX-PIL-01",

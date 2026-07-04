@@ -384,19 +384,25 @@
   }
 
   function initMemberCounter() {
+    /* Canonical shared metrics live in metrics.json (single source). */
     const el = document.getElementById('member-count');
-    if (!el) return;
-    fetch('assets/data/registry.json')
+    fetch('assets/data/metrics.json')
       .then(response => {
-        if (!response.ok) throw new Error('registry ' + response.status);
+        if (!response.ok) throw new Error('metrics ' + response.status);
         return response.json();
       })
       .then(data => {
-        const count = typeof data?.count === 'number' ? data.count : (Array.isArray(data?.entries) ? data.entries.length : 0);
-        el.textContent = String(count);
+        if (el && typeof data?.members === 'number') {
+          el.textContent = String(data.members);
+        }
+        if (data?.protocolVersion) {
+          document.querySelectorAll('.protocol-version').forEach(node => {
+            node.textContent = 'Protocol ' + data.protocolVersion;
+          });
+        }
       })
       .catch(() => {
-        el.textContent = '--';
+        if (el) el.textContent = '--';
       });
   }
 

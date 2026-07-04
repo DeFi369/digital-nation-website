@@ -1,76 +1,70 @@
 # THE PRINCIPALITY OF AETHERIA — Public Website
 
-A digital micronation experience built around transparent governance, cryptographic citizenship, and open protocol infrastructure.
+A digital micronation experience built around transparent governance, cryptographic
+citizenship, and open protocol infrastructure.
 
-Branding:
-- Nation: THE PRINCIPALITY OF AETHERIA
-- Motto: SOVEREIGN BY CODE
+- Nation: **THE PRINCIPALITY OF AETHERIA** · Motto: **SOVEREIGN BY CODE**
+- Live site: https://defi369.github.io/digital-nation-website/ (GitHub Pages, root)
+- Stack: plain static HTML/CSS/JS. **No build step.**
 
-## Pages
+> **Working on this repo (humans and agents): read [`AGENTS.md`](AGENTS.md) and
+> [`AUDIT.md`](AUDIT.md) first.** They contain the architecture rules that keep
+> 69 pages consistent, and the current work log.
 
-- `index.html` — Hero vision, national identity, metrics, and entry points
-- `about.html` — Governance, leadership, founding history, protocol/state model
-- `goals.html` — Milestones using UN Montevideo criteria and Digital Nation specifics
-- `initiatives.html` — Initiative portfolio and future roadmap
-- `join.html` — Citizen onboarding and contribution paths
-- `citizenship.html` — Passport framework, rights, duties, onboarding flow
-- `recognition.html` — UN membership, Montevideo criteria, observer-state pathways, passport diplomacy
-- `manifesto.html` — Modern sovereignty declaration
-- `charter.html` — Transparent founding charter
-- `contact.html` — Front office contacts
-- `consular.html` — Embassies, consular support, recognition agreements
-- `economy.html` — Self-sustaining citizen economy and settlement layer
-- `symbols.html` — Flag concept, anthem direction, national ceremonial protocol
-- `passport.html` — Living citizen credential, diplomatic access, verification
-- `tools.html` — Interactive helpers for prospective citizens
-- `faq.html` — Frequently asked questions
-- `timeline.html` — Evolution from genesis protocols to open network era
-- `dashboard.html` — Public participation metrics and network indicators
-- `terms.html` — Terms of participation and acceptable use
-- `privacy.html` — Privacy policy for citizen data and governance records
-- `404.html` — Page-not-found experience with navigation shortcuts
+## Architecture
 
-## Shared Structure
+~67 content pages live flat in the repo root (flat on purpose: GitHub Pages has no
+server redirects, so moving pages breaks URLs). Shared infrastructure:
 
-- Shared stylesheet: `assets/css/main.css`
-- Shared script: `assets/js/main.js`
-- Shared logo: `assets/images/digital-nation-logo.svg`
-- Canonical base URL: `https://defi369.github.io/digital-nation-website/`
+| Piece | Role |
+| --- | --- |
+| `assets/css/main.css` | Site-wide styles: header, nav dropdowns, footer, cards |
+| `assets/css/home.css` | Homepage only (`body.page-home`): observatory hero, telemetry, sections |
+| `assets/css/page-theme.css` | All inner pages (`body[data-theme]`): cluster accents, stats/pillar cards |
+| `assets/js/nav.js` | **Single source of nav truth** (`NAV_GROUPS`) → header dropdowns + footer sitemap columns; auto-injects any empty `#site-menu` / `.footer-nav` |
+| `assets/js/site.js` | Menu behavior, dropdown behavior (delegated), member counter + protocol badge (from `metrics.json`), per-page script loader |
+| `assets/js/home-effects.js` | Homepage starfield/constellation canvas + scroll reveals |
+| `assets/js/page-ambient.js` | Inner-page ambient starfield tinted by cluster accent |
+| `assets/js/<page>.js` | One module per page; renders that page's `assets/data/<page>.json` |
+| `assets/data/metrics.json` | **Canonical shared metrics** (members, protocol version, uptime…) — never duplicate these in per-page JSON |
 
-## Stack
+Every page's `<body>` carries `data-theme="<cluster>"` (foundations / governance /
+identity / policy / diplomacy / engagement), which drives its accent color and
+ambient graphics. Headers and footers in page HTML are **empty containers** —
+nav.js fills them at runtime. Never hand-edit nav markup in a page.
 
-Static HTML/CSS/JS. No build step. No required frameworks beyond Inter from Google Fonts.
+## Local preview
 
-## Local Preview
-
-Serve from the repository root:
+Pages carry `<base href="/digital-nation-website/">`, so serve the **parent**
+directory and open the subpath:
 
 ```bash
-python3 -m http.server 8080
+cd ~/repos && python3 -m http.server 8080
+# open http://localhost:8080/digital-nation-website/
 ```
 
-Then open `http://localhost:8080`.
+(Serving the repo root directly breaks asset resolution because of the base href.)
 
-## Live Site
+## Integrity checks
 
-Public Pages deployment: https://defi369.github.io/digital-nation-website/
+```bash
+python3 scripts/check_integrity.py
+```
 
-## Deployment Notes
+Validates every page's structure (single header/main/footer, balanced details,
+empty nav containers, parseable JSON, JS syntax incl. inline scripts). Runs in CI
+on every push (`.github/workflows/integrity.yml`) — run it locally before
+committing, especially after any scripted bulk edit.
 
-- The repository is a plain static site. Push the root HTML files, `assets/`, `sitemap.xml`, and `robots.txt`.
-- `sitemap.xml` and `robots.txt` are both present and use the canonical GitHub Pages base URL.
-- `404.html` includes the standard site chrome so lost visitors can navigate back into the site.
-- Legal notices use the `legal-block` pattern for consistency across content and policy pages.
+## Deployment
 
-## Government Structure
+Push to `main` → GitHub Pages deploys the repo root. `sitemap.xml`, `feed.xml`
+(Atom, generated from `assets/data/citizen-press.json`), and `robots.txt` use the
+canonical base URL. `404.html` carries full site chrome.
 
-AETHERIA is organized as a layered digital republic with six distinct layers:
+## Government structure
 
-1. **Constitutional Core** — The President (single executive authority), Vice President, and Constitutional Council (7 members, staggered 4-year terms) set national strategy, interpret the charter, and safeguard constitutional compliance.
-2. **Strategic Cabinet** — Seven department secretaries (External Affairs, Digital Economy, Civic Identity, Public Affairs, Technology & Innovation, Infrastructure & Human Services, Justice & Constitutional Compliance) report to the President and set national policy.
-3. **Operational Offices** — Six specialized arms (Digital Operations, Data Governance, Open Records, Situational Awareness, Treasury & Resource Management, Community Stewardship) handle cross-cutting operational functions.
-4. **Service Branches** — The Digital Service Corps (operational workforce) and Electoral Commission (elections and apportionment) deliver civic and operational services.
-5. **Assembly of the Digital Nation** — A unicameral legislature that confirms appointments, approves charter amendments, passes resolutions, and holds hearings.
-6. **Charter Tribunal** — The final arbiter of charter disputes and constitutional questions, with binding rulings across all departments and offices.
-
-Public-facing content and design decisions are directed through protocol governance under the President's office and the Assembly.
+AETHERIA is a layered digital republic — Constitutional Core, Strategic Cabinet,
+Operational Offices, Service Branches, the Assembly, and the Charter Tribunal.
+See `structure.html` for the interactive map and `charter.html` for the founding
+charter.

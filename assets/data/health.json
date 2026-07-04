@@ -4,7 +4,7 @@
   "secretary": "Secretary of Infrastructure & Human Services",
   "count": 21,
   "stats": {
-    "activeServices": 8,
+    "healthServices": 8,
     "wellnessPrograms": 7,
     "citizenRecords": 18540,
     "telehealthSessions": 2847,
@@ -14,38 +14,221 @@
     "avgResponseTimeMs": 145
   },
   "pillars": [
-    {"id": "HLT-PIL-01", "title": "Privacy-Preserving Health Records", "summary": "Identity-anchored health record layer with auditable consent controls and on-protocol access logs."},
-    {"id": "HLT-PIL-02", "title": "Secure Telehealth Access", "summary": "Low-bandwidth audio and video gateway with metadata minimisation and verified provider identities."},
-    {"id": "HLT-PIL-03", "title": "Emergency Response Readiness", "summary": "Aetheria-wide broadcast and location-verified alerting for regional health incidents."},
-    {"id": "HLT-PIL-04", "title": "Accessible Wellness Tooling", "summary": "Theme, motion, and readability tooling designed for neurodiverse citizens and low-vision users."},
-    {"id": "HLT-PIL-05", "title": "Civic Health Interoperability", "summary": "Cross-ministry integration of health verification with citizenship and engagement pathways."},
-    {"id": "HLT-PIL-06", "title": "Pharmaceutical Supply Integrity", "summary": "End-to-end ledger tracking for medication authenticity, cold-chain monitoring, and recall management."}
+    {
+      "id": "HLT-PIL-01",
+      "title": "Privacy-Preserving Health Records",
+      "summary": "Identity-anchored health record layer with auditable consent controls and on-protocol access logs."
+    },
+    {
+      "id": "HLT-PIL-02",
+      "title": "Secure Telehealth Access",
+      "summary": "Low-bandwidth audio and video gateway with metadata minimisation and verified provider identities."
+    },
+    {
+      "id": "HLT-PIL-03",
+      "title": "Emergency Response Readiness",
+      "summary": "Aetheria-wide broadcast and location-verified alerting for regional health incidents."
+    },
+    {
+      "id": "HLT-PIL-04",
+      "title": "Accessible Wellness Tooling",
+      "summary": "Theme, motion, and readability tooling designed for neurodiverse citizens and low-vision users."
+    },
+    {
+      "id": "HLT-PIL-05",
+      "title": "Civic Health Interoperability",
+      "summary": "Cross-ministry integration of health verification with citizenship and engagement pathways."
+    },
+    {
+      "id": "HLT-PIL-06",
+      "title": "Pharmaceutical Supply Integrity",
+      "summary": "End-to-end ledger tracking for medication authenticity, cold-chain monitoring, and recall management."
+    }
   ],
   "entries": {
     "services": [
-      {"id": "HLT-SVC-01", "title": "Citizen Health Record", "status": "Active", "category": "Service", "owner": "Nia Rahman", "summary": "Privacy-preserving health record layer for identity-anchored citizens with auditable consent controls.", "published": "2025-06-15"},
-      {"id": "HLT-SVC-02", "title": "Telehealth Gateway", "status": "Active", "category": "Service", "owner": "Kai Voss", "summary": "Secure audio and video gateway for low-bandwidth environments with metadata minimization.", "published": "2025-07-22"},
-      {"id": "HLT-SVC-03", "title": "Emergency Response Protocol", "status": "Planning", "category": "Service", "owner": "Aria Solenne", "summary": "Aetheria-wide emergency broadcast and location-verified alerting for regional incidents.", "published": "2026-02-01"},
-      {"id": "HLT-SVC-04", "title": "Pharmacy Verification Ledger", "status": "Active", "category": "Service", "owner": "Mira Chen", "summary": "On-protocol ledger for prescription authenticity and controlled substance tracking.", "published": "2025-09-10"},
-      {"id": "HLT-SVC-05", "title": "Immunisation Registry", "status": "Active", "category": "Service", "owner": "Nia Rahman", "summary": "Verifiable immunisation records with cross-border recognition and outbreak correlation.", "published": "2025-10-05"},
-      {"id": "HLT-SVC-06", "title": "Mental Health Access Portal", "status": "Beta", "category": "Service", "owner": "Orion Vale", "summary": "Anonymised triage and provider matching with encrypted session logs and consent management.", "published": "2026-01-18"},
-      {"id": "HLT-SVC-07", "title": "Chronic Condition Dashboard", "status": "Active", "category": "Service", "owner": "Kai Voss", "summary": "Patient-controlled dashboard aggregating vitals, medication adherence, and provider notes.", "published": "2025-11-30"},
-      {"id": "HLT-SVC-08", "title": "Provider Credential Verification", "status": "Active", "category": "Service", "owner": "Mira Chen", "summary": "On-chain verification of medical licenses, specialisations, and disciplinary history.", "published": "2025-08-14"}
+      {
+        "id": "HLT-SVC-01",
+        "title": "Citizen Health Record",
+        "status": "Active",
+        "category": "Service",
+        "owner": "Nia Rahman",
+        "summary": "Privacy-preserving health record layer for identity-anchored citizens with auditable consent controls.",
+        "published": "2025-06-15"
+      },
+      {
+        "id": "HLT-SVC-02",
+        "title": "Telehealth Gateway",
+        "status": "Active",
+        "category": "Service",
+        "owner": "Kai Voss",
+        "summary": "Secure audio and video gateway for low-bandwidth environments with metadata minimization.",
+        "published": "2025-07-22"
+      },
+      {
+        "id": "HLT-SVC-03",
+        "title": "Emergency Response Protocol",
+        "status": "Planning",
+        "category": "Service",
+        "owner": "Aria Solenne",
+        "summary": "Aetheria-wide emergency broadcast and location-verified alerting for regional incidents.",
+        "published": "2026-02-01"
+      },
+      {
+        "id": "HLT-SVC-04",
+        "title": "Pharmacy Verification Ledger",
+        "status": "Active",
+        "category": "Service",
+        "owner": "Mira Chen",
+        "summary": "On-protocol ledger for prescription authenticity and controlled substance tracking.",
+        "published": "2025-09-10"
+      },
+      {
+        "id": "HLT-SVC-05",
+        "title": "Immunisation Registry",
+        "status": "Active",
+        "category": "Service",
+        "owner": "Nia Rahman",
+        "summary": "Verifiable immunisation records with cross-border recognition and outbreak correlation.",
+        "published": "2025-10-05"
+      },
+      {
+        "id": "HLT-SVC-06",
+        "title": "Mental Health Access Portal",
+        "status": "Beta",
+        "category": "Service",
+        "owner": "Orion Vale",
+        "summary": "Anonymised triage and provider matching with encrypted session logs and consent management.",
+        "published": "2026-01-18"
+      },
+      {
+        "id": "HLT-SVC-07",
+        "title": "Chronic Condition Dashboard",
+        "status": "Active",
+        "category": "Service",
+        "owner": "Kai Voss",
+        "summary": "Patient-controlled dashboard aggregating vitals, medication adherence, and provider notes.",
+        "published": "2025-11-30"
+      },
+      {
+        "id": "HLT-SVC-08",
+        "title": "Provider Credential Verification",
+        "status": "Active",
+        "category": "Service",
+        "owner": "Mira Chen",
+        "summary": "On-chain verification of medical licenses, specialisations, and disciplinary history.",
+        "published": "2025-08-14"
+      }
     ],
     "wellness": [
-      {"id": "HLT-WEL-01", "title": "Mindful Protocol", "status": "Active", "category": "Wellness", "lead": "Nia Rahman", "summary": "Guided digital detox and workflow hygiene program for node operators and governance contributors.", "published": "2025-08-01", "participants": 1200},
-      {"id": "HLT-WEL-02", "title": "Accessible Interfaces", "status": "Active", "category": "Wellness", "lead": "Mira Chen", "summary": "Theme, motion, and readability tooling designed for neurodiverse citizens and low-vision users.", "published": "2025-06-20", "participants": 2800},
-      {"id": "HLT-WEL-03", "title": "Nutrition & Activity Tracker", "status": "Beta", "category": "Wellness", "lead": "Aria Solenne", "summary": "Privacy-respecting activity and nutrition tracking connected to personalised wellness guidance.", "published": "2026-01-10", "participants": 650},
-      {"id": "HLT-WEL-04", "title": "Sleep & Recovery Optimisation", "status": "Planning", "category": "Wellness", "lead": "Orion Vale", "summary": "Circadian-aligned scheduling tools and recovery analytics for high-intensity civic contributors.", "published": "2026-03-15", "participants": 0},
-      {"id": "HLT-WEL-05", "title": "Community Walking Groups", "status": "Active", "category": "Wellness", "lead": "Nia Rahman", "summary": "Geolocated walking groups with social accountability and environmental health correlation.", "published": "2025-09-01", "participants": 420},
-      {"id": "HLT-WEL-06", "title": "Ergonomic Workspace Assessment", "status": "Active", "category": "Wellness", "lead": "Kai Voss", "summary": "AI-assisted workstation evaluation with personalised adjustment recommendations.", "published": "2025-10-15", "participants": 890},
-      {"id": "HLT-WEL-07", "title": "Breathwork & Stress Resilience", "status": "Active", "category": "Wellness", "lead": "Aria Solenne", "summary": "Evidence-based breathing protocols for acute stress reduction and long-term resilience building.", "published": "2025-07-05", "participants": 1650}
+      {
+        "id": "HLT-WEL-01",
+        "title": "Mindful Protocol",
+        "status": "Active",
+        "category": "Wellness",
+        "lead": "Nia Rahman",
+        "summary": "Guided digital detox and workflow hygiene program for node operators and governance contributors.",
+        "published": "2025-08-01",
+        "participants": 1200
+      },
+      {
+        "id": "HLT-WEL-02",
+        "title": "Accessible Interfaces",
+        "status": "Active",
+        "category": "Wellness",
+        "lead": "Mira Chen",
+        "summary": "Theme, motion, and readability tooling designed for neurodiverse citizens and low-vision users.",
+        "published": "2025-06-20",
+        "participants": 2800
+      },
+      {
+        "id": "HLT-WEL-03",
+        "title": "Nutrition & Activity Tracker",
+        "status": "Beta",
+        "category": "Wellness",
+        "lead": "Aria Solenne",
+        "summary": "Privacy-respecting activity and nutrition tracking connected to personalised wellness guidance.",
+        "published": "2026-01-10",
+        "participants": 650
+      },
+      {
+        "id": "HLT-WEL-04",
+        "title": "Sleep & Recovery Optimisation",
+        "status": "Planning",
+        "category": "Wellness",
+        "lead": "Orion Vale",
+        "summary": "Circadian-aligned scheduling tools and recovery analytics for high-intensity civic contributors.",
+        "published": "2026-03-15",
+        "participants": 0
+      },
+      {
+        "id": "HLT-WEL-05",
+        "title": "Community Walking Groups",
+        "status": "Active",
+        "category": "Wellness",
+        "lead": "Nia Rahman",
+        "summary": "Geolocated walking groups with social accountability and environmental health correlation.",
+        "published": "2025-09-01",
+        "participants": 420
+      },
+      {
+        "id": "HLT-WEL-06",
+        "title": "Ergonomic Workspace Assessment",
+        "status": "Active",
+        "category": "Wellness",
+        "lead": "Kai Voss",
+        "summary": "AI-assisted workstation evaluation with personalised adjustment recommendations.",
+        "published": "2025-10-15",
+        "participants": 890
+      },
+      {
+        "id": "HLT-WEL-07",
+        "title": "Breathwork & Stress Resilience",
+        "status": "Active",
+        "category": "Wellness",
+        "lead": "Aria Solenne",
+        "summary": "Evidence-based breathing protocols for acute stress reduction and long-term resilience building.",
+        "published": "2025-07-05",
+        "participants": 1650
+      }
     ],
     "reports": [
-      {"id": "HLT-R01", "title": "Q1 Telehealth Utilisation Review", "status": "Published", "category": "Audit", "owner": "Health Operations", "summary": "Review of telehealth session volumes, latency, and citizen satisfaction scores.", "published": "2026-04-15"},
-      {"id": "HLT-R02", "title": "Health Equity Gap Analysis", "status": "In Progress", "category": "Research", "owner": "Aria Solenne", "summary": "Analysis of service access parity across demographics and connectivity tiers.", "published": "2026-05-01"},
-      {"id": "HLT-R03", "title": "Annual Prescription Integrity Report", "status": "Published", "category": "Governance", "owner": "Independent Auditors", "summary": "Verification of pharmacy ledger completeness, cold-chain compliance, and recall response times.", "published": "2026-02-28"},
-      {"id": "HLT-R04", "title": "Emergency Response Readiness Assessment", "status": "Draft", "category": "Audit", "owner": "Health Operations", "summary": "Tabletop exercise results for regional alerting, citizen reach, and cross-ministry coordination.", "published": "2026-03-20"}
+      {
+        "id": "HLT-R01",
+        "title": "Q1 Telehealth Utilisation Review",
+        "status": "Published",
+        "category": "Audit",
+        "owner": "Health Operations",
+        "summary": "Review of telehealth session volumes, latency, and citizen satisfaction scores.",
+        "published": "2026-04-15"
+      },
+      {
+        "id": "HLT-R02",
+        "title": "Health Equity Gap Analysis",
+        "status": "In Progress",
+        "category": "Research",
+        "owner": "Aria Solenne",
+        "summary": "Analysis of service access parity across demographics and connectivity tiers.",
+        "published": "2026-05-01"
+      },
+      {
+        "id": "HLT-R03",
+        "title": "Annual Prescription Integrity Report",
+        "status": "Published",
+        "category": "Governance",
+        "owner": "Independent Auditors",
+        "summary": "Verification of pharmacy ledger completeness, cold-chain compliance, and recall response times.",
+        "published": "2026-02-28"
+      },
+      {
+        "id": "HLT-R04",
+        "title": "Emergency Response Readiness Assessment",
+        "status": "Draft",
+        "category": "Audit",
+        "owner": "Health Operations",
+        "summary": "Tabletop exercise results for regional alerting, citizen reach, and cross-ministry coordination.",
+        "published": "2026-03-20"
+      }
     ]
   }
 }

@@ -22,7 +22,8 @@
   function renderStats() {
     const container = document.getElementById('index-stats');
     if (!container) return;
-    fetch('assets/data/index.json')
+    /* telemetry strip reads the canonical shared metrics, not page data */
+    fetch('assets/data/metrics.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
         const stats = data.stats || {};
