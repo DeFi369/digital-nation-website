@@ -124,10 +124,13 @@
         var manifestCount = metrics.identityManifestCount || 0;
         var keyCount = metrics.identityKeyCount || 0;
         var signatureStatus = metrics.signatureStatus || 'pre-v1.0';
+        var q = data.quantum || {};
+        var quantumAttested = q.available && q.afterNormalizeTotal != null && q.afterNormalizeTotal > 0.99;
         var items = [
           { label: 'Verified Profiles', value: String(manifestCount) },
           { label: 'Identity Keys', value: String(keyCount) },
-          { label: 'Signature Status', value: signatureStatus }
+          { label: 'Signature Status', value: signatureStatus },
+          { label: 'Quantum Attestation', value: quantumAttested ? 'PASS' : 'PENDING' }
         ];
         container.innerHTML = items.map(function (item) {
           return '<div class="stat">' +
