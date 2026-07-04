@@ -193,6 +193,16 @@ if quantum_harness.exists():
     else:
         quantum_status = None
 
+# Quantum attestation: deterministic hash from quantum state
+quantum_attestation = None
+if quantum_status:
+    import hashlib
+    q = quantum_status
+    collapse = q.get('collapseChosenLattice', '')
+    normalized = q.get('afterNormalizeTotal', 0)
+    qstring = f"{collapse}|{normalized}"
+    quantum_attestation = hashlib.sha256(qstring.encode()).hexdigest()[:16]
+
 # Refresh memory lattice public summary for the website
 lattice_bridge = Path("/home/user/.hermes/scripts/lattice-memory-bridge.py")
 lattice_summary_path = Path("/home/user/repos/digital-nation-website/assets/data/lattice-summary.json")
@@ -235,6 +245,7 @@ out = {
     'stacks': stacks,
     'metrics': metrics,
     'quantum': quantum_status,
+    'quantumAttestation': quantum_attestation,
     'citizenBenefits': [
         'Deterministic transparency for public services',
         'Auditable automation via evidence ledgers',

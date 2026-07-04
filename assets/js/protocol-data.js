@@ -126,11 +126,13 @@
         var signatureStatus = metrics.signatureStatus || 'pre-v1.0';
         var q = data.quantum || {};
         var quantumAttested = q.available && q.afterNormalizeTotal != null && q.afterNormalizeTotal > 0.99;
+        var quantumAttest = data.quantumAttestation || null;
         var items = [
           { label: 'Verified Profiles', value: String(manifestCount) },
           { label: 'Identity Keys', value: String(keyCount) },
           { label: 'Signature Status', value: signatureStatus },
-          { label: 'Quantum Attestation', value: quantumAttested ? 'PASS' : 'PENDING' }
+          { label: 'Quantum Attestation', value: quantumAttested ? 'PASS' : 'PENDING' },
+          { label: 'Quantum Hash', value: quantumAttest ? quantumAttest.substring(0, 16) + '...' : '-' }
         ];
         container.innerHTML = items.map(function (item) {
           return '<div class="stat">' +
