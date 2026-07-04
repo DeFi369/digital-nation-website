@@ -1,5 +1,33 @@
 [
   {
+    "title": "Nav Centralization Complete Across All 67 Pages",
+    "date": "2026-07-03",
+    "summary": "Every standard page now loads nav.js with shared header; 2 visualization pages remain standalone.",
+    "href": "index.html",
+    "tag": "Release"
+  },
+  {
+    "title": "Quantum Attestation Integrated Into Protocol Attestation",
+    "date": "2026-07-03",
+    "summary": "protocol-status.html now shows Quantum Attestation PASS/PENDING and deterministic quantum hash derived from hyper-lattice signal.",
+    "href": "protocol-status.html",
+    "tag": "Release"
+  },
+  {
+    "title": "Chief Electoral Officer Identity Verified",
+    "date": "2026-07-03",
+    "summary": "Local cryptographic signature regenerated; 18 of 19 profiles now VALID. Only hyperlightwiz digital twin remains excluded.",
+    "href": "protocol-status.html",
+    "tag": "Security"
+  },
+  {
+    "title": "Lattice Memory Bridge Wired Into Hermes Workflows",
+    "date": "2026-07-03",
+    "summary": "New lattice-memory-hermes skill enables store/retrieve/list/shiftLayer/checkpoint from any agent via lattice-memory-bridge.py.",
+    "href": "index.html",
+    "tag": "Infrastructure"
+  },
+  {
     "title": "Digital Nation Launches Open Data Portal",
     "date": "2026-07-03",
     "summary": "New datasets.html page now publishes open metrics for transparency and civic engagement.",
