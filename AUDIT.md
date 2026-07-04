@@ -39,9 +39,10 @@ never leave work uncommitted in this repo.
     scoped `.page-home` in new `assets/css/home.css` — other pages untouched.
   - Verified: desktop 1440 (fold/sections/tail), mobile 390 iframe rig + 500px
     direct, mobile menu opens (computed style + screenshot), no console errors.
+  - Pushed to origin/main 2026-07-04 and verified LIVE on GitHub Pages
+    (screenshot of deployed URL; home.css 200, new markup served).
 
 ## Open
-- **Push `248501d` to origin/main** (Claude's sandbox can't push; owner action).
 - Site-wide sweep of the two bug patterns fixed on index/about/goals: ~60 page
   scripts still have (a) their own `setupMenu()` double-binding on top of site.js —
   mobile menu likely broken on most inner pages; (b) the corrupted no-op
