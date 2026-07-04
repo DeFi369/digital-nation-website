@@ -3316,3 +3316,28 @@ a {
   background: var(--color-surface);
   color: var(--color-text);
 }
+
+
+/* protocol-status verified identities */
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.identity-list {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.identity-item {
+  background: #0b1d33;
+  border: 1px solid #15243d;
+  border-radius: 10px;
+  padding: 14px;
+  color: #e6f1ff;
+  font-weight: 600;
+}

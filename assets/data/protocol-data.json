@@ -162,5 +162,24 @@
     "Sovereign resilience without vendor lock-in",
     "Temporal governance for trustworthy timestamps",
     "Local identity verification for agent accountability"
+  ],
+  "verifiedIdentities": [
+    "president",
+    "secretary_of_technology_science_and_innovation",
+    "vice_president",
+    "chief_of_the_digital_service_corps",
+    "data_governance_officer",
+    "open_records_officer",
+    "secretary_of_civic_identity_and_registry",
+    "director_of_digital_operations",
+    "director_of_situational_awareness",
+    "secretary_of_digital_economy_and_commerce",
+    "secretary_of_infrastructure_and_human_services",
+    "secretary_of_justice_and_constitutional_compliance",
+    "secretary_of_public_affairs_and_culture",
+    "secretary_of_external_affairs",
+    "assembly_speaker",
+    "chair_constitutional_council",
+    "constitutional_court"
   ]
 }
