@@ -146,17 +146,17 @@
     ],
     "identityManifestCount": 19,
     "identityKeyCount": 19,
-    "latestCommit": "ad990aefc023e71b115a477fe089e991464dbb2e fix: restore index.html from committed broken state and add Protocol Status / Quantum Roadmap discoverability",
+    "latestCommit": "02263f784bb1b30a41c81f60e3e377b8cb0ca2b3 fix: remove stale inline dropdown markup from empty site-menu nav blocks",
     "latestCommitDate": "2026-07-04",
     "lastAudit": "2026-07-04"
   },
   "quantum": {
     "available": true,
-    "collapseChosenLattice": "lattice-national",
+    "collapseChosenLattice": "lattice-memory",
     "afterNormalizeTotal": 0.9999999999999998,
     "boosterPhaseReady": true
   },
-  "quantumAttestation": "9be76a6da8434473",
+  "quantumAttestation": "dbc7bcc3d4d89374",
   "verifiedIdentities": [
     "president",
     "secretary_of_technology_science_and_innovation",
