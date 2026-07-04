@@ -2,12 +2,12 @@
   "generated": "2026-07-03",
   "ministry": "Secretary of Technology & Innovation",
   "site": {
-    "pageCount": 65,
-    "latestCommit": "1fb8e8d",
-    "latestCommitDate": "2026-07-03",
-    "latestCommitMessage": "Add Citizen Press section to homepage and keep Engagement nav link",
-    "phase7Status": "implementation expansion complete",
-    "phase8Status": "cross-repo integration started",
+    "pageCount": 122,
+    "latestCommit": "df63953",
+    "latestCommitDate": "2026-07-04",
+    "latestCommitMessage": "feat: refine homepage hero statement and CTA styling",
+    "phase7Status": "nav normalization and homepage hero redesign complete",
+    "phase8Status": "ecosystem status and protocol pages operational",
     "protocolPageStatus": "protocol-status.html live with dynamic AEP/dynAEP/GAP data"
   },
   "components": [
