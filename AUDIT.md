@@ -62,13 +62,22 @@ never leave work uncommitted in this repo.
   broken header template + inline-string SyntaxError fixed (map renders again);
   GitHub footer links point at the real repo.
 
+- **2026-07-04 — repo hygiene pass** (commit `53d0eb2`, all verified LIVE):
+  stale cluster dirs deleted; inject-nav.py (source of the header corruption)
+  deleted; government-structure-map.html → redirect stub; canonical
+  `assets/data/metrics.json` wired into member counter / protocol badge /
+  homepage telemetry; sitemap (67 URLs) + Atom feed regenerated; README
+  rewritten (correct preview instructions); `scripts/check_integrity.py` + CI
+  workflow green on first run; `AGENTS.md` added with hard rules for agents.
+  Lesson: Pages deploys can fail transiently ("try again later") — after
+  pushing, confirm with `gh run list` or curl the live files.
+
 ## Open
-- **Stale cluster dirs** (`diplomacy/ engagement/ foundations/ governance/
-  identity/ policy/`, created 2026-07-03): contain OLD diverged copies of root
-  pages; nothing links to them; not in sitemap. Recommend deleting (owner call —
-  may be an unfinished Hermes migration).
-- `AUDIT-CLAUDE.md` (2026-07-02 audit) P1/P2 backlog — metadata gaps, metrics
-  single-source, loader unification (P0-1 dashboard loader now fixed).
+- **Member-count narrative gap (owner decision):** the header pill counts real
+  registry entries (10) while national stats claim 12450 registered citizens.
+  Both now come from metrics.json, but reconciling the story is a content call.
+- `AUDIT-CLAUDE.md` (2026-07-02 audit) P1/P2 backlog — remaining: metadata/OG
+  consistency, loader unification, accessibility follow-ups (focus trap).
 - nav.js footer/header link lists have drifted (footer lacks Research Papers,
   WorldHermes, etc.); consider single source of truth for both fragments.
 - `nav.js` `footerFragment()` is exported but pages carry static footer markup —
