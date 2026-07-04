@@ -48,6 +48,67 @@
     <section id="home" class="hero">
       <div class="hero-canvas-wrap" aria-hidden="true">
         <canvas id="hero-canvas"></canvas>
+        <svg class="hero-graphic" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="nodeA" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#7aa7ff" stop-opacity="0.95"/>
+              <stop offset="55%" stop-color="#7aa7ff" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#7aa7ff" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="nodeB" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#c084fc" stop-opacity="0.9"/>
+              <stop offset="55%" stop-color="#c084fc" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="hero-glow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="12"/>
+            </filter>
+            <linearGradient id="link-grad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#7aa7ff" stop-opacity="0"/>
+              <stop offset="35%" stop-color="#7aa7ff" stop-opacity="0.55"/>
+              <stop offset="65%" stop-color="#c084fc" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- sovereign network motif -->
+          <g fill="none" stroke="url(#link-grad)" stroke-width="1.2">
+            <line x1="240" y1="130" x2="720" y2="280"/>
+            <line x1="720" y1="280" x2="1180" y2="170"/>
+            <line x1="720" y1="280" x2="460" y2="540"/>
+            <line x1="720" y1="280" x2="1000" y2="520"/>
+            <line x1="240" y1="130" x2="480" y2="390"/>
+            <line x1="1180" y1="170" x2="1000" y2="520"/>
+          </g>
+
+          <!-- glow layer -->
+          <g filter="url(#hero-glow)">
+            <circle cx="240" cy="130" r="48" fill="url(#nodeA)"/>
+            <circle cx="720" cy="280" r="56" fill="url(#nodeB)"/>
+            <circle cx="1180" cy="170" r="42" fill="url(#nodeA)"/>
+            <circle cx="1000" cy="520" r="44" fill="url(#nodeB)"/>
+            <circle cx="460" cy="540" r="38" fill="url(#nodeA)"/>
+            <circle cx="480" cy="390" r="32" fill="url(#nodeB)" opacity="0.85"/>
+          </g>
+
+          <!-- core nodes -->
+          <circle cx="240" cy="130" r="9" fill="#0f1318" stroke="#7aa7ff" stroke-width="3.2"/>
+          <circle cx="240" cy="130" r="3.6" fill="#7aa7ff"/>
+          <circle cx="720" cy="280" r="11" fill="#0f1318" stroke="#c084fc" stroke-width="3.6"/>
+          <circle cx="720" cy="280" r="4.2" fill="#c084fc"/>
+          <circle cx="1180" cy="170" r="8.5" fill="#0f1318" stroke="#7aa7ff" stroke-width="3"/>
+          <circle cx="1180" cy="170" r="3.4" fill="#7aa7ff"/>
+          <circle cx="1000" cy="520" r="9" fill="#0f1318" stroke="#c084fc" stroke-width="3.2"/>
+          <circle cx="1000" cy="520" r="3.6" fill="#c084fc"/>
+          <circle cx="460" cy="540" r="7.8" fill="#0f1318" stroke="#7aa7ff" stroke-width="2.8"/>
+          <circle cx="460" cy="540" r="3" fill="#7aa7ff"/>
+          <circle cx="480" cy="390" r="6.8" fill="#0f1318" stroke="#c084fc" stroke-width="2.4"/>
+          <circle cx="480" cy="390" r="2.6" fill="#c084fc"/>
+
+          <!-- framing orb -->
+          <circle cx="720" cy="280" r="180" fill="none" stroke="#7aa7ff" stroke-opacity="0.16"/>
+          <circle cx="720" cy="280" r="300" fill="none" stroke="#c084fc" stroke-opacity="0.1" stroke-dasharray="6 10"/>
+        </svg>
       </div>
       <div class="hero-glow" aria-hidden="true"></div>
       <h1>Welcome to the <span class="highlight">Digital Nation</span></h1>
