@@ -11,24 +11,12 @@ var DigitalNationNav = (function () {
     return '<details class="nav-dropdown"><summary>' + summaryText + '</summary><div class="dropdown-wrap">' + links + '</div></details>';
   }
 
+  /* Menu contents only. Every page injects this into the #site-menu <nav>
+     already present in its static header — do NOT emit brand/counter/toggle
+     here or the header chrome gets duplicated inside the menu panel. */
   function headerFragment() {
     var template = document.createElement('template');
-    var html = '<div class="nav">';
-    html += '<a class="brand" href="index.html">';
-    html += '<img class="logo-img" src="assets/images/digital-nation-logo.svg" alt="The Principality of Aetheria"/>';
-    html += '<span class="logo-text">AETHERIA</span>';
-    html += '</a>';
-    html += '<span class="member-counter" id="member-counter" title="Registered citizens">';
-    html += '<span class="member-counter-label" aria-hidden="true">Members</span>';
-    html += '<span class="member-counter-value" id="member-count" aria-live="polite" aria-label="Current member total">--</span>';
-    html += '</span>';
-    html += '<button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">';
-    html += '<span class="menu-toggle-bar"></span>';
-    html += '<span class="menu-toggle-bar"></span>';
-    html += '<span class="menu-toggle-bar"></span>';
-    html += '</button>';
-    html += '<nav class="menu" id="site-menu" aria-hidden="true">';
-    html += '<a href="index.html">Home</a>';
+    var html = '<a href="index.html">Home</a>';
     html += details('Foundations', [
       { href: 'about.html', label: 'About' },
       { href: 'goals.html', label: 'Goals' },
@@ -85,8 +73,6 @@ var DigitalNationNav = (function () {
       { href: 'digital-service-corps.html', label: 'Digital Service Corps' },
       { href: 'elections.html', label: 'Elections &amp; Petitions' }
     ]);
-    html += '</nav>';
-    html += '</div>';
     template.innerHTML = html;
     return template.content;
   }

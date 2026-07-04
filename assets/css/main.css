@@ -220,28 +220,29 @@ a {
 .nav {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 8px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 14px;
   position: relative;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
 }
 .logo-img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: inline-block;
 }
 .logo-text {
   font-weight: 900;
-  letter-spacing: -0.02em;
+  font-size: 14px;
+  letter-spacing: 0.14em;
 }
 
 .menu-nav a, .menu a {
@@ -255,10 +256,19 @@ a {
 .menu {
   display: flex;
   max-width: 100%;
-  overflow-x: auto;
-  gap: 12px;
+  overflow: visible;
+  gap: 4px;
   align-items: center;
   flex-wrap: wrap;
+}
+.menu > a {
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 1;
 }
 
 .menu-toggle {
@@ -296,7 +306,7 @@ a {
   font-weight: 700;
   letter-spacing: .04em;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1;
   user-select: none;
 }
@@ -340,21 +350,23 @@ a {
 .member-counter {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
+  gap: 6px;
+  padding: 3px 9px;
   border: 1px solid #232a34;
   border-radius: 999px;
   background: #151a21;
   color: var(--color-text);
 }
 .member-counter-label {
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: .14em;
   font-weight: 700;
+  color: var(--color-muted);
 }
 .member-counter-value {
   font-weight: 900;
+  font-size: 12px;
   color: #ffffff;
   min-width: 14px;
   text-align: center;
@@ -1112,7 +1124,7 @@ a {
     display: none;
     gap: 6px;
     position: absolute;
-    top: 72px;
+    top: 100%;
     left: 0;
     right: 0;
     background: rgba(7,9,13,.97);

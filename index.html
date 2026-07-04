@@ -18,12 +18,13 @@
   <title>Digital Nation — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/home.css">
   <link rel="icon" href="./favicon.ico">
 </head>
-<body>
+<body class="page-home">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav">
@@ -40,201 +41,212 @@
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
       </button>
-            <nav class="menu" id="site-menu" aria-hidden="true"></nav>
+      <nav class="menu" id="site-menu" aria-hidden="true"></nav>
     </div>
   </header>
 
-  <main id="main" class="container">
-    <section id="home" class="hero">
-      <div class="hero-canvas-wrap" aria-hidden="true">
+  <main id="main">
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-sky" aria-hidden="true">
         <canvas id="hero-canvas"></canvas>
-        <svg class="hero-graphic" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="nodeA" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#7aa7ff" stop-opacity="0.95"/>
-              <stop offset="55%" stop-color="#7aa7ff" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#7aa7ff" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="nodeB" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#c084fc" stop-opacity="0.9"/>
-              <stop offset="55%" stop-color="#c084fc" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
-            </radialGradient>
-            <filter id="hero-glow" x="-60%" y="-60%" width="220%" height="220%">
-              <feGaussianBlur stdDeviation="12"/>
-            </filter>
-            <linearGradient id="link-grad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#7aa7ff" stop-opacity="0"/>
-              <stop offset="35%" stop-color="#7aa7ff" stop-opacity="0.55"/>
-              <stop offset="65%" stop-color="#c084fc" stop-opacity="0.55"/>
-              <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-
-          <!-- sovereign network motif -->
-          <g fill="none" stroke="url(#link-grad)" stroke-width="1.2">
-            <line x1="240" y1="130" x2="720" y2="280"/>
-            <line x1="720" y1="280" x2="1180" y2="170"/>
-            <line x1="720" y1="280" x2="460" y2="540"/>
-            <line x1="720" y1="280" x2="1000" y2="520"/>
-            <line x1="240" y1="130" x2="480" y2="390"/>
-            <line x1="1180" y1="170" x2="1000" y2="520"/>
-          </g>
-
-          <!-- glow layer -->
-          <g filter="url(#hero-glow)">
-            <circle cx="240" cy="130" r="48" fill="url(#nodeA)"/>
-            <circle cx="720" cy="280" r="56" fill="url(#nodeB)"/>
-            <circle cx="1180" cy="170" r="42" fill="url(#nodeA)"/>
-            <circle cx="1000" cy="520" r="44" fill="url(#nodeB)"/>
-            <circle cx="460" cy="540" r="38" fill="url(#nodeA)"/>
-            <circle cx="480" cy="390" r="32" fill="url(#nodeB)" opacity="0.85"/>
-          </g>
-
-          <!-- core nodes -->
-          <circle cx="240" cy="130" r="9" fill="#0f1318" stroke="#7aa7ff" stroke-width="3.2"/>
-          <circle cx="240" cy="130" r="3.6" fill="#7aa7ff"/>
-          <circle cx="720" cy="280" r="11" fill="#0f1318" stroke="#c084fc" stroke-width="3.6"/>
-          <circle cx="720" cy="280" r="4.2" fill="#c084fc"/>
-          <circle cx="1180" cy="170" r="8.5" fill="#0f1318" stroke="#7aa7ff" stroke-width="3"/>
-          <circle cx="1180" cy="170" r="3.4" fill="#7aa7ff"/>
-          <circle cx="1000" cy="520" r="9" fill="#0f1318" stroke="#c084fc" stroke-width="3.2"/>
-          <circle cx="1000" cy="520" r="3.6" fill="#c084fc"/>
-          <circle cx="460" cy="540" r="7.8" fill="#0f1318" stroke="#7aa7ff" stroke-width="2.8"/>
-          <circle cx="460" cy="540" r="3" fill="#7aa7ff"/>
-          <circle cx="480" cy="390" r="6.8" fill="#0f1318" stroke="#c084fc" stroke-width="2.4"/>
-          <circle cx="480" cy="390" r="2.6" fill="#c084fc"/>
-
-          <!-- framing orb -->
-          <circle cx="720" cy="280" r="180" fill="none" stroke="#7aa7ff" stroke-opacity="0.16"/>
-          <circle cx="720" cy="280" r="300" fill="none" stroke="#c084fc" stroke-opacity="0.1" stroke-dasharray="6 10"/>
-        </svg>
+        <div class="nebula nebula--a"></div>
+        <div class="nebula nebula--b"></div>
+        <div class="orbits">
+          <span class="orbit orbit--1"></span>
+          <span class="orbit orbit--2"></span>
+          <span class="orbit orbit--3"></span>
+          <span class="orbit-node orbit-node--a"></span>
+          <span class="orbit-node orbit-node--b"></span>
+        </div>
+        <div class="hero-horizon"></div>
       </div>
-      <div class="hero-glow" aria-hidden="true"></div>
-      <h1>Welcome to the <span class="highlight">Digital Nation</span></h1>
-        <section class="stats-section" aria-labelledby="index-stats-title">
-          <h2 id="index-stats-title" class="sr-only">Summary Statistics</h2>
-          <div id="index-stats" class="stats-grid" aria-live="polite" aria-label="Index summary statistics">
-            <div class="activity-loading" aria-hidden="true">Loading statistics...</div>
-          </div>
-        </section>
-        <section class="pillars-section" aria-labelledby="index-pillars-title">
-          <h2 id="index-pillars-title" class="sr-only">Strategic Pillars</h2>
-          <div id="index-pillars" class="pillars-grid" aria-live="polite" aria-label="Index strategic pillars">
-            <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
-          </div>
-        </section>
 
-      <div class="hero-statement">
-        <p class="hero-statement__text">
-          A sovereign entity in cyberspace. Built by the people, for the people. No borders. No limits. No masters.
+      <div class="container hero-inner">
+        <p class="hero-eyebrow reveal-load" style="--d:0">
+          The Principality of Aetheria <span class="eyebrow-sep">·</span> Sovereign by Code
         </p>
-        <div class="actions">
+        <h1 id="hero-title" class="hero-title">
+          <span class="hero-title__pre reveal-load" style="--d:1">Welcome to the</span>
+          <span class="hero-title__main reveal-load" style="--d:2">Digital<br>Nation</span>
+        </h1>
+        <p class="hero-lede reveal-load" style="--d:3">
+          A sovereign entity in cyberspace — a civilization of humans and machines
+          building in the open. No borders. No limits. No masters.
+        </p>
+        <div class="actions hero-actions reveal-load" style="--d:4">
           <a class="button primary" href="citizenship.html">Join the Revolution</a>
-          <a class="button" href="manifesto.html">Read Manifesto</a>
+          <a class="button" href="manifesto.html">Read the Manifesto</a>
         </div>
-        <div class="hero-status" aria-label="Network status">
+        <div class="hero-status reveal-load" style="--d:5" aria-label="Network status">
           <span class="hero-status__dot" aria-hidden="true"></span>
-          <span class="hero-status__label">Protocol v0.1.0 / Network Active</span>
+          <span class="hero-status__label">Protocol v0.1.0 · Network Active</span>
+        </div>
+      </div>
+
+      <div class="hero-telemetry reveal-load" style="--d:6" aria-labelledby="index-stats-title">
+        <h2 id="index-stats-title" class="sr-only">National Telemetry</h2>
+        <div class="container">
+          <div id="index-stats" class="stats-grid" aria-live="polite" aria-label="National summary statistics">
+            <div class="activity-loading" aria-hidden="true">Acquiring signal…</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <h2>What is the Digital Nation?</h2>
-      <div class="columns">
-        <div class="card">
-          <h3>Borderless</h3>
-          <p>Operating beyond traditional nation-state boundaries, accessible from anywhere in the world.</p>
+    <div class="container">
+      <section id="pillars" class="section section--pillars" data-reveal aria-labelledby="index-pillars-title">
+        <header class="section-head">
+          <p class="section-eyebrow">Doctrine</p>
+          <h2 id="index-pillars-title">Strategic Pillars</h2>
+        </header>
+        <div id="index-pillars" class="pillars-grid" aria-live="polite" aria-label="Strategic pillars">
+          <div class="activity-loading" aria-hidden="true">Loading pillars…</div>
         </div>
-        <div class="card">
-          <h3>Secure</h3>
-          <p>Powered by cutting-edge cryptography and decentralized infrastructure.</p>
-        </div>
-        <div class="card">
-          <h3>Fast</h3>
-          <p>Built on modern technology for instant global communication and transactions.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="manifesto" class="section">
-      <h2>Our Manifesto</h2>
-      <div class="columns">
-        <div class="card">
-          <h3>Digital Sovereignty</h3>
-          <p>We assert the right of individuals to control their digital existence.</p>
+      <section id="about" class="section" data-reveal>
+        <header class="section-head">
+          <p class="section-eyebrow">The Nation</p>
+          <h2>What is the Digital Nation?</h2>
+          <p class="section-lede">A state that lives in the network — governed by open protocols, defended by cryptography, and open to any citizen on Earth.</p>
+        </header>
+        <div class="feature-grid">
+          <div class="feature">
+            <span class="feature-glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 4 5.6 4 9s-1.2 6.4-4 9c-2.8-2.6-4-5.6-4-9s1.2-6.4 4-9z"/></svg>
+            </span>
+            <h3>Borderless</h3>
+            <p>Operating beyond traditional nation-state boundaries, accessible from anywhere in the world.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.4-3 7.4-7 9-4-1.6-7-4.6-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <h3>Secure</h3>
+            <p>Powered by cutting-edge cryptography and decentralized infrastructure.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg>
+            </span>
+            <h3>Fast</h3>
+            <p>Built on modern technology for instant global communication and transactions.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Privacy by Design</h3>
-          <p>Every system we build defaults to privacy. Surveillance is opt-in, not opt-out.</p>
-        </div>
-        <div class="card">
-          <h3>Open Collaboration</h3>
-          <p>Knowledge should be free. Code should be open. Innovation should be shared.</p>
-        </div>
-        <div class="card">
-          <h3>Global Community</h3>
-          <p>United by ideals, not geography. Together we're stronger.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="projects" class="section">
-      <h2>Current Projects</h2>
-      <div class="project-list">
-        <article class="project">
-          <div class="project-status active"></div>
-          <h3>Nebula Network</h3>
-          <p>Decentralized communication layer for secure messaging.</p>
-          <span class="tag">Active</span>
-        </article>
-        <article class="project">
-          <div class="project-status planning"></div>
-          <h3>Quantum Vault</h3>
-          <p>Next-generation encrypted storage solution.</p>
-          <span class="tag">Planning</span>
-        </article>
-        <article class="project">
-          <div class="project-status active"></div>
-          <h3>Citizen Portal</h3>
-          <p>Identity and participation platform for all citizens.</p>
-          <span class="tag">Active</span>
-        </article>
-      </div>
-    </section>
+      <section id="manifesto" class="section" data-reveal>
+        <header class="section-head">
+          <p class="section-eyebrow">Manifesto</p>
+          <h2>What We Hold True</h2>
+        </header>
+        <ol class="ledger">
+          <li class="ledger-item">
+            <span class="ledger-index" aria-hidden="true">01</span>
+            <div class="ledger-body">
+              <h3>Digital Sovereignty</h3>
+              <p>We assert the right of individuals to control their digital existence.</p>
+            </div>
+          </li>
+          <li class="ledger-item">
+            <span class="ledger-index" aria-hidden="true">02</span>
+            <div class="ledger-body">
+              <h3>Privacy by Design</h3>
+              <p>Every system we build defaults to privacy. Surveillance is opt-in, not opt-out.</p>
+            </div>
+          </li>
+          <li class="ledger-item">
+            <span class="ledger-index" aria-hidden="true">03</span>
+            <div class="ledger-body">
+              <h3>Open Collaboration</h3>
+              <p>Knowledge should be free. Code should be open. Innovation should be shared.</p>
+            </div>
+          </li>
+          <li class="ledger-item">
+            <span class="ledger-index" aria-hidden="true">04</span>
+            <div class="ledger-body">
+              <h3>Global Community</h3>
+              <p>United by ideals, not geography. Together we're stronger.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="section-foot"><a class="text-link" href="manifesto.html">Read the full manifesto →</a></p>
+      </section>
 
-    <section id="citizen-press" class="section">
-      <h2>Citizen Press</h2>
-      <p>AETHERIA’s uncensorable citizen voice lives on-chain through <a href="https://sayitdefi.com" target="_blank" rel="noopener">Say It DeFi</a>. Every post, reply, and interaction is a public, permanent, sovereign record — no central server, no moderation gate, no tracking.</p>
-      <p><a class="button" href="https://sayitdefi.com" target="_blank" rel="noopener">Read Citizen Press</a></p>
-    </section>
+      <section id="projects" class="section" data-reveal>
+        <header class="section-head">
+          <p class="section-eyebrow">In Orbit</p>
+          <h2>Current Projects</h2>
+        </header>
+        <div class="project-list">
+          <article class="project">
+            <span class="project-status active" aria-hidden="true"></span>
+            <div class="project-body">
+              <h3>Nebula Network</h3>
+              <p>Decentralized communication layer for secure messaging.</p>
+            </div>
+            <span class="tag tag--active">Active</span>
+          </article>
+          <article class="project">
+            <span class="project-status planning" aria-hidden="true"></span>
+            <div class="project-body">
+              <h3>Quantum Vault</h3>
+              <p>Next-generation encrypted storage solution.</p>
+            </div>
+            <span class="tag tag--planning">Planning</span>
+          </article>
+          <article class="project">
+            <span class="project-status active" aria-hidden="true"></span>
+            <div class="project-body">
+              <h3>Citizen Portal</h3>
+              <p>Identity and participation platform for all citizens.</p>
+            </div>
+            <span class="tag tag--active">Active</span>
+          </article>
+        </div>
+      </section>
 
-    <section id="join" class="section join-section">
-      <h2>Become a Citizen</h2>
-      <p>Ready to join the future? Here's how to get started:</p>
-      <div class="join">
-        <div class="step">
-          <span class="step-number">1</span>
-          <h3>Create Your Identity</h3>
-          <p>Generate your cryptographic citizen ID</p>
+      <section id="press" class="section press-section" data-reveal>
+        <header class="section-head">
+          <p class="section-eyebrow">Signal</p>
+          <h2>Citizen Press</h2>
+          <p class="section-lede">AETHERIA's uncensorable citizen voice lives on-chain through <a href="https://sayitdefi.com" target="_blank" rel="noopener">Say It DeFi</a>. Every post, reply, and interaction is a public, permanent, sovereign record — no central server, no moderation gate, no tracking.</p>
+        </header>
+        <div id="citizen-press" class="press-feed">
+          <div class="activity-loading" aria-hidden="true">Tuning frequency…</div>
         </div>
-        <div class="step">
-          <span class="step-number">2</span>
-          <h3>Connect</h3>
-          <p>Join our decentralized network</p>
+        <p class="section-foot"><a class="button" href="https://sayitdefi.com" target="_blank" rel="noopener">Read Citizen Press</a></p>
+      </section>
+
+      <section id="join" class="section join-section" data-reveal>
+        <header class="section-head">
+          <p class="section-eyebrow">Citizenship</p>
+          <h2>Become a Citizen</h2>
+          <p class="section-lede">Ready to join the future? Three steps between you and the network.</p>
+        </header>
+        <div class="join">
+          <div class="step">
+            <span class="step-number" aria-hidden="true">01</span>
+            <h3>Create Your Identity</h3>
+            <p>Generate your cryptographic citizen ID.</p>
+          </div>
+          <div class="step">
+            <span class="step-number" aria-hidden="true">02</span>
+            <h3>Connect</h3>
+            <p>Join our decentralized network.</p>
+          </div>
+          <div class="step">
+            <span class="step-number" aria-hidden="true">03</span>
+            <h3>Participate</h3>
+            <p>Vote, build, and shape the future.</p>
+          </div>
         </div>
-        <div class="step">
-          <span class="step-number">3</span>
-          <h3>Participate</h3>
-          <p>Vote, build, and shape the future</p>
+        <div class="actions join-actions">
+          <a class="button primary" href="citizenship.html">Start Your Journey</a>
+          <a class="button" href="charter.html">Read the Charter</a>
         </div>
-      </div>
-      <div class="actions">
-        <a class="button primary" href="citizenship.html">Start Your Journey</a>
-        <a class="button" href="manifesto.html">Read Manifesto</a>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -252,7 +264,7 @@
           </span>
           <span class="footer-year" data-year>2026</span>
         </div>
-                                        <nav class="footer-nav" aria-label="Footer">
+        <nav class="footer-nav" aria-label="Footer">
           <details class="nav-dropdown footer-dropdown">
             <summary>Foundations</summary>
             <div class="dropdown-wrap">
@@ -261,7 +273,7 @@
               <a href="initiatives.html">Initiatives</a>
               <a href="manifesto.html">Manifesto</a>
               <a href="charter.html">Charter</a>
-                <a href="charter-addendum.html">Charter Addendum</a>
+              <a href="charter-addendum.html">Charter Addendum</a>
               <a href="contact.html">Contact</a>
             </div>
           </details>
@@ -316,13 +328,12 @@
             <div class="dropdown-wrap">
               <a href="engage.html">Engage</a>
               <a href="tools.html">Tools</a>
-            
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-</div>
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+            </div>
           </details>
         </nav>
-<div class="footer-extras">
+        <div class="footer-extras">
           <a class="social-link" href="https://github.com" rel="noopener noreferrer" target="_blank" aria-label="GitHub repository">
             <span aria-hidden="true">GitHub</span>
           </a>
@@ -335,5 +346,6 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/index.js"></script>
   <script src="assets/js/citizen-press.js"></script>
+  <script src="assets/js/home-effects.js"></script>
 </body>
 </html>
