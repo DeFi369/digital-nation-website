@@ -1,0 +1,185 @@
+/* ============================================================
+   AETHERIA — inner-page theme layer
+   Loaded by every page EXCEPT index.html (which has home.css).
+   Pages opt in via <body data-theme="cluster">; each nav cluster
+   gets its own accent so a page reads as part of its topic:
+     foundations (default) blue · governance indigo · identity
+     violet · policy teal · diplomacy gold · engagement rose
+   Everything is scoped under body[data-theme] so nothing leaks.
+   ============================================================ */
+
+body[data-theme] {
+  --page-accent: #7aa7ff;
+  --page-accent-2: #c084fc;
+}
+body[data-theme="governance"] { --page-accent: #818cf8; --page-accent-2: #7aa7ff; }
+body[data-theme="identity"]   { --page-accent: #c084fc; --page-accent-2: #f0abfc; }
+body[data-theme="policy"]     { --page-accent: #5eead4; --page-accent-2: #7aa7ff; }
+body[data-theme="diplomacy"]  { --page-accent: #fbbf24; --page-accent-2: #fb923c; }
+body[data-theme="engagement"] { --page-accent: #fb7185; --page-accent-2: #c084fc; }
+
+/* deep-space backdrop tinted by the cluster accent */
+body[data-theme] {
+  background:
+    radial-gradient(1100px 620px at 85% -8%, color-mix(in srgb, var(--page-accent-2) 8%, transparent), transparent 60%),
+    radial-gradient(1300px 800px at 8% 4%, color-mix(in srgb, var(--page-accent) 9%, transparent), transparent 55%),
+    var(--color-bg);
+}
+
+/* ambient starfield canvas sits behind everything */
+#page-ambient-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+body[data-theme] main,
+body[data-theme] .site-footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- page title ---- */
+body[data-theme] .page h1 {
+  font-family: 'Unbounded', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 4.4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 8px 0 18px;
+  text-shadow: 0 0 30px color-mix(in srgb, var(--page-accent) 22%, transparent);
+}
+body[data-theme] .page h1::before {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 3px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, var(--page-accent), var(--page-accent-2));
+  box-shadow: 0 0 16px color-mix(in srgb, var(--page-accent) 55%, transparent);
+}
+body[data-theme] .page .lead,
+body[data-theme] .page p.lead {
+  color: var(--color-muted);
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.65;
+  max-width: 640px;
+}
+
+/* ---- section headings ---- */
+body[data-theme] .page h2 {
+  font-family: 'Unbounded', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: clamp(20px, 2.5vw, 27px);
+  line-height: 1.2;
+  color: #ffffff;
+}
+body[data-theme] .page h2.sr-only {
+  font-size: inherit;
+}
+
+/* ---- telemetry stats (filled by each page's JS) ---- */
+body[data-theme] .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 26px 0;
+}
+body[data-theme] .stats-grid .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid color-mix(in srgb, var(--page-accent) 22%, #1f2630);
+  border-radius: 14px;
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--page-accent) 6%, transparent), transparent 60%),
+    var(--color-surface);
+}
+body[data-theme] .stats-grid .stat-value {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 600;
+  font-size: clamp(17px, 1.9vw, 22px);
+  color: #ffffff;
+  text-shadow: 0 0 16px color-mix(in srgb, var(--page-accent) 40%, transparent);
+}
+body[data-theme] .stats-grid .stat-label {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  opacity: 0.85;
+}
+body[data-theme] .stats-grid .activity-loading,
+body[data-theme] .stats-grid .activity-empty {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---- pillar cards (filled by each page's JS) ---- */
+body[data-theme] .pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 26px 0;
+  counter-reset: pillar;
+}
+body[data-theme] .pillars-grid .pillar {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: none;
+  gap: 0;
+  padding: 22px 20px;
+  border: 1px solid #1f2630;
+  border-radius: 14px;
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--page-accent) 5%, transparent), transparent 65%),
+    var(--color-surface);
+  transition: border-color .2s ease, transform .2s ease;
+}
+body[data-theme] .pillars-grid .pillar:hover {
+  border-color: color-mix(in srgb, var(--page-accent) 45%, transparent);
+  transform: translateY(-2px);
+}
+body[data-theme] .pillars-grid .pillar::before {
+  counter-increment: pillar;
+  content: "0" counter(pillar);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--page-accent);
+  margin-bottom: 12px;
+}
+body[data-theme] .pillars-grid .activity-title {
+  font-family: 'Unbounded', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.35;
+}
+body[data-theme] .pillars-grid .activity-description {
+  margin-bottom: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* ---- generic card/section accents ---- */
+body[data-theme] .card:hover,
+body[data-theme] .activity-item:hover {
+  border-color: color-mix(in srgb, var(--page-accent) 40%, #2d3644);
+}
+body[data-theme] .stats-section,
+body[data-theme] .pillars-section {
+  margin: 0 0 10px;
+}
+
+@media (max-width: 760px) {
+  body[data-theme] .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

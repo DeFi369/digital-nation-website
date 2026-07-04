@@ -228,3 +228,20 @@ var DigitalNationNav = (function () {
     inject(parentSelector, footerFragment);
   }
 })();
+
+/* Fallback: if no page script has filled #site-menu by DOM-ready, inject it
+   here so no page ever ships an empty menu. Re-injection by page scripts is
+   harmless (inject clears the container first). */
+(function () {
+  function autoInject() {
+    var menu = document.getElementById('site-menu');
+    if (menu && !menu.firstElementChild) {
+      DigitalNationNav.injectHeader('#site-menu');
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', autoInject);
+  } else {
+    autoInject();
+  }
+})();

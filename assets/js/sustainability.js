@@ -8,8 +8,10 @@
   }
 
   function init() {
-    setupMenu();
-    liveYear();
+    if (typeof DigitalNationNav !== 'undefined' && DigitalNationNav.injectHeader) {
+      DigitalNationNav.injectHeader('#site-menu');
+    }
+    /* menu + year handled by site.js */
     renderStats();
     renderPillars();
     renderOperations();

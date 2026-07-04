@@ -118,6 +118,14 @@
     }
   }
 
+  function loadDashboardScript() {
+    if (document.querySelector('script[src="assets/js/dashboard.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'assets/js/dashboard.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
   function loadCharterAddendumScript() {
     if (document.querySelector('script[src="assets/js/charter-addendum.js"]')) return;
     const script = document.createElement('script');

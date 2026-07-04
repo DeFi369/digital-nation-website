@@ -12,8 +12,7 @@
       return;
     }
     DigitalNationNav.injectHeader('#site-menu');
-    setupMenu();
-    liveYear();
+    /* menu + year handled by site.js */
     renderStats();
     renderPillars();
     renderPrograms();

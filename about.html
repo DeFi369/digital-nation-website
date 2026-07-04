@@ -18,12 +18,13 @@
   <title>About — The Principality of Aetheria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/page-theme.css">
   <link rel="icon" href="./favicon.ico">
 </head>
-<body>
+<body data-theme="foundations">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav">
@@ -48,6 +49,12 @@
   <main id="main">
     <section class="page">
       <div class="container">
+
+        <h1>About the Principality</h1>
+        <p class="lead">
+          AETHERIA is sovereign by code.
+        </p>
+
         <section class="stats-section" aria-labelledby="about-stats-title">
           <h2 id="about-stats-title" class="sr-only">Summary Statistics</h2>
           <div id="about-stats" class="stats-grid" aria-live="polite" aria-label="About summary statistics">
@@ -60,12 +67,6 @@
             <div class="activity-loading" aria-hidden="true">Loading pillars...</div>
           </div>
         </section>
-
-        <h1>About the Principality</h1>
-        <p class="lead">
-          AETHERIA is sovereign by code.
-        </p>
-
         <h2>Purpose</h2>
         <p>
           We provide durable, sovereign, and public infrastructure for a borderless digital society.
@@ -381,5 +382,6 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/about.js"></script>
+  <script src="assets/js/page-ambient.js"></script>
 </body>
 </html>

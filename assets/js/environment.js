@@ -8,8 +8,10 @@
   }
 
   function init() {
-    setupMenu();
-    liveYear();
+    if (typeof DigitalNationNav !== 'undefined' && DigitalNationNav.injectHeader) {
+      DigitalNationNav.injectHeader('#site-menu');
+    }
+    /* menu + year handled by site.js */
     renderStats();
     renderPillars();
     renderPolicy();
@@ -261,10 +263,10 @@
 
   function escapeHtml(value) {
     return String(value)
-      .replace(/&/g, '&')
-      .replace(/</g, '<')
-      .replace(/>/g, '>')
-      .replace(/"/g, '"')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
       .replace(/'/g, '&apos;');
   }
 
