@@ -58,6 +58,8 @@ var DigitalNationNav = (function () {
       { href: 'sustainability.html', label: 'Sustainability' },
       { href: 'science.html', label: 'Science' },
       { href: 'technology.html', label: 'Technology' },
+      { href: 'research-papers.html', label: 'Research Papers' },
+      { href: 'https://github.com/defi369/WorldHermes', label: 'WorldHermes', external: true },
       { href: 'health-equity.html', label: 'Health Equity' },
       { href: 'bandwidth.html', label: 'Bandwidth' },
       { href: 'education.html', label: 'Education' },
