@@ -8,7 +8,25 @@ var DigitalNationNav = (function () {
     for (var i = 0; i < hrefs.length; i++) {
       links += '<a href="' + hrefs[i].href + '">' + hrefs[i].label + '</a>';
     }
-    return '<details class="nav-dropdown"><summary>' + summaryText + '</summary><div class="dropdown-wrap">' + links + '</div></details>';
+    /* groups with many links get a two-column panel so they stay on screen */
+    var wide = hrefs.length > 8 ? ' dropdown-wrap--wide' : '';
+    return '<details class="nav-dropdown"><summary>' + summaryText + '</summary>' +
+      '<div class="dropdown-wrap' + wide + '">' +
+      '<span class="dropdown-label" aria-hidden="true">' + summaryText + '</span>' +
+      links + '</div></details>';
+  }
+
+  /* highlight the page being viewed: accent the link + its parent group */
+  function markCurrent(container) {
+    var path = window.location.pathname.split('/').pop() || 'index.html';
+    var links = container.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].getAttribute('href') === path) {
+        links[i].setAttribute('aria-current', 'page');
+        var dropdown = links[i].closest ? links[i].closest('.nav-dropdown') : null;
+        if (dropdown) dropdown.classList.add('has-current');
+      }
+    }
   }
 
   /* Menu contents only. Every page injects this into the #site-menu <nav>
@@ -199,6 +217,7 @@ var DigitalNationNav = (function () {
       container.removeChild(container.firstChild);
     }
     container.appendChild(fragment);
+    markCurrent(container);
   }
 
   function injectHeader(parentSelector) {

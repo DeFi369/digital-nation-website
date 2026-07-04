@@ -393,33 +393,60 @@
   }
 
   function initDropdownNavigation() {
+    /* All handlers are delegated to the static .menu element: the dropdown
+       markup itself is injected later by each page's script (nav.js), so
+       binding per-dropdown here would attach to an empty menu. */
     const menu = document.querySelector('.menu');
     if (!menu) return;
-    const dropdowns = menu.querySelectorAll('.nav-dropdown');
-    let openDropdown = null;
-    dropdowns.forEach(dropdown => {
-      const summary = dropdown.querySelector('summary');
-      if (!summary) return;
-      dropdown.addEventListener('toggle', () => {
-        if (dropdown.hasAttribute('open')) {
-          dropdown.removeAttribute('aria-hidden');
-          openDropdown = dropdown;
-        } else if (openDropdown === dropdown) {
-          openDropdown = null;
-        }
+
+    const hoverMode = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 761px)');
+    const allDropdowns = () => Array.from(menu.querySelectorAll('.nav-dropdown'));
+    const closeAll = (except) => {
+      allDropdowns().forEach(d => {
+        if (d !== except) d.removeAttribute('open');
       });
-    });
-    document.addEventListener('click', (event) => {
-      if (!event.target.closest('.nav-dropdown') && !event.target.closest('.menu-toggle')) {
-        dropdowns.forEach(d => {
-          d.removeAttribute('open');
-          d.setAttribute('aria-hidden', 'true');
-        });
-        openDropdown = null;
+    };
+    let hoverTimer = 0;
+
+    /* 'toggle' does not bubble — capture it */
+    menu.addEventListener('toggle', (event) => {
+      const dd = event.target;
+      if (dd instanceof Element && dd.matches('.nav-dropdown') && dd.hasAttribute('open')) {
+        closeAll(dd);
+      }
+    }, true);
+
+    menu.addEventListener('mouseover', (event) => {
+      if (!hoverMode.matches) return;
+      const dd = event.target.closest('.nav-dropdown');
+      if (!dd || !menu.contains(dd)) return;
+      clearTimeout(hoverTimer);
+      if (!dd.hasAttribute('open')) {
+        closeAll(dd);
+        dd.setAttribute('open', '');
       }
     });
-    if (menu.dataset.open === 'true') {
-      dropdowns.forEach(d => d.removeAttribute('open'));
-    }
+    menu.addEventListener('mouseout', (event) => {
+      if (!hoverMode.matches) return;
+      const dd = event.target.closest('.nav-dropdown');
+      if (!dd || dd.contains(event.relatedTarget)) return;
+      hoverTimer = setTimeout(() => dd.removeAttribute('open'), 220);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.nav-dropdown') && !event.target.closest('.menu-toggle')) {
+        closeAll();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      const open = allDropdowns().find(d => d.hasAttribute('open'));
+      if (open) {
+        closeAll();
+        const summary = open.querySelector('summary');
+        if (summary) summary.focus();
+      }
+    });
   }
 })();
