@@ -42,16 +42,27 @@ never leave work uncommitted in this repo.
   - Pushed to origin/main 2026-07-04 and verified LIVE on GitHub Pages
     (screenshot of deployed URL; home.css 200, new markup served).
 
+- **2026-07-04 — nav dropdown rebuild** (commit `84620d0`): compact labeled
+  panels, two-column for big groups, right-edge alignment, hover-open +
+  single-open + Escape + outside-click close (old code bound before injection so
+  outside-click NEVER worked), aria-current page marking, footer panels open up.
+- **2026-07-04 — all inner pages repaired + themed** (commit `26685c3`):
+  59 pages carried corrupted markup (22 in-header junk, 37 duplicated-main junk)
+  — stripped; 15 pages had stats above the h1 — reordered; 37 scripts double-
+  bound the menu, 42 had no-op escapeHtml, 8 never injected the nav — all fixed;
+  nav.js now auto-injects empty menus (fixes passport/404); site.js got the
+  missing loadDashboardScript (P0-1). New cluster theme layer:
+  `assets/css/page-theme.css` + `assets/js/page-ambient.js`, wired into all 68
+  inner pages with per-cluster accents (foundations blue / governance indigo /
+  identity violet / policy teal / diplomacy gold / engagement rose).
+
 ## Open
-- Site-wide sweep of the two bug patterns fixed on index/about/goals: ~60 page
-  scripts still have (a) their own `setupMenu()` double-binding on top of site.js —
-  mobile menu likely broken on most inner pages; (b) the corrupted no-op
-  `escapeHtml`. One mechanical pass (or fix in a shared util) would clear both.
-- Subpage stats are unstyled raw text (`12450Citizens`) — `.stats-grid`/`.stat-*`
-  only exist scoped to `.page-home` in home.css; either promote a neutral version
-  to main.css or restyle per page.
-- `AUDIT-CLAUDE.md` (2026-07-02 audit) P0/P1/P2 backlog — several items remain
-  (dashboard loader, metadata gaps, metrics single-source, loader unification).
+- **Stale cluster dirs** (`diplomacy/ engagement/ foundations/ governance/
+  identity/ policy/`, created 2026-07-03): contain OLD diverged copies of root
+  pages; nothing links to them; not in sitemap. Recommend deleting (owner call —
+  may be an unfinished Hermes migration).
+- `AUDIT-CLAUDE.md` (2026-07-02 audit) P1/P2 backlog — metadata gaps, metrics
+  single-source, loader unification (P0-1 dashboard loader now fixed).
 - nav.js footer/header link lists have drifted (footer lacks Research Papers,
   WorldHermes, etc.); consider single source of truth for both fragments.
 - `nav.js` `footerFragment()` is exported but pages carry static footer markup —
