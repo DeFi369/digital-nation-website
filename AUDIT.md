@@ -56,6 +56,12 @@ never leave work uncommitted in this repo.
   inner pages with per-cluster accents (foundations blue / governance indigo /
   identity violet / policy teal / diplomacy gold / engagement rose).
 
+- **2026-07-04 — footer rebuilt** (commit `0272f22`): footers had drifted into
+  23 per-page variants; now injected from nav.js's single NAV_GROUPS source
+  (shared with header dropdowns) as a six-column sitemap. structure.html's
+  broken header template + inline-string SyntaxError fixed (map renders again);
+  GitHub footer links point at the real repo.
+
 ## Open
 - **Stale cluster dirs** (`diplomacy/ engagement/ foundations/ governance/
   identity/ policy/`, created 2026-07-03): contain OLD diverged copies of root
