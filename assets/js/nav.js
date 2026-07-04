@@ -83,10 +83,7 @@ var DigitalNationNav = (function () {
       { href: 'tools.html', label: 'Tools' },
       { href: 'transparency.html', label: 'Transparency' },
       { href: 'digital-service-corps.html', label: 'Digital Service Corps' },
-      { href: 'elections.html', label: 'Elections &amp; Petitions' },
-      { href: 'open-records.html', label: 'Open Records' },
-      { href: 'data-governance.html', label: 'Data Governance' },
-      { href: 'situational-awareness.html', label: 'Situational Awareness' }
+      { href: 'elections.html', label: 'Elections &amp; Petitions' }
     ]);
     html += '</nav>';
     html += '</div>';
@@ -147,10 +144,7 @@ var DigitalNationNav = (function () {
       { href: 'tools.html', label: 'Tools' },
       { href: 'transparency.html', label: 'Transparency' },
       { href: 'digital-service-corps.html', label: 'Digital Service Corps' },
-      { href: 'elections.html', label: 'Elections &amp; Petitions' },
-      { href: 'open-records.html', label: 'Open Records' },
-      { href: 'data-governance.html', label: 'Data Governance' },
-      { href: 'situational-awareness.html', label: 'Situational Awareness' }
+      { href: 'elections.html', label: 'Elections &amp; Petitions' }
     ]);
     html += '</nav>';
     html += '<div class="footer-extras">';
