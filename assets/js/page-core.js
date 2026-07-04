@@ -1,3 +1,12 @@
+/* Generic page renderer. Pages opt in with <body data-page="<slug>"> and it
+   renders the standard blocks from assets/data/<slug>.json:
+     #<slug>-stats       <- data.stats        (key/value telemetry cards)
+     #<slug>-pillars     <- data.pillars      (numbered doctrine cards)
+     #<slug>-search/-scope -> #<slug>-mixed-feed  (filterable entries feed)
+   Each block is skipped when its container is absent, so pages can use any
+   subset. Pages with bespoke renderers keep their own <slug>.js instead and
+   do NOT set data-page (double-rendering guard).
+   Menu/footer injection lives in nav.js; menu behavior in site.js. */
 (function () {
   'use strict';
 
@@ -8,24 +17,22 @@
   }
 
   function init() {
-    if (typeof DigitalNationNav === 'undefined' || !DigitalNationNav.injectHeader) {
-      return;
-    }
-    DigitalNationNav.injectHeader('#site-menu');
-    /* menu + year handled by site.js */
-    renderStats();
-    renderPillars();
-    initFilters();
+    var slug = document.body ? document.body.getAttribute('data-page') : null;
+    if (!slug) return;
+    var dataUrl = 'assets/data/' + slug + '.json';
+    renderStats(slug, dataUrl);
+    renderPillars(slug, dataUrl);
+    initFilters(slug, dataUrl);
   }
 
   /* ---- stats ---- */
-  function renderStats() {
-    const container = document.getElementById('missions-stats');
+  function renderStats(slug, dataUrl) {
+    var container = document.getElementById(slug + '-stats');
     if (!container) return;
-    fetch('assets/data/missions.json')
+    fetch(dataUrl)
       .then(function (res) { return res.json(); })
       .then(function (data) {
-        const stats = data.stats || {};
+        var stats = data.stats || {};
         var html = '';
         Object.keys(stats).forEach(function (key) {
           html += '<div class="stat">' +
@@ -48,13 +55,13 @@
   }
 
   /* ---- pillars ---- */
-  function renderPillars() {
-    const container = document.getElementById('missions-pillars');
+  function renderPillars(slug, dataUrl) {
+    var container = document.getElementById(slug + '-pillars');
     if (!container) return;
-    fetch('assets/data/missions.json')
+    fetch(dataUrl)
       .then(function (res) { return res.json(); })
       .then(function (data) {
-        const items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
+        var items = Array.isArray(data.pillars) ? data.pillars.slice() : [];
         container.innerHTML = items.map(function (item) {
           return '<article class="activity-item pillar">' +
             '<div class="activity-content">' +
@@ -69,23 +76,17 @@
       });
   }
 
-  /* ---- filters ---- */
-  function initFilters() {
-    var searchField = document.getElementById('missions-search');
-    var scopeField = document.getElementById('missions-scope');
+  /* ---- filterable entries feed ---- */
+  function initFilters(slug, dataUrl) {
+    var searchField = document.getElementById(slug + '-search');
+    var scopeField = document.getElementById(slug + '-scope');
     if (!searchField || !scopeField) return;
 
     var cachedData = null;
-    fetch('assets/data/missions.json')
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
-        cachedData = data;
-      })
-      .catch(function () {
-        cachedData = null;
-      });
+    fetch(dataUrl)
+      .then(function (res) { return res.json(); })
+      .then(function (data) { cachedData = data; })
+      .catch(function () { cachedData = null; });
 
     function applyFilter() {
       if (!cachedData) return;
@@ -113,7 +114,7 @@
         return !term || String(searchable).toLowerCase().indexOf(term) !== -1;
       });
 
-      renderMixedList('missions-mixed-feed', filtered);
+      renderMixedList(slug + '-mixed-feed', filtered);
     }
 
     searchField.addEventListener('input', function () { applyFilter(); });
@@ -161,45 +162,13 @@
     return parts.join('<span class="activity-divider">·</span>');
   }
 
-  /* ---- menu / year ---- */
-  function setupMenu() {
-    var menuButton = document.querySelector('.menu-toggle');
-    var menu = document.querySelector('.menu');
-    if (!menuButton || !menu) return;
-    menuButton.addEventListener('click', function () {
-      var open = menu.dataset.open === 'true';
-      menu.dataset.open = String(!open);
-      menu.setAttribute('aria-hidden', String(open));
-      menuButton.setAttribute('aria-expanded', String(!open));
-      if (!open) {
-        var firstLink = menu.querySelector('a');
-        if (firstLink) setTimeout(function () { firstLink.focus(); }, 0);
-      }
-    });
-    menu.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menu.dataset.open === 'true') {
-        menu.dataset.open = 'false';
-        menu.setAttribute('aria-hidden', 'true');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.focus();
-      }
-    });
-  }
-
-  function liveYear() {
-    try {
-      var yearEl = document.querySelector('[data-year]');
-      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-    } catch {}
-  }
-
   function escapeHtml(value) {
     return String(value)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
-      .replace(/'/g, '&apos;');
+      .replace(/'/g, '&#39;');
   }
 
   function slugify(value) {

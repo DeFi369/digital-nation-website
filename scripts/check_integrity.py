@@ -75,10 +75,13 @@ def check_html(path):
 def check_inline_scripts(path, src, node):
     """Syntax-check inline <script> blocks (no src=) with node --check."""
     name = os.path.basename(path)
-    for i, m in enumerate(re.finditer(r"<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>", src, re.S)):
-        body = m.group(1).strip()
+    for i, m in enumerate(re.finditer(r"<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>", src, re.S)):
+        attrs, body = m.group(1), m.group(2).strip()
         if not body:
             continue
+        type_m = re.search(r'type="([^"]+)"', attrs)
+        if type_m and "javascript" not in type_m.group(1):
+            continue  # JSON-LD, templates, etc. are not JS
         with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as tmp:
             tmp.write(body)
             tmp_path = tmp.name
@@ -91,9 +94,32 @@ def check_inline_scripts(path, src, node):
             os.unlink(tmp_path)
 
 
+def check_links(path, src, existing):
+    """Every internal href/src must resolve to a file in the repo."""
+    name = os.path.basename(path)
+    for attr, target in re.findall(r'\b(href|src)="([^"]+)"', src):
+        target = target.split("#")[0].split("?")[0].strip()
+        if not target or target.startswith(("http://", "https://", "mailto:", "data:", "//", "javascript:")):
+            continue
+        if target.startswith("./"):
+            target = target[2:]
+        target = target.lstrip("/")
+        # pages carry <base href="/digital-nation-website/"> — strip it
+        if target.startswith("digital-nation-website/"):
+            target = target[len("digital-nation-website/"):]
+        if target and target not in existing:
+            fail(f"{name}: broken internal {attr} -> {target}")
+
+
 def main():
     os.chdir(ROOT)
     node = shutil.which("node")
+
+    existing = set()
+    for base, dirs, files in os.walk("."):
+        dirs[:] = [d for d in dirs if not d.startswith(".")]
+        for f in files:
+            existing.add(os.path.relpath(os.path.join(base, f), ".").replace(os.sep, "/"))
 
     pages = sorted(glob.glob("*.html"))
     if len(pages) < 50:
@@ -101,6 +127,7 @@ def main():
 
     for page in pages:
         src = check_html(page)
+        check_links(page, src, existing)
         if node:
             check_inline_scripts(page, src, node)
 

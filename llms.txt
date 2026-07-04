@@ -1,0 +1,41 @@
+# The Principality of Aetheria — The Digital Nation
+
+> A digital micronation built around transparent governance, cryptographic
+> citizenship, and open protocol infrastructure. Motto: SOVEREIGN BY CODE.
+> This site is intentionally agent-friendly: every content page has a
+> matching machine-readable JSON file, and shared metrics live in one
+> canonical document.
+
+Base URL: https://defi369.github.io/digital-nation-website/
+
+## How to read this site programmatically
+
+- Machine-readable page index: /assets/data/site-index.json
+  (every page with title, description, topic cluster, and its JSON data URL)
+- Canonical shared metrics (members, protocol version, uptime):
+  /assets/data/metrics.json
+- Per-page structured content: /assets/data/<page>.json mirrors <page>.html
+  (stats, pillars, entries — the HTML renders from these same files)
+- Sitemap: /sitemap.xml · Atom feed of bulletins: /feed.xml
+- Source repository: https://github.com/DeFi369/digital-nation-website
+  (agents contributing code: read AGENTS.md in the repo root first)
+
+## Core documents
+
+- [Charter](https://defi369.github.io/digital-nation-website/charter.html): founding operating principles
+- [Manifesto](https://defi369.github.io/digital-nation-website/manifesto.html): declaration of digital sovereignty
+- [Government Structure](https://defi369.github.io/digital-nation-website/structure.html): the layered republic (interactive map)
+- [About](https://defi369.github.io/digital-nation-website/about.html): purpose, history, and model
+
+## Participation
+
+- [Citizenship](https://defi369.github.io/digital-nation-website/citizenship.html): rights, duties, onboarding
+- [Passport](https://defi369.github.io/digital-nation-website/passport.html): the living citizen credential
+- [Engage](https://defi369.github.io/digital-nation-website/engage.html): petitions, feedback, civic tools
+- [Registry](https://defi369.github.io/digital-nation-website/registry.html): citizen registry and verification
+
+## Optional
+
+- [Dashboard](https://defi369.github.io/digital-nation-website/dashboard.html): participation metrics
+- [Protocol Status](https://defi369.github.io/digital-nation-website/protocol-status.html): protocol attestation state
+- [Research](https://defi369.github.io/digital-nation-website/research.html): research programs and papers

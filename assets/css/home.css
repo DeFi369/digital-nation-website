@@ -652,6 +652,15 @@
   font-size: 13px;
   line-height: 1.6;
 }
+.press-section .section-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  color: var(--color-muted);
+  font-size: 14px;
+  max-width: 640px;
+}
 .press-feed .press-empty {
   font-family: var(--font-mono);
   font-size: 12px;
