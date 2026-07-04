@@ -20,8 +20,9 @@
     var container = document.getElementById('protocol-stack');
     if (!container) return;
     fetch('assets/data/protocol-data.json')
-      .then(function (res) { return res.json(); })
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
       .then(function (data) {
+        try { window.__protocolDataLoaded = true; } catch (e) {}
         var stacks = Array.isArray(data.stacks) ? data.stacks : [];
         container.innerHTML = stacks.map(function (stack) {
           var highlights = Array.isArray(stack.highlights) ? stack.highlights.map(function (h) {
@@ -47,8 +48,9 @@
     var container = document.getElementById('protocol-metrics');
     if (!container) return;
     fetch('assets/data/protocol-data.json')
-      .then(function (res) { return res.json(); })
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
       .then(function (data) {
+        try { window.__protocolDataLoaded = true; } catch (e) {}
         var metrics = data.metrics || {};
         var items = [
           { label: 'AEP Version', value: metrics.aepVersion || '-' },
@@ -74,8 +76,9 @@
     var container = document.getElementById('protocol-benefits');
     if (!container) return;
     fetch('assets/data/protocol-data.json')
-      .then(function (res) { return res.json(); })
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
       .then(function (data) {
+        try { window.__protocolDataLoaded = true; } catch (e) {}
         var benefits = Array.isArray(data.citizenBenefits) ? data.citizenBenefits : [];
         container.innerHTML = benefits.map(function (benefit) {
           return '<li>' + escapeHtml(benefit) + '</li>';
@@ -90,8 +93,9 @@
     var container = document.getElementById('quantum-status');
     if (!container) return;
     fetch('assets/data/protocol-data.json')
-      .then(function (res) { return res.json(); })
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
       .then(function (data) {
+        try { window.__protocolDataLoaded = true; } catch (e) {}
         var q = data.quantum || {};
         if (!q.available) {
           container.innerHTML = '<div class="activity-empty">Quantum compute signal is not available yet.</div>';
@@ -118,8 +122,9 @@
     var container = document.getElementById('protocol-attestation');
     if (!container) return;
     fetch('assets/data/protocol-data.json')
-      .then(function (res) { return res.json(); })
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
       .then(function (data) {
+        try { window.__protocolDataLoaded = true; } catch (e) {}
         var metrics = data.metrics || {};
         var manifestCount = metrics.identityManifestCount || 0;
         var keyCount = metrics.identityKeyCount || 0;
@@ -160,8 +165,9 @@
       return;
     }
     fetch('assets/data/protocol-data.json')
-      .then(function (res) { return res.json(); })
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
       .then(function (data) {
+        try { window.__protocolDataLoaded = true; } catch (e) {}
         var names = Array.isArray(data.verifiedIdentities) ? data.verifiedIdentities : [];
         if (!names.length) {
           container.innerHTML = '<div class="activity-empty">No verified identities yet.</div>';

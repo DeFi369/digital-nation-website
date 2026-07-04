@@ -146,7 +146,7 @@
     ],
     "identityManifestCount": 19,
     "identityKeyCount": 19,
-    "latestCommit": "3dcc776f4917985791f9243d81d7a2df00ee1966 feat: add inline SVG protocol stack diagram to protocol-status.html",
+    "latestCommit": "ad990aefc023e71b115a477fe089e991464dbb2e fix: restore index.html from committed broken state and add Protocol Status / Quantum Roadmap discoverability",
     "latestCommitDate": "2026-07-04",
     "lastAudit": "2026-07-04"
   },
