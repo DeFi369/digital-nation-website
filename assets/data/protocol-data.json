@@ -144,8 +144,8 @@
       "research.html",
       "sovereign-security.html"
     ],
-    "identityManifestCount": 19,
-    "identityKeyCount": 19,
+    "identityManifestCount": 18,
+    "identityKeyCount": 18,
     "latestCommit": "7bf1d73b8e35b8bad2b3420a646d752a97641be8 Refresh protocol attestation counts to 16 verified identities",
     "latestCommitDate": "2026-07-03",
     "lastAudit": "2026-07-03"
@@ -180,6 +180,7 @@
     "secretary_of_external_affairs",
     "assembly_speaker",
     "chair_constitutional_council",
-    "constitutional_court"
+    "constitutional_court",
+    "chief_electoral_officer"
   ]
 }
