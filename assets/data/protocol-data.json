@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-03",
+  "generated": "2026-07-04",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -135,7 +135,7 @@
     "signatureStatus": "pre-v1.0",
     "totalComponents": 21,
     "artifactFileCount": 40,
-    "pageCount": 68,
+    "pageCount": 69,
     "crossRepoPageCount": 5,
     "crossRepoPages": [
       "ecosystem-status.html",
@@ -146,17 +146,17 @@
     ],
     "identityManifestCount": 19,
     "identityKeyCount": 19,
-    "latestCommit": "2b97dde6df9f0ea57303c503450ba2e2c6ca445f Add Guide to Nation onboarding flow to getting-started.html (HyperLightSite \u2192 digital-nation-website layers)",
-    "latestCommitDate": "2026-07-03",
-    "lastAudit": "2026-07-03"
+    "latestCommit": "3dcc776f4917985791f9243d81d7a2df00ee1966 feat: add inline SVG protocol stack diagram to protocol-status.html",
+    "latestCommitDate": "2026-07-04",
+    "lastAudit": "2026-07-04"
   },
   "quantum": {
     "available": true,
-    "collapseChosenLattice": "lattice-memory",
+    "collapseChosenLattice": "lattice-national",
     "afterNormalizeTotal": 0.9999999999999998,
     "boosterPhaseReady": true
   },
-  "quantumAttestation": "dbc7bcc3d4d89374",
+  "quantumAttestation": "9be76a6da8434473",
   "verifiedIdentities": [
     "president",
     "secretary_of_technology_science_and_innovation",
