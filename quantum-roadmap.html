@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/digital-nation-website/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quantum Attestation Hardware Roadmap: AETHERIA's phased path to sovereign quantum attestation with open hardware, QRNG, FPGA simulation, and on-premise QPU.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/quantum-roadmap.html">
+  <meta property="og:title" content="Quantum Attestation Hardware Roadmap — The Principality of Aetheria">
+  <meta property="og:description" content="AETHERIA's transparent, phased roadmap to sovereign quantum attestation — no cloud quantum, full hardware sovereignty.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/quantum-roadmap.html">
+  <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Quantum Attestation Hardware Roadmap — The Principality of Aetheria">
+  <meta name="twitter:description" content="A transparent, phased roadmap to sovereign quantum attestation with open hardware and zero vendor lock-in.">
+  <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/digital-nation-logo.svg">
+
+  <title>Quantum Attestation Hardware Roadmap — The Principality of Aetheria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="./favicon.ico">
+  <style>
+    .roadmap-phase {
+      background: rgba(122,167,255,0.06);
+      border: 1px solid #1f2630;
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin: 18px 0 26px;
+    }
+    .roadmap-phase h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
+    .roadmap-phase .phase-meta {
+      color: var(--color-muted);
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+    .roadmap-phase ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .roadmap-phase li {
+      margin: 6px 0;
+    }
+    .roadmap-phase .sovereignty-check {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #1f2630;
+      color: var(--color-muted);
+      font-size: 0.92rem;
+    }
+    .roadmap-phase .sovereignty-check strong {
+      color: var(--color-text);
+    }
+    .landscape-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      font-size: 0.95rem;
+    }
+    .landscape-table th,
+    .landscape-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #1f2630;
+      text-align: left;
+      vertical-align: top;
+    }
+    .landscape-table th {
+      color: var(--color-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+    .landscape-table tr:last-child td {
+      border-bottom: none;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #232a34;
+      background: rgba(122,167,255,0.12);
+      color: var(--color-text);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .pill-best {
+      background: rgba(122,167,255,0.22);
+      border-color: rgba(122,167,255,0.45);
+    }
+    .pill-warn {
+      background: rgba(192,132,252,0.12);
+      border-color: rgba(192,132,252,0.35);
+    }
+    .callout {
+      background: rgba(122,167,255,0.08);
+      border-left: 3px solid #7aa7ff;
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      margin: 18px 0;
+    }
+    .callout p {
+      margin: 0;
+    }
+    .budget-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 14px 0 18px;
+    }
+    .budget-card {
+      background: rgba(122,167,255,0.06);
+      border: 1px solid #1f2630;
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .budget-card .budget-value {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    .budget-card .budget-label {
+      color: var(--color-muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+    .actions-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      font-size: 0.95rem;
+    }
+    .actions-table th,
+    .actions-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #1f2630;
+      text-align: left;
+      vertical-align: top;
+    }
+    .actions-table th {
+      color: var(--color-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+    @media (max-width: 720px) {
+      .landscape-table,
+      .actions-table {
+        font-size: 0.9rem;
+      }
+      .landscape-table th,
+      .landscape-table td,
+      .actions-table th,
+      .actions-table td {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body class="page-quantum-roadmap">
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="assets/images/digital-nation-logo.svg" alt="The Principality of Aetheria"/>
+        <span class="logo-text">AETHERIA</span>
+      </a>
+      <span class="member-counter" id="member-counter" title="Registered citizens">
+        <span class="member-counter-label" aria-hidden="true">Members</span>
+        <span class="member-counter-value" id="member-count" aria-live="polite" aria-label="Current member total">--</span>
+      </span>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+            <nav class="menu" id="site-menu" aria-hidden="true"></nav>
+            </header>
+
+  <main id="main">
+    <section class="page">
+      <div class="container">
+        <h1>Quantum Attestation Hardware Roadmap</h1>
+        <p class="lead">
+          AETHERIA is building a sovereign quantum attestation system that does not depend on any cloud quantum provider,
+          closed vendor hardware, or external entropy sources we cannot audit ourselves. This page explains where we are,
+          where we are going, and what it means for citizens.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>Sovereignty rule:</strong> no cloud quantum services at any phase. All hardware paths are local-first,
+            open-hardware where possible, and fully auditable by AETHERIA engineers and citizens.
+          </p>
+        </div>
+
+        <h2>What Is Quantum Attestation?</h2>
+        <p>
+          Every time the Nation records an important action — a protocol update, a governance decision, an identity verification —
+          it creates an <strong>attestation</strong>: a short, verifiable fingerprint of that moment.
+          Today this fingerprint is generated entirely in software using deterministic math.
+        </p>
+        <p>
+          <strong>Quantum attestation</strong> upgrades that fingerprint with true quantum randomness drawn from physical hardware,
+          not a software pseudo-random number generator. The result is a tamper-evident record whose entropy source can be inspected,
+          certified, and reproduced by independent hardware review.
+        </p>
+
+        <h2>Where We Are Today</h2>
+        <p>
+          Our current system, <code>quantum-lattice-harness.py</code>, runs in pure software. It simulates quantum superposition
+          and collapse using Python math, then hashes the result. That is enough for demonstration and protocol integration,
+          but it relies on a classical pseudo-random number generator for the most important ingredient: the Born-rule sampling
+          that chooses the lattice state.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>Citizen impact:</strong> software-only attestation is transparent and auditable at the code level,
+            but it cannot prove that its randomness came from a physical quantum process. For high-assurance sovereignty,
+            we need hardware entropy that citizens and auditors can verify independently.
+          </p>
+        </div>
+
+        <h2>The Hardware Landscape</h2>
+        <p>
+          We evaluated three classes of hardware: quantum random number generators (QRNG) for entropy,
+          FPGA-based quantum simulators for acceleration, and on-premise QPUs for genuine quantum measurement.
+          The table below summarises the options and their sovereignty rating.
+        </p>
+
+        <h3>Quantum Random Number Generators</h3>
+        <table class="landscape-table" aria-label="Quantum random number generator options">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Form factor</th>
+              <th>Sovereignty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pill pill-best">Quantum Village Entropy Loop</span></td>
+              <td>Open hardware kit</td>
+              <td>Fully open design; ~$35–$100; best for sovereignty</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-best">KevinFasusi/qrng (DIY)</span></td>
+              <td>DIY FPGA + optics</td>
+              <td>Open source firmware/hardware; ~$200–$500 parts</td>
+            </tr>
+            <tr>
+              <td><span class="pill">Quside</span></td>
+              <td>PCIe / Appliance</td>
+              <td>Partially open; vendor firmware trust required</td>
+            </tr>
+            <tr>
+              <td><span class="pill">ID Quantique Quantis</span></td>
+              <td>USB / PCIe / Chip</td>
+              <td>Closed firmware; NDA for chip; Swiss/EU</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-warn">Intel/AMD RDRAND</span></td>
+              <td>On-chip</td>
+              <td>Not quantum; microcode is a black box</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>On-Premise Quantum Processing</h3>
+        <table class="landscape-table" aria-label="On-premise QPU options">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Type</th>
+              <th>Sovereignty path</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pill pill-best">Open Quantum Design Equilux</span></td>
+              <td>Trapped ion</td>
+              <td>Open hardware target; 2026–2027 deployment horizon</td>
+            </tr>
+            <tr>
+              <td><span class="pill">IQM</span></td>
+              <td>Superconducting</td>
+              <td>Finnish; some open collaboration; closed hardware</td>
+            </tr>
+            <tr>
+              <td><span class="pill">Rigetti Novera</span></td>
+              <td>Superconducting</td>
+              <td>Closed hardware; on-premise available</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-warn">Quantinuum / IonQ</span></td>
+              <td>Trapped ion</td>
+              <td>Cloud only; no on-premise path</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>FPGA Quantum Simulation</h3>
+        <table class="landscape-table" aria-label="FPGA quantum simulator options">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Purpose</th>
+              <th>Sovereignty note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pill pill-best">QICK (Fermilab)</span></td>
+              <td>Qubit control/readout</td>
+              <td>Fully open; $3K–$10K RFSoC board</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-best">QuTrefoil-class FPGA sim</span></td>
+              <td>Quantum circuit simulation</td>
+              <td>Academic open designs; 43+ qubits demonstrated</td>
+            </tr>
+            <tr>
+              <td><span class="pill">Xilinx/AMD RFSoC custom RTL</span></td>
+              <td>Custom simulator</td>
+              <td>Open RTL possible; hardware available</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Our Phased Plan</h2>
+        <p>
+          We will move from software-only to full quantum attestation in three phases.
+          Each phase is self-contained and does not depend on cloud vendors or closed hardware.
+        </p>
+
+        <h3>Phase 1 — Entropy Sovereignty (Weeks 1–12)</h3>
+        <div class="roadmap-phase">
+          <h3>Add true quantum randomness</h3>
+          <div class="phase-meta">Cost: under $500 &nbsp;|&nbsp; Timeline: ~6–8 weeks &nbsp;|&nbsp; Approval: autonomous within ops budget</div>
+          <ul>
+            <li>Procure or build an open QRNG device, starting with the Quantum Village Entropy Loop.</li>
+            <li>Build a Python driver that reads the entropy stream over USB/serial.</li>
+            <li>Replace the software pseudo-random sampler in <code>quantum-lattice-harness.py</code> with the QRNG stream.</li>
+            <li>Run continuous health tests so the system can prove its entropy quality at any moment.</li>
+            <li>Publish the QRNG hardware schematic and firmware source for audit.</li>
+          </ul>
+          <div class="sovereignty-check">
+            <strong>Sovereignty checkpoint:</strong> hardware schematic published, firmware audited, entropy health metrics logged,
+            zero binary blobs in the entropy path.
+          </div>
+        </div>
+
+        <h3>Phase 2 — Amplitude Acceleration (Months 4–12)</h3>
+        <div class="roadmap-phase">
+          <h3>Speed up quantum simulation with open FPGA hardware</h3>
+          <div class="phase-meta">Cost: ~$5K–$10K &nbsp;|&nbsp; Timeline: ~4–6 months &nbsp;|&nbsp; Approval: ministerial (CapEx under $10K)</div>
+          <ul>
+            <li>Procure a QICK-compatible RFSoC development board.</li>
+            <li>Port the quantum-lattice amplitude-evolution math to FPGA firmware.</li>
+            <li>Store the superposed lattice state vector in on-board memory and run Born-rule collapse in hardware.</li>
+            <li>Deliver a hybrid harness that falls back to software when FPGA is unavailable.</li>
+          </ul>
+          <div class="sovereignty-check">
+            <strong>Sovereignty checkpoint:</strong> all RTL published under open licence, no vendor IP cores in the critical path,
+            FPGA bitstream reproducible from source, attestation includes git commit and bitstream hash.
+          </div>
+        </div>
+
+        <h3>Phase 3 — True Quantum Attestation (Years 2–3)</h3>
+        <div class="roadmap-phase">
+          <h3>Install an on-premise QPU whose measurements become the attestation root of trust</h3>
+          <div class="phase-meta">Cost: ~$1.5M–$3.5M over 3 years &nbsp;|&nbsp; Timeline: 2–3 years &nbsp;|&nbsp; Approval: presidential + Assembly (CapEx above $500K)</div>
+          <ul>
+            <li>Evaluate the Open Quantum Design Equilux system and confirm suitability for governance workloads.</li>
+            <li>Procure cryogenic and vacuum infrastructure, then install and calibrate the trapped-ion system.</li>
+            <li>Upgrade the attestation protocol so QPU measurement records are part of the hash chain.</li>
+            <li>Complete a full hardware/software sovereignty audit with independent reviewers.</li>
+          </ul>
+          <div class="sovereignty-check">
+            <strong>Sovereignty checkpoint:</strong> full hardware schematics accessible, control firmware open source and QICK-compatible,
+            no remote management backdoors, attestation root of trust bound to QPU measurement hardware.
+          </div>
+        </div>
+
+        <h2>How the System Evolves</h2>
+        <p>
+          Each phase keeps the same core interface — <code>SHA256(collapse + normalize + hardware_metadata)</code> —
+          but enriches the metadata with physical entropy quality, FPGA state, and eventually QPU measurement records.
+          This means the citizen-visible attestation hash remains short and readable while the underlying proof grows stronger.
+        </p>
+
+        <h2>What Citizens Should Expect</h2>
+        <div class="columns">
+          <div class="card">
+            <h3>Transparency First</h3>
+            <p>
+              All QRNG schematics, FPGA RTL, and QPU control firmware will be published.
+              Citizens and auditors can inspect the exact hardware path that produces attestation entropy.
+            </p>
+          </div>
+          <div class="card">
+            <h3>No Surprise Bills</h3>
+            <p>
+              Phases 1–2 are small, self-funded steps that use open-source hardware and existing engineering capacity.
+              Phase 3 requires explicit budget approval and will be published with full cost breakdown before procurement.
+            </p>
+          </div>
+          <div class="card">
+            <h3>No Vendor Lock-In</h3>
+            <p>
+              No phase relies on a single commercial vendor. Every path has an open-hardware fallback,
+              and attestation continues even if one component is replaced.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Continuous Auditability</h3>
+            <p>
+              Entropy health, FPGA bitstream hashes, and QPU calibration records are logged to the evidence ledger.
+              Oversight bodies and citizens can verify the chain at any time.
+            </p>
+          </div>
+        </div>
+
+        <h2>Risks and Mitigations</h2>
+        <table class="landscape-table" aria-label="Risk register">
+          <thead>
+            <tr>
+              <th>Risk</th>
+              <th>Likelihood</th>
+              <th>Impact</th>
+              <th>Mitigation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>QRNG supply chain</td>
+              <td>Medium</td>
+              <td>Low</td>
+              <td>Multiple open designs; DIY fallback</td>
+            </tr>
+            <tr>
+              <td>FPGA quantum math bugs</td>
+              <td>High</td>
+              <td>Medium</td>
+              <td>Property-based testing vs software reference; formal verification</td>
+            </tr>
+            <tr>
+              <td>OQD timeline slips</td>
+              <td>High</td>
+              <td>High</td>
+              <td>FPGA simulator is a sovereign fallback; no dependency</td>
+            </tr>
+            <tr>
+              <td>Cryogenic expertise hiring</td>
+              <td>Medium</td>
+              <td>High</td>
+              <td>University partnership; contract specialist</td>
+            </tr>
+            <tr>
+              <td>QPU export control</td>
+              <td>Low</td>
+              <td>High</td>
+              <td>Track Wassenaar; open designs are less restricted</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Budget at a Glance</h2>
+        <div class="budget-grid">
+          <div class="budget-card">
+            <div class="budget-value">&lt;$500</div>
+            <div class="budget-label">Phase 1: QRNG entropy (CapEx)</div>
+          </div>
+          <div class="budget-card">
+            <div class="budget-value">$5K–$10K</div>
+            <div class="budget-label">Phase 2: FPGA simulator (CapEx)</div>
+          </div>
+          <div class="budget-card">
+            <div class="budget-value">$1.35M–$4M</div>
+            <div class="budget-label">Phase 3: On-premise QPU (3-year total)</div>
+          </div>
+        </div>
+        <p>
+          Phases 1–2 are fully funded within existing operations. Phase 3 requires explicit budget allocation
+          and Presidential approval before any procurement begins.
+        </p>
+
+        <h2>Immediate Next Actions</h2>
+        <table class="actions-table" aria-label="Immediate next actions">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Owner</th>
+              <th>Deadline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Order Quantum Village Entropy Loop kit</td>
+              <td>Secretary of Technology</td>
+              <td>2026-07-11</td>
+            </tr>
+            <tr>
+              <td>Create <code>qrng-driver.py</code> skeleton in <code>/scripts</code></td>
+              <td>Quantum Engineer</td>
+              <td>2026-07-11</td>
+            </tr>
+            <tr>
+              <td>File Phase 1 tracking issue in kanban</td>
+              <td>Secretary of Technology</td>
+              <td>2026-07-07</td>
+            </tr>
+            <tr>
+              <td>Draft QRNG integration spec (interface + health API)</td>
+              <td>Quantum Engineer</td>
+              <td>2026-07-14</td>
+            </tr>
+            <tr>
+              <td>Evaluate ZCU111 vs ZCU216 for Phase 2</td>
+              <td>Quantum Engineer</td>
+              <td>2026-07-18</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Governance and Approval</h2>
+        <p>
+          Phase 1 proceeds under ordinary operations authority. Phase 2 requires ministerial approval for capital expenditure
+          under $10,000. Phase 3 requires Presidential approval and Assembly confirmation because it exceeds $500,000
+          and introduces cryogenic and laser-hazard infrastructure.
+        </p>
+
+        <h2>Related Pages</h2>
+        <div class="columns">
+          <div class="card">
+            <h3>Protocol Status</h3>
+            <p>
+              <a href="protocol-status.html">Protocol Status</a> shows the live quantum compute signal,
+              attestation hash, and verified identities generated by the current software harness.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Technology</h3>
+            <p>
+              <a href="technology.html">Technology, Science &amp; Innovation</a> publishes operational updates,
+              infrastructure services, and the emerging-technology pipeline.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Transparency</h3>
+            <p>
+              <a href="transparency.html">Transparency</a> publishes audit-ready reports and open-records disclosures
+              from ministries governed by this protocol stack.
+            </p>
+          </div>
+        </div>
+
+        <div class="legal-block">
+          <p>This roadmap is maintained by the Secretary of Technology, Science &amp; Innovation. Updates are published through the same immutable audit trail used for AEP and dynAEP.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <strong>THE PRINCIPALITY OF AETHERIA</strong>
+          <span class="footer-tagline">Sovereign by code</span>
+        </div>
+        <div class="footer-meta">
+          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
+          <span class="footer-status" aria-label="Public network status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Network Active
+          </span>
+          <span class="footer-year" data-year>2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

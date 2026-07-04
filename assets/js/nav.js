@@ -71,6 +71,8 @@ var DigitalNationNav = (function () {
       { href: 'missions.html', label: 'Missions' },
       { href: 'diplomacy.html', label: 'Diplomacy' },
       { href: 'protocol.html', label: 'Protocol' },
+      { href: 'protocol-status.html', label: 'Protocol Status' },
+      { href: 'quantum-roadmap.html', label: 'Quantum Roadmap' },
       { href: 'consular.html', label: 'Consular' },
       { href: 'culture.html', label: 'Culture' },
       { href: 'communications.html', label: 'Communications' }
