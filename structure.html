@@ -76,8 +76,21 @@
 <body class="page-structure" data-theme="foundations">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="nav" id="site-header-nav">
-      <template id="site-header-nav-template" data-nav="header"></template>
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="assets/images/digital-nation-logo.svg" alt="The Principality of Aetheria"/>
+        <span class="logo-text">AETHERIA</span>
+      </a>
+      <span class="member-counter" id="member-counter" title="Registered citizens">
+        <span class="member-counter-label" aria-hidden="true">Members</span>
+        <span class="member-counter-value" id="member-count" aria-live="polite" aria-label="Current member total">--</span>
+      </span>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <nav class="menu" id="site-menu" aria-hidden="true"></nav>
     </div>
   </header>
 
@@ -209,85 +222,9 @@
           </span>
           <span class="footer-year" data-year>2026</span>
         </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <details class="nav-dropdown footer-dropdown">
-            <summary>Foundations</summary>
-            <div class="dropdown-wrap">
-              <a href="about.html">About</a>
-              <a href="goals.html">Goals</a>
-              <a href="initiatives.html">Initiatives</a>
-              <a href="manifesto.html">Manifesto</a>
-              <a href="charter.html">Charter</a>
-              <a href="charter-addendum.html">Charter Addendum</a>
-              <a href="structure.html">Structure</a>
-              <a href="contact.html">Contact</a>
-            </div>
-          </details>
-          <details class="nav-dropdown footer-dropdown">
-            <summary>Governance</summary>
-            <div class="dropdown-wrap">
-              <a href="assembly.html">Assembly</a>
-              <a href="court.html">Court</a>
-              <a href="justice.html">Justice</a>
-              <a href="safety.html">Safety</a>
-            </div>
-          </details>
-          <details class="nav-dropdown footer-dropdown">
-            <summary>Identity</summary>
-            <div class="dropdown-wrap">
-              <a href="citizenship.html">Citizenship</a>
-              <a href="passport.html">Passport</a>
-              <a href="registry.html">Registry</a>
-            </div>
-          </details>
-          <details class="nav-dropdown footer-dropdown">
-            <summary>Policy</summary>
-            <div class="dropdown-wrap">
-              <a href="economy.html">Economy</a>
-              <a href="finance.html">Finance</a>
-              <a href="treasury.html">Treasury</a>
-              <a href="environment.html">Environment</a>
-              <a href="sustainability.html">Sustainability</a>
-              <a href="science.html">Science</a>
-              <a href="technology.html">Technology</a>
-              <a href="research.html">Research & Laboratory Policy</a>
-              <a href="labs.html">Laboratory Operations & Safety</a>
-              <a href="emerging-tech.html">Emerging Technologies</a>
-              <a href="health-equity.html">Health Equity</a>
-              <a href="bandwidth.html">Bandwidth</a>
-              <a href="education.html">Education</a>
-              <a href="health.html">Health</a>
-              <a href="infrastructure.html">Infrastructure</a>
-            </div>
-          </details>
-          <details class="nav-dropdown footer-dropdown">
-            <summary>Diplomacy</summary>
-            <div class="dropdown-wrap">
-              <a href="recognition.html">Recognition</a>
-              <a href="missions.html">Missions</a>
-              <a href="diplomacy.html">Diplomacy</a>
-              <a href="protocol.html">Protocol</a>
-              <a href="consular.html">Consular</a>
-              <a href="culture.html">Culture</a>
-              <a href="communications.html">Communications</a>
-            </div>
-          </details>
-          <details class="nav-dropdown footer-dropdown">
-            <summary>Engagement</summary>
-            <div class="dropdown-wrap">
-              <a href="engage.html">Engage</a>
-              <a href="tools.html">Tools</a>
-              <a href="transparency.html">Transparency</a>
-              <a href="digital-service-corps.html">Digital Service Corps</a>
-              <a href="elections.html">Elections & Petitions</a>
-              <a href="open-records.html">Open Records</a>
-              <a href="data-governance.html">Data Governance</a>
-              <a href="situational-awareness.html">Situational Awareness</a>
-            </div>
-          </details>
-        </nav>
+        <nav class="footer-nav" aria-label="Footer"></nav>
         <div class="footer-extras">
-          <a class="social-link" href="https://github.com" rel="noopener noreferrer" target="_blank" aria-label="GitHub repository">
+          <a class="social-link" href="https://github.com/DeFi369/digital-nation-website" rel="noopener noreferrer" target="_blank" aria-label="GitHub repository">
             <span aria-hidden="true">GitHub</span>
           </a>
         </div>
@@ -315,8 +252,7 @@
         if (iframe.getAttribute('data-loaded')) return;
         iframe.setAttribute('data-loaded', 'true');
         iframe.srcdoc = [
-          '<!DOCTYPE html><html lang="en"><head>
-  <base href="/digital-nation-website/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Structure Map</title>',
+          '<!DOCTYPE html><html lang="en"><head><base href="/digital-nation-website/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Structure Map</title>',
           '<style>',
           ':root { --bg:#020617; --panel:#0f172a; --text:#e2e8f0; --muted:#94a3b8; --accent:#22d3ee; accent:#34d399; yellow:#fbbf24; orange:#fb923c; pink:#fb7185; }',
           'body{margin:0;background:radial-gradient(circle at top center,#082f49,#020617);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}',
