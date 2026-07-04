@@ -238,6 +238,16 @@ if lattice_bridge.exists() and lattice_summary_path.parent.exists():
     }
     lattice_summary_path.write_text(json.dumps(lattice_summary, indent=2) + '\n')
 
+    # Preserve verifiedIdentities from existing file if present
+    verified_identities = []
+    if OUT.exists():
+        try:
+            existing = json.loads(OUT.read_text())
+            if 'verifiedIdentities' in existing:
+                verified_identities = existing['verifiedIdentities']
+        except Exception:
+            pass
+
 out = {
     'generated': datetime.date.today().isoformat(),
     'generator': 'protocol-data-generator',
@@ -246,6 +256,7 @@ out = {
     'metrics': metrics,
     'quantum': quantum_status,
     'quantumAttestation': quantum_attestation,
+    'verifiedIdentities': verified_identities,
     'citizenBenefits': [
         'Deterministic transparency for public services',
         'Auditable automation via evidence ledgers',
