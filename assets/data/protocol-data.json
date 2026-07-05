@@ -136,13 +136,14 @@
     "totalComponents": 21,
     "artifactFileCount": 40,
     "pageCount": 70,
-    "crossRepoPageCount": 5,
+    "crossRepoPageCount": 6,
     "crossRepoPages": [
       "ecosystem-status.html",
       "memory-lattice.html",
       "protocol-status.html",
       "research.html",
-      "sovereign-security.html"
+      "sovereign-security.html",
+      "worldhermes.html"
     ],
     "identityManifestCount": 19,
     "identityKeyCount": 19,
