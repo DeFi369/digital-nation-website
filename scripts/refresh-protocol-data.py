@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Refresh digital-nation-website protocol data from AEP/dynAEP/GAP/conformance/signatures artifacts."""
 from pathlib import Path
-import re, json, datetime, subprocess, sys
+import re, json, datetime, subprocess, sys, hashlib
 
 REPO_ROOT = Path('/home/user/repos')
 SITE_ROOT = REPO_ROOT / 'digital-nation-website'
@@ -42,7 +42,7 @@ def _extract_first_json_object(text: str) -> dict | None:
 
 aep_text = read_text(REPO_ROOT / 'AEP' / 'README.md', 3000)
 dynaep_text = read_text(REPO_ROOT / 'dynAEP' / 'README.md', 3000)
-gap_text = read_text(REPO_ROOT / 'GAP' / 'README.md', 3000)
+gap_text = read_text(REPO_ROOT / 'GAP' / 'README.md')
 conformance_text = read_text(REPO_ROOT / 'aep-conformance' / 'README.md', 3000)
 signatures_text = read_text(REPO_ROOT / 'aep-signatures' / 'README.md', 3000)
 
@@ -125,14 +125,14 @@ stacks = [
         'highlights': ['Native MCP server with 7 tools', 'Partial-order event validation at arrival time', 'GAP-to-dynAEP translation', 'Auto-discovery bootstrap'],
     }),
     build_stack({
-        'id': 'gap',
-        'name': 'GAP',
-        'fullName': 'Governed Agentic Programming',
-        'version_patterns': [r'version:\s*"?([0-9.]+)"?', r'Version\s+([0-9.]+)'],
-        'status_default': 'active',
-        'components': ['Meta-Schema', 'Constrained decoding', 'Structural validation', 'Governance lattice', 'Subprotocol validators'],
-        'highlights': ['Three-layer enforcement', 'Self-governing by construction', 'YAML-native instruction format', 'Provenance and proof chain tracking'],
-    }),
+            'id': 'gap',
+            'name': 'GAP',
+            'fullName': 'Governed Agentic Programming',
+            'version_patterns': [r'Language Specification v([0-9]+\.[0-9]+)', r'v1\.2', r'v1\.1', r'version:\s*"?([0-9.]+)"?', r'Version\s+([0-9.]+)'],
+            'status_default': 'active',
+            'components': ['Meta-Schema', 'Constrained decoding', 'Structural validation', 'Governance lattice', 'Subprotocol validators'],
+            'highlights': ['Three-layer enforcement', 'Self-governing by construction', 'YAML-native instruction format', 'Provenance and proof chain tracking'],
+        }),
     build_stack({
         'id': 'conformance',
         'name': 'aep-conformance',
@@ -240,7 +240,18 @@ if lattice_bridge.exists() and lattice_summary_path.parent.exists():
 
     # Preserve verifiedIdentities from existing file if present
     verified_identities = []
-    if OUT.exists():
+    # Generate fresh list from identity-manifest.json files
+    for manifest_path in sorted(HERMES_DIR.glob('profiles/*/identity-manifest.json')):
+        try:
+            manifest = json.loads(manifest_path.read_text())
+            profile = manifest.get('profile')
+            if profile and 'error' not in manifest:
+                verified_identities.append(profile)
+        except Exception:
+            pass
+    
+    # If no manifests found, fall back to existing file
+    if not verified_identities and OUT.exists():
         try:
             existing = json.loads(OUT.read_text())
             if 'verifiedIdentities' in existing:
@@ -265,6 +276,15 @@ out = {
         'Local identity verification for agent accountability'
     ]
 }
+
+# Preserve attestation if present in existing file
+if OUT.exists():
+    try:
+        existing = json.loads(OUT.read_text())
+        if 'attestation' in existing:
+            out['attestation'] = existing['attestation']
+    except Exception:
+        pass
 
 OUT.write_text(json.dumps(out, indent=2) + '\n')
 print(f'Wrote {OUT}')

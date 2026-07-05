@@ -36,7 +36,8 @@ var DigitalNationNav = (function () {
       { href: 'science.html', label: 'Science' },
       { href: 'technology.html', label: 'Technology' },
       { href: 'research-papers.html', label: 'Research Papers' },
-      { href: 'https://github.com/defi369/WorldHermes', label: 'WorldHermes', external: true },
+      { href: 'https://github.com/defi369/WorldHermes', label: 'WorldHermes — AI Research', external: true },
+      { href: 'sovereign-security.html', label: 'Sovereign Security' },
       { href: 'health-equity.html', label: 'Health Equity' },
       { href: 'bandwidth.html', label: 'Bandwidth' },
       { href: 'education.html', label: 'Education' },
@@ -52,7 +53,9 @@ var DigitalNationNav = (function () {
       { href: 'quantum-roadmap.html', label: 'Quantum Roadmap' },
       { href: 'consular.html', label: 'Consular' },
       { href: 'culture.html', label: 'Culture' },
-      { href: 'communications.html', label: 'Communications' }
+      { href: 'communications.html', label: 'Communications' },
+      { href: 'https://sayitdefi.com', label: 'SayIt (Citizen Press)', external: true },
+      { href: 'https://waveonpulse.com', label: 'Wave (Citizen Radio)', external: true }
     ]},
     { label: 'Engagement', links: [
       { href: 'engage.html', label: 'Engage' },

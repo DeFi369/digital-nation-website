@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-04",
+  "generated": "2026-07-05",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -43,7 +43,7 @@
       "id": "gap",
       "name": "GAP",
       "fullName": "Governed Agentic Programming",
-      "version": "unknown",
+      "version": "1.1",
       "status": "active",
       "source": "repos/gap/README.md",
       "summary": "# GAP: Governed Agentic Programming Native instructions language for governed, self-improving, mathematically verifiable agency. Part of the Agent Element Protocol ecosystem. GAP is a complete structural programming la",
@@ -69,26 +69,26 @@
         "Schema checks"
       ],
       "artifacts": [
-        "LICENSE",
         "README.md",
+        "LICENSE",
         ".gitkeep",
-        "index",
-        "HEAD",
         "packed-refs",
-        "description",
+        "index",
         "FETCH_HEAD",
+        "description",
+        "HEAD",
         "config",
         "ORIG_HEAD",
-        ".gitkeep",
-        ".gitkeep",
-        "pre-commit.sample",
-        "pre-applypatch.sample",
-        "push-to-checkout.sample",
+        "prepare-commit-msg.sample",
+        "pre-merge-commit.sample",
+        "sendemail-validate.sample",
         "pre-receive.sample",
-        "pre-push.sample",
+        "pre-applypatch.sample",
         "fsmonitor-watchman.sample",
-        "applypatch-msg.sample",
-        "prepare-commit-msg.sample"
+        "push-to-checkout.sample",
+        "pre-rebase.sample",
+        "update.sample",
+        "post-update.sample"
       ]
     },
     {
@@ -105,32 +105,32 @@
       ],
       "artifacts": [
         "LICENSE-CONTENT",
-        "LICENSE-TOOLING",
-        "README.md",
         "setup.py",
-        "__init__.py",
         "README.md",
-        "demo_verifier.py",
-        "index",
-        "HEAD",
-        "packed-refs",
-        "description",
-        "COMMIT_EDITMSG",
-        "FETCH_HEAD",
-        "config",
-        "ORIG_HEAD",
+        "LICENSE-TOOLING",
         ".gitkeep",
+        "test_signature_loader.cpython-313-pytest-9.1.1.pyc",
+        "signature_loader.cpython-313.pyc",
         "example-bundle-001.json",
         ".gitkeep",
-        "entry_points.txt",
-        "SOURCES.txt"
+        "manifest.json",
+        ".gitkeep",
+        "packed-refs",
+        "index",
+        "FETCH_HEAD",
+        "description",
+        "COMMIT_EDITMSG",
+        "HEAD",
+        "config",
+        "ORIG_HEAD",
+        "prepare-commit-msg.sample"
       ]
     }
   ],
   "metrics": {
     "aepVersion": "2.8.0",
     "dynaepVersion": "1.0",
-    "gapStatus": "unknown",
+    "gapStatus": "1.1",
     "conformanceStatus": "pre-v1.0",
     "signatureStatus": "pre-v1.0",
     "totalComponents": 21,
@@ -146,9 +146,9 @@
     ],
     "identityManifestCount": 19,
     "identityKeyCount": 19,
-    "latestCommit": "02263f784bb1b30a41c81f60e3e377b8cb0ca2b3 fix: remove stale inline dropdown markup from empty site-menu nav blocks",
+    "latestCommit": "414a6d29e11515ddef8f5a8cce56decb0b746dff feat: social cards, agent-friendly layer, State Bulletins, link checker, page-core consolidation",
     "latestCommitDate": "2026-07-04",
-    "lastAudit": "2026-07-04"
+    "lastAudit": "2026-07-05"
   },
   "quantum": {
     "available": true,
@@ -183,5 +183,14 @@
     "Sovereign resilience without vendor lock-in",
     "Temporal governance for trustworthy timestamps",
     "Local identity verification for agent accountability"
-  ]
+  ],
+  "attestation": {
+    "trustBundleValid": true,
+    "trustBundleRoot": "epscom-root-2024",
+    "trustBundleExpiry": "2025-01-01T00:00:00Z",
+    "signaturesVerified": 19,
+    "signaturesTotal": 19,
+    "signatureCoverage": "100%",
+    "lastVerification": "2026-07-05T15:32:30.246309+00:00"
+  }
 }
