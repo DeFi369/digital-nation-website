@@ -36,6 +36,7 @@ var DigitalNationNav = (function () {
       { href: 'science.html', label: 'Science' },
       { href: 'technology.html', label: 'Technology' },
       { href: 'research-papers.html', label: 'Research Papers' },
+      { href: 'https://hyperlighttech.gumroad.com', label: 'Guides', external: true },
       { href: 'https://github.com/defi369/WorldHermes', label: 'WorldHermes — AI Research', external: true },
       { href: 'sovereign-security.html', label: 'Sovereign Security' },
       { href: 'health-equity.html', label: 'Health Equity' },
