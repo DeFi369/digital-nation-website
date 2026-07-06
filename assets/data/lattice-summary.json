@@ -43,5 +43,17 @@
       "energy": 0.9,
       "hops": 4
     }
-  ]
+  ],
+  "hyperLatticeCore": {
+    "testSuite": "@hyper-lattice/core",
+    "testScript": "jest --coverage",
+    "result": "49/49 passing",
+    "path": "/home/user/repos/hyper-lattice/packages/lattice-core",
+    "coveragePct": {
+      "statements": 72.59,
+      "branches": 55.86,
+      "functions": 58.4,
+      "lines": 72.51
+    }
+  }
 }
