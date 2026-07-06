@@ -170,7 +170,7 @@
     "latestCommit": "3cc44893405623aea57556bd905220e8e8cc0875 feat: link HyperLightTech Gumroad guides from nav and getting-started",
     "latestCommitDate": "2026-07-05",
     "lastAudit": "2026-07-05",
-    "conformanceEvidenceGeneratedAt": "2026-07-06T02:43:18.506760+00:00",
+    "conformanceEvidenceGeneratedAt": "2026-07-06T04:00:00.390822+00:00",
     "conformancePassedCount": 16,
     "conformanceFailedCount": 0,
     "conformanceSummary": "Result: 16 checks, 0 failed.",
@@ -287,7 +287,7 @@
     "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage."
   },
   "repoCrossReferences": {
-    "edgeCount": 57,
+    "edgeCount": 58,
     "topInboundReferences": [
       {
         "repo": "GAP",
@@ -322,18 +322,18 @@
         "count": 2
       },
       {
-        "repo": "digital-nation-website",
+        "repo": "WorldHermes",
         "count": 1
       },
       {
-        "repo": "aep-signatures",
+        "repo": "QBFF",
         "count": 1
       }
     ],
     "topOutboundReferences": [
       {
         "repo": "digital-nation-website",
-        "count": 9
+        "count": 10
       },
       {
         "repo": "HyperLightSite",
@@ -348,15 +348,15 @@
         "count": 5
       },
       {
-        "repo": "aep-conformance",
-        "count": 4
-      },
-      {
         "repo": "QBFF",
         "count": 4
       },
       {
-        "repo": "dynAEP",
+        "repo": "aep-conformance",
+        "count": 4
+      },
+      {
+        "repo": "WorldHermes",
         "count": 3
       },
       {
@@ -364,49 +364,34 @@
         "count": 3
       },
       {
-        "repo": "WorldHermes",
+        "repo": "dynAEP",
         "count": 3
       },
       {
-        "repo": "extendwrite",
+        "repo": "aep-signatures",
         "count": 2
       }
     ],
     "samples": [
       {
-        "source": "dynAEP",
+        "source": "aep-signatures",
         "target": "AEP",
-        "path": "mcp-server/tools/event-submit.ts"
+        "path": "docs/signature_ingestion_and_refinement_plan.md"
       },
       {
-        "source": "dynAEP",
+        "source": "aep-signatures",
         "target": "GAP",
-        "path": "sdk/python/dynaep/causal/durable_store.py"
+        "path": "docs/signature_ingestion_and_refinement_plan.md"
       },
       {
-        "source": "dynAEP",
-        "target": "aep-conformance",
-        "path": "NAME-POLICY.md"
-      },
-      {
-        "source": "aep-conformance",
+        "source": "GAP",
         "target": "AEP",
-        "path": "runner/check-conformance.py"
+        "path": "docs/gap_validation_layer1_plan.md"
       },
       {
-        "source": "aep-conformance",
+        "source": "GAP",
         "target": "dynAEP",
-        "path": "runner/check-conformance.py"
-      },
-      {
-        "source": "aep-conformance",
-        "target": "GAP",
-        "path": "runner/check-conformance.py"
-      },
-      {
-        "source": "aep-conformance",
-        "target": "hyper-lattice",
-        "path": "runner/check-conformance.py"
+        "path": "README.md"
       },
       {
         "source": "extendwrite",
@@ -419,19 +404,34 @@
         "path": "README.md"
       },
       {
-        "source": "hyper-lattice",
-        "target": "AEP",
-        "path": "packages/lattice-core/dist/core/EvidenceLedger.d.ts"
-      },
-      {
-        "source": "hyper-lattice",
+        "source": "WorldHermes",
         "target": "GAP",
-        "path": "packages/lattice-visual/dist/assets/main-CyBXPj3o.js"
+        "path": ".venv/lib/python3.12/site-packages/pip/_vendor/pygments/lexers/_mapping.py"
       },
       {
-        "source": "hyper-lattice",
-        "target": "SayIt",
-        "path": "packages/lattice-visual/dist/assets/main-CyBXPj3o.js"
+        "source": "WorldHermes",
+        "target": "AEP",
+        "path": ".venv/lib/python3.12/site-packages/PIL/ImageFont.py"
+      },
+      {
+        "source": "WorldHermes",
+        "target": "Wave",
+        "path": ".venv/lib/python3.12/site-packages/pip/_vendor/rich/_emoji_codes.py"
+      },
+      {
+        "source": "OpenAgents",
+        "target": "GAP",
+        "path": ".venv/lib/python3.12/site-packages/pip/_vendor/pygments/lexers/_mapping.py"
+      },
+      {
+        "source": "OpenAgents",
+        "target": "AEP",
+        "path": ".venv/lib/python3.12/site-packages/Crypto/SelfTest/Cipher/test_pkcs1_oaep.py"
+      },
+      {
+        "source": "OpenAgents",
+        "target": "Wave",
+        "path": ".venv/lib/python3.12/site-packages/pip/_vendor/rich/_emoji_codes.py"
       }
     ]
   },
@@ -648,7 +648,7 @@
       }
     }
   },
-  "lastSystemIntegrationUpdate": "2026-07-06T03:50:44.550774+00:00",
+  "lastSystemIntegrationUpdate": "2026-07-06T05:19:51.899120+00:00",
   "systemServices": {
     "wave": {
       "repo": "repos/Wave",
@@ -961,26 +961,78 @@
     "status": "active",
     "localRepo": "/home/user/repos/hyperlight-digital-assets",
     "classification": "SECRET // INTERNAL MONITORING ONLY",
-    "marketMonitor": "live",
-    "pulseChainMonitor": "live",
-    "pulseChainRiver": "live",
-    "indexerStub": "live",
-    "openAgentsExecutionStub": "pending-authorization",
+    "modules": {
+      "marketMonitor": "live",
+      "pulseChainMonitor": "live",
+      "pulseChainRiver": "live",
+      "indexer": "live/hardened",
+      "anomalyDetector": "live",
+      "volumeBaseline": "live/anomalyCount=4",
+      "addressClusters": "live/clusterCount=16",
+      "provenanceGate": "live",
+      "auditLedger": "live",
+      "thresholdDriftMonitor": "triggered",
+      "telemetry": "live",
+      "dryRunHarness": "live",
+      "executionGate": "pending-authorization",
+      "openAgentsSandboxPrep": "done",
+      "executionSandbox": "pending-authorization/scaffold-ready",
+      "dashboard": "live",
+      "executionAuthorizationProcedure": "ready",
+      "sandboxBuildChecklist": "ready",
+      "operatorSandboxWizard": "ready",
+      "auditHardeningTests": "5/5 passing",
+      "sandboxStatusInBriefing": "integrated",
+      "dryRunProvenanceInBriefing": "integrated",
+      "watchedAddressesRegistry": "pending-operator-input",
+      "sandboxActivationHarness": "sandbox-ready",
+      "automatedSandboxWiring": "complete"
+    },
     "cron": {
       "dailySnapshot": "08:00 UTC",
       "dailyBriefing": "08:30 UTC",
       "hourlyRiver": "every hour :05",
-      "weeklyBriefing": "Mondays 09:00 UTC"
+      "weeklyBriefing": "Mondays 09:00 UTC",
+      "secureComputeHealth": "03:00 UTC",
+      "anomalyDetection": "every hour :15",
+      "volumeBaseline": "every hour :30"
+    },
+    "wizAdvice": {
+      "automatedFailover": "done",
+      "indexerHardening": "done",
+      "tokenRoutingRegistryBaseline": "pending-address-input",
+      "openAgentsExecutionSandboxPrep": "done",
+      "provenanceGate": "done",
+      "auditLedger": "done",
+      "thresholdDriftMonitor": "done",
+      "telemetry": "done",
+      "dryRunHarness": "done"
     },
     "liveSignals": {
       "btc": 63239,
       "eth": 1776.66,
       "pls": "0.00000671",
-      "pulsechainBlock": 26960890,
-      "pulsechainGasGwei": 446062.26,
-      "latestRiverTxCount": 31,
-      "latestRiverWhaleCount": 2
+      "pulsechainBlock": 26961311,
+      "pulsechainGasGwei": 477713.68,
+      "latestRiverTxCount": 21,
+      "latestRiverWhaleCount": 2,
+      "anomalyCount": 4,
+      "clusterCount": 16,
+      "indexedTopics": 10,
+      "indexedAddresses": 16,
+      "cpuLoad1": 0.5,
+      "memPct": 48.2,
+      "sandboxPreferredPath": "cgroup + network namespace",
+      "dryRunExecutionAuthorized": false,
+      "executionGateStatus": "pending-authorization",
+      "healthSnapshotGeneratedAt": "2026-07-06T04:57:34.095529+00:00",
+      "watchedAddresses": 0
     },
-    "wizConsultation": "completed"
+    "wizLatestAdvice": {
+      "sessionId": "20260706_050821_fc3cb3",
+      "recommendation": "authorize-sandbox-activation-via-execution-gate",
+      "automatedLane": "wire-sandbox-status-and-dryrun-provenance-into-daily-briefing-and-cron",
+      "status": "automation-prep-in-progress"
+    }
   }
 }
