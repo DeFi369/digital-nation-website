@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T01:43:13.086739+00:00",
+  "generatedAt": "2026-07-06T04:00:00.390822+00:00",
   "protocolStack": {
     "stacks": [
       "aep",
@@ -36,7 +36,7 @@
     "cronLastRunOk": 7,
     "cronLastRunFailed": 0,
     "cronLastRunUnknown": 1,
-    "stateDbMb": 861.3
+    "stateDbMb": 878.7
   },
   "knownIssues": [
     "trust-bundle signed attestations absent",
