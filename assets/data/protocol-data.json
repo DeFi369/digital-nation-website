@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-05",
+  "generated": "2026-07-06",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -165,12 +165,12 @@
       "research.html",
       "sovereign-security.html"
     ],
-    "identityManifestCount": 19,
-    "identityKeyCount": 19,
+    "identityManifestCount": 18,
+    "identityKeyCount": 20,
     "latestCommit": "3cc44893405623aea57556bd905220e8e8cc0875 feat: link HyperLightTech Gumroad guides from nav and getting-started",
-    "latestCommitDate": "2026-07-05",
-    "lastAudit": "2026-07-05",
-    "conformanceEvidenceGeneratedAt": "2026-07-06T04:00:00.390822+00:00",
+    "latestCommitDate": "2026-07-06",
+    "lastAudit": "2026-07-06",
+    "conformanceEvidenceGeneratedAt": "2026-07-06T08:21:03.001596+00:00",
     "conformancePassedCount": 16,
     "conformanceFailedCount": 0,
     "conformanceSummary": "Result: 16 checks, 0 failed.",
@@ -284,7 +284,8 @@
   "attestation": {
     "trustBundleExists": true,
     "ready": "stub-bundle-no-signatures-present",
-    "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage."
+    "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage.",
+    "lastVerification": "2026-07-06T08:21:03.001611+00:00"
   },
   "repoCrossReferences": {
     "edgeCount": 58,
