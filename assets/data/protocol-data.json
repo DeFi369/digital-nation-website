@@ -285,7 +285,7 @@
     "trustBundleExists": true,
     "ready": "stub-bundle-no-signatures-present",
     "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage.",
-    "lastVerification": "2026-07-06T08:21:03.001611+00:00"
+    "lastVerification": "2026-07-06T08:25:10.608554+00:00"
   },
   "repoCrossReferences": {
     "edgeCount": 58,
