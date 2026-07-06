@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-07-06T01:43:13.086739+00:00",
+  "protocolStack": {
+    "stacks": [
+      "aep",
+      "dynaep",
+      "gap",
+      "conformance",
+      "signatures",
+      "ucb-universal-connect-bridge"
+    ],
+    "statuses": {
+      "aep": "active",
+      "dynaep": "active",
+      "gap": "active",
+      "conformance": "pre-v1.0",
+      "signatures": "pre-v1.0",
+      "ucb-universal-connect-bridge": "reference"
+    }
+  },
+  "validation": {
+    "gapProfileJsonInvalidCount": 0,
+    "aepJsonInvalidCount": 0,
+    "profilesScanned": 19,
+    "profilesWithPublicKey": 19,
+    "readyForVerificationPct": 100.0
+  },
+  "attestation": {
+    "trustBundleExists": true,
+    "ready": "stub-bundle-no-signatures-present",
+    "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage."
+  },
+  "health": {
+    "cronJobsTotal": 8,
+    "cronEnabled": 8,
+    "cronLastRunOk": 7,
+    "cronLastRunFailed": 0,
+    "cronLastRunUnknown": 1,
+    "stateDbMb": 861.3
+  },
+  "knownIssues": [
+    "trust-bundle signed attestations absent",
+    "state.db readonly pending; no vacuum while gateway holds write lock",
+    "website major edits paused for Claude"
+  ]
+}

@@ -9,6 +9,59 @@
 
   function init() {
     renderStatusPage();
+    renderRepoCrossReferences();
+  }
+
+  function renderRepoCrossReferences() {
+    var container = document.getElementById('ecosystem-cross-references');
+    if (!container) return;
+    fetch('assets/data/protocol-data.json')
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
+      .then(function (data) {
+        var xref = (data.repoCrossReferences || {});
+        var topIn = Array.isArray(xref.topInboundReferences) ? xref.topInboundReferences.slice(0, 8) : [];
+        var topOut = Array.isArray(xref.topOutboundReferences) ? xref.topOutboundReferences.slice(0, 8) : [];
+        var samples = Array.isArray(xref.samples) ? xref.samples.slice(0, 6) : [];
+        var edgeCount = typeof xref.edgeCount === 'number' ? xref.edgeCount : 0;
+        if (!edgeCount && !topIn.length && !topOut.length) {
+          container.innerHTML = '<div class="activity-empty">No repository cross-reference evidence is available yet.</div>';
+          return;
+        }
+        var buildList = function (items) {
+          if (!items.length) return '';
+          var lis = items.map(function (item) {
+            var repo = escapeHtml(String(item.repo || ''));
+            var count = typeof item.count === 'number' ? item.count : (typeof item.references === 'number' ? item.references : '');
+            return '<li><strong>' + repo + '</strong> — ' + escapeHtml(String(count)) + '</li>';
+          }).join('');
+          return '<ul class="activity-list">' + lis + '</ul>';
+        };
+        container.innerHTML = (
+          '<div class="stats-grid">' +
+            '<div class="card">' +
+              '<h3>Top Inbound References</h3>' +
+              (topIn.length ? buildList(topIn) : '<p class="activity-empty">No inbound references found.</p>') +
+            '</div>' +
+            '<div class="card">' +
+              '<h3>Top Outbound References</h3>' +
+              (topOut.length ? buildList(topOut) : '<p class="activity-empty">No outbound references found.</p>') +
+            '</div>' +
+            '<div class="card">' +
+              '<h3>Sample Edges</h3>' +
+              (samples.length ? '<ul class="activity-list">' + samples.map(function (s) {
+                return '<li>' + escapeHtml(String(s.source || '')) + ' → ' + escapeHtml(String(s.target || '')) + (s.path ? ' <span class="activity-meta">(' + escapeHtml(String(s.path)) + ')</span>' : '') + '</li>';
+              }).join('') + '</ul>' : '<p class="activity-empty">No sample edges available.</p>') +
+            '</div>' +
+            '<div class="card">' +
+              '<h3>Total Referenced Edges</h3>' +
+              '<p>' + escapeHtml(String(edgeCount)) + '</p>' +
+            '</div>' +
+          '</div>'
+        );
+      })
+      .catch(function () {
+        container.innerHTML = '<div class="activity-empty">Repository cross-reference data is temporarily unavailable.</div>';
+      });
   }
 
   function renderStatusPage() {
@@ -50,14 +103,29 @@
 
     var attestation = document.getElementById('citizen-attestation');
     if (attestation) {
-      fetch('assets/data/ecosystem-status.json')
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-          attestation.textContent = data.citizenAttestation || '';
-        })
-        .catch(function () {
-          attestation.textContent = '';
-        });
+      Promise.all([
+        fetch('assets/data/ecosystem-status.json').then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); }),
+        fetch('assets/data/attestation-status.json').then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)); })
+      ]).then(function (results) {
+        var ecosystem = results[0] || {};
+        var attest = results[1] || {};
+        var trustValid = !!attest.attestation && attest.attestation.trustBundleValid;
+        var note = attest.attestation && attest.attestation.note ? attest.attestation.note : 'No attestation update available.';
+        
+        var statusClass = trustValid ? 'status-active' : 'status-warning';
+        var statusText = trustValid ? 'VERIFIED' : 'PENDING';
+        
+        attestation.innerHTML = (
+          '<div class="protocol-details">' +
+            '<p><strong>Generated:</strong> ' + escapeHtml(String(attest.generatedAt || '')) + '</p>' +
+            '<p><strong>Status:</strong> <span class="status-dot ' + statusClass + '" aria-hidden="true"></span>' + escapeHtml(statusText) + '</p>' +
+            '<p><strong>Note:</strong> ' + escapeHtml(String(note)) + '</p>' +
+          '</div>'
+        );
+      }).catch(function () {
+        var fallback = data.citizenAttestation || '';
+        attestation.textContent = fallback ? fallback + ' Attestation details unavailable.' : 'Attestation data is temporarily unavailable.';
+      });
     }
 
     var identities = document.getElementById('verified-identities');
