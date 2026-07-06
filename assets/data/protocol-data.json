@@ -170,7 +170,7 @@
     "latestCommit": "3cc44893405623aea57556bd905220e8e8cc0875 feat: link HyperLightTech Gumroad guides from nav and getting-started",
     "latestCommitDate": "2026-07-05",
     "lastAudit": "2026-07-05",
-    "conformanceEvidenceGeneratedAt": "2026-07-06T01:43:13.086739+00:00",
+    "conformanceEvidenceGeneratedAt": "2026-07-06T02:43:18.506760+00:00",
     "conformancePassedCount": 16,
     "conformanceFailedCount": 0,
     "conformanceSummary": "Result: 16 checks, 0 failed.",
@@ -287,7 +287,7 @@
     "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage."
   },
   "repoCrossReferences": {
-    "edgeCount": 58,
+    "edgeCount": 57,
     "topInboundReferences": [
       {
         "repo": "GAP",
@@ -333,7 +333,7 @@
     "topOutboundReferences": [
       {
         "repo": "digital-nation-website",
-        "count": 10
+        "count": 9
       },
       {
         "repo": "HyperLightSite",
@@ -348,11 +348,11 @@
         "count": 5
       },
       {
-        "repo": "QBFF",
+        "repo": "aep-conformance",
         "count": 4
       },
       {
-        "repo": "aep-conformance",
+        "repo": "QBFF",
         "count": 4
       },
       {
@@ -368,61 +368,11 @@
         "count": 3
       },
       {
-        "repo": "SayIt",
+        "repo": "extendwrite",
         "count": 2
       }
     ],
     "samples": [
-      {
-        "source": "HyperLightSite",
-        "target": "GAP",
-        "path": "content/guides/getting-started.md"
-      },
-      {
-        "source": "HyperLightSite",
-        "target": "AEP",
-        "path": "content/guides/getting-started.md"
-      },
-      {
-        "source": "HyperLightSite",
-        "target": "dynAEP",
-        "path": "content/guides/getting-started.md"
-      },
-      {
-        "source": "HyperLightSite",
-        "target": "hyper-lattice",
-        "path": "content/guides/getting-started.md"
-      },
-      {
-        "source": "HyperLightSite",
-        "target": "digital-nation-website",
-        "path": "content/guides/getting-started.md"
-      },
-      {
-        "source": "HyperLightSite",
-        "target": "Wave",
-        "path": "content/reference/atom.md"
-      },
-      {
-        "source": "HyperLightSite",
-        "target": "aep-conformance",
-        "path": "content/reference/aep.md"
-      },
-      {
-        "source": "HyperLightSite",
-        "target": "aep-signatures",
-        "path": "content/reference/aep.md"
-      },
-      {
-        "source": "SayIt",
-        "target": "GAP",
-        "path": ".ci/app.extracted.js"
-      },
-      {
-        "source": "SayIt",
-        "target": "Wave",
-        "path": ".ci/app.extracted.js"
-      },
       {
         "source": "dynAEP",
         "target": "AEP",
@@ -432,6 +382,56 @@
         "source": "dynAEP",
         "target": "GAP",
         "path": "sdk/python/dynaep/causal/durable_store.py"
+      },
+      {
+        "source": "dynAEP",
+        "target": "aep-conformance",
+        "path": "NAME-POLICY.md"
+      },
+      {
+        "source": "aep-conformance",
+        "target": "AEP",
+        "path": "runner/check-conformance.py"
+      },
+      {
+        "source": "aep-conformance",
+        "target": "dynAEP",
+        "path": "runner/check-conformance.py"
+      },
+      {
+        "source": "aep-conformance",
+        "target": "GAP",
+        "path": "runner/check-conformance.py"
+      },
+      {
+        "source": "aep-conformance",
+        "target": "hyper-lattice",
+        "path": "runner/check-conformance.py"
+      },
+      {
+        "source": "extendwrite",
+        "target": "AEP",
+        "path": "README.md"
+      },
+      {
+        "source": "extendwrite",
+        "target": "GAP",
+        "path": "README.md"
+      },
+      {
+        "source": "hyper-lattice",
+        "target": "AEP",
+        "path": "packages/lattice-core/dist/core/EvidenceLedger.d.ts"
+      },
+      {
+        "source": "hyper-lattice",
+        "target": "GAP",
+        "path": "packages/lattice-visual/dist/assets/main-CyBXPj3o.js"
+      },
+      {
+        "source": "hyper-lattice",
+        "target": "SayIt",
+        "path": "packages/lattice-visual/dist/assets/main-CyBXPj3o.js"
       }
     ]
   },
@@ -463,47 +463,31 @@
     "stderrExcerpt": ""
   },
   "aepGapValidation": {
-    "status": "6/6 valid",
-    "sampledCount": 20,
-    "validCount": 0,
-    "metaSchema": "/home/user/repos/GAP/GAP meta schema v1.2.json",
-    "aepRegistrySchema": "AEP-Base-Node/registry/schemas/*",
-    "finding": "AEP registry component JSON is not GAP policy instance JSON; cross-schema mismatch, not policy violation",
-    "note": "AEP registry JSON schema != GAP policy schema; validation applies to referenced .gap policy files.",
-    "generatedAt": "2026-07-06T01:21:09.990481+00:00",
-    "validator": "/home/user/repos/QBFF/src/gap_policy_validator.py",
+    "status": "validated_with_findings",
+    "source": "QBFF/src/gap_policy_validator.py",
     "summary": {
-      "total": 6,
-      "passed": 6,
-      "failed": 0
+      "total": 11,
+      "passed": 9,
+      "failed": 2
     },
-    "sampleFailures": [],
-    "policyFiles": [
+    "sampleFailures": [
       {
-        "path": "AEP/AEP-Policy-System/reference/eu-ai-act.gap",
-        "valid": true
+        "path": "/home/user/repos/AEP/AEP-Policy-System/reference/aep-noship-distribution.gap",
+        "valid": false,
+        "errors": [
+          "pattern.guard must be boolean-like"
+        ]
       },
       {
-        "path": "AEP/AEP-Policy-System/reference/gdpr.gap",
-        "valid": true
-      },
-      {
-        "path": "AEP/AEP-Policy-System/reference/hipaa.gap",
-        "valid": true
-      },
-      {
-        "path": "AEP/AEP-Policy-System/reference/iso-42001.gap",
-        "valid": true
-      },
-      {
-        "path": "AEP/AEP-Policy-System/reference/nist-ai-rmf.gap",
-        "valid": true
-      },
-      {
-        "path": "AEP/AEP-Policy-System/reference/soc2-type2.gap",
-        "valid": true
+        "path": "/home/user/repos/AEP/AEP-Policy-System/reference/deployment.gap",
+        "valid": false,
+        "errors": [
+          "pattern.guard must be boolean-like"
+        ]
       }
-    ]
+    ],
+    "generatedAt": "2026-07-06T02:46:12.518700+00:00",
+    "regeneratedBy": "refresh-protocol-evidence"
   },
   "components": [
     {
@@ -616,7 +600,38 @@
   "services": {
     "wave": "running",
     "sayit": "running",
-    "openagents": "api_running",
+    "openagents": {
+      "status": "node_modules_installed",
+      "backendPort": 8082,
+      "frontendPort": 8096,
+      "systemdUnit": "digital-nation-openagents.service",
+      "backendUrl": "http://127.0.0.1:8082",
+      "frontendUrl": "http://127.0.0.1:8096",
+      "npmRegistry": "npmmirror",
+      "nodeModules": "installed",
+      "verifiedAt": "2026-07-06T02:22:41.401248+00:00",
+      "compile": {
+        "status": "partial_success",
+        "mode": "offline_solcjs",
+        "compiler": "0.8.24+commit.e11b9ed9.Emscripten.clang",
+        "succeeded": 18,
+        "failed": 3,
+        "failures": [
+          {
+            "file": "contracts/governance/GovernorAlpha.sol",
+            "error": "DeclarationError: Function \"mcopy\" not found"
+          },
+          {
+            "file": "contracts/oracle/ChainlinkAdapter.sol",
+            "error": "ParserError: Expected \",\" but got identifier at int256 answer"
+          },
+          {
+            "file": "contracts/vault/CompoundVault.sol",
+            "error": "DeclarationError: Function \"mcopy\" not found"
+          }
+        ]
+      }
+    },
     "qbff": {
       "status": "ok",
       "monitorTimer": "qbff-monitor.timer"
@@ -633,7 +648,7 @@
       }
     }
   },
-  "lastSystemIntegrationUpdate": "2026-07-06T01:44:09.473318+00:00",
+  "lastSystemIntegrationUpdate": "2026-07-06T03:50:44.550774+00:00",
   "systemServices": {
     "wave": {
       "repo": "repos/Wave",
@@ -925,5 +940,47 @@
       }
     ],
     "note": "AEP registry JSON is governed by AEP registry schema; GAP policy validation applies to .gap YAML policy files referenced by AEP registry metadata via gap_ref."
+  },
+  "aepSignatures": {
+    "integration": {
+      "status": "demo_only",
+      "trustBundlePresent": true,
+      "readmeHygieneFlag": "flagged_for_human_review",
+      "verifiedAt": "2026-07-06T02:40:55.676255+00:00"
+    }
+  },
+  "identity": {
+    "profileVerification": {
+      "status": "18/19 passing",
+      "failingProfile": "hyperlightwiz",
+      "verifiedAt": "2026-07-06T02:46:00.252279+00:00",
+      "evidence": "/home/user/.hermes/archive/audit/profile-identity-verification-2026-07-06.json"
+    }
+  },
+  "dda": {
+    "status": "active",
+    "localRepo": "/home/user/repos/hyperlight-digital-assets",
+    "classification": "SECRET // INTERNAL MONITORING ONLY",
+    "marketMonitor": "live",
+    "pulseChainMonitor": "live",
+    "pulseChainRiver": "live",
+    "indexerStub": "live",
+    "openAgentsExecutionStub": "pending-authorization",
+    "cron": {
+      "dailySnapshot": "08:00 UTC",
+      "dailyBriefing": "08:30 UTC",
+      "hourlyRiver": "every hour :05",
+      "weeklyBriefing": "Mondays 09:00 UTC"
+    },
+    "liveSignals": {
+      "btc": 63239,
+      "eth": 1776.66,
+      "pls": "0.00000671",
+      "pulsechainBlock": 26960890,
+      "pulsechainGasGwei": 446062.26,
+      "latestRiverTxCount": 31,
+      "latestRiverWhaleCount": 2
+    },
+    "wizConsultation": "completed"
   }
 }
