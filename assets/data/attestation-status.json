@@ -1,21 +1,19 @@
 {
-  "generatedAt": "2026-07-06T04:00:00.390822+00:00",
+  "generatedAt": "2026-07-11T12:02:45.627046+00:00",
   "protocolStack": {
     "stacks": [
       "aep",
       "dynaep",
       "gap",
       "conformance",
-      "signatures",
-      "ucb-universal-connect-bridge"
+      "signatures"
     ],
     "statuses": {
       "aep": "active",
       "dynaep": "active",
       "gap": "active",
       "conformance": "pre-v1.0",
-      "signatures": "pre-v1.0",
-      "ucb-universal-connect-bridge": "reference"
+      "signatures": "pre-v1.0"
     }
   },
   "validation": {
@@ -31,12 +29,12 @@
     "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage."
   },
   "health": {
-    "cronJobsTotal": 8,
-    "cronEnabled": 8,
-    "cronLastRunOk": 7,
+    "cronJobsTotal": 18,
+    "cronEnabled": 18,
+    "cronLastRunOk": 17,
     "cronLastRunFailed": 0,
     "cronLastRunUnknown": 1,
-    "stateDbMb": 878.7
+    "stateDbMb": 1082.6
   },
   "knownIssues": [
     "trust-bundle signed attestations absent",

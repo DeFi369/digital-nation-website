@@ -29,21 +29,8 @@
 <body class="page-missions" data-theme="diplomacy" data-page="missions">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <img class="logo-img" src="assets/images/digital-nation-logo.svg" alt="The Principality of Aetheria"/>
-        <span class="logo-text">AETHERIA</span>
-      </a>
-      <span class="member-counter" id="member-counter" title="Registered citizens">
-        <span class="member-counter-label" aria-hidden="true">Members</span>
-        <span class="member-counter-value" id="member-count" aria-live="polite" aria-label="Current member total">--</span>
-      </span>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
-        <span class="menu-toggle-bar"></span>
-        <span class="menu-toggle-bar"></span>
-        <span class="menu-toggle-bar"></span>
-      </button>
-            <nav class="menu" id="site-menu" aria-hidden="true"></nav>
+    <div class="nav" id="site-header-nav">
+      <template id="site-header-nav-template" data-nav="header"></template>
     </div>
   </header>
 
@@ -150,8 +137,14 @@
   </footer>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/nav.js"></script>
-  <script src="assets/js/page-core.js"></script>
-  <script src="assets/js/page-ambient.js"></script>
-</body>
-</html>
+      <script src="assets/js/nav.js"></script>
+    <script>
+      (function () {
+        var tmpl = document.getElementById('site-header-nav-template');
+        if (!tmpl) return;
+        var container = document.getElementById('site-header-nav') || tmpl.parentElement;
+        tmpl.parentNode.insertBefore(document.importNode(tmpl.content, true), tmpl);
+        tmpl.parentNode.removeChild(tmpl);
+      })();
+    </script>
+  </body>

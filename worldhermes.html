@@ -11,14 +11,8 @@
 </head>
 <body class="page-research">
   <header class="site-header">
-    <div class="nav">
-      <a class="brand" href="index.html">AETHERIA</a>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
-        <span class="menu-toggle-bar"></span>
-        <span class="menu-toggle-bar"></span>
-        <span class="menu-toggle-bar"></span>
-      </button>
-      <nav class="menu" id="site-menu" aria-hidden="true"></nav>
+    <div class="nav" id="site-header-nav">
+      <template id="site-header-nav-template" data-nav="header"></template>
     </div>
   </header>
   <main id="main">
@@ -65,5 +59,15 @@
       </div>
     </section>
   </main>
-</body>
+    <script src="assets/js/nav.js"></script>
+    <script>
+      (function () {
+        var tmpl = document.getElementById('site-header-nav-template');
+        if (!tmpl) return;
+        var container = document.getElementById('site-header-nav') || tmpl.parentElement;
+        tmpl.parentNode.insertBefore(document.importNode(tmpl.content, true), tmpl);
+        tmpl.parentNode.removeChild(tmpl);
+      })();
+    </script>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-06",
+  "generated": "2026-07-11",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -76,19 +76,19 @@
         "index",
         "FETCH_HEAD",
         "description",
+        "COMMIT_EDITMSG",
         "HEAD",
         "config",
         "ORIG_HEAD",
-        ".gitkeep",
-        "run.sh",
-        "check-conformance.py",
-        ".gitkeep",
         "prepare-commit-msg.sample",
         "pre-merge-commit.sample",
         "sendemail-validate.sample",
         "pre-receive.sample",
         "pre-applypatch.sample",
-        "fsmonitor-watchman.sample"
+        "fsmonitor-watchman.sample",
+        "push-to-checkout.sample",
+        "pre-rebase.sample",
+        "update.sample"
       ]
     },
     {
@@ -108,7 +108,11 @@
         "setup.py",
         "README.md",
         "LICENSE-TOOLING",
+        ".gitignore",
         ".gitkeep",
+        "test_signature_loader.cpython-313-pytest-9.1.1.pyc",
+        "signature_loader.cpython-313.pyc",
+        "example-bundle-001.json",
         ".gitkeep",
         "manifest.json",
         ".gitkeep",
@@ -119,33 +123,8 @@
         "COMMIT_EDITMSG",
         "HEAD",
         "config",
-        "ORIG_HEAD",
-        "README.md",
-        ".gitignore",
-        "CACHEDIR.TAG",
-        "README.md"
+        "ORIG_HEAD"
       ]
-    },
-    {
-      "id": "ucb-universal-connect-bridge",
-      "name": "UCB UniversalConnectBridge",
-      "fullName": "UCB UniversalConnectBridge Research Paper 005",
-      "version": "research",
-      "status": "reference",
-      "source": "/home/user/repos/UCB-UniversalConnectBridge-research-paper-005",
-      "summary": "Formal backing for AEP's optional UCB airlock design: transformer/state-space to structured-system integration with governance-aware boundaries.",
-      "components": [
-        "UniversalConnectBridge protocol",
-        "Structured-system integration",
-        "Governance-aware airlock",
-        "Research-backed design"
-      ],
-      "artifacts": [
-        "README.md",
-        "OpenTimestamps proof"
-      ],
-      "paperSha256": "9a5b2e434e1eafac",
-      "lastUpdated": "2026-07-05T23:44:58.152384+00:00"
     }
   ],
   "metrics": {
@@ -165,95 +144,30 @@
       "research.html",
       "sovereign-security.html"
     ],
-    "identityManifestCount": 18,
-    "identityKeyCount": 20,
-    "latestCommit": "3cc44893405623aea57556bd905220e8e8cc0875 feat: link HyperLightTech Gumroad guides from nav and getting-started",
+    "identityManifestCount": 15,
+    "identityKeyCount": 19,
+    "latestCommit": "5237e56a9901dae25b1f4ec78b03459515ead632 docs: append validated hyper-lattice core test metrics to lattice-summary",
     "latestCommitDate": "2026-07-06",
-    "lastAudit": "2026-07-06",
-    "conformanceEvidenceGeneratedAt": "2026-07-06T08:21:03.001596+00:00",
-    "conformancePassedCount": 16,
+    "lastAudit": "2026-07-11",
+    "conformanceEvidenceGeneratedAt": "2026-07-11T12:02:45.627046+00:00",
+    "conformancePassedCount": 0,
     "conformanceFailedCount": 0,
-    "conformanceSummary": "Result: 16 checks, 0 failed.",
     "profileReadyForVerificationPct": 100.0,
-    "cronLastRunOk": 7,
+    "cronLastRunOk": 17,
     "cronLastRunUnknown": 1,
     "knownIssues": [
       "trust-bundle signed attestations absent",
       "state.db readonly pending; no vacuum while gateway holds write lock",
       "website major edits paused for Claude"
-    ],
-    "ucbPaperStatus": "referenced",
-    "ucbPaperSha256": "9a5b2e434e1eafac",
-    "repoValidationTotalRepos": 22,
-    "repoValidationReposWithTests": 4,
-    "repoValidationReposWithCI": 7,
-    "repoValidationTotalEdges": 47,
-    "repoValidationTopIntegrationTargets": [
-      "AEP",
-      "GAP",
-      "hyper-lattice",
-      "digital-nation-website",
-      "dynAEP"
-    ],
-    "aepGapValidationTotalPolicies": 6,
-    "aepGapValidationPassed": 6,
-    "aepGapValidationFailed": 0,
-    "aepGapValidationStatus": "6/6 valid",
-    "qbffStatus": "running",
-    "qbffLayer": "sovereign_bio_cyber_defense",
-    "qbffRepo": "QBFF",
-    "localServiceRunnerWave": "http://127.0.0.1:8080",
-    "localServiceRunnerSayIt": "http://127.0.0.1:8081",
-    "localServiceRunnerScript": "/home/user/.hermes/scripts/service-runner.py",
-    "openAgentsApiPort": 8082,
-    "openAgentsApiStatus": "running",
-    "openAgentsContractsPresent": true,
-    "openAgentsHardhatPresent": true,
-    "worldHermesStatus": "dependency_blocked",
-    "worldHermesVenv": "/home/user/repos/WorldHermes/.venv/bin/python",
-    "worldHermesModel": "grok-3",
-    "cellRunnerUnitsEnabled": 3,
-    "cellRunnerUnits": [
-      "digital-nation-wave.service",
-      "digital-nation-sayit.service",
-      "digital-nation-openagents.service"
-    ],
-    "cellRunnerCount": 3,
-    "qbffSystemdStatus": "active",
-    "qbffFirewallStatus": "running",
-    "waveFirewallPort": 8095,
-    "openagentsFirewallPort": 8096,
-    "wavePort": 8080,
-    "sayitPort": 8081,
-    "openagentsPort": 8082,
-    "openAgentsNpmStatus": "retrying_with_correct_npm_path",
-    "qbffFirewallBlockedCount": 4,
-    "qbffMonitorStatus": "ok",
-    "qbffMonitorTimer": "qbff-monitor.timer",
-    "qbffMonitorIntervalSec": 90,
-    "qbffBuilt": "qbff_firewall.py + qbff_monitor.py",
-    "qbffFirewallPorts": [
-      8095,
-      8096
-    ],
-    "openagentsContractsStatus": "pending_npm_install",
-    "aepRegistrySchemaCount": 78,
-    "crossReferenceEdges": 6,
-    "aepGapLinkageStatus": "verified_registry_metadata",
-    "aepGapGapReferenceCount": 6,
-    "aepGapPolicyValidationStatus": "6/6 valid",
-    "qbffIpGuardStatus": "active",
-    "liveServiceCount": 5,
-    "firewallFrontendCount": 2,
-    "qbffIpGuardActive": true
+    ]
   },
   "quantum": {
     "available": true,
-    "collapseChosenLattice": "lattice-national",
+    "collapseChosenLattice": "lattice-memory",
     "afterNormalizeTotal": 0.9999999999999998,
     "boosterPhaseReady": true
   },
-  "quantumAttestation": "9be76a6da8434473",
+  "quantumAttestation": "dbc7bcc3d4d89374",
   "verifiedIdentities": [
     "president",
     "secretary_of_technology_science_and_innovation",
@@ -284,11 +198,10 @@
   "attestation": {
     "trustBundleExists": true,
     "ready": "stub-bundle-no-signatures-present",
-    "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage.",
-    "lastVerification": "2026-07-06T08:25:10.608554+00:00"
+    "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage."
   },
   "repoCrossReferences": {
-    "edgeCount": 58,
+    "edgeCount": 59,
     "topInboundReferences": [
       {
         "repo": "GAP",
@@ -304,14 +217,14 @@
       },
       {
         "repo": "dynAEP",
-        "count": 6
-      },
-      {
-        "repo": "hyper-lattice",
-        "count": 4
+        "count": 7
       },
       {
         "repo": "SayIt",
+        "count": 4
+      },
+      {
+        "repo": "hyper-lattice",
         "count": 4
       },
       {
@@ -320,21 +233,21 @@
       },
       {
         "repo": "OpenAgents",
-        "count": 2
+        "count": 3
       },
       {
-        "repo": "WorldHermes",
+        "repo": "digital-nation-website",
         "count": 1
       },
       {
-        "repo": "QBFF",
+        "repo": "aep-signatures",
         "count": 1
       }
     ],
     "topOutboundReferences": [
       {
         "repo": "digital-nation-website",
-        "count": 10
+        "count": 9
       },
       {
         "repo": "HyperLightSite",
@@ -349,15 +262,15 @@
         "count": 5
       },
       {
+        "repo": "aep-conformance",
+        "count": 5
+      },
+      {
         "repo": "QBFF",
         "count": 4
       },
       {
-        "repo": "aep-conformance",
-        "count": 4
-      },
-      {
-        "repo": "WorldHermes",
+        "repo": "dynAEP",
         "count": 3
       },
       {
@@ -365,675 +278,85 @@
         "count": 3
       },
       {
-        "repo": "dynAEP",
+        "repo": "extendwrite",
         "count": 3
       },
       {
-        "repo": "aep-signatures",
-        "count": 2
+        "repo": "WorldHermes",
+        "count": 3
       }
     ],
     "samples": [
       {
-        "source": "aep-signatures",
+        "source": "dynAEP",
         "target": "AEP",
-        "path": "docs/signature_ingestion_and_refinement_plan.md"
+        "path": "observers/README.md"
       },
       {
-        "source": "aep-signatures",
+        "source": "dynAEP",
         "target": "GAP",
-        "path": "docs/signature_ingestion_and_refinement_plan.md"
+        "path": "gap-translator/parser.ts"
       },
       {
-        "source": "GAP",
+        "source": "dynAEP",
+        "target": "aep-conformance",
+        "path": "NAME-POLICY.md"
+      },
+      {
+        "source": "hyper-lattice",
         "target": "AEP",
-        "path": "docs/gap_validation_layer1_plan.md"
+        "path": "packages/lattice-visual/package-lock.json"
       },
       {
-        "source": "GAP",
+        "source": "hyper-lattice",
+        "target": "GAP",
+        "path": "packages/lattice-visual/dist/assets/main-DMZezTsC.js"
+      },
+      {
+        "source": "hyper-lattice",
+        "target": "SayIt",
+        "path": "packages/lattice-visual/dist/assets/main-DMZezTsC.js"
+      },
+      {
+        "source": "hyper-lattice",
+        "target": "Wave",
+        "path": "packages/lattice-visual/dist/assets/main-DMZezTsC.js"
+      },
+      {
+        "source": "hyper-lattice",
         "target": "dynAEP",
-        "path": "README.md"
+        "path": "packages/lattice-core/dist/core/EvidenceLedger.d.ts"
       },
       {
-        "source": "extendwrite",
+        "source": "aep-signatures",
         "target": "AEP",
-        "path": "README.md"
+        "path": "docs/signature_ingestion_and_refinement_plan.md"
       },
       {
-        "source": "extendwrite",
+        "source": "aep-signatures",
         "target": "GAP",
-        "path": "README.md"
+        "path": "docs/signature_ingestion_and_refinement_plan.md"
       },
       {
-        "source": "WorldHermes",
+        "source": "HyperLightSite",
         "target": "GAP",
-        "path": ".venv/lib/python3.12/site-packages/pip/_vendor/pygments/lexers/_mapping.py"
+        "path": "blog/dns-over-tls-ubuntu.html"
       },
       {
-        "source": "WorldHermes",
+        "source": "HyperLightSite",
         "target": "AEP",
-        "path": ".venv/lib/python3.12/site-packages/PIL/ImageFont.py"
-      },
-      {
-        "source": "WorldHermes",
-        "target": "Wave",
-        "path": ".venv/lib/python3.12/site-packages/pip/_vendor/rich/_emoji_codes.py"
-      },
-      {
-        "source": "OpenAgents",
-        "target": "GAP",
-        "path": ".venv/lib/python3.12/site-packages/pip/_vendor/pygments/lexers/_mapping.py"
-      },
-      {
-        "source": "OpenAgents",
-        "target": "AEP",
-        "path": ".venv/lib/python3.12/site-packages/Crypto/SelfTest/Cipher/test_pkcs1_oaep.py"
-      },
-      {
-        "source": "OpenAgents",
-        "target": "Wave",
-        "path": ".venv/lib/python3.12/site-packages/pip/_vendor/rich/_emoji_codes.py"
+        "path": "blog/digital-nation-protocol-attestation-live.html"
       }
     ]
   },
   "conformanceEvidence": {
     "source": "aep-conformance probe via check-conformance.py",
     "exitCode": 0,
-    "summaryLine": "Result: 16 checks, 0 failed.",
-    "passedCount": 16,
+    "summaryLine": "",
+    "passedCount": 0,
     "failedCount": 0,
-    "checks": [
-      "[PASS] protocol-data.ministry",
-      "[PASS] protocol-data.stacks",
-      "[PASS] protocol-data.metrics",
-      "[PASS] protocol-data.quantum",
-      "[PASS] protocol-data.quantumAttestation",
-      "[PASS] protocol-data.verifiedIdentities",
-      "[PASS] protocol-data.attestation",
-      "[PASS] protocol-data.citizenBenefits",
-      "[PASS] protocol-data aep version present",
-      "[PASS] protocol-data dynaep version present",
-      "[PASS] AEP/package.json readable :: None",
-      "[PASS] AEP package type module :: module",
-      "[PASS] AEP hyper-lattice dep present",
-      "[PASS] aep-signatures repo present",
-      "[PASS] aep-signatures verifier present",
-      "[PASS] GAP README present"
-    ],
-    "stdoutExcerpt": "=== AEP Conformance Probe ===\n  [PASS] protocol-data.ministry\n  [PASS] protocol-data.stacks\n  [PASS] protocol-data.metrics\n  [PASS] protocol-data.quantum\n  [PASS] protocol-data.quantumAttestation\n  [PASS] protocol-data.verifiedIdentities\n  [PASS] protocol-data.attestation\n  [PASS] protocol-data.citizenBenefits\n  [PASS] protocol-data aep version present\n  [PASS] protocol-data dynaep version present\n  [PASS] AEP/package.json readable :: None\n  [PASS] AEP package type module :: module\n  [PASS] AEP hyper-lattice dep present\n  [PASS] aep-signatures repo present\n  [PASS] aep-signatures verifier present\n  [PASS] GAP README present\nResult: 16 checks, 0 failed.\n",
+    "checks": [],
+    "stdoutExcerpt": "attestation_written=/home/user/.hermes/archive/audit/aep-conformance-attestation-2026-07-11.json\nchecks=20 passed=20 failed=0\n",
     "stderrExcerpt": ""
-  },
-  "aepGapValidation": {
-    "status": "validated_with_findings",
-    "source": "QBFF/src/gap_policy_validator.py",
-    "summary": {
-      "total": 11,
-      "passed": 9,
-      "failed": 2
-    },
-    "sampleFailures": [
-      {
-        "path": "/home/user/repos/AEP/AEP-Policy-System/reference/aep-noship-distribution.gap",
-        "valid": false,
-        "errors": [
-          "pattern.guard must be boolean-like"
-        ]
-      },
-      {
-        "path": "/home/user/repos/AEP/AEP-Policy-System/reference/deployment.gap",
-        "valid": false,
-        "errors": [
-          "pattern.guard must be boolean-like"
-        ]
-      }
-    ],
-    "generatedAt": "2026-07-06T02:46:12.518700+00:00",
-    "regeneratedBy": "refresh-protocol-evidence"
-  },
-  "components": [
-    {
-      "id": "qbff",
-      "name": "QBFF Sovereign Bio-Cyber Defense",
-      "kind": "defense_layer",
-      "path": "repos/QBFF",
-      "source": "QBFF/README.md",
-      "status": "live"
-    },
-    {
-      "id": "wave-local",
-      "name": "Wave Local Runner",
-      "kind": "service",
-      "path": "repos/Wave",
-      "source": "service-runner.py",
-      "status": "running",
-      "url": "http://127.0.0.1:8080"
-    },
-    {
-      "id": "sayit-local",
-      "name": "SayIt Local Runner",
-      "kind": "service",
-      "path": "repos/SayIt",
-      "source": "service-runner.py",
-      "status": "running",
-      "url": "http://127.0.0.1:8081"
-    },
-    {
-      "id": "openagents-api",
-      "name": "OpenAgents Indexer API",
-      "kind": "service",
-      "path": "repos/OpenAgents/api",
-      "status": "running",
-      "url": "http://127.0.0.1:8082"
-    },
-    {
-      "id": "openagents-contracts",
-      "name": "OpenAgents Smart Contracts",
-      "kind": "contracts",
-      "path": "repos/OpenAgents/contracts",
-      "status": "present"
-    },
-    {
-      "id": "qbff-monitor",
-      "name": "QBFF Monitor",
-      "kind": "service",
-      "path": "QBFF/src",
-      "status": "running",
-      "systemdUnit": "qbff-monitor.service"
-    },
-    {
-      "id": "qbff-firewall",
-      "name": "QBFF Firewall",
-      "kind": "service",
-      "path": "QBFF/src/qbff_firewall.py",
-      "status": "running"
-    },
-    {
-      "id": "qbff-firewall-wave",
-      "name": "QBFF Firewall Wave",
-      "kind": "service",
-      "path": "QBFF/src/qbff_firewall.py",
-      "status": "running",
-      "frontend": "http://127.0.0.1:8095",
-      "backendPort": 8080
-    },
-    {
-      "id": "qbff-firewall-openagents",
-      "name": "QBFF Firewall OpenAgents",
-      "kind": "service",
-      "path": "QBFF/src/qbff_firewall.py",
-      "status": "running",
-      "frontend": "http://127.0.0.1:8096",
-      "backendPort": 8082
-    }
-  ],
-  "qbff": {
-    "status": "running",
-    "firewalls": [
-      {
-        "backend": "wave",
-        "frontend": "http://127.0.0.1:8095",
-        "backendPort": 8080
-      },
-      {
-        "backend": "openagents",
-        "frontend": "http://127.0.0.1:8096",
-        "backendPort": 8082
-      }
-    ],
-    "monitor": {
-      "unit": "qbff-monitor.service",
-      "timer": "qbff-monitor.timer",
-      "intervalSec": 90
-    },
-    "telemetry": {
-      "repo": "repos/QBFF",
-      "type": "python",
-      "preset": null,
-      "status": "ready",
-      "commands": {
-        "main": [
-          "python3",
-          "{repo}/src/main.py"
-        ]
-      }
-    }
-  },
-  "services": {
-    "wave": "running",
-    "sayit": "running",
-    "openagents": {
-      "status": "node_modules_installed",
-      "backendPort": 8082,
-      "frontendPort": 8096,
-      "systemdUnit": "digital-nation-openagents.service",
-      "backendUrl": "http://127.0.0.1:8082",
-      "frontendUrl": "http://127.0.0.1:8096",
-      "npmRegistry": "npmmirror",
-      "nodeModules": "installed",
-      "verifiedAt": "2026-07-06T02:22:41.401248+00:00",
-      "compile": {
-        "status": "partial_success",
-        "mode": "offline_solcjs",
-        "compiler": "0.8.24+commit.e11b9ed9.Emscripten.clang",
-        "succeeded": 18,
-        "failed": 3,
-        "failures": [
-          {
-            "file": "contracts/governance/GovernorAlpha.sol",
-            "error": "DeclarationError: Function \"mcopy\" not found"
-          },
-          {
-            "file": "contracts/oracle/ChainlinkAdapter.sol",
-            "error": "ParserError: Expected \",\" but got identifier at int256 answer"
-          },
-          {
-            "file": "contracts/vault/CompoundVault.sol",
-            "error": "DeclarationError: Function \"mcopy\" not found"
-          }
-        ]
-      }
-    },
-    "qbff": {
-      "status": "ok",
-      "monitorTimer": "qbff-monitor.timer"
-    },
-    "qbffIpGuard": {
-      "status": "active",
-      "port": 8190,
-      "listenHost": "0.0.0.0",
-      "denyEntries": 2,
-      "checks": {
-        "allowed": 200,
-        "blockedLocal2": 200,
-        "blockedLocal3": 200
-      }
-    }
-  },
-  "lastSystemIntegrationUpdate": "2026-07-06T05:19:51.899120+00:00",
-  "systemServices": {
-    "wave": {
-      "repo": "repos/Wave",
-      "type": "static",
-      "preset": "wave",
-      "status": "running",
-      "url": "http://127.0.0.1:8080",
-      "commands": {
-        "start": [
-          "python3",
-          "-m",
-          "http.server",
-          "8080",
-          "--directory",
-          "{repo}"
-        ],
-        "probe": [
-          "curl",
-          "-fsS",
-          "http://127.0.0.1:8080/"
-        ]
-      }
-    },
-    "sayit": {
-      "repo": "repos/SayIt",
-      "type": "static",
-      "preset": "sayit",
-      "status": "running",
-      "url": "http://127.0.0.1:8081",
-      "commands": {
-        "start": [
-          "python3",
-          "-m",
-          "http.server",
-          "8081",
-          "--directory",
-          "{repo}"
-        ],
-        "probe": [
-          "curl",
-          "-fsS",
-          "http://127.0.0.1:8081/"
-        ]
-      }
-    },
-    "openagents-api": {
-      "repo": "repos/OpenAgents/api",
-      "type": "fastapi",
-      "preset": "openagents",
-      "status": "running",
-      "url": "http://127.0.0.1:8082",
-      "commands": {
-        "start": [
-          "{repo}/../.venv/bin/python",
-          "-m",
-          "uvicorn",
-          "main:app",
-          "--app-dir",
-          "{repo}",
-          "--host",
-          "127.0.0.1",
-          "--port",
-          "8082"
-        ],
-        "probe": [
-          "curl",
-          "-fsS",
-          "http://127.0.0.1:8082/health"
-        ]
-      }
-    },
-    "openagents-contracts": {
-      "repo": "repos/OpenAgents",
-      "type": "hardhat",
-      "preset": "openagents",
-      "status": "pending_npm_install",
-      "commands": {
-        "install": [
-          "/home/user/.hermes/node/bin/npm",
-          "install"
-        ],
-        "compile": [
-          "/home/user/.hermes/node/bin/npx",
-          "hardhat",
-          "compile"
-        ],
-        "test": [
-          "/home/user/.hermes/node/bin/npx",
-          "hardhat",
-          "test"
-        ]
-      },
-      "npmCmd": "/home/user/.hermes/node/bin/npm"
-    },
-    "worldhermes": {
-      "repo": "repos/WorldHermes",
-      "type": "python_client",
-      "preset": null,
-      "status": "dependency_blocked",
-      "commands": {
-        "client": [
-          "{repo}/src/hermes_client.py"
-        ],
-        "run_venv": [
-          "{venv}",
-          "{repo}/src/hermes_client.py"
-        ]
-      },
-      "venv": "/home/user/repos/WorldHermes/.venv/bin/python",
-      "import": "src/hermes_client.py",
-      "class": "HermesClient",
-      "base_url_default": "http://localhost:8000/v1",
-      "model_default": "grok-3",
-      "blocker": "stable-worldmodel[train,env] requires box2d-py build toolchain not present and dependency is optional for core client import",
-      "fallback": "core client imports and is usable without world-model extra; venv created at /home/user/repos/WorldHermes/.venv"
-    },
-    "qbff": {
-      "repo": "repos/QBFF",
-      "type": "python",
-      "preset": null,
-      "status": "ready",
-      "commands": {
-        "main": [
-          "python3",
-          "{repo}/src/main.py"
-        ]
-      }
-    },
-    "openagents": {
-      "api": {
-        "status": "running",
-        "url": "http://127.0.0.1:8082"
-      },
-      "contracts": {
-        "status": "pending_npm_install"
-      },
-      "systemd": {
-        "status": "active",
-        "units": [
-          "digital-nation-wave.service",
-          "digital-nation-sayit.service",
-          "digital-nation-openagents.service"
-        ]
-      }
-    },
-    "dynaep": {
-      "repo": "repos/dynAEP",
-      "type": "npm_package",
-      "status": "ready",
-      "packageJson": "dynAEP/package.json",
-      "commands": {
-        "inspect": [
-          "cat",
-          "dynAEP/package.json"
-        ],
-        "validate": [
-          "python3",
-          "/home/user/.hermes/scripts/validate-repos.py"
-        ]
-      }
-    },
-    "hyper-lattice": {
-      "repo": "repos/hyper-lattice",
-      "type": "npm_package",
-      "status": "ready",
-      "packageJson": "hyper-lattice/package.json",
-      "commands": {
-        "inspect": [
-          "cat",
-          "hyper-lattice/package.json"
-        ],
-        "validate": [
-          "python3",
-          "/home/user/.hermes/scripts/validate-repos.py"
-        ]
-      }
-    },
-    "aep-signatures": {
-      "repo": "repos/aep-signatures",
-      "type": "python",
-      "status": "ready",
-      "commands": {
-        "validate": [
-          "python3",
-          "/home/user/.hermes/scripts/validate-repos.py"
-        ]
-      }
-    }
-  },
-  "systemEvidence": {
-    "wave": {
-      "status": "running",
-      "backendPort": 8080,
-      "frontendPort": 8095,
-      "firewall": "qbff"
-    },
-    "sayit": {
-      "status": "running",
-      "backendPort": 8081
-    },
-    "openagents": {
-      "status": "running",
-      "backendPort": 8082,
-      "frontendPort": 8096,
-      "firewall": "qbff"
-    },
-    "qbff": {
-      "status": "running",
-      "firewallMode": true,
-      "monitorTimer": "qbff-monitor.timer"
-    },
-    "worldhermes": {
-      "status": "dependency_blocked",
-      "venv": "/home/user/repos/WorldHermes/.venv"
-    },
-    "openagentsContracts": {
-      "status": "pending_npm_install"
-    },
-    "repoValidation": {
-      "status": "22/22 pass",
-      "script": "/home/user/.hermes/scripts/validate-repos.py"
-    }
-  },
-  "lastAepGapValidationUpdate": "2026-07-06T01:15:38.892765+00:00",
-  "lastAepGapLinkageUpdate": "2026-07-06T01:18:54.561029+00:00",
-  "aepGapLinkage": {
-    "status": "verified_registry_metadata",
-    "catalogVersion": "2.8.0",
-    "catalogProtocolVersion": "2.8.0",
-    "gapReferenceCount": 6,
-    "dependencyEdgeCount": 251,
-    "gapReferences": [
-      {
-        "component": "eu-ai-act",
-        "gap_ref": "AEP-Policy-System/reference/eu-ai-act.gap"
-      },
-      {
-        "component": "gdpr",
-        "gap_ref": "AEP-Policy-System/reference/gdpr.gap"
-      },
-      {
-        "component": "hipaa",
-        "gap_ref": "AEP-Policy-System/reference/hipaa.gap"
-      },
-      {
-        "component": "iso-42001",
-        "gap_ref": "AEP-Policy-System/reference/iso-42001.gap"
-      },
-      {
-        "component": "nist-ai-rmf",
-        "gap_ref": "AEP-Policy-System/reference/nist-ai-rmf.gap"
-      },
-      {
-        "component": "soc2-type2",
-        "gap_ref": "AEP-Policy-System/reference/soc2-type2.gap"
-      }
-    ],
-    "note": "AEP registry JSON is not GAP policy data; linkage is via gap_ref metadata to separate .gap policy files."
-  },
-  "lastAepGapPolicyValidationUpdate": "2026-07-06T01:20:38.667868+00:00",
-  "aepGapPolicyValidation": {
-    "status": "6/6 valid",
-    "validator": "/home/user/repos/QBFF/src/gap_policy_validator.py",
-    "metaSchema": "/home/user/repos/GAP/GAP meta schema v1.2.json",
-    "policyFiles": [
-      {
-        "path": "AEP/AEP-Policy-System/reference/eu-ai-act.gap",
-        "valid": true
-      },
-      {
-        "path": "AEP/AEP-Policy-System/reference/gdpr.gap",
-        "valid": true
-      },
-      {
-        "path": "AEP/AEP-Policy-System/reference/hipaa.gap",
-        "valid": true
-      },
-      {
-        "path": "AEP/AEP-Policy-System/reference/iso-42001.gap",
-        "valid": true
-      },
-      {
-        "path": "AEP/AEP-Policy-System/reference/nist-ai-rmf.gap",
-        "valid": true
-      },
-      {
-        "path": "AEP/AEP-Policy-System/reference/soc2-type2.gap",
-        "valid": true
-      }
-    ],
-    "note": "AEP registry JSON is governed by AEP registry schema; GAP policy validation applies to .gap YAML policy files referenced by AEP registry metadata via gap_ref."
-  },
-  "aepSignatures": {
-    "integration": {
-      "status": "demo_only",
-      "trustBundlePresent": true,
-      "readmeHygieneFlag": "flagged_for_human_review",
-      "verifiedAt": "2026-07-06T02:40:55.676255+00:00"
-    }
-  },
-  "identity": {
-    "profileVerification": {
-      "status": "18/19 passing",
-      "failingProfile": "hyperlightwiz",
-      "verifiedAt": "2026-07-06T02:46:00.252279+00:00",
-      "evidence": "/home/user/.hermes/archive/audit/profile-identity-verification-2026-07-06.json"
-    }
-  },
-  "dda": {
-    "status": "active",
-    "localRepo": "/home/user/repos/hyperlight-digital-assets",
-    "classification": "SECRET // INTERNAL MONITORING ONLY",
-    "modules": {
-      "marketMonitor": "live",
-      "pulseChainMonitor": "live",
-      "pulseChainRiver": "live",
-      "indexer": "live/hardened",
-      "anomalyDetector": "live",
-      "volumeBaseline": "live/anomalyCount=4",
-      "addressClusters": "live/clusterCount=16",
-      "provenanceGate": "live",
-      "auditLedger": "live",
-      "thresholdDriftMonitor": "triggered",
-      "telemetry": "live",
-      "dryRunHarness": "live",
-      "executionGate": "pending-authorization",
-      "openAgentsSandboxPrep": "done",
-      "executionSandbox": "pending-authorization/scaffold-ready",
-      "dashboard": "live",
-      "executionAuthorizationProcedure": "ready",
-      "sandboxBuildChecklist": "ready",
-      "operatorSandboxWizard": "ready",
-      "auditHardeningTests": "5/5 passing",
-      "sandboxStatusInBriefing": "integrated",
-      "dryRunProvenanceInBriefing": "integrated",
-      "watchedAddressesRegistry": "pending-operator-input",
-      "sandboxActivationHarness": "sandbox-ready",
-      "automatedSandboxWiring": "complete"
-    },
-    "cron": {
-      "dailySnapshot": "08:00 UTC",
-      "dailyBriefing": "08:30 UTC",
-      "hourlyRiver": "every hour :05",
-      "weeklyBriefing": "Mondays 09:00 UTC",
-      "secureComputeHealth": "03:00 UTC",
-      "anomalyDetection": "every hour :15",
-      "volumeBaseline": "every hour :30"
-    },
-    "wizAdvice": {
-      "automatedFailover": "done",
-      "indexerHardening": "done",
-      "tokenRoutingRegistryBaseline": "pending-address-input",
-      "openAgentsExecutionSandboxPrep": "done",
-      "provenanceGate": "done",
-      "auditLedger": "done",
-      "thresholdDriftMonitor": "done",
-      "telemetry": "done",
-      "dryRunHarness": "done"
-    },
-    "liveSignals": {
-      "btc": 63239,
-      "eth": 1776.66,
-      "pls": "0.00000671",
-      "pulsechainBlock": 26961311,
-      "pulsechainGasGwei": 477713.68,
-      "latestRiverTxCount": 21,
-      "latestRiverWhaleCount": 2,
-      "anomalyCount": 4,
-      "clusterCount": 16,
-      "indexedTopics": 10,
-      "indexedAddresses": 16,
-      "cpuLoad1": 0.5,
-      "memPct": 48.2,
-      "sandboxPreferredPath": "cgroup + network namespace",
-      "dryRunExecutionAuthorized": false,
-      "executionGateStatus": "pending-authorization",
-      "healthSnapshotGeneratedAt": "2026-07-06T04:57:34.095529+00:00",
-      "watchedAddresses": 0
-    },
-    "wizLatestAdvice": {
-      "sessionId": "20260706_050821_fc3cb3",
-      "recommendation": "authorize-sandbox-activation-via-execution-gate",
-      "automatedLane": "wire-sandbox-status-and-dryrun-provenance-into-daily-briefing-and-cron",
-      "status": "automation-prep-in-progress"
-    }
   }
 }
