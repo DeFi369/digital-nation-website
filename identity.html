@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The public identity of THE PRINCIPALITY OF AETHERIA — what we are, how we are governed, and why we exist.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/identity.html">
+  <meta property="og:title" content="Identity — The Principality of Aetheria">
+  <meta property="og:description" content="The public identity of THE PRINCIPALITY OF AETHERIA — what we are, how we are governed, and why we exist.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/identity.html">
+  <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Identity — The Principality of Aetheria">
+  <meta name="twitter:description" content="The public identity of THE PRINCIPALITY OF AETHERIA — what we are, how we are governed, and why we exist.">
+  <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
+  <title>Identity — The Principality of Aetheria</title>
+
+  <style>
+    /* Critical identity-page styles inline */
+    :root {
+      --color-bg: #0b0d14;
+      --color-surface: rgba(255,255,255,0.04);
+      --color-border: rgba(255,255,255,0.08);
+      --color-text: #e8e9ed;
+      --color-text-secondary: #9ca3af;
+      --color-accent: #7c3aed;
+      --color-accent-2: #06b6d4;
+      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+      --font-sans: "Inter", system-ui, sans-serif;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--color-accent);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 0 0 8px 0;
+      font-weight: 700;
+      text-decoration: none;
+      z-index: 100;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
+    .container {
+      width: min(1180px, 92vw);
+      margin-inline: auto;
+    }
+    a { color: var(--color-accent-2); }
+    a:hover { text-decoration-color: transparent; }
+    .muted { color: var(--color-text-secondary); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px) saturate(140%);
+      background: rgba(11,13,20,0.72);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .inner-header {
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(124,58,237,0.45), transparent 55%),
+        linear-gradient(135deg, rgba(6,182,212,0.35), rgba(124,58,237,0.45));
+      border: 1px solid rgba(255,255,255,0.12);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 30px rgba(6,182,212,0.18), inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+    .brand-mark svg { width: 20px; height: 20px; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 96px 0 80px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(124,58,237,0.22), transparent 42%),
+        radial-gradient(circle at 90% 90%, rgba(6,182,212,0.22), transparent 42%);
+      pointer-events: none;
+      z-index: 0;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    @keyframes drift {
+      from { transform: translate(1%, -1%) scale(1); }
+      to   { transform: translate(-1%, 1%) scale(1.04); }
+    }
+    .hero { position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      font-family: var(--font-mono);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+    }
+    h1 {
+      font-family: "Unbounded", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: clamp(42px, 7vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 18px 0 16px;
+    }
+    .lede {
+      font-size: clamp(16px, 1.8vw, 22px);
+      color: var(--color-text-secondary);
+      max-width: 720px;
+      margin: 0 0 28px;
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35), 0 0 0 1px rgba(124,58,237,0.25) inset;
+    }
+    .card-frame {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background:
+        linear-gradient(135deg, rgba(124,58,237,0.22), rgba(6,182,212,0.22));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .card h3 { margin: 2px 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--color-text-secondary); font-size: 15px; }
+
+    /* Identity diagram */
+    .identity-visual {
+      margin: 56px 0 40px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(124,58,237,0.06), rgba(6,182,212,0.06)),
+        var(--color-surface);
+      border: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .identity-visual::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(6,182,212,0.22), transparent 62%);
+      pointer-events: none;
+    }
+    .visual-caption {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-text-secondary);
+      margin-bottom: 14px;
+    }
+    .identity-visual img, .identity-visual svg {
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-inline: auto;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+    }
+
+    /* Governance map */
+    .gov-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 28px 0 0;
+    }
+    .gov-node {
+      padding: 18px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--color-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    }
+    .gov-node strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .gov-node span {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+    }
+
+    /* Principles */
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .principle {
+      padding: 22px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      position: relative;
+      overflow: hidden;
+    }
+    .principle::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(124,58,237,0.08), transparent), linear-gradient(315deg, rgba(6,182,212,0.06), transparent);
+      pointer-events: none;
+    }
+    .principle h3 { margin: 0 0 8px; font-size: 16px; position: relative; z-index: 1; }
+    .principle p { margin: 0; color: var(--color-text-secondary); font-size: 15px; position: relative; z-index: 1; }
+
+    /* CTA */
+    .cta-block {
+      margin: 64px 0 40px;
+      padding: 36px 32px;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+      background:
+        radial-gradient(circle at 0% 100%, rgba(124,58,237,0.22), transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(6,182,212,0.22), transparent 50%),
+        var(--color-surface);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #fff;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+    .button.primary {
+      background: linear-gradient(135deg, rgba(124,58,237,0.85), rgba(6,182,212,0.85));
+      border-color: transparent;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 60px;
+      border-top: 1px solid var(--color-border);
+      padding: 36px 0 52px;
+      color: var(--color-text-secondary);
+      font-size: 13px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 22px;
+    }
+    .footer-grid strong {
+      display: block;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+    .footer-meta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
+
+    /* Sections */
+    .section { padding: 68px 0; }
+    .section + .section { border-top: 1px solid var(--color-border); }
+    .section-head { margin-bottom: 28px; }
+    .section-head h2 {
+      font-family: "Unbounded", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height: 1.05;
+      margin: 8px 0 10px;
+    }
+
+    /* Metadata JSON note */
+    .meta-note {
+      margin-top: 44px;
+      padding: 18px 20px;
+      border-radius: 12px;
+      border: 1px dashed rgba(255,255,255,0.12);
+      color: var(--color-text-secondary);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" href="./favicon.ico">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container inner-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3c2.8 2.6 4 5.6 4 9s-1.2 6.4-4 9c-2.8-2.6-4-5.6-4-9s1.2-6.4 4-9z"/>
+          <path d="M3 12h18"/>
+        </svg>
+      </span>
+      THE PRINCIPALITY OF AETHERIA
+    </a>
+    <span class="muted" style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">Protocol v0.1.0</span>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="identity-title">
+    <div class="container">
+      <p class="eyebrow">Public Identity</p>
+      <h1 id="identity-title">What is the Digital Nation?</h1>
+      <p class="lede">
+        A sovereign digital polity — built in the open, governed by transparent rules, and open to anyone on Earth who accepts its charter.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="citizenship.html">Begin Citizenship</a>
+        <a class="button" href="charter.html">Read the Charter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="what-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Definition</p>
+        <h2 id="what-title">Identity in one view</h2>
+        <p class="lede">A clear public statement of what the Digital Nation is — and what it is not.</p>
+      </header>
+
+      <!-- Public visual reference only; replace path with an uploaded asset if desired. -->
+      <div class="identity-visual">
+        <div class="visual-caption">
+          <span aria-hidden="true">◆</span> Public Identity Model — Path-only image reference
+        </div>
+        <img
+          src="assets/images/identity-diagram.svg"
+          alt="Simplified diagram showing the Digital Nation as a layered system: foundational protocols at the base, governance in the middle, and services and citizens at the top."
+          width="720"
+          height="420"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-frame" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8">
+              <circle cx="12" cy="12" r="9"/><path d="M12 3c2.8 2.6 4 5.6 4 9s-1.2 6.4-4 9c-2.8-2.6-4-5.6-4-9s1.2-6.4 4-9z"/><path d="M3 12h18"/>
+            </svg>
+          </div>
+          <h3>A Sovereign Entity</h3>
+          <p>The Principality of Aetheria exists as a digital polity with its own founding text, governance protocol, and public-facing institutions — independent of any single server or company.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-frame" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.8">
+              <path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/>
+            </svg>
+          </div>
+          <h3>Governed by Rules, Not Rulers</h3>
+          <p>Power is structured into published roles and processes: a Constitutional Core, a Strategic Cabinet, operational offices, and an Assembly of citizens with quorum, deliberation, and recorded consent.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-frame" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8">
+              <path d="M12 3l7 3v6c0 4.4-3 7.4-7 9-4-1.6-7-4.6-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>Open by Default</h3>
+          <p>Decisions, standards, and progress are publicly auditable. The site publishes governance artifacts, declarations, and goals so citizens and observers can verify claims independently.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-frame" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Citizen-Centered</h3>
+          <p>Participation is intentionally accessible: create an identity, connect to the protocol, then vote, build, and shape services. Barriers are technical, not arbitrary.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="purpose-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Purpose</p>
+        <h2 id="purpose-title">Why this exists</h2>
+        <p class="lede">The Digital Nation is an experiment in self-governance for the internet age.</p>
+      </header>
+
+      <div class="principles">
+        <div class="principle">
+          <h3>01 · Digital Sovereignty</h3>
+          <p>Individuals should control their own digital existence rather than inheriting extractive platform defaults.</p>
+        </div>
+        <div class="principle">
+          <h3>02 · Privacy by Design</h3>
+          <p>Systems should default to private. Surveillance should be explicit, opt-in, and accountable.</p>
+        </div>
+        <div class="principle">
+          <h3>03 · Transparent Institutions</h3>
+          <p>Authority must be legible: defined roles, published procedures, and auditable records.</p>
+        </div>
+        <div class="principle">
+          <h3>04 · Global Access</h3>
+          <p>Geography is not a membership gate. Any person can participate from any country.</p>
+        </div>
+        <div class="principle">
+          <h3>05 · Iterative Legitimacy</h3>
+          <p>Legitimacy is earned through consistent execution and open improvement, not inherited title.</p>
+        </div>
+        <div class="principle">
+          <h3>06 · Public Infrastructure</h3>
+          <p>Core protocols and standards are treated as public goods: open, documented, and reusable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="governance-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Governance</p>
+        <h2 id="governance-title">How rules become action</h2>
+        <p class="lede">A layered public governance model — simplified for transparency, not obfuscation.</p>
+      </header>
+
+      <div class="gov-flow">
+        <div class="gov-node">
+          <strong>Constitutional Core</strong>
+          <span>President + Constitutional Council. Charter guardian and final interpreter of the founding text.</span>
+        </div>
+        <div class="gov-node">
+          <strong>Strategic Cabinet</strong>
+          <span>Seven department secretaries translating priorities into structured policy direction.</span>
+        </div>
+        <div class="gov-node">
+          <strong>Assembly of the Digital Nation</strong>
+          <span>Recorded deliberation, quorum-based voting, and published outcomes.</span>
+        </div>
+        <div class="gov-node">
+          <strong>Service Branches</strong>
+          <span>Digital Service Corps and Electoral Commission executing public-facing functions.</span>
+        </div>
+        <div class="gov-node">
+          <strong>Operational Offices</strong>
+          <span>Cross-cutting functions — records, implementation, and coordination.</span>
+        </div>
+        <div class="gov-node">
+          <strong>Charter Tribunal</strong>
+          <span>Independent arbiter for charter disputes, electoral questions, and constitutional interpretation.</span>
+        </div>
+      </div>
+
+      <div class="meta-note" aria-labelledby="meta-note-title">
+        <strong id="meta-note-title">Implementation note</strong><br>
+        For current roles, appointment rules, and procedural detail, see the protocol governance documentation. This page intentionally omits operational endpoints, internal communications channels, and instance-specific configuration.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-block">
+        <div>
+          <h2 id="cta-title" style="margin: 0 0 8px; font-size: clamp(22px, 2.6vw, 32px); font-family: 'Unbounded', system-ui, sans-serif;">Ready to participate?</h2>
+          <p class="muted" style="margin: 0; max-width: 540px;">Start with an identity, then join the network and contribute to governance, projects, or public infrastructure.</p>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="citizenship.html">Create Your Identity</a>
+          <a class="button" href="about.html">Explore the Nation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>THE PRINCIPALITY OF AETHERIA</strong>
+      <span class="muted">Sovereign by code</span>
+    </div>
+    <div>
+      <strong>Protocol</strong>
+      <span class="muted">v0.1.0 · Network Active</span>
+    </div>
+    <div>
+      <strong>Transparency</strong>
+      <span class="muted">Public by default. Closed only for security-sensitive exceptions.</span>
+    </div>
+    <div>
+      <strong>Legal Notice</strong>
+      <span class="muted">Experimental digital polity. Nothing here is legal advice or statehood under international law unless explicitly stated in a published protocol.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/nav.js"></script>
+<script>
+  (function () {
+    var tmpl = document.getElementById('site-header-nav-template');
+    if (!tmpl) return;
+    tmpl.parentNode.insertBefore(document.importNode(tmpl.content, true), tmpl);
+    tmpl.parentNode.removeChild(tmpl);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "identity": {
+    "name": "The Principality of Aetheria",
+    "alternateName": "The Digital Nation",
+    "motto": "Sovereign by Code",
+    "purpose": "A sovereign digital polity built in the open, governed by transparent rules, and open to anyone on Earth who accepts its charter.",
+    "status": "Active",
+    "publicContact": "public channels only",
+    "charter": "charter.html",
+    "identityPage": "identity.html"
+  },
+  "governance": {
+    "constitutionalCore": ["President", "ConstitutionalCouncil"],
+    "strategicCabinet": [
+      "SecretaryOfTechnologyScienceAndInnovation",
+      "SecretaryOfExternalAffairs",
+      "SecretaryOfDigitalEconomyAndCommerce",
+      "SecretaryOfCivicIdentityAndRegistry",
+      "SecretaryOfPublicAffairsAndCulture",
+      "SecretaryOfInfrastructureAndHumanServices",
+      "SecretaryOfJusticeAndConstitutionalCompliance"
+    ],
+    "operationalOffices": [
+      "DirectorOfDigitalOperations",
+      "DataGovernanceOfficer",
+      "OpenRecordsOfficer",
+      "DirectorOfSituationalAwareness",
+      "ChiefOfTheDigitalServiceCorps",
+      "ChiefElectoralOfficer",
+      "AssemblySpeaker",
+      "ChairConstitutionalCouncil",
+      "ConstitutionalCourt"
+    ]
+  },
+  "meta": {
+    "protocolVersion": "0.1.0",
+    "publicSurface": true,
+    "classification": "UNCLASSIFIED",
+    "lastReviewed": "2026-07-12"
+  }
+}

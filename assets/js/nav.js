@@ -13,6 +13,7 @@ var DigitalNationNav = (function () {
       { href: 'manifesto.html', label: 'Manifesto' },
       { href: 'charter.html', label: 'Charter' },
       { href: 'charter-addendum.html', label: 'Charter Addendum' },
+      { href: 'identity.html', label: 'Identity' },
       { href: 'structure.html', label: 'Structure' },
       { href: 'contact.html', label: 'Contact' }
     ]},

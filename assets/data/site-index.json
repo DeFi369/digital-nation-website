@@ -1,5 +1,5 @@
 {
-  "name": "The Principality of Aetheria — site index",
+  "name": "The Principality of Aetheria \u2014 site index",
   "generated": "2026-07-04",
   "base": "https://defi369.github.io/digital-nation-website/",
   "metrics": "https://defi369.github.io/digital-nation-website/assets/data/metrics.json",
@@ -10,469 +10,476 @@
   "pages": [
     {
       "page": "https://defi369.github.io/digital-nation-website/about.html",
-      "title": "About — The Principality of Aetheria",
+      "title": "About \u2014 The Principality of Aetheria",
       "description": "AETHERIA is sovereign by code. Learn about our purpose, governance model, and founding history.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/about.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/ambassadors.html",
-      "title": "Ambassadors — The Principality of Aetheria",
+      "title": "Ambassadors \u2014 The Principality of Aetheria",
       "description": "Meet citizen ambassadors and learn about the program representing Aetheria across projects, events, and communities.",
       "cluster": "diplomacy",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/assembly.html",
-      "title": "Assembly of the Digital Nation — The Principality of Aetheria",
+      "title": "Assembly of the Digital Nation \u2014 The Principality of Aetheria",
       "description": "The Assembly of the Digital Nation is the co-equal legislative branch of AETHERIA. Track bills, resolutions, confirmations, and budget actions.",
       "cluster": "governance",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/assembly.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/bandwidth.html",
-      "title": "National Broadband & Digital Equity — The Principality of Aetheria",
+      "title": "National Broadband & Digital Equity \u2014 The Principality of Aetheria",
       "description": "National Broadband & Digital Equity: connectivity coverage, access standards, deployment programmes, and digital-inclusion policy under the Secretary of Infrastructure & Human Services.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/bandwidth.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/charter-addendum.html",
-      "title": "Charter Addendum — The Principality of Aetheria",
+      "title": "Charter Addendum \u2014 The Principality of Aetheria",
       "description": "Charter Amendments & Revisions for THE PRINCIPALITY OF AETHERIA. Explore proposed changes, revision history, and live amendment processes under the Civic Assembly.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/charter-addendum.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/charter.html",
-      "title": "Charter — The Principality of Aetheria",
+      "title": "Charter \u2014 The Principality of Aetheria",
       "description": "The founding text of THE PRINCIPALITY OF AETHERIA. Every article is open to amendment through the Civic Assembly.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/charter.json"
     },
     {
+      "page": "https://defi369.github.io/digital-nation-website/identity.html",
+      "title": "Identity \u2014 The Principality of Aetheria",
+      "description": "Public identity, governance, and charter summary for the Digital Nation.",
+      "cluster": "foundations",
+      "data": "https://defi369.github.io/digital-nation-website/assets/data/namespace/identity.json"
+    },
+    {
       "page": "https://defi369.github.io/digital-nation-website/citizen-hub.html",
-      "title": "Citizen Hub — The Principality of Aetheria",
+      "title": "Citizen Hub \u2014 The Principality of Aetheria",
       "description": "Personal citizen dashboard for the Principality of Aetheria. Track signed petitions, submitted feedback, upcoming elections, and records requests.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/citizen-hub.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/citizenship.html",
-      "title": "Citizenship — The Principality of Aetheria",
+      "title": "Citizenship \u2014 The Principality of Aetheria",
       "description": "Citizenship readiness self-check, path assessment, passport framework, and onboarding flow for new citizens.",
       "cluster": "identity",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/citizenship.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/communications.html",
-      "title": "Digital Communications & Public Affairs — The Principality of Aetheria",
-      "description": "AETHERIA’s official communications, press protocols, and public information management under the layered republic external affairs layer.",
+      "title": "Digital Communications & Public Affairs \u2014 The Principality of Aetheria",
+      "description": "AETHERIA\u2019s official communications, press protocols, and public information management under the layered republic external affairs layer.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/communications.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/consular.html",
-      "title": "Consular — The Principality of Aetheria",
-      "description": "AETHERIA’s layered republic external affairs under the Secretary of External Affairs. Treaties, consular services, and outreach strategy.",
+      "title": "Consular \u2014 The Principality of Aetheria",
+      "description": "AETHERIA\u2019s layered republic external affairs under the Secretary of External Affairs. Treaties, consular services, and outreach strategy.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/consular.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/contact.html",
-      "title": "Contact — The Principality of Aetheria",
-      "description": "Reach the Principality’s front office for citizen requests, press, partnerships, governance correspondence, or technical support.",
+      "title": "Contact \u2014 The Principality of Aetheria",
+      "description": "Reach the Principality\u2019s front office for citizen requests, press, partnerships, governance correspondence, or technical support.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/contact.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/court.html",
-      "title": "Constitutional Court — The Principality of Aetheria",
+      "title": "Constitutional Court \u2014 The Principality of Aetheria",
       "description": "Judicial Review for the Principality of Aetheria. Browse case dockets, read opinions, search precedent, and request judicial review of governance actions.",
       "cluster": "governance",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/court.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/culture.html",
-      "title": "Public Affairs — The Principality of Aetheria",
-      "description": "AETHERIA’s public narrative, media standards, and community programs under the Secretary of External Affairs and the layered republic structure.",
+      "title": "Public Affairs \u2014 The Principality of Aetheria",
+      "description": "AETHERIA\u2019s public narrative, media standards, and community programs under the Secretary of External Affairs and the layered republic structure.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/culture.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/dashboard.html",
-      "title": "Public Dashboard — The Principality of Aetheria",
+      "title": "Public Dashboard \u2014 The Principality of Aetheria",
       "description": "Public participation metrics for the Republic. Figures reflect protocol-reported data.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/dashboard.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/data-governance.html",
-      "title": "Data Governance — The Principality of Aetheria",
+      "title": "Data Governance \u2014 The Principality of Aetheria",
       "description": "Data Governance for the Principality of Aetheria: data ethics, sovereignty, retention, and privacy compliance. Operational arm reporting through the President's operational layer, under the oversight of the Secretary of Public Affairs & Culture.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/data-governance.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/datasets.html",
-      "title": "Open Datasets — The Principality of Aetheria",
+      "title": "Open Datasets \u2014 The Principality of Aetheria",
       "description": "Open Datasets for the Principality of Aetheria: downloadable public data, usage examples, governance metadata, and transparency reporting. Managed under the Secretary of Public Affairs & Culture.",
       "cluster": "policy",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/digital-service-corps.html",
-      "title": "Digital Service Corps — The Principality of Aetheria",
+      "title": "Digital Service Corps \u2014 The Principality of Aetheria",
       "description": "Digital Service Corps for the Principality of Aetheria: workforce, civic-tech programs, infrastructure projects, and service-branch operations under the Chief of the Digital Service Corps reporting to the Secretary of Public Affairs & Culture.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/digital-service-corps.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/diplomacy.html",
-      "title": "Diplomacy — The Principality of Aetheria",
-      "description": "AETHERIA’s international relations, treaty framework, diplomatic protocols, and multilateral engagement under the layered republic v3.0.",
+      "title": "Diplomacy \u2014 The Principality of Aetheria",
+      "description": "AETHERIA\u2019s international relations, treaty framework, diplomatic protocols, and multilateral engagement under the layered republic v3.0.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/diplomacy.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/economy.html",
-      "title": "Digital Economy & Commerce — The Principality of Aetheria",
+      "title": "Digital Economy & Commerce \u2014 The Principality of Aetheria",
       "description": "Digital Economy & Commerce: open markets, protocol-backed instruments, treasury transparency, public-good funding, and citizen economic participation under the Secretary of Digital Economy & Commerce.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/economy.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/ecosystem-status.html",
-      "title": "Ecosystem Status — The Principality of Aetheria",
+      "title": "Ecosystem Status \u2014 The Principality of Aetheria",
       "description": "Unified ecosystem status for the Digital Nation: AEP 2.8, dynAEP 1.0, GAP, conformance, and signatures in one citizen-facing attestation.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/ecosystem-status.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/education.html",
-      "title": "Infrastructure & Human Services — Education — The Principality of Aetheria",
-      "description": "Infrastructure & Human Services — Education: curriculum framework, digital literacy, knowledge services, and research initiatives under the Secretary of Infrastructure & Human Services.",
+      "title": "Infrastructure & Human Services \u2014 Education \u2014 The Principality of Aetheria",
+      "description": "Infrastructure & Human Services \u2014 Education: curriculum framework, digital literacy, knowledge services, and research initiatives under the Secretary of Infrastructure & Human Services.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/education.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/elections.html",
-      "title": "Elections & Petitions — The Principality of Aetheria",
+      "title": "Elections & Petitions \u2014 The Principality of Aetheria",
       "description": "Elections, referendums, and petition validation for the Principality of Aetheria. The Chief Electoral Officer reports to the Assembly of the Digital Nation, under the oversight of the Secretary of Public Affairs & Culture.",
       "cluster": "governance",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/elections.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/emerging-tech.html",
-      "title": "Emerging Technology Review — The Principality of Aetheria",
+      "title": "Emerging Technology Review \u2014 The Principality of Aetheria",
       "description": "Emerging Technology Review: quantum, biotechnology, and autonomous systems policy frameworks for the Principality of Aetheria.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/emerging-tech.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/engage.html",
-      "title": "Civic Engagement Hub — The Principality of Aetheria",
+      "title": "Civic Engagement Hub \u2014 The Principality of Aetheria",
       "description": "Civic Engagement Hub for the Principality of Aetheria. Create petitions, submit feedback, track governance activity, and access interactive citizenship tools. Overseen by the Secretary of Public Affairs & Culture.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/engage.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/environment.html",
-      "title": "Environment & Sustainability — The Principality of Aetheria",
+      "title": "Environment & Sustainability \u2014 The Principality of Aetheria",
       "description": "Environmental Policy & Sustainability: carbon disclosure, resource stewardship, green protocol standards, and sustainability operations under the Secretary of Infrastructure & Human Services.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/environment.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/events.html",
-      "title": "Events — The Principality of Aetheria",
+      "title": "Events \u2014 The Principality of Aetheria",
       "description": "Upcoming town halls, hackathons, elections, protocol ceremonies, and recent events from the Digital Nation.",
       "cluster": "engagement",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/faq.html",
-      "title": "FAQ — The Principality of Aetheria",
+      "title": "FAQ \u2014 The Principality of Aetheria",
       "description": "Frequently asked questions about The Principality of Aetheria: citizenship, passports, recognition, governance, and digital identity.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/faq.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/finance.html",
-      "title": "Financial Oversight & Economic Governance — The Principality of Aetheria",
+      "title": "Financial Oversight & Economic Governance \u2014 The Principality of Aetheria",
       "description": "AETHERIA Economic Governance & Financial Oversight: fiscal policy, budget transparency, ledger oversight, and citizen economic participation.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/finance.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/getting-started.html",
-      "title": "Getting Started — The Principality of Aetheria",
+      "title": "Getting Started \u2014 The Principality of Aetheria",
       "description": "New to the Digital Nation? Start here with a quick checklist, key terms, and next steps.",
       "cluster": "foundations",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/goals.html",
-      "title": "Goals — The Principality of Aetheria",
-      "description": "Measurable progress toward sovereignty by protocol — grounded in real micronation frameworks.",
+      "title": "Goals \u2014 The Principality of Aetheria",
+      "description": "Measurable progress toward sovereignty by protocol \u2014 grounded in real micronation frameworks.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/goals.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/health-equity.html",
-      "title": "Health Equity & Public Health Access — The Principality of Aetheria",
+      "title": "Health Equity & Public Health Access \u2014 The Principality of Aetheria",
       "description": "Health Equity & Public Health Access: equity frameworks, access standards, community health programmes, and cross-ministry wellbeing services under the Secretary of Infrastructure & Human Services.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/health-equity.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/health.html",
-      "title": "Infrastructure & Human Services — Health — The Principality of Aetheria",
-      "description": "Infrastructure & Human Services — Health: digital health services, wellness programs, public health infrastructure, and citizen wellbeing under the Secretary of Infrastructure & Human Services.",
+      "title": "Infrastructure & Human Services \u2014 Health \u2014 The Principality of Aetheria",
+      "description": "Infrastructure & Human Services \u2014 Health: digital health services, wellness programs, public health infrastructure, and citizen wellbeing under the Secretary of Infrastructure & Human Services.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/health.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/helpline.html",
-      "title": "Helpline — The Principality of Aetheria",
+      "title": "Helpline \u2014 The Principality of Aetheria",
       "description": "Find support channels, response-time expectations, and contact options for the Principality of Aetheria.",
       "cluster": "engagement",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/index.html",
-      "title": "Digital Nation — The Principality of Aetheria",
+      "title": "Digital Nation \u2014 The Principality of Aetheria",
       "description": "Welcome to the Digital Nation. A sovereign entity in cyberspace built for secure, borderless collaboration.",
       "cluster": "home",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/index.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/infrastructure.html",
-      "title": "Infrastructure & Human Services — Infrastructure — The Principality of Aetheria",
-      "description": "Infrastructure & Human Services — Infrastructure: digital infrastructure, civic technology, broadband equity, and citizen-facing connectivity services under the Secretary of Infrastructure & Human Services.",
+      "title": "Infrastructure & Human Services \u2014 Infrastructure \u2014 The Principality of Aetheria",
+      "description": "Infrastructure & Human Services \u2014 Infrastructure: digital infrastructure, civic technology, broadband equity, and citizen-facing connectivity services under the Secretary of Infrastructure & Human Services.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/infrastructure.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/initiatives.html",
-      "title": "Initiatives — The Principality of Aetheria",
+      "title": "Initiatives \u2014 The Principality of Aetheria",
       "description": "Active programs, infrastructure projects, and standards work run under the Principality charter.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/initiatives.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/join.html",
-      "title": "Join — The Principality of Aetheria",
+      "title": "Join \u2014 The Principality of Aetheria",
       "description": "Citizenship is open to all. Engineers, operators, researchers, educators, and advocates are equally welcome.",
       "cluster": "identity",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/join.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/justice.html",
-      "title": "Justice & Constitutional Compliance — The Principality of Aetheria",
+      "title": "Justice & Constitutional Compliance \u2014 The Principality of Aetheria",
       "description": "Justice & Constitutional Compliance for the Principality of Aetheria: charter law, digital rights, Charter Tribunal proceedings, and dispute resolution under the Secretary of Justice & Constitutional Compliance.",
       "cluster": "governance",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/justice.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/labs.html",
-      "title": "Laboratory Operations & Safety — The Principality of Aetheria",
+      "title": "Laboratory Operations & Safety \u2014 The Principality of Aetheria",
       "description": "Laboratory Operations & Safety: laboratory operations, safety frameworks, biosecurity, and training standards for the Principality of Aetheria.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/labs.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/manifesto.html",
-      "title": "Manifesto — The Principality of Aetheria",
-      "description": "A Modern Sovereignty Declaration — principles we build into every protocol, service, and governance decision.",
+      "title": "Manifesto \u2014 The Principality of Aetheria",
+      "description": "A Modern Sovereignty Declaration \u2014 principles we build into every protocol, service, and governance decision.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/manifesto.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/memory-lattice.html",
-      "title": "Memory Lattice — The Principality of Aetheria",
+      "title": "Memory Lattice \u2014 The Principality of Aetheria",
       "description": "Citizen-facing view of the Aetheria memory lattice: active layer, memory count, visited layers, and transition state.",
       "cluster": "policy",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/missions.html",
-      "title": "Diplomatic Missions & Consular Network — The Principality of Aetheria",
+      "title": "Diplomatic Missions & Consular Network \u2014 The Principality of Aetheria",
       "description": "Diplomatic missions, consular representatives, regions, and appointment framing for the Principality of Aetheria.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/missions.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/newsletter-archive.html",
-      "title": "Newsletter Archive — The Principality of Aetheria",
+      "title": "Newsletter Archive \u2014 The Principality of Aetheria",
       "description": "Archive of past newsletters from the Digital Nation with updates, protocol notes, and citizen stories.",
       "cluster": "engagement",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/newsletter-blog.html",
-      "title": "Newsletter & Blog — The Principality of Aetheria",
+      "title": "Newsletter & Blog \u2014 The Principality of Aetheria",
       "description": "Recent updates, citizen stories, protocol notes, and upcoming announcements from the Digital Nation.",
       "cluster": "engagement",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/open-records.html",
-      "title": "Open Records — The Principality of Aetheria",
+      "title": "Open Records \u2014 The Principality of Aetheria",
       "description": "Open Records for the Principality of Aetheria: proactive disclosure, public records access, FOI-style requests, and audit-ready documentation. Overseen by the Secretary of Public Affairs & Culture.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/open-records.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/passport.html",
-      "title": "Passport / Citizen Credential — The Principality of Aetheria",
+      "title": "Passport / Citizen Credential \u2014 The Principality of Aetheria",
       "description": "The Aetheria Passport is a living, portable, machine-verifiable citizen credential designed for a networked world.",
       "cluster": "identity",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/passport.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/privacy.html",
-      "title": "Privacy Policy — The Principality of Aetheria",
+      "title": "Privacy Policy \u2014 The Principality of Aetheria",
       "description": "Privacy policy for The Principality of Aetheria: how citizen data, credentials, and governance records are handled.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/privacy.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/protocol-status.html",
-      "title": "Protocol Status — The Principality of Aetheria",
+      "title": "Protocol Status \u2014 The Principality of Aetheria",
       "description": "Live protocol-status briefing for AETHERIA: AEP 2.8 governance stack, dynAEP temporal layer, and cross-repo integration status.",
       "cluster": "diplomacy",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/protocol.html",
-      "title": "Protocol — The Principality of Aetheria",
-      "description": "AETHERIA’s technical standards, layered republic interoperability frameworks, and digital sovereignty protocols under the Protocol office.",
+      "title": "Protocol \u2014 The Principality of Aetheria",
+      "description": "AETHERIA\u2019s technical standards, layered republic interoperability frameworks, and digital sovereignty protocols under the Protocol office.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/protocol.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/quantum-roadmap.html",
-      "title": "Quantum Attestation Hardware Roadmap — The Principality of Aetheria",
+      "title": "Quantum Attestation Hardware Roadmap \u2014 The Principality of Aetheria",
       "description": "Quantum Attestation Hardware Roadmap: AETHERIA's phased path to sovereign quantum attestation with open hardware, QRNG, FPGA simulation, and on-premise QPU.",
       "cluster": "policy",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/recognition.html",
-      "title": "Recognition — The Principality of Aetheria",
-      "description": "AETHERIA’s recognition strategy across Montevideo criteria, digital-state conditions, and passport diplomacy.",
+      "title": "Recognition \u2014 The Principality of Aetheria",
+      "description": "AETHERIA\u2019s recognition strategy across Montevideo criteria, digital-state conditions, and passport diplomacy.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/recognition.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/registry.html",
-      "title": "Civic Registry — The Principality of Aetheria",
+      "title": "Civic Registry \u2014 The Principality of Aetheria",
       "description": "Search the public Citizen Registry, view verification tiers, and understand public record notices for the Principality of Aetheria.",
       "cluster": "identity",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/registry.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/research-papers.html",
-      "title": "Research Papers — The Principality of Aetheria",
+      "title": "Research Papers \u2014 The Principality of Aetheria",
       "description": "Research papers and provable attestations backing Digital Nation governance claims.",
       "cluster": "policy",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/research.html",
-      "title": "Technology & Innovation — The Principality of Aetheria",
+      "title": "Technology & Innovation \u2014 The Principality of Aetheria",
       "description": "Technology & Innovation: research initiatives, innovation policy, technology standards, and cross-ministry collaboration for the Principality of Aetheria.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/research.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/safety.html",
-      "title": "Digital Operations & Situational Awareness — The Principality of Aetheria",
+      "title": "Digital Operations & Situational Awareness \u2014 The Principality of Aetheria",
       "description": "Digital Operations & Situational Awareness for the Principality of Aetheria: platform reliability, incident response, digital operational awareness, and threat monitoring under the Secretary of Justice & Constitutional Compliance.",
       "cluster": "governance",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/safety.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/science.html",
-      "title": "Science — The Principality of Aetheria",
+      "title": "Science \u2014 The Principality of Aetheria",
       "description": "Science: open science, reproducibility, interdisciplinary platforms, citizen science, and evidence stewardship under the Secretary of Technology, Science & Innovation.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/science.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/situational-awareness.html",
-      "title": "Situational Awareness — The Principality of Aetheria",
+      "title": "Situational Awareness \u2014 The Principality of Aetheria",
       "description": "Situational Awareness for the Principality of Aetheria: national indicators, risk assessment, strategic foresight, and early warning reporting through the President's operational layer, under the oversight of the Secretary of Public Affairs & Culture.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/situational-awareness.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/sovereign-security.html",
-      "title": "Sovereign Security — The Principality of Aetheria",
+      "title": "Sovereign Security \u2014 The Principality of Aetheria",
       "description": "Sovereign security posture for the Principality of Aetheria: network, identity, compute, and attestation safeguards.",
       "cluster": "governance",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/structure.html",
-      "title": "Government Structure — The Principality of Aetheria",
-      "description": "Explore the layered republic of THE PRINCIPALITY OF AETHERIA — Constitutional Core, Strategic Cabinet, Operational Offices, Service Branches, Assembly, and Constitutional Court.",
+      "title": "Government Structure \u2014 The Principality of Aetheria",
+      "description": "Explore the layered republic of THE PRINCIPALITY OF AETHERIA \u2014 Constitutional Core, Strategic Cabinet, Operational Offices, Service Branches, Assembly, and Constitutional Court.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/structure.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/sustainability.html",
-      "title": "Sustainability Operations — The Principality of Aetheria",
+      "title": "Sustainability Operations \u2014 The Principality of Aetheria",
       "description": "Sustainability Operations & Reporting: operational sustainability, impact reporting, green infrastructure, and reporting frameworks under the Secretary of Infrastructure & Human Services.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/sustainability.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/symbols.html",
-      "title": "National Symbols — The Principality of Aetheria",
-      "description": "The visual and ceremonial identity of AETHERIA — flag concept, anthem direction, founding date, and protocol.",
+      "title": "National Symbols \u2014 The Principality of Aetheria",
+      "description": "The visual and ceremonial identity of AETHERIA \u2014 flag concept, anthem direction, founding date, and protocol.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/symbols.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/technology.html",
-      "title": "Technology, Science & Innovation — The Principality of Aetheria",
+      "title": "Technology, Science & Innovation \u2014 The Principality of Aetheria",
       "description": "Technology, Science & Innovation: operational technology, digital infrastructure, enterprise care, and healthy pipeline management for the Principality of Aetheria.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/technology.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/terms.html",
-      "title": "Terms — The Principality of Aetheria",
+      "title": "Terms \u2014 The Principality of Aetheria",
       "description": "Terms of participation for The Principality of Aetheria: citizenship, services, governance, and acceptable use.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/terms.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/timeline.html",
-      "title": "History & Timeline — The Principality of Aetheria",
-      "description": "From early protocol experiments to a sovereign digital republic — the evolution of AETHERIA.",
+      "title": "History & Timeline \u2014 The Principality of Aetheria",
+      "description": "From early protocol experiments to a sovereign digital republic \u2014 the evolution of AETHERIA.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/timeline.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/tools.html",
-      "title": "Citizenship Tools — The Principality of Aetheria",
+      "title": "Citizenship Tools \u2014 The Principality of Aetheria",
       "description": "Interactive citizenship tools for the Principality of Aetheria: readiness self-check, contribution path finder, petition builder, feedback submission, civic activity feed, petition signing, escalation tracker, and judicial review portal. Overseen by the Secretary of Public Affairs & Culture.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/tools.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/transparency.html",
-      "title": "Operational Transparency & Open Records — The Principality of Aetheria",
+      "title": "Operational Transparency & Open Records \u2014 The Principality of Aetheria",
       "description": "Operational Transparency & Open Records for the Principality of Aetheria: proactive disclosure, governance transparency, public records access, and audit-ready documentation. Overseen by the Secretary of Public Affairs & Culture.",
       "cluster": "engagement",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/transparency.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/treasury.html",
-      "title": "Treasury & Digital Assets — The Principality of Aetheria v3.0",
+      "title": "Treasury & Digital Assets \u2014 The Principality of Aetheria v3.0",
       "description": "Treasury & Digital Assets: reserve management, protocol-backed assets, instrument lifecycle, and fiscal oversight under the Secretary of Digital Economy & Commerce.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/treasury.json"
