@@ -64,6 +64,7 @@
 - charter law, dispute resolution, electoral oversight, compliance
 - Reports to: President
 - Classification: AEP_GOVERNANCE_SECRETARY_OF_JUSTICE_AND_CONSTITUTIONAL_COMPLIANCE
+- Status: Deprecated as standalone commissioning label in public mapping; retained as deprecated reference in operational docs for lineage.
 
 ---
 
@@ -73,6 +74,7 @@
 - platform, deployment, nodes, architecture
 - Reports to: President
 - Classification: AEP_GOVERNANCE_DIRECTOR_OF_DIGITAL_OPERATIONS
+- Status: Deprecated as standalone operational office in public mapping; retained as deprecated reference in operational docs for lineage.
 
 **Data Governance Officer**
 - ethics, sovereignty, retention, transparency
@@ -88,6 +90,7 @@
 - indicators, risk, foresight, early warning
 - Reports to: President
 - Classification: AEP_GOVERNANCE_DIRECTOR_OF_SITUATIONAL_AWARENESS
+- Status: Deprecated as standalone operational office in public mapping; retained as deprecated reference in operational docs for lineage.
 
 ---
 
@@ -118,18 +121,18 @@
 ## LAYER 3: DEPUTY / DIVISION / PROGRAM LEADS
 
 **Vice President**
-|- Chief of Staff
-|- Director of OMB
-|- National Security Advisor
+- Chief of Staff
+- Director of OMB
+- National Security Advisor
 
 **Chair, Constitutional Council**
 - Tribunal Clerk
 - Dispute Resolution Officer
 
 **Secretary of External Affairs**
-|- Deputy Secretary of External Affairs
-|- Consular Operations Lead
-|- Protocol Officer
+- Deputy Secretary of External Affairs
+- Consular Operations Lead
+- Protocol Officer
 
 **Secretary of Digital Economy & Commerce**
 - Deputy Secretary
@@ -206,3 +209,7 @@
 - secretary_of_technology_and_innovation/aep standalone agent
 - Legacy Defense/Intelligence/Justice offices
 - All old US-mirrored department profiles
+
+---
+
+*End of Agent Lattice Map v3.0*

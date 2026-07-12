@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-11",
+  "generated": "2026-07-12",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -135,7 +135,7 @@
     "signatureStatus": "pre-v1.0",
     "totalComponents": 21,
     "artifactFileCount": 40,
-    "pageCount": 70,
+    "pageCount": 71,
     "crossRepoPageCount": 5,
     "crossRepoPages": [
       "ecosystem-status.html",
@@ -146,28 +146,17 @@
     ],
     "identityManifestCount": 15,
     "identityKeyCount": 19,
-    "latestCommit": "5237e56a9901dae25b1f4ec78b03459515ead632 docs: append validated hyper-lattice core test metrics to lattice-summary",
-    "latestCommitDate": "2026-07-06",
-    "lastAudit": "2026-07-11",
-    "conformanceEvidenceGeneratedAt": "2026-07-11T12:02:45.627046+00:00",
-    "conformancePassedCount": 0,
-    "conformanceFailedCount": 0,
-    "profileReadyForVerificationPct": 100.0,
-    "cronLastRunOk": 17,
-    "cronLastRunUnknown": 1,
-    "knownIssues": [
-      "trust-bundle signed attestations absent",
-      "state.db readonly pending; no vacuum while gateway holds write lock",
-      "website major edits paused for Claude"
-    ]
+    "latestCommit": "a1aedec3d6e501ac6d43108ea7a18e4bee74612a docs: fix goverment lattice map Vice President block",
+    "latestCommitDate": "2026-07-12",
+    "lastAudit": "2026-07-12"
   },
   "quantum": {
     "available": true,
-    "collapseChosenLattice": "lattice-memory",
+    "collapseChosenLattice": "lattice-national",
     "afterNormalizeTotal": 0.9999999999999998,
     "boosterPhaseReady": true
   },
-  "quantumAttestation": "dbc7bcc3d4d89374",
+  "quantumAttestation": "9be76a6da8434473",
   "verifiedIdentities": [
     "president",
     "secretary_of_technology_science_and_innovation",
@@ -196,167 +185,12 @@
     "Local identity verification for agent accountability"
   ],
   "attestation": {
-    "trustBundleExists": true,
-    "ready": "stub-bundle-no-signatures-present",
-    "note": "Populate trust-bundle with signed profile attestations before claiming verification coverage."
-  },
-  "repoCrossReferences": {
-    "edgeCount": 59,
-    "topInboundReferences": [
-      {
-        "repo": "GAP",
-        "count": 15
-      },
-      {
-        "repo": "AEP",
-        "count": 10
-      },
-      {
-        "repo": "Wave",
-        "count": 9
-      },
-      {
-        "repo": "dynAEP",
-        "count": 7
-      },
-      {
-        "repo": "SayIt",
-        "count": 4
-      },
-      {
-        "repo": "hyper-lattice",
-        "count": 4
-      },
-      {
-        "repo": "aep-conformance",
-        "count": 3
-      },
-      {
-        "repo": "OpenAgents",
-        "count": 3
-      },
-      {
-        "repo": "digital-nation-website",
-        "count": 1
-      },
-      {
-        "repo": "aep-signatures",
-        "count": 1
-      }
-    ],
-    "topOutboundReferences": [
-      {
-        "repo": "digital-nation-website",
-        "count": 9
-      },
-      {
-        "repo": "HyperLightSite",
-        "count": 8
-      },
-      {
-        "repo": "AEP",
-        "count": 6
-      },
-      {
-        "repo": "hyper-lattice",
-        "count": 5
-      },
-      {
-        "repo": "aep-conformance",
-        "count": 5
-      },
-      {
-        "repo": "QBFF",
-        "count": 4
-      },
-      {
-        "repo": "dynAEP",
-        "count": 3
-      },
-      {
-        "repo": "OpenAgents",
-        "count": 3
-      },
-      {
-        "repo": "extendwrite",
-        "count": 3
-      },
-      {
-        "repo": "WorldHermes",
-        "count": 3
-      }
-    ],
-    "samples": [
-      {
-        "source": "dynAEP",
-        "target": "AEP",
-        "path": "observers/README.md"
-      },
-      {
-        "source": "dynAEP",
-        "target": "GAP",
-        "path": "gap-translator/parser.ts"
-      },
-      {
-        "source": "dynAEP",
-        "target": "aep-conformance",
-        "path": "NAME-POLICY.md"
-      },
-      {
-        "source": "hyper-lattice",
-        "target": "AEP",
-        "path": "packages/lattice-visual/package-lock.json"
-      },
-      {
-        "source": "hyper-lattice",
-        "target": "GAP",
-        "path": "packages/lattice-visual/dist/assets/main-DMZezTsC.js"
-      },
-      {
-        "source": "hyper-lattice",
-        "target": "SayIt",
-        "path": "packages/lattice-visual/dist/assets/main-DMZezTsC.js"
-      },
-      {
-        "source": "hyper-lattice",
-        "target": "Wave",
-        "path": "packages/lattice-visual/dist/assets/main-DMZezTsC.js"
-      },
-      {
-        "source": "hyper-lattice",
-        "target": "dynAEP",
-        "path": "packages/lattice-core/dist/core/EvidenceLedger.d.ts"
-      },
-      {
-        "source": "aep-signatures",
-        "target": "AEP",
-        "path": "docs/signature_ingestion_and_refinement_plan.md"
-      },
-      {
-        "source": "aep-signatures",
-        "target": "GAP",
-        "path": "docs/signature_ingestion_and_refinement_plan.md"
-      },
-      {
-        "source": "HyperLightSite",
-        "target": "GAP",
-        "path": "blog/dns-over-tls-ubuntu.html"
-      },
-      {
-        "source": "HyperLightSite",
-        "target": "AEP",
-        "path": "blog/digital-nation-protocol-attestation-live.html"
-      }
-    ]
-  },
-  "conformanceEvidence": {
-    "source": "aep-conformance probe via check-conformance.py",
-    "exitCode": 0,
-    "summaryLine": "",
-    "passedCount": 0,
-    "failedCount": 0,
-    "checks": [],
-    "stdoutExcerpt": "attestation_written=/home/user/.hermes/archive/audit/aep-conformance-attestation-2026-07-11.json\nchecks=20 passed=20 failed=0\n",
-    "stderrExcerpt": ""
+    "trustBundleValid": true,
+    "trustBundleRoot": "epscom-root-2024",
+    "trustBundleExpiry": "2025-01-01T00:00:00Z",
+    "signaturesVerified": 19,
+    "signaturesTotal": 19,
+    "signatureCoverage": "100%",
+    "lastVerification": "2026-07-12T06:00:04.884183+00:00"
   }
 }
