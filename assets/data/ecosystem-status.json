@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-03",
+  "generated": "2026-07-12",
   "ministry": "Secretary of Technology & Innovation",
   "site": {
     "pageCount": 122,
@@ -22,7 +22,7 @@
         "Composer Lite is experimental",
         "NPM registry distribution is forbidden; Docker or verified source clone required"
       ],
-      "lastUpdated": "2026-07-03"
+      "lastUpdated": "2026-07-12"
     },
     {
       "id": "dynaep",
@@ -34,20 +34,20 @@
       "knownIssues": [
         "GAP Runtime is a closed paid product; dynAEP is the open runtime"
       ],
-      "lastUpdated": "2026-07-03"
+      "lastUpdated": "2026-07-12"
     },
     {
       "id": "gap",
       "name": "GAP",
       "fullName": "Governed Agentic Programming",
-      "version": "pre-v1.0",
-      "stage": "pre-release",
+      "version": "1.1",
+      "stage": "active",
       "summary": "Native YAML instruction language for governed agency with three-layer enforcement: constrained decoding, structural validation, and governance lattice.",
       "knownIssues": [
         "Stable spec not yet finalized; meta-schema iterations in progress",
         "No v1.0 release tag"
       ],
-      "lastUpdated": "2026-07-03"
+      "lastUpdated": "2026-07-12"
     },
     {
       "id": "aep-conformance",
@@ -60,7 +60,7 @@
         "Runner scaffolding lands in a forthcoming commit",
         "Conformance report submission format not yet published"
       ],
-      "lastUpdated": "2026-07-03"
+      "lastUpdated": "2026-07-12"
     },
     {
       "id": "aep-signatures",
@@ -73,17 +73,88 @@
         "Signature format and trust-bundle layout still being finalized",
         "Reference subscriber implementation not yet shipped"
       ],
-      "lastUpdated": "2026-07-03"
+      "lastUpdated": "2026-07-12"
     }
   ],
   "metrics": {
     "aepVersion": "2.8.0",
     "dynaepVersion": "1.0",
-    "gapStatus": "pre-v1.0",
+    "gapStatus": "1.1",
     "conformanceStatus": "pre-v1.0",
     "signatureStatus": "pre-v1.0",
     "knownIssueCount": 7,
-    "lastAudit": "2026-07-03"
+    "lastAudit": "2026-07-12",
+    "totalComponents": 21,
+    "artifactFileCount": 40,
+    "pageCount": 71,
+    "crossRepoPageCount": 5,
+    "crossRepoPages": [
+      "ecosystem-status.html",
+      "memory-lattice.html",
+      "protocol-status.html",
+      "research.html",
+      "sovereign-security.html"
+    ],
+    "identityManifestCount": 15,
+    "identityKeyCount": 19,
+    "latestCommit": "a1aedec3d6e501ac6d43108ea7a18e4bee74612a",
+    "latestCommitDate": "2026-07-12"
   },
-  "citizenAttestation": "The Digital Nation protocol stack is sovereign, deterministic, and auditable. Citizens can rely on transparent governance, auditable automation, and resilient infrastructure without vendor lock-in."
+  "quantum": {
+    "available": true,
+    "collapseChosenLattice": "lattice-national",
+    "afterNormalizeTotal": 0.9999999999999998,
+    "boosterPhaseReady": true
+  },
+  "quantumAttestation": "9be76a6da8434473",
+  "verifiedIdentities": [
+    "president",
+    "secretary_of_technology_science_and_innovation",
+    "vice_president",
+    "chief_of_the_digital_service_corps",
+    "data_governance_officer",
+    "open_records_officer",
+    "secretary_of_civic_identity_and_registry",
+    "director_of_digital_operations",
+    "director_of_situational_awareness",
+    "secretary_of_digital_economy_and_commerce",
+    "secretary_of_infrastructure_and_human_services",
+    "secretary_of_justice_and_constitutional_compliance",
+    "secretary_of_public_affairs_and_culture",
+    "secretary_of_external_affairs",
+    "assembly_speaker",
+    "chair_constitutional_council",
+    "constitutional_court",
+    "chief_electoral_officer"
+  ],
+  "citizenAttestation": "The Digital Nation protocol stack is sovereign, deterministic, and auditable. Citizens can rely on transparent governance, auditable automation, and resilient infrastructure without vendor lock-in.",
+  "citizenBenefits": [
+    "Deterministic transparency for public services",
+    "Auditable automation via evidence ledgers",
+    "Sovereign resilience without vendor lock-in",
+    "Temporal governance for trustworthy timestamps",
+    "Local identity verification for agent accountability"
+  ],
+  "attestation": {
+    "trustBundleValid": true,
+    "trustBundleRoot": "epscom-root-2024",
+    "trustBundleExpiry": "2025-01-01T00:00:00Z",
+    "signaturesVerified": 19,
+    "signaturesTotal": 19,
+    "signatureCoverage": "100%",
+    "lastVerification": "2026-07-12T06:00:04.884183+00:00"
+  },
+  "provenance": {
+    "sources": [
+      "AEP 2.8.0 Protocol Specification",
+      "dynAEP 1.0 Runtime",
+      "GAP 1.1 Language Specification",
+      "AEP Conformance Test Suite",
+      "AEP Signature Trust Bundles"
+    ],
+    "method": "EPSCOM-curated trust bundles with JSON Schema validation and signed attestations",
+    "verified": true,
+    "updatedAt": "2026-07-12",
+    "hash": "9be76a6da8434473"
+  }
 }

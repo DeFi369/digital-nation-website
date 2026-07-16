@@ -10,6 +10,7 @@
   function init() {
     renderStatusPage();
     renderRepoCrossReferences();
+    renderProvenanceAttestation();
   }
 
   function renderRepoCrossReferences() {
@@ -253,6 +254,27 @@
       { label: 'Quantum Layer', value: q.collapseChosenLattice || '-' },
       { label: 'Normalized Total', value: q.afterNormalizeTotal != null ? String(q.afterNormalizeTotal) : '-' },
       { label: 'Booster Phase', value: q.boosterPhaseReady ? 'Ready' : 'Not ready' }
+    ];
+    container.innerHTML = items.map(function (item) {
+      return '<div class="stat">' +
+        '<span class="stat-value">' + escapeHtml(String(item.value)) + '</span>' +
+        '<span class="stat-label">' + escapeHtml(String(item.label)) + '</span>' +
+      '</div>';
+    }).join('');
+  }
+
+  function renderProvenanceAttestation(container, data) {
+    var prov = data.provenance || {};
+    if (!prov || Object.keys(prov).length === 0) {
+      container.innerHTML = '<div class="activity-empty">Provenance data not available.</div>';
+      return;
+    }
+    var items = [
+      { label: 'Data Sources', value: prov.sources ? prov.sources.join(', ') : '—' },
+      { label: 'Attestation Method', value: prov.method || '—' },
+      { label: 'Verification', value: prov.verified ? 'Verified' : 'Pending' },
+      { label: 'Last Updated', value: prov.updatedAt || '—' },
+      { label: 'Integrity Hash', value: prov.hash ? prov.hash.substring(0, 16) + '...' : '—' }
     ];
     container.innerHTML = items.map(function (item) {
       return '<div class="stat">' +

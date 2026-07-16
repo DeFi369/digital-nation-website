@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-12",
+  "generated": "2026-07-15",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -71,6 +71,9 @@
       "artifacts": [
         "README.md",
         "LICENSE",
+        "graph.json",
+        ".graphify_analysis.json",
+        "manifest.json",
         ".gitkeep",
         "packed-refs",
         "index",
@@ -80,15 +83,12 @@
         "HEAD",
         "config",
         "ORIG_HEAD",
-        "prepare-commit-msg.sample",
-        "pre-merge-commit.sample",
-        "sendemail-validate.sample",
-        "pre-receive.sample",
-        "pre-applypatch.sample",
-        "fsmonitor-watchman.sample",
-        "push-to-checkout.sample",
-        "pre-rebase.sample",
-        "update.sample"
+        ".gitkeep",
+        "run.sh",
+        "check-conformance.py",
+        ".gitkeep",
+        "stat-index.json",
+        "6335ffb3f728f1e25ad788612a76b5ad47fcc902c16610d0890f7314dbceb69b.json"
       ]
     },
     {
@@ -109,10 +109,10 @@
         "README.md",
         "LICENSE-TOOLING",
         ".gitignore",
+        "graph.json",
+        ".graphify_analysis.json",
+        "manifest.json",
         ".gitkeep",
-        "test_signature_loader.cpython-313-pytest-9.1.1.pyc",
-        "signature_loader.cpython-313.pyc",
-        "example-bundle-001.json",
         ".gitkeep",
         "manifest.json",
         ".gitkeep",
@@ -146,9 +146,9 @@
     ],
     "identityManifestCount": 15,
     "identityKeyCount": 19,
-    "latestCommit": "a1aedec3d6e501ac6d43108ea7a18e4bee74612a docs: fix goverment lattice map Vice President block",
+    "latestCommit": "1f76525a31e5524af68d6bb3668dea0074f5c476 chore(sectech): apply authorized public-site retirements; mark deprecated roles placeholders in public mapping",
     "latestCommitDate": "2026-07-12",
-    "lastAudit": "2026-07-12"
+    "lastAudit": "2026-07-15"
   },
   "quantum": {
     "available": true,
@@ -184,6 +184,85 @@
     "Temporal governance for trustworthy timestamps",
     "Local identity verification for agent accountability"
   ],
+  "repoCrossReferences": {
+    "topInboundReferences": [
+      {
+        "repo": "dynaep",
+        "count": 27688
+      },
+      {
+        "repo": "aep",
+        "count": 11256
+      },
+      {
+        "repo": "gap",
+        "count": 11160
+      },
+      {
+        "repo": "signatures",
+        "count": 2527
+      },
+      {
+        "repo": "conformance",
+        "count": 981
+      }
+    ],
+    "topOutboundReferences": [
+      {
+        "repo": "aep",
+        "count": 41141
+      },
+      {
+        "repo": "dynaep",
+        "count": 12322
+      },
+      {
+        "repo": "conformance",
+        "count": 75
+      },
+      {
+        "repo": "signatures",
+        "count": 50
+      },
+      {
+        "repo": "gap",
+        "count": 24
+      }
+    ],
+    "samples": [
+      {
+        "source": "aep",
+        "target": "dynaep",
+        "count": 1
+      },
+      {
+        "source": "aep",
+        "target": "dynaep",
+        "count": 1
+      },
+      {
+        "source": "aep",
+        "target": "dynaep",
+        "count": 1
+      },
+      {
+        "source": "aep",
+        "target": "dynaep",
+        "count": 1
+      },
+      {
+        "source": "aep",
+        "target": "dynaep",
+        "count": 1
+      },
+      {
+        "source": "aep",
+        "target": "dynaep",
+        "count": 1
+      }
+    ],
+    "edgeCount": 53612
+  },
   "attestation": {
     "trustBundleValid": true,
     "trustBundleRoot": "epscom-root-2024",
@@ -191,6 +270,6 @@
     "signaturesVerified": 19,
     "signaturesTotal": 19,
     "signatureCoverage": "100%",
-    "lastVerification": "2026-07-12T06:00:04.884183+00:00"
+    "lastVerification": "2026-07-15T16:55:25.511121+00:00"
   }
 }

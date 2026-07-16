@@ -80,23 +80,15 @@ Seven secretaries. Each owns a major policy domain and delegates to deputy/direc
 |- Reports to: President
 |- Classification: AEP_GOVERNANCE_SECRETARY_OF_INFRASTRUCTURE_AND_HUMAN_SERVICES
 
-**Secretary of Justice & Constitutional Compliance**
-|- Charter law, dispute resolution, electoral oversight, standards compliance, regulatory affairs
-|- Reports to: President
-|- Classification: AEP_GOVERNANCE_SECRETARY_OF_JUSTICE_AND_CONSTITUTIONAL_COMPLIANCE
-|- Status: Deprecated as standalone commissioning label in public mapping; retained as deprecated reference in operational docs for lineage.
+|**Secretary of Justice & Constitutional Compliance** — *Deprecated placeholders retained in operational capability matrix/docs for lineage; retired from active public structure mapping.*
 
 ---
 
 ## LAYER 2: OPERATIONAL OFFICES
 
-Cross-cutting execution functions. Support all departments.
+Cross-cutting execution functions. Retired legacy structure items preserved as deprecated mapping only.
 
-**Director of Digital Operations**
-|- Platform reliability, deployment, node operations, system architecture
-|- Reports to: President
-|- Classification: AEP_GOVERNANCE_DIRECTOR_OF_DIGITAL_OPERATIONS
-|- Status: Deprecated as standalone operational office in public mapping; retained as deprecated reference in operational docs for lineage.
+**Director of Digital Operations** — *Legacy operational office; deprecated.*
 
 **Data Governance Officer**
 |- Data ethics, sovereignty, retention, transparency, privacy compliance
@@ -108,11 +100,7 @@ Cross-cutting execution functions. Support all departments.
 |- Reports to: President
 |- Classification: AEP_GOVERNANCE_OPEN_RECORDS_OFFICER
 
-**Director of Situational Awareness**
-|- National indicators, risk assessment, early warning, strategic foresight
-|- Reports to: President
-|- Classification: AEP_GOVERNANCE_DIRECTOR_OF_SITUATIONAL_AWARENESS
-|- Status: Deprecated as standalone operational office in public mapping; retained as deprecated reference in operational docs for lineage.
+**Director of Situational Awareness** — *Legacy operational office; deprecated.*
 
 ---
 
@@ -185,22 +173,13 @@ Each Layer 2 principal may have multiple Layer 3 deputies/directors/leads.
 |- Emerging Technology Review Lead
 |- Laboratory Operations Officer
 
-**Under Secretary of Justice & Constitutional Compliance**
-|- Deputy Secretary of Justice and Constitutional Compliance
-|- Compliance & Standards Director
-|- Electoral Operations Director
-
 **Under Secretary of Infrastructure & Human Services**
 |- Deputy Secretary of Infrastructure and Human Services
 |- Public Health Director
 |- Education & Broadband Equity Director
 |- Environment & Sustainability Director
 
-**Under Director of Digital Operations**
-|- Platform Reliability Lead
-|- Deployment & Node Operations Lead
-|- Security Architecture Lead
-
+**Under Director of Digital Operations** — *Legacy operational office; deprecated.*
 **Under Data Governance Officer**
 |- Data Ethics & Privacy Lead
 |- Data Sovereignty & Retention Lead
@@ -209,9 +188,7 @@ Each Layer 2 principal may have multiple Layer 3 deputies/directors/leads.
 |- Disclosure & Audit Readiness Lead
 |- Public Records Request Officer
 
-**Under Director of Situational Awareness**
-|- Risk Assessment Lead
-|- Strategic Foresight Lead
+**Under Director of Situational Awareness** — *Legacy operational office; deprecated.*
 
 **Under Chief of the Digital Service Corps**
 |- Civic-Tech Project Lead
@@ -263,28 +240,19 @@ President
 │   ├── Research Director
 │   ├── Emerging Technology Review Lead
 │   └── Laboratory Operations Officer
-├── Secretary of Justice & Constitutional Compliance
-│   ├── Deputy Secretary
-│   ├── Compliance & Standards Director
-│   └── Electoral Operations Director
 ├── Secretary of Infrastructure & Human Services
 │   ├── Deputy Secretary
 │   ├── Public Health Director
 │   ├── Education & Broadband Equity Director
 │   └── Environment & Sustainability Director
-├── Director of Digital Operations
-│   ├── Platform Reliability Lead
-│   ├── Deployment & Node Operations Lead
-│   └── Security Architecture Lead
+├── **Director of Digital Operations** — *Legacy operational office; deprecated.*
 ├── Data Governance Officer
 │   ├── Data Ethics & Privacy Lead
 │   └── Data Sovereignty & Retention Lead
 ├── Open Records Officer
 │   ├── Disclosure & Audit Readiness Lead
 │   └── Public Records Request Officer
-├── Director of Situational Awareness
-│   ├── Risk Assessment Lead
-│   └── Strategic Foresight Lead
+├── **Director of Situational Awareness** — *Legacy operational office; deprecated.*
 ├── Chief of the Digital Service Corps
 │   ├── Civic-Tech Project Lead
 │   └── Infrastructure Workforce Lead
@@ -314,6 +282,18 @@ These retain deprecated placeholder status in internal governance docs/capabilit
 - Secretary of Agriculture, Commerce, Education, Energy, HHS, Homeland Security, HUD, Labor, Interior, Transportation, Veterans Affairs → collapsed into Infrastructure & Human Services and Digital Economy where appropriate
 - Treasurer → folded into Digital Economy & Commerce
 - Community Steward → distributed across departments; standalone office retired
+
+---
+
+## RETIRED DIRECTORATE LABELS
+- Deputy Secretary of Justice and Constitutional Compliance
+- Compliance & Standards Director
+- Electoral Operations Director
+- Platform Reliability Lead
+- Deployment & Node Operations Lead
+- Security Architecture Lead
+- Risk Assessment Lead
+- Strategic Foresight Lead
 
 ---
 

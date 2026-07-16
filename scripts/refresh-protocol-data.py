@@ -238,26 +238,97 @@ if lattice_bridge.exists() and lattice_summary_path.parent.exists():
     }
     lattice_summary_path.write_text(json.dumps(lattice_summary, indent=2) + '\n')
 
-    # Preserve verifiedIdentities from existing file if present
-    verified_identities = []
-    # Generate fresh list from identity-manifest.json files
-    for manifest_path in sorted(HERMES_DIR.glob('profiles/*/identity-manifest.json')):
-        try:
-            manifest = json.loads(manifest_path.read_text())
-            profile = manifest.get('profile')
-            if profile and 'error' not in manifest:
-                verified_identities.append(profile)
-        except Exception:
-            pass
-    
-    # If no manifests found, fall back to existing file
-    if not verified_identities and OUT.exists():
-        try:
-            existing = json.loads(OUT.read_text())
-            if 'verifiedIdentities' in existing:
-                verified_identities = existing['verifiedIdentities']
-        except Exception:
-            pass
+# Preserve verifiedIdentities from existing file if present
+verified_identities = []
+# Generate fresh list from identity-manifest.json files
+for manifest_path in sorted(HERMES_DIR.glob('profiles/*/identity-manifest.json')):
+    try:
+        manifest = json.loads(manifest_path.read_text())
+        profile = manifest.get('profile')
+        if profile and 'error' not in manifest:
+            verified_identities.append(profile)
+    except Exception:
+        pass
+
+# If no manifests found, fall back to existing file
+if not verified_identities and OUT.exists():
+    try:
+        existing = json.loads(OUT.read_text())
+        if 'verifiedIdentities' in existing:
+            verified_identities = existing['verifiedIdentities']
+    except Exception:
+        pass
+
+# Cross-repo reference graph (for ecosystem-status.html / protocol-status.html)
+def _build_cross_references(repo_root, stacks):
+    """Build a lightweight cross-reference graph from protocol repos."""
+    import subprocess
+    try:
+        # Simple grep-based reference extraction
+        edge_count = 0
+        top_inbound = {}
+        top_outbound = {}
+        samples = []
+
+        # Map stack IDs to actual repo directory names
+        repo_dir_map = {
+            'aep': 'AEP',
+            'dynaep': 'dynAEP',
+            'gap': 'GAP',
+            'conformance': 'aep-conformance',
+            'signatures': 'aep-signatures',
+        }
+
+        for stack in stacks:
+            tid = stack['id']
+            repo_dir = repo_dir_map.get(tid, tid)
+            repo_path = repo_root / repo_dir
+            if not repo_path.exists():
+                continue
+
+            # Count cross-references (imports/references to other protocol IDs)
+            other_ids = [s['id'] for s in stacks if s['id'] != tid]
+            for other_id in other_ids:
+                # Count how many times this repo references the other
+                try:
+                    result = subprocess.run(
+                        ['grep', '-r', '-c', other_id, str(repo_path)],
+                        capture_output=True, text=True, timeout=30
+                    )
+                    if result.returncode == 0:
+                        for line in result.stdout.strip().split('\n'):
+                            if line:
+                                parts = line.split(':', 1)
+                                if len(parts) == 2:
+                                    count = int(parts[1].strip())
+                                    if count > 0:
+                                        edge_count += count
+                                        top_outbound[tid] = top_outbound.get(tid, 0) + count
+                                        top_inbound[other_id] = top_inbound.get(other_id, 0) + count
+                                        if len(samples) < 10:
+                                            samples.append({'source': tid, 'target': other_id, 'count': count})
+                except Exception:
+                    pass
+
+        # Format for JS consumption
+        top_in = [{'repo': k, 'count': v} for k, v in sorted(top_inbound.items(), key=lambda x: -x[1])[:8]]
+        top_out = [{'repo': k, 'count': v} for k, v in sorted(top_outbound.items(), key=lambda x: -x[1])[:8]]
+
+        return {
+            'topInboundReferences': top_in,
+            'topOutboundReferences': top_out,
+            'samples': samples[:6],
+            'edgeCount': edge_count
+        }
+    except Exception:
+        return {
+            'topInboundReferences': [],
+            'topOutboundReferences': [],
+            'samples': [],
+            'edgeCount': 0
+        }
+
+cross_refs = _build_cross_references(REPO_ROOT, stacks)
 
 out = {
     'generated': datetime.date.today().isoformat(),
@@ -274,7 +345,8 @@ out = {
         'Sovereign resilience without vendor lock-in',
         'Temporal governance for trustworthy timestamps',
         'Local identity verification for agent accountability'
-    ]
+    ],
+    'repoCrossReferences': cross_refs
 }
 
 # Preserve attestation if present in existing file
