@@ -117,6 +117,11 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - HL MCP: added `<header role="banner">` wrapper
   - Verified: grep-based pass on all 9 pages
 
+- **2026-07-21 — Round 20 improvements** (commit pending):
+  - Hub: added `<header role="banner">` landmark wrapping content
+  - HL MCP: added `<footer role="contentinfo">` landmark before script
+  - Verified: grep-based pass on changed files
+
 ## Open
 - **2026-07-21 — Round 15 improvements** (commit `3c9f9d1`):
   - All 9 pages: added 1-2 internal cross-links near bottom of body
