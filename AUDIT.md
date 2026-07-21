@@ -96,6 +96,17 @@ never leave work uncommitted in this repo.
   - Protocol v1: added `name="robots" content="index, follow"`
   - Verified: grep-based automated pass on all 9 pages
 
+
+- **2026-07-21 — Round 3 improvements** (commit `3a874a4`):
+  - All 9 pages: added `name="generator" content="Digital Nation Static Site"`
+  - Verified: each file contains exactly 1 generator meta tag
+
+- **2026-07-21 — Round 4 improvements** (commit `c80d3c6`):
+  - All 9 pages: added `name="referrer" content="strict-origin-when-cross-origin"`
+  - All 9 pages: added `name="author" content="Digital Nation"`
+  - All 9 pages: added `name="theme-color" content="#020408"`
+  - Verified: grep-based pass on all 9 pages for all 3 new tags each
+
 ## Open
 - **2026-07-21 — Round 3 pending** (next improvement cycle)
 - Member-count narrative gap (owner decision): the header pill counts real
