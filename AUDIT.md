@@ -140,7 +140,7 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, Index, Protocol v1: added `permissions-policy` meta (geolocation/microphone/camera)
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 21 improvements** (commit pending):
+- **2026-07-21 — Round 21 improvements** (commit `964b33e`):
   - Governance v2, HL MCP, Ecosystem: replaced regular font stylesheet with lazy-loading variant (`media="print" onload` + `<noscript>` fallback)
   - Verified: grep-based pass on all 9 pages
 
@@ -154,4 +154,11 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   WorldHermes, etc.); consider single source of truth for both fragments.
 - `nav.js` `footerFragment()` is exported but pages carry static footer markup —
   dead path worth unifying one way or the other.
-- **2026-07-21 — Round 22 pending** (next improvement cycle)
+- **2026-07-21 — Round 22 improvements** (commit `3813ea8`):
+  - Governance v2: added missing `og:description`
+  - HL MCP: added missing `og:title`, `og:description`, `twitter:card`
+  - Ecosystem: added missing `og:description`
+  - Hub: already complete in all categories this round
+  - Verified: grep-based pass on changed files
+
+- **2026-07-21 — Round 23 pending** (next improvement cycle)
