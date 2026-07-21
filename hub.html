@@ -180,6 +180,24 @@
         0 0 120px rgba(122, 167, 255, 0.18),
         inset 0 1px 0 rgba(255, 255, 255, 0.07);
     }
+
+    /* per-node color themes */
+    .orbit-node { --node-hue: 215; --node-glow: rgba(122,167,255,0.25); }
+    .orbit-node--theme-a { --node-hue: 215; --node-glow: rgba(122,167,255,0.35); }
+    .orbit-node--theme-b { --node-hue: 270; --node-glow: rgba(192,132,252,0.35); }
+    .orbit-node--theme-c { --node-hue: 160; --node-glow: rgba(52,211,153,0.35); }
+    .orbit-node--theme-d { --node-hue: 35; --node-glow: rgba(250,204,21,0.35); }
+    .orbit-node--theme-e { --node-hue: 0; --node-glow: rgba(248,113,113,0.35); }
+    .orbit-node__icon { filter: drop-shadow(0 0 6px var(--node-glow)); }
+    .orbit-node:hover {
+      transform: scale(1.18) translateY(-4px);
+      border-color: hsl(var(--node-hue), 70%, 55%);
+      box-shadow:
+        0 0 0 1px hsl(var(--node-hue), 70%, 55%),
+        0 0 40px hsl(var(--node-hue), 70%, 55%, 0.35),
+        0 16px 40px rgba(0, 0, 0, 0.55);
+      animation-play-state: paused;
+    }
     .hub-core__title {
       font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
       font-weight: 700;
@@ -218,13 +236,13 @@
       pointer-events: none;
       transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
     }
-
-    /* orbital node wrapper handles positioning */
+    /* each node auto-counter-rotates so text stays horizontal during spin */
     .orbit-node-wrap {
       position: absolute;
       left: 50%;
       top: 50%;
       pointer-events: none;
+      animation: counter-spin 80s linear infinite;
     }
     .orbit-node-wrap--0 { transform: rotate(0deg) translate(clamp(16vw, 22vh, 26vw)) rotate(0deg); }
     .orbit-node-wrap--1 { transform: rotate(45deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-45deg); }
@@ -234,6 +252,9 @@
     .orbit-node-wrap--5 { transform: rotate(225deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-225deg); }
     .orbit-node-wrap--6 { transform: rotate(270deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-270deg); }
     .orbit-node-wrap--7 { transform: rotate(315deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-315deg); }
+    @keyframes counter-spin {
+      to { transform: rotate(-360deg); }
+    }
 
     .orbit-node {
       position: relative;
@@ -298,26 +319,27 @@
       opacity: 0.9;
     }
 
-    /* spoke lines */
+    /* spoked colors */
     .spoke {
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 1px;
+      width: 2px;
       height: calc(clamp(16vw, 22vh, 26vw) - clamp(6vw, 8vh, 9vw));
-      background: linear-gradient(to top, rgba(122, 167, 255, 0.4), rgba(192, 132, 252, 0.08));
       transform-origin: bottom center;
       pointer-events: none;
       z-index: 1;
+      background: linear-gradient(to top, rgba(122, 167, 255, 0.5), rgba(192, 132, 252, 0.12));
+      box-shadow: 0 0 8px rgba(122, 167, 255, 0.12);
     }
-    .spoke--0 { transform: rotate(0deg); }
-    .spoke--1 { transform: rotate(45deg); }
-    .spoke--2 { transform: rotate(90deg); }
-    .spoke--3 { transform: rotate(135deg); }
-    .spoke--4 { transform: rotate(180deg); }
-    .spoke--5 { transform: rotate(225deg); }
-    .spoke--6 { transform: rotate(270deg); }
-    .spoke--7 { transform: rotate(315deg); }
+    .spoke--0 { transform: rotate(0deg); background: linear-gradient(to top, rgba(122,167,255,0.6), rgba(52,211,153,0.18)); box-shadow: 0 0 10px rgba(122,167,255,0.18); }
+    .spoke--1 { transform: rotate(45deg); background: linear-gradient(to top, rgba(192,132,252,0.6), rgba(248,113,113,0.18)); box-shadow: 0 0 10px rgba(192,132,252,0.18); }
+    .spoke--2 { transform: rotate(90deg); background: linear-gradient(to top, rgba(52,211,153,0.6), rgba(122,167,255,0.18)); box-shadow: 0 0 10px rgba(52,211,153,0.18); }
+    .spoke--3 { transform: rotate(135deg); background: linear-gradient(to top, rgba(248,113,113,0.5), rgba(250,204,21,0.18)); box-shadow: 0 0 10px rgba(248,113,113,0.15); }
+    .spoke--4 { transform: rotate(180deg); background: linear-gradient(to top, rgba(122,167,255,0.6), rgba(192,132,252,0.18)); box-shadow: 0 0 10px rgba(122,167,255,0.18); }
+    .spoke--5 { transform: rotate(225deg); background: linear-gradient(to top, rgba(250,204,21,0.5), rgba(52,211,153,0.18)); box-shadow: 0 0 10px rgba(250,204,21,0.15); }
+    .spoke--6 { transform: rotate(270deg); background: linear-gradient(to top, rgba(192,132,252,0.6), rgba(122,167,255,0.18)); box-shadow: 0 0 10px rgba(192,132,252,0.18); }
+    .spoke--7 { transform: rotate(315deg); background: linear-gradient(to top, rgba(52,211,153,0.6), rgba(248,113,113,0.18)); box-shadow: 0 0 10px rgba(52,211,153,0.18); }
 
     /* telemetry bar */
     .telemetry-bar {
@@ -454,7 +476,7 @@
     <!-- carousel wraps all orbit nodes and rotates as a unit -->
     <div class="orbit-carousel" id="orbit-carousel">
       <div class="orbit-node-wrap orbit-node-wrap--0">
-        <a class="orbit-node" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="4D Quantum Thought Engine">
+        <a class="orbit-node orbit-node--theme-a" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="4D Quantum Thought Engine">
           <div class="orbit-node__icon">🧠</div>
           <div class="orbit-node__title">Lattice Brain</div>
           <div class="orbit-node__badge">Live</div>
@@ -462,7 +484,7 @@
       </div>
 
       <div class="orbit-node-wrap orbit-node-wrap--1">
-        <a class="orbit-node" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer" aria-label="Trading Desk">
+        <a class="orbit-node orbit-node--theme-c" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer" aria-label="Trading Desk">
           <div class="orbit-node__icon">📈</div>
           <div class="orbit-node__title">Trading Desk</div>
           <div class="orbit-node__badge">Paper</div>
@@ -470,7 +492,7 @@
       </div>
 
       <div class="orbit-node-wrap orbit-node-wrap--2">
-        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/protocol-status.html" aria-label="Governance and IAMS">
+        <a class="orbit-node orbit-node--theme-b" href="https://defi369.github.io/digital-nation-website/protocol-status.html" aria-label="Governance and IAMS">
           <div class="orbit-node__icon">🏛️</div>
           <div class="orbit-node__title">Governance</div>
           <div class="orbit-node__badge">Ops</div>
@@ -478,7 +500,7 @@
       </div>
 
       <div class="orbit-node-wrap orbit-node-wrap--3">
-        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/quantum-roadmap.html" aria-label="Quantum Roadmap">
+        <a class="orbit-node orbit-node--theme-d" href="https://defi369.github.io/digital-nation-website/quantum-roadmap.html" aria-label="Quantum Roadmap">
           <div class="orbit-node__icon">🗺️</div>
           <div class="orbit-node__title">Roadmap</div>
           <div class="orbit-node__badge">Planned</div>
@@ -486,7 +508,7 @@
       </div>
 
       <div class="orbit-node-wrap orbit-node-wrap--4">
-        <a class="orbit-node" href="http://localhost:8091/mcp" target="_blank" rel="noopener noreferrer" aria-label="HyperLattice MCP open">
+        <a class="orbit-node orbit-node--theme-b" href="/digital-nation-website/mcp-status.html" aria-label="HyperLattice MCP open">
           <div class="orbit-node__icon">🔗</div>
           <div class="orbit-node__title">HL MCP</div>
           <div class="orbit-node__badge">Memory</div>
@@ -494,7 +516,7 @@
       </div>
 
       <div class="orbit-node-wrap orbit-node-wrap--5">
-        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/index-legacy.html" aria-label="Digital Nation archive">
+        <a class="orbit-node orbit-node--theme-e" href="https://defi369.github.io/digital-nation-website/index-legacy.html" aria-label="Digital Nation archive">
           <div class="orbit-node__icon">📜</div>
           <div class="orbit-node__title">Archive</div>
           <div class="orbit-node__badge">Legacy</div>
@@ -502,7 +524,7 @@
       </div>
 
       <div class="orbit-node-wrap orbit-node-wrap--6">
-        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/structure.html" aria-label="Government structure">
+        <a class="orbit-node orbit-node--theme-c" href="https://defi369.github.io/digital-nation-website/structure.html" aria-label="Government structure">
           <div class="orbit-node__icon">🏗️</div>
           <div class="orbit-node__title">Structure</div>
           <div class="orbit-node__badge">Gov</div>
@@ -510,7 +532,7 @@
       </div>
 
       <div class="orbit-node-wrap orbit-node-wrap--7">
-        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html" aria-label="Ecosystem status">
+        <a class="orbit-node orbit-node--theme-a" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html" aria-label="Ecosystem status">
           <div class="orbit-node__icon">🌐</div>
           <div class="orbit-node__title">Ecosystem</div>
           <div class="orbit-node__badge">Status</div>
@@ -609,19 +631,49 @@
       refresh();
       setInterval(refresh, 30000);
 
-      // spin control: each click rotates the carousel by 45° so the next node moves to top center
+      // spin control: click = one step, hold = continuous spin
       const carousel = document.getElementById('orbit-carousel');
       const hubSpin = document.getElementById('hub-spin');
       let spinAngle = 0;
-      if (hubSpin && carousel) {
-        hubSpin.addEventListener('click', function (e) {
-          e.preventDefault();
-          spinAngle -= 45;
-          carousel.style.transform = 'rotate(' + spinAngle + 'deg)';
+      let holdTimer = null;
+      let holdInterval = null;
+      function applySpin(angle) {
+        spinAngle = angle;
+        if (carousel) carousel.style.transform = 'rotate(' + spinAngle + 'deg)';
+        const wraps = document.querySelectorAll('.orbit-node-wrap');
+        wraps.forEach(function (w, i) {
+          const base = i * 45;
+          w.style.transform = 'rotate(' + (base - spinAngle) + 'deg) translate(clamp(16vw, 22vh, 26vw)) rotate(' + (-(base - spinAngle)) + 'deg)';
         });
       }
+      function startHold() {
+        applySpin(spinAngle - 15);
+        holdTimer = setTimeout(function () {
+          holdInterval = setInterval(function () {
+            applySpin(spinAngle - 20);
+          }, 40);
+        }, 180);
+      }
+      function stopHold() {
+        clearTimeout(holdTimer);
+        clearInterval(holdInterval);
+        holdTimer = null;
+        holdInterval = null;
+      }
+      if (hubSpin) {
+        hubSpin.addEventListener('click', function (e) {
+          e.preventDefault();
+          stopHold();
+          applySpin(spinAngle - 45);
+        });
+        hubSpin.addEventListener('mousedown', startHold);
+        hubSpin.addEventListener('mouseup', stopHold);
+        hubSpin.addEventListener('mouseleave', stopHold);
+        hubSpin.addEventListener('touchstart', function (e) { e.preventDefault(); startHold(); }, { passive: false });
+        hubSpin.addEventListener('touchend', stopHold);
+      }
 
-      // functional HL MCP terminal: open the in-page terminal overlay instead of a dead stats tab
+      // functional HL MCP terminal: open the in-page terminal overlay
       const mcpTerminal = document.getElementById('mcp-terminal');
       const mcpClose = document.getElementById('mcp-terminal-close');
       const mcpNode = document.querySelector('.orbit-node-wrap--4 .orbit-node');

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HL MCP — Live Status</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <style>
+    :root {
+      --bg: #020408;
+      --surface: #0a0f1a;
+      --border: rgba(122, 167, 255, 0.22);
+      --accent: #7aa7ff;
+      --muted: rgba(230, 232, 235, 0.78);
+    }
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: #e6e8eb;
+      font-family: 'IBM Plex Mono', ui-monospace, monospace;
+      margin: 0;
+      overflow: hidden;
+    }
+    .wrap {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      gap: 14px;
+    }
+    .card {
+      width: min(720px, 94vw);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .card h2 {
+      font-family: 'Unbounded', 'Inter', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0 0 10px;
+    }
+    .kv { display: grid; grid-template-columns: 140px 1fr; gap: 8px 14px; }
+    .k { color: var(--muted); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+    .v { color: #fff; font-size: 13px; word-break: break-word; }
+    .v.ok { color: #34d399; }
+    .v.bad { color: #f87171; }
+    .raw {
+      margin-top: 12px;
+      padding: 10px;
+      background: rgba(2,4,8,0.6);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 220px;
+      overflow: auto;
+    }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    button {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: #fff;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    button:hover { border-color: rgba(122,167,255,0.5); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h2>HyperLattice MCP Status</h2>
+      <div class="kv" id="kv"></div>
+      <div class="actions">
+        <button id="btn-tools">List Tools</button>
+        <button id="btn-graph">Graph Stats</button>
+        <button id="btn-prs">Open PRs</button>
+      </div>
+      <div class="raw" id="raw">Loading…</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      const base = 'http://localhost:8091';
+      const kv = document.getElementById('kv');
+      const raw = document.getElementById('raw');
+      function setKV(obj) {
+        kv.innerHTML = Object.entries(obj).map(([k,v])=>`<div class=\"k\">${k}</div><div class=\"v\">${v}</div>`).join('');
+      }
+      async function loadHealth() {
+        try {
+          const r = await fetch(base + '/health');
+          const j = await r.json();
+          setKV({
+            status: j.status === 'healthy' ? 'healthy' : j.status,
+            uptimeMs: String(j.uptimeMs),
+            nodeCount: String(j.nodeCount),
+            recordCount: String(j.recordCount)
+          });
+          raw.textContent = JSON.stringify(j, null, 2);
+        } catch (e) {
+          setKV({ status: 'unreachable', error: String(e) });
+          raw.textContent = 'Cannot reach ' + base + '/health';
+        }
+      }
+      async function postJSON(path, payload) {
+        try {
+          const r = await fetch(base + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          const j = await r.json();
+          raw.textContent = JSON.stringify(j, null, 2);
+        } catch (e) {
+          raw.textContent = 'Request failed: ' + e;
+        }
+      }
+      loadHealth();
+      document.getElementById('btn-tools').onclick = () => postJSON('/mcp', { jsonrpc: '2.0', id: 1, method: 'tools/list', params: {} });
+      document.getElementById('btn-graph').onclick = () => postJSON('/mcp', { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'graph_stats', arguments: {} } });
+      document.getElementById('btn-prs').onclick = () => postJSON('/mcp', { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'list_prs', arguments: {} } });
+    })();
+  </script>
+</body>
+</html>
