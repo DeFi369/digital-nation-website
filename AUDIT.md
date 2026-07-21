@@ -216,4 +216,9 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Hub: added `:focus-visible` focus ring styles
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 33 pending** (next improvement cycle)
+- **2026-07-21 — Round 33 improvements** (commit `b621679`):
+  - Hub: fixed live deployed Google Fonts CSS URL (`css2?family="this.media='all'"` → valid `css2?family=...`)
+  - Hub: added `crossorigin="anonymous"` to font stylesheet
+  - Verified: local grep + live curl from GitHub Pages CDN
+
+- **2026-07-21 — Round 34 pending** (next improvement cycle)
