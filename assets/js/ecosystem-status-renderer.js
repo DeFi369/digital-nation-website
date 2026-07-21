@@ -1,4 +1,3 @@
-window._ecoDebug={steps:[]};function _dbg(k){window._ecoDebug.steps.push({k,t:Date.now()});}
 /* ecosystem-status-renderer.js */
 (function () {
   'use strict';

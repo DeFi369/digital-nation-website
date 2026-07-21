@@ -1,4 +1,3 @@
-window._protoDebug={steps:[]};function _dbg(k){window._protoDebug.steps.push({k,t:Date.now()});}
 /* protocol-status-renderer.js */
 (function () {
   'use strict';
