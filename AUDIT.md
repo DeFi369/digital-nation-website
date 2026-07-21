@@ -107,6 +107,16 @@ never leave work uncommitted in this repo.
   - All 9 pages: added `name="theme-color" content="#020408"`
   - Verified: grep-based pass on all 9 pages for all 3 new tags each
 
+
+- **2026-07-21 — Round 5 improvements** (commit `3a5eec4`):
+  - All 9 pages: added `apple-mobile-web-app-capable`, `apple-mobile-web-app-status-bar-style`, `apple-mobile-web-app-title`
+  - All 9 pages: added `msapplication-TileColor`, `format-detection`
+  - Verified: grep-based pass on all 9 pages for each new tag
+
+- **2026-07-21 — Round 6 improvements** (commit `8a882b9`):
+  - All 9 pages: added 3× `dns-prefetch` hints for fonts/github/site origins
+  - Verified: each page contains >=3 dns-prefetch links
+
 ## Open
 - **2026-07-21 — Round 3 pending** (next improvement cycle)
 - Member-count narrative gap (owner decision): the header pill counts real
