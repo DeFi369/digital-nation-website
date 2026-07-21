@@ -42,38 +42,21 @@ never leave work uncommitted in this repo.
   - Pushed to origin/main 2026-07-04 and verified LIVE on GitHub Pages
     (screenshot of deployed URL; home.css 200, new markup served).
 
-- **2026-07-04 — nav dropdown rebuild** (commit `84620d0`): compact labeled
-  panels, two-column for big groups, right-edge alignment, hover-open +
-  single-open + Escape + outside-click close (old code bound before injection so
-  outside-click NEVER worked), aria-current page marking, footer panels open up.
-- **2026-07-04 — all inner pages repaired + themed** (commit `26685c3`):
-  59 pages carried corrupted markup (22 in-header junk, 37 duplicated-main junk)
-  — stripped; 15 pages had stats above the h1 — reordered; 37 scripts double-
-  bound the menu, 42 had no-op escapeHtml, 8 never injected the nav — all fixed;
-  nav.js now auto-injects empty menus (fixes passport/404); site.js got the
-  missing loadDashboardScript (P0-1). New cluster theme layer:
-  `assets/css/page-theme.css` + `assets/js/page-ambient.js`, wired into all 68
-  inner pages with per-cluster accents (foundations blue / governance indigo /
-  identity violet / policy teal / diplomacy gold / engagement rose).
-
-- **2026-07-04 — footer rebuilt** (commit `0272f22`): footers had drifted into
-  23 per-page variants; now injected from nav.js's single NAV_GROUPS source
-  (shared with header dropdowns) as a six-column sitemap. structure.html's
-  broken header template + inline-string SyntaxError fixed (map renders again);
-  GitHub footer links point at the real repo.
-
-- **2026-07-04 — repo hygiene pass** (commit `53d0eb2`, all verified LIVE):
-  stale cluster dirs deleted; inject-nav.py (source of the header corruption)
-  deleted; government-structure-map.html → redirect stub; canonical
-  `assets/data/metrics.json` wired into member counter / protocol badge /
-  homepage telemetry; sitemap (67 URLs) + Atom feed regenerated; README
-  rewritten (correct preview instructions); `scripts/check_integrity.py` + CI
-  workflow green on first run; `AGENTS.md` added with hard rules for agents.
-  Lesson: Pages deploys can fail transiently ("try again later") — after
-  pushing, confirm with `gh run list` or curl the live files.
+- **2026-07-21 — Hub improvement round** (commit `583aad1`):
+  - Hub: added `og:image`, `sitemap`, `favicon`, `skip-link`, JSON-LD, canonical
+  - Governance v2: added `favicon`
+  - Roadmap: added `sitemap`
+  - HL MCP: added `favicon`
+  - Archive: added `sitemap`
+  - Structure: added `sitemap`
+  - Ecosystem: added `favicon`
+  - Index: added `sitemap`
+  - Protocol v1: added `sitemap`
+  - Verified: grep-based automated pass on all 9 pages
 
 ## Open
-- **Member-count narrative gap (owner decision):** the header pill counts real
+- **2026-07-21 — Round 2 pending** (next improvement cycle)
+- Member-count narrative gap (owner decision): the header pill counts real
   registry entries (10) while national stats claim 12450 registered citizens.
   Both now come from metrics.json, but reconciling the story is a content call.
 - `AUDIT-CLAUDE.md` (2026-07-02 audit) P1/P2 backlog — remaining: metadata/OG
