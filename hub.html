@@ -16,14 +16,17 @@
   <link rel="stylesheet" href="/assets/css/main.css" />
   <style>
     :root {
-      --hub-bg: #04060b;
-      --hub-surface: #0b0f18;
-      --hub-border: rgba(122, 167, 255, 0.18);
+      --hub-bg: #020408;
+      --hub-surface: #0a0f1a;
+      --hub-border: rgba(122, 167, 255, 0.22);
       --hub-accent: #7aa7ff;
       --hub-accent-2: #c084fc;
-      --hub-muted: rgba(230, 232, 235, 0.72);
-      --hub-glow: rgba(122, 167, 255, 0.22);
-      --hub-ring: rgba(192, 132, 252, 0.18);
+      --hub-muted: rgba(230, 232, 235, 0.78);
+      --hub-glow: rgba(122, 167, 255, 0.35);
+      --hub-ring: rgba(192, 132, 252, 0.22);
+      --hub-nebula-a: rgba(122, 167, 255, 0.08);
+      --hub-nebula-b: rgba(192, 132, 252, 0.07);
+      --hub-nebula-c: rgba(52, 211, 153, 0.05);
     }
 
     html, body {
@@ -40,13 +43,13 @@
       justify-content: center;
       position: relative;
       background:
-        radial-gradient(1200px 800px at 50% 50%, rgba(122, 167, 255, 0.07), transparent 60%),
-        radial-gradient(900px 600px at 20% 10%, rgba(192, 132, 252, 0.06), transparent 55%),
-        radial-gradient(900px 600px at 80% 90%, rgba(52, 211, 153, 0.04), transparent 55%),
+        radial-gradient(1200px 900px at 50% 45%, var(--hub-nebula-a), transparent 60%),
+        radial-gradient(900px 700px at 15% 15%, var(--hub-nebula-b), transparent 55%),
+        radial-gradient(900px 700px at 85% 85%, var(--hub-nebula-c), transparent 55%),
         var(--hub-bg);
     }
 
-    /* starfield */
+    /* deeper starfield */
     .stars {
       position: absolute;
       inset: 0;
@@ -59,21 +62,55 @@
       height: 2px;
       background: #fff;
       border-radius: 50%;
-      opacity: 0.35;
-      animation: twinkle 4s ease-in-out infinite alternate;
+      opacity: 0.4;
+      animation: twinkle 5s ease-in-out infinite alternate;
+    }
+    .star--bright {
+      width: 3px;
+      height: 3px;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+      opacity: 0.85;
     }
     @keyframes twinkle {
-      from { opacity: 0.15; transform: translateY(0); }
-      to { opacity: 0.55; transform: translateY(-2px); }
+      from { opacity: 0.12; transform: translateY(0); }
+      to { opacity: 0.7; transform: translateY(-3px); }
+    }
+
+    /* nebula clouds */
+    .nebula {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .nebula--a {
+      width: 700px; height: 500px; left: -180px; top: -140px;
+      background: radial-gradient(closest-side, rgba(122, 167, 255, 0.18), transparent 70%);
+      animation: drift 28s ease-in-out infinite alternate;
+    }
+    .nebula--b {
+      width: 750px; height: 550px; right: -200px; bottom: -160px;
+      background: radial-gradient(closest-side, rgba(192, 132, 252, 0.16), transparent 70%);
+      animation: drift 34s ease-in-out infinite alternate-reverse;
+    }
+    .nebula--c {
+      width: 500px; height: 400px; left: 30%; top: 40%;
+      background: radial-gradient(closest-side, rgba(52, 211, 153, 0.08), transparent 70%);
+      animation: drift 22s ease-in-out infinite alternate;
+    }
+    @keyframes drift {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(40px, 25px, 0) scale(1.1); }
     }
 
     /* orbital ring system */
     .orbit-system {
       position: relative;
-      width: min(92vw, 92vh);
-      height: min(92vw, 92vh);
-      max-width: 1100px;
-      max-height: 1100px;
+      width: min(94vw, 94vh);
+      height: min(94vw, 94vh);
+      max-width: 1200px;
+      max-height: 1200px;
     }
 
     .orbit-ring {
@@ -81,25 +118,28 @@
       inset: 0;
       border-radius: 50%;
       border: 1px dashed var(--hub-ring);
-      animation: spin 60s linear infinite;
+      animation: spin 80s linear infinite;
       pointer-events: none;
+      box-shadow: 0 0 18px rgba(122, 167, 255, 0.06), inset 0 0 18px rgba(122, 167, 255, 0.03);
     }
     .orbit-ring--outer {
-      inset: 6%;
+      inset: 4%;
       border-style: dotted;
-      border-color: rgba(122, 167, 255, 0.12);
-      animation-duration: 90s;
+      border-color: rgba(122, 167, 255, 0.14);
+      animation-duration: 110s;
     }
     .orbit-ring--mid {
-      inset: 18%;
-      border-color: rgba(192, 132, 252, 0.16);
-      animation-duration: 55s;
+      inset: 16%;
+      border-color: rgba(192, 132, 252, 0.18);
+      animation-duration: 70s;
       animation-direction: reverse;
+      box-shadow: 0 0 22px rgba(192, 132, 252, 0.08), inset 0 0 22px rgba(192, 132, 252, 0.04);
     }
     .orbit-ring--inner {
-      inset: 30%;
-      border-color: rgba(122, 167, 255, 0.14);
-      animation-duration: 35s;
+      inset: 28%;
+      border-color: rgba(122, 167, 255, 0.16);
+      animation-duration: 45s;
+      box-shadow: 0 0 20px rgba(122, 167, 255, 0.1), inset 0 0 20px rgba(122, 167, 255, 0.05);
     }
     @keyframes spin {
       to { transform: rotate(360deg); }
@@ -108,11 +148,11 @@
     /* center hub */
     .hub-core {
       position: absolute;
-      inset: 32%;
+      inset: 34%;
       border-radius: 50%;
       background:
-        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08), transparent 60%),
-        radial-gradient(circle at 50% 50%, rgba(122, 167, 255, 0.18), transparent 70%),
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.09), transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(122, 167, 255, 0.22), transparent 70%),
         var(--hub-surface);
       border: 1px solid var(--hub-border);
       display: flex;
@@ -120,52 +160,53 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 4px;
+      gap: 2px;
       box-shadow:
-        0 0 0 1px rgba(122, 167, 255, 0.08),
-        0 20px 60px rgba(0, 0, 0, 0.55),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        0 0 0 1px rgba(122, 167, 255, 0.1),
+        0 24px 70px rgba(0, 0, 0, 0.7),
+        0 0 90px rgba(122, 167, 255, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
       z-index: 5;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.25s cubic-bezier(.2,.8,.2,1), box-shadow 0.25s ease;
     }
     .hub-core:hover {
-      transform: scale(1.03);
+      transform: scale(1.04);
       box-shadow:
-        0 0 0 1px rgba(122, 167, 255, 0.18),
-        0 24px 70px rgba(0, 0, 0, 0.6),
-        0 0 60px rgba(122, 167, 255, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        0 0 0 1px rgba(122, 167, 255, 0.22),
+        0 28px 80px rgba(0, 0, 0, 0.75),
+        0 0 120px rgba(122, 167, 255, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
     }
     .hub-core__title {
       font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
       font-weight: 700;
-      font-size: clamp(22px, 3.2vw, 42px);
-      letter-spacing: 0.18em;
+      font-size: clamp(24px, 3.2vw, 44px);
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: #fff;
       line-height: 1;
     }
     .hub-core__sub {
       font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-      font-size: clamp(9px, 1.1vw, 11px);
-      letter-spacing: 0.22em;
+      font-size: clamp(8px, 1vw, 10px);
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--hub-muted);
     }
     .hub-core__pulse {
-      margin-top: 6px;
+      margin-top: 8px;
       width: 7px;
       height: 7px;
       border-radius: 50%;
       background: #34d399;
-      box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
-      animation: pulse-ring 2s ease-out infinite;
+      box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.8);
+      animation: pulse-ring 2.2s ease-out infinite;
     }
     @keyframes pulse-ring {
-      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.8); }
+      70% { box-shadow: 0 0 0 12px rgba(52, 211, 153, 0); }
       100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
 
@@ -174,13 +215,13 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: clamp(64px, 9.5vw, 96px);
-      height: clamp(64px, 9.5vw, 96px);
-      margin-left: clamp(-32px, -4.75vw, -48px);
-      margin-top: clamp(-32px, -4.75vw, -48px);
+      width: clamp(56px, 8.4vw, 84px);
+      height: clamp(56px, 8.4vw, 84px);
+      margin-left: clamp(-28px, -4.2vw, -42px);
+      margin-top: clamp(-28px, -4.2vw, -42px);
       border-radius: 50%;
       background:
-        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.07), transparent 60%),
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08), transparent 60%),
         var(--hub-surface);
       border: 1px solid var(--hub-border);
       display: flex;
@@ -188,52 +229,62 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 4px;
+      gap: 3px;
       padding: 6px;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.3s cubic-bezier(.2,.8,.2,1), border-color 0.25s ease, box-shadow 0.25s ease;
       z-index: 4;
+      animation: float 6s ease-in-out infinite;
     }
     .orbit-node:hover {
-      transform: scale(1.12);
-      border-color: rgba(122, 167, 255, 0.55);
+      transform: scale(1.18) translateY(-4px);
+      border-color: rgba(122, 167, 255, 0.6);
       box-shadow:
-        0 0 0 1px rgba(122, 167, 255, 0.15),
-        0 0 30px rgba(122, 167, 255, 0.18),
-        0 12px 30px rgba(0, 0, 0, 0.5);
+        0 0 0 1px rgba(122, 167, 255, 0.18),
+        0 0 40px rgba(122, 167, 255, 0.22),
+        0 16px 40px rgba(0, 0, 0, 0.55);
+      animation-play-state: paused;
     }
+    .orbit-node:nth-child(odd) { animation-duration: 7.2s; }
+    .orbit-node:nth-child(even) { animation-duration: 5.6s; animation-direction: reverse; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
     .orbit-node__icon {
-      font-size: clamp(18px, 2vw, 24px);
+      font-size: clamp(16px, 1.8vw, 22px);
       line-height: 1;
+      filter: drop-shadow(0 0 6px rgba(122, 167, 255, 0.3));
     }
     .orbit-node__title {
       font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
       font-weight: 600;
-      font-size: clamp(8px, 0.95vw, 10px);
-      letter-spacing: 0.1em;
+      font-size: clamp(7px, 0.85vw, 9px);
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #fff;
       line-height: 1.2;
     }
     .orbit-node__badge {
       font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-      font-size: 8px;
+      font-size: 7px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--hub-muted);
       opacity: 0.9;
     }
 
-    /* 8-node orbital positions */
-    .orbit-node--0 { transform: rotate(0deg) translate(clamp(28vw, 38vh, 42vw)) rotate(0deg); }
-    .orbit-node--1 { transform: rotate(45deg) translate(clamp(28vw, 38vh, 42vw)) rotate(-45deg); }
-    .orbit-node--2 { transform: rotate(90deg) translate(clamp(28vw, 38vh, 42vw)) rotate(-90deg); }
-    .orbit-node--3 { transform: rotate(135deg) translate(clamp(28vw, 38vh, 42vw)) rotate(-135deg); }
-    .orbit-node--4 { transform: rotate(180deg) translate(clamp(28vw, 38vh, 42vw)) rotate(-180deg); }
-    .orbit-node--5 { transform: rotate(225deg) translate(clamp(28vw, 38vh, 42vw)) rotate(-225deg); }
-    .orbit-node--6 { transform: rotate(270deg) translate(clamp(28vw, 38vh, 42vw)) rotate(-270deg); }
-    .orbit-node--7 { transform: rotate(315deg) translate(clamp(28vw, 38vh, 42vw)) rotate(-315deg); }
+    /* 8-node orbital positions — tighter radius */
+    .orbit-node--0 { transform: rotate(0deg) translate(clamp(22vw, 30vh, 34vw)) rotate(0deg); }
+    .orbit-node--1 { transform: rotate(45deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-45deg); }
+    .orbit-node--2 { transform: rotate(90deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-90deg); }
+    .orbit-node--3 { transform: rotate(135deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-135deg); }
+    .orbit-node--4 { transform: rotate(180deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-180deg); }
+    .orbit-node--5 { transform: rotate(225deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-225deg); }
+    .orbit-node--6 { transform: rotate(270deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-270deg); }
+    .orbit-node--7 { transform: rotate(315deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-315deg); }
 
     /* spoke lines */
     .spoke {
@@ -241,8 +292,8 @@
       left: 50%;
       top: 50%;
       width: 1px;
-      height: calc(clamp(28vw, 38vh, 42vw) - clamp(4vw, 6vh, 6vw));
-      background: linear-gradient(to top, rgba(122, 167, 255, 0.35), rgba(192, 132, 252, 0.08));
+      height: calc(clamp(22vw, 30vh, 34vw) - clamp(5vw, 7vh, 8vw));
+      background: linear-gradient(to top, rgba(122, 167, 255, 0.4), rgba(192, 132, 252, 0.08));
       transform-origin: bottom center;
       pointer-events: none;
       z-index: 1;
@@ -256,18 +307,18 @@
     .spoke--6 { transform: rotate(270deg); }
     .spoke--7 { transform: rotate(315deg); }
 
-    /* telemetry bar at bottom */
+    /* telemetry bar */
     .telemetry-bar {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
       border-top: 1px solid var(--hub-border);
-      background: linear-gradient(to top, rgba(4, 6, 11, 0.95), rgba(4, 6, 11, 0));
+      background: linear-gradient(to top, rgba(2, 4, 8, 0.96), rgba(2, 4, 8, 0));
       padding: 10px 0 12px;
       z-index: 10;
       display: flex;
-      gap: 14px;
+      gap: 18px;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -277,25 +328,22 @@
       gap: 7px;
       font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
       font-size: 10px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--hub-muted);
+      text-shadow: 0 0 10px rgba(122, 167, 255, 0.15);
     }
     .telemetry-item__value {
       color: #fff;
       font-weight: 500;
     }
-    .telemetry-item__value--ok { color: #34d399; }
-    .telemetry-item__value--bad { color: #f87171; }
+    .telemetry-item__value--ok { color: #34d399; text-shadow: 0 0 12px rgba(52, 211, 153, 0.5); }
+    .telemetry-item__value--bad { color: #f87171; text-shadow: 0 0 12px rgba(248, 113, 113, 0.5); }
 
     @media (max-width: 760px) {
-      .orbit-system {
-        width: 98vw;
-        height: 98vw;
-      }
       .orbit-node--0, .orbit-node--1, .orbit-node--2, .orbit-node--3,
       .orbit-node--4, .orbit-node--5, .orbit-node--6, .orbit-node--7 {
-        transform: rotate(var(--angle)) translate(clamp(32vw, 42vh, 46vw)) rotate(calc(-1 * var(--angle)));
+        transform: rotate(var(--angle)) translate(clamp(26vw, 36vh, 40vw)) rotate(calc(-1 * var(--angle)));
       }
       .spoke { display: none; }
     }
@@ -303,14 +351,15 @@
 </head>
 <body class="page-hub">
   <div class="stars" aria-hidden="true" id="stars"></div>
+  <div class="nebula nebula--a" aria-hidden="true"></div>
+  <div class="nebula nebula--b" aria-hidden="true"></div>
+  <div class="nebula nebula--c" aria-hidden="true"></div>
 
   <div class="orbit-system">
-    <!-- orbital rings -->
     <div class="orbit-ring orbit-ring--outer" aria-hidden="true"></div>
     <div class="orbit-ring orbit-ring--mid" aria-hidden="true"></div>
     <div class="orbit-ring orbit-ring--inner" aria-hidden="true"></div>
 
-    <!-- spokes -->
     <div class="spoke spoke--0" aria-hidden="true"></div>
     <div class="spoke spoke--1" aria-hidden="true"></div>
     <div class="spoke spoke--2" aria-hidden="true"></div>
@@ -320,14 +369,12 @@
     <div class="spoke spoke--6" aria-hidden="true"></div>
     <div class="spoke spoke--7" aria-hidden="true"></div>
 
-    <!-- core hub -->
     <a class="hub-core" href="/digital-nation-website/index-legacy.html" aria-label="Digital Nation home">
       <div class="hub-core__title">Hub</div>
       <div class="hub-core__sub">Digital Nation</div>
       <div class="hub-core__pulse" aria-hidden="true"></div>
     </a>
 
-    <!-- orbital nodes -->
     <a class="orbit-node orbit-node--0" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="4D Quantum Thought Engine">
       <div class="orbit-node__icon">🧠</div>
       <div class="orbit-node__title">Lattice Brain</div>
@@ -377,51 +424,28 @@
     </a>
   </div>
 
-  <!-- live telemetry strip -->
   <div class="telemetry-bar" aria-label="Live system telemetry">
-    <div class="telemetry-item">
-      <span>Brain</span>
-      <span class="telemetry-item__value" id="svc-brain">—</span>
-    </div>
-    <div class="telemetry-item">
-      <span>Desk</span>
-      <span class="telemetry-item__value" id="svc-desk">—</span>
-    </div>
-    <div class="telemetry-item">
-      <span>HL MCP</span>
-      <span class="telemetry-item__value" id="svc-hl">—</span>
-    </div>
-    <div class="telemetry-item">
-      <span>Equity</span>
-      <span class="telemetry-item__value" id="desk-equity">—</span>
-    </div>
-    <div class="telemetry-item">
-      <span>Positions</span>
-      <span class="telemetry-item__value" id="desk-positions">—</span>
-    </div>
-    <div class="telemetry-item">
-      <span>Realized</span>
-      <span class="telemetry-item__value" id="desk-realized">—</span>
-    </div>
-    <div class="telemetry-item">
-      <span>Directives</span>
-      <span class="telemetry-item__value" id="directives-count">—</span>
-    </div>
+    <div class="telemetry-item"><span>Brain</span><span class="telemetry-item__value" id="svc-brain">—</span></div>
+    <div class="telemetry-item"><span>Desk</span><span class="telemetry-item__value" id="svc-desk">—</span></div>
+    <div class="telemetry-item"><span>HL MCP</span><span class="telemetry-item__value" id="svc-hl">—</span></div>
+    <div class="telemetry-item"><span>Equity</span><span class="telemetry-item__value" id="desk-equity">—</span></div>
+    <div class="telemetry-item"><span>Positions</span><span class="telemetry-item__value" id="desk-positions">—</span></div>
+    <div class="telemetry-item"><span>Realized</span><span class="telemetry-item__value" id="desk-realized">—</span></div>
+    <div class="telemetry-item"><span>Directives</span><span class="telemetry-item__value" id="directives-count">—</span></div>
   </div>
 
   <script>
     (function () {
       'use strict';
 
-      // starfield
       const stars = document.getElementById('stars');
-      for (let i = 0; i < 70; i++) {
+      for (let i = 0; i < 90; i++) {
         const s = document.createElement('div');
-        s.className = 'star';
+        s.className = 'star' + (Math.random() < 0.12 ? ' star--bright' : '');
         s.style.left = Math.random() * 100 + '%';
         s.style.top = Math.random() * 100 + '%';
-        s.style.animationDelay = (Math.random() * 4) + 's';
-        s.style.opacity = Math.random() * 0.35 + 0.1;
+        s.style.animationDelay = (Math.random() * 5) + 's';
+        s.style.opacity = Math.random() * 0.4 + 0.1;
         stars.appendChild(s);
       }
 
