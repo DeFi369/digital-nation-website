@@ -391,7 +391,7 @@
             set('protocol-attestation', data.attestation&&Object.keys(data.attestation).length ? '<div class="stats-grid"><div class="card"><h3>Attestation</h3>'+Object.keys(data.attestation).map(function(k){return '<p><strong>'+esc(k)+':</strong> '+esc(String(data.attestation[k]))+'</p>';}).join('')+'</div></div>' : '<p class="activity-empty">No attestation data loaded.</p>');
           }).catch(function(){});
         }
-        console.log("protocol-status-renderer-20260721-0510"); if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+        console.log("protocol-status-renderer-20260721-0510"); console.log('protocol-status-init-20260721-0522'); if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
       })();
     </script>
   </body>
