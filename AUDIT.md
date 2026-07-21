@@ -140,6 +140,13 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, Index, Protocol v1: added `permissions-policy` meta (geolocation/microphone/camera)
   - Verified: grep-based pass on all 9 pages
 
+- **2026-07-21 — Round 20 improvements** (commit `baa0dd6`):
+  - Hub: added `<header role="banner">` landmark wrapping content
+  - HL MCP: added `<footer role="contentinfo">` landmark before script
+  - Verified: grep-based pass on changed files
+
+
+
 - **2026-07-21 — Round 21 improvements** (commit `964b33e`):
   - Governance v2, HL MCP, Ecosystem: replaced regular font stylesheet with lazy-loading variant (`media="print" onload` + `<noscript>` fallback)
   - Verified: grep-based pass on all 9 pages
@@ -166,7 +173,7 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Hub: added `referrerpolicy="strict-origin-when-cross-origin"` to `<html>` tag
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 24 improvements** (commit pending):
+- **2026-07-21 — Round 24 improvements** (commit `05dde88`):
   - All 9 pages: added `Content-Security-Policy` meta
   - Verified: grep-based pass on all 9 pages
 
