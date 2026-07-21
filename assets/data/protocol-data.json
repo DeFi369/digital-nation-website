@@ -148,7 +148,35 @@
     "identityKeyCount": 19,
     "latestCommit": "b8a6a1c22d6c722b4f0f44c0816cbbfb4e696eda chore(secsite): snapshot nav canary + live attestation/ecosystem data wiring",
     "latestCommitDate": "2026-07-16",
-    "lastAudit": "2026-07-20"
+    "lastAudit": "2026-07-20",
+    "conformanceEvidence": {
+      "passedCount": 44,
+      "failedCount": 0,
+      "summaryLine": "All 44 fast_aep_proof checks passed on latest run.",
+      "generatedAt": "2026-07-21T04:39:00Z",
+      "checks": [
+        "AEP policy load",
+        "GAP compile",
+        "TrustConfig parse",
+        "dynAEP capsule seal",
+        "LatticeChannel encrypt",
+        "Identity verify",
+        "15-step eval chain",
+        "Evidence ledger hash",
+        "Conformance CC-01..CC-15"
+      ]
+    },
+    "repoValidationTotalRepos": 7,
+    "repoValidationReposWithTests": 5,
+    "repoValidationReposWithCI": 6,
+    "repoValidationTotalEdges": 12,
+    "repoValidationTopIntegrationTargets": [
+      "hyper-lattice -> agent-runtime",
+      "aep-gap-enforcer -> hermes-agent",
+      "lattice-consolidator -> hyper-lattice",
+      "meme-sniper -> pons-discovery",
+      "digital-nation-website -> site-api"
+    ]
   },
   "quantum": {
     "available": true,
@@ -271,5 +299,35 @@
     "signaturesTotal": 19,
     "signatureCoverage": "100%",
     "lastVerification": "2026-07-20T06:00:46.474466+00:00"
+  },
+  "services": {
+    "qbff": {
+      "status": "operational",
+      "monitorTimer": "5m"
+    },
+    "qbffIpGuard": {
+      "status": "operational",
+      "port": "8190"
+    },
+    "wave": {
+      "status": "operational",
+      "front": "8095",
+      "back": "8080"
+    },
+    "openagents": {
+      "status": "operational",
+      "front": "8096",
+      "back": "8082"
+    }
+  },
+  "aepGapValidation": {
+    "summary": {
+      "total": 41,
+      "passed": 41,
+      "failed": 0
+    },
+    "status": "PASS",
+    "generatedAt": "2026-07-21T04:39:00Z",
+    "sampleFailures": []
   }
 }
