@@ -128,7 +128,11 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - All 9 pages: added `<link rel="author">` with mailto authorship
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 17 pending** (next improvement cycle) (next improvement cycle)
+- **2026-07-21 — Round 17 improvements** (commit pending):
+  - All 9 pages: added `og:locale` content="en_US"
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 18 pending** (next improvement cycle) (next improvement cycle)
 - Member-count narrative gap (owner decision): the header pill counts real
   registry entries (10) while national stats claim 12450 registered citizens.
   Both now come from metrics.json, but reconciling the story is a content call.
