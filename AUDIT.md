@@ -117,6 +117,13 @@ never leave work uncommitted in this repo.
   - All 9 pages: added 3× `dns-prefetch` hints for fonts/github/site origins
   - Verified: each page contains >=3 dns-prefetch links
 
+
+- **2026-07-21 — Round 8 improvements** (commit `f21ff7f`):
+  - Hub: added RSS `alternate` link
+  - Governance v2, HL MCP, Ecosystem: added `<noscript>` CSS fallback
+  - Note: Hub iframe already had `title`; structure img already had `alt`; those checks were false positives
+  - Verified: grep-based pass on actual changed files
+
 ## Open
 - **2026-07-21 — Round 3 pending** (next improvement cycle)
 - Member-count narrative gap (owner decision): the header pill counts real
