@@ -7,131 +7,73 @@
   <meta name="description" content="Unified ecosystem status for the Digital Nation: AEP 2.8, dynAEP 1.0, GAP, conformance, and signatures in one citizen-facing attestation.">
   <link rel="canonical" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html">
   <meta property="og:title" content="Ecosystem Status — The Principality of Aetheria">
-  <meta property="og:description" content="Unified protocol and website status for the Digital Nation ecosystem.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://defi369.github.io/digital-nation-website/ecosystem-status.html">
-  <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ecosystem Status — The Principality of Aetheria">
-  <meta name="twitter:description" content="Unified protocol and website status for the Digital Nation ecosystem.">
-  <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
-
   <title>Ecosystem Status — The Principality of Aetheria</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/page-theme.css">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  <link rel="icon" href="./favicon.ico">
 </head>
-<body data-theme="engagement"> <span style="display:none" id="cache-bust">20260721-0510</span>
-<a class="skip-link" href="#main">Skip to content</a>
+<body data-theme="engagement">
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="nav" id="site-header-nav">
-      <template id="site-header-nav-template" data-nav="header"></template>
-    </div>
+    <div class="nav" id="site-header-nav"></div>
   </header>
-
   <main id="main">
     <section class="page">
       <div class="container">
         <h1>Ecosystem Status</h1>
-        <p class="lead">
-          This page aggregates protocol status, website integration state, and
-          known issues into a single citizen-facing attestation.
-          All data is pulled from local JSON; no external services or tracking
-          are required.
-        </p>
-
-        <h2>Website Status</h2>
+        <p class="lead">This page aggregates protocol status, website integration state, and known issues into a single citizen-facing attestation. All data is pulled from local JSON; no external calls.</p>
+        <h2>Site Status</h2>
         <div id="site-status" class="stats-grid" aria-live="polite" aria-label="Site status metrics">
-          <div class="activity-loading" aria-hidden="true">Loading site status...</div>
+          <div class="activity-loading" aria-hidden="true"><h2>Loading site status...</h2></div>
         </div>
-
-        <h2>Protocol Component Status</h2>
+        <h2>Protocol Components</h2>
         <div id="ecosystem-components" class="activity-feed" role="feed" aria-live="polite" aria-label="Protocol components">
-          <div class="activity-loading" aria-hidden="true">Loading protocol components...</div>
+          <div class="activity-loading" aria-hidden="true"><h2>Loading protocol components...</h2></div>
         </div>
-
-        <h2>Verified Agent Identities</h2>
-        <div id="verified-identities" class="stats-grid" aria-live="polite" aria-label="Verified agent identities">
-          <div class="activity-loading" aria-hidden="true">Loading verified identities...</div>
-        </div>
-
-        <h2>Ecosystem Metrics</h2>
+        <h2>Metrics</h2>
         <div id="ecosystem-metrics" class="stats-grid" aria-live="polite" aria-label="Ecosystem metrics">
-          <div class="activity-loading" aria-hidden="true">Loading metrics...</div>
+          <div class="activity-loading" aria-hidden="true"><h2>Loading metrics...</h2></div>
         </div>
-
-        <h2>Repo Cross-References</h2>
+        <h2>Cross-References</h2>
         <div id="ecosystem-cross-references" class="stats-grid" aria-live="polite" aria-label="Repository cross-references">
-          <div class="activity-loading" aria-hidden="true">Loading cross-references...</div>
+          <div class="activity-loading" aria-hidden="true"><h2>Loading cross-references...</h2></div>
         </div>
-
         <h2>Citizen Attestation</h2>
         <p id="citizen-attestation" class="attestation" aria-live="polite">Loading attestation...</p>
-
-        <h2>Verified Agent Identities</h2>
+        <h2>Verified Identities</h2>
+        <div id="verified-identities" class="stats-grid" aria-live="polite" aria-label="Verified agent identities">
+          <div class="activity-loading" aria-hidden="true"><h2>Loading verified identities...</h2></div>
+        </div>
         <div id="verification-feed" class="stats-grid" aria-live="polite" aria-label="Verified agent identities">
-          <div class="activity-loading" aria-hidden="true">Loading verified identities...</div>
+          <div class="activity-loading" aria-hidden="true"><h2>Loading verification feed...</h2></div>
         </div>
-
-        <h2>Quantum Compute Signal</h2>
+        <h2>Quantum Signal</h2>
         <div id="quantum-status" class="stats-grid" aria-live="polite" aria-label="Quantum compute status">
-          <div class="activity-loading" aria-hidden="true">Loading quantum status...</div>
+          <div class="activity-loading" aria-hidden="true"><h2>Loading quantum status...</h2></div>
         </div>
-
         <h2>Data Provenance & Attestation</h2>
         <div id="provenance-attestation" class="stats-grid" aria-live="polite" aria-label="Data provenance and attestation">
-          <div class="activity-loading" aria-hidden="true">Loading provenance data...</div>
-        </div>
-
-        <div class="legal-block">
-          <p>
-            Maintained by the Secretary of Technology &amp; Innovation.
-            Status data is assembled from public README sources and website audit records.
-            No external API calls are used.
-          </p>
+          <div class="activity-loading" aria-hidden="true"><h2>Loading provenance data...</h2></div>
         </div>
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-brand">
-          <strong>THE PRINCIPALITY OF AETHERIA</strong>
-          <span class="footer-tagline">Sovereign by code</span>
-        </div>
+        <div class="footer-brand"><strong><span class="footer-tagline"></span></strong></div>
         <div class="footer-meta">
-          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
-          <span class="footer-status" aria-label="Public network status">
-            <span class="status-dot" aria-hidden="true"></span>
-            Network Active
-          </span>
-          <span class="footer-year" data-year>2026</span>
+          <span class="protocol-version" aria-label="Protocol version"></span>
+          <span class="footer-status" aria-label="Public network status"><span class="status-dot" aria-hidden="true"></span></span>
+          <span class="footer-year" data-year></span>
         </div>
         <nav class="footer-nav" aria-label="Footer"></nav>
       </div>
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
-  <script src="assets/js/main.js"></script>
-      <script src="assets/js/ecosystem-status.js"></script>
-      <script src="assets/js/nav.js"></script>
-    <script>
-      (function () {
-        var tmpl = document.getElementById('site-header-nav-template');
-        if (!tmpl) return;
-        var container = document.getElementById('site-header-nav') || tmpl.parentElement;
-        tmpl.parentNode.insertBefore(document.importNode(tmpl.content, true), tmpl);
-        tmpl.parentNode.removeChild(tmpl);
-      })();
-    </script>
-    <!-- renderer externalized to assets/js/ecosystem-status-renderer.js -->
-  </body>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/ecosystem-status-renderer.js"></script>
+</body>
 </html>
