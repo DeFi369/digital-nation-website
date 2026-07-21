@@ -1,128 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <base href="/digital-nation-website/">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Unified ecosystem status for the Digital Nation: AEP 2.8, dynAEP 1.0, GAP, conformance, and signatures in one citizen-facing attestation.">
-  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html">
-  <meta property="og:title" content="Ecosystem Status — The Principality of Aetheria">
-  <meta property="og:description" content="Unified protocol and website status for the Digital Nation ecosystem.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/ecosystem-status.html">
-  <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ecosystem Status — The Principality of Aetheria">
-  <meta name="twitter:description" content="Unified protocol and website status for the Digital Nation ecosystem.">
-  <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
-
-  <title>Ecosystem Status — The Principality of Aetheria</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap"></noscript>
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/page-theme.css">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  <link rel="icon" href="./favicon.ico">
-</head>
-<body data-theme="engagement"> <span style="display:none" id="cache-bust">20260721-0510</span>
-<a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="nav" id="site-header-nav">
-      <template id="site-header-nav-template" data-nav="header"></template>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="page">
-      <div class="container">
-        <h1>Ecosystem Status</h1>
-        <p class="lead">
-          This page aggregates protocol status, website integration state, and
-          known issues into a single citizen-facing attestation.
-          All data is pulled from local JSON; no external services or tracking
-          are required.
-        </p>
-
-        <h2>Website Status</h2>
-        <div id="site-status" class="stats-grid" aria-live="polite" aria-label="Site status metrics">
-          <div class="activity-loading" aria-hidden="true">Loading site status...</div>
-        </div>
-
-        <h2>Protocol Component Status</h2>
-        <div id="ecosystem-components" class="activity-feed" role="feed" aria-live="polite" aria-label="Protocol components">
-          <div class="activity-loading" aria-hidden="true">Loading protocol components...</div>
-        </div>
-
-        <h2>Verified Agent Identities</h2>
-        <div id="verified-identities" class="stats-grid" aria-live="polite" aria-label="Verified agent identities">
-          <div class="activity-loading" aria-hidden="true">Loading verified identities...</div>
-        </div>
-
-        <h2>Ecosystem Metrics</h2>
-        <div id="ecosystem-metrics" class="stats-grid" aria-live="polite" aria-label="Ecosystem metrics">
-          <div class="activity-loading" aria-hidden="true">Loading metrics...</div>
-        </div>
-
-        <h2>Repo Cross-References</h2>
-        <div id="ecosystem-cross-references" class="stats-grid" aria-live="polite" aria-label="Repository cross-references">
-          <div class="activity-loading" aria-hidden="true">Loading cross-references...</div>
-        </div>
-
-        <h2>Citizen Attestation</h2>
-        <p id="citizen-attestation" class="attestation" aria-live="polite">Loading attestation...</p>
-
-        <h2>Verified Agent Identities</h2>
-        <div id="verification-feed" class="stats-grid" aria-live="polite" aria-label="Verified agent identities">
-          <div class="activity-loading" aria-hidden="true">Loading verified identities...</div>
-        </div>
-
-        <h2>Quantum Compute Signal</h2>
-        <div id="quantum-status" class="stats-grid" aria-live="polite" aria-label="Quantum compute status">
-          <div class="activity-loading" aria-hidden="true">Loading quantum status...</div>
-        </div>
-
-        <h2>Data Provenance & Attestation</h2>
-        <div id="provenance-attestation" class="stats-grid" aria-live="polite" aria-label="Data provenance and attestation">
-          <div class="activity-loading" aria-hidden="true">Loading provenance data...</div>
-        </div>
-
-        <div class="legal-block">
-          <p>
-            Maintained by the Secretary of Technology &amp; Innovation.
-            Status data is assembled from public README sources and website audit records.
-            No external API calls are used.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <strong>THE PRINCIPALITY OF AETHERIA</strong>
-          <span class="footer-tagline">Sovereign by code</span>
-        </div>
-        <div class="footer-meta">
-          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
-          <span class="footer-status" aria-label="Public network status">
-            <span class="status-dot" aria-hidden="true"></span>
-            Network Active
-          </span>
-          <span class="footer-year" data-year>2026</span>
-        </div>
-        <nav class="footer-nav" aria-label="Footer"></nav>
-      </div>
-    </div>
-  </footer>
-  <script src="assets/js/site.js"></script>
-  <script src="assets/js/main.js"></script>
-      <script src="assets/js/nav.js"></script>
-    <script>
+<html lang="en"><head><base href="/digital-nation-website/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Unified ecosystem status for the Digital Nation: AEP 2.8, dynAEP 1.0, GAP, conformance, and signatures in one citizen-facing attestation."><link rel="canonical" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html"><meta property="og:title" content="Ecosystem Status — The Principality of Aetheria"><meta property="og:description" content="Unified protocol and website status for the Digital Nation ecosystem."><meta property="og:type" content="website"><meta property="og:url" content="https://defi369.github.io/digital-nation-website/ecosystem-status.html"><meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Ecosystem Status — The Principality of Aetheria"><meta name="twitter:description" content="Unified protocol and website status for the Digital Nation ecosystem."><meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png"><title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap"><link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/page-theme.css"><link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"><link rel="icon" href="./favicon.ico"><body data-theme="engagement"><span style="display:none" id="cache-bust"><a class="skip-link" href="#main"><header class="site-header"><div class="nav" id="site-header-nav"><template id="site-header-nav-template" data-nav="header"><main id="main"><section class="page"><div class="container"><h1><p class="lead"><h2><div id="site-status" class="stats-grid" aria-live="polite" aria-label="Site status metrics"><div class="activity-loading" aria-hidden="true"><h2><div id="ecosystem-components" class="activity-feed" role="feed" aria-live="polite" aria-label="Protocol components"><div class="activity-loading" aria-hidden="true"><h2><div id="verified-identities" class="stats-grid" aria-live="polite" aria-label="Verified agent identities"><div class="activity-loading" aria-hidden="true"><h2><div id="ecosystem-metrics" class="stats-grid" aria-live="polite" aria-label="Ecosystem metrics"><div class="activity-loading" aria-hidden="true"><h2><div id="ecosystem-cross-references" class="stats-grid" aria-live="polite" aria-label="Repository cross-references"><div class="activity-loading" aria-hidden="true"><h2><p id="citizen-attestation" class="attestation" aria-live="polite"><h2><div id="verification-feed" class="stats-grid" aria-live="polite" aria-label="Verified agent identities"><div class="activity-loading" aria-hidden="true"><h2><div id="quantum-status" class="stats-grid" aria-live="polite" aria-label="Quantum compute status"><div class="activity-loading" aria-hidden="true"><h2><div id="provenance-attestation" class="stats-grid" aria-live="polite" aria-label="Data provenance and attestation"><div class="activity-loading" aria-hidden="true"><div class="legal-block"><p><footer class="site-footer"><div class="container"><div class="footer-inner"><div class="footer-brand"><strong><span class="footer-tagline"><div class="footer-meta"><span class="protocol-version" aria-label="Protocol version"><span class="footer-status" aria-label="Public network status"><span class="status-dot" aria-hidden="true"><span class="footer-year" data-year><nav class="footer-nav" aria-label="Footer"><script src="assets/js/site.js"></script><script src="assets/js/main.js"></script><script src="assets/js/nav.js"></script><script>
       (function () {
         var tmpl = document.getElementById('site-header-nav-template');
         if (!tmpl) return;
@@ -130,8 +6,188 @@
         tmpl.parentNode.insertBefore(document.importNode(tmpl.content, true), tmpl);
         tmpl.parentNode.removeChild(tmpl);
       })();
-    </script>
-    <script>
+    </script><script>
+      // Ecosystem status renderer: populates all sections from local JSON data
+      (function () {
+        'use strict';
+        function esc(str) {
+          return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+        function qs(id) { return document.getElementById(id); }
+        function set(id, html) { var el = qs(id); if (el) el.innerHTML = html; }
+        function buildCard(title, body, cls) {
+          return '<div class="card" + (cls || '') + '"><h3>' + esc(title) + '</h3><div>' + (body || '') + '</div></div>';
+        }
+        function buildKV(rows) {
+          return '<div class="kv">' + rows.map(function (r) {
+            return '<div class="k">' + esc(r[0]) + '</div><div class="v">' + esc(r[1]) + '</div>';
+          }).join('') + '</div>';
+        }
+        function buildStatusDot(status) {
+          var color = '#34d399';
+          if (status === 'active') color = '#34d399';
+          else if (status === 'scaffolding') color = '#facc15';
+          else if (status === 'pre-v1.0') color = '#facc15';
+          else if (status === 'active-release') color = '#7aa7ff';
+          else if (status === 'experimental') color = '#f87171';
+          return '<span class="status-dot" style="background:' + color + ';box-shadow:0 0 8px ' + color + '"></span>';
+        }
+        function renderSiteStatus(data) {
+          if (!data || !data.site) { set('site-status', '<p class="activity-empty">Site status unavailable.</p>'); return; }
+          var s = data.site;
+          var rows = [
+            ['Pages', String(s.pageCount || 0)],
+            ['Latest commit', esc(s.latestCommit || '—')],
+            ['Latest commit date', esc(s.latestCommitDate || '—')],
+            ['Latest commit message', esc(s.latestCommitMessage || '—')],
+            ['Phase 7', esc(s.phase7Status || '—')],
+            ['Phase 8', esc(s.phase8Status || '—')],
+            ['Protocol page', esc(s.protocolPageStatus || '—')]
+          ];
+          set('site-status', buildCard('Website Status', buildKV(rows)));
+        }
+        function renderComponents(data) {
+          if (!data || !Array.isArray(data.components) || !data.components.length) {
+            set('ecosystem-components', '<p class="activity-empty">No protocol components loaded.</p>'); return;
+          }
+          var html = '<div class="activity-list">';
+          data.components.forEach(function (c) {
+            html += '<div class="activity-item activity-governance">';
+            html += '<div><div class="activity-label">' + esc(c.name || c.id) + '</div>';
+            html += '<div class="activity-meta">';
+            html += '<span class="activity-type">' + esc(c.fullName || c.id) + '</span>';
+            html += '<span class="activity-divider" aria-hidden="true">·</span>';
+            html += '<span>v' + esc(c.version) + '</span>';
+            html += '<span class="activity-divider" aria-hidden="true">·</span>';
+            html += '<span>' + esc(c.stage) + '</span>';
+            html += '<span class="activity-divider" aria-hidden="true">·</span>';
+            html += '<span>Updated ' + esc(c.lastUpdated) + '</span>';
+            html += '</div>';
+            if (c.summary) html += '<div style="margin-top:6px;color:rgba(230,232,235,0.8)">' + esc(c.summary) + '</div>';
+            if (c.knownIssues && c.knownIssues.length) {
+              html += '<ul style="margin-top:8px;padding-left:18px;color:#f87171">';
+              c.knownIssues.forEach(function (issue) { html += '<li>' + esc(issue) + '</li>'; });
+              html += '</ul>';
+            }
+            html += '</div>';
+            html += '<div class="activity-state">' + buildStatusDot(c.stage) + ' ' + esc(c.stage) + '</div>';
+            html += '</div>';
+          });
+          html += '</div>';
+          set('ecosystem-components', html);
+        }
+        function renderMetrics(data) {
+          var eco = (data && data.metrics) || {};
+          var globalMetrics = {};
+          try { globalMetrics = JSON.parse(document.querySelector('link[rel="canonical"]') ? '' : '{}'); } catch (e) {}
+          fallbackMetrics: {
+            var m = eco;
+            var rows = [
+              ['Protocol', esc(m.protocolVersion || 'v0.1.0')],
+              ['AEP', esc(m.aepVersion || '—')],
+              ['dynAEP', esc(m.dynaepVersion || '—')],
+              ['GAP', esc(m.gapStatus || '—')],
+              ['Conformance', esc(m.conformanceStatus || '—')],
+              ['Signatures', esc(m.signatureStatus || '—')],
+              ['Known issues', String(m.knownIssueCount ?? '—')],
+              ['Last audit', esc(m.lastAudit || '—')],
+              ['Total components', String(m.totalComponents ?? '—')],
+              ['Artifact files', String(m.artifactFileCount ?? '—')],
+              ['Pages', String(m.pageCount ?? '—')],
+              ['Cross-repo pages', String(m.crossRepoPageCount ?? '—')],
+              ['Identity manifests', String(m.identityManifestCount ?? '—')],
+              ['Identity keys', String(m.identityKeyCount ?? '—')]
+            ];
+            set('ecosystem-metrics', buildCard('Ecosystem Metrics', buildKV(rows)));
+          }
+        }
+        function renderIdentities(data) {
+          var list = [];
+          if (data && Array.isArray(data.verifiedIdentities)) list = data.verifiedIdentities;
+          else if (data && Array.isArray(data.identities)) list = data.identities;
+          if (!list.length) { set('verified-identities', '<p class="activity-empty">No verified identities loaded.</p>'); return; }
+          var html = '<div class="activity-list">';
+          list.forEach(function (id) {
+            html += '<div class="activity-item activity-governance">';
+            html += '<div><div class="activity-label">' + esc(id.name || id.id || 'Unknown') + '</div>';
+            html += '<div class="activity-meta"><span class="activity-type">' + esc(id.role || id.type || 'Agent') + '</span>';
+            if (id.pubkey) html += '<span class="activity-divider" aria-hidden="true">·</span><span>' + esc(id.pubkey.slice(0, 16)) + '...</span>';
+            html += '</div></div>';
+            html += '<div class="activity-state">' + buildStatusDot('active') + ' Verified</div>';
+            html += '</div>';
+          });
+          html += '</div>';
+          set('verified-identities', html);
+          set('verification-feed', html);
+        }
+        function renderQuantum(data) {
+          var q = (data && data.quantum) || {};
+          var rows = [
+            ['Available', q.available === true ? 'Yes' : q.available === false ? 'No' : '—'],
+            ['Mode', esc(q.mode || '—')],
+            ['Note', esc(q.note || q.summary || '—')]
+          ];
+          set('quantum-status', buildCard('Quantum Compute Signal', buildKV(rows)));
+        }
+        function renderAttestation(data) {
+          var a = (data && data.attestation) || {};
+          if (!Object.keys(a).length) { set('provenance-attestation', '<p class="activity-empty">No attestation data loaded.</p>'); return; }
+          var rows = Object.keys(a).map(function (k) { return [k, esc(String(a[k]))]; });
+          set('provenance-attestation', buildCard('Data Provenance & Attestation', buildKV(rows)));
+        }
+        function renderCitizenAttestation(data) {
+          if (!data) { set('citizen-attestation', '<p class="activity-empty">Attestation unavailable.</p>'); return; }
+          var text = data.citizenAttestation || data.citizenBenefits || 'No attestation text available.';
+          set('citizen-attestation', '<p>' + esc(text) + '</p>');
+        }
+        function renderCrossReferences(data) {
+          if (!data || !Array.isArray(data.crossRepoPages)) {
+            set('ecosystem-cross-references', '<p class="activity-empty">No cross-references loaded.</p>'); return;
+          }
+          var items = data.crossRepoPages.map(function (p) {
+            return '<div class="activity-item activity-governance"><div class="activity-label">' + esc(p) + '</div>';
+          }).join('');
+          set('ecosystem-cross-references', '<div class="activity-list">' + items + '</div>');
+        }
+        function loadJSON(path, fallback) {
+          return fetch(path, { mode: 'cors' }).then(function (r) { return r.ok ? r.json() : fallback; }).catch(function () { return fallback; });
+        }
+        function init() {
+          var base = (document.querySelector('base[href]') ? document.querySelector('base[href]').getAttribute('href') : './');
+          if (base && !base.endsWith('/')) base = base + '/';
+          var root = base || './';
+          loadJSON(root + 'assets/data/ecosystem-status.json', {}).then(function (eco) {
+            renderSiteStatus(eco);
+            renderComponents(eco);
+            renderMetrics(eco);
+            renderIdentities(eco);
+            renderQuantum(eco);
+            renderAttestation(eco);
+            renderCitizenAttestation(eco);
+            renderCrossReferences(eco);
+          });
+          loadJSON(root + 'assets/data/metrics.json', {}).then(function (m) {
+            if (m && m.protocolVersion) {
+              var el = qs('ecosystem-metrics');
+              if (el) {
+                var badge = el.querySelector('.k') ? null : null;
+                var existing = el.innerHTML;
+              }
+            }
+          });
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+        else init();
+      })();
+    </script><script src="assets/js/ecosystem-status-renderer.js"></script><head><base href="/digital-nation-website/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Unified ecosystem status for the Digital Nation: AEP 2.8, dynAEP 1.0, GAP, conformance, and signatures in one citizen-facing attestation."><link rel="canonical" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html"><meta property="og:title" content="Ecosystem Status — The Principality of Aetheria"><meta property="og:description" content="Unified protocol and website status for the Digital Nation ecosystem."><meta property="og:type" content="website"><meta property="og:url" content="https://defi369.github.io/digital-nation-website/ecosystem-status.html"><meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Ecosystem Status — The Principality of Aetheria"><meta name="twitter:description" content="Unified protocol and website status for the Digital Nation ecosystem."><meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png"><title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap"><link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/page-theme.css"><link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"><link rel="icon" href="./favicon.ico"><body data-theme="engagement"><span style="display:none" id="cache-bust"><a class="skip-link" href="#main"><header class="site-header"><div class="nav" id="site-header-nav"><template id="site-header-nav-template" data-nav="header"><main id="main"><section class="page"><div class="container"><h1><p class="lead"><h2><div id="site-status" class="stats-grid" aria-live="polite" aria-label="Site status metrics"><div class="activity-loading" aria-hidden="true"><h2><div id="ecosystem-components" class="activity-feed" role="feed" aria-live="polite" aria-label="Protocol components"><div class="activity-loading" aria-hidden="true"><h2><div id="verified-identities" class="stats-grid" aria-live="polite" aria-label="Verified agent identities"><div class="activity-loading" aria-hidden="true"><h2><div id="ecosystem-metrics" class="stats-grid" aria-live="polite" aria-label="Ecosystem metrics"><div class="activity-loading" aria-hidden="true"><h2><div id="ecosystem-cross-references" class="stats-grid" aria-live="polite" aria-label="Repository cross-references"><div class="activity-loading" aria-hidden="true"><h2><p id="citizen-attestation" class="attestation" aria-live="polite"><h2><div id="verification-feed" class="stats-grid" aria-live="polite" aria-label="Verified agent identities"><div class="activity-loading" aria-hidden="true"><h2><div id="quantum-status" class="stats-grid" aria-live="polite" aria-label="Quantum compute status"><div class="activity-loading" aria-hidden="true"><h2><div id="provenance-attestation" class="stats-grid" aria-live="polite" aria-label="Data provenance and attestation"><div class="activity-loading" aria-hidden="true"><div class="legal-block"><p><footer class="site-footer"><div class="container"><div class="footer-inner"><div class="footer-brand"><strong><span class="footer-tagline"><div class="footer-meta"><span class="protocol-version" aria-label="Protocol version"><span class="footer-status" aria-label="Public network status"><span class="status-dot" aria-hidden="true"><span class="footer-year" data-year><nav class="footer-nav" aria-label="Footer"><script>
+      (function () {
+        var tmpl = document.getElementById('site-header-nav-template');
+        if (!tmpl) return;
+        var container = document.getElementById('site-header-nav') || tmpl.parentElement;
+        tmpl.parentNode.insertBefore(document.importNode(tmpl.content, true), tmpl);
+        tmpl.parentNode.removeChild(tmpl);
+      })();
+    </script><script>
       // Ecosystem status renderer: populates all sections from local JSON data
       (function () {
         'use strict';
@@ -305,313 +361,3 @@
         else init();
       })();
     </script>
-  
-</body><script src="assets/js/ecosystem-status-renderer.js"></script>
-</html> lang="en">
-<head>
-  <base href="/digital-nation-website/">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Unified ecosystem status for the Digital Nation: AEP 2.8, dynAEP 1.0, GAP, conformance, and signatures in one citizen-facing attestation.">
-  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html">
-  <meta property="og:title" content="Ecosystem Status — The Principality of Aetheria">
-  <meta property="og:description" content="Unified protocol and website status for the Digital Nation ecosystem.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/ecosystem-status.html">
-  <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ecosystem Status — The Principality of Aetheria">
-  <meta name="twitter:description" content="Unified protocol and website status for the Digital Nation ecosystem.">
-  <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
-
-  <title>Ecosystem Status — The Principality of Aetheria</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap"></noscript>
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/page-theme.css">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  <link rel="icon" href="./favicon.ico">
-</head>
-<body data-theme="engagement"> <span style="display:none" id="cache-bust">20260721-0510</span>
-<a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="nav" id="site-header-nav">
-      <template id="site-header-nav-template" data-nav="header"></template>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="page">
-      <div class="container">
-        <h1>Ecosystem Status</h1>
-        <p class="lead">
-          This page aggregates protocol status, website integration state, and
-          known issues into a single citizen-facing attestation.
-          All data is pulled from local JSON; no external services or tracking
-          are required.
-        </p>
-
-        <h2>Website Status</h2>
-        <div id="site-status" class="stats-grid" aria-live="polite" aria-label="Site status metrics">
-          <div class="activity-loading" aria-hidden="true">Loading site status...</div>
-        </div>
-
-        <h2>Protocol Component Status</h2>
-        <div id="ecosystem-components" class="activity-feed" role="feed" aria-live="polite" aria-label="Protocol components">
-          <div class="activity-loading" aria-hidden="true">Loading protocol components...</div>
-        </div>
-
-        <h2>Verified Agent Identities</h2>
-        <div id="verified-identities" class="stats-grid" aria-live="polite" aria-label="Verified agent identities">
-          <div class="activity-loading" aria-hidden="true">Loading verified identities...</div>
-        </div>
-
-        <h2>Ecosystem Metrics</h2>
-        <div id="ecosystem-metrics" class="stats-grid" aria-live="polite" aria-label="Ecosystem metrics">
-          <div class="activity-loading" aria-hidden="true">Loading metrics...</div>
-        </div>
-
-        <h2>Repo Cross-References</h2>
-        <div id="ecosystem-cross-references" class="stats-grid" aria-live="polite" aria-label="Repository cross-references">
-          <div class="activity-loading" aria-hidden="true">Loading cross-references...</div>
-        </div>
-
-        <h2>Citizen Attestation</h2>
-        <p id="citizen-attestation" class="attestation" aria-live="polite">Loading attestation...</p>
-
-        <h2>Verified Agent Identities</h2>
-        <div id="verification-feed" class="stats-grid" aria-live="polite" aria-label="Verified agent identities">
-          <div class="activity-loading" aria-hidden="true">Loading verified identities...</div>
-        </div>
-
-        <h2>Quantum Compute Signal</h2>
-        <div id="quantum-status" class="stats-grid" aria-live="polite" aria-label="Quantum compute status">
-          <div class="activity-loading" aria-hidden="true">Loading quantum status...</div>
-        </div>
-
-        <h2>Data Provenance & Attestation</h2>
-        <div id="provenance-attestation" class="stats-grid" aria-live="polite" aria-label="Data provenance and attestation">
-          <div class="activity-loading" aria-hidden="true">Loading provenance data...</div>
-        </div>
-
-        <div class="legal-block">
-          <p>
-            Maintained by the Secretary of Technology &amp; Innovation.
-            Status data is assembled from public README sources and website audit records.
-            No external API calls are used.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <strong>THE PRINCIPALITY OF AETHERIA</strong>
-          <span class="footer-tagline">Sovereign by code</span>
-        </div>
-        <div class="footer-meta">
-          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
-          <span class="footer-status" aria-label="Public network status">
-            <span class="status-dot" aria-hidden="true"></span>
-            Network Active
-          </span>
-          <span class="footer-year" data-year>2026</span>
-        </div>
-        <nav class="footer-nav" aria-label="Footer"></nav>
-      </div>
-    </div>
-  </footer>
-  <script src="assets/js/site.js"></script>
-  <script src="assets/js/main.js"></script>
-      <script src="assets/js/nav.js"></script>
-    <script>
-      (function () {
-        var tmpl = document.getElementById('site-header-nav-template');
-        if (!tmpl) return;
-        var container = document.getElementById('site-header-nav') || tmpl.parentElement;
-        tmpl.parentNode.insertBefore(document.importNode(tmpl.content, true), tmpl);
-        tmpl.parentNode.removeChild(tmpl);
-      })();
-    </script>
-    <script>
-      // Ecosystem status renderer: populates all sections from local JSON data
-      (function () {
-        'use strict';
-        function esc(str) {
-          return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        }
-        function qs(id) { return document.getElementById(id); }
-        function set(id, html) { var el = qs(id); if (el) el.innerHTML = html; }
-        function buildCard(title, body, cls) {
-          return '<div class="card" + (cls || '') + '"><h3>' + esc(title) + '</h3><div>' + (body || '') + '</div></div>';
-        }
-        function buildKV(rows) {
-          return '<div class="kv">' + rows.map(function (r) {
-            return '<div class="k">' + esc(r[0]) + '</div><div class="v">' + esc(r[1]) + '</div>';
-          }).join('') + '</div>';
-        }
-        function buildStatusDot(status) {
-          var color = '#34d399';
-          if (status === 'active') color = '#34d399';
-          else if (status === 'scaffolding') color = '#facc15';
-          else if (status === 'pre-v1.0') color = '#facc15';
-          else if (status === 'active-release') color = '#7aa7ff';
-          else if (status === 'experimental') color = '#f87171';
-          return '<span class="status-dot" style="background:' + color + ';box-shadow:0 0 8px ' + color + '"></span>';
-        }
-        function renderSiteStatus(data) {
-          if (!data || !data.site) { set('site-status', '<p class="activity-empty">Site status unavailable.</p>'); return; }
-          var s = data.site;
-          var rows = [
-            ['Pages', String(s.pageCount || 0)],
-            ['Latest commit', esc(s.latestCommit || '—')],
-            ['Latest commit date', esc(s.latestCommitDate || '—')],
-            ['Latest commit message', esc(s.latestCommitMessage || '—')],
-            ['Phase 7', esc(s.phase7Status || '—')],
-            ['Phase 8', esc(s.phase8Status || '—')],
-            ['Protocol page', esc(s.protocolPageStatus || '—')]
-          ];
-          set('site-status', buildCard('Website Status', buildKV(rows)));
-        }
-        function renderComponents(data) {
-          if (!data || !Array.isArray(data.components) || !data.components.length) {
-            set('ecosystem-components', '<p class="activity-empty">No protocol components loaded.</p>'); return;
-          }
-          var html = '<div class="activity-list">';
-          data.components.forEach(function (c) {
-            html += '<div class="activity-item activity-governance">';
-            html += '<div><div class="activity-label">' + esc(c.name || c.id) + '</div>';
-            html += '<div class="activity-meta">';
-            html += '<span class="activity-type">' + esc(c.fullName || c.id) + '</span>';
-            html += '<span class="activity-divider" aria-hidden="true">·</span>';
-            html += '<span>v' + esc(c.version) + '</span>';
-            html += '<span class="activity-divider" aria-hidden="true">·</span>';
-            html += '<span>' + esc(c.stage) + '</span>';
-            html += '<span class="activity-divider" aria-hidden="true">·</span>';
-            html += '<span>Updated ' + esc(c.lastUpdated) + '</span>';
-            html += '</div>';
-            if (c.summary) html += '<div style="margin-top:6px;color:rgba(230,232,235,0.8)">' + esc(c.summary) + '</div>';
-            if (c.knownIssues && c.knownIssues.length) {
-              html += '<ul style="margin-top:8px;padding-left:18px;color:#f87171">';
-              c.knownIssues.forEach(function (issue) { html += '<li>' + esc(issue) + '</li>'; });
-              html += '</ul>';
-            }
-            html += '</div>';
-            html += '<div class="activity-state">' + buildStatusDot(c.stage) + ' ' + esc(c.stage) + '</div>';
-            html += '</div>';
-          });
-          html += '</div>';
-          set('ecosystem-components', html);
-        }
-        function renderMetrics(data) {
-          var eco = (data && data.metrics) || {};
-          var globalMetrics = {};
-          try { globalMetrics = JSON.parse(document.querySelector('link[rel="canonical"]') ? '' : '{}'); } catch (e) {}
-          fallbackMetrics: {
-            var m = eco;
-            var rows = [
-              ['Protocol', esc(m.protocolVersion || 'v0.1.0')],
-              ['AEP', esc(m.aepVersion || '—')],
-              ['dynAEP', esc(m.dynaepVersion || '—')],
-              ['GAP', esc(m.gapStatus || '—')],
-              ['Conformance', esc(m.conformanceStatus || '—')],
-              ['Signatures', esc(m.signatureStatus || '—')],
-              ['Known issues', String(m.knownIssueCount ?? '—')],
-              ['Last audit', esc(m.lastAudit || '—')],
-              ['Total components', String(m.totalComponents ?? '—')],
-              ['Artifact files', String(m.artifactFileCount ?? '—')],
-              ['Pages', String(m.pageCount ?? '—')],
-              ['Cross-repo pages', String(m.crossRepoPageCount ?? '—')],
-              ['Identity manifests', String(m.identityManifestCount ?? '—')],
-              ['Identity keys', String(m.identityKeyCount ?? '—')]
-            ];
-            set('ecosystem-metrics', buildCard('Ecosystem Metrics', buildKV(rows)));
-          }
-        }
-        function renderIdentities(data) {
-          var list = [];
-          if (data && Array.isArray(data.verifiedIdentities)) list = data.verifiedIdentities;
-          else if (data && Array.isArray(data.identities)) list = data.identities;
-          if (!list.length) { set('verified-identities', '<p class="activity-empty">No verified identities loaded.</p>'); return; }
-          var html = '<div class="activity-list">';
-          list.forEach(function (id) {
-            html += '<div class="activity-item activity-governance">';
-            html += '<div><div class="activity-label">' + esc(id.name || id.id || 'Unknown') + '</div>';
-            html += '<div class="activity-meta"><span class="activity-type">' + esc(id.role || id.type || 'Agent') + '</span>';
-            if (id.pubkey) html += '<span class="activity-divider" aria-hidden="true">·</span><span>' + esc(id.pubkey.slice(0, 16)) + '...</span>';
-            html += '</div></div>';
-            html += '<div class="activity-state">' + buildStatusDot('active') + ' Verified</div>';
-            html += '</div>';
-          });
-          html += '</div>';
-          set('verified-identities', html);
-          set('verification-feed', html);
-        }
-        function renderQuantum(data) {
-          var q = (data && data.quantum) || {};
-          var rows = [
-            ['Available', q.available === true ? 'Yes' : q.available === false ? 'No' : '—'],
-            ['Mode', esc(q.mode || '—')],
-            ['Note', esc(q.note || q.summary || '—')]
-          ];
-          set('quantum-status', buildCard('Quantum Compute Signal', buildKV(rows)));
-        }
-        function renderAttestation(data) {
-          var a = (data && data.attestation) || {};
-          if (!Object.keys(a).length) { set('provenance-attestation', '<p class="activity-empty">No attestation data loaded.</p>'); return; }
-          var rows = Object.keys(a).map(function (k) { return [k, esc(String(a[k]))]; });
-          set('provenance-attestation', buildCard('Data Provenance & Attestation', buildKV(rows)));
-        }
-        function renderCitizenAttestation(data) {
-          if (!data) { set('citizen-attestation', '<p class="activity-empty">Attestation unavailable.</p>'); return; }
-          var text = data.citizenAttestation || data.citizenBenefits || 'No attestation text available.';
-          set('citizen-attestation', '<p>' + esc(text) + '</p>');
-        }
-        function renderCrossReferences(data) {
-          if (!data || !Array.isArray(data.crossRepoPages)) {
-            set('ecosystem-cross-references', '<p class="activity-empty">No cross-references loaded.</p>'); return;
-          }
-          var items = data.crossRepoPages.map(function (p) {
-            return '<div class="activity-item activity-governance"><div class="activity-label">' + esc(p) + '</div>';
-          }).join('');
-          set('ecosystem-cross-references', '<div class="activity-list">' + items + '</div>');
-        }
-        function loadJSON(path, fallback) {
-          return fetch(path, { mode: 'cors' }).then(function (r) { return r.ok ? r.json() : fallback; }).catch(function () { return fallback; });
-        }
-        function init() {
-          var base = (document.querySelector('base[href]') ? document.querySelector('base[href]').getAttribute('href') : './');
-          if (base && !base.endsWith('/')) base = base + '/';
-          var root = base || './';
-          loadJSON(root + 'assets/data/ecosystem-status.json', {}).then(function (eco) {
-            renderSiteStatus(eco);
-            renderComponents(eco);
-            renderMetrics(eco);
-            renderIdentities(eco);
-            renderQuantum(eco);
-            renderAttestation(eco);
-            renderCitizenAttestation(eco);
-            renderCrossReferences(eco);
-          });
-          loadJSON(root + 'assets/data/metrics.json', {}).then(function (m) {
-            if (m && m.protocolVersion) {
-              var el = qs('ecosystem-metrics');
-              if (el) {
-                var badge = el.querySelector('.k') ? null : null;
-                var existing = el.innerHTML;
-              }
-            }
-          });
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-        else init();
-      })();
-    </script>
-  
-</body>
