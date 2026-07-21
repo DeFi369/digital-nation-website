@@ -179,15 +179,11 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
 
 - **2026-07-21 — Round 25 improvements** (commit `1bc648a`):
   - Hub: replaced div.orbit-system[role=main] with semantic <main> element
-  - Governance v2, Roadmap, HL MCP, Ecosystem: added <link rel="manifest"> (4 still missing)
+  - Governance v2, Roadmap, HL MCP, Structure, Ecosystem: added `<link rel="manifest">` (remaining 5 pages)
   - Verified: grep-based pass on changed files
-  - Hub: added `<section id="hub-main" aria-label="Main content">` landmark
-  - Governance v2, Roadmap, HL MCP, Structure, Ecosystem, Protocol v1: added `<article>` landmark with proper open/close balance
-  - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 26 improvements** (commit pending):
-  - All 9 pages: confirmed `<main>` element + `<link rel="manifest">`
-  - Hub: replaced div.orbit-system[role=main] with semantic <main>
+- **2026-07-21 — Round 26 improvements** (commit `1cf2b89`):
+  - All 9 pages: added `fetchpriority="low"` to Atom feed `<link rel="alternate">`
   - Verified: grep-based pass on all 9 pages
 
 - **2026-07-21 — Round 27 pending** (next improvement cycle)
