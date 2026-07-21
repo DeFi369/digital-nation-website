@@ -1,0 +1,12 @@
+--- protocol-status.html
++++ protocol-status.html
+@@ -365,8 +365,8 @@
+   </footer>
+   <script src="assets/js/site.js"></script>
+-  <script src="assets/js/protocol-status.js"></script>
++      <script src="assets/js/protocol-status.js"></script>
+       <script src="assets/js/nav.js"></script>
+     <script>
+ 
+ 
+ 
