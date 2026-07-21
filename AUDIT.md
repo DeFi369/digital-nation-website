@@ -161,4 +161,13 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Hub: already complete in all categories this round
   - Verified: grep-based pass on changed files
 
-- **2026-07-21 — Round 23 pending** (next improvement cycle)
+- **2026-07-21 — Round 23 improvements** (commit `b34bf4c`):
+  - All 9 pages: added `xml:lang="en"` to `<html>` tag
+  - Hub: added `referrerpolicy="strict-origin-when-cross-origin"` to `<html>` tag
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 24 improvements** (commit pending):
+  - All 9 pages: added `Content-Security-Policy` meta
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 25 pending** (next improvement cycle)
