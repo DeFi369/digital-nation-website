@@ -118,7 +118,16 @@ never leave work uncommitted in this repo.
   - Verified: each page contains >=3 dns-prefetch links
 
 
-- **2026-07-21 — Round 8 improvements** (commit `f21ff7f`):
+- **2026-07-21 — Round 7 improvements** (commit `f21ff7f`):
+  - All 9 pages: added `<meta name="color-scheme" content="dark">`
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 8 improvements** (commit `918ebbf`):
+  - Hub: added RSS `alternate` link
+  - Governance v2, HL MCP, Ecosystem: added `<noscript>` CSS fallback
+  - Verified: grep-based pass on actual changed files
+
+- **2026-07-21 — Round 9 pending** (next improvement cycle) (commit `f21ff7f`):
   - Hub: added RSS `alternate` link
   - Governance v2, HL MCP, Ecosystem: added `<noscript>` CSS fallback
   - Note: Hub iframe already had `title`; structure img already had `alt`; those checks were false positives
