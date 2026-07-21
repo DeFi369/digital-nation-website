@@ -170,6 +170,7 @@
       text-decoration: none;
       color: inherit;
       transition: transform 0.25s cubic-bezier(.2,.8,.2,1), box-shadow 0.25s ease;
+      cursor: pointer;
     }
     .hub-core:hover {
       transform: scale(1.04);
@@ -210,7 +211,15 @@
       100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
 
-    /* orbital node wrapper handles positioning so inner can animate without fighting transform */
+    /* carousel rotates all nodes around the center */
+    .orbit-carousel {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
+    }
+
+    /* orbital node wrapper handles positioning */
     .orbit-node-wrap {
       position: absolute;
       left: 50%;
@@ -343,6 +352,69 @@
     .telemetry-item__value--ok { color: #34d399; text-shadow: 0 0 12px rgba(52, 211, 153, 0.5); }
     .telemetry-item__value--bad { color: #f87171; text-shadow: 0 0 12px rgba(248, 113, 113, 0.5); }
 
+    /* mcp terminal modal */
+    .mcp-terminal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(2, 4, 8, 0.85);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .mcp-terminal.is-open { display: flex; }
+    .mcp-terminal__frame {
+      width: min(860px, 94vw);
+      height: min(520px, 70vh);
+      background: var(--hub-surface);
+      border: 1px solid var(--hub-border);
+      border-radius: 14px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .mcp-terminal__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--hub-border);
+      background: rgba(122, 167, 255, 0.04);
+    }
+    .mcp-terminal__title {
+      font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .mcp-terminal__close {
+      background: transparent;
+      border: 1px solid var(--hub-border);
+      color: var(--hub-muted);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+      font-size: 11px;
+      cursor: pointer;
+    }
+    .mcp-terminal__close:hover { border-color: rgba(122, 167, 255, 0.4); color: #fff; }
+    .mcp-terminal__body {
+      flex: 1;
+      overflow: hidden;
+    }
+    .mcp-terminal__body iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #05070a;
+    }
+
     @media (max-width: 760px) {
       .orbit-node-wrap--0, .orbit-node-wrap--1, .orbit-node-wrap--2, .orbit-node-wrap--3,
       .orbit-node-wrap--4, .orbit-node-wrap--5, .orbit-node-wrap--6, .orbit-node-wrap--7 {
@@ -372,85 +444,101 @@
     <div class="spoke" aria-hidden="true"></div>
     <div class="spoke" aria-hidden="true"></div>
 
-    <a class="hub-core" href="https://defi369.github.io/digital-nation-website/" aria-label="Digital Nation home">
+    <!-- center hub acts as the spin control -->
+    <a class="hub-core" id="hub-spin" href="https://defi369.github.io/digital-nation-website/" aria-label="Digital Nation home">
       <div class="hub-core__title">Hub</div>
       <div class="hub-core__sub">Digital Nation</div>
       <div class="hub-core__pulse" aria-hidden="true"></div>
     </a>
 
-    <div class="orbit-node-wrap orbit-node-wrap--0">
-      <a class="orbit-node" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="4D Quantum Thought Engine">
-        <div class="orbit-node__icon">🧠</div>
-        <div class="orbit-node__title">Lattice Brain</div>
-        <div class="orbit-node__badge">Live</div>
-      </a>
-    </div>
+    <!-- carousel wraps all orbit nodes and rotates as a unit -->
+    <div class="orbit-carousel" id="orbit-carousel">
+      <div class="orbit-node-wrap orbit-node-wrap--0">
+        <a class="orbit-node" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="4D Quantum Thought Engine">
+          <div class="orbit-node__icon">🧠</div>
+          <div class="orbit-node__title">Lattice Brain</div>
+          <div class="orbit-node__badge">Live</div>
+        </a>
+      </div>
 
-    <div class="orbit-node-wrap orbit-node-wrap--1">
-      <a class="orbit-node" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer" aria-label="Trading Desk">
-        <div class="orbit-node__icon">📈</div>
-        <div class="orbit-node__title">Trading Desk</div>
-        <div class="orbit-node__badge">Paper</div>
-      </a>
-    </div>
+      <div class="orbit-node-wrap orbit-node-wrap--1">
+        <a class="orbit-node" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer" aria-label="Trading Desk">
+          <div class="orbit-node__icon">📈</div>
+          <div class="orbit-node__title">Trading Desk</div>
+          <div class="orbit-node__badge">Paper</div>
+        </a>
+      </div>
 
-    <div class="orbit-node-wrap orbit-node-wrap--2">
-      <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/protocol-status.html" aria-label="Governance and IAMS">
-        <div class="orbit-node__icon">🏛️</div>
-        <div class="orbit-node__title">Governance</div>
-        <div class="orbit-node__badge">Ops</div>
-      </a>
-    </div>
+      <div class="orbit-node-wrap orbit-node-wrap--2">
+        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/protocol-status.html" aria-label="Governance and IAMS">
+          <div class="orbit-node__icon">🏛️</div>
+          <div class="orbit-node__title">Governance</div>
+          <div class="orbit-node__badge">Ops</div>
+        </a>
+      </div>
 
-    <div class="orbit-node-wrap orbit-node-wrap--3">
-      <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/quantum-roadmap.html" aria-label="Quantum Roadmap">
-        <div class="orbit-node__icon">🗺️</div>
-        <div class="orbit-node__title">Roadmap</div>
-        <div class="orbit-node__badge">Planned</div>
-      </a>
-    </div>
+      <div class="orbit-node-wrap orbit-node-wrap--3">
+        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/quantum-roadmap.html" aria-label="Quantum Roadmap">
+          <div class="orbit-node__icon">🗺️</div>
+          <div class="orbit-node__title">Roadmap</div>
+          <div class="orbit-node__badge">Planned</div>
+        </a>
+      </div>
 
-    <div class="orbit-node-wrap orbit-node-wrap--4">
-      <a class="orbit-node" href="http://localhost:8091/mcp" target="_blank" rel="noopener noreferrer" aria-label="HyperLattice MCP">
-        <div class="orbit-node__icon">🔗</div>
-        <div class="orbit-node__title">HL MCP</div>
-        <div class="orbit-node__badge">Memory</div>
-      </a>
-    </div>
+      <div class="orbit-node-wrap orbit-node-wrap--4">
+        <a class="orbit-node" href="http://localhost:8091/mcp" target="_blank" rel="noopener noreferrer" aria-label="HyperLattice MCP open">
+          <div class="orbit-node__icon">🔗</div>
+          <div class="orbit-node__title">HL MCP</div>
+          <div class="orbit-node__badge">Memory</div>
+        </a>
+      </div>
 
-    <div class="orbit-node-wrap orbit-node-wrap--5">
-      <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/" aria-label="Legacy landing page">
-        <div class="orbit-node__icon">📜</div>
-        <div class="orbit-node__title">Legacy</div>
-        <div class="orbit-node__badge">Static</div>
-      </a>
-    </div>
+      <div class="orbit-node-wrap orbit-node-wrap--5">
+        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/index-legacy.html" aria-label="Digital Nation archive">
+          <div class="orbit-node__icon">📜</div>
+          <div class="orbit-node__title">Archive</div>
+          <div class="orbit-node__badge">Legacy</div>
+        </a>
+      </div>
 
-    <div class="orbit-node-wrap orbit-node-wrap--6">
-      <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/structure.html" aria-label="Government structure">
-        <div class="orbit-node__icon">🏗️</div>
-        <div class="orbit-node__title">Structure</div>
-        <div class="orbit-node__badge">Gov</div>
-      </a>
-    </div>
+      <div class="orbit-node-wrap orbit-node-wrap--6">
+        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/structure.html" aria-label="Government structure">
+          <div class="orbit-node__icon">🏗️</div>
+          <div class="orbit-node__title">Structure</div>
+          <div class="orbit-node__badge">Gov</div>
+        </a>
+      </div>
 
-    <div class="orbit-node-wrap orbit-node-wrap--7">
-      <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html" aria-label="Ecosystem status">
-        <div class="orbit-node__icon">🌐</div>
-        <div class="orbit-node__title">Ecosystem</div>
-        <div class="orbit-node__badge">Status</div>
-      </a>
+      <div class="orbit-node-wrap orbit-node-wrap--7">
+        <a class="orbit-node" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html" aria-label="Ecosystem status">
+          <div class="orbit-node__icon">🌐</div>
+          <div class="orbit-node__title">Ecosystem</div>
+          <div class="orbit-node__badge">Status</div>
+        </a>
+      </div>
     </div>
   </div>
 
   <div class="telemetry-bar" aria-label="Live system telemetry">
     <div class="telemetry-item"><span>Brain</span><span class="telemetry-item__value" id="svc-brain">—</span></div>
     <div class="telemetry-item"><span>Desk</span><span class="telemetry-item__value" id="svc-desk">—</span></div>
-    <div class="telemetry-item"><span>HL MCP</span><span class="telemetry-item__value" id="svc-hl">—</span></div>
     <div class="telemetry-item"><span>Equity</span><span class="telemetry-item__value" id="desk-equity">—</span></div>
     <div class="telemetry-item"><span>Positions</span><span class="telemetry-item__value" id="desk-positions">—</span></div>
     <div class="telemetry-item"><span>Realized</span><span class="telemetry-item__value" id="desk-realized">—</span></div>
     <div class="telemetry-item"><span>Directives</span><span class="telemetry-item__value" id="directives-count">—</span></div>
+  </div>
+
+  <!-- functional MCP terminal overlay -->
+  <div class="mcp-terminal" id="mcp-terminal" aria-hidden="true">
+    <div class="mcp-terminal__frame">
+      <div class="mcp-terminal__header">
+        <div class="mcp-terminal__title">HL MCP — Live Terminal</div>
+        <button class="mcp-terminal__close" id="mcp-terminal-close">Close</button>
+      </div>
+      <div class="mcp-terminal__body">
+        <iframe src="http://localhost:8091/" title="HyperLattice MCP terminal" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -520,6 +608,36 @@
 
       refresh();
       setInterval(refresh, 30000);
+
+      // spin control: each click rotates the carousel by 45° so the next node moves to top center
+      const carousel = document.getElementById('orbit-carousel');
+      const hubSpin = document.getElementById('hub-spin');
+      let spinAngle = 0;
+      if (hubSpin && carousel) {
+        hubSpin.addEventListener('click', function (e) {
+          e.preventDefault();
+          spinAngle -= 45;
+          carousel.style.transform = 'rotate(' + spinAngle + 'deg)';
+        });
+      }
+
+      // functional HL MCP terminal: open the in-page terminal overlay instead of a dead stats tab
+      const mcpTerminal = document.getElementById('mcp-terminal');
+      const mcpClose = document.getElementById('mcp-terminal-close');
+      const mcpNode = document.querySelector('.orbit-node-wrap--4 .orbit-node');
+      if (mcpNode && mcpTerminal) {
+        mcpNode.addEventListener('click', function (e) {
+          e.preventDefault();
+          mcpTerminal.classList.add('is-open');
+          mcpTerminal.setAttribute('aria-hidden', 'false');
+        });
+      }
+      if (mcpClose && mcpTerminal) {
+        mcpClose.addEventListener('click', function () {
+          mcpTerminal.classList.remove('is-open');
+          mcpTerminal.setAttribute('aria-hidden', 'true');
+        });
+      }
     })();
   </script>
 </body>
