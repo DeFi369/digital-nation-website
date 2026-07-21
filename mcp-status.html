@@ -52,6 +52,8 @@
     .v { color: #fff; font-size: 13px; word-break: break-word; }
     .v.ok { color: #34d399; }
     .v.bad { color: #f87171; }
+    .v.info { color: #facc15; }
+    .wrap-note { margin-top: 18px; padding: 12px; border: 1px solid var(--border); border-radius: 10px; background: rgba(122,167,255,0.04); color: var(--muted); font-size: 12px; line-height: 1.55; }
     .raw {
       margin-top: 12px;
       padding: 10px;
@@ -90,6 +92,7 @@
         <button id="btn-prs">Open PRs</button>
       </div>
       <div class="raw" id="raw">Loading…</div>
+      <div class="wrap-note" id="note"></div>
     </div>
   </div>
 
@@ -113,20 +116,23 @@
             recordCount: String(j.recordCount)
           });
           raw.textContent = JSON.stringify(j, null, 2);
+          note.textContent = noteOpen;
         } catch (e) {
           const msg = String(e);
           const blocked = msg.includes('Failed to fetch') || msg.includes('fetch');
           setKV({
             status: blocked ? 'mixed-content-blocked' : 'unreachable',
-            error: blocked
-              ? 'Browser blocked this request. Open this page from http://localhost:8086/ or from the local hub to allow localhost fetches.'
-              : msg
+            error: blocked ? 'Browser mixed-content policy blocked localhost from HTTPS.' : msg
           });
           raw.textContent = blocked
-            ? 'This diagnostic must be opened from a localhost origin. From the public HTTPS site, mixed-content policy blocks http://localhost:8091 fetches. Use the hub MCP terminal or open http://localhost:8086/ directly.'
+            ? 'The public HTTPS site cannot call http://localhost:8091 because the browser blocks cross-origin loopback requests from secure origins. Open the local hub or http://localhost:8086/ to view live MCP status.'
             : 'Cannot reach ' + base + '/health: ' + msg;
+          note.textContent = blocked ? noteMixed : noteError;
         }
       }
+      const noteMixed = 'Use the on-machine HL MCP terminal under the local hub, or open http://localhost:8086/ directly, to use the live MCP controls from a localhost origin.';
+      const noteError = 'Live controls are unavailable from this origin. From the local hub, the HL MCP terminal can call the local MCP server directly.';
+      const noteOpen = 'Live MCP controls are available from a localhost origin. From the hub, open the HL MCP terminal for the full experience.';
       let sessionId = null;
       async function postJSON(method, params) {
         try {
