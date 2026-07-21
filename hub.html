@@ -49,7 +49,6 @@
         var(--hub-bg);
     }
 
-    /* deeper starfield */
     .stars {
       position: absolute;
       inset: 0;
@@ -76,7 +75,6 @@
       to { opacity: 0.7; transform: translateY(-3px); }
     }
 
-    /* nebula clouds */
     .nebula {
       position: absolute;
       border-radius: 50%;
@@ -104,7 +102,6 @@
       to { transform: translate3d(40px, 25px, 0) scale(1.1); }
     }
 
-    /* orbital ring system */
     .orbit-system {
       position: relative;
       width: min(94vw, 94vh);
@@ -145,7 +142,6 @@
       to { transform: rotate(360deg); }
     }
 
-    /* center hub */
     .hub-core {
       position: absolute;
       inset: 34%;
@@ -168,9 +164,9 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
       z-index: 5;
       text-decoration: none;
+      cursor: pointer;
       color: inherit;
       transition: transform 0.25s cubic-bezier(.2,.8,.2,1), box-shadow 0.25s ease;
-      cursor: pointer;
     }
     .hub-core:hover {
       transform: scale(1.04);
@@ -179,24 +175,6 @@
         0 28px 80px rgba(0, 0, 0, 0.75),
         0 0 120px rgba(122, 167, 255, 0.18),
         inset 0 1px 0 rgba(255, 255, 255, 0.07);
-    }
-
-    /* per-node color themes */
-    .orbit-node { --node-hue: 215; --node-glow: rgba(122,167,255,0.25); }
-    .orbit-node--theme-a { --node-hue: 215; --node-glow: rgba(122,167,255,0.35); }
-    .orbit-node--theme-b { --node-hue: 270; --node-glow: rgba(192,132,252,0.35); }
-    .orbit-node--theme-c { --node-hue: 160; --node-glow: rgba(52,211,153,0.35); }
-    .orbit-node--theme-d { --node-hue: 35; --node-glow: rgba(250,204,21,0.35); }
-    .orbit-node--theme-e { --node-hue: 0; --node-glow: rgba(248,113,113,0.35); }
-    .orbit-node__icon { filter: drop-shadow(0 0 6px var(--node-glow)); }
-    .orbit-node:hover {
-      transform: scale(1.18) translateY(-4px);
-      border-color: hsl(var(--node-hue), 70%, 55%);
-      box-shadow:
-        0 0 0 1px hsl(var(--node-hue), 70%, 55%),
-        0 0 40px hsl(var(--node-hue), 70%, 55%, 0.35),
-        0 16px 40px rgba(0, 0, 0, 0.55);
-      animation-play-state: paused;
     }
     .hub-core__title {
       font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
@@ -229,14 +207,13 @@
       100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
 
-    /* carousel rotates all nodes around the center */
     .orbit-carousel {
       position: absolute;
       inset: 0;
       pointer-events: none;
       transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
     }
-    /* each node is positioned by JS; no CSS animation on wraps */
+
     .orbit-node-wrap {
       position: absolute;
       left: 50%;
@@ -275,15 +252,23 @@
       pointer-events: auto;
       transition: transform 0.3s cubic-bezier(.2,.8,.2,1), border-color 0.25s ease, box-shadow 0.25s ease;
       animation: float 6s ease-in-out infinite;
+      --node-hue: 215;
+      --node-glow: rgba(122,167,255,0.3);
     }
+    .orbit-node--theme-a { --node-hue: 215; --node-glow: rgba(122,167,255,0.35); }
+    .orbit-node--theme-b { --node-hue: 270; --node-glow: rgba(192,132,252,0.35); }
+    .orbit-node--theme-c { --node-hue: 160; --node-glow: rgba(52,211,153,0.35); }
+    .orbit-node--theme-d { --node-hue: 35; --node-glow: rgba(250,204,21,0.35); }
+    .orbit-node--theme-e { --node-hue: 0; --node-glow: rgba(248,113,113,0.35); }
+    .orbit-node__icon { filter: drop-shadow(0 0 6px var(--node-glow)); }
     .orbit-node:nth-child(odd) { animation-duration: 7.2s; }
     .orbit-node:nth-child(even) { animation-duration: 5.6s; animation-direction: reverse; }
     .orbit-node:hover {
       transform: scale(1.18) translateY(-4px);
-      border-color: rgba(122, 167, 255, 0.6);
+      border-color: hsl(var(--node-hue), 70%, 55%);
       box-shadow:
-        0 0 0 1px rgba(122, 167, 255, 0.18),
-        0 0 40px rgba(122, 167, 255, 0.22),
+        0 0 0 1px hsl(var(--node-hue), 70%, 55%),
+        0 0 40px hsl(var(--node-hue), 70%, 55%, 0.35),
         0 16px 40px rgba(0, 0, 0, 0.55);
       animation-play-state: paused;
     }
@@ -292,11 +277,6 @@
       50% { transform: translateY(-6px); }
     }
 
-    .orbit-node__icon {
-      font-size: clamp(16px, 1.8vw, 22px);
-      line-height: 1;
-      filter: drop-shadow(0 0 6px rgba(122, 167, 255, 0.3));
-    }
     .orbit-node__title {
       font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
       font-weight: 600;
@@ -315,7 +295,6 @@
       opacity: 0.9;
     }
 
-    /* spoked colors */
     .spoke {
       position: absolute;
       left: 50%;
@@ -325,8 +304,6 @@
       transform-origin: bottom center;
       pointer-events: none;
       z-index: 1;
-      background: linear-gradient(to top, rgba(122, 167, 255, 0.5), rgba(192, 132, 252, 0.12));
-      box-shadow: 0 0 8px rgba(122, 167, 255, 0.12);
     }
     .spoke--0 { transform: rotate(0deg); background: linear-gradient(to top, rgba(122,167,255,0.6), rgba(52,211,153,0.18)); box-shadow: 0 0 10px rgba(122,167,255,0.18); }
     .spoke--1 { transform: rotate(45deg); background: linear-gradient(to top, rgba(192,132,252,0.6), rgba(248,113,113,0.18)); box-shadow: 0 0 10px rgba(192,132,252,0.18); }
@@ -337,7 +314,6 @@
     .spoke--6 { transform: rotate(270deg); background: linear-gradient(to top, rgba(192,132,252,0.6), rgba(122,167,255,0.18)); box-shadow: 0 0 10px rgba(192,132,252,0.18); }
     .spoke--7 { transform: rotate(315deg); background: linear-gradient(to top, rgba(52,211,153,0.6), rgba(248,113,113,0.18)); box-shadow: 0 0 10px rgba(52,211,153,0.18); }
 
-    /* telemetry bar */
     .telemetry-bar {
       position: absolute;
       bottom: 0;
@@ -366,11 +342,12 @@
     .telemetry-item__value {
       color: #fff;
       font-weight: 500;
+      text-decoration: none;
     }
-    .telemetry-item__value--ok { color: #34d399; text-shadow: 0 0 12px rgba(52, 211, 153, 0.5); }
-    .telemetry-item__value--bad { color: #f87171; text-shadow: 0 0 12px rgba(248, 113, 113, 0.5); }
+    .telemetry-item__value:hover {
+      text-shadow: 0 0 12px rgba(122, 167, 255, 0.4);
+    }
 
-    /* mcp terminal modal */
     .mcp-terminal {
       position: fixed;
       inset: 0;
@@ -462,14 +439,12 @@
     <div class="spoke" aria-hidden="true"></div>
     <div class="spoke" aria-hidden="true"></div>
 
-    <!-- center hub acts as the spin control -->
     <a class="hub-core" id="hub-spin" href="https://defi369.github.io/digital-nation-website/" aria-label="Digital Nation home">
       <div class="hub-core__title">Hub</div>
       <div class="hub-core__sub">Digital Nation</div>
       <div class="hub-core__pulse" aria-hidden="true"></div>
     </a>
 
-    <!-- carousel wraps all orbit nodes and rotates as a unit -->
     <div class="orbit-carousel" id="orbit-carousel">
       <div class="orbit-node-wrap orbit-node-wrap--0">
         <a class="orbit-node orbit-node--theme-a" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="4D Quantum Thought Engine">
@@ -504,7 +479,7 @@
       </div>
 
       <div class="orbit-node-wrap orbit-node-wrap--4">
-        <a class="orbit-node orbit-node--theme-b" href="/digital-nation-website/mcp-status.html" aria-label="HyperLattice MCP open">
+        <a class="orbit-node orbit-node--theme-b" href="/digital-nation-website/mcp-status.html" aria-label="HyperLattice MCP status">
           <div class="orbit-node__icon">🔗</div>
           <div class="orbit-node__title">HL MCP</div>
           <div class="orbit-node__badge">Memory</div>
@@ -537,16 +512,14 @@
     </div>
   </div>
 
-  <div class="telemetry-bar" aria-label="Live system telemetry">
-    <div class="telemetry-item"><span>Brain</span><span class="telemetry-item__value" id="svc-brain">—</span></div>
-    <div class="telemetry-item"><span>Desk</span><span class="telemetry-item__value" id="svc-desk">—</span></div>
-    <div class="telemetry-item"><span>Equity</span><span class="telemetry-item__value" id="desk-equity">—</span></div>
-    <div class="telemetry-item"><span>Positions</span><span class="telemetry-item__value" id="desk-positions">—</span></div>
-    <div class="telemetry-item"><span>Realized</span><span class="telemetry-item__value" id="desk-realized">—</span></div>
-    <div class="telemetry-item"><span>Directives</span><span class="telemetry-item__value" id="directives-count">—</span></div>
+  <div class="telemetry-bar" aria-label="Live system windows">
+    <div class="telemetry-item"><span>Brain</span><a class="telemetry-item__value" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer">Open</a></div>
+    <div class="telemetry-item"><span>Desk</span><a class="telemetry-item__value" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer">Open</a></div>
+    <div class="telemetry-item"><span>HL MCP</span><a class="telemetry-item__value" href="/digital-nation-website/mcp-status.html">Status</a></div>
+    <div class="telemetry-item"><span>DN Site</span><a class="telemetry-item__value" href="https://defi369.github.io/digital-nation-website/" target="_blank" rel="noopener noreferrer">Open</a></div>
+    <div class="telemetry-item"><span>Hub</span><span class="telemetry-item__value" style="color:#34d399">Live</span></div>
   </div>
 
-  <!-- functional MCP terminal overlay -->
   <div class="mcp-terminal" id="mcp-terminal" aria-hidden="true">
     <div class="mcp-terminal__frame">
       <div class="mcp-terminal__header">
@@ -574,60 +547,6 @@
         stars.appendChild(s);
       }
 
-      const endpoints = {
-        hl: 'http://localhost:8090/health',
-        desk: 'http://localhost:8100/api/health',
-        brain: 'http://localhost:8086/health',
-        deskEquity: 'http://localhost:8100/api/status'
-      };
-
-      function setVal(id, healthy, text) {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.textContent = text;
-        el.className = 'telemetry-item__value' + (healthy === false ? ' telemetry-item__value--bad' : healthy === true ? ' telemetry-item__value--ok' : '');
-      }
-
-      async function safeFetchJSON(url, fallback) {
-        try {
-          const r = await fetch(url, { mode: 'cors' });
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-          return await r.json();
-        } catch (e) {
-          return fallback;
-        }
-      }
-
-      async function refresh() {
-        const hl = await safeFetchJSON(endpoints.hl, { status: '' });
-        const desk = await safeFetchJSON(endpoints.desk, { status: '' });
-        const brain = await safeFetchJSON(endpoints.brain, { status: '' });
-
-        setVal('svc-hl', !!hl.status, hl.status ? 'online' : 'down');
-        setVal('svc-desk', !!desk.status, desk.status ? 'online' : 'down');
-        setVal('svc-brain', !!brain.status, brain.status ? 'online' : 'down');
-
-        try {
-          const status = await safeFetchJSON(endpoints.deskEquity, {});
-          const equity = status.equityUsd ?? status.equity ?? '—';
-          const positions = status.openPositions ?? status.open ?? '—';
-          const realized = status.realizedPnlUsd ?? status.realized ?? '—';
-          setVal('desk-equity', null, '$' + equity);
-          setVal('desk-positions', null, '' + positions);
-          setVal('desk-realized', null, '$' + realized);
-        } catch (e) {
-          setVal('desk-equity', false, '—');
-          setVal('desk-positions', false, '—');
-          setVal('desk-realized', false, '—');
-        }
-
-        setVal('directives-count', null, '—');
-      }
-
-      refresh();
-      setInterval(refresh, 30000);
-
-      // spin control: click = one step, hold = continuous spin
       const carousel = document.getElementById('orbit-carousel');
       const hubSpin = document.getElementById('hub-spin');
       let spinAngle = 0;
@@ -687,7 +606,6 @@
         hubSpin.addEventListener('touchend', function () { stopHold(); });
       }
 
-      // functional HL MCP terminal: open the in-page terminal overlay
       const mcpTerminal = document.getElementById('mcp-terminal');
       const mcpClose = document.getElementById('mcp-terminal-close');
       const mcpNode = document.querySelector('.orbit-node-wrap--4 .orbit-node');
