@@ -142,7 +142,7 @@
         function qs(id) { return document.getElementById(id); }
         function set(id, html) { var el = qs(id); if (el) el.innerHTML = html; }
         function buildCard(title, body, cls) {
-          return '<div class="card ' + (cls || '') + '"><h3>' + esc(title) + '</h3><div>' + (body || '') + '</div></div>';
+          return '<div class="card" + (cls || '') + '"><h3>' + esc(title) + '</h3><div>' + (body || '') + '</div></div>';
         }
         function buildKV(rows) {
           return '<div class="kv">' + rows.map(function (r) {
