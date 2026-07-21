@@ -236,13 +236,12 @@
       pointer-events: none;
       transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
     }
-    /* each node auto-counter-rotates so text stays horizontal during spin */
+    /* each node is positioned by JS; no CSS animation on wraps */
     .orbit-node-wrap {
       position: absolute;
       left: 50%;
       top: 50%;
       pointer-events: none;
-      animation: counter-spin 80s linear infinite;
     }
     .orbit-node-wrap--0 { transform: rotate(0deg) translate(clamp(16vw, 22vh, 26vw)) rotate(0deg); }
     .orbit-node-wrap--1 { transform: rotate(45deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-45deg); }
@@ -252,9 +251,6 @@
     .orbit-node-wrap--5 { transform: rotate(225deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-225deg); }
     .orbit-node-wrap--6 { transform: rotate(270deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-270deg); }
     .orbit-node-wrap--7 { transform: rotate(315deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-315deg); }
-    @keyframes counter-spin {
-      to { transform: rotate(-360deg); }
-    }
 
     .orbit-node {
       position: relative;
@@ -637,15 +633,23 @@
       let spinAngle = 0;
       let holdTimer = null;
       let holdInterval = null;
+
+      function setNodeTransform(wrap, index, angle) {
+        const base = index * 45;
+        const r1 = base - angle;
+        const r2 = -r1;
+        wrap.style.transform = 'rotate(' + r1 + 'deg) translate(clamp(16vw, 22vh, 26vw)) rotate(' + r2 + 'deg)';
+      }
+
       function applySpin(angle) {
         spinAngle = angle;
         if (carousel) carousel.style.transform = 'rotate(' + spinAngle + 'deg)';
-        const wraps = document.querySelectorAll('.orbit-node-wrap');
-        wraps.forEach(function (w, i) {
-          const base = i * 45;
-          w.style.transform = 'rotate(' + (base - spinAngle) + 'deg) translate(clamp(16vw, 22vh, 26vw)) rotate(' + (-(base - spinAngle)) + 'deg)';
+        const nodes = document.querySelectorAll('.orbit-node-wrap');
+        nodes.forEach(function (w, i) {
+          setNodeTransform(w, i, spinAngle);
         });
       }
+
       function startHold() {
         applySpin(spinAngle - 15);
         holdTimer = setTimeout(function () {
@@ -654,12 +658,22 @@
           }, 40);
         }, 180);
       }
+
       function stopHold() {
         clearTimeout(holdTimer);
         clearInterval(holdInterval);
         holdTimer = null;
         holdInterval = null;
+        snapToGrid();
       }
+
+      function snapToGrid() {
+        const snapped = Math.round(spinAngle / 45) * 45;
+        applySpin(snapped);
+      }
+
+      applySpin(0);
+
       if (hubSpin) {
         hubSpin.addEventListener('click', function (e) {
           e.preventDefault();
@@ -670,7 +684,7 @@
         hubSpin.addEventListener('mouseup', stopHold);
         hubSpin.addEventListener('mouseleave', stopHold);
         hubSpin.addEventListener('touchstart', function (e) { e.preventDefault(); startHold(); }, { passive: false });
-        hubSpin.addEventListener('touchend', stopHold);
+        hubSpin.addEventListener('touchend', function () { stopHold(); });
       }
 
       // functional HL MCP terminal: open the in-page terminal overlay
