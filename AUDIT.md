@@ -191,4 +191,10 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - HL MCP: corrected heading hierarchy (<h2> → <h1>)
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 28 pending** (next improvement cycle)
+- **2026-07-21 — Round 28 improvements** (commit pending):
+  - Hub: added `og:url` + `twitter:title` + `twitter:image`
+  - HL MCP: added `og:url` + `twitter:title` + `twitter:image`
+  - Remaining 7 pages already had full OG/Twitter coverage
+  - Verified: grep-based pass on changed files
+
+- **2026-07-21 — Round 29 pending** (next improvement cycle)
