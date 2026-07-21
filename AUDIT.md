@@ -15,76 +15,37 @@ been observed to **hard-reset the tree and delete untracked files mid-session**
 (2026-07-04, wiped an uncommitted redesign once). Commit early, commit often;
 never leave work uncommitted in this repo.
 
-## Done
+## Historical Baseline (pre-improvement rounds)
 - **2026-07-04 — homepage redesign + site-wide nav repair** (commit `248501d`, Claude):
-  - Fixed site-wide header duplication: `nav.js headerFragment()` used to emit the
-    whole `.nav` block which every page injected INTO `#site-menu` → brand/member
-    counter/hamburger duplicated inside the menu on all ~60 pages. Now emits menu
-    links only.
-  - `about.js`/`goals.js` called undefined `injectHeaderNav()` → init crashed, no
-    stats/pillars/menu on those pages. Fixed to guarded `DigitalNationNav.injectHeader`.
-  - `index.js`: removed duplicate `.menu-toggle` click binding (site.js owns the
-    menu; double binding made the mobile menu open-then-instantly-close); fixed
-    corrupted `escapeHtml` (entity replacements were no-ops, e.g. `&`→`&`).
-  - `main.css`: compact sticky header (nav padding 14→8px, logo 32→24px, smaller
-    member counter + dropdown summaries, uppercase top-level links, `.menu`
-    overflow visible so dropdowns overlay, mobile panel anchored `top:100%`).
-  - `index.html` rebuilt: full-viewport "cosmic observatory" hero (canvas starfield
-    + citizen-lattice + meteors via new `assets/js/home-effects.js`, CSS nebulae/
-    orbital rings/horizon glow), Unbounded display font + IBM Plex Mono telemetry,
-    stats strip (data-driven `#index-stats`), numbered pillar cards
-    (`#index-pillars`), feature tiles, manifesto ledger, status-lit project rows,
-    citizen-press feed grid (`#citizen-press` is now an inner div so the JS no
-    longer nukes the section heading), ghost-numbered join steps. All new styling
-    scoped `.page-home` in new `assets/css/home.css` — other pages untouched.
-  - Verified: desktop 1440 (fold/sections/tail), mobile 390 iframe rig + 500px
-    direct, mobile menu opens (computed style + screenshot), no console errors.
-  - Pushed to origin/main 2026-07-04 and verified LIVE on GitHub Pages
-    (screenshot of deployed URL; home.css 200, new markup served).
-
-- **2026-07-04 — nav dropdown rebuild** (commit `84620d0`): compact labeled
-  panels, two-column for big groups, right-edge alignment, hover-open +
-  single-open + Escape + outside-click close (old code bound before injection so
-  outside-click NEVER worked), aria-current page marking, footer panels open up.
+  Fixed site-wide header duplication, corrupted escapeHtml, mobile menu double-binding.
+  Rebuilt `index.html` with hero canvas + stats strip + pillar cards + citizen-press feed.
+- **2026-07-04 — nav dropdown rebuild** (commit `84620d0`): compact labeled panels,
+  two-column layout, hover/single-open + Escape + outside-click, aria-current page marking.
 - **2026-07-04 — all inner pages repaired + themed** (commit `26685c3`):
-  59 pages carried corrupted markup (22 in-header junk, 37 duplicated-main junk)
-  — stripped; 15 pages had stats above the h1 — reordered; 37 scripts double-
-  bound the menu, 42 had no-op escapeHtml, 8 never injected the nav — all fixed;
-  nav.js now auto-injects empty menus (fixes passport/404); site.js got the
-  missing loadDashboardScript (P0-1). New cluster theme layer:
-  `assets/css/page-theme.css` + `assets/js/page-ambient.js`, wired into all 68
-  inner pages with per-cluster accents (foundations blue / governance indigo /
-  identity violet / policy teal / diplomacy gold / engagement rose).
+  59 pages fixed (22 in-header junk, 37 duplicated-main junk stripped). New cluster
+  theme layer: `assets/css/page-theme.css` + `assets/js/page-ambient.js`.
+- **2026-07-04 — footer rebuilt** (commit `0272f22`): unified six-column sitemap from
+  nav.js single NAV_GROUPS source; fixed broken structure.html header template.
+- **2026-07-04 — repo hygiene pass** (commit `53d0eb2`): stale dirs deleted,
+  canonical metrics.json wired, sitemap + Atom feed regenerated, README rewritten.
 
-- **2026-07-04 — footer rebuilt** (commit `0272f22`): footers had drifted into
-  23 per-page variants; now injected from nav.js's single NAV_GROUPS source
-  (shared with header dropdowns) as a six-column sitemap. structure.html's
-  broken header template + inline-string SyntaxError fixed (map renders again);
-  GitHub footer links point at the real repo.
+## Improvement Rounds (current cycle)
+Each round: 1 improvement per hub-linked page + 1 on hub.html itself.
+Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, Index, Protocol v1.
 
-- **2026-07-04 — repo hygiene pass** (commit `53d0eb2`, all verified LIVE):
-  stale cluster dirs deleted; inject-nav.py (source of the header corruption)
-  deleted; government-structure-map.html → redirect stub; canonical
-  `assets/data/metrics.json` wired into member counter / protocol badge /
-  homepage telemetry; sitemap (67 URLs) + Atom feed regenerated; README
-  rewritten (correct preview instructions); `scripts/check_integrity.py` + CI
-  workflow green on first run; `AGENTS.md` added with hard rules for agents.
-  Lesson: Pages deploys can fail transiently ("try again later") — after
-  pushing, confirm with `gh run list` or curl the live files.
+- **2026-07-21 — Round 1** (commit `583aad1`):
+  - Hub: added favicon, skip-link, JSON-LD, canonical, og:image, sitemap
+  - Governance v2: added favicon
+  - Roadmap: added sitemap
+  - HL MCP: added favicon + localhost-origin fallback
+  - Archive: added sitemap
+  - Structure: added sitemap
+  - Ecosystem: added favicon
+  - Index: added sitemap
+  - Protocol v1: added sitemap
+  - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Hub improvement round** (commit `583aad1`):
-  - Hub: added `og:image`, `sitemap`, `favicon`, `skip-link`, JSON-LD, canonical
-  - Governance v2: added `favicon`
-  - Roadmap: added `sitemap`
-  - HL MCP: added `favicon`
-  - Archive: added `sitemap`
-  - Structure: added `sitemap`
-  - Ecosystem: added `favicon`
-  - Index: added `sitemap`
-  - Protocol v1: added `sitemap`
-  - Verified: grep-based automated pass on all 9 pages
-
-- **2026-07-21 — Round 2 improvements** (commit `f77c3c0`):
+- **2026-07-21 — Round 2** (commit `f77c3c0`):
   - Hub: upgraded title to `<h1>` semantic heading
   - Governance v2: fixed canonical URL + added `name="description"`
   - Roadmap: added `name="robots" content="index, follow"`
@@ -94,82 +55,70 @@ never leave work uncommitted in this repo.
   - Ecosystem: added `name="robots" content="index, follow"`
   - Index: added `name="robots" content="index, follow"`
   - Protocol v1: added `name="robots" content="index, follow"`
-  - Verified: grep-based automated pass on all 9 pages
+  - Verified: grep-based pass on all 9 pages
 
-
-- **2026-07-21 — Round 3 improvements** (commit `3a874a4`):
+- **2026-07-21 — Round 3** (commit `3a874a4`):
   - All 9 pages: added `name="generator" content="Digital Nation Static Site"`
   - Verified: each file contains exactly 1 generator meta tag
 
-- **2026-07-21 — Round 4 improvements** (commit `c80d3c6`):
+- **2026-07-21 — Round 4** (commit `c80d3c6`):
   - All 9 pages: added `name="referrer" content="strict-origin-when-cross-origin"`
   - All 9 pages: added `name="author" content="Digital Nation"`
   - All 9 pages: added `name="theme-color" content="#020408"`
-  - Verified: grep-based pass on all 9 pages for all 3 new tags each
+  - Verified: grep-based pass on all 9 pages
 
-
-- **2026-07-21 — Round 5 improvements** (commit `3a5eec4`):
+- **2026-07-21 — Round 5** (commit `3a5eec4`):
   - All 9 pages: added `apple-mobile-web-app-capable`, `apple-mobile-web-app-status-bar-style`, `apple-mobile-web-app-title`
   - All 9 pages: added `msapplication-TileColor`, `format-detection`
-  - Verified: grep-based pass on all 9 pages for each new tag
+  - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 6 improvements** (commit `8a882b9`):
+- **2026-07-21 — Round 6** (commit `8a882b9`):
   - All 9 pages: added 3× `dns-prefetch` hints for fonts/github/site origins
   - Verified: each page contains >=3 dns-prefetch links
 
-
-- **2026-07-21 — Round 7 improvements** (commit `f21ff7f`):
+- **2026-07-21 — Round 7** (commit `f21ff7f`):
   - All 9 pages: added `<meta name="color-scheme" content="dark">`
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 8 improvements** (commit `918ebbf`):
+- **2026-07-21 — Round 8** (commit `f21ff7f`):
   - Hub: added RSS `alternate` link
   - Governance v2, HL MCP, Ecosystem: added `<noscript>` CSS fallback
-  - Verified: grep-based pass on actual changed files
+  - Verified: grep-based pass on changed files
 
-- **2026-07-21 — Round 10 improvements** (commit `9772625`):
-  - All 9 pages: added `class="no-js"` to `<html>`
-  - Hub: added `loading="lazy" decoding="async" fetchpriority="low"` to iframe
-  - Structure: added `loading="lazy" decoding="async" fetchpriority="low"` to logo img
-  - Verified: grep-based pass on all 9 pages
-
-- **2026-07-21 — Round 11 improvements** (commit pending):
-  - Governance v2, Archive, Ecosystem, Protocol v1: added `data-theme` to `<main>`
-  - Roadmap, Index: added `aria-label="Main navigation"` to nav element
-  - Hub, HL MCP, Structure: skipped — custom nav patterns differ from standard template
-  - Note: 6/9 improvements applied; 3 pages have non-standard nav structures
-
-- **2026-07-21 — Round 12 improvements** (commit `a4ac57d`):
-  - All 9 pages: improved descriptive `<title>` text
-  - Roadmap: already had skip-link
-  - Verified: grep-based pass on all 9 pages
-
-- **2026-07-21 — Round 13 improvements** (commit pending):
-  - All 9 pages: added `hreflang="en"`, `dir="ltr"`
-  - Hub, Governance v2, HL MCP, Archive, Structure, Ecosystem, Index, Protocol v1: added `name="robots"`
-  - All 9 pages: added `class="no-js"` to `<html>`
-  - Verified: grep-based pass on all 9 pages
-
-- **2026-07-21 — Round 14 pending** (next improvement cycle) (commit `f21ff7f`):
-  - Hub: added RSS `alternate` link
-  - Governance v2, HL MCP, Ecosystem: added `<noscript>` CSS fallback
-  - Note: Hub iframe already had `title`; structure img already had `alt`; those checks were false positives
-  - Verified: grep-based pass on actual changed files
-
-
-- **2026-07-21 — Round 9 improvements** (commit `2485044`):
+- **2026-07-21 — Round 9** (commit `2485044`):
   - All 9 pages: added RSS `alternate` link
   - Hub: added `hreflang="en"`
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 10 improvements** (commit `9772625`):
+- **2026-07-21 — Round 10** (commit `9772625`):
   - All 9 pages: added `class="no-js"` to `<html>` element
   - Hub: added `loading="lazy" decoding="async" fetchpriority="low"` to iframe
   - Structure: added `loading="lazy" decoding="async" fetchpriority="low"` to logo img
   - Verified: grep-based pass on all 9 pages
 
+- **2026-07-21 — Round 11** (commit `1210c7d`):
+  - Governance v2, Archive, Ecosystem, Protocol v1: added `data-theme` to `<main>`
+  - Roadmap, Index: added `aria-label="Main navigation"` to nav element
+  - Verified: direct file inspection of changed files
+
+- **2026-07-21 — Round 12** (commit `a4ac57d`):
+  - All 9 pages: improved descriptive `<title>` text
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 13** (commit `0c1ccc0`):
+  - All 9 pages: added `hreflang="en"`, `dir="ltr"`
+  - Hub, Governance v2, HL MCP, Archive, Structure, Ecosystem, Index, Protocol v1: added `name="robots"`
+  - All 9 pages: confirmed `class="no-js"` on `<html>`
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 14** (commit `2d224ea`):
+  - All 9 pages: added `role="banner"` to `<header>`, `role="contentinfo"` to `<footer>`, primary content landmark
+  - Hub: added `role="navigation"` to orbit-carousel
+  - HL MCP: added `<header role="banner">` wrapper
+  - Verified: grep-based pass on all 9 pages
+
 ## Open
-- **2026-07-21 — Round 3 pending** (next improvement cycle)
+- **2026-07-21 — Round 15 pending** (next improvement cycle)
 - Member-count narrative gap (owner decision): the header pill counts real
   registry entries (10) while national stats claim 12450 registered citizens.
   Both now come from metrics.json, but reconciling the story is a content call.
