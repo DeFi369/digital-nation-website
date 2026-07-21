@@ -127,7 +127,19 @@ never leave work uncommitted in this repo.
   - Governance v2, HL MCP, Ecosystem: added `<noscript>` CSS fallback
   - Verified: grep-based pass on actual changed files
 
-- **2026-07-21 — Round 9 pending** (next improvement cycle) (commit `f21ff7f`):
+- **2026-07-21 — Round 10 improvements** (commit `9772625`):
+  - All 9 pages: added `class="no-js"` to `<html>`
+  - Hub: added `loading="lazy" decoding="async" fetchpriority="low"` to iframe
+  - Structure: added `loading="lazy" decoding="async" fetchpriority="low"` to logo img
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 11 improvements** (commit pending):
+  - Governance v2, Archive, Ecosystem, Protocol v1: added `data-theme` to `<main>`
+  - Roadmap, Index: added `aria-label="Main navigation"` to nav element
+  - Hub, HL MCP, Structure: skipped — custom nav patterns differ from standard template
+  - Note: 6/9 improvements applied; 3 pages have non-standard nav structures
+
+- **2026-07-21 — Round 12 pending** (next improvement cycle) (commit `f21ff7f`):
   - Hub: added RSS `alternate` link
   - Governance v2, HL MCP, Ecosystem: added `<noscript>` CSS fallback
   - Note: Hub iframe already had `title`; structure img already had `alt`; those checks were false positives
