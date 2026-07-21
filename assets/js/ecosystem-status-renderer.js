@@ -1,3 +1,4 @@
+window._ecoDebug={steps:[]};function _dbg(k){window._ecoDebug.steps.push({k,t:Date.now()});}
 /* ecosystem-status-renderer.js */
 (function () {
   'use strict';
@@ -13,7 +14,7 @@
   }
   function buildCard(title, body) { return '<div class="card"><h3>' + esc(title) + '</h3><div>' + (body || '') + '</div></div>'; }
   function buildKV(rows) { return rows.map(function (r) { return '<p><strong>' + esc(r[0]) + ':</strong> ' + esc(r[1]) + '</p>'; }).join(''); }
-  function init() {
+  function init() { _dbg('init_start');
     var base = (document.querySelector('base[href]') ? document.querySelector('base[href]').getAttribute('href') : './');
     if (base && !base.endsWith('/')) base = base + '/';
     var root = base || './';
@@ -52,8 +53,8 @@
       set('citizen-attestation', '<p>' + esc(eco.citizenAttestation || eco.citizenBenefits || 'No attestation text available.') + '</p>');
       set('provenance-attestation', (eco.attestation && Object.keys(eco.attestation).length) ? buildCard('Data Provenance & Attestation', buildKV(Object.keys(eco.attestation).map(function (k) { return [k, esc(String(eco.attestation[k]))]; }))) : '<p class="activity-empty">No attestation data loaded.</p>');
       set('ecosystem-cross-references', (Array.isArray(eco.crossRepoPages) && eco.crossRepoPages.length) ? '<div class="activity-list">' + eco.crossRepoPages.map(function (p) { return '<div class="activity-item activity-governance"><div class="activity-label">' + esc(p) + '</div></div>'; }).join('') + '</div>' : '<p class="activity-empty">No cross-references loaded.</p>');
-    }).catch(function () {});
+    }).catch(function (e) { _dbg('fetch_error:'+e.message); });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  else { _dbg('dom_ready'); init(); }
 })();
