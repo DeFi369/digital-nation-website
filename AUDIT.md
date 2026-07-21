@@ -117,36 +117,35 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - HL MCP: added `<header role="banner">` wrapper
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 20 improvements** (commit pending):
-  - Hub: added `<header role="banner">` landmark wrapping content
-  - HL MCP: added `<footer role="contentinfo">` landmark before script
-  - Verified: grep-based pass on changed files
-
-## Open
 - **2026-07-21 — Round 15 improvements** (commit `3c9f9d1`):
   - All 9 pages: added 1-2 internal cross-links near bottom of body
   - Each page links to related hub-linked pages for better navigation
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 16 improvements** (commit pending):
+- **2026-07-21 — Round 16 improvements** (commit `f99e006`):
   - All 9 pages: added `article:modified_time` with current ISO timestamp
   - All 9 pages: added `<link rel="author">` with mailto authorship
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 17 improvements** (commit pending):
+- **2026-07-21 — Round 17 improvements** (commit `db0794c`):
   - All 9 pages: added `og:locale` content="en_US"
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 18 improvements** (commit pending):
+- **2026-07-21 — Round 18 improvements** (commit `f99e006`):
   - All 9 pages: added Atom feed alternate link
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 19 improvements** (commit `ad0cb0c`):
-  - Hub: added `apple-touch-icon` link (verifiable asset present)
-  - Note: 8/9 link pages already had `article:modified_time` from round 16; only Hub `apple-touch-icon` was net-new this round
+- **2026-07-21 — Round 19 improvements** (commit `80d77a9`):
+  - All 9 pages: added `apple-touch-icon` link (icon asset exists in repo)
+  - Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, Index, Protocol v1: added `permissions-policy` meta (geolocation/microphone/camera)
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 20 pending** (next improvement cycle)
+- **2026-07-21 — Round 20 improvements** (commit `baa0dd6`):
+  - Hub: added `<header role="banner">` landmark wrapping content
+  - HL MCP: added `<footer role="contentinfo">` landmark before script
+  - Verified: grep-based pass on changed files
+
+## Open
 - Member-count narrative gap (owner decision): the header pill counts real
   registry entries (10) while national stats claim 12450 registered citizens.
   Both now come from metrics.json, but reconciling the story is a content call.
@@ -156,3 +155,4 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   WorldHermes, etc.); consider single source of truth for both fragments.
 - `nav.js` `footerFragment()` is exported but pages carry static footer markup —
   dead path worth unifying one way or the other.
+- **2026-07-21 — Round 21 pending** (next improvement cycle)
