@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital Nation — Hub</title>
-  <meta name="description" content="The sovereign hub of the Digital Nation. Real-time neural substrate, trading desk, governance, and agent activity." />
+  <meta name="description" content="The sovereign hub of the Digital Nation. Real-time neural substrate, trading desk, governance, and agent activity — one viewport." />
   <meta property="og:title" content="Digital Nation — Hub" />
   <meta property="og:description" content="Portal to the Digital Nation: live quantum brain, trading desk, governance, and agent telemetry." />
   <meta property="og:type" content="website" />
@@ -26,23 +26,32 @@
       --hub-glow: rgba(122, 167, 255, 0.12);
     }
 
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
     .page-hub {
       background:
         radial-gradient(1200px 700px at 80% -10%, rgba(192, 132, 252, 0.06), transparent 60%),
         radial-gradient(1400px 900px at 12% 8%, rgba(122, 167, 255, 0.07), transparent 55%),
         var(--hub-bg);
       color: #e6e8eb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .hub-header {
       border-bottom: 1px solid var(--hub-border);
-      padding: 22px 0;
+      padding: 10px 0;
+      flex: 0 0 auto;
     }
     .hub-header .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
     }
     .hub-wordmark {
@@ -50,26 +59,24 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 12px;
       color: var(--hub-muted);
     }
-    .hub-wordmark span {
-      color: #fff;
-    }
+    .hub-wordmark span { color: #fff; }
     .hub-pulse {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-      font-size: 11px;
+      font-size: 10px;
       color: var(--hub-muted);
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
     .hub-pulse::before {
       content: "";
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: #34d399;
       box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
@@ -77,103 +84,116 @@
     }
     @keyframes pulse-ring {
       0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); }
-      70% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+      70% { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
       100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
 
+    .hub-main {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
     .hub-hero {
-      position: relative;
-      padding: 44px 0 32px;
+      padding: 14px 0 10px;
       border-bottom: 1px solid var(--hub-border);
+      flex: 0 0 auto;
     }
     .hub-hero h1 {
       font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
       font-weight: 700;
-      font-size: clamp(28px, 4vw, 52px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin: 0 0 14px;
+      font-size: 20px;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin: 0 0 6px;
     }
     .hub-hero p {
       color: var(--hub-muted);
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 72ch;
+      font-size: 12px;
+      line-height: 1.4;
+      max-width: 88ch;
       margin: 0;
     }
 
     .hub-grid {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 18px;
-      padding: 26px 0;
+      gap: 10px;
+      padding: 10px 0;
+      flex: 1 1 auto;
+      min-height: 0;
     }
 
     .hub-tile {
       grid-column: span 4;
       background: var(--hub-surface);
       border: 1px solid var(--hub-border);
-      border-radius: 14px;
-      padding: 16px;
+      border-radius: 10px;
+      padding: 10px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 6px;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      min-height: 0;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .hub-tile:hover {
-      transform: translateY(-2px);
+      transform: translateY(-1px);
       border-color: rgba(122, 167, 255, 0.35);
-      box-shadow: 0 0 0 1px rgba(122, 167, 255, 0.08), 0 14px 40px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 0 0 1px rgba(122, 167, 255, 0.08), 0 10px 30px rgba(0, 0, 0, 0.35);
     }
     .hub-tile--feature {
       grid-column: span 8;
-      min-height: 420px;
       padding: 0;
       overflow: hidden;
+      min-height: 0;
     }
     .hub-tile--tall {
       grid-column: span 4;
-      min-height: 420px;
+      min-height: 0;
     }
     .hub-tile--wide {
       grid-column: span 6;
+      min-height: 0;
     }
 
     .hub-tile__header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 8px;
+      padding: 8px 10px 0;
     }
     .hub-tile__title {
       font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
       font-weight: 600;
-      font-size: 13px;
+      font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #fff;
     }
     .hub-tile__badge {
       font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--hub-muted);
       border: 1px solid var(--hub-border);
       border-radius: 999px;
-      padding: 3px 8px;
+      padding: 2px 7px;
     }
     .hub-tile__body {
       color: var(--hub-muted);
-      font-size: 14px;
-      line-height: 1.55;
+      font-size: 12px;
+      line-height: 1.4;
+      padding: 0 10px;
     }
     .hub-tile__cta {
       margin-top: auto;
+      padding: 0 10px 6px;
       font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--hub-accent);
@@ -182,58 +202,55 @@
     .hub-embed {
       width: 100%;
       height: 100%;
-      min-height: 420px;
+      min-height: 0;
       border: 0;
       background: #0a0a0f;
-      border-radius: 0 0 14px 14px;
     }
-    .hub-embed--top {
-      border-radius: 14px 14px 0 0;
-    }
+    .hub-embed--top { border-radius: 10px 10px 0 0; }
 
     .hub-status {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+      gap: 8px;
+      padding: 0 10px;
     }
     .hub-status__item {
       background: rgba(122, 167, 255, 0.06);
       border: 1px solid var(--hub-border);
-      border-radius: 10px;
-      padding: 10px 12px;
+      border-radius: 8px;
+      padding: 6px 8px;
     }
     .hub-status__label {
       font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--hub-muted);
     }
     .hub-status__value {
       font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-      font-size: 13px;
+      font-size: 12px;
       color: #fff;
-      margin-top: 4px;
+      margin-top: 2px;
       word-break: break-word;
     }
 
     .hub-footer {
       border-top: 1px solid var(--hub-border);
-      padding: 18px 0 40px;
+      padding: 8px 0 12px;
       color: var(--hub-muted);
-      font-size: 12px;
+      font-size: 11px;
       display: flex;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
+      flex: 0 0 auto;
     }
     .hub-footer a {
       color: var(--hub-accent);
       text-decoration: none;
     }
-    .hub-footer a:hover {
-      text-decoration: underline;
-    }
+    .hub-footer a:hover { text-decoration: underline; }
 
     @media (max-width: 980px) {
       .hub-tile,
@@ -241,11 +258,9 @@
       .hub-tile--tall,
       .hub-tile--wide {
         grid-column: span 12;
-        min-height: auto;
       }
-      .hub-status {
-        grid-template-columns: 1fr;
-      }
+      .hub-status { grid-template-columns: 1fr; }
+      html, body { overflow: auto; }
     }
   </style>
 </head>
@@ -257,131 +272,124 @@
     </div>
   </header>
 
-  <section class="hub-hero" aria-labelledby="hub-title">
+  <main class="hub-main">
+    <section class="hub-hero" aria-labelledby="hub-title">
+      <div class="container">
+        <h1 id="hub-title">Command Center</h1>
+        <p>Real-time portal into the Digital Nation — neural substrate, trading desk, governance, and agent telemetry.</p>
+      </div>
+    </section>
+
     <div class="container">
-      <h1 id="hub-title">Command Center</h1>
-      <p>
-        A real-time portal into the Digital Nation. Live neural substrate,
-        trading desk telemetry, governance direct feeds, and agent activity —
-        one pane instead of twelve.
-      </p>
-    </div>
-  </section>
+      <div class="hub-grid">
 
-  <main id="main" class="container">
-    <div class="hub-grid">
-
-      <!-- Lattice Brain live embed -->
-      <a class="hub-tile hub-tile--feature" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="Open Lattice Brain in new tab">
-        <div class="hub-tile__header">
-          <div class="hub-tile__title">4D Quantum Thought Engine</div>
-          <div class="hub-tile__badge">Live</div>
-        </div>
-        <iframe class="hub-embed hub-embed--top" src="http://localhost:8086/" title="Lattice Brain live visualization" loading="lazy" sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
-        <div class="hub-tile__cta">Open in new tab ↗</div>
-      </a>
-
-      <!-- Trading Desk -->
-      <a class="hub-tile hub-tile--tall" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer" aria-label="Open Trading Desk in new tab">
-        <div class="hub-tile__header">
-          <div class="hub-tile__title">Trading Desk</div>
-          <div class="hub-tile__badge">Paper</div>
-        </div>
-        <div class="hub-tile__body">
-          Meme-sniper dashboard, equity tracker, live new-coin board, and wallet-connect manual trading on Robinhood Chain & PulseChain.
-        </div>
-        <div class="hub-status" id="desk-status">
-          <div class="hub-status__item">
-            <div class="hub-status__label">Equity</div>
-            <div class="hub-status__value" id="desk-equity">Loading…</div>
+        <!-- Lattice Brain live embed -->
+        <a class="hub-tile hub-tile--feature" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="Open Lattice Brain">
+          <div class="hub-tile__header">
+            <div class="hub-tile__title">4D Quantum Thought Engine</div>
+            <div class="hub-tile__badge">Live</div>
           </div>
-          <div class="hub-status__item">
-            <div class="hub-status__label">Open</div>
-            <div class="hub-status__value" id="desk-positions">Loading…</div>
-          </div>
-          <div class="hub-status__item">
-            <div class="hub-status__label">Realized</div>
-            <div class="hub-status__value" id="desk-realized">Loading…</div>
-          </div>
-        </div>
-        <div class="hub-tile__cta">Open desk ↗</div>
-      </a>
+          <iframe class="hub-embed" src="http://localhost:8086/" title="Lattice Brain" loading="lazy" sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
+          <div class="hub-tile__cta">Open ↗</div>
+        </a>
 
-      <!-- Legacy Landing -->
-      <a class="hub-tile hub-tile--tall" href="/digital-nation-website/index-legacy.html">
-        <div class="hub-tile__header">
-          <div class="hub-tile__title">Legacy Landing</div>
-          <div class="hub-tile__badge">Static</div>
-        </div>
-        <div class="hub-tile__body">
-          The original Digital Nation homepage. Charter, manifesto, governance pages, and institutional presentation. Preserved as the public-facing record.
-        </div>
-        <div class="hub-tile__cta">Visit legacy landing →</div>
-      </a>
-
-      <!-- Governance IAMS Status -->
-      <a class="hub-tile hub-tile--wide" href="/digital-nation-website/protocol-status.html">
-        <div class="hub-tile__header">
-          <div class="hub-tile__title">Governance & IAMS</div>
-          <div class="hub-tile__badge">Ops</div>
-        </div>
-        <div class="hub-tile__body">
-          Inter-agent messaging status, AEP enforcement, protocol attestation, and directive lifecycle. View the current operational posture of the Digital Nation government.
-        </div>
-        <div class="hub-tile__cta">Protocol status →</div>
-      </a>
-
-      <!-- Quantum Roadmap -->
-      <a class="hub-tile hub-tile--wide" href="/digital-nation-website/quantum-roadmap.html">
-        <div class="hub-tile__header">
-          <div class="hub-tile__title">Quantum Roadmap</div>
-          <div class="hub-tile__badge">Planned</div>
-        </div>
-        <div class="hub-tile__body">
-          Spatial-temporal memory substrate evaluation, HyperLattice milestones, compute sovereignty path, and the long-term architecture toward sovereign compute.
-        </div>
-        <div class="hub-tile__cta">View roadmap →</div>
-      </a>
-
-      <!-- System Telemetry -->
-      <div class="hub-tile hub-tile--wide" aria-labelledby="telemetry-title">
-        <div class="hub-tile__header">
-          <div class="hub-tile__title" id="telemetry-title">System Telemetry</div>
-          <div class="hub-tile__badge" id="telemetry-badge">Polling</div>
-        </div>
-        <div class="hub-status" id="system-telemetry">
-          <div class="hub-status__item">
-            <div class="hub-status__label">HL MCP</div>
-            <div class="hub-status__value" id="svc-hl">Loading…</div>
+        <!-- Trading Desk -->
+        <a class="hub-tile hub-tile--tall" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer" aria-label="Open Trading Desk">
+          <div class="hub-tile__header">
+            <div class="hub-tile__title">Trading Desk</div>
+            <div class="hub-tile__badge">Paper</div>
           </div>
-          <div class="hub-status__item">
-            <div class="hub-status__label">Trading Desk</div>
-            <div class="hub-status__value" id="svc-desk">Loading…</div>
+          <div class="hub-tile__body">
+            Meme-sniper dashboard, equity tracker, live new-coin board, wallet-connect on Robinhood Chain & PulseChain.
           </div>
-          <div class="hub-status__item">
-            <div class="hub-status__label">Lattice Brain</div>
-            <div class="hub-status__value" id="svc-brain">Loading…</div>
+          <div class="hub-status">
+            <div class="hub-status__item">
+              <div class="hub-status__label">Equity</div>
+              <div class="hub-status__value" id="desk-equity">Loading…</div>
+            </div>
+            <div class="hub-status__item">
+              <div class="hub-status__label">Open</div>
+              <div class="hub-status__value" id="desk-positions">Loading…</div>
+            </div>
+            <div class="hub-status__item">
+              <div class="hub-status__label">Realized</div>
+              <div class="hub-status__value" id="desk-realized">Loading…</div>
+            </div>
+          </div>
+          <div class="hub-tile__cta">Open desk ↗</div>
+        </a>
+
+        <!-- Legacy Landing -->
+        <a class="hub-tile hub-tile--tall" href="/digital-nation-website/index-legacy.html" aria-label="Open legacy landing page">
+          <div class="hub-tile__header">
+            <div class="hub-tile__title">Legacy Landing</div>
+            <div class="hub-tile__badge">Static</div>
+          </div>
+          <div class="hub-tile__body">
+            Original Digital Nation homepage. Charter, manifesto, governance, and institutional pages preserved.
+          </div>
+          <div class="hub-tile__cta">Visit legacy →</div>
+        </a>
+
+        <!-- Governance -->
+        <a class="hub-tile hub-tile--wide" href="/digital-nation-website/protocol-status.html" aria-label="Governance and IAMS">
+          <div class="hub-tile__header">
+            <div class="hub-tile__title">Governance & IAMS</div>
+            <div class="hub-tile__badge">Ops</div>
+          </div>
+          <div class="hub-tile__body">
+            Inter-agent messaging, AEP enforcement, protocol attestation, directive lifecycle.
+          </div>
+          <div class="hub-tile__cta">Protocol status →</div>
+        </a>
+
+        <!-- Roadmap -->
+        <a class="hub-tile hub-tile--wide" href="/digital-nation-website/quantum-roadmap.html" aria-label="Quantum roadmap">
+          <div class="hub-tile__header">
+            <div class="hub-tile__title">Quantum Roadmap</div>
+            <div class="hub-tile__badge">Planned</div>
+          </div>
+          <div class="hub-tile__body">
+            Spatial-temporal substrate evaluation, HyperLattice milestones, compute sovereignty path.
+          </div>
+          <div class="hub-tile__cta">View roadmap →</div>
+        </a>
+
+        <!-- System Telemetry -->
+        <div class="hub-tile hub-tile--wide" aria-labelledby="telemetry-title">
+          <div class="hub-tile__header">
+            <div class="hub-tile__title" id="telemetry-title">System Telemetry</div>
+            <div class="hub-tile__badge" id="telemetry-badge">Polling</div>
+          </div>
+          <div class="hub-status">
+            <div class="hub-status__item">
+              <div class="hub-status__label">HL MCP</div>
+              <div class="hub-status__value" id="svc-hl">Loading…</div>
+            </div>
+            <div class="hub-status__item">
+              <div class="hub-status__label">Trading Desk</div>
+              <div class="hub-status__value" id="svc-desk">Loading…</div>
+            </div>
+            <div class="hub-status__item">
+              <div class="hub-status__label">Brain</div>
+              <div class="hub-status__value" id="svc-brain">Loading…</div>
+            </div>
+          </div>
+          <div class="hub-tile__body" style="padding-top:8px;">
+            Auto-refresh every 30s. Red = down.
           </div>
         </div>
-        <div class="hub-tile__body" style="margin-top:10px;">
-          Live service health from this host. Auto-refreshes every 30s. If a value shows <code style="color:#f87171;">down</code>, the service needs attention.
+
+        <!-- Agent Activity -->
+        <div class="hub-tile hub-tile--wide" aria-labelledby="agent-title">
+          <div class="hub-tile__header">
+            <div class="hub-tile__title" id="agent-title">Agent Activity</div>
+            <div class="hub-tile__badge">Live</div>
+          </div>
+          <div class="hub-status__value" id="agent-activity" style="max-height: 78px; overflow: hidden;">Loading…</div>
         </div>
+
       </div>
-
-      <!-- Agent Activity -->
-      <div class="hub-tile hub-tile--wide" aria-labelledby="agent-title">
-        <div class="hub-tile__header">
-          <div class="hub-tile__title" id="agent-title">Agent Activity</div>
-          <div class="hub-tile__badge" id="agent-badge">Live</div>
-        </div>
-        <div class="hub-tile__body" id="agent-activity">
-          <div class="hub-status__value">Loading agent feed…</div>
-        </div>
-        <div class="hub-tile__body" style="margin-top:10px;">
-          Recent directive, delegation, and relay events from the Digital Nation agent stack.
-        </div>
-      </div>
-
     </div>
   </main>
 
@@ -390,9 +398,9 @@
     <div>
       <a href="/digital-nation-website/index-legacy.html">Legacy</a>
       <span style="opacity:.5"> · </span>
-      <a href="http://localhost:8086/" target="_blank" rel="noopener noreferrer">Lattice Brain</a>
+      <a href="http://localhost:8086/" target="_blank" rel="noopener noreferrer">Brain</a>
       <span style="opacity:.5"> · </span>
-      <a href="http://localhost:8100/" target="_blank" rel="noopener noreferrer">Trading Desk</a>
+      <a href="http://localhost:8100/" target="_blank" rel="noopener noreferrer">Desk</a>
     </div>
   </footer>
 
@@ -406,9 +414,18 @@
         desk: 'http://localhost:8100/api/health',
         brain: 'http://localhost:8086/health',
         deskEquity: 'http://localhost:8100/api/status',
-        presidentialDirectives: '/.hermes/presidential_directives.log',
-        iamsState: '/.hermes/state/iams-roster-state.json'
+        presidentialDirectives: '/.hermes/presidential_directives.log'
       };
+
+      const svcHl = document.getElementById('svc-hl');
+      const svcDesk = document.getElementById('svc-desk');
+      const svcBrain = document.getElementById('svc-brain');
+
+      function setStatus(node, healthy, text) {
+        if (!node) return;
+        node.textContent = text;
+        node.style.color = healthy ? '#34d399' : '#f87171';
+      }
 
       async function fetchJSON(url, fallback) {
         try {
@@ -428,16 +445,6 @@
         } catch (e) {
           return fallback;
         }
-      }
-
-      const svcHl = document.getElementById('svc-hl');
-      const svcDesk = document.getElementById('svc-desk');
-      const svcBrain = document.getElementById('svc-brain');
-
-      function setStatus(node, healthy, text) {
-        if (!node) return;
-        node.textContent = text;
-        node.style.color = healthy ? '#34d399' : '#f87171';
       }
 
       async function refresh() {
@@ -468,11 +475,12 @@
         }
 
         const activityEl = document.getElementById('agent-activity');
-        if (activityEl) activityEl.innerHTML = '';
+        if (!activityEl) return;
+        activityEl.innerHTML = '';
         try {
           const text = await fetchText(endpoints.presidentialDirectives, '');
           const lines = text.split('\n').filter(Boolean).slice(-8).reverse();
-          if (!lines.length && activityEl) {
+          if (!lines.length) {
             const empty = document.createElement('div');
             empty.style.color = 'var(--hub-muted)';
             empty.textContent = 'No recent directives.';
@@ -485,18 +493,16 @@
             row.style.fontFamily = "var(--font-mono, ui-monospace, monospace)";
             row.style.fontSize = '11px';
             row.style.color = 'var(--hub-muted)';
-            row.style.padding = '5px 0';
+            row.style.padding = '3px 0';
             row.style.borderBottom = '1px solid var(--hub-border)';
             row.textContent = clean;
-            if (activityEl) activityEl.appendChild(row);
+            activityEl.appendChild(row);
           });
         } catch (e) {
-          if (activityEl) {
-            const row = document.createElement('div');
-            row.style.color = '#f87171';
-            row.textContent = 'Agent feed unavailable.';
-            activityEl.appendChild(row);
-          }
+          const row = document.createElement('div');
+          row.style.color = '#f87171';
+          row.textContent = 'Agent feed unavailable.';
+          activityEl.appendChild(row);
         }
       }
 
