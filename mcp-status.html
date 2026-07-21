@@ -114,8 +114,17 @@
           });
           raw.textContent = JSON.stringify(j, null, 2);
         } catch (e) {
-          setKV({ status: 'unreachable', error: String(e) });
-          raw.textContent = 'Cannot reach ' + base + '/health';
+          const msg = String(e);
+          const blocked = msg.includes('Failed to fetch') || msg.includes('fetch');
+          setKV({
+            status: blocked ? 'mixed-content-blocked' : 'unreachable',
+            error: blocked
+              ? 'Browser blocked this request. Open this page from http://localhost:8086/ or from the local hub to allow localhost fetches.'
+              : msg
+          });
+          raw.textContent = blocked
+            ? 'This diagnostic must be opened from a localhost origin. From the public HTTPS site, mixed-content policy blocks http://localhost:8091 fetches. Use the hub MCP terminal or open http://localhost:8086/ directly.'
+            : 'Cannot reach ' + base + '/health: ' + msg;
         }
       }
       let sessionId = null;
