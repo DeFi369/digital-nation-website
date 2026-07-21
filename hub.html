@@ -210,15 +210,28 @@
       100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
 
-    /* orbital nodes */
-    .orbit-node {
+    /* orbital node wrapper handles positioning so inner can animate without fighting transform */
+    .orbit-node-wrap {
       position: absolute;
       left: 50%;
       top: 50%;
+      pointer-events: none;
+    }
+    .orbit-node-wrap--0 { transform: rotate(0deg) translate(clamp(22vw, 30vh, 34vw)) rotate(0deg); }
+    .orbit-node-wrap--1 { transform: rotate(45deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-45deg); }
+    .orbit-node-wrap--2 { transform: rotate(90deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-90deg); }
+    .orbit-node-wrap--3 { transform: rotate(135deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-135deg); }
+    .orbit-node-wrap--4 { transform: rotate(180deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-180deg); }
+    .orbit-node-wrap--5 { transform: rotate(225deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-225deg); }
+    .orbit-node-wrap--6 { transform: rotate(270deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-270deg); }
+    .orbit-node-wrap--7 { transform: rotate(315deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-315deg); }
+
+    .orbit-node {
+      position: relative;
+      left: clamp(-28px, -4.2vw, -42px);
+      top: clamp(-28px, -4.2vw, -42px);
       width: clamp(56px, 8.4vw, 84px);
       height: clamp(56px, 8.4vw, 84px);
-      margin-left: clamp(-28px, -4.2vw, -42px);
-      margin-top: clamp(-28px, -4.2vw, -42px);
       border-radius: 50%;
       background:
         radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08), transparent 60%),
@@ -233,10 +246,12 @@
       padding: 6px;
       text-decoration: none;
       color: inherit;
+      pointer-events: auto;
       transition: transform 0.3s cubic-bezier(.2,.8,.2,1), border-color 0.25s ease, box-shadow 0.25s ease;
-      z-index: 4;
       animation: float 6s ease-in-out infinite;
     }
+    .orbit-node:nth-child(odd) { animation-duration: 7.2s; }
+    .orbit-node:nth-child(even) { animation-duration: 5.6s; animation-direction: reverse; }
     .orbit-node:hover {
       transform: scale(1.18) translateY(-4px);
       border-color: rgba(122, 167, 255, 0.6);
@@ -246,8 +261,6 @@
         0 16px 40px rgba(0, 0, 0, 0.55);
       animation-play-state: paused;
     }
-    .orbit-node:nth-child(odd) { animation-duration: 7.2s; }
-    .orbit-node:nth-child(even) { animation-duration: 5.6s; animation-direction: reverse; }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
@@ -275,16 +288,6 @@
       color: var(--hub-muted);
       opacity: 0.9;
     }
-
-    /* 8-node orbital positions — tighter radius */
-    .orbit-node--0 { transform: rotate(0deg) translate(clamp(22vw, 30vh, 34vw)) rotate(0deg); }
-    .orbit-node--1 { transform: rotate(45deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-45deg); }
-    .orbit-node--2 { transform: rotate(90deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-90deg); }
-    .orbit-node--3 { transform: rotate(135deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-135deg); }
-    .orbit-node--4 { transform: rotate(180deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-180deg); }
-    .orbit-node--5 { transform: rotate(225deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-225deg); }
-    .orbit-node--6 { transform: rotate(270deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-270deg); }
-    .orbit-node--7 { transform: rotate(315deg) translate(clamp(22vw, 30vh, 34vw)) rotate(-315deg); }
 
     /* spoke lines */
     .spoke {
@@ -341,8 +344,8 @@
     .telemetry-item__value--bad { color: #f87171; text-shadow: 0 0 12px rgba(248, 113, 113, 0.5); }
 
     @media (max-width: 760px) {
-      .orbit-node--0, .orbit-node--1, .orbit-node--2, .orbit-node--3,
-      .orbit-node--4, .orbit-node--5, .orbit-node--6, .orbit-node--7 {
+      .orbit-node-wrap--0, .orbit-node-wrap--1, .orbit-node-wrap--2, .orbit-node-wrap--3,
+      .orbit-node-wrap--4, .orbit-node-wrap--5, .orbit-node-wrap--6, .orbit-node-wrap--7 {
         transform: rotate(var(--angle)) translate(clamp(26vw, 36vh, 40vw)) rotate(calc(-1 * var(--angle)));
       }
       .spoke { display: none; }
@@ -360,14 +363,14 @@
     <div class="orbit-ring orbit-ring--mid" aria-hidden="true"></div>
     <div class="orbit-ring orbit-ring--inner" aria-hidden="true"></div>
 
-    <div class="spoke spoke--0" aria-hidden="true"></div>
-    <div class="spoke spoke--1" aria-hidden="true"></div>
-    <div class="spoke spoke--2" aria-hidden="true"></div>
-    <div class="spoke spoke--3" aria-hidden="true"></div>
-    <div class="spoke spoke--4" aria-hidden="true"></div>
-    <div class="spoke spoke--5" aria-hidden="true"></div>
-    <div class="spoke spoke--6" aria-hidden="true"></div>
-    <div class="spoke spoke--7" aria-hidden="true"></div>
+    <div class="spoke" aria-hidden="true"></div>
+    <div class="spoke" aria-hidden="true"></div>
+    <div class="spoke" aria-hidden="true"></div>
+    <div class="spoke" aria-hidden="true"></div>
+    <div class="spoke" aria-hidden="true"></div>
+    <div class="spoke" aria-hidden="true"></div>
+    <div class="spoke" aria-hidden="true"></div>
+    <div class="spoke" aria-hidden="true"></div>
 
     <a class="hub-core" href="/digital-nation-website/index-legacy.html" aria-label="Digital Nation home">
       <div class="hub-core__title">Hub</div>
@@ -375,53 +378,69 @@
       <div class="hub-core__pulse" aria-hidden="true"></div>
     </a>
 
-    <a class="orbit-node orbit-node--0" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="4D Quantum Thought Engine">
-      <div class="orbit-node__icon">🧠</div>
-      <div class="orbit-node__title">Lattice Brain</div>
-      <div class="orbit-node__badge">Live</div>
-    </a>
+    <div class="orbit-node-wrap orbit-node-wrap--0">
+      <a class="orbit-node" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="4D Quantum Thought Engine">
+        <div class="orbit-node__icon">🧠</div>
+        <div class="orbit-node__title">Lattice Brain</div>
+        <div class="orbit-node__badge">Live</div>
+      </a>
+    </div>
 
-    <a class="orbit-node orbit-node--1" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer" aria-label="Trading Desk">
-      <div class="orbit-node__icon">📈</div>
-      <div class="orbit-node__title">Trading Desk</div>
-      <div class="orbit-node__badge">Paper</div>
-    </a>
+    <div class="orbit-node-wrap orbit-node-wrap--1">
+      <a class="orbit-node" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer" aria-label="Trading Desk">
+        <div class="orbit-node__icon">📈</div>
+        <div class="orbit-node__title">Trading Desk</div>
+        <div class="orbit-node__badge">Paper</div>
+      </a>
+    </div>
 
-    <a class="orbit-node orbit-node--2" href="/digital-nation-website/protocol-status.html" aria-label="Governance and IAMS">
-      <div class="orbit-node__icon">🏛️</div>
-      <div class="orbit-node__title">Governance</div>
-      <div class="orbit-node__badge">Ops</div>
-    </a>
+    <div class="orbit-node-wrap orbit-node-wrap--2">
+      <a class="orbit-node" href="/digital-nation-website/protocol-status.html" aria-label="Governance and IAMS">
+        <div class="orbit-node__icon">🏛️</div>
+        <div class="orbit-node__title">Governance</div>
+        <div class="orbit-node__badge">Ops</div>
+      </a>
+    </div>
 
-    <a class="orbit-node orbit-node--3" href="/digital-nation-website/quantum-roadmap.html" aria-label="Quantum Roadmap">
-      <div class="orbit-node__icon">🗺️</div>
-      <div class="orbit-node__title">Roadmap</div>
-      <div class="orbit-node__badge">Planned</div>
-    </a>
+    <div class="orbit-node-wrap orbit-node-wrap--3">
+      <a class="orbit-node" href="/digital-nation-website/quantum-roadmap.html" aria-label="Quantum Roadmap">
+        <div class="orbit-node__icon">🗺️</div>
+        <div class="orbit-node__title">Roadmap</div>
+        <div class="orbit-node__badge">Planned</div>
+      </a>
+    </div>
 
-    <a class="orbit-node orbit-node--4" href="http://localhost:8091/mcp" target="_blank" rel="noopener noreferrer" aria-label="HyperLattice MCP">
-      <div class="orbit-node__icon">🔗</div>
-      <div class="orbit-node__title">HL MCP</div>
-      <div class="orbit-node__badge">Memory</div>
-    </a>
+    <div class="orbit-node-wrap orbit-node-wrap--4">
+      <a class="orbit-node" href="http://localhost:8091/mcp" target="_blank" rel="noopener noreferrer" aria-label="HyperLattice MCP">
+        <div class="orbit-node__icon">🔗</div>
+        <div class="orbit-node__title">HL MCP</div>
+        <div class="orbit-node__badge">Memory</div>
+      </a>
+    </div>
 
-    <a class="orbit-node orbit-node--5" href="/digital-nation-website/index-legacy.html" aria-label="Legacy landing page">
-      <div class="orbit-node__icon">📜</div>
-      <div class="orbit-node__title">Legacy</div>
-      <div class="orbit-node__badge">Static</div>
-    </a>
+    <div class="orbit-node-wrap orbit-node-wrap--5">
+      <a class="orbit-node" href="/digital-nation-website/index-legacy.html" aria-label="Legacy landing page">
+        <div class="orbit-node__icon">📜</div>
+        <div class="orbit-node__title">Legacy</div>
+        <div class="orbit-node__badge">Static</div>
+      </a>
+    </div>
 
-    <a class="orbit-node orbit-node--6" href="/digital-nation-website/structure.html" aria-label="Government structure">
-      <div class="orbit-node__icon">🏗️</div>
-      <div class="orbit-node__title">Structure</div>
-      <div class="orbit-node__badge">Gov</div>
-    </a>
+    <div class="orbit-node-wrap orbit-node-wrap--6">
+      <a class="orbit-node" href="/digital-nation-website/structure.html" aria-label="Government structure">
+        <div class="orbit-node__icon">🏗️</div>
+        <div class="orbit-node__title">Structure</div>
+        <div class="orbit-node__badge">Gov</div>
+      </a>
+    </div>
 
-    <a class="orbit-node orbit-node--7" href="/digital-nation-website/ecosystem-status.html" aria-label="Ecosystem status">
-      <div class="orbit-node__icon">🌐</div>
-      <div class="orbit-node__title">Ecosystem</div>
-      <div class="orbit-node__badge">Status</div>
-    </a>
+    <div class="orbit-node-wrap orbit-node-wrap--7">
+      <a class="orbit-node" href="/digital-nation-website/ecosystem-status.html" aria-label="Ecosystem status">
+        <div class="orbit-node__icon">🌐</div>
+        <div class="orbit-node__title">Ecosystem</div>
+        <div class="orbit-node__badge">Status</div>
+      </a>
+    </div>
   </div>
 
   <div class="telemetry-bar" aria-label="Live system telemetry">
@@ -453,8 +472,7 @@
         hl: 'http://localhost:8090/health',
         desk: 'http://localhost:8100/api/health',
         brain: 'http://localhost:8086/health',
-        deskEquity: 'http://localhost:8100/api/status',
-        presidentialDirectives: '/.hermes/presidential_directives.log'
+        deskEquity: 'http://localhost:8100/api/status'
       };
 
       function setVal(id, healthy, text) {
@@ -464,7 +482,7 @@
         el.className = 'telemetry-item__value' + (healthy === false ? ' telemetry-item__value--bad' : healthy === true ? ' telemetry-item__value--ok' : '');
       }
 
-      async function fetchJSON(url, fallback) {
+      async function safeFetchJSON(url, fallback) {
         try {
           const r = await fetch(url, { mode: 'cors' });
           if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -474,27 +492,17 @@
         }
       }
 
-      async function fetchText(url, fallback) {
-        try {
-          const r = await fetch(url, { mode: 'cors' });
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-          return await r.text();
-        } catch (e) {
-          return fallback;
-        }
-      }
-
       async function refresh() {
-        const hl = await fetchJSON(endpoints.hl, { status: '' });
-        const desk = await fetchJSON(endpoints.desk, { status: '' });
-        const brain = await fetchJSON(endpoints.brain, { status: '' });
+        const hl = await safeFetchJSON(endpoints.hl, { status: '' });
+        const desk = await safeFetchJSON(endpoints.desk, { status: '' });
+        const brain = await safeFetchJSON(endpoints.brain, { status: '' });
 
         setVal('svc-hl', !!hl.status, hl.status ? 'online' : 'down');
         setVal('svc-desk', !!desk.status, desk.status ? 'online' : 'down');
         setVal('svc-brain', !!brain.status, brain.status ? 'online' : 'down');
 
         try {
-          const status = await fetchJSON(endpoints.deskEquity, {});
+          const status = await safeFetchJSON(endpoints.deskEquity, {});
           const equity = status.equityUsd ?? status.equity ?? '—';
           const positions = status.openPositions ?? status.open ?? '—';
           const realized = status.realizedPnlUsd ?? status.realized ?? '—';
@@ -507,13 +515,7 @@
           setVal('desk-realized', false, '—');
         }
 
-        try {
-          const text = await fetchText(endpoints.presidentialDirectives, '');
-          const lines = text.split('\n').filter(Boolean);
-          setVal('directives-count', null, '' + lines.length);
-        } catch (e) {
-          setVal('directives-count', false, '—');
-        }
+        setVal('directives-count', null, '—');
       }
 
       refresh();
