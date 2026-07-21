@@ -136,7 +136,12 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - All 9 pages: added Atom feed alternate link
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 19 pending** (next improvement cycle)
+- **2026-07-21 — Round 19 improvements** (commit `ad0cb0c`):
+  - Hub: added `apple-touch-icon` link (verifiable asset present)
+  - Note: 8/9 link pages already had `article:modified_time` from round 16; only Hub `apple-touch-icon` was net-new this round
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 20 pending** (next improvement cycle)
 - Member-count narrative gap (owner decision): the header pill counts real
   registry entries (10) while national stats claim 12450 registered citizens.
   Both now come from metrics.json, but reconciling the story is a content call.
