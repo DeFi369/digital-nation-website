@@ -133,6 +133,18 @@ never leave work uncommitted in this repo.
   - Note: Hub iframe already had `title`; structure img already had `alt`; those checks were false positives
   - Verified: grep-based pass on actual changed files
 
+
+- **2026-07-21 — Round 9 improvements** (commit `2485044`):
+  - All 9 pages: added RSS `alternate` link
+  - Hub: added `hreflang="en"`
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 10 improvements** (commit `9772625`):
+  - All 9 pages: added `class="no-js"` to `<html>` element
+  - Hub: added `loading="lazy" decoding="async" fetchpriority="low"` to iframe
+  - Structure: added `loading="lazy" decoding="async" fetchpriority="low"` to logo img
+  - Verified: grep-based pass on all 9 pages
+
 ## Open
 - **2026-07-21 — Round 3 pending** (next improvement cycle)
 - Member-count narrative gap (owner decision): the header pill counts real
