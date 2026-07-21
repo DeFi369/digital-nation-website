@@ -118,19 +118,30 @@
           raw.textContent = 'Cannot reach ' + base + '/health';
         }
       }
-      async function postJSON(path, payload) {
+      let sessionId = null;
+      async function postJSON(method, params) {
         try {
-          const r = await fetch(base + path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream' }, body: JSON.stringify(payload) });
-          const j = await r.json();
-          raw.textContent = JSON.stringify(j, null, 2);
+          const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream' };
+          if (sessionId) headers['Mcp-Session-Id'] = sessionId;
+          const payload = { jsonrpc: '2.0', id: 1, method, params };
+          const r = await fetch(base + '/mcp', { method: 'POST', headers, body: JSON.stringify(payload) });
+          if (r.headers.get('Mcp-Session-Id')) sessionId = r.headers.get('Mcp-Session-Id');
+          const text = await r.text();
+          try { raw.textContent = JSON.stringify(JSON.parse(text), null, 2); }
+          catch { raw.textContent = text; }
         } catch (e) {
           raw.textContent = 'Request failed: ' + e;
         }
       }
-      loadHealth();
-      document.getElementById('btn-tools').onclick = () => postJSON('/mcp', { jsonrpc: '2.0', id: 1, method: 'tools/list', params: {} });
-      document.getElementById('btn-graph').onclick = () => postJSON('/mcp', { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'graph_stats', arguments: {} } });
-      document.getElementById('btn-prs').onclick = () => postJSON('/mcp', { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'list_prs', arguments: {} } });
+      async function mcpInit() {
+        await postJSON('initialize', { protocolVersion: '2024-11-05', capabilities: {}, clientInfo: { name: 'mcp-status', version: '1.0' } });
+        await postJSON('notifications/initialized', {});
+        loadHealth();
+      }
+      document.getElementById('btn-tools').onclick = () => postJSON('tools/list', {});
+      document.getElementById('btn-graph').onclick = () => postJSON('tools/call', { name: 'graph_stats', arguments: {} });
+      document.getElementById('btn-prs').onclick = () => postJSON('tools/call', { name: 'list_prs', arguments: {} });
+      mcpInit();
     })();
   </script>
 </body>
