@@ -139,7 +139,12 @@ never leave work uncommitted in this repo.
   - Hub, HL MCP, Structure: skipped — custom nav patterns differ from standard template
   - Note: 6/9 improvements applied; 3 pages have non-standard nav structures
 
-- **2026-07-21 — Round 12 pending** (next improvement cycle) (commit `f21ff7f`):
+- **2026-07-21 — Round 12 improvements** (commit `a4ac57d`):
+  - All 9 pages: improved descriptive `<title>` text
+  - Roadmap: already had skip-link
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 13 pending** (next improvement cycle) (commit `f21ff7f`):
   - Hub: added RSS `alternate` link
   - Governance v2, HL MCP, Ecosystem: added `<noscript>` CSS fallback
   - Note: Hub iframe already had `title`; structure img already had `alt`; those checks were false positives
