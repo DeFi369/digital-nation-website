@@ -433,7 +433,15 @@
       }
       .spoke { display: none; }
     }
-  </style>
+    :focus-visible {
+    outline: 2px solid var(--hub-light, #6cf);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Digital Nation","url":"https://defi369.github.io/digital-nation-website/","description":"Sovereign digital nation governed by AEP 2.8, dynAEP temporal layer, and HyperLattice substrate.","sameAs":["https://github.com/DeFi369"]}</script>
   <link rel="icon" href="/digital-nation-website/assets/images/digital-nation-logo.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://defi369.github.io/digital-nation-website/" />
@@ -455,6 +463,17 @@
   <meta name="twitter:image" content="/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta property="og:url" content="/digital-nation-website/hub.html">
   <script>if ("scrollRestoration" in history) history.scrollRestoration = "manual";</script>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32">
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
 <body class="page-hub">
   <header role="banner">

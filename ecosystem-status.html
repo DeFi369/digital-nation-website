@@ -50,6 +50,16 @@
   <meta name="twitter:title" content="Digital Nation Ecosystem">
   <meta name="twitter:image" content="/digital-nation-website/assets/images/digital-nation-logo.svg">
   <script>if ("scrollRestoration" in history) history.scrollRestoration = "manual";</script>
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
 <body data-theme="engagement">
   <a class="skip-link" href="#main">Skip to content</a>
