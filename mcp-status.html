@@ -120,7 +120,7 @@
       }
       async function postJSON(path, payload) {
         try {
-          const r = await fetch(base + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          const r = await fetch(base + path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream' }, body: JSON.stringify(payload) });
           const j = await r.json();
           raw.textContent = JSON.stringify(j, null, 2);
         } catch (e) {
