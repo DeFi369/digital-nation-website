@@ -606,17 +606,17 @@
         hubSpin.addEventListener('touchend', function () { stopHold(); });
       }
 
-      const mcpTerminal = document.getElementById('mcp-terminal');
-      const mcpClose = document.getElementById('mcp-terminal-close');
-      const mcpNode = document.querySelector('.orbit-node-wrap--4 .orbit-node');
-      if (mcpNode && mcpTerminal) {
+      const mcpTerminal = null;
+      const mcpClose = null;
+      const mcpNode = null;
+      if (false && mcpNode && mcpTerminal) {
         mcpNode.addEventListener('click', function (e) {
           e.preventDefault();
           mcpTerminal.classList.add('is-open');
           mcpTerminal.setAttribute('aria-hidden', 'false');
         });
       }
-      if (mcpClose && mcpTerminal) {
+      if (false && mcpClose && mcpTerminal) {
         mcpClose.addEventListener('click', function () {
           mcpTerminal.classList.remove('is-open');
           mcpTerminal.setAttribute('aria-hidden', 'true');
