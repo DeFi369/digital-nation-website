@@ -211,4 +211,9 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - All 9 pages: added `crossorigin="anonymous"` to font stylesheet links
   - Verified: HTML parser + grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 32 pending** (next improvement cycle)
+- **2026-07-21 — Round 32 improvements** (commit `4729918`):
+  - All 9 pages: added `prefers-reduced-motion` safety styles
+  - Hub: added `:focus-visible` focus ring styles
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 33 pending** (next improvement cycle)
