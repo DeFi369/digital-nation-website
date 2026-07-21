@@ -144,7 +144,13 @@ never leave work uncommitted in this repo.
   - Roadmap: already had skip-link
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 13 pending** (next improvement cycle) (commit `f21ff7f`):
+- **2026-07-21 — Round 13 improvements** (commit pending):
+  - All 9 pages: added `hreflang="en"`, `dir="ltr"`
+  - Hub, Governance v2, HL MCP, Archive, Structure, Ecosystem, Index, Protocol v1: added `name="robots"`
+  - All 9 pages: added `class="no-js"` to `<html>`
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 14 pending** (next improvement cycle) (commit `f21ff7f`):
   - Hub: added RSS `alternate` link
   - Governance v2, HL MCP, Ecosystem: added `<noscript>` CSS fallback
   - Note: Hub iframe already had `title`; structure img already had `alt`; those checks were false positives
