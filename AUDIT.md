@@ -140,10 +140,9 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, Index, Protocol v1: added `permissions-policy` meta (geolocation/microphone/camera)
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 20 improvements** (commit `baa0dd6`):
-  - Hub: added `<header role="banner">` landmark wrapping content
-  - HL MCP: added `<footer role="contentinfo">` landmark before script
-  - Verified: grep-based pass on changed files
+- **2026-07-21 — Round 21 improvements** (commit pending):
+  - Governance v2, HL MCP, Ecosystem: replaced regular font stylesheet with lazy-loading variant (`media="print" onload` + `<noscript>` fallback)
+  - Verified: grep-based pass on all 9 pages
 
 ## Open
 - Member-count narrative gap (owner decision): the header pill counts real
@@ -155,4 +154,4 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   WorldHermes, etc.); consider single source of truth for both fragments.
 - `nav.js` `footerFragment()` is exported but pages carry static footer markup —
   dead path worth unifying one way or the other.
-- **2026-07-21 — Round 21 pending** (next improvement cycle)
+- **2026-07-21 — Round 22 pending** (next improvement cycle)
