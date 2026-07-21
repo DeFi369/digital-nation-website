@@ -177,4 +177,9 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - All 9 pages: added `Content-Security-Policy` meta
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 25 pending** (next improvement cycle)
+- **2026-07-21 — Round 25 improvements** (commit pending):
+  - Hub: added `<section id="hub-main" aria-label="Main content">` landmark
+  - Governance v2, Roadmap, HL MCP, Structure, Ecosystem, Protocol v1: added `<article>` landmark with proper open/close balance
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 26 pending** (next improvement cycle)

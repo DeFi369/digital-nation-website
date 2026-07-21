@@ -1,0 +1,17 @@
+{
+  "name": "Digital Nation",
+  "short_name": "Digital Nation",
+  "start_url": "/digital-nation-website/",
+  "display": "standalone",
+  "background_color": "#020408",
+  "theme_color": "#020408",
+  "description": "Sovereign Digital Nation governance portal",
+  "icons": [
+    {
+      "src": "/digital-nation-website/assets/images/digital-nation-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
