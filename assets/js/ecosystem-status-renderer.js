@@ -5,15 +5,14 @@
   function set(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
   function dot(status) {
     var c = '#34d399';
-    if (status === 'active') c = '#34d399';
-    else if (status === 'scaffolding' || status === 'pre-v1.0') c = '#facc15';
+    if (status === 'scaffolding' || status === 'pre-v1.0') c = '#facc15';
     else if (status === 'active-release') c = '#7aa7ff';
     else if (status === 'experimental') c = '#f87171';
     return '<span class="status-dot" style="background:' + c + ';box-shadow:0 0 8px ' + c + '"></span> ' + esc(status);
   }
   function buildCard(title, body) { return '<div class="card"><h3>' + esc(title) + '</h3><div>' + (body || '') + '</div></div>'; }
   function buildKV(rows) { return rows.map(function (r) { return '<p><strong>' + esc(r[0]) + ':</strong> ' + esc(r[1]) + '</p>'; }).join(''); }
-  function init() { _dbg('init_start');
+  function init() {
     var base = (document.querySelector('base[href]') ? document.querySelector('base[href]').getAttribute('href') : './');
     if (base && !base.endsWith('/')) base = base + '/';
     var root = base || './';
@@ -52,8 +51,8 @@
       set('citizen-attestation', '<p>' + esc(eco.citizenAttestation || eco.citizenBenefits || 'No attestation text available.') + '</p>');
       set('provenance-attestation', (eco.attestation && Object.keys(eco.attestation).length) ? buildCard('Data Provenance & Attestation', buildKV(Object.keys(eco.attestation).map(function (k) { return [k, esc(String(eco.attestation[k]))]; }))) : '<p class="activity-empty">No attestation data loaded.</p>');
       set('ecosystem-cross-references', (Array.isArray(eco.crossRepoPages) && eco.crossRepoPages.length) ? '<div class="activity-list">' + eco.crossRepoPages.map(function (p) { return '<div class="activity-item activity-governance"><div class="activity-label">' + esc(p) + '</div></div>'; }).join('') + '</div>' : '<p class="activity-empty">No cross-references loaded.</p>');
-    }).catch(function (e) { _dbg('fetch_error:'+e.message); });
+    }).catch(function () {});
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else { _dbg('dom_ready'); init(); }
+  else init();
 })();
