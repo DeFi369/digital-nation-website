@@ -20,7 +20,6 @@ var DigitalNationNav = (function () {
     { label: 'Governance', links: [
       { href: 'assembly.html', label: 'Assembly' },
       { href: 'court.html', label: 'Court' },
-      { href: 'justice.html', label: 'Justice' },
       { href: 'safety.html', label: 'Safety' }
     ]},
     { label: 'Identity', links: [
@@ -42,7 +41,6 @@ var DigitalNationNav = (function () {
       { href: 'sovereign-security.html', label: 'Sovereign Security' },
       { href: 'health-equity.html', label: 'Health Equity' },
       { href: 'bandwidth.html', label: 'Bandwidth' },
-      { href: 'education.html', label: 'Education' },
       { href: 'health.html', label: 'Health' },
       { href: 'infrastructure.html', label: 'Infrastructure' }
     ]},
@@ -55,9 +53,7 @@ var DigitalNationNav = (function () {
       { href: 'quantum-roadmap.html', label: 'Quantum Roadmap' },
       { href: 'consular.html', label: 'Consular' },
       { href: 'culture.html', label: 'Culture' },
-      { href: 'communications.html', label: 'Communications' },
-      { href: 'https://sayitdefi.com', label: 'SayIt (Citizen Press)', external: true },
-      { href: 'https://waveonpulse.com', label: 'Wave (Citizen Radio)', external: true }
+      { href: 'communications.html', label: 'Communications' }
     ]},
     { label: 'Engagement', links: [
       { href: 'engage.html', label: 'Engage' },
@@ -140,9 +136,8 @@ var DigitalNationNav = (function () {
       { href: 'transparency.html', label: 'Transparency' },
       { href: 'digital-service-corps.html', label: 'Digital Service Corps' },
       { href: 'elections.html', label: 'Elections & Petitions' },
-      { href: 'open-records.html', label: 'Open Records' },
-      { href: 'data-governance.html', label: 'Data Governance' },
-      { href: 'situational-awareness.html', label: 'Situational Awareness' }
+      { href: 'privacy.html', label: 'Privacy' },
+      { href: 'terms.html', label: 'Terms' }
     ];
   }
 

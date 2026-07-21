@@ -101,12 +101,15 @@
     "latestCommitDate": "2026-07-12"
   },
   "quantum": {
-    "available": true,
+    "available": false,
+    "mode": "software-simulation-only",
+    "note": "Quantum attestation is RESEARCH-SCOPED. Current implementation is pure software simulation using a classical PRNG — NOT live quantum hardware. No QRNG/QPU deployed. See quantum-roadmap.html for the phased (future) hardware plan.",
     "collapseChosenLattice": "lattice-national",
     "afterNormalizeTotal": 0.9999999999999998,
-    "boosterPhaseReady": true
+    "boosterPhaseReady": false
   },
-  "quantumAttestation": "9be76a6da8434473",
+  "quantumAttestation": "SIMULATION-ONLY-9be76a6da8434473",
+  "quantumAttestationNote": "Software-simulated lattice-collapse hash (classical PRNG). NOT a hardware quantum attestation. Research-scoped future project.",
   "verifiedIdentities": [
     "president",
     "secretary_of_technology_science_and_innovation",

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-15",
+  "generated": "2026-07-20",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -74,6 +74,9 @@
         "graph.json",
         ".graphify_analysis.json",
         "manifest.json",
+        "stat-index.json",
+        "6335ffb3f728f1e25ad788612a76b5ad47fcc902c16610d0890f7314dbceb69b.json",
+        "c8c81f96052c83732e1c4f0d28dcd516d92850c8b73118fe88eae461269352d9.json",
         ".gitkeep",
         "packed-refs",
         "index",
@@ -83,12 +86,9 @@
         "HEAD",
         "config",
         "ORIG_HEAD",
-        ".gitkeep",
-        "run.sh",
-        "check-conformance.py",
-        ".gitkeep",
-        "stat-index.json",
-        "6335ffb3f728f1e25ad788612a76b5ad47fcc902c16610d0890f7314dbceb69b.json"
+        "prepare-commit-msg.sample",
+        "pre-merge-commit.sample",
+        "sendemail-validate.sample"
       ]
     },
     {
@@ -108,22 +108,22 @@
         "setup.py",
         "README.md",
         "LICENSE-TOOLING",
-        ".gitignore",
         "graph.json",
         ".graphify_analysis.json",
         "manifest.json",
+        "stat-index.json",
+        "9713719d3c671a2541fdb68f141fabdbb94d94cec5fcc33edef2fa5f89b5cabc.json",
+        "84d9acecffa8f873b02ad553df4fceac86ba363f1d57eaa597a7675f670a8ecc.json",
+        "903ceba45e6a1412c3360fe267a3bc9d96db911678fa8e785791e0f270b59a6d.json",
+        "3ba5eb5ce73bcce295c42efe64fd0af2c6d3fd7bc4b9e10d962edea80453abc6.json",
+        "90e255f0b06ac7750f1cb2e3c190502a088f1d8fe8adef0b33f2b3944c9afc92.json",
+        "a7ba421127e3fe9be8de4b7e4afb7c5171c501a4e2513101d570bca482c0cc3a.json",
+        "8806105909fd2aae6b76cca4b7c72b5332df854723f5ec2da3887e580522a20a.json",
         ".gitkeep",
-        ".gitkeep",
-        "manifest.json",
-        ".gitkeep",
-        "packed-refs",
-        "index",
-        "FETCH_HEAD",
-        "description",
-        "COMMIT_EDITMSG",
-        "HEAD",
-        "config",
-        "ORIG_HEAD"
+        "test_signature_loader.cpython-313-pytest-9.1.1.pyc",
+        "signature_loader.cpython-313.pyc",
+        "example-bundle-001.json",
+        ".gitkeep"
       ]
     }
   ],
@@ -135,7 +135,7 @@
     "signatureStatus": "pre-v1.0",
     "totalComponents": 21,
     "artifactFileCount": 40,
-    "pageCount": 71,
+    "pageCount": 70,
     "crossRepoPageCount": 5,
     "crossRepoPages": [
       "ecosystem-status.html",
@@ -146,17 +146,17 @@
     ],
     "identityManifestCount": 15,
     "identityKeyCount": 19,
-    "latestCommit": "1f76525a31e5524af68d6bb3668dea0074f5c476 chore(sectech): apply authorized public-site retirements; mark deprecated roles placeholders in public mapping",
-    "latestCommitDate": "2026-07-12",
-    "lastAudit": "2026-07-15"
+    "latestCommit": "b8a6a1c22d6c722b4f0f44c0816cbbfb4e696eda chore(secsite): snapshot nav canary + live attestation/ecosystem data wiring",
+    "latestCommitDate": "2026-07-16",
+    "lastAudit": "2026-07-20"
   },
   "quantum": {
     "available": true,
-    "collapseChosenLattice": "lattice-national",
+    "collapseChosenLattice": "lattice-memory",
     "afterNormalizeTotal": 0.9999999999999998,
     "boosterPhaseReady": true
   },
-  "quantumAttestation": "9be76a6da8434473",
+  "quantumAttestation": "dbc7bcc3d4d89374",
   "verifiedIdentities": [
     "president",
     "secretary_of_technology_science_and_innovation",
@@ -192,7 +192,7 @@
       },
       {
         "repo": "aep",
-        "count": 11256
+        "count": 11244
       },
       {
         "repo": "gap",
@@ -222,7 +222,7 @@
       },
       {
         "repo": "signatures",
-        "count": 50
+        "count": 38
       },
       {
         "repo": "gap",
@@ -261,7 +261,7 @@
         "count": 1
       }
     ],
-    "edgeCount": 53612
+    "edgeCount": 53600
   },
   "attestation": {
     "trustBundleValid": true,
@@ -270,6 +270,6 @@
     "signaturesVerified": 19,
     "signaturesTotal": 19,
     "signatureCoverage": "100%",
-    "lastVerification": "2026-07-15T16:55:25.511121+00:00"
+    "lastVerification": "2026-07-20T06:00:46.474466+00:00"
   }
 }

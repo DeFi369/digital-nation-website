@@ -147,6 +147,71 @@ def main():
     if not node:
         print("note: node not found — JS syntax checks skipped")
 
+    # Leakage rule (governance-drift gate): the public site MUST NOT advertise
+    # any office that GOVERNMENT-LATTICE-MAP.md has retired. We derive the
+    # canonical retired-office list dynamically from the lattice map's
+    # "POSITIONS RETIRED FROM OPERATIONAL/MAPPING VIEW" section so the rule
+    # cannot drift out of sync, then:
+    #   1. Flag any active href to a retired office's page (public HTML).
+    #   2. Flag any retired office still wired into assets/js/nav.js.
+    #   3. Flag any retired office's page still listed in sitemap.xml.
+    # Historical/deprecated mentions (e.g. lineage notes) are NOT flagged —
+    # only ACTIVE presentation (links/targets) constitutes drift.
+    lattice_path = os.path.join(ROOT, "GOVERNMENT-LATTICE-MAP.md")
+    lattice_text = open(lattice_path, encoding="utf-8").read() if os.path.exists(lattice_path) else ""
+
+    # Retired office name -> public page that would advertise it (if present).
+    RETIRED_PAGE_MAP = {
+        "Secretary of Education": "education.html",
+        "Secretary of Interior": "interior.html",
+        "Secretary of Justice & Constitutional Compliance": "justice.html",
+        "Senior Counsel to the President": "senior-counsel.html",
+        "Director of Digital Operations": "digital-operations.html",
+        "Director of Situational Awareness": "situational-awareness.html",
+        "Attorney General": "attorney-general.html",
+        "Secretary of Defense": "defense.html",
+    }
+    # Only treat an office as "must not be advertised" if the lattice map
+    # explicitly lists it under its retired-positions section.
+    sec_marker = "POSITIONS RETIRED FROM OPERATIONAL"
+    retired_names = []
+    if sec_marker in lattice_text:
+        sec = lattice_text.split(sec_marker, 1)[1].split("\n---", 1)[0]
+        for name in RETIRED_PAGE_MAP:
+            if name.lower() in sec.lower():
+                retired_names.append(name)
+
+    # 1) Active href to a retired office's page == governance-drift leak.
+    for page in pages:
+        if page in SKIP_CHROME:
+            continue
+        psrc = open(page, encoding="utf-8").read()
+        for name, target in RETIRED_PAGE_MAP.items():
+            if name not in retired_names:
+                continue
+            if f'href="{target}"' in psrc:
+                fail(f"{page}: active link to retired office page `{target}` ({name}; governance drift)")
+
+    # 2) Retired office still wired into nav.js (the injected menu).
+    nav_path = os.path.join(ROOT, "assets/js/nav.js")
+    if os.path.exists(nav_path):
+        nav_src = open(nav_path, encoding="utf-8").read()
+        for name, target in RETIRED_PAGE_MAP.items():
+            if name not in retired_names:
+                continue
+            if target in nav_src:
+                fail(f"assets/js/nav.js: contains retired office link `{target}` ({name}; governance drift)")
+
+    # 3) Retired office page still listed in sitemap.xml.
+    sm_path = os.path.join(ROOT, "sitemap.xml")
+    if os.path.exists(sm_path):
+        sm_src = open(sm_path, encoding="utf-8").read()
+        for name, target in RETIRED_PAGE_MAP.items():
+            if name not in retired_names:
+                continue
+            if target in sm_src:
+                fail(f"sitemap.xml: contains retired office page `{target}` ({name}; governance drift)")
+
     if failures:
         print(f"INTEGRITY FAILURES ({len(failures)}):")
         for f in failures:

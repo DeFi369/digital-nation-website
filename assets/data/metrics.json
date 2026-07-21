@@ -1,14 +1,14 @@
 {
-  "updated": "2026-07-04",
+  "updated": "2026-07-18",
   "note": "Canonical shared metrics. The header member counter, homepage telemetry, and footer protocol badge read from THIS file — do not duplicate these values in per-page JSON.",
   "protocolVersion": "v0.1.0",
   "networkStatus": "Network Active",
   "members": 10,
   "stats": {
-    "registeredCitizens": 12450,
+    "registeredCitizens": 10,
     "activeServices": 24,
     "systemUptime": "99.97%",
     "governmentLayers": 4,
-    "lastProtocolUpdate": "2026-07-02"
+    "lastProtocolUpdate": "2026-07-18"
   }
 }
