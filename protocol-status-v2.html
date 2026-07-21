@@ -368,4 +368,375 @@
     <script src="assets/js/nav.js"></script>
     <script src="assets/js/protocol-status-data.js"></script>
   
+</body<script src="assets/js/protocol-status-data.js"></script>
+  <script src="assets/js/protocol-status-renderer.js"></script>E html>
+<html lang="en">
+<head>
+  <base href="/digital-nation-website/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Live protocol-status briefing for AETHERIA: AEP 2.8 governance stack, dynAEP temporal layer, and cross-repo integration status.">
+  <link rel="canonical" href="https://defi369.github.io/digital-nation-website/protocol-status.html">
+  <meta property="og:title" content="Protocol Status — The Principality of Aetheria">
+  <meta property="og:description" content="Live protocol-status briefing for AEP 2.8, dynAEP temporal layer, and citizen-facing governance guarantees.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://defi369.github.io/digital-nation-website/protocol-status.html">
+  <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Protocol Status — The Principality of Aetheria">
+  <meta name="twitter:description" content="Live protocol-status briefing for AEP 2.8, dynAEP temporal layer, and citizen-facing governance guarantees.">
+  <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
+
+  <title>Protocol Status — The Principality of Aetheria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/page-theme.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" href="./favicon.ico">
+</head>
+<body class="page-protocol-status" data-theme="diplomacy">
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav" id="site-header-nav">
+      <template id="site-header-nav-template" data-nav="header"></template>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page">
+      <div class="container">
+        <h1>Protocol Status</h1>
+        <p class="lead">
+          Under the cross-repo integration programme, AETHERIA publishes this interoperable view of the
+          AEP 2.8 governance stack and the dynAEP temporal/runtime layer. Both protocols are used to give
+          citizens deterministic transparency, auditable automation, and sovereign control over agent services,
+          records, and digital interactions.
+        </p>
+
+        <h2>AEP 2.8 Protocol Stack</h2>
+        <div class="columns">
+          <div class="card">
+            <h3>Base Node</h3>
+            <p>
+              Mandatory local governance daemon that owns registry, sockets, and policy lifetime.
+              It validates every config change at boot and keeps the governance substrate resident on the
+              local node.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Lattice Channels</h3>
+            <p>
+              Every SDK, connector, wizard, and runtime module communicates via
+              <strong>PQEncryptedCapsule</strong> sealed frames on lattice transport.
+              Plain wire formats are rejected to prevent side-channel anomalies.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Hyperlattice Wrap</h3>
+            <p>
+              One hyperlattice per governed system. It binds the scene graph, <code>action_path</code>
+              registry, GAP policy nodes, and Lattice Channel transport into one topological matrix.
+            </p>
+          </div>
+          <div class="card">
+            <h3>AgentMesh &amp; Identity</h3>
+            <p>
+              SPIFFE/DID/mTLS identity on lattice transport, governed attestation, and ring-capability checks
+              before any agent action crosses the wrap.
+            </p>
+          </div>
+          <div class="card">
+            <h3>POTOMITAN</h3>
+            <p>
+              Mesh fallback transport. When normal internet is unavailable, the same Lattice Channel frames
+              can route through POTOMITAN without altering governance semantics.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Policy &amp; GAP</h3>
+            <p>
+              Hyperlattice GAP policies, presets, and subprotocol validators govern everything at runtime.
+              Policy loads at boot; nothing runs ungoverned.
+            </p>
+          </div>
+          <div class="card">
+            <h3>CAW Framework</h3>
+            <p>
+              Execution-layer sandbox for shell, file, network, and LLM workloads.
+              Profiles are authored in GAP, compiled locally, and enforced at runtime.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Conformance &amp; SDKs</h3>
+            <p>
+              A public CC-01..CC-15 conformance battery proves compliance, while TypeScript/Python SDKs
+              provide thin, lattice-gated clients.
+            </p>
+          </div>
+        </div>
+
+        <h2>Evaluation &amp; Trust</h2>
+        <div class="columns">
+          <div class="card">
+            <h3>15-Step Evaluation Chain</h3>
+            <p>
+              Every agent action executes a deterministic allow/deny chain that covers session state,
+              ring capability, rate limits, intent drift, covenants, Rego checks, content scanners, and
+              lattice validation.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Trust Rings</h3>
+            <p>
+              Four trust tiers gate access progressively: sandbox, user, system, and enterprise.
+              Trust scoring, kill switches, and soft/hard violation handling keep operations recoverable.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Evidence Ledger</h3>
+            <p>
+              SHA-256 hash-chain evidence and Merkle proof bundles make every mutation auditable,
+              which is essential for citizen-facing transparency records.
+            </p>
+          </div>
+        </div>
+
+        <h2>dynAEP Temporal Layer</h2>
+        <div class="columns">
+          <div class="card">
+            <h3>Action Lattice</h3>
+            <p>
+              dynAEP extends AEP from static scene governance into runtime event governance.
+              Every event crosses a partial-order DAG that checks lattice membership, parent closure,
+              constraints, trust floor, and agent interest before delivery.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Temporal Authority (dynAEP-TA)</h3>
+            <p>
+              The bridge clock is the authoritative time source. PTP, NTP, and system-clock fallback are
+              used with drift, future, and staleness checks to prevent unreliable timestamps from corrupting
+              causal chains.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Perception Governance (dynAEP-TA-P)</h3>
+            <p>
+              Speech pacing, haptic duration, notification cadence, and sensor polling intervals are governed
+              against research-derived perception bounds before they reach citizens.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Observer Adapters &amp; MCP</h3>
+            <p>
+              Webhook, SSE, poll, blockchain, and email adapters normalize external events into
+              LatticeEvents. A native MCP server exposes lattice queries, validation, agent registration,
+              discovery, event submission, temporal queries, and causal tracing.
+            </p>
+          </div>
+        </div>
+
+        <h2>Protocol Stack</h2>
+        <div class="stats-section" aria-labelledby="protocol-stack-title">
+          <h2 id="protocol-stack-title" class="sr-only">Protocol Stack</h2>
+          <figure class="protocol-stack-diagram" aria-label="Protocol stack diagram showing AEP, dynAEP, hyper-lattice, and website relationships">
+            <svg viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true" focusable="false">
+              <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                  <path d="M0,0 L0,8 L10,4 z" fill="#7aa7ff"/>
+                </marker>
+              </defs>
+              <g fill="#0f1318" stroke="#7aa7ff" stroke-width="1.6">
+                <rect x="90" y="36" width="180" height="64" rx="12"/>
+                <rect x="330" y="36" width="180" height="64" rx="12"/>
+                <rect x="90" y="140" width="180" height="64" rx="12"/>
+                <rect x="330" y="140" width="180" height="64" rx="12"/>
+              </g>
+              <g fill="#e6e8eb" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, sans-serif" text-anchor="middle">
+                <text x="180" y="64">AEP</text>
+                <text x="180" y="82">TrustConfig / PolicyEngine</text>
+                <text x="420" y="64">dynAEP</text>
+                <text x="420" y="82">TemporalAuthority</text>
+                <text x="180" y="168">hyper-lattice</text>
+                <text x="180" y="186">LatticeMemoryAdapter</text>
+                <text x="420" y="168">Website</text>
+                <text x="420" y="186">Digital Nation</text>
+              </g>
+              <g stroke="#7aa7ff" stroke-width="1.6" marker-end="url(#arrow)" aria-hidden="true">
+                <line x1="180" y1="100" x2="180" y2="140"/>
+                <line x1="270" y1="68" x2="330" y2="68"/>
+                <line x1="420" y1="100" x2="420" y2="140"/>
+                <line x1="270" y1="172" x2="330" y2="172"/>
+              </g>
+              <g fill="#cfd6dd" font-size="11" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, sans-serif" aria-hidden="true">
+                <text x="204" y="124">governs</text>
+                <text x="301" y="62" text-anchor="middle">flows into</text>
+                <text x="436" y="124" text-anchor="start">trust chain</text>
+                <text x="301" y="166" text-anchor="middle">transport</text>
+              </g>
+            </svg>
+            <figcaption class="sr-only">AEP TrustConfig and PolicyEngine govern the dynAEP TemporalAuthority and hyper-lattice LatticeMemoryAdapter. The hyper-lattice serves the governed Digital Nation website.</figcaption>
+          </figure>
+          <div id="protocol-stack" class="activity-feed" role="feed" aria-live="polite" aria-label="Protocol stack components">
+            <div class="activity-loading" aria-hidden="true">Loading protocol stack...</div>
+          </div>
+        </div>
+
+        <h2>Protocol Metrics</h2>
+        <div id="protocol-metrics" class="stats-grid" aria-live="polite" aria-label="Protocol metrics">
+          <div class="activity-loading" aria-hidden="true">Loading metrics...</div>
+        </div>
+
+        <h2>Conformance Evidence</h2>
+        <div id="protocol-conformance" class="stats-grid" aria-live="polite" aria-label="Conformance evidence">
+          <div class="activity-loading" aria-hidden="true">Loading conformance evidence...</div>
+        </div>
+
+        <h2>Repo Validation</h2>
+        <div id="protocol-repo-validation" class="stats-grid" aria-live="polite" aria-label="Repository validation">
+          <div class="activity-loading" aria-hidden="true">Loading repository validation...</div>
+        </div>
+
+        <h2>AEP &harr; GAP Cross-Validation</h2>
+        <div id="protocol-aep-gap-validation" class="stats-grid" aria-live="polite" aria-label="AEP to GAP cross-validation">
+          <div class="activity-loading" aria-hidden="true">Loading AEP↔GAP validation...</div>
+        </div>
+
+        <h2>Protocol Attestation</h2>
+        <div id="protocol-attestation" class="stats-grid" aria-live="polite" aria-label="Protocol attestation">
+          <div class="activity-loading" aria-hidden="true">Loading attestation...</div>
+        </div>
+
+        <h2>Repo Cross-References</h2>
+        <div id="protocol-cross-references" class="stats-grid" aria-live="polite" aria-label="Repository cross-references">
+          <div class="activity-loading" aria-hidden="true">Loading cross-references...</div>
+        </div>
+
+        <h2>Verified Identities</h2>
+        <div id="verified-identities" class="identity-grid" aria-live="polite" aria-label="Verified identities">
+          <div class="activity-loading" aria-hidden="true">Loading verified identities...</div>
+        </div>
+
+        <h2>Quantum Compute Signal</h2>
+        <div id="quantum-status" class="stats-grid" aria-live="polite" aria-label="Quantum compute status">
+          <div class="activity-loading" aria-hidden="true">Loading quantum status...</div>
+        </div>
+        <p class="section-note">
+          <strong>Status:</strong> Quantum attestation is currently <em>software simulation only</em> (classical PRNG, no quantum hardware deployed). It is a research-scoped future project, not an operational capability. The phased hardware plan (QRNG → FPGA → on-premise QPU) is documented in the
+          <a href="quantum-roadmap.html">Quantum Roadmap</a>.
+        </p>
+        <p class="section-note">
+          <a href="quantum-roadmap.html">Read the full Quantum Attestation Hardware Roadmap</a> for the phased plan toward sovereign quantum attestation.
+        </p>
+
+        <h2>Live Services</h2>
+        <div id="protocol-live-services" class="stats-grid" aria-live="polite" aria-label="Live service status">
+          <div class="activity-loading" aria-hidden="true">Loading live service status...</div>
+        </div>
+
+        <h2>Citizen Benefits</h2>
+        <div id="protocol-benefits" class="activity-feed" role="feed" aria-live="polite" aria-label="Citizen benefits">
+          <div class="activity-loading" aria-hidden="true">Loading benefits...</div>
+        </div>
+
+        <h2>What This Means for Citizens & Governance</h2>
+        <div class="columns">
+          <div class="card">
+            <h3>Deterministic Outcomes</h3>
+            <p>
+              Because policy is enforced as architecture, citizen-facing services cannot deviate from the
+              approved behaviour contract. This reduces surprise, error, and unilateral change.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Auditable Automation</h3>
+            <p>
+              Evidence ledgers, vector clocks, and Merkle proofs make agency automations inspectable.
+              Oversight bodies can verify that each automated decision satisfied the required sequence,
+              constraints, and trust tier before execution.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Transparent Integration</h3>
+            <p>
+              The AEP/dynAEP stack is published as source, Docker, and SDKs with an open conformance suite.
+              Transparency reports and protocol status can be reviewed alongside operational disclosures.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Sovereign Resilience</h3>
+            <p>
+              Lattice Channels, POTOMITAN mesh fallback, local Base Node deployment, and offline
+              conformance testing ensure AETHERIA services remain operable under degraded network states
+              without relaxing governance.
+            </p>
+          </div>
+        </div>
+
+        <h2>Cross-Links</h2>
+        <div class="columns">
+          <div class="card">
+            <h3>Transparency</h3>
+            <p>
+              <a href="transparency.html">Transparency</a> publishes operational disclosures, open records requests,
+              and audit-ready reports from ministries governed by this protocol stack.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Dashboard</h3>
+            <p>
+              <a href="dashboard.html">Dashboard</a> surfaces live network and operational metrics that reflect
+              system health, queue depth, and conformance-status signals.
+            </p>
+          </div>
+          <div class="card">
+            <h3>About</h3>
+            <p>
+              <a href="about.html">About</a> documents the constitutional vision, layered-republic structure,
+              and rationale for adopting deterministic, auditable digital governance.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Quantum Roadmap</h3>
+            <p>
+              <a href="quantum-roadmap.html">Quantum Roadmap</a> explains the phased hardware path to sovereign
+              quantum attestation, from open QRNG to FPGA simulation and on-premise QPU.
+            </p>
+          </div>
+        </div>
+
+        <div class="legal-block">
+          <p>Protocol status is maintained by the Secretary of Technology &amp; Innovation. Changes are published through the same immutable audit trail applied to AEP and dynAEP.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <strong>THE PRINCIPALITY OF AETHERIA</strong>
+          <span class="footer-tagline">Sovereign by code</span>
+        </div>
+        <div class="footer-meta">
+          <span class="protocol-version" aria-label="Protocol version">Protocol v0.1.0</span>
+          <span class="footer-status" aria-label="Public network status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Network Active
+          </span>
+          <span class="footer-year" data-year>2026</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer"></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/site.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/protocol-status-data.js"></script>
+  
 </body>
