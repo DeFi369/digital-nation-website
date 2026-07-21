@@ -221,4 +221,9 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Hub: added `crossorigin="anonymous"` to font stylesheet
   - Verified: local grep + live curl from GitHub Pages CDN
 
-- **2026-07-21 — Round 34 pending** (next improvement cycle)
+- **2026-07-21 — Round 34 improvements** (commit `7d87bb4`):
+  - All 9 pages: added `referrerpolicy="no-referrer-when-downgrade"` to Google Fonts preconnect hints
+  - All 9 pages: added `fetchpriority="low"` to Atom feed `<link rel="alternate">`
+  - Verified: HTML parser + grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 35 pending** (next improvement cycle)
