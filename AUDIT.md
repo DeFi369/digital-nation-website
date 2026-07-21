@@ -186,7 +186,7 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - All 9 pages: added `fetchpriority="low"` to Atom feed `<link rel="alternate">`
   - Verified: grep-based pass on all 9 pages
 
-- **2026-07-21 — Round 27 improvements** (commit pending):
+- **2026-07-21 — Round 27 improvements** (commit `3423148`):
   - All 9 pages: added BreadcrumbList JSON-LD
   - HL MCP: corrected heading hierarchy (<h2> → <h1>)
   - Verified: grep-based pass on all 9 pages
@@ -197,4 +197,8 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Remaining 7 pages already had full OG/Twitter coverage
   - Verified: grep-based pass on changed files
 
-- **2026-07-21 — Round 29 pending** (next improvement cycle)
+- **2026-07-21 — Round 29 improvements** (commit pending):
+  - All 9 pages: set `scrollRestoration="manual"`
+  - Verified: grep-based pass on all 9 pages
+
+- **2026-07-21 — Round 30 pending** (next improvement cycle)
