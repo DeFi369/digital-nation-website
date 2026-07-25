@@ -1,4 +1,4 @@
-# Digital Nation Graphic Assets
+# Noosphere Graphic Assets
 
 Dark-themed SVG motif set for the public website.
 

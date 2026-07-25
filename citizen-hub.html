@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal citizen dashboard for the Principality of Aetheria. Track signed petitions, submitted feedback, upcoming elections, and records requests.">
+  <meta name="description" content="Personal citizen dashboard for the Noosphere. Track signed petitions, submitted feedback, upcoming elections, and records requests.">
   <link rel="canonical" href="https://defi369.github.io/digital-nation-website/citizen-hub.html">
-  <meta property="og:title" content="Citizen Hub — The Principality of Aetheria">
+  <meta property="og:title" content="Citizen Hub — The Noosphere">
   <meta property="og:description" content="Your personal action center: petitions, elections, records requests, and civic activity.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://defi369.github.io/digital-nation-website/citizen-hub.html">
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Citizen Hub — The Principality of Aetheria">
+  <meta name="twitter:title" content="Citizen Hub — The Noosphere">
   <meta name="twitter:description" content="Your personal action center: petitions, elections, records requests, and civic activity.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
 
-  <title>Citizen Hub — The Principality of Aetheria</title>
+  <title>Citizen Hub — The Noosphere</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
@@ -26,8 +26,57 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="icon" href="./favicon.ico">
-</head>
+  <style>
+    .noosphere-intro{
+      position:fixed;inset:0;z-index:9999;background:#04060f;
+      display:flex;align-items:center;justify-content:center;
+      transition:opacity .8s ease;opacity:1;
+    }
+    .noosphere-intro--hidden{opacity:0;pointer-events:none;}
+    .noosphere-video{
+      width:100%;height:100%;object-fit:cover;display:block;
+      image-rendering:auto;background:#04060f;
+    }
+    .noosphere-skip{
+      position:fixed;right:24px;bottom:24px;z-index:10000;
+      background:rgba(10,14,28,.6);color:#e8c659;border:1px solid #e8c659;
+      font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.08em;
+      padding:10px 18px;border-radius:4px;cursor:pointer;
+      transition:background .2s,color .2s;text-transform:uppercase;
+    }
+    .noosphere-skip:hover{background:#e8c659;color:#04060f;}
+    /* Respect reduced-motion: skip straight to the hub */
+    @media (prefers-reduced-motion: reduce){
+      .noosphere-intro{display:none!important;}
+    }
+  </style>
 <body class="page-engage" data-theme="engagement">
+  <!-- Noosphere intro overlay: auto-plays once, then reveals the hub -->
+  <div id="noosphere-intro" class="noosphere-intro" aria-hidden="true">
+    <video id="noosphere-video" class="noosphere-video" autoplay muted playsinline preload="auto">
+      <source src="assets/videos/noosphere-intro.mp4" type="video/mp4">
+    </video>
+    <button id="noosphere-skip" class="noosphere-skip" type="button">Enter ›</button>
+  </div>
+  <script>
+    (function () {
+      var intro = document.getElementById('noosphere-intro');
+      var video = document.getElementById('noosphere-video');
+      var skip  = document.getElementById('noosphere-skip');
+      if (!intro || !video) return;
+      var done = false;
+      function dismiss() {
+        if (done) return; done = true;
+        intro.classList.add('noosphere-intro--hidden');
+        setTimeout(function(){ intro.remove(); }, 900);
+      }
+      video.addEventListener('ended', dismiss);
+      skip.addEventListener('click', dismiss);
+      // Safety: if the video can't load/play, reveal the hub after 1.2s
+      video.addEventListener('error', function(){ setTimeout(dismiss, 400); });
+      setTimeout(dismiss, 12000);
+    })();
+  </script>
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav" id="site-header-nav">
@@ -40,10 +89,10 @@
     <section class="page">
       <div class="container">
         <h1>Citizen Hub</h1>
-        <p class="lead">Welcome to your personal action center for civic participation in the Principality of Aetheria. Open Records is an operational arm of the transparency system, managed by the Open Records Officer and overseen by the Assembly. The Chief Electoral Officer administers all elections and referendums and reports to the Assembly.</p>
+        <p class="lead">Welcome to your personal action center for civic participation in the Noosphere. Open Records is an operational arm of the transparency system, managed by the Open Records Officer and overseen by the Assembly. The Chief Electoral Officer administers all elections and referendums and reports to the Assembly.</p>
         <section class="services-section" aria-labelledby="citizen-services-title">
           <h2 id="citizen-services-title">Citizen Services</h2>
-          <p class="services-intro">Aetheria provides essential services to help every citizen participate confidently. Choose a service below to get started.</p>
+          <p class="services-intro">Noosphere provides essential services to help every citizen participate confidently. Choose a service below to get started.</p>
           <div class="services-grid">
             <a class="service-card" href="getting-started.html">
               <span class="hub-action-icon" aria-hidden="true">🧭</span>
@@ -53,7 +102,7 @@
             <a class="service-card" href="ambassadors.html">
               <span class="hub-action-icon" aria-hidden="true">🤝</span>
               <h3>Ambassador Program</h3>
-              <p>Meet citizen ambassadors, learn how to represent Aetheria, and apply if you want to help expand the Digital Nation.</p>
+              <p>Meet citizen ambassadors, learn how to represent Noosphere, and apply if you want to help expand the Noosphere.</p>
             </a>
             <a class="service-card" href="helpline.html">
               <span class="hub-action-icon" aria-hidden="true">🛟</span>
@@ -73,7 +122,7 @@
             <a class="hub-action-card" href="ambassadors.html">
               <span class="hub-action-icon" aria-hidden="true">🤝</span>
               <h3>Ambassador Program</h3>
-              <p>Represent Aetheria, speak at events, and help onboard new citizens.</p>
+              <p>Represent Noosphere, speak at events, and help onboard new citizens.</p>
             </a>
             <a class="hub-action-card" href="helpline.html">
               <span class="hub-action-icon" aria-hidden="true">🛟</span>

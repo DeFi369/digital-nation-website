@@ -15,11 +15,11 @@
     "frameworks": [
       {
         "id": "SEC-FW-01",
-        "title": "Aetheria Operational Awareness Framework",
+        "title": "Noosphere Operational Awareness Framework",
         "status": "Ratified",
         "category": "Digital Operations",
         "owner": "Digital Operations & Situational Awareness",
-        "summary": "Comprehensive operational awareness framework covering platform reliability, incident response, and threat monitoring for all Aetheria infrastructure.",
+        "summary": "Comprehensive operational awareness framework covering platform reliability, incident response, and threat monitoring for all Noosphere infrastructure.",
         "lastReviewed": "2026-05-10"
       },
       {

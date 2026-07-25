@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-22",
+  "generated": "2026-07-25",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -146,9 +146,9 @@
     ],
     "identityManifestCount": 15,
     "identityKeyCount": 19,
-    "latestCommit": "af025cef724f772fd11d34631007e421e72acf10 audit: record round 34 improvements",
-    "latestCommitDate": "2026-07-21",
-    "lastAudit": "2026-07-22"
+    "latestCommit": "d41d25f18f8cf6fb90c3a3eae21f5c77203524eb chore: refresh protocol/lattice data (2026-07-22 generated snapshot)",
+    "latestCommitDate": "2026-07-22",
+    "lastAudit": "2026-07-25"
   },
   "quantum": {
     "available": true,
@@ -270,6 +270,6 @@
     "signaturesVerified": 19,
     "signaturesTotal": 19,
     "signatureCoverage": "100%",
-    "lastVerification": "2026-07-22T06:00:53.606879+00:00"
+    "lastVerification": "2026-07-25T06:00:32.241812+00:00"
   }
 }

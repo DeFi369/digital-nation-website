@@ -10,7 +10,7 @@ Derived from local public docs:
 - /home/user/repos/digital-nation-website/about.html
 
 ## Condensed Public Summary
-The Principality of Aetheria is a sovereign digital polity organized as a layered republic. Executive authority rests with the President. The President appoints the Cabinet and senior officers and sets national strategy. The Vice President coordinates between departments and chairs the Assembly when required. The Constitutional Council interprets the charter and reviews amendments.
+The Noosphere is a sovereign digital polity organized as a layered republic. Executive authority rests with the President. The President appoints the Cabinet and senior officers and sets national strategy. The Vice President coordinates between departments and chairs the Assembly when required. The Constitutional Council interprets the charter and reviews amendments.
 
 Seven secretaries report directly to the President:
 - Secretary of External Affairs

@@ -8,23 +8,23 @@
   <meta charset="UTF-8" />
   <meta name="last-modified" content="2026-07-21" />
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="author" content="Digital Nation">
+  <meta name="author" content="Noosphere">
   <meta name="theme-color" content="#020408">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Digital Nation">
+  <meta name="apple-mobile-web-app-title" content="Noosphere">
   <meta name="msapplication-TileColor" content="#020408">
   <meta name="format-detection" content="telephone=no">
 <meta name="robots" content="index, follow">
   <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Nation — Orbital Command Center</title>
+  <title>Noosphere — Orbital Command Center</title>
     <meta name="twitter:card" content="summary">
-<meta name="description" content="The sovereign hub of the Digital Nation. Real-time neural substrate, trading desk, governance, and agent activity — orbital command center." />
-  <meta property="og:title" content="Digital Nation — Hub" />
-  <meta property="og:description" content="Portal to the Digital Nation: live quantum brain, trading desk, governance, and agent telemetry." />
+<meta name="description" content="The sovereign hub of the Noosphere. Real-time neural substrate, trading desk, governance, and agent activity — orbital command center." />
+  <meta property="og:title" content="Noosphere — Hub" />
+  <meta property="og:description" content="Portal to the Noosphere: live quantum brain, trading desk, governance, and agent telemetry." />
   <meta property="og:type" content="website" />
-    <meta name="generator" content="Digital Nation Static Site">
+    <meta name="generator" content="Noosphere Static Site">
 <link rel="canonical" href="/digital-nation-website/hub.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" referrerpolicy="no-referrer-when-downgrade" crossorigin />
@@ -158,65 +158,47 @@
       to { transform: rotate(360deg); }
     }
 
-    .hub-core {
-      position: absolute;
-      inset: 34%;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.09), transparent 60%),
-        radial-gradient(circle at 50% 50%, rgba(122, 167, 255, 0.22), transparent 70%),
-        var(--hub-surface);
-      border: 1px solid var(--hub-border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 2px;
-      box-shadow:
-        0 0 0 1px rgba(122, 167, 255, 0.1),
-        0 24px 70px rgba(0, 0, 0, 0.7),
-        0 0 90px rgba(122, 167, 255, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      z-index: 5;
-      text-decoration: none;
-      cursor: pointer;
-      color: inherit;
-      transition: transform 0.25s cubic-bezier(.2,.8,.2,1), box-shadow 0.25s ease;
+    /* ---- Edge graphics: left/right vertical data streams ---- */
+    .hub-edge{
+      position:absolute;top:0;bottom:0;width:clamp(40px,7vw,96px);
+      display:flex;flex-direction:column;justify-content:space-around;
+      align-items:center;gap:8px;z-index:3;pointer-events:none;
+      overflow:hidden;
     }
-    .hub-core:hover {
-      transform: scale(1.04);
-      box-shadow:
-        0 0 0 1px rgba(122, 167, 255, 0.22),
-        0 28px 80px rgba(0, 0, 0, 0.75),
-        0 0 120px rgba(122, 167, 255, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    .hub-edge--left{left:0;}
+    .hub-edge--right{right:0;}
+    .hub-edge__stream{
+      width:2px;height:100%;
+      background:linear-gradient(to bottom,
+        transparent,
+        rgba(122,167,255,0.15) 15%,
+        rgba(192,132,252,0.45) 50%,
+        rgba(52,211,153,0.15) 85%,
+        transparent);
+      position:relative;
+      animation:edgeFlow 6s linear infinite;
     }
-    .hub-core__title {
-      font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
-      font-weight: 700;
-      font-size: clamp(24px, 3.2vw, 44px);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #fff;
-      line-height: 1;
+    .hub-edge--right .hub-edge__stream{
+      background:linear-gradient(to top,
+        transparent,
+        rgba(122,167,255,0.15) 15%,
+        rgba(250,204,21,0.45) 50%,
+        rgba(52,211,153,0.15) 85%,
+        transparent);
+      animation-delay:-3s;
     }
-    .hub-core__sub {
-      font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-      font-size: clamp(8px, 1vw, 10px);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--hub-muted);
+    .hub-edge__stream::after{
+      content:"";position:absolute;left:-2px;top:-30%;
+      width:6px;height:30%;border-radius:3px;
+      background:linear-gradient(to bottom,transparent,rgba(200,220,255,0.9),transparent);
+      animation:edgePulse 3.5s ease-in-out infinite;
     }
-    .hub-core__pulse {
-      margin-top: 8px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #34d399;
-      box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.8);
-      animation: pulse-ring 2.2s ease-out infinite;
+    .hub-edge--right .hub-edge__stream::after{
+      background:linear-gradient(to top,transparent,rgba(200,220,255,0.9),transparent);
+      animation-delay:-1.5s;
     }
+    @keyframes edgeFlow{0%{opacity:.5;}50%{opacity:1;}100%{opacity:.5;}}
+    @keyframes edgePulse{0%{top:-30%;}100%{top:100%;}}
     @keyframes pulse-ring {
       0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.8); }
       70% { box-shadow: 0 0 0 12px rgba(52, 211, 153, 0); }
@@ -439,27 +421,81 @@
     border-radius: 2px;
   }
   .skip-link:focus {
-    top: 0;
+  top: 0;
+  }
+
+  /* ---- Noosphere intro overlay ---- */
+  .noosphere-intro{
+  position:fixed;inset:0;z-index:10000;background:#020408;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .8s ease;opacity:1;
+  }
+  .noosphere-intro--hidden{opacity:0;pointer-events:none;}
+  .noosphere-video{width:100%;height:100%;object-fit:cover;display:block;background:#020408;}
+  .noosphere-skip{
+  position:fixed;right:24px;bottom:24px;z-index:10001;
+  background:rgba(10,14,28,.6);color:#7aa7ff;border:1px solid #7aa7ff;
+  font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.08em;
+  padding:10px 18px;border-radius:4px;cursor:pointer;
+  transition:background .2s,color .2s;text-transform:uppercase;
+  }
+  .noosphere-skip:hover{background:#7aa7ff;color:#020408;}
+  .noosphere-fallback{
+    position:absolute;inset:0;display:none;
+    flex-direction:column;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 45%, rgba(122,167,255,0.08), transparent 60%), #020408;
+    text-align:center;z-index:1;
+  }
+  .noosphere-fallback--show{display:flex;}
+  .noosphere-video{position:relative;z-index:2;}
+  .noosphere-fallback__word{
+    font-family:'Unbounded','IBM Plex Mono',sans-serif;font-weight:900;
+    font-size:clamp(36px,8vw,96px);letter-spacing:0.18em;
+    color:#e8c659;text-shadow:0 0 40px rgba(232,198,89,0.4);
+    animation:nooPulse 3s ease-in-out infinite;
+  }
+  .noosphere-fallback__sub{
+    font-family:'IBM Plex Mono',monospace;font-size:clamp(10px,1.5vw,14px);
+    letter-spacing:0.3em;text-transform:uppercase;color:#7aa7ff;margin-top:12px;
+  }
+  @keyframes nooPulse{0%,100%{opacity:.85;}50%{opacity:1;}}
+
+  /* ---- Per-portal transition: themed video overlay ---- */
+  .portal-transition{
+    position:fixed;inset:0;z-index:10001;pointer-events:none;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;background:#020408;
+    transition:opacity .2s ease;
+  }
+  .portal-transition--active{opacity:1;pointer-events:all;}
+  .portal-transition__video{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+
+  /* ---- Portal videos replace CSS keyframes (generated per-portal clips) ---- */
+
+  @media (prefers-reduced-motion: reduce){
+    .noosphere-intro,.portal-transition{display:none!important;}
   }
 </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Digital Nation","url":"https://defi369.github.io/digital-nation-website/","description":"Sovereign digital nation governed by AEP 2.8, dynAEP temporal layer, and HyperLattice substrate.","sameAs":["https://github.com/DeFi369"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Noosphere","url":"https://defi369.github.io/digital-nation-website/","description":"Sovereign digital nation governed by AEP 2.8, dynAEP temporal layer, and HyperLattice substrate.","sameAs":["https://github.com/DeFi369"]}</script>
   <link rel="icon" href="/digital-nation-website/assets/images/digital-nation-logo.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://defi369.github.io/digital-nation-website/" />
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png" />
   <link rel="sitemap" type="application/xml" href="/digital-nation-website/sitemap.xml" />
-  <link rel="alternate" type="application/rss+xml" title="Digital Nation Feed" href="/digital-nation-website/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Noosphere Feed" href="/digital-nation-website/feed.xml" />
   <a class="skip-link" href="#orbit-system">Skip to content</a>
   <meta name="article:modified_time" content="2026-07-21T08:23:07Z">
   <link rel="author" href="mailto:digital-nation@defi369.github.io">
   <meta property="og:locale" content="en_US">
-  <link rel="alternate" type="application/atom+xml" title="Digital Nation Hub — Atom Feed" href="/digital-nation-website/feed.atom" fetchpriority="low">
+  <link rel="alternate" type="application/atom+xml" title="Noosphere Hub — Atom Feed" href="/digital-nation-website/feed.atom" fetchpriority="low">
   <link rel="apple-touch-icon" href="/digital-nation-website/assets/images/apple-touch-icon.png">
   <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' http://localhost:*;">
   <link rel="manifest" href="/digital-nation-website/assets/manifest.webmanifest">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "/digital-nation-website/hub.html"}]}</script>
-  <meta property="og:site_name" content="Digital Nation">
-  <meta name="twitter:title" content="Digital Nation Hub">
+  <meta property="og:site_name" content="Noosphere">
+  <meta name="twitter:title" content="Noosphere Hub">
   <meta name="twitter:image" content="/digital-nation-website/assets/images/digital-nation-logo.svg">
   <meta property="og:url" content="/digital-nation-website/hub.html">
   <script>if ("scrollRestoration" in history) history.scrollRestoration = "manual";</script>
@@ -476,6 +512,18 @@
   </style>
 </head>
 <body class="page-hub">
+  <!-- Noosphere intro overlay: plays once on landing, then reveals the orbital hub -->
+  <div id="noosphere-intro" class="noosphere-intro" aria-hidden="true">
+    <!-- Static fallback shown behind video if video can't autoplay -->
+    <div class="noosphere-fallback" id="noosphere-fallback" aria-hidden="true">
+      <div class="noosphere-fallback__word">NOOSPHERE</div>
+      <div class="noosphere-fallback__sub">The Sphere of Mind</div>
+    </div>
+    <video id="noosphere-video" class="noosphere-video" autoplay muted playsinline preload="auto" poster="assets/videos/noosphere-poster.jpg">
+      <source src="assets/videos/noosphere-intro.mp4" type="video/mp4">
+    </video>
+    <button id="noosphere-skip" class="noosphere-skip" type="button">Enter ›</button>
+  </div>
   <header role="banner">
   <section id="hub-main" aria-label="Main content">
   <div class="stars" aria-hidden="true" id="stars"></div>
@@ -483,10 +531,9 @@
   <div class="nebula nebula--b" aria-hidden="true"></div>
   <div class="nebula nebula--c" aria-hidden="true"></div>
 
-  <main id="main" aria-label="Digital Nation Hub">
+  <main id="main" aria-label="Noosphere Hub">
     <div class="orbit-ring orbit-ring--outer" aria-hidden="true"></div>
     <div class="orbit-ring orbit-ring--mid" aria-hidden="true"></div>
-    <div class="orbit-ring orbit-ring--inner" aria-hidden="true"></div>
 
     <div class="spoke" aria-hidden="true"></div>
     <div class="spoke" aria-hidden="true"></div>
@@ -497,18 +544,24 @@
     <div class="spoke" aria-hidden="true"></div>
     <div class="spoke" aria-hidden="true"></div>
 
-    <a class="hub-core" id="hub-spin" href="https://defi369.github.io/digital-nation-website/" aria-label="Digital Nation home">
-      <h1 class="hub-core__title">Hub</h1>
-      <div class="hub-core__sub">Digital Nation</div>
-      <div class="hub-core__pulse" aria-hidden="true"></div>
-    </a>
+    <!-- Edge graphics: left + right vertical data streams -->
+    <div class="hub-edge hub-edge--left" aria-hidden="true">
+      <div class="hub-edge__stream"></div>
+      <div class="hub-edge__stream"></div>
+      <div class="hub-edge__stream"></div>
+    </div>
+    <div class="hub-edge hub-edge--right" aria-hidden="true">
+      <div class="hub-edge__stream"></div>
+      <div class="hub-edge__stream"></div>
+      <div class="hub-edge__stream"></div>
+    </div>
 
-    <div class="orbit-carousel" role="navigation" aria-label="Hub navigation" id="orbit-carousel">
+    <div class="orbit-carousel" role="navigation" aria-label="Noosphere navigation" id="orbit-carousel">
       <div class="orbit-node-wrap orbit-node-wrap--0">
-        <a class="orbit-node orbit-node--theme-a" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="4D Quantum Thought Engine">
+        <a class="orbit-node orbit-node--theme-a" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="Quantum Lattice — live agent flows">
           <div class="orbit-node__icon">🧠</div>
-          <div class="orbit-node__title">Lattice Brain</div>
-          <div class="orbit-node__badge">Live</div>
+          <div class="orbit-node__title">Quantum Lattice</div>
+          <div class="orbit-node__badge">Live Flows</div>
         </a>
       </div>
 
@@ -545,7 +598,7 @@
       </div>
 
       <div class="orbit-node-wrap orbit-node-wrap--5">
-        <a class="orbit-node orbit-node--theme-e" href="https://defi369.github.io/digital-nation-website/index-legacy.html" aria-label="Digital Nation archive">
+        <a class="orbit-node orbit-node--theme-e" href="https://defi369.github.io/digital-nation-website/index-legacy.html" aria-label="Noosphere archive">
           <div class="orbit-node__icon">📜</div>
           <div class="orbit-node__title">Archive</div>
           <div class="orbit-node__badge">Legacy</div>
@@ -574,6 +627,7 @@
 
   <div class="telemetry-bar" aria-label="Live system windows">
     <div class="telemetry-item"><span>Brain</span><a class="telemetry-item__value" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer">Open</a></div>
+    <div class="telemetry-item"><span>Agents</span><a class="telemetry-item__value" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" id="hub-agent-count">—</a></div>
     <div class="telemetry-item"><span>Desk</span><a class="telemetry-item__value" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer">Open</a></div>
     <div class="telemetry-item"><span>HL MCP</span><a class="telemetry-item__value" href="/digital-nation-website/mcp-status.html">Status</a></div>
     <div class="telemetry-item"><span>DN Site</span><a class="telemetry-item__value" href="https://defi369.github.io/digital-nation-website/" target="_blank" rel="noopener noreferrer">Open</a></div>
@@ -608,10 +662,7 @@
       }
 
       const carousel = document.getElementById('orbit-carousel');
-      const hubSpin = document.getElementById('hub-spin');
       let spinAngle = 0;
-      let holdTimer = null;
-      let holdInterval = null;
 
       function setNodeTransform(wrap, index, angle) {
         const base = index * 45;
@@ -629,42 +680,7 @@
         });
       }
 
-      function startHold() {
-        applySpin(spinAngle - 15);
-        holdTimer = setTimeout(function () {
-          holdInterval = setInterval(function () {
-            applySpin(spinAngle - 20);
-          }, 40);
-        }, 180);
-      }
-
-      function stopHold() {
-        clearTimeout(holdTimer);
-        clearInterval(holdInterval);
-        holdTimer = null;
-        holdInterval = null;
-        snapToGrid();
-      }
-
-      function snapToGrid() {
-        const snapped = Math.round(spinAngle / 45) * 45;
-        applySpin(snapped);
-      }
-
       applySpin(0);
-
-      if (hubSpin) {
-        hubSpin.addEventListener('click', function (e) {
-          e.preventDefault();
-          stopHold();
-          applySpin(spinAngle - 45);
-        });
-        hubSpin.addEventListener('mousedown', startHold);
-        hubSpin.addEventListener('mouseup', stopHold);
-        hubSpin.addEventListener('mouseleave', stopHold);
-        hubSpin.addEventListener('touchstart', function (e) { e.preventDefault(); startHold(); }, { passive: false });
-        hubSpin.addEventListener('touchend', function () { stopHold(); });
-      }
 
       const mcpTerminal = null;
       const mcpClose = null;
@@ -683,7 +699,121 @@
         });
       }
     })();
+
+    // ---- Noosphere intro: dismiss on end/skip/timeout ----
+    (function () {
+      var intro = document.getElementById('noosphere-intro');
+      var video = document.getElementById('noosphere-video');
+      var skip  = document.getElementById('noosphere-skip');
+      var fallback = document.getElementById('noosphere-fallback');
+      if (!intro) return;
+      var done = false;
+      function dismiss() {
+        if (done) return; done = true;
+        intro.classList.add('noosphere-intro--hidden');
+        setTimeout(function () { intro.remove(); }, 800);
+      }
+      if (video) {
+        video.addEventListener('ended', dismiss);
+        video.addEventListener('error', function () {
+          if (fallback) fallback.classList.add('noosphere-fallback--show');
+          setTimeout(dismiss, 2000);
+        });
+        // Try to play programmatically (muted + playsinline should allow it)
+        var playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.then(function () {
+            // playing — video covers fallback (z-index 2 > 1)
+          }).catch(function () {
+            // autoplay blocked — show fallback, dismiss after hold
+            if (fallback) fallback.classList.add('noosphere-fallback--show');
+            setTimeout(dismiss, 4000);
+          });
+        }
+      }
+      if (skip) skip.addEventListener('click', dismiss);
+      // Safety: if nothing happened, dismiss after 12s
+      setTimeout(dismiss, 12000);
+    })();
+
+    // ---- Per-portal transition: intercept orbit-node clicks, animate per-theme, then navigate ----
+    (function () {
+      // Map portal label → portal video clip filename
+      var THEME_MAP = [
+        { match: /quantum lattice/i,           video: 'portals/lattice.mp4' },
+        { match: /trading desk/i,              video: 'portals/trading.mp4' },
+        { match: /governance/i,                video: 'portals/governance.mp4' },
+        { match: /roadmap/i,                   video: 'portals/roadmap.mp4' },
+        { match: /hl mcp|hyperlattice|mcp/i,    video: 'portals/mcp.mp4' },
+        { match: /archive/i,                   video: 'portals/archive.mp4' },
+        { match: /structure/i,                 video: 'portals/structure.mp4' },
+        { match: /ecosystem/i,                 video: 'portals/ecosystem.mp4' }
+      ];
+      function nodeIcon(node) {
+        var ic = node.querySelector('.orbit-node__icon');
+        return ic ? ic.textContent.trim() : '🌐';
+      }
+      function videoFor(node) {
+        var label = (node.getAttribute('aria-label') || '') + ' ' + (node.textContent || '');
+        for (var i = 0; i < THEME_MAP.length; i++) {
+          if (THEME_MAP[i].match.test(label)) return THEME_MAP[i].video;
+        }
+        return 'portals/lattice.mp4'; // default
+      }
+      function firePortal(node, href) {
+        var src = videoFor(node);
+        var overlay = document.createElement('div');
+        overlay.className = 'portal-transition';
+        var vid = document.createElement('video');
+        vid.className = 'portal-transition__video';
+        vid.muted = true;
+        vid.playsInline = true;
+        vid.autoplay = true;
+        var source = document.createElement('source');
+        source.src = src;
+        source.type = 'video/mp4';
+        vid.appendChild(source);
+        overlay.appendChild(vid);
+        document.body.appendChild(overlay);
+        void overlay.offsetHeight;
+        overlay.classList.add('portal-transition--active');
+        // navigate after the clip ends (clips are 4s) or after a max timeout
+        var navigated = false;
+        function go() {
+          if (navigated) return; navigated = true;
+          if (href) window.location.href = href;
+          overlay.remove();
+        }
+        vid.addEventListener('ended', go);
+        vid.play().catch(function(){ /* autoplay may be blocked; still navigate */ });
+        setTimeout(go, 5000); // safety: max 5s hold
+      }
+      var nodes = document.querySelectorAll('.orbit-node');
+      nodes.forEach(function (node) {
+        node.addEventListener('click', function (e) {
+          var href = node.getAttribute('href');
+          if (!href) return;
+          e.preventDefault();
+          firePortal(node, href);
+        });
+      });
+    })();
+
+    // Live agent count from the quantum lattice dashboard.
+    (function pollAgents() {
+      const el = document.getElementById('hub-agent-count');
+      if (!el) return;
+      fetch('http://localhost:8086/api/agents', { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : null)
+        .then(d => {
+          if (d && d.ok && typeof d.agentCount === 'number') {
+            el.textContent = d.agentCount + ' online';
+          }
+        })
+        .catch(() => { /* silent */ })
+        .finally(() => setTimeout(pollAgents, 5000));
+    })();
   </script>
-  <p class="internal-links">Also see the <a href="/digital-nation-website/index.html">Digital Nation homepage</a> for the full citizen experience.</p>
+  <p class="internal-links">Also see the <a href="/digital-nation-website/index.html">Noosphere homepage</a> for the full citizen experience.</p>
 </body>
 </html>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Site integrity checker for the Aetheria static site.
+"""Site integrity checker for the Noosphere static site.
 
 Catches the corruption classes that scripted bulk edits have produced here
 before: duplicated <main>/<header> blocks, orphaned dropdown markup, static

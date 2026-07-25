@@ -38,7 +38,7 @@
       {"id":"ECON-R01","title":"Q1 Market Integrity Review","category":"Audit","status":"Published","owner":"Independent Auditors","summary":"Order-book fairness, fee transparency, and settlement latency review across open-market runtimes.","published":"2026-03-31"},
       {"id":"ECON-R02","title":"Midyear Treasury Reconciliation","category":"Governance","status":"In Progress","owner":"Audit Office","summary":"Line-item reconciliation of ministry budgets, instrument flows, and public-goods disbursements through Q2.","published":null},
       {"id":"ECON-R03","title":"Citizen Participation Survey","category":"Research","status":"Scheduled","owner":"Research & Laboratory Policy","summary":"Annual survey of citizen engagement, satisfaction, and trust across economy ministries and programs.","published":null},
-      {"id":"ECON-R04","title":"Instruments Depth & Distribution Review","category":"Governance","status":"Published","owner":"Treasury Node Alpha","summary":"Analysis of instrument distribution, concentration, and reserve coverage across Aetheria markets.","published":"2026-01-15"},
+      {"id":"ECON-R04","title":"Instruments Depth & Distribution Review","category":"Governance","status":"Published","owner":"Treasury Node Alpha","summary":"Analysis of instrument distribution, concentration, and reserve coverage across Noosphere markets.","published":"2026-01-15"},
       {"id":"ECON-R05","title":"Quadratic Funding Efficacy Report","category":"Research","status":"Draft","owner":"Assembly Grants Committee","summary":"Capital efficiency, project diversity, and long-term outcomes metrics for quadratic matching pools.","published":null}
     ]
   }

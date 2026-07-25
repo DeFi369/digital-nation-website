@@ -113,14 +113,14 @@ Cross-cutting execution functions. Retired legacy structure items preserved as d
 
 **Chief Electoral Officer**
 |- Internal elections, referendums, apportionment; certifies results
-|- Reports to: Assembly of the Digital Nation
+|- Reports to: Assembly of the Noosphere
 |- Classification: AEP_GOVERNANCE_CHIEF_ELECTORAL_OFFICER
 
 ---
 
 ## LAYER 2: CO-EQUAL BRANCHES
 
-**Assembly of the Digital Nation**
+**Assembly of the Noosphere**
 |- Unicameral legislature
 |- Powers: initiate legislation, approve budgets, confirm appointments, pass resolutions, oversee elections
 |- Reports to: People / Charter
@@ -259,7 +259,7 @@ President
 ├── Chief Electoral Officer → Reports to Assembly
 │   ├── Elections Administration Lead
 │   └── Petition & Initiative Validation Lead
-├── Assembly of the Digital Nation → Co-equal branch
+├── Assembly of the Noosphere → Co-equal branch
 │   ├── Clerk of the Assembly
 │   └── Legislative Counsel
 └── Constitutional Court → Co-equal branch

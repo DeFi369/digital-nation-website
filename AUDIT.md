@@ -9,7 +9,7 @@ at runtime). Local preview: serve the **parent** dir (`cd ~/repos && python3 -m
 http.server`) because every page carries `<base href="/digital-nation-website/">`.
 
 ⚠ **Two writers share this working tree.** A local Hermes agent
-(`~/.hermes/hermes-agent`, commits as "Digital Nation Automation
+(`~/.hermes/hermes-agent`, commits as "Noosphere Automation
 <digital-nation@defi369.github.io>") commits + pushes directly to `main` and has
 been observed to **hard-reset the tree and delete untracked files mid-session**
 (2026-07-04, wiped an uncommitted redesign once). Commit early, commit often;
@@ -58,12 +58,12 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Verified: grep-based pass on all 9 pages
 
 - **2026-07-21 — Round 3** (commit `3a874a4`):
-  - All 9 pages: added `name="generator" content="Digital Nation Static Site"`
+  - All 9 pages: added `name="generator" content="Noosphere Static Site"`
   - Verified: each file contains exactly 1 generator meta tag
 
 - **2026-07-21 — Round 4** (commit `c80d3c6`):
   - All 9 pages: added `name="referrer" content="strict-origin-when-cross-origin"`
-  - All 9 pages: added `name="author" content="Digital Nation"`
+  - All 9 pages: added `name="author" content="Noosphere"`
   - All 9 pages: added `name="theme-color" content="#020408"`
   - Verified: grep-based pass on all 9 pages
 

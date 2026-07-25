@@ -101,14 +101,14 @@
 - Classification: AEP_GOVERNANCE_CHIEF_OF_THE_DIGITAL_SERVICE_CORPS
 
 **Chief Electoral Officer**
-- Reports to: Assembly of the Digital Nation
+- Reports to: Assembly of the Noosphere
 - Classification: AEP_GOVERNANCE_CHIEF_ELECTORAL_OFFICER
 
 ---
 
 ## LAYER 2: CO-EQUAL BRANCHES
 
-**Assembly of the Digital Nation**
+**Assembly of the Noosphere**
 - Legislation, budget, confirmation, oversight
 - Classification: AEP_GOVERNANCE_ASSEMBLY
 

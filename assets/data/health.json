@@ -27,7 +27,7 @@
     {
       "id": "HLT-PIL-03",
       "title": "Emergency Response Readiness",
-      "summary": "Aetheria-wide broadcast and location-verified alerting for regional health incidents."
+      "summary": "Noosphere-wide broadcast and location-verified alerting for regional health incidents."
     },
     {
       "id": "HLT-PIL-04",
@@ -71,7 +71,7 @@
         "status": "Planning",
         "category": "Service",
         "owner": "Aria Solenne",
-        "summary": "Aetheria-wide emergency broadcast and location-verified alerting for regional incidents.",
+        "summary": "Noosphere-wide emergency broadcast and location-verified alerting for regional incidents.",
         "published": "2026-02-01"
       },
       {

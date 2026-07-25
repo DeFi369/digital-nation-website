@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>The Principality of Aetheria</title>
+  <title>The Noosphere</title>
   <link href="https://defi369.github.io/digital-nation-website/feed.xml" rel="self"/>
   <link href="https://defi369.github.io/digital-nation-website/"/>
   <updated>2026-07-03T00:00:00Z</updated>
@@ -35,7 +35,7 @@
     <summary>New lattice-memory-hermes skill enables store/retrieve/list/shiftLayer/checkpoint from any agent via lattice-memory-bridge.py.</summary>
   </entry>
   <entry>
-    <title>Digital Nation Launches Open Data Portal</title>
+    <title>Noosphere Launches Open Data Portal</title>
     <link href="https://defi369.github.io/digital-nation-website/datasets.html"/>
     <id>urn:uuid:aetheria-digital-nation-launches-open-data-portal-2026-07-03</id>
     <updated>2026-07-03T00:00:00Z</updated>

@@ -37,7 +37,7 @@ def main():
             "data": BASE + data_file if os.path.exists(data_file) else None,
         })
     manifest = {
-        "name": "The Principality of Aetheria — site index",
+        "name": "The Noosphere — site index",
         "generated": __import__("datetime").date.today().isoformat(),
         "base": BASE,
         "metrics": BASE + "assets/data/metrics.json",
