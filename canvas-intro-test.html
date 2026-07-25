@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Canvas Intro Test</title>
+<style>
+  body{margin:0;background:#0a1228;overflow:hidden;}
+  #c{display:block;width:100vw;height:100vh;}
+  #skip{position:fixed;right:24px;bottom:24px;z-index:2;background:rgba(10,14,28,.6);color:#7aa7ff;border:1px solid #7aa7ff;font-family:monospace;padding:10px 18px;cursor:pointer;border-radius:4px;}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<button id="skip" onclick="window.__done&&window.__done()">Enter ›</button>
+<script>
+const cv = document.getElementById('c');
+const ctx = cv.getContext('2d');
+let W, H, COLS, ROWS;
+const CELL = 12;
+const KATAKANA = "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ";
+// agent particles
+const N = 140;
+const rng = mulberry32(7);
+const agents = [];
+for (let i=0;i<N;i++) agents.push({phase: rng()*6.28, speed: 0.3+rng()*0.7, jx:0, jy:0});
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+
+function resize(){ W=cv.width=window.innerWidth; H=cv.height=window.innerHeight; COLS=Math.floor(W/CELL); ROWS=Math.floor(H/CELL); }
+resize();
+window.addEventListener('resize', resize);
+
+const BG = [26, 42, 74]; // visible blue, never black
+const DURATION = 10, FPS = 24, N_FRAMES = DURATION*FPS;
+let frame = 0;
+let raf;
+
+function hsv2rgb(h,s,v){ const i=Math.floor(h*6)%6; const f=h*6-Math.floor(h*6); const p=v*(1-s),q=v*(1-f*s),t=v*(1-(1-f)*s); const r=[v,t,p,p,q,v][i],g=[t,v,p,p,q,v][i],b=[p,q,v,v,t,p][i]; return [r*255,g*255,b*255]; }
+
+function draw(){
+  const t = frame/FPS;
+  const p = t/DURATION;
+  const pull = Math.min(1, Math.max(0,(p-0.15)/0.6))**1.5;
+  // clear with bg
+  ctx.fillStyle = `rgb(${BG[0]},${BG[1]},${BG[2]})`;
+  ctx.fillRect(0,0,W,H);
+  ctx.font = '12px monospace';
+  ctx.textBaseline = 'top';
+  // field + agents
+  const grid = {};
+  for (let i=0;i<N;i++){
+    const a = agents[i].phase + t*agents[i].speed*1.2;
+    const bx = (0.5+0.42*Math.cos(a))*(1-pull)+0.5*pull;
+    const by = (0.5+0.42*Math.sin(a*1.3))*(1-pull)+0.5*pull;
+    const gx = Math.floor(bx*COLS), gy = Math.floor(by*ROWS);
+    if (gx>=0&&gx<COLS&&gy>=0&&gy<ROWS){
+      const v = 0.5+0.5*Math.sin(t*3+i)*(0.4+0.6*pull);
+      const ch = KATAKANA[(i*7+Math.floor(t*8))%KATAKANA.length];
+      const col = hsv2rgb(0.11,0.9,0.85+0.15*v);
+      grid[gy*COLS+gx] = {ch, col};
+    }
+  }
+  // lattice in mid/late
+  if (p>0.45){
+    const lp = Math.min(1,Math.max(0,(p-0.45)/0.4));
+    for (let r=0;r<ROWS;r+=3){ for (let c=0;c<COLS;c+=3){
+      const nx=c/COLS, ny=r/ROWS; const dx=nx-0.5, dy=ny-0.5; const rad=Math.sqrt(dx*dx+dy*dy);
+      const ring = 0.5+0.5*Math.sin(rad*26 - t*2);
+      if (ring>0.7){ grid[r*COLS+c] = {ch:'╋', col:hsv2rgb(0.52,0.85,0.7+0.3*lp)}; }
+    }}
+  }
+  // draw
+  for (const k in grid){ const r=Math.floor(k/COLS), c=k%COLS; const {ch,col}=grid[k]; ctx.fillStyle=`rgb(${col[0]|0},${col[1]|0},${col[2]|0})`; ctx.fillText(ch, c*CELL, r*CELL); }
+  // word reveal
+  if (p>0.78){
+    const wp = Math.min(1,Math.max(0,(p-0.78)/0.18));
+    ctx.save();
+    ctx.globalAlpha = wp;
+    ctx.font = 'bold 54px sans-serif';
+    ctx.fillStyle = '#e8c659';
+    ctx.textAlign='center';
+    ctx.shadowColor='rgba(232,198,89,0.5)'; ctx.shadowBlur=30;
+    ctx.fillText('NOOSPHERE', W/2, H*0.42);
+    ctx.restore();
+  }
+  frame++;
+  if (frame < N_FRAMES){ raf = requestAnimationFrame(draw); }
+  else { window.__done && window.__done(); }
+}
+raf = requestAnimationFrame(draw);
+window.__done = function(){ cancelAnimationFrame(raf); document.body.style.background='#020408'; };
+// safety timeout
+setTimeout(()=>window.__done&&window.__done(), 12000);
+</script>
+</body>
+</html>

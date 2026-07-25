@@ -424,14 +424,40 @@
   top: 0;
   }
 
-  /* ---- Noosphere intro overlay ---- */
+  /* ---- Noosphere intro overlay (CSS-animated, no video dependency) ---- */
   .noosphere-intro{
-  position:fixed;inset:0;z-index:10000;background:#020408;
+  position:fixed;inset:0;z-index:10000;
+  background:radial-gradient(circle at 50% 45%, #0e1a3a, #020408 70%);
   display:flex;align-items:center;justify-content:center;
-  transition:opacity .8s ease;opacity:1;
+  transition:opacity .8s ease;opacity:1;overflow:hidden;
   }
   .noosphere-intro--hidden{opacity:0;pointer-events:none;}
-  .noosphere-video{width:100%;height:100%;object-fit:cover;display:block;background:#1a2a4a;}
+  .noosphere-fx{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .noosphere-fx__ring{
+    position:absolute;border:1px solid rgba(122,167,255,0.25);
+    border-radius:50%;
+    animation:nooRing 8s linear infinite;
+  }
+  .noosphere-fx__ring--1{width:min(60vw,60vh);height:min(60vw,60vh);animation-duration:10s;}
+  .noosphere-fx__ring--2{width:min(80vw,80vh);height:min(80vw,80vh);animation-duration:14s;animation-direction:reverse;}
+  .noosphere-fx__ring--3{width:min(100vw,100vh);height:min(100vw,100vh);animation-duration:20s;}
+  @keyframes nooRing{
+    0%{transform:scale(0.6) rotate(0deg);opacity:0.1;}
+    50%{opacity:0.5;}
+    100%{transform:scale(1.1) rotate(360deg);opacity:0.1;}
+  }
+  .noosphere-fx__particles{position:absolute;inset:0;}
+  .noosphere-fx__particles span{
+    position:absolute;width:3px;height:3px;border-radius:50%;
+    background:#7aa7ff;box-shadow:0 0 6px #7aa7ff;
+    animation:nooFloat linear infinite;
+  }
+  @keyframes nooFloat{
+    0%{transform:translateY(20px);opacity:0;}
+    20%{opacity:0.9;}
+    80%{opacity:0.9;}
+    100%{transform:translateY(-40px);opacity:0;}
+  }
   .noosphere-skip{
   position:fixed;right:24px;bottom:24px;z-index:10001;
   background:rgba(10,14,28,.6);color:#7aa7ff;border:1px solid #7aa7ff;
@@ -441,24 +467,23 @@
   }
   .noosphere-skip:hover{background:#7aa7ff;color:#020408;}
   .noosphere-fallback{
-    position:absolute;inset:0;display:none;
-    flex-direction:column;align-items:center;justify-content:center;
-    background:radial-gradient(circle at 50% 45%, rgba(122,167,255,0.08), transparent 60%), #020408;
-    text-align:center;z-index:1;
+    position:relative;z-index:2;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
   }
-  .noosphere-fallback--show{display:flex;}
-  .noosphere-video{position:relative;z-index:2;}
   .noosphere-fallback__word{
     font-family:'Unbounded','IBM Plex Mono',sans-serif;font-weight:900;
     font-size:clamp(36px,8vw,96px);letter-spacing:0.18em;
     color:#e8c659;text-shadow:0 0 40px rgba(232,198,89,0.4);
-    animation:nooPulse 3s ease-in-out infinite;
+    animation:nooPulse 3s ease-in-out infinite, nooReveal 2s ease-out forwards;
   }
   .noosphere-fallback__sub{
     font-family:'IBM Plex Mono',monospace;font-size:clamp(10px,1.5vw,14px);
     letter-spacing:0.3em;text-transform:uppercase;color:#7aa7ff;margin-top:12px;
+    animation:nooReveal 2.5s ease-out forwards;
   }
   @keyframes nooPulse{0%,100%{opacity:.85;}50%{opacity:1;}}
+  @keyframes nooReveal{0%{opacity:0;transform:translateY(20px) scale(0.95);}100%{opacity:1;transform:translateY(0) scale(1);}}
 
   /* ---- Per-portal transition: themed video overlay ---- */
   .portal-transition{
@@ -514,15 +539,16 @@
 <body class="page-hub">
   <!-- Noosphere intro overlay: plays once on landing, then reveals the orbital hub -->
   <div id="noosphere-intro" class="noosphere-intro" aria-hidden="true">
-    <!-- Static fallback shown behind video if video can't autoplay -->
-    <div class="noosphere-fallback" id="noosphere-fallback" aria-hidden="true">
+    <div class="noosphere-fx">
+      <div class="noosphere-fx__ring noosphere-fx__ring--1"></div>
+      <div class="noosphere-fx__ring noosphere-fx__ring--2"></div>
+      <div class="noosphere-fx__ring noosphere-fx__ring--3"></div>
+      <div class="noosphere-fx__particles" id="noosphere-particles"></div>
+    </div>
+    <div class="noosphere-fallback">
       <div class="noosphere-fallback__word">NOOSPHERE</div>
       <div class="noosphere-fallback__sub">The Sphere of Mind</div>
     </div>
-    <video id="noosphere-video" class="noosphere-video" autoplay muted playsinline preload="auto" poster="assets/videos/noosphere-poster.jpg">
-      <source src="assets/videos/noosphere-intro.webm" type="video/webm">
-      <source src="assets/videos/noosphere-intro-baseline.mp4" type="video/mp4">
-    </video>
     <button id="noosphere-skip" class="noosphere-skip" type="button">Enter ›</button>
   </div>
   <header role="banner">
@@ -701,40 +727,32 @@
       }
     })();
 
-    // ---- Noosphere intro: dismiss on end/skip/timeout ----
+    // ---- Noosphere intro: CSS-animated, dismiss on skip/timeout ----
     (function () {
       var intro = document.getElementById('noosphere-intro');
-      var video = document.getElementById('noosphere-video');
       var skip  = document.getElementById('noosphere-skip');
-      var fallback = document.getElementById('noosphere-fallback');
       if (!intro) return;
+      // generate floating particles
+      var pbox = document.getElementById('noosphere-particles');
+      if (pbox) {
+        for (var i = 0; i < 40; i++) {
+          var s = document.createElement('span');
+          s.style.left = (Math.random() * 100) + '%';
+          s.style.top = (Math.random() * 100) + '%';
+          s.style.animationDuration = (3 + Math.random() * 4) + 's';
+          s.style.animationDelay = (Math.random() * 4) + 's';
+          pbox.appendChild(s);
+        }
+      }
       var done = false;
       function dismiss() {
         if (done) return; done = true;
         intro.classList.add('noosphere-intro--hidden');
         setTimeout(function () { intro.remove(); }, 800);
       }
-      if (video) {
-        video.addEventListener('ended', dismiss);
-        video.addEventListener('error', function () {
-          if (fallback) fallback.classList.add('noosphere-fallback--show');
-          setTimeout(dismiss, 2000);
-        });
-        // Try to play programmatically (muted + playsinline should allow it)
-        var playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.then(function () {
-            // playing — video covers fallback (z-index 2 > 1)
-          }).catch(function () {
-            // autoplay blocked — show fallback, dismiss after hold
-            if (fallback) fallback.classList.add('noosphere-fallback--show');
-            setTimeout(dismiss, 4000);
-          });
-        }
-      }
       if (skip) skip.addEventListener('click', dismiss);
-      // Safety: if nothing happened, dismiss after 12s
-      setTimeout(dismiss, 12000);
+      // auto-dismiss after 9s
+      setTimeout(dismiss, 9000);
     })();
 
     // ---- Per-portal transition: intercept orbit-node clicks, animate per-theme, then navigate ----
