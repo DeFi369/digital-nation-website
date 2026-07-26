@@ -433,6 +433,12 @@
     border-color:var(--accent);
     box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px var(--accent);
   }
+  .bento-card:focus-visible{
+    outline:none;
+    transform:perspective(800px) translateY(-6px) rotateX(2deg) rotateY(-2deg);
+    border-color:var(--accent);
+    box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px var(--accent);
+  }
   .bento-card__icon{
     font-size:clamp(32px,6vw,44px);margin-bottom:16px;
     display:block;text-align:center;
@@ -529,7 +535,7 @@
       <div class="noosphere-fallback__word">NOOSPHERE</div>
       <div class="noosphere-fallback__sub">The Sphere of Mind</div>
     </div>
-    <button id="noosphere-skip" class="noosphere-skip" type="button">Enter ›</button>
+    <button id="noosphere-skip" class="noosphere-skip" type="button">Enter Noosphere ›</button>
   </div>
   <header role="banner">
   <section id="hub-main" aria-label="Main content">
