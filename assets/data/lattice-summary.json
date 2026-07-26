@@ -1,6 +1,6 @@
 {
   "agentId": "default",
-  "updatedAt": "2026-07-25",
+  "updatedAt": "2026-07-26",
   "mode": "sequential",
   "memoryCount": 5,
   "currentLayer": 0,
@@ -10,7 +10,7 @@
   "memories": [
     {
       "key": "digital_nation.overview",
-      "content": "Noosphere is a sovereign-by-code digital nation with structured agency governance.",
+      "content": "Aetheria is a sovereign-by-code digital nation with structured agency governance.",
       "layer": 0,
       "energy": 0.9,
       "hops": 0

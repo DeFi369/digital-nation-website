@@ -53,16 +53,18 @@
     }
 
     .page-hub {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       position: relative;
       background:
         radial-gradient(1200px 900px at 50% 45%, var(--hub-nebula-a), transparent 60%),
         radial-gradient(900px 700px at 15% 15%, var(--hub-nebula-b), transparent 55%),
         radial-gradient(900px 700px at 85% 85%, var(--hub-nebula-c), transparent 55%),
         var(--hub-bg);
+      overflow-y: auto;
     }
 
     .stars {
@@ -167,16 +169,11 @@
     }
     @keyframes edgeFlow{0%{opacity:.5;}50%{opacity:1;}100%{opacity:.5;}}
     @keyframes edgePulse{0%{top:-30%;}100%{top:100%;}}
-    @keyframes pulse-ring {
-      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.8); }
-      70% { box-shadow: 0 0 0 12px rgba(52, 211, 153, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
-    }
 
-    /* ---- (orbit/portal CSS removed — replaced by bento grid above) ---- */
+    /* ---- Bento grid hub navigation ---- */
 
     .telemetry-bar {
-      position: absolute;
+      position: relative;
       bottom: 0;
       left: 0;
       right: 0;
@@ -283,8 +280,24 @@
     outline-offset: 3px;
     border-radius: 2px;
   }
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 10001;
+    background: rgba(12,20,42,0.95);
+    color: #7aa7ff;
+    padding: 10px 16px;
+    border: 1px solid rgba(122,167,255,0.4);
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
   .skip-link:focus {
-  top: 0;
+    left: 8px;
+    top: 8px;
   }
 
   /* ---- Noosphere intro overlay (CSS-animated, no video dependency) ---- */
@@ -361,13 +374,19 @@
   }
 
   /* ---- Bento grid hub navigation ---- */
-  .hub-title{text-align:center;margin:6vh auto 4vh;text-decoration:none;color:inherit;}
+  .hub-title{text-align:center;margin:8vh auto 3vh;text-decoration:none;color:inherit;}
   .hub-title__name{
     font-family:var(--font-display,'Unbounded','Inter',sans-serif);
     font-weight:800;font-size:clamp(42px,9vw,84px);letter-spacing:0.15em;
     text-transform:uppercase;color:#fff;
     text-shadow:0 0 60px rgba(122,167,255,0.3),0 0 30px rgba(232,198,89,0.2);
     line-height:1;
+    animation:nooGlitch 5s ease-in-out infinite;
+  }
+  @keyframes nooGlitch{
+    0%,12%,20%,24%,30%,100%{text-shadow:0 0 60px rgba(122,167,255,0.3),0 0 30px rgba(232,198,89,0.2);}
+    13%,17%{text-shadow:5px 0 0 rgba(122,167,255,0.8),-5px 0 0 rgba(232,198,89,0.8);}
+    21%,23%{text-shadow:-5px 0 0 rgba(122,167,255,0.8),5px 0 0 rgba(232,198,89,0.8);}
   }
   .hub-title__sub{
     font-family:var(--font-mono,'IBM Plex Mono',monospace);
@@ -375,14 +394,17 @@
     text-transform:uppercase;color:var(--hub-muted);margin-top:8px;
   }
   .bento-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:clamp(20px,4vw,32px);max-width:1100px;margin:0 auto;padding:0 2vw;
+    display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));
+    gap:clamp(20px,4vw,32px);max-width:900px;margin:0 auto;padding:0 2vw;
+  }
+  @media (max-width:640px){
+    .bento-grid{grid-template-columns:1fr;max-width:420px;}
   }
   .bento-card{
     position:relative;display:block;text-decoration:none;color:inherit;
     background:rgba(12,20,42,0.6);backdrop-filter:blur(10px);
     border:1px solid rgba(122,167,255,0.2);border-radius:16px;
-    padding:clamp(24px,4vw,32px);
+    padding:clamp(20px,3vw,26px);
     transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .3s ease;
   }
   .bento-card:hover{
@@ -438,7 +460,7 @@
   <meta property="og:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png" />
   <link rel="sitemap" type="application/xml" href="/digital-nation-website/sitemap.xml" />
   <link rel="alternate" type="application/rss+xml" title="Noosphere Feed" href="/digital-nation-website/feed.xml" />
-  <a class="skip-link" href="#orbit-system">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
   <meta name="article:modified_time" content="2026-07-21T08:23:07Z">
   <link rel="author" href="mailto:digital-nation@defi369.github.io">
   <meta property="og:locale" content="en_US">
@@ -542,7 +564,7 @@
     <div class="telemetry-item"><span>Agents</span><a class="telemetry-item__value" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" id="hub-agent-count">—</a></div>
     <div class="telemetry-item"><span>Desk</span><a class="telemetry-item__value" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer">Open</a></div>
     <div class="telemetry-item"><span>HL MCP</span><a class="telemetry-item__value" href="/digital-nation-website/mcp-status.html">Status</a></div>
-    <div class="telemetry-item"><span>DN Site</span><a class="telemetry-item__value" href="https://defi369.github.io/digital-nation-website/" target="_blank" rel="noopener noreferrer">Open</a></div>
+    <div class="telemetry-item"><span>Noosphere</span><a class="telemetry-item__value" href="https://defi369.github.io/digital-nation-website/" target="_blank" rel="noopener noreferrer">Open</a></div>
     <div class="telemetry-item"><span>Hub</span><span class="telemetry-item__value" style="color:#34d399">Live</span></div>
   </div>
 

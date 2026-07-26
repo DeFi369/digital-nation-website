@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-25",
+  "generated": "2026-07-26",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -135,7 +135,7 @@
     "signatureStatus": "pre-v1.0",
     "totalComponents": 21,
     "artifactFileCount": 40,
-    "pageCount": 74,
+    "pageCount": 75,
     "crossRepoPageCount": 5,
     "crossRepoPages": [
       "ecosystem-status.html",
@@ -146,9 +146,9 @@
     ],
     "identityManifestCount": 15,
     "identityKeyCount": 19,
-    "latestCommit": "d41d25f18f8cf6fb90c3a3eae21f5c77203524eb chore: refresh protocol/lattice data (2026-07-22 generated snapshot)",
-    "latestCommitDate": "2026-07-22",
-    "lastAudit": "2026-07-25"
+    "latestCommit": "83e942a9b25bb5decce9b46c993fcbe52f92d814 Redesign hub: replace orbital ring with bento grid (4 cards: Ecosystem, Trading Desk, Quantum Lattice, Roadmap) under NOOSPHERE title. Remove video dependency from portal transitions (CSS word-reveal). Add trading-desk.html.",
+    "latestCommitDate": "2026-07-26",
+    "lastAudit": "2026-07-26"
   },
   "quantum": {
     "available": true,
@@ -270,6 +270,6 @@
     "signaturesVerified": 19,
     "signaturesTotal": 19,
     "signatureCoverage": "100%",
-    "lastVerification": "2026-07-25T06:00:32.241812+00:00"
+    "lastVerification": "2026-07-26T06:00:45.504546+00:00"
   }
 }
