@@ -420,6 +420,10 @@
   .bento-card--trading{--accent:rgba(52,211,153,0.5);}
   .bento-card--lattice{--accent:rgba(192,132,252,0.5);}
   .bento-card--roadmap{--accent:rgba(250,204,21,0.5);}
+  .bento-card--noosphere{--accent:rgba(232,198,89,0.6);}
+  .bento-card--noosphere{grid-column:1 / -1;}
+  .bento-card--noosphere .bento-card__icon{font-size:clamp(40px,7vw,56px);}
+  .bento-card--noosphere .bento-card__title{font-size:clamp(22px,4vw,28px);}
   .bento-card{
     position:relative;display:block;text-decoration:none;color:inherit;
     background:rgba(12,20,42,0.6);backdrop-filter:blur(10px);
@@ -563,6 +567,14 @@
     </div>
 
     <nav class="bento-grid" aria-label="Noosphere navigation" id="orbit-carousel">
+      <a class="bento-card bento-card--noosphere" href="https://defi369.github.io/digital-nation-website/" aria-label="Noosphere — enter the main citizen portal: charter, governance, structure, and all public records" rel="noopener noreferrer">
+        <div class="bento-card__icon">🌟</div>
+        <div class="bento-card__title">Noosphere</div>
+        <div class="bento-card__desc">Enter the main site — the full citizen portal: charter, governance, structure, ministries, and every public record of the Digital Nation.</div>
+        <div class="bento-card__badge">Main Site</div>
+        <div class="bento-card__arrow">→</div>
+      </a>
+
       <a class="bento-card bento-card--ecosystem" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html" aria-label="Ecosystem — overview of all systems built and coming">
         <div class="bento-card__icon">🌐</div>
         <div class="bento-card__title">Ecosystem</div>
