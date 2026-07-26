@@ -1,7 +1,7 @@
 # DIGITAL NATION — AGENT CHAIN OF COMMAND MAP
 # Classification: Secret — Agent Lattice Map v3.0
 # Status: Active Canon
-# Applies to: THE PRINCIPALITY OF AETHERIA / SOVEREIGN BY CODE
+# Applies to: THE PRINCIPALITY OF NOOSPHERE / SOVEREIGN BY CODE
 
 ---
 

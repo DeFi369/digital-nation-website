@@ -1,9 +1,9 @@
-# THE PRINCIPALITY OF AETHERIA — Public Website
+# THE PRINCIPALITY OF NOOSPHERE — Public Website
 
 A digital micronation experience built around transparent governance, cryptographic
 citizenship, and open protocol infrastructure.
 
-- Nation: **THE PRINCIPALITY OF AETHERIA** · Motto: **SOVEREIGN BY CODE**
+- Nation: **THE PRINCIPALITY OF NOOSPHERE** · Motto: **SOVEREIGN BY CODE**
 - Live site: https://defi369.github.io/digital-nation-website/ (GitHub Pages, root)
 - Stack: plain static HTML/CSS/JS. **No build step.**
 
@@ -64,7 +64,7 @@ canonical base URL. `404.html` carries full site chrome.
 
 ## Government structure
 
-AETHERIA is a layered digital republic — Constitutional Core, Strategic Cabinet,
+NOOSPHERE is a layered digital republic — Constitutional Core, Strategic Cabinet,
 Operational Offices, Service Branches, the Assembly, and the Charter Tribunal.
 See `structure.html` for the interactive map and `charter.html` for the founding
 charter.

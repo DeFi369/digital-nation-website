@@ -11,7 +11,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/about.html",
       "title": "About \u2014 The Noosphere",
-      "description": "AETHERIA is sovereign by code. Learn about our purpose, governance model, and founding history.",
+      "description": "NOOSPHERE is sovereign by code. Learn about our purpose, governance model, and founding history.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/about.json"
     },
@@ -25,7 +25,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/assembly.html",
       "title": "Assembly of the Noosphere \u2014 The Noosphere",
-      "description": "The Assembly of the Noosphere is the co-equal legislative branch of AETHERIA. Track bills, resolutions, confirmations, and budget actions.",
+      "description": "The Assembly of the Noosphere is the co-equal legislative branch of NOOSPHERE. Track bills, resolutions, confirmations, and budget actions.",
       "cluster": "governance",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/assembly.json"
     },
@@ -39,14 +39,14 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/charter-addendum.html",
       "title": "Charter Addendum \u2014 The Noosphere",
-      "description": "Charter Amendments & Revisions for THE PRINCIPALITY OF AETHERIA. Explore proposed changes, revision history, and live amendment processes under the Civic Assembly.",
+      "description": "Charter Amendments & Revisions for THE PRINCIPALITY OF NOOSPHERE. Explore proposed changes, revision history, and live amendment processes under the Civic Assembly.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/charter-addendum.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/charter.html",
       "title": "Charter \u2014 The Noosphere",
-      "description": "The founding text of THE PRINCIPALITY OF AETHERIA. Every article is open to amendment through the Civic Assembly.",
+      "description": "The founding text of THE PRINCIPALITY OF NOOSPHERE. Every article is open to amendment through the Civic Assembly.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/charter.json"
     },
@@ -74,14 +74,14 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/communications.html",
       "title": "Digital Communications & Public Affairs \u2014 The Noosphere",
-      "description": "AETHERIA\u2019s official communications, press protocols, and public information management under the layered republic external affairs layer.",
+      "description": "NOOSPHERE\u2019s official communications, press protocols, and public information management under the layered republic external affairs layer.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/communications.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/consular.html",
       "title": "Consular \u2014 The Noosphere",
-      "description": "AETHERIA\u2019s layered republic external affairs under the Secretary of External Affairs. Treaties, consular services, and outreach strategy.",
+      "description": "NOOSPHERE\u2019s layered republic external affairs under the Secretary of External Affairs. Treaties, consular services, and outreach strategy.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/consular.json"
     },
@@ -102,7 +102,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/culture.html",
       "title": "Public Affairs \u2014 The Noosphere",
-      "description": "AETHERIA\u2019s public narrative, media standards, and community programs under the Secretary of External Affairs and the layered republic structure.",
+      "description": "NOOSPHERE\u2019s public narrative, media standards, and community programs under the Secretary of External Affairs and the layered republic structure.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/culture.json"
     },
@@ -137,7 +137,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/diplomacy.html",
       "title": "Diplomacy \u2014 The Noosphere",
-      "description": "AETHERIA\u2019s international relations, treaty framework, diplomatic protocols, and multilateral engagement under the layered republic v3.0.",
+      "description": "NOOSPHERE\u2019s international relations, treaty framework, diplomatic protocols, and multilateral engagement under the layered republic v3.0.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/diplomacy.json"
     },
@@ -207,7 +207,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/finance.html",
       "title": "Financial Oversight & Economic Governance \u2014 The Noosphere",
-      "description": "AETHERIA Economic Governance & Financial Oversight: fiscal policy, budget transparency, ledger oversight, and citizen economic participation.",
+      "description": "NOOSPHERE Economic Governance & Financial Oversight: fiscal policy, budget transparency, ledger oversight, and citizen economic participation.",
       "cluster": "policy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/finance.json"
     },
@@ -347,28 +347,28 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/protocol-status.html",
       "title": "Protocol Status \u2014 The Noosphere",
-      "description": "Live protocol-status briefing for AETHERIA: AEP 2.8 governance stack, dynAEP temporal layer, and cross-repo integration status.",
+      "description": "Live protocol-status briefing for NOOSPHERE: AEP 2.8 governance stack, dynAEP temporal layer, and cross-repo integration status.",
       "cluster": "diplomacy",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/protocol.html",
       "title": "Protocol \u2014 The Noosphere",
-      "description": "AETHERIA\u2019s technical standards, layered republic interoperability frameworks, and digital sovereignty protocols under the Protocol office.",
+      "description": "NOOSPHERE\u2019s technical standards, layered republic interoperability frameworks, and digital sovereignty protocols under the Protocol office.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/protocol.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/quantum-roadmap.html",
       "title": "Quantum Attestation Hardware Roadmap \u2014 The Noosphere",
-      "description": "Quantum Attestation Hardware Roadmap: AETHERIA's phased path to sovereign quantum attestation with open hardware, QRNG, FPGA simulation, and on-premise QPU.",
+      "description": "Quantum Attestation Hardware Roadmap: NOOSPHERE's phased path to sovereign quantum attestation with open hardware, QRNG, FPGA simulation, and on-premise QPU.",
       "cluster": "policy",
       "data": null
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/recognition.html",
       "title": "Recognition \u2014 The Noosphere",
-      "description": "AETHERIA\u2019s recognition strategy across Montevideo criteria, digital-state conditions, and passport diplomacy.",
+      "description": "NOOSPHERE\u2019s recognition strategy across Montevideo criteria, digital-state conditions, and passport diplomacy.",
       "cluster": "diplomacy",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/recognition.json"
     },
@@ -424,7 +424,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/structure.html",
       "title": "Government Structure \u2014 The Noosphere",
-      "description": "Explore the layered republic of THE PRINCIPALITY OF AETHERIA \u2014 Constitutional Core, Strategic Cabinet, Operational Offices, Service Branches, Assembly, and Constitutional Court.",
+      "description": "Explore the layered republic of THE PRINCIPALITY OF NOOSPHERE \u2014 Constitutional Core, Strategic Cabinet, Operational Offices, Service Branches, Assembly, and Constitutional Court.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/structure.json"
     },
@@ -438,7 +438,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/symbols.html",
       "title": "National Symbols \u2014 The Noosphere",
-      "description": "The visual and ceremonial identity of AETHERIA \u2014 flag concept, anthem direction, founding date, and protocol.",
+      "description": "The visual and ceremonial identity of NOOSPHERE \u2014 flag concept, anthem direction, founding date, and protocol.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/symbols.json"
     },
@@ -459,7 +459,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/timeline.html",
       "title": "History & Timeline \u2014 The Noosphere",
-      "description": "From early protocol experiments to a sovereign digital republic \u2014 the evolution of AETHERIA.",
+      "description": "From early protocol experiments to a sovereign digital republic \u2014 the evolution of NOOSPHERE.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/timeline.json"
     },

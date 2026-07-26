@@ -13,7 +13,7 @@
       "timestamp": "2026-06-20T14:30:00Z",
       "metadata": {
         "category": "rights",
-        "initiator": "citizen-203@aetheria.network"
+        "initiator": "citizen-203@noosphere.network"
       }
     },
     {
@@ -29,7 +29,7 @@
       "timestamp": "2026-06-15T10:00:00Z",
       "metadata": {
         "category": "governance",
-        "initiator": "citizen-089@aetheria.network"
+        "initiator": "citizen-089@noosphere.network"
       }
     },
     {
@@ -45,7 +45,7 @@
       "timestamp": "2026-05-20T09:15:00Z",
       "metadata": {
         "category": "outreach",
-        "initiator": "citizen-156@aetheria.network"
+        "initiator": "citizen-156@noosphere.network"
       }
     }
   ],
@@ -60,7 +60,7 @@
       "status": "open",
       "timestamp": "2026-06-25T11:20:00Z",
       "metadata": {
-        "contact": "citizen-203@aetheria.network"
+        "contact": "citizen-203@noosphere.network"
       }
     },
     {
@@ -73,7 +73,7 @@
       "status": "in-progress",
       "timestamp": "2026-06-22T08:30:00Z",
       "metadata": {
-        "contact": "citizen-089@aetheria.network"
+        "contact": "citizen-089@noosphere.network"
       }
     },
     {
@@ -97,7 +97,7 @@
       "status": "complete",
       "timestamp": "2026-06-12T10:00:00Z",
       "metadata": {
-        "contact": "citizen-156@aetheria.network"
+        "contact": "citizen-156@noosphere.network"
       }
     }
   ],
@@ -210,7 +210,7 @@
         "timestamp": "2026-06-20T14:30:00Z",
         "metadata": {
           "category": "rights",
-          "initiator": "citizen-203@aetheria.network"
+          "initiator": "citizen-203@noosphere.network"
         }
       },
       {
@@ -226,7 +226,7 @@
         "timestamp": "2026-06-15T10:00:00Z",
         "metadata": {
           "category": "governance",
-          "initiator": "citizen-089@aetheria.network"
+          "initiator": "citizen-089@noosphere.network"
         }
       },
       {
@@ -242,7 +242,7 @@
         "timestamp": "2026-05-20T09:15:00Z",
         "metadata": {
           "category": "outreach",
-          "initiator": "citizen-156@aetheria.network"
+          "initiator": "citizen-156@noosphere.network"
         }
       }
     ],
@@ -257,7 +257,7 @@
         "status": "open",
         "timestamp": "2026-06-25T11:20:00Z",
         "metadata": {
-          "contact": "citizen-203@aetheria.network"
+          "contact": "citizen-203@noosphere.network"
         }
       },
       {
@@ -270,7 +270,7 @@
         "status": "in-progress",
         "timestamp": "2026-06-22T08:30:00Z",
         "metadata": {
-          "contact": "citizen-089@aetheria.network"
+          "contact": "citizen-089@noosphere.network"
         }
       },
       {
@@ -294,7 +294,7 @@
         "status": "complete",
         "timestamp": "2026-06-12T10:00:00Z",
         "metadata": {
-          "contact": "citizen-156@aetheria.network"
+          "contact": "citizen-156@noosphere.network"
         }
       }
     ],
