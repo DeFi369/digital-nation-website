@@ -66,6 +66,26 @@
         var(--hub-bg);
       overflow-y: auto;
     }
+    /* ---- Scanline overlay (subtle cyber effect) ---- */
+    .page-hub::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 2px,
+        rgba(122,167,255,0.012) 3px,
+        transparent 4px
+      );
+      animation: scanline 8s linear infinite;
+    }
+    @keyframes scanline {
+      0% { background-position-y: 0; }
+      100% { background-position-y: 100px; }
+    }
 
     .stars {
       position: absolute;
