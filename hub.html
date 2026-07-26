@@ -126,38 +126,6 @@
       max-height: 1200px;
     }
 
-    .orbit-ring {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 1px dashed var(--hub-ring);
-      animation: spin 80s linear infinite;
-      pointer-events: none;
-      box-shadow: 0 0 18px rgba(122, 167, 255, 0.06), inset 0 0 18px rgba(122, 167, 255, 0.03);
-    }
-    .orbit-ring--outer {
-      inset: 4%;
-      border-style: dotted;
-      border-color: rgba(122, 167, 255, 0.14);
-      animation-duration: 110s;
-    }
-    .orbit-ring--mid {
-      inset: 16%;
-      border-color: rgba(192, 132, 252, 0.18);
-      animation-duration: 70s;
-      animation-direction: reverse;
-      box-shadow: 0 0 22px rgba(192, 132, 252, 0.08), inset 0 0 22px rgba(192, 132, 252, 0.04);
-    }
-    .orbit-ring--inner {
-      inset: 28%;
-      border-color: rgba(122, 167, 255, 0.16);
-      animation-duration: 45s;
-      box-shadow: 0 0 20px rgba(122, 167, 255, 0.1), inset 0 0 20px rgba(122, 167, 255, 0.05);
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
     /* ---- Edge graphics: left/right vertical data streams ---- */
     .hub-edge{
       position:absolute;top:0;bottom:0;width:clamp(40px,7vw,96px);
@@ -205,112 +173,7 @@
       100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
 
-    .orbit-carousel {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
-    }
-
-    .orbit-node-wrap {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      pointer-events: none;
-    }
-    .orbit-node-wrap--0 { transform: rotate(0deg) translate(clamp(16vw, 22vh, 26vw)) rotate(0deg); }
-    .orbit-node-wrap--1 { transform: rotate(45deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-45deg); }
-    .orbit-node-wrap--2 { transform: rotate(90deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-90deg); }
-    .orbit-node-wrap--3 { transform: rotate(135deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-135deg); }
-    .orbit-node-wrap--4 { transform: rotate(180deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-180deg); }
-    .orbit-node-wrap--5 { transform: rotate(225deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-225deg); }
-    .orbit-node-wrap--6 { transform: rotate(270deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-270deg); }
-    .orbit-node-wrap--7 { transform: rotate(315deg) translate(clamp(16vw, 22vh, 26vw)) rotate(-315deg); }
-
-    .orbit-node {
-      position: relative;
-      left: clamp(-28px, -4.2vw, -42px);
-      top: clamp(-28px, -4.2vw, -42px);
-      width: clamp(56px, 8.4vw, 84px);
-      height: clamp(56px, 8.4vw, 84px);
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08), transparent 60%),
-        var(--hub-surface);
-      border: 1px solid var(--hub-border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 3px;
-      padding: 6px;
-      text-decoration: none;
-      color: inherit;
-      pointer-events: auto;
-      transition: transform 0.3s cubic-bezier(.2,.8,.2,1), border-color 0.25s ease, box-shadow 0.25s ease;
-      animation: float 6s ease-in-out infinite;
-      --node-hue: 215;
-      --node-glow: rgba(122,167,255,0.3);
-    }
-    .orbit-node--theme-a { --node-hue: 215; --node-glow: rgba(122,167,255,0.35); }
-    .orbit-node--theme-b { --node-hue: 270; --node-glow: rgba(192,132,252,0.35); }
-    .orbit-node--theme-c { --node-hue: 160; --node-glow: rgba(52,211,153,0.35); }
-    .orbit-node--theme-d { --node-hue: 35; --node-glow: rgba(250,204,21,0.35); }
-    .orbit-node--theme-e { --node-hue: 0; --node-glow: rgba(248,113,113,0.35); }
-    .orbit-node__icon { filter: drop-shadow(0 0 6px var(--node-glow)); }
-    .orbit-node:nth-child(odd) { animation-duration: 7.2s; }
-    .orbit-node:nth-child(even) { animation-duration: 5.6s; animation-direction: reverse; }
-    .orbit-node:hover {
-      transform: scale(1.18) translateY(-4px);
-      border-color: hsl(var(--node-hue), 70%, 55%);
-      box-shadow:
-        0 0 0 1px hsl(var(--node-hue), 70%, 55%),
-        0 0 40px hsl(var(--node-hue), 70%, 55%, 0.35),
-        0 16px 40px rgba(0, 0, 0, 0.55);
-      animation-play-state: paused;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    .orbit-node__title {
-      font-family: var(--font-display, 'Unbounded', 'Inter', sans-serif);
-      font-weight: 600;
-      font-size: clamp(7px, 0.85vw, 9px);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #fff;
-      line-height: 1.2;
-    }
-    .orbit-node__badge {
-      font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-      font-size: 7px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--hub-muted);
-      opacity: 0.9;
-    }
-
-    .spoke {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 2px;
-      height: calc(clamp(16vw, 22vh, 26vw) - clamp(6vw, 8vh, 9vw));
-      transform-origin: bottom center;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .spoke--0 { transform: rotate(0deg); background: linear-gradient(to top, rgba(122,167,255,0.6), rgba(52,211,153,0.18)); box-shadow: 0 0 10px rgba(122,167,255,0.18); }
-    .spoke--1 { transform: rotate(45deg); background: linear-gradient(to top, rgba(192,132,252,0.6), rgba(248,113,113,0.18)); box-shadow: 0 0 10px rgba(192,132,252,0.18); }
-    .spoke--2 { transform: rotate(90deg); background: linear-gradient(to top, rgba(52,211,153,0.6), rgba(122,167,255,0.18)); box-shadow: 0 0 10px rgba(52,211,153,0.18); }
-    .spoke--3 { transform: rotate(135deg); background: linear-gradient(to top, rgba(248,113,113,0.5), rgba(250,204,21,0.18)); box-shadow: 0 0 10px rgba(248,113,113,0.15); }
-    .spoke--4 { transform: rotate(180deg); background: linear-gradient(to top, rgba(122,167,255,0.6), rgba(192,132,252,0.18)); box-shadow: 0 0 10px rgba(122,167,255,0.18); }
-    .spoke--5 { transform: rotate(225deg); background: linear-gradient(to top, rgba(250,204,21,0.5), rgba(52,211,153,0.18)); box-shadow: 0 0 10px rgba(250,204,21,0.15); }
-    .spoke--6 { transform: rotate(270deg); background: linear-gradient(to top, rgba(192,132,252,0.6), rgba(122,167,255,0.18)); box-shadow: 0 0 10px rgba(192,132,252,0.18); }
-    .spoke--7 { transform: rotate(315deg); background: linear-gradient(to top, rgba(52,211,153,0.6), rgba(248,113,113,0.18)); box-shadow: 0 0 10px rgba(52,211,153,0.18); }
+    /* ---- (orbit/portal CSS removed — replaced by bento grid above) ---- */
 
     .telemetry-bar {
       position: absolute;
@@ -497,7 +360,73 @@
     width:100%;height:100%;object-fit:cover;display:block;
   }
 
-  /* ---- Portal videos replace CSS keyframes (generated per-portal clips) ---- */
+  /* ---- Bento grid hub navigation ---- */
+  .hub-title{text-align:center;margin:6vh auto 4vh;text-decoration:none;color:inherit;}
+  .hub-title__name{
+    font-family:var(--font-display,'Unbounded','Inter',sans-serif);
+    font-weight:800;font-size:clamp(42px,9vw,84px);letter-spacing:0.15em;
+    text-transform:uppercase;color:#fff;
+    text-shadow:0 0 60px rgba(122,167,255,0.3),0 0 30px rgba(232,198,89,0.2);
+    line-height:1;
+  }
+  .hub-title__sub{
+    font-family:var(--font-mono,'IBM Plex Mono',monospace);
+    font-size:clamp(11px,1.8vw,14px);letter-spacing:0.4em;
+    text-transform:uppercase;color:var(--hub-muted);margin-top:8px;
+  }
+  .bento-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:clamp(20px,4vw,32px);max-width:1100px;margin:0 auto;padding:0 2vw;
+  }
+  .bento-card{
+    position:relative;display:block;text-decoration:none;color:inherit;
+    background:rgba(12,20,42,0.6);backdrop-filter:blur(10px);
+    border:1px solid rgba(122,167,255,0.2);border-radius:16px;
+    padding:clamp(24px,4vw,32px);
+    transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .3s ease;
+  }
+  .bento-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(122,167,255,0.5);
+    box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px rgba(122,167,255,0.2);
+  }
+  .bento-card__icon{
+    font-size:clamp(32px,6vw,44px);margin-bottom:16px;
+    display:block;text-align:center;
+  }
+  .bento-card__title{
+    font-family:var(--font-display,'Unbounded','Inter',sans-serif);
+    font-weight:700;font-size:clamp(18px,3vw,22px);letter-spacing:0.12em;
+    text-transform:uppercase;margin-bottom:10px;color:#fff;
+  }
+  .bento-card__desc{
+    font-family:var(--font-mono,'IBM Plex Mono',monospace);
+    font-size:clamp(12px,1.8vw,14px);line-height:1.5;
+    color:var(--hub-muted);
+  }
+  .bento-card__arrow{
+    position:absolute;right:20px;bottom:20px;
+    font-family:var(--font-mono,monospace);font-size:20px;
+    color:rgba(122,167,255,0.4);transition:color .3s ease;
+    pointer-events:none;
+  }
+  .bento-card:hover .bento-card__arrow{color:rgba(122,167,255,0.9);}
+
+  /* ---- Portal transition: CSS-only (no video) ---- */
+  .portal-transition{
+    position:fixed;inset:0;z-index:10001;pointer-events:none;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;background:rgba(2,4,8,0.95);
+    transition:opacity .3s ease;
+  }
+  .portal-transition--active{opacity:1;pointer-events:all;}
+  .portal-transition__word{
+    font-family:var(--font-display,'Unbounded','IBM Plex Mono',sans-serif);
+    font-weight:900;font-size:clamp(48px,12vw,120px);letter-spacing:0.2em;
+    text-transform:uppercase;color:#e8c659;
+    text-shadow:0 0 60px rgba(232,198,89,0.5);
+    animation:nooPulse 2s ease-in-out infinite;
+  }
 
   @media (prefers-reduced-motion: reduce){
     .noosphere-intro,.portal-transition{display:none!important;}
@@ -559,18 +488,6 @@
   <div class="nebula nebula--c" aria-hidden="true"></div>
 
   <main id="main" aria-label="Noosphere Hub">
-    <div class="orbit-ring orbit-ring--outer" aria-hidden="true"></div>
-    <div class="orbit-ring orbit-ring--mid" aria-hidden="true"></div>
-
-    <div class="spoke" aria-hidden="true"></div>
-    <div class="spoke" aria-hidden="true"></div>
-    <div class="spoke" aria-hidden="true"></div>
-    <div class="spoke" aria-hidden="true"></div>
-    <div class="spoke" aria-hidden="true"></div>
-    <div class="spoke" aria-hidden="true"></div>
-    <div class="spoke" aria-hidden="true"></div>
-    <div class="spoke" aria-hidden="true"></div>
-
     <!-- Edge graphics: left + right vertical data streams -->
     <div class="hub-edge hub-edge--left" aria-hidden="true">
       <div class="hub-edge__stream"></div>
@@ -583,72 +500,40 @@
       <div class="hub-edge__stream"></div>
     </div>
 
-    <div class="orbit-carousel" role="navigation" aria-label="Noosphere navigation" id="orbit-carousel">
-      <div class="orbit-node-wrap orbit-node-wrap--0">
-        <a class="orbit-node orbit-node--theme-a" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" aria-label="Quantum Lattice — live agent flows">
-          <div class="orbit-node__icon">🧠</div>
-          <div class="orbit-node__title">Quantum Lattice</div>
-          <div class="orbit-node__badge">Live Flows</div>
-        </a>
-      </div>
-
-      <div class="orbit-node-wrap orbit-node-wrap--1">
-        <a class="orbit-node orbit-node--theme-c" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer" aria-label="Trading Desk">
-          <div class="orbit-node__icon">📈</div>
-          <div class="orbit-node__title">Trading Desk</div>
-          <div class="orbit-node__badge">Paper</div>
-        </a>
-      </div>
-
-      <div class="orbit-node-wrap orbit-node-wrap--2">
-        <a class="orbit-node orbit-node--theme-b" href="https://defi369.github.io/digital-nation-website/protocol-status-v2.html" aria-label="Governance and IAMS">
-          <div class="orbit-node__icon">🏛️</div>
-          <div class="orbit-node__title">Governance</div>
-          <div class="orbit-node__badge">Ops</div>
-        </a>
-      </div>
-
-      <div class="orbit-node-wrap orbit-node-wrap--3">
-        <a class="orbit-node orbit-node--theme-d" href="https://defi369.github.io/digital-nation-website/quantum-roadmap.html" aria-label="Quantum Roadmap">
-          <div class="orbit-node__icon">🗺️</div>
-          <div class="orbit-node__title">Roadmap</div>
-          <div class="orbit-node__badge">Planned</div>
-        </a>
-      </div>
-
-      <div class="orbit-node-wrap orbit-node-wrap--4">
-        <a class="orbit-node orbit-node--theme-b" href="/digital-nation-website/mcp-status.html" aria-label="HyperLattice MCP status">
-          <div class="orbit-node__icon">🔗</div>
-          <div class="orbit-node__title">HL MCP</div>
-          <div class="orbit-node__badge">Memory</div>
-        </a>
-      </div>
-
-      <div class="orbit-node-wrap orbit-node-wrap--5">
-        <a class="orbit-node orbit-node--theme-e" href="https://defi369.github.io/digital-nation-website/index-legacy.html" aria-label="Noosphere archive">
-          <div class="orbit-node__icon">📜</div>
-          <div class="orbit-node__title">Archive</div>
-          <div class="orbit-node__badge">Legacy</div>
-        </a>
-      </div>
-
-      <div class="orbit-node-wrap orbit-node-wrap--6">
-        <a class="orbit-node orbit-node--theme-c" href="https://defi369.github.io/digital-nation-website/structure.html" aria-label="Government structure">
-          <div class="orbit-node__icon">🏗️</div>
-          <div class="orbit-node__title">Structure</div>
-          <div class="orbit-node__badge">Gov</div>
-        </a>
-      </div>
-
-      <div class="orbit-node-wrap orbit-node-wrap--7">
-        <a class="orbit-node orbit-node--theme-a" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html" aria-label="Ecosystem status">
-          <div class="orbit-node__icon">🌐</div>
-          <div class="orbit-node__title">Ecosystem</div>
-          <div class="orbit-node__badge">Status</div>
-        </a>
-      </div>
+    <div class="hub-title">
+      <h1 class="hub-title__name">NOOSPHERE</h1>
+      <p class="hub-title__sub">The Sphere of Mind</p>
     </div>
-  </div>
+
+    <nav class="bento-grid" aria-label="Noosphere navigation" id="orbit-carousel">
+      <a class="bento-card bento-card--ecosystem" href="https://defi369.github.io/digital-nation-website/ecosystem-status.html" aria-label="Ecosystem — overview of all systems built and coming">
+        <div class="bento-card__icon">🌐</div>
+        <div class="bento-card__title">Ecosystem</div>
+        <div class="bento-card__desc">The full network of systems we've built — and what's coming next.</div>
+        <div class="bento-card__arrow">→</div>
+      </a>
+
+      <a class="bento-card bento-card--trading" href="https://defi369.github.io/digital-nation-website/trading-desk.html" aria-label="Trading Desk — asset management company">
+        <div class="bento-card__icon">📈</div>
+        <div class="bento-card__title">Trading Desk</div>
+        <div class="bento-card__desc">Our company for managing sovereign assets. Expanding soon.</div>
+        <div class="bento-card__arrow">→</div>
+      </a>
+
+      <a class="bento-card bento-card--lattice" href="https://defi369.github.io/digital-nation-website/memory-lattice.html" aria-label="Quantum Lattice — the 4D brain showing live agents">
+        <div class="bento-card__icon">🧠</div>
+        <div class="bento-card__title">Quantum Lattice</div>
+        <div class="bento-card__desc">The 4D brain of the Noosphere — watch live agents at work in real time.</div>
+        <div class="bento-card__arrow">→</div>
+      </a>
+
+      <a class="bento-card bento-card--roadmap" href="https://defi369.github.io/digital-nation-website/quantum-roadmap.html" aria-label="Roadmap — plans for the entire system">
+        <div class="bento-card__icon">🗺️</div>
+        <div class="bento-card__title">Roadmap</div>
+        <div class="bento-card__desc">Where the Noosphere is headed — the full system plan.</div>
+        <div class="bento-card__arrow">→</div>
+      </a>
+    </nav>
   </main>
 </header>
 
@@ -755,65 +640,29 @@
       setTimeout(dismiss, 9000);
     })();
 
-    // ---- Per-portal transition: intercept orbit-node clicks, animate per-theme, then navigate ----
+    // ---- Bento card click: brief CSS word-reveal, then navigate ----
     (function () {
-      // Map portal label → portal video clip filename
-      var THEME_MAP = [
-        { match: /quantum lattice/i,           video: 'portals/lattice.mp4' },
-        { match: /trading desk/i,              video: 'portals/trading.mp4' },
-        { match: /governance/i,                video: 'portals/governance.mp4' },
-        { match: /roadmap/i,                   video: 'portals/roadmap.mp4' },
-        { match: /hl mcp|hyperlattice|mcp/i,    video: 'portals/mcp.mp4' },
-        { match: /archive/i,                   video: 'portals/archive.mp4' },
-        { match: /structure/i,                 video: 'portals/structure.mp4' },
-        { match: /ecosystem/i,                 video: 'portals/ecosystem.mp4' }
-      ];
-      function nodeIcon(node) {
-        var ic = node.querySelector('.orbit-node__icon');
-        return ic ? ic.textContent.trim() : '🌐';
-      }
-      function videoFor(node) {
-        var label = (node.getAttribute('aria-label') || '') + ' ' + (node.textContent || '');
-        for (var i = 0; i < THEME_MAP.length; i++) {
-          if (THEME_MAP[i].match.test(label)) return THEME_MAP[i].video;
-        }
-        return 'portals/lattice.mp4'; // default
-      }
-      function firePortal(node, href) {
-        var src = videoFor(node);
-        var overlay = document.createElement('div');
-        overlay.className = 'portal-transition';
-        var vid = document.createElement('video');
-        vid.className = 'portal-transition__video';
-        vid.muted = true;
-        vid.playsInline = true;
-        vid.autoplay = true;
-        var source = document.createElement('source');
-        source.src = src;
-        source.type = 'video/mp4';
-        vid.appendChild(source);
-        overlay.appendChild(vid);
-        document.body.appendChild(overlay);
-        void overlay.offsetHeight;
-        overlay.classList.add('portal-transition--active');
-        // navigate after the clip ends (clips are 4s) or after a max timeout
-        var navigated = false;
-        function go() {
-          if (navigated) return; navigated = true;
-          if (href) window.location.href = href;
-          overlay.remove();
-        }
-        vid.addEventListener('ended', go);
-        vid.play().catch(function(){ /* autoplay may be blocked; still navigate */ });
-        setTimeout(go, 5000); // safety: max 5s hold
-      }
-      var nodes = document.querySelectorAll('.orbit-node');
+      var nodes = document.querySelectorAll('.bento-card');
       nodes.forEach(function (node) {
         node.addEventListener('click', function (e) {
           var href = node.getAttribute('href');
           if (!href) return;
           e.preventDefault();
-          firePortal(node, href);
+          var title = node.querySelector('.bento-card__title');
+          var word = title ? title.textContent.trim().toUpperCase() : 'NOOSPHERE';
+          var overlay = document.createElement('div');
+          overlay.className = 'portal-transition';
+          var w = document.createElement('div');
+          w.className = 'portal-transition__word';
+          w.textContent = word;
+          overlay.appendChild(w);
+          document.body.appendChild(overlay);
+          void overlay.offsetHeight;
+          overlay.classList.add('portal-transition--active');
+          setTimeout(function () {
+            window.location.href = href;
+            overlay.remove();
+          }, 900);
         });
       });
     })();
