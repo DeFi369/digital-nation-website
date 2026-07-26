@@ -406,9 +406,10 @@
     border:1px solid rgba(122,167,255,0.2);border-radius:16px;
     padding:clamp(20px,3vw,26px);
     transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .3s ease;
+    transform:perspective(800px) translateZ(0);
   }
   .bento-card:hover{
-    transform:translateY(-4px);
+    transform:perspective(800px) translateY(-6px) rotateX(2deg) rotateY(-2deg);
     border-color:rgba(122,167,255,0.5);
     box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px rgba(122,167,255,0.2);
   }
