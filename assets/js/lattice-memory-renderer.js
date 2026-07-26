@@ -10,6 +10,11 @@
   function init() {
     renderCurrentState();
     renderMemoryIndex();
+    // Live refresh: re-poll the summary every 10s so the view feels real-time
+    setInterval(function () {
+      renderCurrentState();
+      renderMemoryIndex();
+    }, 10000);
   }
 
   function renderCurrentState() {
