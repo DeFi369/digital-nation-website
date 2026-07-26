@@ -400,6 +400,10 @@
   @media (max-width:640px){
     .bento-grid{grid-template-columns:1fr;max-width:420px;}
   }
+  .bento-card--ecosystem{--accent:rgba(122,167,255,0.5);}
+  .bento-card--trading{--accent:rgba(52,211,153,0.5);}
+  .bento-card--lattice{--accent:rgba(192,132,252,0.5);}
+  .bento-card--roadmap{--accent:rgba(250,204,21,0.5);}
   .bento-card{
     position:relative;display:block;text-decoration:none;color:inherit;
     background:rgba(12,20,42,0.6);backdrop-filter:blur(10px);
@@ -410,30 +414,30 @@
   }
   .bento-card:hover{
     transform:perspective(800px) translateY(-6px) rotateX(2deg) rotateY(-2deg);
-    border-color:rgba(122,167,255,0.5);
-    box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px rgba(122,167,255,0.2);
+    border-color:var(--accent);
+    box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px var(--accent);
   }
   .bento-card__icon{
     font-size:clamp(32px,6vw,44px);margin-bottom:16px;
     display:block;text-align:center;
+    filter:drop-shadow(0 0 10px var(--accent));
+  }
+  .bento-card__arrow{
+    position:absolute;right:20px;bottom:20px;
+    font-family:var(--font-mono,monospace);font-size:20px;
+    color:var(--accent);transition:color .3s ease;
+    pointer-events:none;
+  }
+    font-family:var(--font-mono,'IBM Plex Mono',monospace);
+    font-size:clamp(12px,1.8vw,14px);line-height:1.5;
+    color:var(--hub-muted);
   }
   .bento-card__title{
     font-family:var(--font-display,'Unbounded','Inter',sans-serif);
     font-weight:700;font-size:clamp(18px,3vw,22px);letter-spacing:0.12em;
     text-transform:uppercase;margin-bottom:10px;color:#fff;
   }
-  .bento-card__desc{
-    font-family:var(--font-mono,'IBM Plex Mono',monospace);
-    font-size:clamp(12px,1.8vw,14px);line-height:1.5;
-    color:var(--hub-muted);
-  }
-  .bento-card__arrow{
-    position:absolute;right:20px;bottom:20px;
-    font-family:var(--font-mono,monospace);font-size:20px;
-    color:rgba(122,167,255,0.4);transition:color .3s ease;
-    pointer-events:none;
-  }
-  .bento-card:hover .bento-card__arrow{color:rgba(122,167,255,0.9);}
+  .bento-card:hover .bento-card__arrow{color:var(--accent);}
 
   /* ---- Portal transition: CSS-only (no video) ---- */
   .portal-transition{
