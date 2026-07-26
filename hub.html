@@ -18,7 +18,7 @@
 <meta name="robots" content="index, follow">
   <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noosphere — Orbital Command Center</title>
+  <title>Noosphere — The Sphere of Mind</title>
     <meta name="twitter:card" content="summary">
 <meta name="description" content="The sovereign hub of the Noosphere. Real-time neural substrate, trading desk, governance, and agent activity — orbital command center." />
   <meta property="og:title" content="Noosphere — Hub" />
@@ -438,6 +438,13 @@
     text-transform:uppercase;margin-bottom:10px;color:#fff;
   }
   .bento-card:hover .bento-card__arrow{color:var(--accent);}
+  .bento-card__badge{
+    display:inline-block;margin-top:14px;
+    font-family:var(--font-mono,monospace);font-size:10px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--accent);
+    border:1px solid var(--accent);border-radius:20px;padding:3px 12px;
+    opacity:0.85;
+  }
 
   /* ---- Portal transition: CSS-only (no video) ---- */
   .portal-transition{
@@ -537,6 +544,7 @@
         <div class="bento-card__icon">🌐</div>
         <div class="bento-card__title">Ecosystem</div>
         <div class="bento-card__desc">The full network of systems we've built — and what's coming next.</div>
+        <div class="bento-card__badge">Live</div>
         <div class="bento-card__arrow">→</div>
       </a>
 
@@ -544,6 +552,7 @@
         <div class="bento-card__icon">📈</div>
         <div class="bento-card__title">Trading Desk</div>
         <div class="bento-card__desc">Our company for managing sovereign assets. Expanding soon.</div>
+        <div class="bento-card__badge">Paper</div>
         <div class="bento-card__arrow">→</div>
       </a>
 
@@ -551,6 +560,7 @@
         <div class="bento-card__icon">🧠</div>
         <div class="bento-card__title">Quantum Lattice</div>
         <div class="bento-card__desc">The 4D brain of the Noosphere — watch live agents at work in real time.</div>
+        <div class="bento-card__badge" id="hub-lattice-badge">Live</div>
         <div class="bento-card__arrow">→</div>
       </a>
 
@@ -558,6 +568,7 @@
         <div class="bento-card__icon">🗺️</div>
         <div class="bento-card__title">Roadmap</div>
         <div class="bento-card__desc">Where the Noosphere is headed — the full system plan.</div>
+        <div class="bento-card__badge">Planned</div>
         <div class="bento-card__arrow">→</div>
       </a>
     </nav>
@@ -697,12 +708,14 @@
     // Live agent count from the quantum lattice dashboard.
     (function pollAgents() {
       const el = document.getElementById('hub-agent-count');
-      if (!el) return;
+      const badge = document.getElementById('hub-lattice-badge');
+      if (!el && !badge) return;
       fetch('http://localhost:8086/api/agents', { cache: 'no-store' })
         .then(r => r.ok ? r.json() : null)
         .then(d => {
           if (d && d.ok && typeof d.agentCount === 'number') {
-            el.textContent = d.agentCount + ' online';
+            if (el) el.textContent = d.agentCount + ' online';
+            if (badge) badge.textContent = d.agentCount + ' active';
           }
         })
         .catch(() => { /* silent */ })
