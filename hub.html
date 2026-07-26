@@ -268,12 +268,8 @@
       background: #05070a;
     }
 
-    @media (max-width: 760px) {
-      .orbit-node-wrap--0, .orbit-node-wrap--1, .orbit-node-wrap--2, .orbit-node-wrap--3,
-      .orbit-node-wrap--4, .orbit-node-wrap--5, .orbit-node-wrap--6, .orbit-node-wrap--7 {
-        transform: rotate(var(--angle)) translate(clamp(26vw, 36vh, 40vw)) rotate(calc(-1 * var(--angle)));
-      }
-      .spoke { display: none; }
+    @media (max-width: 768px) {
+      .bento-grid{grid-template-columns:1fr;max-width:420px;}
     }
     :focus-visible {
     outline: 2px solid var(--hub-light, #6cf);
@@ -428,6 +424,7 @@
     color:var(--accent);transition:color .3s ease;
     pointer-events:none;
   }
+  .bento-card__desc{
     font-family:var(--font-mono,'IBM Plex Mono',monospace);
     font-size:clamp(12px,1.8vw,14px);line-height:1.5;
     color:var(--hub-muted);
@@ -674,8 +671,8 @@
         setTimeout(function () { intro.remove(); }, 800);
       }
       if (skip) skip.addEventListener('click', dismiss);
-      // auto-dismiss after 9s
-      setTimeout(dismiss, 9000);
+      // auto-dismiss after 7s
+      setTimeout(dismiss, 7000);
     })();
 
     // ---- Bento card click: brief CSS word-reveal, then navigate ----
