@@ -38,10 +38,15 @@
         ['Protocol', esc(eco.metrics && eco.metrics.protocolVersion || eco.aepVersion || '—')]
       ])));
       set('verified-identities', (eco.verifiedIdentities || []).map(function (id) {
-        return '<div class="card"><h3>' + esc(id.name || id.id || 'Unknown') + '</h3><p>' + esc(id.role || id.type || 'Agent') + '</p>' + (id.pubkey ? '<p><code>' + esc(id.pubkey.slice(0, 16)) + '...</code></p>' : '') + '</div>';
+        var name = (typeof id === 'string') ? id : (id.name || id.id || 'Unknown');
+        var role = (typeof id === 'string') ? 'Agent' : (id.role || id.type || 'Agent');
+        var pubkey = (typeof id === 'string') ? null : id.pubkey;
+        return '<div class="card"><h3>' + esc(name) + '</h3><p>' + esc(role) + '</p>' + (pubkey ? '<p><code>' + esc(pubkey.slice(0, 16)) + '...</code></p>' : '') + '</div>';
       }).join('') || '<p class="activity-empty">No identities loaded.</p>');
       set('verification-feed', (eco.verifiedIdentities || []).map(function (id) {
-        return '<div class="activity-item activity-governance"><div class="activity-label">' + esc(id.name || id.id || 'Unknown') + '</div><div class="activity-meta"><span class="activity-type">' + esc(id.role || id.type || 'Agent') + '</span></div><div class="activity-state">' + dot('active') + '</div></div>';
+        var name = (typeof id === 'string') ? id : (id.name || id.id || 'Unknown');
+        var role = (typeof id === 'string') ? 'Agent' : (id.role || id.type || 'Agent');
+        return '<div class="activity-item activity-governance"><div class="activity-label">' + esc(name) + '</div><div class="activity-meta"><span class="activity-type">' + esc(role) + '</span></div><div class="activity-state">' + dot('active') + '</div></div>';
       }).join('') || '');
       set('quantum-status', buildCard('Quantum Compute Signal', buildKV([
         ['Available', eco.quantum && eco.quantum.available === true ? 'Yes' : eco.quantum && eco.quantum.available === false ? 'No' : '—'],
