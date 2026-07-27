@@ -28,6 +28,15 @@
   <meta name="twitter:title" content="Quantum Attestation Hardware Roadmap — The Noosphere">
   <meta name="twitter:description" content="A transparent, phased roadmap to sovereign quantum attestation with open hardware and zero vendor lock-in.">
   <meta name="twitter:image" content="https://defi369.github.io/digital-nation-website/assets/images/og-card.png">
+  <style>
+    details { margin: 16px 0; border: 1px solid rgba(122,167,255,0.2); border-radius: 12px; overflow: hidden; background: rgba(12,20,42,0.4); }
+    summary { cursor: pointer; padding: 16px 20px; background: rgba(122,167,255,0.04); list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "▸ "; color: #7aa7ff; font-family: 'IBM Plex Mono', monospace; }
+    details[open] > summary::before { content: "▾ "; }
+    summary h3 { display: inline; margin: 0; font-size: clamp(16px, 2.5vw, 20px); }
+    details > table { margin: 0; border-radius: 0; border-left: none; border-right: none; border-bottom: none; }
+  </style>
 
   <title>Quantum Attestation Hardware Roadmap — The Noosphere</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -276,7 +285,8 @@
           The table below summarises the options and their sovereignty rating.
         </p>
 
-        <h3>Quantum Random Number Generators</h3>
+        <details open>
+          <summary><h3>Quantum Random Number Generators</h3></summary>
         <table class="landscape-table" aria-label="Quantum random number generator options">
           <thead>
             <tr>
@@ -313,8 +323,10 @@
             </tr>
           </tbody>
         </table>
+        </details>
 
-        <h3>On-Premise Quantum Processing</h3>
+        <details>
+          <summary><h3>On-Premise Quantum Processing</h3></summary>
         <table class="landscape-table" aria-label="On-premise QPU options">
           <thead>
             <tr>
@@ -346,8 +358,10 @@
             </tr>
           </tbody>
         </table>
+        </details>
 
-        <h3>FPGA Quantum Simulation</h3>
+        <details>
+          <summary><h3>FPGA Quantum Simulation</h3></summary>
         <table class="landscape-table" aria-label="FPGA quantum simulator options">
           <thead>
             <tr>
@@ -374,6 +388,7 @@
             </tr>
           </tbody>
         </table>
+        </details>
 
         <h2>Our Phased Plan</h2>
         <p>
