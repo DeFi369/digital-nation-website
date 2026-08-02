@@ -597,8 +597,9 @@
   <div class="telemetry-bar" aria-label="Live system windows">
     <div class="telemetry-item"><span>Brain</span><a class="telemetry-item__value" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer">Open</a></div>
     <div class="telemetry-item"><span>Agents</span><a class="telemetry-item__value" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer" id="hub-agent-count">—</a></div>
+    <div class="telemetry-item"><span>Graph</span><span class="telemetry-item__value" id="hub-graph-status">—</span></div>
     <div class="telemetry-item"><span>Desk</span><a class="telemetry-item__value" href="http://localhost:8100/" target="_blank" rel="noopener noreferrer">Open</a></div>
-    <div class="telemetry-item"><span>HL MCP</span><a class="telemetry-item__value" href="/digital-nation-website/mcp-status.html">Status</a></div>
+    <div class="telemetry-item"><span>HLMCP</span><a class="telemetry-item__value" href="/digital-nation-website/mcp-status.html">Status</a></div>
     <div class="telemetry-item"><span>Noosphere</span><a class="telemetry-item__value" href="https://defi369.github.io/digital-nation-website/" target="_blank" rel="noopener noreferrer">Open</a></div>
     <div class="telemetry-item"><span>Hub</span><span class="telemetry-item__value" style="color:#34d399">Live</span></div>
   </div>
@@ -695,6 +696,24 @@
         })
         .catch(() => { /* silent */ })
         .finally(() => setTimeout(pollAgents, 5000));
+    })();
+
+    // ---- Poll graph-summary.json for live status ----
+    (function pollGraph() {
+      const el = document.getElementById('hub-graph-status');
+      if (!el) return;
+      fetch('assets/data/graph-summary.json', { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : null)
+        .then(d => {
+          if (!d) return;
+          const done = d.nodes.filter(n => n.status === 'done').length;
+          const running = d.nodes.filter(n => n.status === 'running').length;
+          const total = d.nodes.length;
+          el.textContent = done + '/' + total + ' done, ' + running + ' running';
+          el.style.color = running > 0 ? '#7aa7ff' : '#50e3a4';
+        })
+        .catch(() => { /* silent */ })
+        .finally(() => setTimeout(pollGraph, 10000));
     })();
   </script>
   <p class="internal-links">Also see the <a href="/digital-nation-website/index.html">Noosphere homepage</a> for the full citizen experience.</p>
