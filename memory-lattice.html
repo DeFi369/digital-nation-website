@@ -113,10 +113,9 @@
 
         <h2>Memory Lattice — 3D Visualization</h2>
         <p>
-          The nodes below represent visible memory entries in the Noosphere lattice. Each node
-          is a memoized observation; edges show transition hops. This is a static snapshot
-          rendered in-browser — the live 3D brain runs on local infrastructure and connects
-          via the Lattice Brain service.
+          Toggle between the memory lattice (spiral view of memoized observations) and the
+          task graph (dependency tree of active Noosphere systems). The graph view colors
+          nodes by progress and animates edges to show the flow of governance over time.
         </p>
         <div class="lattice-brain-embed">
           <canvas id="latticeCanvas" class="lattice-canvas"
@@ -126,6 +125,12 @@
           <div class="lattice-brain-fallback" id="latticeBrainFallback" style="display:none;">
             <p>Lattice visualization not available in this browser.</p>
             <p style="margin-top:10px;">The static memory summary below reflects the latest local snapshot.</p>
+          </div>
+          <div class="lattice-view-toggle" style="position:absolute;top:12px;right:12px;display:flex;gap:4px;z-index:5;">
+            <button id="latticeViewBtn" class="lattice-view-btn active" type="button"
+              style="background:rgba(10,14,28,.6);border:1px solid #7aa7ff;color:#7aa7ff;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 12px;border-radius:4px;cursor:pointer;transition:all .2s;">Lattice</button>
+            <button id="graphViewBtn" class="lattice-view-btn" type="button"
+              style="background:rgba(10,14,28,.6);border:1px solid rgba(122,167,255,0.3);color:#5a6b8c;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 12px;border-radius:4px;cursor:pointer;transition:all .2s;">Graph</button>
           </div>
         </div>
         <p>
@@ -240,60 +245,125 @@
       // ---- Lattice brain iframe reachability check ----
       // Public visitors cannot reach localhost:8086. We now render a static
       // 3D-style visualization from the lattice-summary.json data instead.
+      // Toggle between "lattice" view (spiral memory layout) and "graph" view
+      // (task dependency tree with progress-based coloring).
       (function () {
         var canvas = document.getElementById('latticeCanvas');
         var fallback = document.getElementById('latticeBrainFallback');
+        var latticeBtn = document.getElementById('latticeViewBtn');
+        var graphBtn = document.getElementById('graphViewBtn');
         if (!canvas || !fallback) return;
         var ctx = canvas.getContext('2d');
         if (!ctx) { fallback.style.display = 'flex'; return; }
 
-        // Set canvas resolution to match display size
         var w = canvas.width, h = canvas.height;
-        ctx.fillStyle = '#05070a';
-        ctx.fillRect(0, 0, w, h);
+        var view = 'lattice';
+        var nodeData = [];
+        var edgeData = [];
 
-        var nodes = [];
-        var edges = [];
+        // Toggle button handlers
+        if (latticeBtn) latticeBtn.addEventListener('click', function () {
+          view = 'lattice';
+          latticeBtn.classList.add('active');
+          latticeBtn.style.borderColor = '#7aa7ff';
+          latticeBtn.style.color = '#7aa7ff';
+          graphBtn.classList.remove('active');
+          graphBtn.style.borderColor = 'rgba(122,167,255,0.3)';
+          graphBtn.style.color = '#5a6b8c';
+          draw();
+        });
+        if (graphBtn) graphBtn.addEventListener('click', function () {
+          view = 'graph';
+          graphBtn.classList.add('active');
+          graphBtn.style.borderColor = '#7aa7ff';
+          graphBtn.style.color = '#7aa7ff';
+          latticeBtn.classList.remove('active');
+          latticeBtn.style.borderColor = 'rgba(122,167,255,0.3)';
+          latticeBtn.style.color = '#5a6b8c';
+          draw();
+        });
 
-        fetch('assets/data/lattice-summary.json')
-          .then(function (r) { return r.json(); })
-          .then(function (data) {
-            var memories = data.memories || [];
-            var memCount = memories.length;
-            if (memCount === 0) return;
+        // Load both datasets
+        loadLattice();
+        loadGraph();
 
-            // Place nodes in a spiral layout
-            var centerX = w / 2, centerY = h / 2;
-            var radius = 100;
-            nodes = memories.map(function (m, i) {
-              var angle = (i / memCount) * Math.PI * 2 * (memories.length > 8 ? 2 : 1);
-              var r = radius + (i / memCount) * radius;
-              var x = centerX + Math.cos(angle) * r;
-              var y = centerY + Math.sin(angle) * r;
-              return { x: x, y: y, label: m.key, layer: m.layer, energy: m.energy };
-            });
+        function loadLattice() {
+          fetch('assets/data/lattice-summary.json')
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              var memories = data.memories || [];
+              var memCount = memories.length;
+              if (memCount === 0) return;
+              var centerX = w / 2, centerY = h / 2;
+              var radius = 100;
+              nodeData = memories.map(function (m, i) {
+                var angle = (i / memCount) * Math.PI * 2 * (memories.length > 8 ? 2 : 1);
+                var r = radius + (i / memCount) * radius;
+                var x = centerX + Math.cos(angle) * r;
+                var y = centerY + Math.sin(angle) * r;
+                return { x: x, y: y, label: m.key, layer: m.layer, energy: m.energy, progress: 1 };
+              });
+              edgeData = [];
+              memories.forEach(function (m, i) {
+                var hops = m.hops || 0;
+                if (hops > 0 && i - hops >= 0) {
+                  edgeData.push({ from: i, to: i - hops });
+                }
+              });
+              if (view === 'lattice') draw();
+            })
+            .catch(function () { fallback.style.display = 'flex'; });
+        }
 
-            // Draw edges based on hops
-            memories.forEach(function (m, i) {
-              var hops = m.hops || 0;
-              if (hops > 0 && i - hops >= 0) {
-                edges.push({ from: i, to: i - hops });
-              }
-            });
-
-            draw();
-          })
-          .catch(function () {
-            fallback.style.display = 'flex';
-            fallback.innerHTML = '<p>Lattice data unavailable.</p>';
-          });
+        function loadGraph() {
+          fetch('assets/data/graph-summary.json')
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              var graphNodes = data.nodes || [];
+              var centerX = w / 2, centerY = h / 2;
+              // Tree layout: group by layer, arrange horizontally
+              var layerMap = {};
+              graphNodes.forEach(function (n) {
+                if (!layerMap[n.layer]) layerMap[n.layer] = [];
+                layerMap[n.layer].push(n);
+              });
+              var layers = Object.keys(layerMap).sort(function (a, b) { return a - b; });
+              var layerGap = 180;
+              var maxPerLayer = 0;
+              layers.forEach(function (l) { maxPerLayer = Math.max(maxPerLayer, layerMap[l].length); });
+              var nodeSpacing = Math.min(100, (w - 100) / (maxPerLayer + 1));
+              var statusColors = {
+                'pending': '#5a6b8c',
+                'running': '#7aa7ff',
+                'done': '#50e3a4',
+                'failed': '#ff3d71'
+              };
+              graphNodes.forEach(function (n, i) {
+                var layerIdx = layers.indexOf(n.layer) || 0;
+                var lx = centerX - (layers.length * layerGap / 2) + layerIdx * layerGap;
+                var nodesInLayer = layerMap[n.layer];
+                var nodeIdx = nodesInLayer.indexOf(n);
+                var ly = centerY - (nodesInLayer.length * nodeSpacing / 2) + nodeIdx * nodeSpacing + nodeSpacing / 2;
+                n._x = lx; n._y = ly;
+                n._color = statusColors[n.status] || '#5a6b8c';
+                n._progress = n.progress || 0;
+              });
+              // Map edges to node indices
+              var idMap = {}; graphNodes.forEach(function (n, i) { idMap[n.id] = i; });
+              edgeData = data.edges.map(function (e) {
+                return { from: idMap[e.from], to: idMap[e.to], type: e.type };
+              }).filter(function (e) { return e.from !== undefined && e.to !== undefined; });
+              nodeData = graphNodes;
+              if (view === 'graph') draw();
+            })
+            .catch(function () { fallback.style.display = 'flex'; });
+        }
 
         function draw() {
-          // Clear
           ctx.fillStyle = '#05070a';
           ctx.fillRect(0, 0, w, h);
 
-          // Draw grid dots for depth
+          // Grid dots
           ctx.strokeStyle = 'rgba(122,167,255,0.03)';
           ctx.lineWidth = 1;
           for (var gx = 0; gx < w; gx += 40) {
@@ -303,38 +373,98 @@
             ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(w, gy); ctx.stroke();
           }
 
+          var time = Date.now() / 1000;
+
           // Draw edges
-          ctx.strokeStyle = 'rgba(122,167,255,0.2)';
+          ctx.strokeStyle = 'rgba(122,167,255,0.15)';
           ctx.lineWidth = 1.5;
-          edges.forEach(function (e) {
-            var a = nodes[e.from], b = nodes[e.to];
+          edgeData.forEach(function (e) {
+            var a = nodeData[e.from], b = nodeData[e.to];
             if (!a || !b) return;
             ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
+            ctx.moveTo(a._x || a.x, a._y || a.y);
+            ctx.lineTo(b._x || b.x, b._y || b.y);
             ctx.stroke();
+            // Animate pulse along edge in graph view
+            if (view === 'graph' && a._x) {
+              var dx = b._x - a._x, dy = b._y - a._y;
+              var dist = Math.sqrt(dx*dx + dy*dy);
+              var pulseT = (time * 0.5 + e.from * 0.3 + e.to * 0.1) % 1;
+              var px = a._x + (dx/dist) * pulseT * dist;
+              var py = a._y + (dy/dist) * pulseT * dist;
+              ctx.strokeStyle = 'rgba(122,167,255,0.4)';
+              ctx.lineWidth = 2;
+              ctx.beginPath(); ctx.moveTo(px-2, py-2); ctx.lineTo(px+2, py+2); ctx.stroke();
+              ctx.strokeStyle = 'rgba(122,167,255,0.15)';
+              ctx.lineWidth = 1.5;
+            }
           });
 
-          // Draw nodes (as 3D-looking spheres)
-          nodes.forEach(function (n, i) {
-            var grad = ctx.createRadialGradient(
-              n.x - 3, n.y - 3, 1, n.x, n.y, 12);
-            var energy = n.energy || 0.5;
-            grad.addColorStop(0, 'rgba(122,167,255,' + (0.6 + energy * 0.4) + ')');
-            grad.addColorStop(1, 'rgba(192,132,252,' + (0.2 + energy * 0.3) + ')');
-            ctx.fillStyle = grad;
-            ctx.beginPath();
-            ctx.arc(n.x, n.y, 8 + energy * 4, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Glow
-            ctx.shadowColor = 'rgba(122,167,255,0.4)';
-            ctx.shadowBlur = 10;
-            ctx.beginPath();
-            ctx.arc(n.x, n.y, 6, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.shadowBlur = 0;
+          // Draw nodes
+          nodeData.forEach(function (n, i) {
+            var nx = n._x || n.x, ny = n._y || n.y;
+            if (view === 'graph') {
+              var progress = n._progress || 1;
+              var baseR = 6 + (progress * 4);
+              var color = n._color || '#7aa7ff';
+              // Pulsing glow for running nodes
+              if (n.status === 'running') {
+                var pulse = 0.5 + 0.5 * Math.sin(time * 2 + i);
+                ctx.shadowColor = color;
+                ctx.shadowBlur = 10 * pulse;
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(nx, ny, baseR + pulse, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+              } else {
+                ctx.shadowColor = color;
+                ctx.shadowBlur = 6;
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(nx, ny, baseR, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+              }
+              // Progress ring for partial completion
+              if (progress > 0 && progress < 1) {
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2;
+                var startAngle = -Math.PI / 2;
+                var endAngle = startAngle + (progress * 2 * Math.PI);
+                ctx.beginPath();
+                ctx.arc(nx, ny, baseR + 4, startAngle, endAngle);
+                ctx.stroke();
+              }
+              // Status label
+              ctx.fillStyle = 'rgba(122,167,255,0.7)';
+              ctx.font = '10px monospace';
+              ctx.textAlign = 'center';
+              ctx.fillText(n.label || n.key, nx, ny + baseR + 14);
+            } else {
+              // Lattice view: energy-based spheres
+              var grad = ctx.createRadialGradient(
+                nx - 3, ny - 3, 1, nx, ny, 12);
+              var energy = n.energy || 0.5;
+              grad.addColorStop(0, 'rgba(122,167,255,' + (0.6 + energy * 0.4) + ')');
+              grad.addColorStop(1, 'rgba(192,132,252,' + (0.2 + energy * 0.3) + ')');
+              ctx.fillStyle = grad;
+              ctx.beginPath();
+              ctx.arc(nx, ny, 8 + energy * 4, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.shadowColor = 'rgba(122,167,255,0.4)';
+              ctx.shadowBlur = 10;
+              ctx.beginPath();
+              ctx.arc(nx, ny, 6, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.shadowBlur = 0;
+            }
           });
+
+          // Animation loop for graph view (pulsing edges + running node glow)
+          if (view === 'graph') {
+            requestAnimationFrame(draw);
+          }
         }
       })();
     </script>

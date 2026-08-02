@@ -1,0 +1,108 @@
+{
+  "graphId": "noosphere-task-graph",
+  "updatedAt": "2026-08-02",
+  "title": "Noosphere Agent Task Graph",
+  "description": "Current active task graph for Noosphere's agent governance stack. Nodes represent agent tasks; edges show dependency relationships. Color indicates progress: grey=pending, blue=running, green=done, red=failed.",
+  "nodes": [
+    {
+      "id": "aep-governance",
+      "label": "AEP Governance",
+      "status": "done",
+      "layer": 0,
+      "progress": 1.0,
+      "description": "Agent Element Protocol enforcement stack"
+    },
+    {
+      "id": "hyperlattice-substrate",
+      "label": "HyperLattice MCP",
+      "status": "done",
+      "layer": 0,
+      "progress": 1.0,
+      "description": "Governance substrate on port 8091"
+    },
+    {
+      "id": "lattice-brain",
+      "label": "Lattice Brain",
+      "status": "running",
+      "layer": 0,
+      "progress": 0.85,
+      "description": "Quantum thought engine visualization"
+    },
+    {
+      "id": "trading-desk",
+      "label": "Trading Desk",
+      "status": "running",
+      "layer": 1,
+      "progress": 0.9,
+      "description": "Meme-sniper + trading-agent engines"
+    },
+    {
+      "id": "buzz-cabinet",
+      "label": "Buzz Cabinet",
+      "status": "running",
+      "layer": 1,
+      "progress": 0.7,
+      "description": "Multi-party agent communication"
+    },
+    {
+      "id": "memlawb",
+      "label": "MemLawB",
+      "status": "running",
+      "layer": 1,
+      "progress": 0.95,
+      "description": "Zero-knowledge encrypted memory"
+    },
+    {
+      "id": "website-deploy",
+      "label": "Website Deploy",
+      "status": "done",
+      "layer": 1,
+      "progress": 1.0,
+      "description": "GitHub Pages publishing pipeline"
+    },
+    {
+      "id": "aep-health-monitor",
+      "label": "AEP Health Monitor",
+      "status": "running",
+      "layer": 2,
+      "progress": 0.99,
+      "description": "5-min cron health sweep"
+    },
+    {
+      "id": "iams-cycle",
+      "label": "IAMS Cycle",
+      "status": "running",
+      "layer": 2,
+      "progress": 1.0,
+      "description": "Agent messaging coordination"
+    },
+    {
+      "id": "nightly-maint",
+      "label": "Nightly Maintenance",
+      "status": "done",
+      "layer": 2,
+      "progress": 1.0,
+      "description": "Consolidated maintenance phases"
+    },
+    {
+      "id": "health-watchdog",
+      "label": "Health-Loop Watchdog",
+      "status": "pending",
+      "layer": 2,
+      "progress": 0.0,
+      "description": "Daily system health audit"
+    }
+  ],
+  "edges": [
+    { "from": "aep-governance", "to": "lattice-brain", "type": "depends" },
+    { "from": "aep-governance", "to": "hyperlattice-substrate", "type": "depends" },
+    { "from": "hyperlattice-substrate", "to": "trading-desk", "type": "governs" },
+    { "from": "hyperlattice-substrate", "to": "buzz-cabinet", "type": "governs" },
+    { "from": "hyperlattice-substrate", "to": "memlawb", "type": "governs" },
+    { "from": "hyperlattice-substrate", "to": "website-deploy", "type": "governs" },
+    { "from": "lattice-brain", "to": "aep-health-monitor", "type": "informs" },
+    { "from": "lattice-brain", "to": "iams-cycle", "type": "informs" },
+    { "from": "iams-cycle", "to": "nightly-maint", "type": "triggers" },
+    { "from": "nightly-maint", "to": "health-watchdog", "type": "triggers" }
+  ]
+}
