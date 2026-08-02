@@ -238,3 +238,5 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Cleanup: fixed index.html redundant title "Noosphere — The Noosphere" → "Noosphere — The Sphere of Mind"
   - Cleanup: updated hub.html description from "orbital command center" → "command center" (layout is now bento grid)
   - Verified: 0 remaining Principality/Aetheria/Digital Nation references; integrity check passes; deployed live on GitHub Pages
+  - Metadata: added full head metadata to ALL 76 pages (was only on 10) — CSP, manifest, html attributes (hreflang/dir/class/no-js), dns-prefetch, permissions-policy, og:locale, og:site_name, article:modified_time, JSON-LD breadcrumbs, color-scheme, format-detection, robots
+  - Committed as b827778 + 1bd5f29
