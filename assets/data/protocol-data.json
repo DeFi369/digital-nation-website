@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-26",
+  "generated": "2026-08-02",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -60,10 +60,10 @@
       "id": "conformance",
       "name": "aep-conformance",
       "fullName": "AEP Conformance Suite",
-      "version": "1.0",
-      "status": "pre-v1.0",
+      "version": "2",
+      "status": "scaffolding",
       "source": "repos/conformance/README.md",
-      "summary": "# AEP Conformance Test Suite Test battery that determines who gets to claim AEP-compliance. ## Status Pre-v1.0 scaffolding. Tests under active authoring. ## License Fair Core License 1.0. Converts to Apache 2.0 afte",
+      "summary": "# AEP Conformance \u2014 2.8 Mapping Tool Local-only, honest gap map of our AEP/GAP enforcement against the upstream AEP 2.8 public conformance suite (CC-01..CC-27, defined in `thePM001/AEP-agent-element-protocol` \u2192 `AEP-Com",
       "components": [
         "Test harness",
         "Schema checks"
@@ -71,12 +71,6 @@
       "artifacts": [
         "README.md",
         "LICENSE",
-        "graph.json",
-        ".graphify_analysis.json",
-        "manifest.json",
-        "stat-index.json",
-        "6335ffb3f728f1e25ad788612a76b5ad47fcc902c16610d0890f7314dbceb69b.json",
-        "c8c81f96052c83732e1c4f0d28dcd516d92850c8b73118fe88eae461269352d9.json",
         ".gitkeep",
         "packed-refs",
         "index",
@@ -86,9 +80,15 @@
         "HEAD",
         "config",
         "ORIG_HEAD",
+        ".gitkeep",
+        "run.sh",
+        "check-conformance.py",
+        ".gitkeep",
         "prepare-commit-msg.sample",
         "pre-merge-commit.sample",
-        "sendemail-validate.sample"
+        "sendemail-validate.sample",
+        "pre-receive.sample",
+        "pre-applypatch.sample"
       ]
     },
     {
@@ -111,19 +111,19 @@
         "graph.json",
         ".graphify_analysis.json",
         "manifest.json",
-        "stat-index.json",
-        "9713719d3c671a2541fdb68f141fabdbb94d94cec5fcc33edef2fa5f89b5cabc.json",
-        "84d9acecffa8f873b02ad553df4fceac86ba363f1d57eaa597a7675f670a8ecc.json",
-        "903ceba45e6a1412c3360fe267a3bc9d96db911678fa8e785791e0f270b59a6d.json",
-        "3ba5eb5ce73bcce295c42efe64fd0af2c6d3fd7bc4b9e10d962edea80453abc6.json",
-        "90e255f0b06ac7750f1cb2e3c190502a088f1d8fe8adef0b33f2b3944c9afc92.json",
-        "a7ba421127e3fe9be8de4b7e4afb7c5171c501a4e2513101d570bca482c0cc3a.json",
-        "8806105909fd2aae6b76cca4b7c72b5332df854723f5ec2da3887e580522a20a.json",
         ".gitkeep",
-        "test_signature_loader.cpython-313-pytest-9.1.1.pyc",
-        "signature_loader.cpython-313.pyc",
-        "example-bundle-001.json",
-        ".gitkeep"
+        ".gitkeep",
+        "manifest.json",
+        ".gitkeep",
+        "README.md",
+        "__init__.py",
+        "demo_verifier.py",
+        ".gitkeep",
+        "signature_ingestion_and_refinement_plan.md",
+        ".gitkeep",
+        "PKG-INFO",
+        "top_level.txt",
+        "dependency_links.txt"
       ]
     }
   ],
@@ -131,7 +131,7 @@
     "aepVersion": "2.8.0",
     "dynaepVersion": "1.0",
     "gapStatus": "1.1",
-    "conformanceStatus": "pre-v1.0",
+    "conformanceStatus": "scaffolding",
     "signatureStatus": "pre-v1.0",
     "totalComponents": 21,
     "artifactFileCount": 40,
@@ -146,9 +146,9 @@
     ],
     "identityManifestCount": 15,
     "identityKeyCount": 19,
-    "latestCommit": "83e942a9b25bb5decce9b46c993fcbe52f92d814 Redesign hub: replace orbital ring with bento grid (4 cards: Ecosystem, Trading Desk, Quantum Lattice, Roadmap) under NOOSPHERE title. Remove video dependency from portal transitions (CSS word-reveal). Add trading-desk.html.",
-    "latestCommitDate": "2026-07-26",
-    "lastAudit": "2026-07-26"
+    "latestCommit": "4841401237e4bdd6a5eac13474978d23d3a24987 ecosystem-status: fix 'Unknown' identities \u2014 handle string array entries in renderer",
+    "latestCommitDate": "2026-07-27",
+    "lastAudit": "2026-08-02"
   },
   "quantum": {
     "available": true,
@@ -188,19 +188,19 @@
     "topInboundReferences": [
       {
         "repo": "dynaep",
-        "count": 27688
+        "count": 27686
       },
       {
         "repo": "aep",
-        "count": 11244
+        "count": 11227
       },
       {
         "repo": "gap",
-        "count": 11160
+        "count": 11163
       },
       {
         "repo": "signatures",
-        "count": 2527
+        "count": 2511
       },
       {
         "repo": "conformance",
@@ -218,7 +218,7 @@
       },
       {
         "repo": "conformance",
-        "count": 75
+        "count": 43
       },
       {
         "repo": "signatures",
@@ -261,7 +261,7 @@
         "count": 1
       }
     ],
-    "edgeCount": 53600
+    "edgeCount": 53568
   },
   "attestation": {
     "trustBundleValid": true,
@@ -270,6 +270,6 @@
     "signaturesVerified": 19,
     "signaturesTotal": 19,
     "signatureCoverage": "100%",
-    "lastVerification": "2026-07-26T06:00:45.504546+00:00"
+    "lastVerification": "2026-08-02T06:59:57.831416+00:00"
   }
 }

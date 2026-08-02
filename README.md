@@ -1,9 +1,9 @@
-# THE PRINCIPALITY OF NOOSPHERE — Public Website
+# NOOSPHERE — Public Website
 
 A digital micronation experience built around transparent governance, cryptographic
 citizenship, and open protocol infrastructure.
 
-- Nation: **THE PRINCIPALITY OF NOOSPHERE** · Motto: **SOVEREIGN BY CODE**
+- Nation: **NOOSPHERE** · Motto: **SOVEREIGN BY CODE**
 - Live site: https://defi369.github.io/digital-nation-website/ (GitHub Pages, root)
 - Stack: plain static HTML/CSS/JS. **No build step.**
 

@@ -39,14 +39,14 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/charter-addendum.html",
       "title": "Charter Addendum \u2014 The Noosphere",
-      "description": "Charter Amendments & Revisions for THE PRINCIPALITY OF NOOSPHERE. Explore proposed changes, revision history, and live amendment processes under the Civic Assembly.",
+      "description": "Charter Amendments & Revisions for NOOSPHERE. Explore proposed changes, revision history, and live amendment processes under the Civic Assembly.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/charter-addendum.json"
     },
     {
       "page": "https://defi369.github.io/digital-nation-website/charter.html",
       "title": "Charter \u2014 The Noosphere",
-      "description": "The founding text of THE PRINCIPALITY OF NOOSPHERE. Every article is open to amendment through the Civic Assembly.",
+      "description": "The founding text of NOOSPHERE. Every article is open to amendment through the Civic Assembly.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/charter.json"
     },
@@ -88,7 +88,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/contact.html",
       "title": "Contact \u2014 The Noosphere",
-      "description": "Reach the Principality\u2019s front office for citizen requests, press, partnerships, governance correspondence, or technical support.",
+      "description": "Reach the Noosphere\u2019s front office for citizen requests, press, partnerships, governance correspondence, or technical support.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/contact.json"
     },
@@ -263,7 +263,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/initiatives.html",
       "title": "Initiatives \u2014 The Noosphere",
-      "description": "Active programs, infrastructure projects, and standards work run under the Principality charter.",
+      "description": "Active programs, infrastructure projects, and standards work run under the Noosphere charter.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/initiatives.json"
     },
@@ -424,7 +424,7 @@
     {
       "page": "https://defi369.github.io/digital-nation-website/structure.html",
       "title": "Government Structure \u2014 The Noosphere",
-      "description": "Explore the layered republic of THE PRINCIPALITY OF NOOSPHERE \u2014 Constitutional Core, Strategic Cabinet, Operational Offices, Service Branches, Assembly, and Constitutional Court.",
+      "description": "Explore the layered republic of NOOSPHERE \u2014 Constitutional Core, Strategic Cabinet, Operational Offices, Service Branches, Assembly, and Constitutional Court.",
       "cluster": "foundations",
       "data": "https://defi369.github.io/digital-nation-website/assets/data/structure.json"
     },
