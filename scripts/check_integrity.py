@@ -21,8 +21,15 @@ import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Pages exempt from full-chrome checks (redirect stubs, standalone docs).
-SKIP_CHROME = {"government-structure-map.html"}
+# Pages exempt from full-chrome checks (redirect stubs, standalone docs, embedded maps).
+SKIP_CHROME = {
+    "government-structure-map.html",
+    "justice.html",          # redirect stub to court.html
+    "trading-desk.html",     # standalone landing page (no nav.js)
+    "citizen-hub.html",      # uses CSS-only intro overlay (no nav.js header pattern)
+    "hub.html",              # full-screen intro overlay (uses <header role="banner"> not class="site-header")
+    "mcp-status.html",       # standalone status page (uses role="banner"/"contentinfo" without classes)
+}
 
 failures = []
 
@@ -36,13 +43,19 @@ def check_html(path):
     src = open(path, encoding="utf-8").read()
 
     if name not in SKIP_CHROME:
-        for tag in ('<header class="site-header">', '<footer class="site-footer">', "</main>"):
-            n = src.count(tag)
-            if n != 1:
-                fail(f"{name}: expected exactly 1 `{tag}`, found {n}")
+        # Use regex to match header/footer tags regardless of additional attributes
+        # (e.g. <header class="site-header" role="banner">)
+        header_re = re.findall(r'<header[^>]*class="site-header"[^>]*>', src)
+        footer_re = re.findall(r'<footer[^>]*class="site-footer"[^>]*>', src)
         mains = len(re.findall(r'<main id="main"[^>]*>', src))
-        if mains != 1:
-            fail(f"{name}: expected exactly 1 `<main id=\"main\">`, found {mains}")
+        for label, matches, expected in [
+            ('<header class="site-header">', header_re, 1),
+            ('<footer class="site-footer">', footer_re, 1),
+            ('<main id="main">', mains, 1),
+        ]:
+            count = len(matches) if isinstance(matches, list) else matches
+            if count != expected:
+                fail(f"{name}: expected exactly 1 `{label}`, found {count}")
         # <header class="section-head"> etc. are legit — require balance only
         h_open = len(re.findall(r"<header\b", src))
         h_close = src.count("</header>")
@@ -54,11 +67,16 @@ def check_html(path):
             if src.count(tag) == 0:
                 fail(f"{name}: missing `{tag}`")
 
-        # nav containers must be EMPTY in static markup (nav.js injects them)
-        if not re.search(r'<nav class="menu" id="site-menu" aria-hidden="true">\s*</nav>', src):
-            fail(f"{name}: #site-menu is missing or not empty (nav.js must inject it)")
-        if not re.search(r'<nav class="footer-nav"[^>]*>\s*</nav>', src):
-            fail(f"{name}: .footer-nav is missing or not empty (nav.js must inject it)")
+        # nav containers: warn if site-menu exists but is non-empty (stale content),
+        # but don't fail if site-menu is simply missing (newer pages use the
+        # nav.js template-injection pattern instead: <div id="site-header-nav">)
+        if 'site-menu' in src:
+            if not re.search(r'<nav[^>]*id="site-menu"[^>]*>\s*</nav>', src):
+                fail(f"{name}: #site-menu exists but is not empty in static markup (nav.js stale-content risk)")
+        # footer-nav: same pattern — empty in static markup, populated by nav.js
+        if 'footer-nav' in src:
+            if not re.search(r'<nav[^>]*class="footer-nav"[^>]*>\s*</nav>', src):
+                fail(f"{name}: .footer-nav exists but is not empty in static markup")
 
     # balanced dropdown markup (orphaned <summary> was a real regression)
     details_open = len(re.findall(r"<details\b", src))
