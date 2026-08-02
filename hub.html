@@ -417,6 +417,7 @@
     padding:clamp(20px,3vw,26px);
     transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .3s ease;
     transform:perspective(800px) translateZ(0);
+    overflow:hidden;
   }
   .bento-card:hover{
     transform:perspective(800px) translateY(-6px) rotateX(2deg) rotateY(-2deg);
@@ -461,12 +462,8 @@
 
   /* ---- Portal transition: CSS-only (no video) ---- */
   .portal-transition{
-    position:fixed;inset:0;z-index:10001;pointer-events:none;
-    display:flex;align-items:center;justify-content:center;
-    opacity:0;background:rgba(2,4,8,0.95);
-    transition:opacity .3s ease;
+    display:none;
   }
-  .portal-transition--active{opacity:1;pointer-events:all;}
   .portal-transition__word{
     font-family:var(--font-display,'Unbounded','IBM Plex Mono',sans-serif);
     font-weight:900;font-size:clamp(48px,12vw,120px);letter-spacing:0.2em;
@@ -666,29 +663,19 @@
       setTimeout(dismiss, 7000);
     })();
 
-    // ---- Bento card click: brief CSS word-reveal, then navigate ----
+    // ---- Bento card click: navigate directly with brief fade ----
     (function () {
       var nodes = document.querySelectorAll('.bento-card');
       nodes.forEach(function (node) {
         node.addEventListener('click', function (e) {
           var href = node.getAttribute('href');
           if (!href) return;
-          e.preventDefault();
-          var title = node.querySelector('.bento-card__title');
-          var word = title ? title.textContent.trim().toUpperCase() : 'NOOSPHERE';
-          var overlay = document.createElement('div');
-          overlay.className = 'portal-transition';
-          var w = document.createElement('div');
-          w.className = 'portal-transition__word';
-          w.textContent = word;
-          overlay.appendChild(w);
-          document.body.appendChild(overlay);
-          void overlay.offsetHeight;
-          overlay.classList.add('portal-transition--active');
+          // Brief fade transition, then navigate
+          document.body.style.opacity = '0';
+          document.body.style.transition = 'opacity 0.3s ease';
           setTimeout(function () {
             window.location.href = href;
-            overlay.remove();
-          }, 900);
+          }, 300);
         });
       });
     })();
