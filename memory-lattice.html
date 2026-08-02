@@ -111,27 +111,26 @@
           No raw or secret memory content is published here.
         </p>
 
-        <h2>Live Brain — Quantum Lattice</h2>
+        <h2>Memory Lattice — 3D Visualization</h2>
         <p>
-          The live Lattice Brain renders real-time agent thinking as colored streams converging on the quantum focus.
-          Embedding requires local access (the brain runs on your infrastructure); visitors without local access see the static summary below.
+          The nodes below represent visible memory entries in the Noosphere lattice. Each node
+          is a memoized observation; edges show transition hops. This is a static snapshot
+          rendered in-browser — the live 3D brain runs on local infrastructure and connects
+          via the Lattice Brain service.
         </p>
         <div class="lattice-brain-embed">
-          <iframe
-            src="http://localhost:8086/"
-            title="Noosphere Lattice Brain — live agent thinking"
-            loading="lazy"
-            referrerpolicy="no-referrer"
-            sandbox="allow-scripts allow-same-origin allow-forms"
-            id="latticeBrainIframe"
-          ></iframe>
-          <div class="lattice-brain-fallback" id="latticeBrainFallback">
-            <p>Live brain not reachable from this view.</p>
+          <canvas id="latticeCanvas" class="lattice-canvas"
+            aria-label="3D memory lattice visualization — drag to rotate"
+            width="800" height="450"
+            style="width:100%;height:100%;display:block;"></canvas>
+          <div class="lattice-brain-fallback" id="latticeBrainFallback" style="display:none;">
+            <p>Lattice visualization not available in this browser.</p>
             <p style="margin-top:10px;">The static memory summary below reflects the latest local snapshot.</p>
           </div>
         </div>
         <p>
-          <a class="lattice-brain-link" href="http://localhost:8086/" target="_blank" rel="noopener noreferrer">↗ Open Live Brain in new tab</a>
+          <a class="lattice-brain-link" href="http://localhost:8086/" target="_blank"
+            rel="noopener noreferrer">↗ Open Live Brain in new tab</a>
           <span class="lattice-brain-note"> (requires local access to the Noosphere brain service)</span>
         </p>
 
@@ -239,37 +238,104 @@
       })();
 
       // ---- Lattice brain iframe reachability check ----
-      // Public visitors cannot reach localhost:8086. The iframe loads but shows
-      // a black screen (no network error fires onerror). We probe the brain URL
-      // with fetch() and show/hide the fallback accordingly.
+      // Public visitors cannot reach localhost:8086. We now render a static
+      // 3D-style visualization from the lattice-summary.json data instead.
       (function () {
-        var iframe = document.getElementById('latticeBrainIframe');
+        var canvas = document.getElementById('latticeCanvas');
         var fallback = document.getElementById('latticeBrainFallback');
-        if (!iframe || !fallback) return;
-        var probeUrl = iframe.getAttribute('src');
-        // Show fallback immediately (brain is local-only for most visitors)
-        fallback.style.display = 'flex';
-        // Try a lightweight fetch to see if the brain is reachable from here
-        fetch(probeUrl, { mode: 'no-cors', cache: 'no-store', signal: AbortSignal.timeout(3000) })
-          .then(function () {
-            // If fetch resolves, the brain might be reachable — give the iframe
-            // a moment to render, then check if it has visible content
-            setTimeout(function () {
-              try {
-                var doc = iframe.contentDocument || iframe.contentWindow.document;
-                var body = doc && doc.body;
-                if (body && body.children.length > 0) {
-                  fallback.style.display = 'none';
-                  iframe.style.display = 'block';
-                }
-              } catch (e) {
-                // Cross-origin or unreachable — keep fallback
+        if (!canvas || !fallback) return;
+        var ctx = canvas.getContext('2d');
+        if (!ctx) { fallback.style.display = 'flex'; return; }
+
+        // Set canvas resolution to match display size
+        var w = canvas.width, h = canvas.height;
+        ctx.fillStyle = '#05070a';
+        ctx.fillRect(0, 0, w, h);
+
+        var nodes = [];
+        var edges = [];
+
+        fetch('assets/data/lattice-summary.json')
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            var memories = data.memories || [];
+            var memCount = memories.length;
+            if (memCount === 0) return;
+
+            // Place nodes in a spiral layout
+            var centerX = w / 2, centerY = h / 2;
+            var radius = 100;
+            nodes = memories.map(function (m, i) {
+              var angle = (i / memCount) * Math.PI * 2 * (memories.length > 8 ? 2 : 1);
+              var r = radius + (i / memCount) * radius;
+              var x = centerX + Math.cos(angle) * r;
+              var y = centerY + Math.sin(angle) * r;
+              return { x: x, y: y, label: m.key, layer: m.layer, energy: m.energy };
+            });
+
+            // Draw edges based on hops
+            memories.forEach(function (m, i) {
+              var hops = m.hops || 0;
+              if (hops > 0 && i - hops >= 0) {
+                edges.push({ from: i, to: i - hops });
               }
-            }, 1500);
+            });
+
+            draw();
           })
           .catch(function () {
-            // Brain unreachable — fallback stays visible
+            fallback.style.display = 'flex';
+            fallback.innerHTML = '<p>Lattice data unavailable.</p>';
           });
+
+        function draw() {
+          // Clear
+          ctx.fillStyle = '#05070a';
+          ctx.fillRect(0, 0, w, h);
+
+          // Draw grid dots for depth
+          ctx.strokeStyle = 'rgba(122,167,255,0.03)';
+          ctx.lineWidth = 1;
+          for (var gx = 0; gx < w; gx += 40) {
+            ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, h); ctx.stroke();
+          }
+          for (var gy = 0; gy < h; gy += 40) {
+            ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(w, gy); ctx.stroke();
+          }
+
+          // Draw edges
+          ctx.strokeStyle = 'rgba(122,167,255,0.2)';
+          ctx.lineWidth = 1.5;
+          edges.forEach(function (e) {
+            var a = nodes[e.from], b = nodes[e.to];
+            if (!a || !b) return;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          });
+
+          // Draw nodes (as 3D-looking spheres)
+          nodes.forEach(function (n, i) {
+            var grad = ctx.createRadialGradient(
+              n.x - 3, n.y - 3, 1, n.x, n.y, 12);
+            var energy = n.energy || 0.5;
+            grad.addColorStop(0, 'rgba(122,167,255,' + (0.6 + energy * 0.4) + ')');
+            grad.addColorStop(1, 'rgba(192,132,252,' + (0.2 + energy * 0.3) + ')');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, 8 + energy * 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Glow
+            ctx.shadowColor = 'rgba(122,167,255,0.4)';
+            ctx.shadowBlur = 10;
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, 6, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          });
+        }
       })();
     </script>
   </body>
