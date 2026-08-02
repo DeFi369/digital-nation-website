@@ -32,6 +32,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;700;900&family=Unbounded:wght@500;700;900&display=swap" crossorigin="anonymous"></noscript>
   <style>
     :root {
+      --font-display: 'Unbounded', 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
       --hub-bg: #020408;
       --hub-surface: #0a0f1a;
       --hub-border: rgba(122, 167, 255, 0.22);
@@ -409,6 +412,12 @@
     font-size:clamp(11px,1.8vw,14px);letter-spacing:0.4em;
     text-transform:uppercase;color:var(--hub-muted);margin-top:8px;
   }
+  .hub-title__desc{
+    font-family:var(--font-body,'Inter',sans-serif);
+    font-size:clamp(13px,1.8vw,15px);line-height:1.5;
+    color:var(--hub-muted);margin:10px auto 0;max-width:560px;
+    text-align:center;font-weight:400;opacity:0.85;
+  }
   .bento-grid{
     display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));
     gap:clamp(20px,4vw,32px);max-width:900px;margin:0 auto;padding:0 2vw;
@@ -500,7 +509,7 @@
   <link rel="sitemap" type="application/xml" href="/digital-nation-website/sitemap.xml" />
   <link rel="alternate" type="application/rss+xml" title="Noosphere Feed" href="/digital-nation-website/feed.xml" />
   <a class="skip-link" href="#main">Skip to content</a>
-  <meta name="article:modified_time" content="2026-07-21T08:23:07Z">
+  <meta name="article:modified_time" content="2026-08-02T08:30:00Z">
   <link rel="author" href="mailto:digital-nation@defi369.github.io">
   <meta property="og:locale" content="en_US">
   <link rel="alternate" type="application/atom+xml" title="Noosphere Hub — Atom Feed" href="/digital-nation-website/feed.atom" fetchpriority="low">
@@ -527,7 +536,7 @@
   </style>
 </head>
 <body class="page-hub">
-  <!-- Noosphere intro overlay: plays once on landing, then reveals the orbital hub -->
+  <!-- Noosphere intro overlay: plays once on landing, then reveals the bento grid hub -->
   <div id="noosphere-intro" class="noosphere-intro" aria-hidden="true">
     <div class="noosphere-fx">
       <div class="noosphere-fx__ring noosphere-fx__ring--1"></div>
@@ -564,9 +573,10 @@
     <div class="hub-title">
       <h1 class="hub-title__name">NOOSPHERE</h1>
       <p class="hub-title__sub">The Sphere of Mind</p>
+      <p class="hub-title__desc">A sovereign society of agents governed by the Agent Element Protocol. Explore the live brain, trading desk, and governance of a digital nation.</p>
     </div>
 
-    <nav class="bento-grid" aria-label="Noosphere navigation" id="orbit-carousel">
+    <nav class="bento-grid" aria-label="Noosphere navigation" id="hub-nav">
       <a class="bento-card bento-card--noosphere" href="https://defi369.github.io/digital-nation-website/" aria-label="Noosphere — enter the main citizen portal: charter, governance, structure, and all public records" rel="noopener noreferrer">
         <div class="bento-card__icon">🌟</div>
         <div class="bento-card__title">Noosphere</div>
@@ -646,43 +656,7 @@
         stars.appendChild(s);
       }
 
-      const carousel = document.getElementById('orbit-carousel');
-      let spinAngle = 0;
-
-      function setNodeTransform(wrap, index, angle) {
-        const base = index * 45;
-        const r1 = base - angle;
-        const r2 = -r1;
-        wrap.style.transform = 'rotate(' + r1 + 'deg) translate(clamp(16vw, 22vh, 26vw)) rotate(' + r2 + 'deg)';
-      }
-
-      function applySpin(angle) {
-        spinAngle = angle;
-        if (carousel) carousel.style.transform = 'rotate(' + spinAngle + 'deg)';
-        const nodes = document.querySelectorAll('.orbit-node-wrap');
-        nodes.forEach(function (w, i) {
-          setNodeTransform(w, i, spinAngle);
-        });
-      }
-
-      applySpin(0);
-
-      const mcpTerminal = null;
-      const mcpClose = null;
-      const mcpNode = null;
-      if (false && mcpNode && mcpTerminal) {
-        mcpNode.addEventListener('click', function (e) {
-          e.preventDefault();
-          mcpTerminal.classList.add('is-open');
-          mcpTerminal.setAttribute('aria-hidden', 'false');
-        });
-      }
-      if (false && mcpClose && mcpTerminal) {
-        mcpClose.addEventListener('click', function () {
-          mcpTerminal.classList.remove('is-open');
-          mcpTerminal.setAttribute('aria-hidden', 'true');
-        });
-      }
+      // ---- Live agent count from the quantum lattice dashboard. ----
     })();
 
     // ---- Noosphere intro: CSS-animated, dismiss on skip/timeout ----
