@@ -212,9 +212,12 @@ def main():
     # Add protocol status
     protocol = get_protocol_status()
     if protocol:
-        for n in nodes:
-            if n["id"] == "aep-governance":
-                n["protocolVersion"] = protocol.get("version", "unknown")
+        aep_stack = next((s for s in protocol.get("stacks", []) if s.get("name") == "AEP"), None)
+        if aep_stack:
+            for n in nodes:
+                if n["id"] == "aep-governance":
+                    n["protocolVersion"] = f"{aep_stack.get('name', 'AEP')} v{aep_stack.get('version', '?')}"
+                    n["protocolStatus"] = aep_stack.get("status", "unknown")
 
     graph = {
         "graphId": "noosphere-task-graph",
