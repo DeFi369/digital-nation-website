@@ -227,3 +227,14 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Verified: HTML parser + grep-based pass on all 9 pages
 
 - **2026-07-21 — Round 35 pending** (next improvement cycle)
+
+- **2026-08-02 — Full site audit + branding consistency** (commit `b827778`):
+  - Branding: replaced all "THE PRINCIPALITY OF NOOSPHERE" → "NOOSPHERE" across 71 files (HTML, JSON, MD)
+  - Branding: replaced all "Principality" (possessive) → "Noosphere's" across all files
+  - Branding: replaced "Aetheria" → "Noosphere" in lattice-summary.json
+  - Branding: replaced last "Digital Nation" reference in hub.html bento card desc
+  - Assets: removed dead video files (noosphere-intro.mp4 7MB, .webm 2.5MB, .poster.jpg 179K) — not referenced in any HTML
+  - Metadata: added full head metadata to citizen-hub.html (CSP, manifest, html attributes, OG/Twitter, dns-prefetch, JSON-LD breadcrumbs) matching hub.html
+  - Cleanup: fixed index.html redundant title "Noosphere — The Noosphere" → "Noosphere — The Sphere of Mind"
+  - Cleanup: updated hub.html description from "orbital command center" → "command center" (layout is now bento grid)
+  - Verified: 0 remaining Principality/Aetheria/Digital Nation references; integrity check passes; deployed live on GitHub Pages
