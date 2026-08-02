@@ -240,3 +240,17 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   - Verified: 0 remaining Principality/Aetheria/Digital Nation references; integrity check passes; deployed live on GitHub Pages
   - Metadata: added full head metadata to ALL 76 pages (was only on 10) — CSP, manifest, html attributes (hreflang/dir/class/no-js), dns-prefetch, permissions-policy, og:locale, og:site_name, article:modified_time, JSON-LD breadcrumbs, color-scheme, format-detection, robots
   - Committed as b827778 + 1bd5f29
+
+## Cron Job Consolidation (2026-08-02)
+- Consolidated 6 cron jobs → 4 (removed 2 redundant jobs):
+- Merged Morning Briefing (daily 11:00) into IAMS cycle as Phase 0
+  (briefing script has internal dedup — only generates once per day)
+- Merged Monthly state.db optimize-storage into nightly-maint.sh as Phase 7
+  (runs only on 1st of month via day-of-month check)
+- Created /home/user/.hermes/scripts/optimize_storage.sh as the script
+  for monthly optimization (replaces inline agent-prompt cron job)
+- Remaining 4 cron jobs:
+  1. Daily WH Audit (00:00 UTC) — security, sudo
+  2. AEP Health Monitor (every 5min) — real-time stack health
+  3. IAMS Cycle (08:00, 20:00 UTC) — communication + morning briefing
+  4. Nightly Maint (02:30 UTC) — 7 phases incl. monthly optimize on 1st
