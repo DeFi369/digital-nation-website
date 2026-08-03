@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-02",
+  "generated": "2026-08-03",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -80,15 +80,15 @@
         "HEAD",
         "config",
         "ORIG_HEAD",
-        ".gitkeep",
-        "run.sh",
-        "check-conformance.py",
-        ".gitkeep",
         "prepare-commit-msg.sample",
         "pre-merge-commit.sample",
         "sendemail-validate.sample",
         "pre-receive.sample",
-        "pre-applypatch.sample"
+        "pre-applypatch.sample",
+        "fsmonitor-watchman.sample",
+        "push-to-checkout.sample",
+        "pre-rebase.sample",
+        "update.sample"
       ]
     },
     {
@@ -111,19 +111,19 @@
         "graph.json",
         ".graphify_analysis.json",
         "manifest.json",
+        "stat-index.json",
+        "9713719d3c671a2541fdb68f141fabdbb94d94cec5fcc33edef2fa5f89b5cabc.json",
+        "84d9acecffa8f873b02ad553df4fceac86ba363f1d57eaa597a7675f670a8ecc.json",
+        "903ceba45e6a1412c3360fe267a3bc9d96db911678fa8e785791e0f270b59a6d.json",
+        "3ba5eb5ce73bcce295c42efe64fd0af2c6d3fd7bc4b9e10d962edea80453abc6.json",
+        "90e255f0b06ac7750f1cb2e3c190502a088f1d8fe8adef0b33f2b3944c9afc92.json",
+        "a7ba421127e3fe9be8de4b7e4afb7c5171c501a4e2513101d570bca482c0cc3a.json",
+        "8806105909fd2aae6b76cca4b7c72b5332df854723f5ec2da3887e580522a20a.json",
         ".gitkeep",
-        ".gitkeep",
-        "manifest.json",
-        ".gitkeep",
-        "README.md",
-        "__init__.py",
-        "demo_verifier.py",
-        ".gitkeep",
-        "signature_ingestion_and_refinement_plan.md",
-        ".gitkeep",
-        "PKG-INFO",
-        "top_level.txt",
-        "dependency_links.txt"
+        "test_signature_loader.cpython-313-pytest-9.1.1.pyc",
+        "signature_loader.cpython-313.pyc",
+        "example-bundle-001.json",
+        ".gitkeep"
       ]
     }
   ],
@@ -146,17 +146,17 @@
     ],
     "identityManifestCount": 15,
     "identityKeyCount": 19,
-    "latestCommit": "4841401237e4bdd6a5eac13474978d23d3a24987 ecosystem-status: fix 'Unknown' identities \u2014 handle string array entries in renderer",
-    "latestCommitDate": "2026-07-27",
-    "lastAudit": "2026-08-02"
+    "latestCommit": "d2d20e9cfe92ac35696b6915fb1e6d3fc925c8f7 perf: remove dead JS + unused images from live tree",
+    "latestCommitDate": "2026-08-03",
+    "lastAudit": "2026-08-03"
   },
   "quantum": {
     "available": true,
-    "collapseChosenLattice": "lattice-memory",
+    "collapseChosenLattice": "lattice-national",
     "afterNormalizeTotal": 0.9999999999999998,
     "boosterPhaseReady": true
   },
-  "quantumAttestation": "dbc7bcc3d4d89374",
+  "quantumAttestation": "9be76a6da8434473",
   "verifiedIdentities": [
     "president",
     "secretary_of_technology_science_and_innovation",
@@ -270,6 +270,6 @@
     "signaturesVerified": 19,
     "signaturesTotal": 19,
     "signatureCoverage": "100%",
-    "lastVerification": "2026-08-02T06:59:57.831416+00:00"
+    "lastVerification": "2026-08-03T02:30:28.777169+00:00"
   }
 }
