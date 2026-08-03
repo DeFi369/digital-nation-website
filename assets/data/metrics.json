@@ -1,7 +1,7 @@
 {
   "updated": "2026-07-18",
   "note": "Canonical shared metrics. The header member counter, homepage telemetry, and footer protocol badge read from THIS file — do not duplicate these values in per-page JSON.",
-  "protocolVersion": "v0.1.0",
+  "protocolVersion": "AEP v2.8.0",
   "networkStatus": "Network Active",
   "members": 10,
   "stats": {
