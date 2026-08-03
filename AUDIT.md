@@ -253,4 +253,19 @@ Hub links: Hub, Governance v2, Roadmap, HL MCP, Archive, Structure, Ecosystem, I
   1. Daily WH Audit (00:00 UTC) — security, sudo
   2. AEP Health Monitor (every 5min) — real-time stack health
   3. IAMS Cycle (08:00, 20:00 UTC) — communication + morning briefing
-  4. Nightly Maint (02:30 UTC) — 7 phases incl. monthly optimize on 1st
+  |  4. Nightly Maint (02:30 UTC) — 7 phases incl. monthly optimize on 1st
+  |  5. Health-Loop Watchdog (23:00 UTC) — cron + kanban + state.db + graph freshness
+  |
+  |- **2026-08-03 — Full stack audit + graph data pipeline**
+  |  - Created `scripts/generate-graph-summary.py`: generates live `graph-summary.json` from systemctl + Docker + cron DB + HTTP probes (11 nodes, 10 edges, AEP v2.8.0)
+  |  - Added Phase 9 to `aep-health-monitor.sh`: regenerates `graph-summary.json` every 5 min (not just nightly) → graph data stays fresh for the memory-lattice visualization
+  |  - Enhanced `health-loop-watchdog.py`: added state.db detailed breakdown (message counts per session) when >500MB, and graph_summary freshness check (stale alert >25h)
+  |  - Added SIGTERM/SIGHUP trap to `iams-cycle.sh`: gateway restarts during 20:00 cycle no longer produce false "error" status (exits cleanly with code 0)
+  |  - Added `AEP_LATTICE_GATE=1` export to `iams-cycle.sh` for consistency
+  |  - Hub telemetry bar: added "Graph" item showing live node counts (dones+running), polls graph-summary.json every 10s
+  |  - `memory-lattice.html`: added Graph view toggle alongside Lattice view — tree layout, status-colored nodes, progress rings, pulse edges
+  |  - `index.html`: simplified to hero + 5 feature cards + minimal footer (was 7+ dense sections)
+  |  - `hub.html`: replaced invisible ring/particle intro with text-based reveal (fixes "black screen" issue)
+  |  - `about.html`: "Built by Us" instead of listing individual contributors
+  |  - Verified: integrity ✓ | AEP 15/15 ✓ | 5/5 services ✓ | 5/5 Docker ✓ | 5/5 cron ok
+  |  - Alert: IAMS cycle `last_status=error` (gateway restart at 20:00 interrupted process; trap fix should help future runs; cron scheduler may still show "unknown")
