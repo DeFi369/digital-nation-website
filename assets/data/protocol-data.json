@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03",
+  "generated": "2026-08-04",
   "generator": "protocol-data-generator",
   "ministry": "Secretary of Technology & Innovation",
   "stacks": [
@@ -146,9 +146,9 @@
     ],
     "identityManifestCount": 15,
     "identityKeyCount": 19,
-    "latestCommit": "d2d20e9cfe92ac35696b6915fb1e6d3fc925c8f7 perf: remove dead JS + unused images from live tree",
+    "latestCommit": "2dfa5093a180c57142595673385ae84978c10794 chore: remove dead assets + pre-retirement files (76KB)",
     "latestCommitDate": "2026-08-03",
-    "lastAudit": "2026-08-03"
+    "lastAudit": "2026-08-04"
   },
   "quantum": {
     "available": true,
@@ -270,6 +270,6 @@
     "signaturesVerified": 19,
     "signaturesTotal": 19,
     "signatureCoverage": "100%",
-    "lastVerification": "2026-08-03T02:30:28.777169+00:00"
+    "lastVerification": "2026-08-04T02:31:04.435102+00:00"
   }
 }

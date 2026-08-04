@@ -1,6 +1,6 @@
 {
   "graphId": "noosphere-task-graph",
-  "updatedAt": "2026-08-03T09:50:30Z",
+  "updatedAt": "2026-08-04T18:30:52Z",
   "generatedBy": "generate-graph-summary.py",
   "title": "Noosphere Agent Task Graph",
   "description": "Live graph of Noosphere's agent governance stack. Nodes color-coded by progress: grey=pending, blue=running, green=done, red=failed. Edges pulse to show governance/data flow over time.",
